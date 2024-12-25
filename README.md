@@ -1,4 +1,6 @@
-# Llama 3 Interpretability with Sparse Autoencoders
+# SAINT (Sparse Autoencoder INterpretability Toolkit)
+
+Llama 3 Interpretability with Sparse Autoencoders
 
 [![Version](https://img.shields.io/badge/Version-0.2.1-brightgreen.svg)](https://github.com/PaulPauls/llama3_interpretability_sae)
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-blue.svg)](https://www.python.org/downloads/release/python-3120/)
