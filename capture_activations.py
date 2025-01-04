@@ -133,6 +133,7 @@ def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_dir", type=Path, required=True)
     parser.add_argument("--output_dir", type=Path, default=Path("activation_outs/"))
+    parser.add_argument("--dataset_dir", type=Path, default=Path("dataset/"))
     parser.add_argument("--num_samples", type=int, default=None)
     return parser.parse_args()
 
@@ -157,9 +158,11 @@ def main() -> None:
     args = parse_arguments()
     args.model_dir = args.model_dir.resolve()
     args.output_dir = args.output_dir.resolve()
+    args.dataset_dir = args.dataset_dir.resolve()
     tokenizer_path = args.model_dir / "tokenizer.model"
     params_path = args.model_dir / "params.json"
     model_path = args.model_dir / "consolidated.00.pth"
+    parquet_path = args.dataset_dir / "train-00000-of-00082.parquet"
 
     # Set up configuration
     store_layer_activ = [22]
@@ -206,6 +209,7 @@ def main() -> None:
         num_samples=args.num_samples,
         shuffle=dataset_shuffle,
         add_bos_token=add_bos_token,
+        parquet_path=parquet_path,
     )
     sampler = DistributedSampler(
         dataset,

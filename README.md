@@ -19,3 +19,9 @@ pip install torch --index-url https://download.pytorch.org/whl/cu121
 python main.py
 exit
 ```
+
+获取激活
+
+```bash
+python capture_activations.py --model_dir llama_3.2-3B_model/original --output_dir activations --dataset_dir dataset
+```

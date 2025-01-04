@@ -1,4 +1,5 @@
 import logging
+from pathlib import Path
 from unittest.mock import Mock
 
 import torch
@@ -18,6 +19,7 @@ class OpenWebTextSentencesDataset(Dataset):
         num_samples: int | None = None,
         shuffle: bool = False,
         add_bos_token: bool = False,
+        parquet_path: Path = Path("dataset/train-00000-of-00082.parquet"),
         seed: int = 42,
     ):
         """"""
@@ -33,7 +35,7 @@ class OpenWebTextSentencesDataset(Dataset):
         # self.dataset = load_dataset("paulpauls/openwebtext-sentences", split="train")
         self.dataset = load_dataset(
             "parquet",
-            data_files="path/to/train-00000-of-00082.parquet",  # 请替换为您的实际文件路径
+            data_files=parquet_path,
             split="train"
         )
         if shuffle:
@@ -98,6 +100,7 @@ def mock_instantiate_dataset() -> None:
         max_token_length=123,
         num_samples=None,
         add_bos_token=False,
+        parquet_path=Path("dataset/train-00000-of-00082.parquet"),
     )
 
 
