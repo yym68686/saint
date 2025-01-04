@@ -30,7 +30,12 @@ class OpenWebTextSentencesDataset(Dataset):
         self.add_bos_token = add_bos_token
 
         # Load the OpenWebText dataset
-        self.dataset = load_dataset("paulpauls/openwebtext-sentences", split="train")
+        # self.dataset = load_dataset("paulpauls/openwebtext-sentences", split="train")
+        self.dataset = load_dataset(
+            "parquet",
+            data_files="path/to/train-00000-of-00082.parquet",  # 请替换为您的实际文件路径
+            split="train"
+        )
         if shuffle:
             logging.info("Shuffling the dataset...")
             self.dataset = self.dataset.shuffle(seed=seed)
