@@ -36,7 +36,7 @@ class OpenWebTextSentencesDataset(Dataset):
         # print("parquet_path", parquet_path)
         self.dataset = load_dataset(
             "parquet",
-            data_files=parquet_path,
+            data_files={"train": str(parquet_path)},
             split="train"
         )
         if shuffle:
