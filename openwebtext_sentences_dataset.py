@@ -33,6 +33,7 @@ class OpenWebTextSentencesDataset(Dataset):
 
         # Load the OpenWebText dataset
         # self.dataset = load_dataset("paulpauls/openwebtext-sentences", split="train")
+        # print("parquet_path", parquet_path)
         self.dataset = load_dataset(
             "parquet",
             data_files=parquet_path,
