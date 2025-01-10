@@ -1,3 +1,4 @@
 *.pth
 *.parquet
 test
+*.pt
