@@ -10,8 +10,11 @@ https://huggingface.co/datasets/PaulPauls/openwebtext-sentences
 
 https://github.com/yym68686/saint
 
-cpu 内存需求：20GB
-gpu 内存需求：24GB
+加载 llama3.2-3B 模型获取激活，cpu 内存需求：20GB
+
+加载 llama3.2-3B 模型获取激活，gpu 内存需求：24GB
+
+训练 SAE 模型，gpu 内存需求：12GB
 
 安装环境
 
@@ -68,6 +71,8 @@ python sae_preprocessing.py \
 
 训练 SAE 模型
 
+数据集较小时，修改 logs_per_epoch 值，否则报错。
+
 ```bash
 cd saint
 eval $(poetry env activate)
@@ -76,4 +81,37 @@ torchrun --nproc_per_node=1 \
     --data_dir ./activation_outputs_batched \
     --b_pre_path ./activation_outputs_mean.pt \
     --model_save_path ./trained_sae.pt
+```
+
+获取 top 激活句子
+
+```bash
+cd saint
+eval $(poetry env activate)
+python capture_top_activating_sentences.py \
+    --data_dir ./activation_outputs \
+    --model_path ./trained_sae.pt \
+    --captured_data_output_dir ./top_activating_sentences
+```
+
+获取语义解释
+
+```bash
+cd saint
+eval $(poetry env activate)
+python interpret_top_sentences_send_batches.py \
+    --top_sentences_dict_filepath ./top_activating_sentences/top_sentences_mean.yaml \
+    --response_ids_filepath ./top_activating_sentences/response_ids.yaml
+```
+
+查看磁盘使用情况
+
+```bash
+df -h
+```
+
+查看当前目录磁盘占用
+
+```bash
+du -h | sort -hr
 ```
