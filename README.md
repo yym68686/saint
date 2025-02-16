@@ -32,6 +32,8 @@ unset http_proxy && unset https_proxy
 安装环境
 
 ```bash
+git config --global user.name "yym68686"
+git config --global user.email "yym68686@outlook.com"
 git clone https://github.com/yym68686/saint.git
 cd saint
 
