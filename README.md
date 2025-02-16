@@ -157,6 +157,21 @@ python interpret_top_sentences_parse_responses.py \
     --parsed_responses_output_filepath ./output/parsed_responses.yaml
 ```
 
+运行图形界面
+
+将 SAE 放在第 23 层。
+
+```bash
+cd saint
+eval $(poetry env activate)
+python llama_3_inference_text_completion_gradio.py \
+    --llama_model_dir ./llama_3.2-3B_model/original \
+    --sae_model_path ./trained_sae.pt \
+    --sae_layer_idx 22 \
+    --port 8080 \
+    --share
+```
+
 查看磁盘使用情况
 
 ```bash
