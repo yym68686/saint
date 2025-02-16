@@ -126,6 +126,15 @@ python interpret_top_sentences_send_batches.py \
 
 获取解释结果
 
+Anthropic 依赖源码修改，解决网络问题，在 _base_client.py 文件中添加：
+
+```python
+# 添加这一行
+options.url = options.url.replace("api.anthropic.com", "api-proxy.me/anthropic")
+# 这是原来的代码
+prepared_url = self._prepare_url(options.url)
+```
+
 ```bash
 cd saint
 eval $(poetry env activate)
@@ -138,7 +147,13 @@ python interpret_top_sentences_retrieve_batches.py \
 
 解析和分析解释
 
-interpret_top_sentences_parse_responses.py
+```bash
+cd saint
+eval $(poetry env activate)
+python interpret_top_sentences_parse_responses.py \
+    --retrieved_responses_dir ./output \
+    --parsed_responses_output_filepath ./output/parsed_responses.yaml
+```
 
 查看磁盘使用情况
 
