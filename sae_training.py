@@ -248,6 +248,16 @@ def validate_epoch(
 
     return avg_loss, avg_aux_loss, avg_total_loss
 
+def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
+    """清理旧的检查点，只保留最新的 N 个"""
+    checkpoints = sorted(checkpoint_dir.glob("model_checkpoint_epoch-*.pth"))
+    if len(checkpoints) > keep_last_n:
+        for checkpoint in checkpoints[:-keep_last_n]:
+            try:
+                checkpoint.unlink()
+                logging.info(f"Removed old checkpoint: {checkpoint}")
+            except Exception as e:
+                logging.error(f"Failed to remove checkpoint {checkpoint}: {e}")
 
 def train_autoencoder(
     model: TopKSparseAutoencoder,
@@ -360,6 +370,8 @@ def train_autoencoder(
             checkpoint_path = checkpoint_dir / f"model_checkpoint_epoch-{epoch + 1}.pth"
             torch.save(model.module.state_dict(), checkpoint_path)
             logging.info(f"Checkpoint saved to: {checkpoint_path}")
+            # 原来的代码里面没有这个函数
+            cleanup_old_checkpoints(checkpoint_dir, keep_last_n=3)
 
         # Early stopping check
         if val_avg_total_loss < best_val_avg_total_loss:

@@ -15,7 +15,8 @@ from utils.cuda_utils import set_up_cuda
 class SequenceActivationDataset(Dataset):
     def __init__(self, data_dir: Path, filename_prefix: str):
         self.data_files = list(data_dir.rglob("*.pt"))
-        self.data_files.sort()
+        # self.data_files.sort()
+        self.data_files.sort(key=lambda x: int(x.stem[len(filename_prefix):]))
         self.filename_prefix = filename_prefix
 
         # assert that data indices are continuous and starting at 0

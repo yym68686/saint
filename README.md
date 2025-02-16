@@ -2,19 +2,32 @@
 
 使用 Llama 3.2-3B 模型，通过 SAE 模型训练，并使用 Claude 3.5 Sonnet 模型进行解释。
 
-OpenWebText 数据集下载
-
-https://huggingface.co/datasets/PaulPauls/openwebtext-sentences
-
-项目地址：
-
-https://github.com/yym68686/saint
-
 加载 llama3.2-3B 模型获取激活，cpu 内存需求：20GB
 
 加载 llama3.2-3B 模型获取激活，gpu 内存需求：24GB
 
 训练 SAE 模型，gpu 内存需求：12GB
+
+项目地址：
+
+https://github.com/yym68686/saint
+
+
+OpenWebText 数据集下载
+
+https://huggingface.co/datasets/PaulPauls/openwebtext-sentences
+
+github 加速
+
+```bash
+source /etc/network_turbo
+```
+
+取消加速
+
+```bash
+unset http_proxy && unset https_proxy
+```
 
 安装环境
 
@@ -73,6 +86,8 @@ python sae_preprocessing.py \
 
 数据集较小时，修改 logs_per_epoch 值，否则报错。
 
+本次实验设置为 logs_per_epoch = 100
+
 ```bash
 cd saint
 eval $(poetry env activate)
@@ -94,15 +109,36 @@ python capture_top_activating_sentences.py \
     --captured_data_output_dir ./top_activating_sentences
 ```
 
-获取语义解释
+构建并发送批次以供 llm api 解释，获取语义解释
+
+设置 ANTHROPIC_API_KEY，ANTHROPIC_BASE_URL 环境变量
 
 ```bash
 cd saint
 eval $(poetry env activate)
+export ANTHROPIC_API_KEY="your_anthropic_api_key"
+export ANTHROPIC_BASE_URL="https://api-proxy.me/anthropic"
 python interpret_top_sentences_send_batches.py \
     --top_sentences_dict_filepath ./top_activating_sentences/top_sentences_mean.yaml \
-    --response_ids_filepath ./top_activating_sentences/response_ids.yaml
+    --response_ids_filepath ./top_activating_sentences/response_ids.yaml \
+    --dataset_dir /root/autodl-fs
 ```
+
+获取解释结果
+
+```bash
+cd saint
+eval $(poetry env activate)
+export ANTHROPIC_API_KEY="your_anthropic_api_key"
+export ANTHROPIC_BASE_URL="https://api-proxy.me/anthropic"
+python interpret_top_sentences_retrieve_batches.py \
+    --response_ids_filepath ./top_activating_sentences/response_ids.yaml \
+    --response_output_dir ./output/
+```
+
+解析和分析解释
+
+interpret_top_sentences_parse_responses.py
 
 查看磁盘使用情况
 
@@ -114,4 +150,10 @@ df -h
 
 ```bash
 du -h | sort -hr
+```
+
+更新代码：
+
+```bash
+git pull https://github.com/yym68686/saint.git
 ```

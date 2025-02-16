@@ -138,6 +138,7 @@ def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--top_sentences_dict_filepath", type=Path, required=True)
     parser.add_argument("--response_ids_filepath", type=Path, required=True)
+    parser.add_argument("--dataset_dir", type=Path, required=False)
     return parser.parse_args()
 
 
@@ -151,6 +152,7 @@ def main() -> None:
 
     # Parse arguments and set up paths
     args = parse_arguments()
+    args.dataset_dir = args.dataset_dir.resolve()
     args.top_sentences_dict_filepath = args.top_sentences_dict_filepath.resolve()
     args.response_ids_filepath = args.response_ids_filepath.resolve()
 
@@ -183,7 +185,13 @@ def main() -> None:
     )
 
     logging.info("Loading OpenWebText-Sentences dataset...")
-    dataset = load_dataset("paulpauls/openwebtext-sentences", split="train")
+    # dataset = load_dataset("paulpauls/openwebtext-sentences", split="train")
+    parquet_path = args.dataset_dir / "train-00000-of-00082.parquet"
+    dataset = load_dataset(
+        "parquet",
+        data_files={"train": str(parquet_path)},
+        split="train"
+    )
     if dataset_shuffle:
         logging.info("Shuffling the dataset...")
         dataset = dataset.shuffle(seed=shuffle_seed)
