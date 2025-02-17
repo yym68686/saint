@@ -15,7 +15,7 @@ OpenWebText 数据集下载
 
 https://huggingface.co/datasets/PaulPauls/openwebtext-sentences
 
-安装环境
+## 安装环境
 
 ```bash
 git config --global credential.helper store
@@ -45,7 +45,7 @@ eval $(poetry env activate)
 python -c "import torch; print(f'CUDA可用: {torch.cuda.is_available()}, GPU数量: {torch.cuda.device_count() if torch.cuda.is_available() else 0}')"
 ```
 
-获取激活
+## 获取激活
 
 num_samples 是训练数据集的样本数量，每个 parquet 文件一共 3749177 条数据
 
@@ -62,7 +62,7 @@ torchrun --nproc_per_node=1 \
     --num_samples 50000
 ```
 
-SAE 训练的数据预处理
+## SAE 训练的数据预处理
 
 num_processes 需要根据机器实际CPU核心数和内存情况合理设置这个参数。
 
@@ -75,7 +75,7 @@ python sae_preprocessing.py \
     --batch_size 1024
 ```
 
-训练 SAE 模型
+## 训练 SAE 模型
 
 activation_outputs 文件数量小于 50000 时，修改 logs_per_epoch 值，否则报错。logs_per_epoch 必须小于 len(activation_outputs_batched)
 
@@ -99,7 +99,7 @@ torchrun --nproc_per_node=1 \
 
 1x4090 24GB 内存，训练 1 个 epoch，batch_size = 1024，num_samples=50000，需要 1m44s。
 
-获取 top 激活句子
+## 获取 top 激活句子
 
 ```bash
 cd saint
@@ -110,7 +110,7 @@ python capture_top_activating_sentences.py \
     --captured_data_output_dir ./top_activating_sentences
 ```
 
-构建并发送批次以供 llm api 解释，获取语义解释
+## 构建并发送批次以供 llm api 解释，获取语义解释
 
 设置 ANTHROPIC_API_KEY，ANTHROPIC_BASE_URL 环境变量
 
@@ -125,7 +125,7 @@ python interpret_top_sentences_send_batches.py \
     --dataset_dir /root/autodl-fs
 ```
 
-获取解释结果
+## 获取解释结果
 
 Anthropic 依赖源码修改，解决网络问题，在 _base_client.py 文件中添加：
 
@@ -146,7 +146,7 @@ python interpret_top_sentences_retrieve_batches.py \
     --response_output_dir ./output/
 ```
 
-解析和分析解释
+## 解析和分析解释
 
 ```bash
 cd saint
@@ -156,7 +156,7 @@ python interpret_top_sentences_parse_responses.py \
     --parsed_responses_output_filepath ./output/parsed_responses.yaml
 ```
 
-运行图形界面
+## 运行图形界面
 
 将 SAE 放在第 23 层。
 
@@ -171,6 +171,7 @@ python llama_3_inference_text_completion_gradio.py \
     --share
 ```
 
+## codebook
 
 更新代码：
 
