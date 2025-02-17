@@ -61,6 +61,8 @@ python -c "import torch; print(f'CUDA可用: {torch.cuda.is_available()}, GPU数
 
 获取激活
 
+num_samples 是训练数据集的样本数量，每个 parquet 文件一共 3749177 条数据
+
 ```bash
 ln -s /root/autodl-fs/consolidated.00.pth /root/saint/llama_3.2-3B_model/original/consolidated.00.pth
 
@@ -71,7 +73,7 @@ torchrun --nproc_per_node=1 \
     --model_dir llama_3.2-3B_model/original \
     --output_dir activation_outputs/ \
     --dataset_dir /root/autodl-fs \
-    --num_samples 10000
+    --num_samples 50000
 ```
 
 SAE 训练的数据预处理
