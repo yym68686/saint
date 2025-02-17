@@ -28,6 +28,7 @@ def parse_content_response(content: str) -> dict[str, str | float]:
 def parse_arguments() -> argparse.Namespace:
     """"""
     parser = argparse.ArgumentParser()
+    parser.add_argument("--response_ids_filepath", type=Path, required=True)
     parser.add_argument("--retrieved_responses_dir", type=Path, required=True)
     parser.add_argument("--parsed_responses_output_filepath", type=Path, required=True)
     return parser.parse_args()
@@ -43,6 +44,7 @@ def main() -> None:
 
     # Parse arguments and set up paths
     args = parse_arguments()
+    args.response_ids_filepath = args.response_ids_filepath.resolve()
     args.retrieved_responses_dir = args.retrieved_responses_dir.resolve()
     args.parsed_responses_output_filepath = args.parsed_responses_output_filepath.resolve()
 
@@ -51,9 +53,16 @@ def main() -> None:
     logging.info(f"# retrieved_responses_dir: {args.retrieved_responses_dir}")
     logging.info(f"# parsed_responses_output_filepath: {args.parsed_responses_output_filepath}")
 
+    logging.info("Loading response IDs to check for...")
+    with args.response_ids_filepath.open("r") as f:
+        response_ids = yaml.safe_load(f)
+    if len(response_ids) != 1:
+        raise ValueError(f"Expected 1 response ID, got {len(response_ids)}")
+    response_id = response_ids[0]
+
     logging.info("Parsing retrieved responses...")
     parsed_response_dict = dict()
-    retrieved_responses = list(args.retrieved_responses_dir.glob("*.yaml"))
+    retrieved_responses = list(args.retrieved_responses_dir.glob(f"*{response_id}.yaml"))
     for response_file in tqdm(retrieved_responses):
         with open(response_file) as f:
             response_dict = yaml.safe_load(f)

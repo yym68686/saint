@@ -401,6 +401,7 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("--b_pre_path", type=Path, required=True)
     parser.add_argument("--model_save_path", type=Path, required=True)
     parser.add_argument("--model_load_path", type=Path, default=None)
+    parser.add_argument("--batch_size", type=int, default=1024)
     parser.add_argument("--checkpoint_dir", type=Path, default=Path("sae_checkpoints"))
     return parser.parse_args()
 
@@ -438,7 +439,7 @@ def main() -> None:
     aux_loss_coeff = 1 / 32
     dead_steps_threshold = 80_000  # ~1 epoch in training steps
     sae_normalization_eps = 1e-6
-    batch_size = 1024
+    batch_size = args.batch_size
     num_epochs = 10
     early_stopping_patience = 10  # disabled
     learning_rate = 5e-5
@@ -447,7 +448,7 @@ def main() -> None:
     optimizer_eps = 6.25e-10
     dtype = torch.float32
     dataloader_num_workers = 8
-    logs_per_epoch = 1000
+    logs_per_epoch = 100
     train_val_split = 0.95
 
     if rank == 0:

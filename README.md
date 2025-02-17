@@ -69,15 +69,18 @@ num_processes 需要根据机器实际CPU核心数和内存情况合理设置这
 ```bash
 cd saint
 eval $(poetry env activate)
+rm -rf activation_outputs_batched
 python sae_preprocessing.py \
     --input_dir activation_outputs/ \
     --num_processes 4 \
-    --batch_size 1024
+    --batch_size 8192
 ```
 
 ## 训练 SAE 模型
 
-activation_outputs 文件数量小于 50000 时，修改 logs_per_epoch 值，否则报错。logs_per_epoch 必须小于 len(activation_outputs_batched)
+运行前，检查 logs_per_epoch，batch_size 的值。logs_per_epoch 必须小于 len(activation_outputs_batched)
+
+activation_outputs 文件数量小于 50000 时，修改 logs_per_epoch 值，否则报错。
 
 本次实验设置为 logs_per_epoch = 100。
 
@@ -94,10 +97,17 @@ torchrun --nproc_per_node=1 \
     sae_training.py \
     --data_dir ./activation_outputs_batched \
     --b_pre_path ./activation_outputs_mean.pt \
-    --model_save_path ./trained_sae.pt
+    --model_save_path ./trained_sae.pt \
+    --batch_size 8192
 ```
 
-1x4090 24GB 内存，训练 1 个 epoch，batch_size = 1024，num_samples=50000，需要 1m44s。
+1x4090 24GB 内存，训练 1 个 epoch，batch_size = 1024，num_samples=50000，需要 1m44s。MEM 47.3%（11622MB）。UTL 99%。训练 10 个 epoch，需要 18m。训练 50 个 epoch，需要 81m。
+
+1x4090 24GB 内存，训练 1 个 epoch，batch_size = 2048，num_samples=50000，需要 1m10s。MEM 51.5%（12684MB）。UTL 99%。
+
+1x4090 24GB 内存，训练 1 个 epoch，batch_size = 4096，num_samples=50000，需要 58s。MEM 60.9%（14952MB）。UTL 97%。
+
+1x4090 24GB 内存，训练 1 个 epoch，batch_size = 8192，num_samples=50000，需要 51s。MEM 79.6%（19560MB）。UTL 88%。
 
 ## 获取 top 激活句子
 
@@ -152,6 +162,7 @@ python interpret_top_sentences_retrieve_batches.py \
 cd saint
 eval $(poetry env activate)
 python interpret_top_sentences_parse_responses.py \
+    --response_ids_filepath ./top_activating_sentences/response_ids.yaml \
     --retrieved_responses_dir ./output \
     --parsed_responses_output_filepath ./output/parsed_responses.yaml
 ```
@@ -159,6 +170,10 @@ python interpret_top_sentences_parse_responses.py \
 ## 运行图形界面
 
 将 SAE 放在第 23 层。
+
+CPU 内存需求：46GB
+
+GPU 内存需求：16GB
 
 ```bash
 cd saint
@@ -169,6 +184,15 @@ python llama_3_inference_text_completion_gradio.py \
     --sae_layer_idx 22 \
     --port 8080 \
     --share
+```
+
+测试语句
+
+```text
+The delegates gathered at the
+Foreign officials released a statement
+Humanitarian staff coordinated their efforts
+Senior diplomats met to discuss
 ```
 
 ## codebook
@@ -215,4 +239,46 @@ du -h -d 1 -x / 2>/dev/null | sort -hr | head -n 20
 ```bash
 rm -rf /root/.cache/pypoetry/cache/*
 rm -rf /root/.cache/pypoetry/artifacts/*
+```
+
+## 训练 log 记录
+
+num_samples = 50000
+epochs = 10
+batch_size = 1024
+num_processes = 4
+logs_per_epoch = 1000
+
+```bash
+wandb: Run summary:
+wandb:    debug/dead_latents_ratio 0
+wandb:       debug/max_dead_latent 12580
+wandb: debug/max_dead_latent_count 4263
+wandb:               learning_rate 1e-05
+wandb:              train/aux_loss 0
+wandb:                  train/loss 0.22714
+wandb:            train/total_loss 0.22714
+wandb:                val/aux_loss 0
+wandb:                    val/loss 0.23462
+wandb:              val/total_loss 0.23462
+```
+
+num_samples = 50000
+epochs = 50
+batch_size = 1024
+num_processes = 4
+logs_per_epoch = 1000
+
+```bash
+wandb: Run summary:
+wandb:    debug/dead_latents_ratio 0
+wandb:       debug/max_dead_latent 62900
+wandb: debug/max_dead_latent_count 4283
+wandb:               learning_rate 1e-05
+wandb:              train/aux_loss 0
+wandb:                  train/loss 0.19525
+wandb:            train/total_loss 0.19525
+wandb:                val/aux_loss 0
+wandb:                    val/loss 0.19424
+wandb:              val/total_loss 0.19424
 ```
