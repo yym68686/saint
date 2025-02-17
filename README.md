@@ -179,7 +179,7 @@ unset http_proxy && unset https_proxy
 source /etc/network_turbo
 # cd saint
 # git config --global credential.helper store
-git pull origin main
+git push origin main
 unset http_proxy && unset https_proxy
 ```
 
