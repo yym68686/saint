@@ -17,18 +17,6 @@ OpenWebText 数据集下载
 
 https://huggingface.co/datasets/PaulPauls/openwebtext-sentences
 
-github 加速
-
-```bash
-source /etc/network_turbo
-```
-
-取消加速
-
-```bash
-unset http_proxy && unset https_proxy
-```
-
 安装环境
 
 ```bash
@@ -175,6 +163,15 @@ python llama_3_inference_text_completion_gradio.py \
     --share
 ```
 
+
+更新代码：
+
+```bash
+source /etc/network_turbo
+git pull https://github.com/yym68686/saint.git
+unset http_proxy && unset https_proxy
+```
+
 查看磁盘使用情况
 
 ```bash
@@ -185,10 +182,4 @@ df -h
 
 ```bash
 du -h | sort -hr
-```
-
-更新代码：
-
-```bash
-git pull https://github.com/yym68686/saint.git
 ```
