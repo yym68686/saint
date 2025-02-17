@@ -168,7 +168,18 @@ python llama_3_inference_text_completion_gradio.py \
 
 ```bash
 source /etc/network_turbo
+cd saint
 git pull https://github.com/yym68686/saint.git
+unset http_proxy && unset https_proxy
+```
+
+推送代码：
+
+```bash
+source /etc/network_turbo
+cd saint
+# git config --global credential.helper store
+git pull origin main
 unset http_proxy && unset https_proxy
 ```
 
