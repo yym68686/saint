@@ -2,9 +2,7 @@
 
 使用 Llama 3.2-3B 模型，通过 SAE 模型训练，并使用 Claude 3.5 Sonnet 模型进行解释。
 
-加载 llama3.2-3B 模型获取激活，cpu 内存需求：20GB
-
-加载 llama3.2-3B 模型获取激活，gpu 内存需求：24GB
+加载 llama3.2-3B 模型获取激活，cpu 内存需求：20GB，gpu 内存需求：24GB
 
 训练 SAE 模型，gpu 内存需求：12GB
 
@@ -66,6 +64,8 @@ torchrun --nproc_per_node=1 \
 
 SAE 训练的数据预处理
 
+num_processes 需要根据机器实际CPU核心数和内存情况合理设置这个参数。
+
 ```bash
 cd saint
 eval $(poetry env activate)
@@ -77,9 +77,15 @@ python sae_preprocessing.py \
 
 训练 SAE 模型
 
-数据集较小时，修改 logs_per_epoch 值，否则报错。
+activation_outputs 文件数量小于 50000 时，修改 logs_per_epoch 值，否则报错。logs_per_epoch 必须小于 len(activation_outputs_batched)
 
-本次实验设置为 logs_per_epoch = 100
+本次实验设置为 logs_per_epoch = 100。
+
+activation_outputs_batched = activation_outputs 总序列长度 / num_processes / batch_size * num_processes
+
+log_interval = len(activation_outputs_batched) // logs_per_epoch
+
+cleanup_old_checkpoints 的 keep_last_n 参数设置为 0，表示删除所有检查点。
 
 ```bash
 cd saint
@@ -90,6 +96,8 @@ torchrun --nproc_per_node=1 \
     --b_pre_path ./activation_outputs_mean.pt \
     --model_save_path ./trained_sae.pt
 ```
+
+1x4090 24GB 内存，训练 1 个 epoch，batch_size = 1024，num_samples=50000，需要 1m44s。
 
 获取 top 激活句子
 
@@ -193,4 +201,17 @@ df -h
 
 ```bash
 du -h | sort -hr
+```
+
+查看特定目录的磁盘占用
+
+```bash
+du -h -d 1 -x / 2>/dev/null | sort -hr | head -n 20
+```
+
+清楚 poetry 缓存
+
+```bash
+rm -rf /root/.cache/pypoetry/cache/*
+rm -rf /root/.cache/pypoetry/artifacts/*
 ```
