@@ -21,6 +21,7 @@ tqdm = "^4.66.5"
 anthropic = "^0.36.1"
 pillow = "^10.4.0"
 gradio = "^5.5.0"
+matplotlib = "^3.10.0"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^4.0.1"

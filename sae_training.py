@@ -602,6 +602,9 @@ def main() -> None:
         num_workers=dataloader_num_workers,
         pin_memory=True,
     )
+
+    dead_steps_threshold = len(train_dataloader) + 1
+
     val_dataloader = DataLoader(
         val_dataset,
         batch_size=1,
