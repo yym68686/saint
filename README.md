@@ -63,8 +63,6 @@ torchrun --nproc_per_node=1 \
     --num_samples 50000
 ```
 
-50000 条数据，需要 1m。6:23 todo
-
 ## SAE 训练的数据预处理
 
 num_processes 需要根据机器实际CPU核心数和内存情况合理设置这个参数。
@@ -105,15 +103,27 @@ torchrun --nproc_per_node=1 \
     --batch_size 2048
 ```
 
-1x4090 24GB 内存，训练 1 个 epoch，batch_size = 1024，num_samples=50000，需要 1m44s。MEM 47.3%（11622MB）。UTL 99%。训练 10 个 epoch，需要 18m。训练 50 个 epoch，需要 81m。
+1x4090 24GB 内存，num_samples=50000
 
-1x4090 24GB 内存，训练 1 个 epoch，batch_size = 2048，num_samples=50000，需要 1m10s。MEM 51.5%（12684MB）。UTL 99%。
+batch_size = 1024，MEM 47.3%（11622MB）。UTL 99%。
+1 epoch，需要 1m44s。
+10 epoch，需要 18m。
+50 epoch，需要 81m。
 
-1x4090 24GB 内存，训练 1 个 epoch，batch_size = 4096，num_samples=50000，需要 58s。MEM 60.9%（14952MB）。UTL 97%。
+batch_size = 2048，MEM 51.5%（12684MB）。UTL 99%。
+1 epoch，需要 1m10s。
+200 epoch，需要 4h12m。
 
-1x4090 24GB 内存，训练 1 个 epoch，batch_size = 8192，num_samples=50000，需要 51s。MEM 79.6%（19560MB）。UTL 88%。
+batch_size = 4096，MEM 60.9%（14952MB）。UTL 97%。
+1 epoch，需要 58s。
+
+batch_size = 8192，MEM 79.6%（19560MB）。UTL 88%。
+1 epoch，需要 51s。
 
 ## 获取 top 激活句子
+
+GPU 显存需求：17GB
+CPU 内存需求：5GB
 
 ```bash
 cd saint
