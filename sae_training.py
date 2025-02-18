@@ -289,6 +289,25 @@ def train_autoencoder(
     model = model.to(device)
     model = DistributedDataParallel(model)
 
+    # 新增参数量统计
+    if rank == 0:
+        # 按层统计参数量
+        layer_stats = {}
+        for name, param in model.module.named_parameters():
+            layer_name = name.split('.')[0]  # 获取层名称（如encoder）
+            num_params = param.numel()
+            layer_stats[layer_name] = layer_stats.get(layer_name, 0) + num_params
+
+        # 打印各层详细信息
+        logging.info("各层参数量明细:")
+        for layer, count in layer_stats.items():
+            logging.info(f"{layer.ljust(15)}: {count:,}")
+
+        trainable_params = sum(p.numel() for p in model.module.parameters() if p.requires_grad)
+        total_params = sum(p.numel() for p in model.module.parameters())
+        logging.info(f"模型总参数量: {total_params:,}")
+        logging.info(f"可训练参数量: {trainable_params:,}")
+
     logging.info("Setting up optimizer, scheduler and loss function...")
     optimizer = optim.AdamW(
         model.parameters(),
@@ -440,7 +459,7 @@ def main() -> None:
     dead_steps_threshold = 80_000  # ~1 epoch in training steps
     sae_normalization_eps = 1e-6
     batch_size = args.batch_size
-    num_epochs = 10
+    num_epochs = 200
     early_stopping_patience = 10  # disabled
     learning_rate = 5e-5
     learning_rate_min = learning_rate / 5
