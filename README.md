@@ -112,7 +112,7 @@ batch_size = 1024，MEM 47.3%（11622MB）。UTL 99%。
 
 batch_size = 2048，MEM 51.5%（12684MB）。UTL 99%。
 1 epoch，需要 1m10s。
-200 epoch，需要 4h12m。
+200 epoch，需要 4h33m。
 
 batch_size = 4096，MEM 60.9%（14952MB）。UTL 97%。
 1 epoch，需要 58s。
