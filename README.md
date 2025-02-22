@@ -47,7 +47,13 @@ python -c "import torch; print(f'CUDA可用: {torch.cuda.is_available()}, GPU数
 
 ## 获取激活
 
-num_samples 是训练数据集的样本数量，每个 parquet 文件一共 3749177 条数据
+num_samples 是训练数据集的样本数量，每个 parquet 文件一共 3749177 条数据。
+
+获取第几层的激活有三个地方需要改。
+
+1. capture_activations.py 文件中 store_layer_activ 参数
+2. capture_top_activating_sentences.py 文件中 layer 参数
+3. llama_3_inference_text_completion_gradio.py 文件中 sae_layer_idx 参数。同时修改 Llama3GradioInterface 里面的 generate_completion 里面的参数数量。
 
 ```bash
 ln -s /root/autodl-fs/consolidated.00.pth /root/saint/llama_3.2-3B_model/original/consolidated.00.pth
@@ -138,6 +144,8 @@ decoder:
 
 GPU 显存需求：17GB
 CPU 内存需求：5GB
+
+视情况需要修改 capture_top_activating_sentences.py 文件中 layer 参数。
 
 ```bash
 cd saint
@@ -310,3 +318,15 @@ wandb:                val/aux_loss 0
 wandb:                    val/loss 0.19424
 wandb:              val/total_loss 0.19424
 ```
+
+成功的例子：
+
+seed = 48632
+SAE h_bias index 11 = 39351
+SAE h_bias value 11 = 500
+SAE h_bias index 22 = 53367
+SAE h_bias value 22 = 100/200/300/400/500/600
+
+seed = 48632
+SAE h_bias index 11 = 39351
+SAE h_bias value 11 = 400/500/600（700开始胡言乱语，大量重复）

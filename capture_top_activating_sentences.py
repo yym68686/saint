@@ -178,7 +178,7 @@ def main():
     sae_top_k = 64
     sae_normalization_eps = 1e-6
     batch_size = 128
-    layer = 22
+    layer = 11
     filename_prefix = f"activations_l{layer}_idx"
     dtype = torch.float32
     device = torch.device("cuda")

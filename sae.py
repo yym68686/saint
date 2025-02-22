@@ -106,7 +106,21 @@ class TopKSparseAutoencoder(nn.Module):
         h = self.encoder(x)
 
         if self.h_bias is not None:
+            # 获取最大的4个值及其索引
+            top_values, top_indices = torch.topk(h, k=4, dim=-1)
+
+            # 遍历每个样本的前4大值
+            for batch_idx in range(top_indices.shape[0]):
+                for i in range(4):
+                    latent_idx = top_indices[batch_idx, i].item()
+                    value = top_values[batch_idx, i].item()
+                    logging.info(
+                        f"Top {i+1} value: h[{batch_idx}, {latent_idx}] = {value:.2f}"
+                    )
+
             h = h + self.h_bias
+            non_zero_idx = torch.nonzero(self.h_bias).squeeze()
+            logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
 
         # Reconstruct input and latent representation with default k sparsity
         reconstructed, h_sparse = self.decode_latent(h=h, k=self.k)

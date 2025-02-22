@@ -165,7 +165,7 @@ def main() -> None:
     parquet_path = args.dataset_dir / "train-00000-of-00082.parquet"
 
     # Set up configuration
-    store_layer_activ = [22]
+    store_layer_activ = [11]
     batch_size = 32
     dataloader_num_workers = 8
     dtype = torch.bfloat16

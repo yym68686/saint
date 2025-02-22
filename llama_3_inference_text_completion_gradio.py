@@ -23,18 +23,21 @@ class Llama3GradioInterface:
         """"""
         # Load the SAE model if provided and set up the forward fn for the specified sae_layer_idx
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-        sae_layer_forward_fn = None
-        self.sae_model = None
+        sae_layer_forward_fn = {}
+        self.sae_model = []
+        self.sae_layer_idx = sae_layer_idx
         if sae_model_path is not None:
             assert sae_layer_idx is not None
-            self.sae_model = load_sae_model(
-                model_path=sae_model_path,
-                sae_top_k=64,
-                sae_normalization_eps=1e-6,
-                device=self.device,
-                dtype=torch.float32,
-            )
-            sae_layer_forward_fn = {sae_layer_idx: self.sae_model.forward}
+            for idx, smodel_path in enumerate(sae_model_path):
+                self.sae_model.append(load_sae_model(
+                    model_path=smodel_path,
+                    sae_top_k=64,
+                    sae_normalization_eps=1e-6,
+                    device=self.device,
+                    dtype=torch.float32,
+                ))
+                sae_layer_forward_fn[sae_layer_idx[idx]] = self.sae_model[idx].forward
+            # sae_layer_forward_fn = {sae_layer_idx: self.sae_model.forward}
 
         # Initialize the Llama3Inferenence generator
         self.llama_inference = Llama3Inference(
@@ -53,8 +56,10 @@ class Llama3GradioInterface:
         temperature: float,
         top_p: float,
         seed: int,
-        sae_h_bias_index: int | None = None,
-        sae_h_bias_value: float | None = None,
+        sae_h_bias_index_11: int | None = None,
+        sae_h_bias_value_11: float | None = None,
+        sae_h_bias_index_22: int | None = None,
+        sae_h_bias_value_22: float | None = None,
     ) -> str:
         """"""
         # Input validation
@@ -69,8 +74,12 @@ class Llama3GradioInterface:
         logging.info(f"# temperature={temperature}")
         logging.info(f"# top_p={top_p}")
         logging.info(f"# seed={seed}")
-        logging.info(f"# sae_h_bias_index={sae_h_bias_index}")
-        logging.info(f"# sae_h_bias_value={sae_h_bias_value}")
+        logging.info(f"# sae_h_bias_index_11={sae_h_bias_index_11}")
+        logging.info(f"# sae_h_bias_value_11={sae_h_bias_value_11}")
+        logging.info(f"# sae_h_bias_index_22={sae_h_bias_index_22}")
+        logging.info(f"# sae_h_bias_value_22={sae_h_bias_value_22}")
+        sae_h_bias_index = [sae_h_bias_index_11, sae_h_bias_index_22]
+        sae_h_bias_value = [sae_h_bias_value_11, sae_h_bias_value_22]
 
         # Set random seed if seed set to 0:
         if seed == 0:
@@ -80,14 +89,15 @@ class Llama3GradioInterface:
 
         # Set SAE h_bias if provided
         if self.sae_model:
-            if sae_h_bias_index >= 0 and sae_h_bias_value:
-                logging.info("Setting SAE h_bias...")
-                h_bias = torch.zeros(self.sae_model.n_latents)
-                h_bias[sae_h_bias_index] = sae_h_bias_value
-                h_bias = h_bias.to(torch.float32).to(self.device)
-                self.sae_model.set_latent_bias(h_bias)
-            else:
-                self.sae_model.unset_latent_bias()
+            for idx, model in enumerate(self.sae_model):
+                if sae_h_bias_index[idx] >= 0 and sae_h_bias_value[idx]:
+                    logging.info("Setting SAE h_bias...")
+                    h_bias = torch.zeros(model.n_latents)
+                    h_bias[sae_h_bias_index[idx]] = sae_h_bias_value[idx]
+                    h_bias = h_bias.to(torch.float32).to(self.device)
+                    self.sae_model[idx].set_latent_bias(h_bias)
+                else:
+                    self.sae_model[idx].unset_latent_bias()
 
         # Generate text completions and print results iteratively
         text_prompts = text.split("\n")
@@ -144,20 +154,21 @@ class Llama3GradioInterface:
                 precision=0,
             ),
         ]
-        if self.sae_model is not None:
-            inputs.append(
-                gr.Number(
-                    label="SAE h_bias index",
-                    value=0,
-                    precision=0,
-                ),
-            )
-            inputs.append(
-                gr.Number(
-                    label="SAE h_bias value",
-                    value=0,
-                ),
-            )
+        if self.sae_model:
+            for idx, model in enumerate(self.sae_model):
+                inputs.append(
+                    gr.Number(
+                        label=f"SAE h_bias index {self.sae_layer_idx[idx]}",
+                        value=0,
+                        precision=0,
+                    ),
+                )
+                inputs.append(
+                    gr.Number(
+                        label=f"SAE h_bias value {self.sae_layer_idx[idx]}",
+                        value=0,
+                    ),
+                )
 
         interface = gr.Interface(
             title="Llama 3 Text Completion",
@@ -175,8 +186,8 @@ class Llama3GradioInterface:
 def parse_arguments() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
     parser.add_argument("--llama_model_dir", type=Path, required=True)
-    parser.add_argument("--sae_model_path", type=Path, default=None)
-    parser.add_argument("--sae_layer_idx", type=int, default=None)
+    parser.add_argument("--sae_model_path", type=Path, nargs='+')
+    parser.add_argument("--sae_layer_idx", type=int, nargs='+')
     parser.add_argument("--port", type=int, default=8080)
     parser.add_argument("--share", action="store_true")
     return parser.parse_args()
@@ -198,7 +209,7 @@ def main():
     llama_params_path = args.llama_model_dir / "params.json"
     llama_model_path = args.llama_model_dir / "consolidated.00.pth"
     if args.sae_model_path is not None:
-        args.sae_model_path = args.sae_model_path.resolve()
+        args.sae_model_path = [p.resolve() for p in args.sae_model_path]
         assert args.sae_layer_idx is not None, "sae_layer_idx must be specified when using SAE"
 
     logging.info("Initializing Llama3 Gradio Interface...")
