@@ -45,15 +45,36 @@ eval $(poetry env activate)
 python -c "import torch; print(f'CUDA可用: {torch.cuda.is_available()}, GPU数量: {torch.cuda.device_count() if torch.cuda.is_available() else 0}')"
 ```
 
+## 模型下载
+
+下载 llama_3.2-3B
+
+官方网址：https://huggingface.co/meta-llama/Llama-3.2-3B
+下载链接：https://huggingface.co/meta-llama/Llama-3.2-3B/resolve/main/original/consolidated.00.pth?download=true
+
+
+## 文件执行顺序
+
+1. capture_activations.py 从句子获取激活
+2. sae_preprocessing.py
+3. sae_training.py
+4. capture_top_activating_sentences.py
+5. interpret_top_sentences_send_batches.py
+6. interpret_top_sentences_retrieve_batches.py
+7. interpret_top_sentences_parse_responses.py
+8. llama_3_inference_text_completion_gradio.py
+
 ## 获取激活
 
-num_samples 是训练数据集的样本数量，每个 parquet 文件一共 3749177 条数据。
+num_samples 是训练数据集的样本数量，每个 parquet 文件一共 3749177 条数据。4090 50000 num_samples 需要处理5m33s
 
 获取第几层的激活有三个地方需要改。
 
 1. capture_activations.py 文件中 store_layer_activ 参数
 2. capture_top_activating_sentences.py 文件中 layer 参数
 3. llama_3_inference_text_completion_gradio.py 文件中 sae_layer_idx 参数。同时修改 Llama3GradioInterface 里面的 generate_completion 里面的参数数量。
+
+其中 dataset_dir 是放 parquet 文件的地方。可以是 /root/autodl-fs 也可以是 /root/lanyun-tmp
 
 ```bash
 ln -s /root/autodl-fs/consolidated.00.pth /root/saint/llama_3.2-3B_model/original/consolidated.00.pth
@@ -65,13 +86,15 @@ torchrun --nproc_per_node=1 \
     capture_activations.py \
     --model_dir llama_3.2-3B_model/original \
     --output_dir activation_outputs/ \
-    --dataset_dir /root/autodl-fs \
+    --dataset_dir /root/lanyun-tmp \
     --num_samples 50000
 ```
 
 ## SAE 训练的数据预处理
 
-num_processes 需要根据机器实际CPU核心数和内存情况合理设置这个参数。
+num_processes 需要根据机器实际CPU核心数和内存情况合理设置这个参数。一般设置为逻辑核心的一半数量作为起点。
+
+num_processes 10，batch_size 2048，CPU：Intel(R) Xeon(R) Gold 5418Y * 10核 用时：6h
 
 ```bash
 cd saint
@@ -79,7 +102,7 @@ eval $(poetry env activate)
 rm -rf activation_outputs_batched
 python sae_preprocessing.py \
     --input_dir activation_outputs/ \
-    --num_processes 4 \
+    --num_processes 10 \
     --batch_size 2048
 ```
 
