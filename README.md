@@ -43,6 +43,10 @@ poetry env use python3.12
 poetry install
 eval $(poetry env activate)
 python -c "import torch; print(f'CUDA可用: {torch.cuda.is_available()}, GPU数量: {torch.cuda.device_count() if torch.cuda.is_available() else 0}')"
+
+# autodl
+source /etc/network_turbo
+unset http_proxy && unset https_proxy
 ```
 
 ## 模型下载
@@ -121,6 +125,8 @@ log_interval = len(activation_outputs_batched) // logs_per_epoch
 cleanup_old_checkpoints 的 keep_last_n 参数设置为 0，表示删除所有检查点。
 
 ```bash
+export WANDB_MODE=offline
+
 cd saint
 eval $(poetry env activate)
 rm -rf trained_sae.pt
