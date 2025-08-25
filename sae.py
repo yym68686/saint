@@ -97,7 +97,7 @@ class TopKSparseAutoencoder(nn.Module):
     def forward_1d_normalized(
         self,
         x: torch.Tensor,
-    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
         """
         :param x: input tensor of shape (batch_size, d_model)
         """
@@ -123,11 +123,11 @@ class TopKSparseAutoencoder(nn.Module):
             logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
 
         # Reconstruct input and latent representation with default k sparsity
-        reconstructed, h_sparse = self.decode_latent(h=h, k=self.k)
+        reconstructed, h_sparse, topk_values = self.decode_latent(h=h, k=self.k)
 
-        return reconstructed, h, h_sparse
+        return reconstructed, h, h_sparse, topk_values
 
-    def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
+    def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
         """"""
         # Apply TopK activation, Relu to guarantee positive topk vals and then build sparse representation
         topk_values, topk_indices = torch.topk(h, k=k, dim=-1)
@@ -137,7 +137,7 @@ class TopKSparseAutoencoder(nn.Module):
         # Decode h_sparse and add pre-bias
         reconstructed = self.decoder(h_sparse) + self.b_pre
 
-        return reconstructed, h_sparse
+        return reconstructed, h_sparse, topk_values
 
     def set_latent_bias(self, h_bias: torch.Tensor) -> None:
         """"""

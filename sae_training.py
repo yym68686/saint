@@ -43,6 +43,7 @@ def train_epoch(
     optimizer: optim.AdamW,
     k_aux: int,
     aux_loss_coeff: float,
+    topk_reg_coeff: float,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     logs_per_epoch: int,
@@ -76,10 +77,13 @@ def train_epoch(
 
         # Zero the gradients and perform forward pass
         optimizer.zero_grad()
-        reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+        reconstructed, h, h_sparse, topk_values = model.module.forward_1d_normalized(batch_normalized)
 
         # Compute main loss in normalized space
         loss = criterion(reconstructed, batch_normalized)
+
+        # Compute Top-K activation regularization loss
+        topk_l2_reg_loss = torch.mean(torch.pow(topk_values, 2))
 
         # If enough latents haven't been activated in more than dead_steps_threshold training steps then calculate an
         # auxiliary loss to help reactivate the latents.
@@ -89,7 +93,7 @@ def train_epoch(
             # Calculate an auxiliary reconstruction with only dead latents and an additionaly amount (k_aux) of TopK
             # filtered latents.
             h_masked = h * dead_mask
-            reconstructed_aux, _ = model.module.decode_latent(h=h_masked, k=k_aux)
+            reconstructed_aux, _, _ = model.module.decode_latent(h=h_masked, k=k_aux)
 
             # Compute auxiliary loss as MSE between residual and the aux reconstruction to make dead latents explain
             # what the main latents could not and thereby activate them again and make them useful again.
@@ -100,7 +104,7 @@ def train_epoch(
             aux_loss = torch.tensor(0.0, device=device)
 
         # Compute total loss with auxiliary loss coefficient
-        total_loss = loss + aux_loss_coeff * aux_loss
+        total_loss = loss + aux_loss_coeff * aux_loss + topk_reg_coeff * topk_l2_reg_loss
 
         # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
         # and normalize the decoder weights again.
@@ -151,6 +155,10 @@ def train_epoch(
                         "train/loss": avg_loss,
                         "train/aux_loss": avg_aux_loss,
                         "train/total_loss": avg_total_loss,
+                        "train/topk_reg_loss": topk_l2_reg_loss.item(),
+                        "activations/topk_values_histogram": wandb.Histogram(topk_values.detach().cpu()),
+                        "activations/topk_values_mean": torch.mean(topk_values).item(),
+                        "activations/topk_values_max": torch.max(topk_values).item(),
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
@@ -277,6 +285,7 @@ def train_autoencoder(
     optimizer_eps: float,
     k_aux: int,
     aux_loss_coeff: float,
+    topk_reg_coeff: float,
     dead_steps_threshold: int,
     logs_per_epoch: int,
     checkpoint_dir: Path,
@@ -346,6 +355,7 @@ def train_autoencoder(
             optimizer=optimizer,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
+            topk_reg_coeff=topk_reg_coeff,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             logs_per_epoch=logs_per_epoch,
@@ -456,6 +466,7 @@ def main() -> None:
     k = 64
     k_aux = 2048
     aux_loss_coeff = 1 / 32
+    topk_reg_coeff = 1e-2
     dead_steps_threshold = 80_000  # ~1 epoch in training steps
     sae_normalization_eps = 1e-6
     batch_size = args.batch_size
@@ -481,6 +492,7 @@ def main() -> None:
                 "k": k,
                 "k_aux": k_aux,
                 "aux_loss_coeff": aux_loss_coeff,
+                "topk_reg_coeff": topk_reg_coeff,
                 "dead_steps_threshold": dead_steps_threshold,
                 "sae_normalization_eps": sae_normalization_eps,
                 "batch_size": batch_size,
@@ -630,6 +642,7 @@ def main() -> None:
         optimizer_eps=optimizer_eps,
         k_aux=k_aux,
         aux_loss_coeff=aux_loss_coeff,
+        topk_reg_coeff=topk_reg_coeff,
         dead_steps_threshold=dead_steps_threshold,
         logs_per_epoch=logs_per_epoch,
         checkpoint_dir=args.checkpoint_dir,
