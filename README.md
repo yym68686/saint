@@ -128,6 +128,8 @@ log_interval = len(activation_outputs_batched) // logs_per_epoch
 
 cleanup_old_checkpoints 的 keep_last_n 参数设置为 0，表示删除所有检查点。
 
+use_freq_adaptive_bias 开关 频率自适应TopK选择偏置 实验。
+
 ```bash
 export WANDB_MODE=offline
 
