@@ -17,6 +17,23 @@ from sae import TopKSparseAutoencoder
 from utils.cuda_utils import set_up_cuda
 
 
+def gini_coefficient(x: torch.Tensor) -> torch.Tensor:
+    """计算一个非负张量的基尼系数。"""
+    if x.dim() > 1:
+        x = x.flatten()
+    if torch.all(x == 0):
+        return torch.tensor(0.0, device=x.device)
+    # 确保所有值都是非负的
+    x = x.abs()
+    # 根据值进行排序
+    sorted_x = torch.sort(x)[0]
+    n = x.shape[0]
+    # 计算累积和
+    cumx = torch.cumsum(sorted_x, dim=0)
+    # Gini = (n + 1 - 2 * sum(cumx) / cumx[-1]) / n
+    return (n + 1 - 2 * torch.sum(cumx) / cumx[-1]) / n
+
+
 class TopKSparseAutoencoderDataset(Dataset):
     def __init__(self, data_dir: Path):
         """"""
@@ -49,6 +66,10 @@ def train_epoch(
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
+    # 新增参数 for 频率自适应偏置
+    feature_freq_ema: torch.Tensor,
+    ema_decay: float,
+    freq_bias_strength: float,
 ) -> None:
     """"""
     # Set the model to train mode
@@ -74,9 +95,29 @@ def train_epoch(
         batch = batch.squeeze(0).to(dtype).to(device)
         batch_normalized, mean, norm = model.module.preprocess_input(batch)
 
+        # --- 频率自适应偏置计算 ---
+        with torch.no_grad():
+            # Add a small epsilon to avoid division by zero if avg_freq is 0 at the beginning
+            avg_freq = feature_freq_ema.mean() + 1e-7
+            bias_vector = freq_bias_strength * (1 - feature_freq_ema / avg_freq)
+
         # Zero the gradients and perform forward pass
         optimizer.zero_grad()
-        reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+        reconstructed, h, h_sparse = model.module.forward_1d_normalized(
+            batch_normalized,
+            freq_bias_vector=bias_vector
+        )
+
+        # --- 更新频率计数器 (采用exp1.py的正确逻辑) ---
+        with torch.no_grad():
+            # `h_sparse > 0` 的部分表示被激活的特征
+            current_batch_freqs = (h_sparse > 0).to(dtype).mean(dim=0)
+            # 在多GPU环境下同步频率
+            dist.all_reduce(current_batch_freqs, op=dist.ReduceOp.SUM)
+            current_batch_freqs /= dist.get_world_size()
+            # 使用 EMA 更新
+            feature_freq_ema.mul_(ema_decay).add_(current_batch_freqs, alpha=1 - ema_decay)
+
 
         # Compute main loss in normalized space
         loss = criterion(reconstructed, batch_normalized)
@@ -146,6 +187,24 @@ def train_epoch(
 
             # Log to wandb and tqdm
             if rank == 0:
+                # --- 计算并记录新的监控指标 ---
+                with torch.no_grad():
+                    # 1. 核心效果指标
+                    freq_histogram = wandb.Histogram(feature_freq_ema.cpu())
+
+                    # 2. 量化统计指标
+                    freq_variance = torch.var(feature_freq_ema).item()
+                    gini = gini_coefficient(feature_freq_ema).item()
+                    # 定义活跃特征阈值（例如，频率 > 0）
+                    active_threshold = 1e-7
+                    active_features_ratio = (feature_freq_ema > active_threshold).float().mean().item()
+
+
+                    # 3. 辅助诊断指标
+                    bias_histogram = wandb.Histogram(bias_vector.cpu())
+                    bias_mean = torch.mean(bias_vector).item()
+                    bias_std = torch.std(bias_vector).item()
+
                 wandb.log(
                     data={
                         "train/loss": avg_loss,
@@ -154,6 +213,14 @@ def train_epoch(
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
+                        # 新的监控指标
+                        "frequency/activation_frequency": freq_histogram,
+                        "metrics/freq_variance": freq_variance,
+                        "metrics/gini_coefficient": gini,
+                        "metrics/active_features_ratio": active_features_ratio,
+                        "bias/bias_vector_histogram": bias_histogram,
+                        "bias/bias_vector_mean": bias_mean,
+                        "bias/bias_vector_std": bias_std,
                     },
                     step=epoch * len(dataloader) + batch_idx + 1,
                 )
@@ -161,6 +228,8 @@ def train_epoch(
                     loss=f"{avg_loss:.6f}",
                     aux_loss=f"{avg_aux_loss:.6f}",
                     total_loss=f"{avg_total_loss:.6f}",
+                    gini=f"{gini:.3f}",
+                    active=f"{active_features_ratio:.2%}",
                 )
 
     # Close the progress bar on main process
@@ -283,6 +352,9 @@ def train_autoencoder(
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
+    # 新增参数
+    ema_decay: float,
+    freq_bias_strength: float,
 ) -> TopKSparseAutoencoder:
     """"""
     logging.info("Sending model to device and wrapping in DistributedDataParallel...")
@@ -323,6 +395,9 @@ def train_autoencoder(
     # Initialize latent_last_nonzero tensor to keep track of the last non-zero step for each latent
     latent_last_nonzero = torch.zeros(model.module.n_latents, dtype=torch.long, device=device)
 
+    # Initialize EMA frequency counter
+    feature_freq_ema = torch.zeros(model.module.n_latents, dtype=dtype, device=device)
+
     # Early stopping variables
     best_val_avg_total_loss = float("inf")
     patience_counter = 0
@@ -352,6 +427,10 @@ def train_autoencoder(
             dtype=dtype,
             device=device,
             rank=rank,
+            # 传递新参数
+            feature_freq_ema=feature_freq_ema,
+            ema_decay=ema_decay,
+            freq_bias_strength=freq_bias_strength,
         )
 
         # Validate an epoch
@@ -469,6 +548,9 @@ def main() -> None:
     dataloader_num_workers = 8
     logs_per_epoch = 100
     train_val_split = 0.95
+    # 新增超参数
+    ema_decay = 0.999
+    freq_bias_strength = 0.1 # 这是超参数C
 
     if rank == 0:
         logging.info("Logging into and initializing wandb...")
@@ -636,6 +718,9 @@ def main() -> None:
         dtype=dtype,
         device=device,
         rank=rank,
+        # 传递新参数
+        ema_decay=ema_decay,
+        freq_bias_strength=freq_bias_strength,
     )
 
     # Save the model only on the main process

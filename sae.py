@@ -97,6 +97,7 @@ class TopKSparseAutoencoder(nn.Module):
     def forward_1d_normalized(
         self,
         x: torch.Tensor,
+        freq_bias_vector: torch.Tensor = None,
     ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
         """
         :param x: input tensor of shape (batch_size, d_model)
@@ -123,20 +124,29 @@ class TopKSparseAutoencoder(nn.Module):
             logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
 
         # Reconstruct input and latent representation with default k sparsity
-        reconstructed, h_sparse = self.decode_latent(h=h, k=self.k)
+        reconstructed, h_sparse = self.decode_latent(h=h, k=self.k, freq_bias_vector=freq_bias_vector)
 
         return reconstructed, h, h_sparse
 
-    def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
-        """"""
-        # Apply TopK activation, Relu to guarantee positive topk vals and then build sparse representation
-        topk_values, topk_indices = torch.topk(h, k=k, dim=-1)
-        topk_values = torch.relu(topk_values)
-        h_sparse = torch.zeros_like(h).scatter_(1, topk_indices, topk_values)
+    def decode_latent(self, h: torch.Tensor, k: int, freq_bias_vector: torch.Tensor = None) -> tuple[torch.Tensor, torch.Tensor]:
+        # 预激活值 h
+        h_for_selection = h
 
-        # Decode h_sparse and add pre-bias
+        # 如果传入了频率偏置向量，则应用它
+        if freq_bias_vector is not None:
+            h_for_selection = h + freq_bias_vector # 这里是核心改动
+
+        # 在加了偏置的预激活值上进行TopK选择
+        topk_values, topk_indices = torch.topk(h_for_selection, k=k, dim=-1)
+
+        # 注意！在重构时，我们仍然使用原始的激活值，以避免破坏重构
+        # 我们只用偏置来“影响选择”，而不是“改变数值”
+        original_topk_values = torch.gather(h, 1, topk_indices)
+        original_topk_values = torch.relu(original_topk_values)
+
+        h_sparse = torch.zeros_like(h).scatter_(1, topk_indices, original_topk_values)
+
         reconstructed = self.decoder(h_sparse) + self.b_pre
-
         return reconstructed, h_sparse
 
     def set_latent_bias(self, h_bias: torch.Tensor) -> None:
