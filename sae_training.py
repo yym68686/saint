@@ -180,6 +180,7 @@ def train_epoch(
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
+                        "diagnostics/max_similarity": similarity_scores.max(),
                     },
                     step=epoch * len(dataloader) + batch_idx + 1,
                 )
