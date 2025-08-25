@@ -67,6 +67,7 @@ def train_epoch(
     device: torch.device,
     rank: int,
     # 新增参数 for 频率自适应偏置
+    use_freq_adaptive_bias: bool,
     feature_freq_ema: torch.Tensor,
     ema_decay: float,
     freq_bias_strength: float,
@@ -101,11 +102,13 @@ def train_epoch(
             avg_freq = feature_freq_ema.mean() + 1e-7
             bias_vector = freq_bias_strength * (1 - feature_freq_ema / avg_freq)
 
+        bias_to_pass = bias_vector if use_freq_adaptive_bias else None
+
         # Zero the gradients and perform forward pass
         optimizer.zero_grad()
         reconstructed, h, h_sparse = model.module.forward_1d_normalized(
             batch_normalized,
-            freq_bias_vector=bias_vector
+            freq_bias_vector=bias_to_pass
         )
 
         # --- 更新频率计数器 (采用exp1.py的正确逻辑) ---
@@ -353,6 +356,7 @@ def train_autoencoder(
     device: torch.device,
     rank: int,
     # 新增参数
+    use_freq_adaptive_bias: bool,
     ema_decay: float,
     freq_bias_strength: float,
 ) -> TopKSparseAutoencoder:
@@ -428,6 +432,7 @@ def train_autoencoder(
             device=device,
             rank=rank,
             # 传递新参数
+            use_freq_adaptive_bias=use_freq_adaptive_bias,
             feature_freq_ema=feature_freq_ema,
             ema_decay=ema_decay,
             freq_bias_strength=freq_bias_strength,
@@ -549,6 +554,7 @@ def main() -> None:
     logs_per_epoch = 100
     train_val_split = 0.95
     # 新增超参数
+    use_freq_adaptive_bias = True # 功能开关
     ema_decay = 0.999
     freq_bias_strength = 0.1 # 这是超参数C
 
@@ -577,6 +583,9 @@ def main() -> None:
                 "logs_per_epoch": logs_per_epoch,
                 "train_val_split": train_val_split,
                 "world_size": world_size,
+                "use_freq_adaptive_bias": use_freq_adaptive_bias,
+                "ema_decay": ema_decay,
+                "freq_bias_strength": freq_bias_strength,
             },
         )
 
@@ -719,6 +728,7 @@ def main() -> None:
         device=device,
         rank=rank,
         # 传递新参数
+        use_freq_adaptive_bias=use_freq_adaptive_bias,
         ema_decay=ema_decay,
         freq_bias_strength=freq_bias_strength,
     )
