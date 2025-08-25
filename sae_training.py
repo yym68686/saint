@@ -5,6 +5,7 @@ from pathlib import Path
 
 import torch
 import torch.distributed as dist
+import torch.nn.functional as F
 import wandb
 from torch import nn, optim
 from torch.nn.parallel import DistributedDataParallel
@@ -86,14 +87,36 @@ def train_epoch(
         dead_mask = latent_last_nonzero > dead_steps_threshold
         dead_latents = dead_mask.sum().item()
         if dead_latents >= k_aux:
-            # Calculate an auxiliary reconstruction with only dead latents and an additionaly amount (k_aux) of TopK
-            # filtered latents.
-            h_masked = h * dead_mask
-            reconstructed_aux, _ = model.module.decode_latent(h=h_masked, k=k_aux)
+            # "Reconstruction Error-Guided Feature Revival" - Corrected Implementation
 
-            # Compute auxiliary loss as MSE between residual and the aux reconstruction to make dead latents explain
-            # what the main latents could not and thereby activate them again and make them useful again.
-            residual = batch_normalized - reconstructed.detach()
+            # 1. Calculate residual
+            residual = batch_normalized - reconstructed.detach()  # Shape: [batch_size, d_model]
+
+            with torch.no_grad():
+                # 2. Get decoder weights of dead features
+                dead_decoder_weights = model.module.decoder.weight[dead_mask] # Shape: [num_dead_latents, d_model]
+
+                # 3. Calculate cosine similarity between residual and each dead feature's decoder vector
+                similarity_scores = F.cosine_similarity(
+                    residual.unsqueeze(1),
+                    dead_decoder_weights.unsqueeze(0),
+                    dim=-1
+                ) # Shape: [batch_size, num_dead_latents]
+
+                # 4. Create guidance signal and apply it only at the positions of dead features
+                guidance_signal = torch.zeros_like(h) # Shape: [batch_size, n_latents]
+                guidance_signal[:, dead_mask] = torch.relu(similarity_scores)
+
+            # 5. Apply guidance signal to pre-activations
+            h_aux = h + guidance_signal
+
+            # 6. Mask out active features to ensure TopK selects only from dead features
+            h_aux[:, ~dead_mask] = -torch.finfo(h.dtype).max
+
+            # 7. Decode from the guided and masked pre-activations
+            reconstructed_aux, _ = model.module.decode_latent(h=h_aux, k=k_aux)
+
+            # 8. Compute auxiliary loss
             aux_loss = criterion(reconstructed_aux, residual)
         else:
             # If there are not enough dead latents to activate, set auxiliary loss to 0.
@@ -215,9 +238,23 @@ def validate_epoch(
             dead_mask = latent_last_nonzero > dead_steps_threshold
             dead_latents = dead_mask.sum().item()
             if dead_latents >= k_aux:
-                h_masked = h * dead_mask
-                reconstructed_aux, _ = model.module.decode_latent(h=h_masked, k=k_aux)
+                # "Reconstruction Error-Guided Feature Revival" - Corrected Implementation
                 residual = batch_normalized - reconstructed.detach()
+
+                dead_decoder_weights = model.module.decoder.weight[dead_mask]
+                similarity_scores = F.cosine_similarity(
+                    residual.unsqueeze(1),
+                    dead_decoder_weights.unsqueeze(0),
+                    dim=-1
+                )
+
+                guidance_signal = torch.zeros_like(h)
+                guidance_signal[:, dead_mask] = torch.relu(similarity_scores)
+
+                h_aux = h + guidance_signal
+                h_aux[:, ~dead_mask] = -torch.finfo(h.dtype).max
+
+                reconstructed_aux, _ = model.module.decode_latent(h=h_aux, k=k_aux)
                 aux_loss = criterion(reconstructed_aux, residual)
             else:
                 aux_loss = torch.tensor(0.0, device=device)
