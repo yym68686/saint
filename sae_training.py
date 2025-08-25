@@ -71,6 +71,7 @@ def train_epoch(
     feature_freq_ema: torch.Tensor,
     ema_decay: float,
     freq_bias_strength: float,
+    norm_loss_coeff: float,  # 新增 for exp3
 ) -> None:
     """"""
     # Set the model to train mode
@@ -79,6 +80,7 @@ def train_epoch(
     # Initialize epoch log variables and helpers
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
+    norm_loss_acc = torch.tensor(0.0, device=device)  # 新增 for exp3
     total_loss_acc = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
     accumulated_loss_count = dist.get_world_size() * log_interval
@@ -143,19 +145,29 @@ def train_epoch(
             # If there are not enough dead latents to activate, set auxiliary loss to 0.
             aux_loss = torch.tensor(0.0, device=device)
 
+        # --- Exp3: Adaptive Decoder Norm Penalty ---
+        # 获取解码器权重范数
+        decoder_norms = torch.norm(model.module.decoder.weight, p=2, dim=1)  # Shape: [n_latents]
+
+        # 计算惩罚权重，频率越高的特征，惩罚权重越大
+        # 我们使用归一化的频率作为权重
+        penalty_weights = feature_freq_ema / (feature_freq_ema.max() + 1e-9)  # 归一化到 [0, 1]
+
+        # 计算范数损失：我们惩罚的是 (范数 - 1)^2，并且用频率加权
+        norm_loss = torch.mean(penalty_weights * (decoder_norms - 1.0) ** 2)
+
         # Compute total loss with auxiliary loss coefficient
-        total_loss = loss + aux_loss_coeff * aux_loss
+        total_loss = loss + aux_loss_coeff * aux_loss + norm_loss_coeff * norm_loss
 
         # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
-        # and normalize the decoder weights again.
         total_loss.backward()
         model.module.project_decoder_grads()
         optimizer.step()
-        model.module.normalize_decoder_weights()
 
         # Accumulate losses
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
+        norm_loss_acc += norm_loss.detach()  # 新增 for exp3
         total_loss_acc += total_loss.detach()
 
         # Update the progress bar on main process
@@ -173,14 +185,17 @@ def train_epoch(
         if (batch_idx + 1) % log_interval == 0:
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(norm_loss_acc, op=dist.ReduceOp.SUM)  # 新增 for exp3
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
+            avg_norm_loss = norm_loss_acc.item() / accumulated_loss_count  # 新增 for exp3
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
+            norm_loss_acc = torch.tensor(0.0, device=device)  # 新增 for exp3
             total_loss_acc = torch.tensor(0.0, device=device)
 
             # Determine dead latent debug statistics
@@ -208,15 +223,32 @@ def train_epoch(
                     bias_mean = torch.mean(bias_vector).item()
                     bias_std = torch.std(bias_vector).item()
 
+                    # --- Exp3 新增监控指标 ---
+                    # 组1：解码器范数监控
+                    decoder_norms_for_log = torch.norm(model.module.decoder.weight, p=2, dim=1)
+                    norm_histogram = wandb.Histogram(decoder_norms_for_log.cpu())
+                    norm_mean = decoder_norms_for_log.mean().item()
+                    norm_std = decoder_norms_for_log.std().item()
+
+                    # 组2：范数惩罚监控
+                    # penalty_weights 在循环外计算，这里直接用
+                    penalty_weights_histogram = wandb.Histogram(penalty_weights.cpu())
+
+                    # 组3：关联性分析
+                    freq_norm_data = torch.stack([feature_freq_ema, decoder_norms_for_log], dim=1).cpu().numpy()
+                    freq_norm_table = wandb.Table(data=freq_norm_data, columns=["frequency", "norm"])
+
+
                 wandb.log(
                     data={
                         "train/loss": avg_loss,
                         "train/aux_loss": avg_aux_loss,
+                        "train/norm_loss": avg_norm_loss,  # 已有
                         "train/total_loss": avg_total_loss,
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
-                        # 新的监控指标
+                        # 频率和偏置指标
                         "frequency/activation_frequency": freq_histogram,
                         "metrics/freq_variance": freq_variance,
                         "metrics/gini_coefficient": gini,
@@ -224,12 +256,23 @@ def train_epoch(
                         "bias/bias_vector_histogram": bias_histogram,
                         "bias/bias_vector_mean": bias_mean,
                         "bias/bias_vector_std": bias_std,
+                        # --- Exp3 新增监控 ---
+                        # 组1: 解码器范数监控
+                        "decoder_norm/histogram": norm_histogram,
+                        "decoder_norm/mean": norm_mean,
+                        "decoder_norm/std": norm_std,
+                        # 组2: 范数惩罚监控
+                        "norm_penalty/norm_loss": avg_norm_loss, # 复用已计算的平均损失
+                        "norm_penalty/penalty_weights_histogram": penalty_weights_histogram,
+                        # 组3: 关联性分析
+                        "correlation/freq_vs_norm_scatterplot": wandb.plot.scatter(freq_norm_table, "frequency", "norm", title="Frequency vs. Decoder Norm"),
                     },
                     step=epoch * len(dataloader) + batch_idx + 1,
                 )
                 progress_bar.set_postfix(
                     loss=f"{avg_loss:.6f}",
                     aux_loss=f"{avg_aux_loss:.6f}",
+                    norm_loss=f"{avg_norm_loss:.6f}",
                     total_loss=f"{avg_total_loss:.6f}",
                     gini=f"{gini:.3f}",
                     active=f"{active_features_ratio:.2%}",
@@ -359,6 +402,7 @@ def train_autoencoder(
     use_freq_adaptive_bias: bool,
     ema_decay: float,
     freq_bias_strength: float,
+    norm_loss_coeff: float,  # 新增 for exp3
 ) -> TopKSparseAutoencoder:
     """"""
     logging.info("Sending model to device and wrapping in DistributedDataParallel...")
@@ -436,6 +480,7 @@ def train_autoencoder(
             feature_freq_ema=feature_freq_ema,
             ema_decay=ema_decay,
             freq_bias_strength=freq_bias_strength,
+            norm_loss_coeff=norm_loss_coeff,  # 新增 for exp3
         )
 
         # Validate an epoch
@@ -557,6 +602,7 @@ def main() -> None:
     use_freq_adaptive_bias = True # 功能开关
     ema_decay = 0.999
     freq_bias_strength = 0.1 # 这是超参数C
+    norm_loss_coeff = 1.0  # 新增 for exp3
 
     if rank == 0:
         logging.info("Logging into and initializing wandb...")
@@ -586,6 +632,7 @@ def main() -> None:
                 "use_freq_adaptive_bias": use_freq_adaptive_bias,
                 "ema_decay": ema_decay,
                 "freq_bias_strength": freq_bias_strength,
+                "norm_loss_coeff": norm_loss_coeff,  # 新增 for exp3
             },
         )
 
@@ -731,6 +778,7 @@ def main() -> None:
         use_freq_adaptive_bias=use_freq_adaptive_bias,
         ema_decay=ema_decay,
         freq_bias_strength=freq_bias_strength,
+        norm_loss_coeff=norm_loss_coeff,  # 新增 for exp3
     )
 
     # Save the model only on the main process
