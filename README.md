@@ -47,6 +47,9 @@ python -c "import torch; print(f'CUDA可用: {torch.cuda.is_available()}, GPU数
 # autodl
 source /etc/network_turbo
 unset http_proxy && unset https_proxy
+
+# autodl wandb
+export WANDB_BASE_URL=https://api.bandw.top
 ```
 
 ## 模型下载
