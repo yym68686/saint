@@ -234,13 +234,8 @@ def train_epoch(
                     # penalty_weights 在循环外计算，这里直接用
                     penalty_weights_histogram = wandb.Histogram(penalty_weights.cpu())
 
-                    # 组3：关联性分析
-                    freq_norm_data = torch.stack([feature_freq_ema, decoder_norms_for_log], dim=1).cpu().numpy()
-                    freq_norm_table = wandb.Table(data=freq_norm_data, columns=["frequency", "norm"])
-
-
-                wandb.log(
-                    data={
+                    # 定义基础日志字典
+                    log_data = {
                         "train/loss": avg_loss,
                         "train/aux_loss": avg_aux_loss,
                         "train/norm_loss": avg_norm_loss,  # 已有
@@ -262,11 +257,22 @@ def train_epoch(
                         "decoder_norm/mean": norm_mean,
                         "decoder_norm/std": norm_std,
                         # 组2: 范数惩罚监控
-                        "norm_penalty/norm_loss": avg_norm_loss, # 复用已计算的平均损失
+                        "norm_penalty/norm_loss": avg_norm_loss,  # 复用已计算的平均损失
                         "norm_penalty/penalty_weights_histogram": penalty_weights_histogram,
-                        # 组3: 关联性分析
-                        "correlation/freq_vs_norm_scatterplot": wandb.plot.scatter(freq_norm_table, "frequency", "norm", title="Frequency vs. Decoder Norm"),
-                    },
+                    }
+
+                    # 组3：关联性分析 - 仅在每个 epoch 的最后一个 log step 记录，以减少性能开销
+                    # 判断是否为当前 epoch 的最后一个 log step
+                    is_last_log_step = (batch_idx + 1) >= (len(dataloader) - log_interval)
+                    if is_last_log_step:
+                        freq_norm_data = torch.stack([feature_freq_ema, decoder_norms_for_log], dim=1).cpu().numpy()
+                        freq_norm_table = wandb.Table(data=freq_norm_data, columns=["frequency", "norm"])
+                        log_data["correlation/freq_vs_norm_scatterplot"] = wandb.plot.scatter(
+                            freq_norm_table, "frequency", "norm", title="Frequency vs. Decoder Norm"
+                        )
+
+                wandb.log(
+                    data=log_data,
                     step=epoch * len(dataloader) + batch_idx + 1,
                 )
                 progress_bar.set_postfix(
