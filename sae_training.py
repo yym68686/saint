@@ -146,8 +146,8 @@ def train_epoch(
             aux_loss = torch.tensor(0.0, device=device)
 
         # --- Exp3: Adaptive Decoder Norm Penalty ---
-        # 获取解码器权重范数
-        decoder_norms = torch.norm(model.module.decoder.weight, p=2, dim=1)  # Shape: [n_latents]
+        # 获取解码器权重范数 (每一列是一个特征)
+        decoder_norms = torch.norm(model.module.decoder.weight, p=2, dim=0)  # Shape: [n_latents]
 
         # 计算惩罚权重，频率越高的特征，惩罚权重越大
         # 我们使用归一化的频率作为权重
@@ -225,7 +225,7 @@ def train_epoch(
 
                     # --- Exp3 新增监控指标 ---
                     # 组1：解码器范数监控
-                    decoder_norms_for_log = torch.norm(model.module.decoder.weight, p=2, dim=1)
+                    decoder_norms_for_log = torch.norm(model.module.decoder.weight, p=2, dim=0)
                     norm_histogram = wandb.Histogram(decoder_norms_for_log.cpu())
                     norm_mean = decoder_norms_for_log.mean().item()
                     norm_std = decoder_norms_for_log.std().item()
