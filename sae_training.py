@@ -96,17 +96,18 @@ def train_epoch(
                 # 2. Get decoder weights of dead features and transpose
                 dead_decoder_weights = model.module.decoder.weight[:, dead_mask].t()
 
-                # 3. Calculate cosine similarity iteratively to save memory
-                similarity_scores_list = []
-                for i in range(residual.shape[0]):
-                    # Compare one sample's residual with all dead decoder weights
-                    similarity = F.cosine_similarity(
-                        residual[i].unsqueeze(0),
-                        dead_decoder_weights,
+                # 3. Calculate cosine similarity in chunks to balance speed and memory
+                chunk_size = 8  # Calculated based on available memory
+                similarity_scores_chunks = []
+                for residual_chunk in torch.split(residual, chunk_size, dim=0):
+                    # residual_chunk shape: [chunk_size, d_model]
+                    similarity_chunk = F.cosine_similarity(
+                        residual_chunk.unsqueeze(1), # Shape: [chunk_size, 1, d_model]
+                        dead_decoder_weights.unsqueeze(0), # Shape: [1, num_dead_latents, d_model]
                         dim=-1
-                    )
-                    similarity_scores_list.append(similarity)
-                similarity_scores = torch.stack(similarity_scores_list, dim=0) # Shape: [batch_size, num_dead_latents]
+                    ) # Shape: [chunk_size, num_dead_latents]
+                    similarity_scores_chunks.append(similarity_chunk)
+                similarity_scores = torch.cat(similarity_scores_chunks, dim=0) # Shape: [batch_size, num_dead_latents]
 
                 # 4. Create guidance signal and apply it only at the positions of dead features
                 guidance_signal = torch.zeros_like(h) # Shape: [batch_size, n_latents]
@@ -249,16 +250,17 @@ def validate_epoch(
                 # Original shape is [d_model, n_latents], we want [num_dead_latents, d_model]
                 dead_decoder_weights = model.module.decoder.weight[:, dead_mask].t()
 
-                # Calculate cosine similarity iteratively to save memory
-                similarity_scores_list = []
-                for i in range(residual.shape[0]):
-                    similarity = F.cosine_similarity(
-                        residual[i].unsqueeze(0),
-                        dead_decoder_weights,
+                # Calculate cosine similarity in chunks to balance speed and memory
+                chunk_size = 8
+                similarity_scores_chunks = []
+                for residual_chunk in torch.split(residual, chunk_size, dim=0):
+                    similarity_chunk = F.cosine_similarity(
+                        residual_chunk.unsqueeze(1),
+                        dead_decoder_weights.unsqueeze(0),
                         dim=-1
                     )
-                    similarity_scores_list.append(similarity)
-                similarity_scores = torch.stack(similarity_scores_list, dim=0)
+                    similarity_scores_chunks.append(similarity_chunk)
+                similarity_scores = torch.cat(similarity_scores_chunks, dim=0)
 
                 guidance_signal = torch.zeros_like(h)
                 guidance_signal[:, dead_mask] = torch.relu(similarity_scores)
