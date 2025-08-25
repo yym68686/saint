@@ -93,21 +93,18 @@ def train_epoch(
             residual = batch_normalized - reconstructed.detach()  # Shape: [batch_size, d_model]
 
             with torch.no_grad():
-                # 2. Get decoder weights of dead features and transpose
+                # 2. Get decoder weights of dead features
+                # dead_decoder_weights shape: [num_dead_latents, d_model]
                 dead_decoder_weights = model.module.decoder.weight[:, dead_mask].t()
 
-                # 3. Calculate cosine similarity in chunks to balance speed and memory
-                chunk_size = 8  # Calculated based on available memory
-                similarity_scores_chunks = []
-                for residual_chunk in torch.split(residual, chunk_size, dim=0):
-                    # residual_chunk shape: [chunk_size, d_model]
-                    similarity_chunk = F.cosine_similarity(
-                        residual_chunk.unsqueeze(1), # Shape: [chunk_size, 1, d_model]
-                        dead_decoder_weights.unsqueeze(0), # Shape: [1, num_dead_latents, d_model]
-                        dim=-1
-                    ) # Shape: [chunk_size, num_dead_latents]
-                    similarity_scores_chunks.append(similarity_chunk)
-                similarity_scores = torch.cat(similarity_scores_chunks, dim=0) # Shape: [batch_size, num_dead_latents]
+                # 3. Memory-efficient cosine similarity calculation via matrix multiplication
+                # Normalize residual and weights vectors
+                residual_norm = F.normalize(residual, p=2, dim=-1)
+                weights_norm = F.normalize(dead_decoder_weights, p=2, dim=-1)
+
+                # Calculate similarity scores using matrix multiplication
+                # (batch_size, d_model) @ (d_model, num_dead_latents) -> (batch_size, num_dead_latents)
+                similarity_scores = torch.matmul(residual_norm, weights_norm.t())
 
                 # 4. Create guidance signal and apply it only at the positions of dead features
                 guidance_signal = torch.zeros_like(h) # Shape: [batch_size, n_latents]
@@ -250,17 +247,10 @@ def validate_epoch(
                 # Original shape is [d_model, n_latents], we want [num_dead_latents, d_model]
                 dead_decoder_weights = model.module.decoder.weight[:, dead_mask].t()
 
-                # Calculate cosine similarity in chunks to balance speed and memory
-                chunk_size = 8
-                similarity_scores_chunks = []
-                for residual_chunk in torch.split(residual, chunk_size, dim=0):
-                    similarity_chunk = F.cosine_similarity(
-                        residual_chunk.unsqueeze(1),
-                        dead_decoder_weights.unsqueeze(0),
-                        dim=-1
-                    )
-                    similarity_scores_chunks.append(similarity_chunk)
-                similarity_scores = torch.cat(similarity_scores_chunks, dim=0)
+                # Memory-efficient cosine similarity calculation via matrix multiplication
+                residual_norm = F.normalize(residual, p=2, dim=-1)
+                weights_norm = F.normalize(dead_decoder_weights, p=2, dim=-1)
+                similarity_scores = torch.matmul(residual_norm, weights_norm.t())
 
                 guidance_signal = torch.zeros_like(h)
                 guidance_signal[:, dead_mask] = torch.relu(similarity_scores)
