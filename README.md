@@ -85,6 +85,7 @@ num_samples 是训练数据集的样本数量，每个 parquet 文件一共 3749
 
 ```bash
 ln -s /root/autodl-fs/consolidated.00.pth /root/saint/llama_3.2-3B_model/original/consolidated.00.pth
+ln -s /root/lanyun-tmp/consolidated.00.pth /root/saint/llama_3.2-3B_model/original/consolidated.00.pth
 
 cd saint
 eval $(poetry env activate)
