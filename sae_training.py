@@ -599,7 +599,7 @@ def main() -> None:
     logs_per_epoch = 100
     train_val_split = 0.95
     # 新增超参数
-    use_freq_adaptive_bias = True # 功能开关
+    use_freq_adaptive_bias = False # 功能开关
     ema_decay = 0.999
     freq_bias_strength = 0.1 # 这是超参数C
     norm_loss_coeff = 1.0  # 新增 for exp3
