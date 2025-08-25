@@ -214,7 +214,7 @@ def validate_epoch(
             batch_normalized, mean, norm = model.module.preprocess_input(batch)
 
             # Perform forward pass
-            reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+            reconstructed, h, h_sparse, _ = model.module.forward_1d_normalized(batch_normalized)
 
             # Compute main loss in normalized space
             loss = criterion(reconstructed, batch_normalized)
@@ -224,7 +224,7 @@ def validate_epoch(
             dead_latents = dead_mask.sum().item()
             if dead_latents >= k_aux:
                 h_masked = h * dead_mask
-                reconstructed_aux, _ = model.module.decode_latent(h=h_masked, k=k_aux)
+                reconstructed_aux, _, _ = model.module.decode_latent(h=h_masked, k=k_aux)
                 residual = batch_normalized - reconstructed.detach()
                 aux_loss = criterion(reconstructed_aux, residual)
             else:
