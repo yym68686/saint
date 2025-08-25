@@ -93,8 +93,9 @@ def train_epoch(
             residual = batch_normalized - reconstructed.detach()  # Shape: [batch_size, d_model]
 
             with torch.no_grad():
-                # 2. Get decoder weights of dead features
-                dead_decoder_weights = model.module.decoder.weight[dead_mask] # Shape: [num_dead_latents, d_model]
+                # 2. Get decoder weights of dead features and transpose
+                # Original shape is [d_model, n_latents], we want [num_dead_latents, d_model]
+                dead_decoder_weights = model.module.decoder.weight[:, dead_mask].t()
 
                 # 3. Calculate cosine similarity between residual and each dead feature's decoder vector
                 similarity_scores = F.cosine_similarity(
@@ -241,7 +242,8 @@ def validate_epoch(
                 # "Reconstruction Error-Guided Feature Revival" - Corrected Implementation
                 residual = batch_normalized - reconstructed.detach()
 
-                dead_decoder_weights = model.module.decoder.weight[dead_mask]
+                # Original shape is [d_model, n_latents], we want [num_dead_latents, d_model]
+                dead_decoder_weights = model.module.decoder.weight[:, dead_mask].t()
                 similarity_scores = F.cosine_similarity(
                     residual.unsqueeze(1),
                     dead_decoder_weights.unsqueeze(0),
