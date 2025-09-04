@@ -3,6 +3,8 @@ from pathlib import Path
 
 import torch
 from torch import nn
+import torch.nn.utils.parametrize as parametrize
+from torch.nn.utils import parametrizations
 
 
 class TopKSparseAutoencoder(nn.Module):
@@ -14,6 +16,8 @@ class TopKSparseAutoencoder(nn.Module):
         b_pre: torch.Tensor,
         dtype: torch.dtype,
         normalize_eps: float = 1e-6,
+        use_ndm_loss: bool = False,
+        num_subspaces: int = 4,
     ):
         """"""
         super().__init__()
@@ -23,6 +27,7 @@ class TopKSparseAutoencoder(nn.Module):
         self.dtype = dtype
         self.normalize_eps = normalize_eps
         self.h_bias = None
+        self.use_ndm_loss = use_ndm_loss
 
         # Initialize training data mean (or median) as shared trainable pre-bias Parameter for encoder and decoder
         self.b_pre = nn.Parameter(b_pre.to(dtype), requires_grad=True)
@@ -39,6 +44,23 @@ class TopKSparseAutoencoder(nn.Module):
             self.decoder.weight.copy_(self.encoder.weight.t())
 
         self.normalize_decoder_weights()
+
+        if self.use_ndm_loss:
+            logging.info("Initializing NDM components...")
+            # Initialize R as an identity matrix
+            R_initial = torch.eye(d_model, dtype=dtype)
+            self.R = nn.Linear(d_model, d_model, bias=False)
+            self.R.weight = nn.Parameter(R_initial)
+            # Make it an orthogonal matrix
+            self.R = parametrizations.orthogonal(self.R)
+
+            # Define the subspace partition
+            subspace_dim = d_model // num_subspaces
+            self.ndm_partition = [subspace_dim] * num_subspaces
+            # Handle remainder
+            if d_model % num_subspaces != 0:
+                self.ndm_partition[-1] += d_model % num_subspaces
+            logging.info(f"NDM subspace partition: {self.ndm_partition}")
 
     def normalize_decoder_weights(self) -> None:
         """Normalize the decoder weights to unit norm for each latent (corresponding to decoder columns)."""
