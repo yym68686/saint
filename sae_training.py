@@ -700,7 +700,7 @@ def main() -> None:
         pin_memory=True,
     )
 
-    dead_steps_threshold = len(train_dataloader) + 1
+    # dead_steps_threshold = len(train_dataloader) + 1
     logging.info(f"Dead steps threshold: {dead_steps_threshold}")
 
     val_dataloader = DataLoader(
