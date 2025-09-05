@@ -560,7 +560,7 @@ def main() -> None:
     # NDM experiment config
     use_ndm_loss = True
     num_subspaces = 4
-    ndm_loss_coeff = 0.1
+    ndm_loss_coeff = 0.01
 
     if rank == 0:
         logging.info("Logging into and initializing wandb...")
