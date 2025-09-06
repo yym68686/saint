@@ -1,7 +1,6 @@
 import argparse
 import logging
 from datetime import UTC, datetime
-from itertools import cycle
 from pathlib import Path
 
 import torch
@@ -40,12 +39,10 @@ def train_epoch(
     num_epochs: int,
     model: DistributedDataParallel,
     dataloader: DataLoader,
-    dataloader_iterator: iter,
     criterion: nn.MSELoss,
     optimizer: optim.AdamW,
     k_aux: int,
     aux_loss_coeff: float,
-    ndm_loss_coeff: float,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     logs_per_epoch: int,
@@ -60,7 +57,6 @@ def train_epoch(
     # Initialize epoch log variables and helpers
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
-    ndm_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
     accumulated_loss_count = dist.get_world_size() * log_interval
@@ -106,39 +102,6 @@ def train_epoch(
         # Compute total loss with auxiliary loss coefficient
         total_loss = loss + aux_loss_coeff * aux_loss
 
-        # NDM Loss Calculation
-        ndm_loss = torch.tensor(0.0, device=device)
-        if model.module.use_ndm_loss:
-            try:
-                key_batch = next(dataloader_iterator)
-            except StopIteration:
-                # This should not happen with cycle iterator, but as a safeguard
-                dataloader_iterator = iter(cycle(dataloader))
-                key_batch = next(dataloader_iterator)
-
-            key_batch = key_batch.squeeze(0).to(dtype).to(device)
-            key_batch_normalized, _, _ = model.module.preprocess_input(key_batch)
-
-            # Rotate both query and key batches
-            rotated_query = model.module.R(batch_normalized)
-            with torch.no_grad():
-                rotated_key = model.module.R(key_batch_normalized)
-
-            # Split into subspaces
-            query_subspaces = rotated_query.split(model.module.ndm_partition, dim=1)
-            key_subspaces = rotated_key.split(model.module.ndm_partition, dim=1)
-
-            ndm_loss_per_subspace = []
-            for q_sub, k_sub in zip(query_subspaces, key_subspaces):
-                dist_matrix = torch.cdist(q_sub, k_sub)
-                min_dists, _ = torch.min(dist_matrix, dim=1)
-                ndm_loss_per_subspace.append(min_dists.mean())
-
-            ndm_loss = torch.stack(ndm_loss_per_subspace).mean()
-
-        # Add the NDM loss to the total loss
-        total_loss = total_loss + ndm_loss_coeff * ndm_loss
-
         # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
         # and normalize the decoder weights again.
         total_loss.backward()
@@ -149,7 +112,6 @@ def train_epoch(
         # Accumulate losses
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
-        ndm_loss_acc += ndm_loss.detach()
         total_loss_acc += total_loss.detach()
 
         # Update the progress bar on main process
@@ -167,17 +129,14 @@ def train_epoch(
         if (batch_idx + 1) % log_interval == 0:
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
-            dist.all_reduce(ndm_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
-            avg_ndm_loss = ndm_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
-            ndm_loss_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
 
             # Determine dead latent debug statistics
@@ -191,7 +150,6 @@ def train_epoch(
                     data={
                         "train/loss": avg_loss,
                         "train/aux_loss": avg_aux_loss,
-                        "train/ndm_loss": avg_ndm_loss,
                         "train/total_loss": avg_total_loss,
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
@@ -202,7 +160,6 @@ def train_epoch(
                 progress_bar.set_postfix(
                     loss=f"{avg_loss:.6f}",
                     aux_loss=f"{avg_aux_loss:.6f}",
-                    ndm_loss=f"{avg_ndm_loss:.6f}",
                     total_loss=f"{avg_total_loss:.6f}",
                 )
 
@@ -219,13 +176,12 @@ def validate_epoch(
     criterion: nn.MSELoss,
     k_aux: int,
     aux_loss_coeff: float,
-    ndm_loss_coeff: float,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
-) -> tuple[float, float, float, float]:
+) -> tuple[float, float, float]:
     """"""
     # Set the model to eval mode
     model.eval()
@@ -233,7 +189,6 @@ def validate_epoch(
     # Initialize epoch log variables
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
-    ndm_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
 
     # Create epoch progress bar on main process
@@ -244,7 +199,6 @@ def validate_epoch(
         )
 
     with torch.no_grad():
-        dataloader_iterator = iter(cycle(dataloader))
         for batch in dataloader:
             # batch shape is [1, preprocessed_batch_size, d_model]. Squeeze to [preprocessed_batch_size, d_model] and
             # cast to model dtype and device, then preprocess to normalize.
@@ -271,40 +225,9 @@ def validate_epoch(
             # Compute total loss with auxiliary loss coefficient
             total_loss = loss + aux_loss_coeff * aux_loss
 
-            # NDM Loss Calculation for validation
-            ndm_loss = torch.tensor(0.0, device=device)
-            if model.module.use_ndm_loss:
-                # Simplified neighbor search for validation: use the next batch
-                try:
-                    key_batch = next(dataloader_iterator)
-                except StopIteration:
-                    dataloader_iterator = iter(cycle(dataloader))
-                    key_batch = next(dataloader_iterator)
-
-                key_batch = key_batch.squeeze(0).to(dtype).to(device)
-                key_batch_normalized, _, _ = model.module.preprocess_input(key_batch)
-
-                rotated_query = model.module.R(batch_normalized)
-                rotated_key = model.module.R(key_batch_normalized)
-
-                query_subspaces = rotated_query.split(model.module.ndm_partition, dim=1)
-                key_subspaces = rotated_key.split(model.module.ndm_partition, dim=1)
-
-                ndm_loss_per_subspace = []
-                for q_sub, k_sub in zip(query_subspaces, key_subspaces):
-                    dist_matrix = torch.cdist(q_sub, k_sub)
-                    min_dists, _ = torch.min(dist_matrix, dim=1)
-                    ndm_loss_per_subspace.append(min_dists.mean())
-
-                ndm_loss = torch.stack(ndm_loss_per_subspace).mean()
-
-            # Add the NDM loss to the total loss
-            total_loss = total_loss + ndm_loss_coeff * ndm_loss
-
             # Accumulate losses
             loss_acc += loss.detach()
             aux_loss_acc += aux_loss.detach()
-            ndm_loss_acc += ndm_loss.detach()
             total_loss_acc += total_loss.detach()
 
             # Update the progress bar on main process
@@ -318,14 +241,12 @@ def validate_epoch(
     # Gather and average losses across processes
     dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
-    dist.all_reduce(ndm_loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
     avg_loss = loss_acc.item() / (dist.get_world_size() * len(dataloader))
     avg_aux_loss = aux_loss_acc.item() / (dist.get_world_size() * len(dataloader))
-    avg_ndm_loss = ndm_loss_acc.item() / (dist.get_world_size() * len(dataloader))
     avg_total_loss = total_loss_acc.item() / (dist.get_world_size() * len(dataloader))
 
-    return avg_loss, avg_aux_loss, avg_ndm_loss, avg_total_loss
+    return avg_loss, avg_aux_loss, avg_total_loss
 
 def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
     """清理旧的检查点，只保留最新的 N 个"""
@@ -356,7 +277,6 @@ def train_autoencoder(
     optimizer_eps: float,
     k_aux: int,
     aux_loss_coeff: float,
-    ndm_loss_coeff: float,
     dead_steps_threshold: int,
     logs_per_epoch: int,
     checkpoint_dir: Path,
@@ -407,9 +327,6 @@ def train_autoencoder(
     best_val_avg_total_loss = float("inf")
     patience_counter = 0
 
-    # Create a cycling iterator for neighbor search in NDM
-    train_dataloader_iterator = iter(cycle(train_dataloader))
-
     logging.info("Starting training loop...")
     for epoch in range(num_epochs):
         # Wait for all processes to synchronize
@@ -425,12 +342,10 @@ def train_autoencoder(
             num_epochs=num_epochs,
             model=model,
             dataloader=train_dataloader,
-            dataloader_iterator=train_dataloader_iterator,
             criterion=criterion,
             optimizer=optimizer,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
-            ndm_loss_coeff=ndm_loss_coeff,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             logs_per_epoch=logs_per_epoch,
@@ -440,7 +355,7 @@ def train_autoencoder(
         )
 
         # Validate an epoch
-        val_avg_loss, val_avg_aux_loss, val_avg_ndm_loss, val_avg_total_loss = validate_epoch(
+        val_avg_loss, val_avg_aux_loss, val_avg_total_loss = validate_epoch(
             epoch=epoch,
             num_epochs=num_epochs,
             model=model,
@@ -448,7 +363,6 @@ def train_autoencoder(
             criterion=criterion,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
-            ndm_loss_coeff=ndm_loss_coeff,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             dtype=dtype,
@@ -466,7 +380,6 @@ def train_autoencoder(
                 data={
                     "val/loss": val_avg_loss,
                     "val/aux_loss": val_avg_aux_loss,
-                    "val/ndm_loss": val_avg_ndm_loss,
                     "val/total_loss": val_avg_total_loss,
                     "learning_rate": updated_lr,
                 },
@@ -476,7 +389,6 @@ def train_autoencoder(
             logging.info(
                 f"val/loss: {val_avg_loss:.6f} "
                 f"| val/aux_loss: {val_avg_aux_loss:.6f} "
-                f"| val/ndm_loss: {val_avg_ndm_loss:.6f} "
                 f"| val/total_loss: {val_avg_total_loss:.6f}",
             )
 
@@ -557,10 +469,6 @@ def main() -> None:
     dataloader_num_workers = 8
     logs_per_epoch = 100
     train_val_split = 0.95
-    # NDM experiment config
-    use_ndm_loss = True
-    num_subspaces = 4
-    ndm_loss_coeff = 0.01
 
     if rank == 0:
         logging.info("Logging into and initializing wandb...")
@@ -587,9 +495,6 @@ def main() -> None:
                 "logs_per_epoch": logs_per_epoch,
                 "train_val_split": train_val_split,
                 "world_size": world_size,
-                "use_ndm_loss": use_ndm_loss,
-                "num_subspaces": num_subspaces,
-                "ndm_loss_coeff": ndm_loss_coeff,
             },
         )
 
@@ -647,8 +552,6 @@ def main() -> None:
         b_pre=b_pre,
         dtype=dtype,
         normalize_eps=sae_normalization_eps,
-        use_ndm_loss=use_ndm_loss,
-        num_subspaces=num_subspaces,
     )
     if args.model_load_path:
         logging.info("Loading model weights from checkpoint...")
@@ -727,7 +630,6 @@ def main() -> None:
         optimizer_eps=optimizer_eps,
         k_aux=k_aux,
         aux_loss_coeff=aux_loss_coeff,
-        ndm_loss_coeff=ndm_loss_coeff,
         dead_steps_threshold=dead_steps_threshold,
         logs_per_epoch=logs_per_epoch,
         checkpoint_dir=args.checkpoint_dir,
