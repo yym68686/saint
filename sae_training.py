@@ -1,5 +1,7 @@
-import argparse
+import os
+import random
 import logging
+import argparse
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -15,6 +17,16 @@ from tqdm import tqdm
 
 from sae import TopKSparseAutoencoder
 from utils.cuda_utils import set_up_cuda
+
+
+def set_seed(seed: int):
+    """Set the seed for reproducibility."""
+    random.seed(seed)
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    os.environ["PYTHONHASHSEED"] = str(seed)
+    torch.backends.cudnn.deterministic = True
+    torch.backends.cudnn.benchmark = False
 
 
 class TopKSparseAutoencoderDataset(Dataset):
@@ -427,6 +439,7 @@ def parse_arguments() -> argparse.Namespace:
 
 def main() -> None:
     """"""
+    set_seed(42)
     # Initialize distributed process group
     dist.init_process_group(backend="nccl")
     world_size = dist.get_world_size()
@@ -456,7 +469,7 @@ def main() -> None:
     k = 64
     k_aux = 2048
     aux_loss_coeff = 1 / 32
-    dead_steps_threshold = 80_000  # ~1 epoch in training steps
+    dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
     sae_normalization_eps = 1e-6
     batch_size = args.batch_size
     num_epochs = 200
