@@ -3,6 +3,7 @@ from pathlib import Path
 
 import torch
 from torch import nn
+from torch.nn.utils.parametrizations import orthogonal
 
 
 class TopKSparseAutoencoder(nn.Module):
@@ -14,6 +15,8 @@ class TopKSparseAutoencoder(nn.Module):
         b_pre: torch.Tensor,
         dtype: torch.dtype,
         normalize_eps: float = 1e-6,
+        use_ndm_loss: bool = False,
+        num_subspaces: int = 4,
     ):
         """"""
         super().__init__()
@@ -24,6 +27,21 @@ class TopKSparseAutoencoder(nn.Module):
         self.normalize_eps = normalize_eps
         self.h_bias = None
 
+        self.use_ndm_loss = use_ndm_loss
+        if self.use_ndm_loss:
+            # Initialize R as an identity matrix
+            R_initial = torch.eye(d_model, dtype=dtype)
+            self.R = nn.Linear(d_model, d_model, bias=False, dtype=dtype)
+            self.R.weight = nn.Parameter(R_initial)
+            # Make it an orthogonal matrix
+            orthogonal(self.R, "weight")
+
+            # Define the subspace partition
+            subspace_dim = d_model // num_subspaces
+            self.ndm_partition = [subspace_dim] * num_subspaces
+            if d_model % num_subspaces != 0:
+                self.ndm_partition[-1] += d_model % num_subspaces
+        
         # Initialize training data mean (or median) as shared trainable pre-bias Parameter for encoder and decoder
         self.b_pre = nn.Parameter(b_pre.to(dtype), requires_grad=True)
 

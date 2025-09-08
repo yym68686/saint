@@ -55,6 +55,7 @@ def train_epoch(
     optimizer: optim.AdamW,
     k_aux: int,
     aux_loss_coeff: float,
+    ndm_loss_coeff: float,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     logs_per_epoch: int,
@@ -70,8 +71,12 @@ def train_epoch(
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+    ndm_loss_acc = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
     accumulated_loss_count = dist.get_world_size() * log_interval
+
+    # Create an iterator for the dataloader for neighbor search
+    dataloader_iter = iter(dataloader)
 
     # Create epoch progress bar on main process
     if rank == 0:
@@ -111,8 +116,44 @@ def train_epoch(
             # If there are not enough dead latents to activate, set auxiliary loss to 0.
             aux_loss = torch.tensor(0.0, device=device)
 
+        # NDM Loss Calculation
+        ndm_loss = torch.tensor(0.0, device=device)
+        if hasattr(model.module, 'use_ndm_loss') and model.module.use_ndm_loss:
+            try:
+                # Use the original, non-normalized batch for NDM
+                key_batch = next(dataloader_iter).squeeze(0).to(dtype).to(device)
+            except StopIteration:
+                # Reset iterator if it's exhausted
+                dataloader_iter = iter(dataloader)
+                key_batch = next(dataloader_iter).squeeze(0).to(dtype).to(device)
+
+            with torch.no_grad():
+                rotated_query = model.module.R(batch)
+                rotated_key = model.module.R(key_batch)
+                query_subspaces = rotated_query.split(model.module.ndm_partition, dim=1)
+                key_subspaces = rotated_key.split(model.module.ndm_partition, dim=1)
+                neighbor_indices = []
+                for q_sub, k_sub in zip(query_subspaces, key_subspaces):
+                    dist_matrix = torch.cdist(q_sub, k_sub)
+                    indices = torch.argmin(dist_matrix, dim=1)
+                    neighbor_indices.append(indices)
+            
+            rotated_query_final = model.module.R(batch)
+            query_subspaces_final = rotated_query_final.split(model.module.ndm_partition, dim=1)
+
+            ndm_loss_per_subspace = []
+            for s_idx, (q_sub_final, indices) in enumerate(zip(query_subspaces_final, neighbor_indices)):
+                neighbor_batch_s = key_batch[indices]
+                rotated_neighbor_final = model.module.R(neighbor_batch_s)
+                start_dim = sum(model.module.ndm_partition[:s_idx])
+                end_dim = start_dim + model.module.ndm_partition[s_idx]
+                rotated_neighbor_sub_final = rotated_neighbor_final[:, start_dim:end_dim]
+                distance = torch.linalg.vector_norm(q_sub_final - rotated_neighbor_sub_final, dim=1)
+                ndm_loss_per_subspace.append(distance.mean())
+            ndm_loss = torch.stack(ndm_loss_per_subspace).mean()
+
         # Compute total loss with auxiliary loss coefficient
-        total_loss = loss + aux_loss_coeff * aux_loss
+        total_loss = loss + aux_loss_coeff * aux_loss + ndm_loss_coeff * ndm_loss
 
         # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
         # and normalize the decoder weights again.
@@ -125,6 +166,7 @@ def train_epoch(
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
         total_loss_acc += total_loss.detach()
+        ndm_loss_acc += ndm_loss.detach()
 
         # Update the progress bar on main process
         if rank == 0:
@@ -142,14 +184,17 @@ def train_epoch(
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(ndm_loss_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
+            avg_ndm_loss = ndm_loss_acc.item() / accumulated_loss_count
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
+            ndm_loss_acc = torch.tensor(0.0, device=device)
 
             # Determine dead latent debug statistics
             dead_latents_ratio = dead_latents / dead_mask.numel()
@@ -163,6 +208,7 @@ def train_epoch(
                         "train/loss": avg_loss,
                         "train/aux_loss": avg_aux_loss,
                         "train/total_loss": avg_total_loss,
+                        "train/ndm_loss": avg_ndm_loss,
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
@@ -173,6 +219,7 @@ def train_epoch(
                     loss=f"{avg_loss:.6f}",
                     aux_loss=f"{avg_aux_loss:.6f}",
                     total_loss=f"{avg_total_loss:.6f}",
+                    ndm_loss=f"{avg_ndm_loss:.6f}",
                 )
 
     # Close the progress bar on main process
@@ -289,6 +336,7 @@ def train_autoencoder(
     optimizer_eps: float,
     k_aux: int,
     aux_loss_coeff: float,
+    ndm_loss_coeff: float,
     dead_steps_threshold: int,
     logs_per_epoch: int,
     checkpoint_dir: Path,
@@ -358,6 +406,7 @@ def train_autoencoder(
             optimizer=optimizer,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
+            ndm_loss_coeff=ndm_loss_coeff,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             logs_per_epoch=logs_per_epoch,
@@ -482,6 +531,9 @@ def main() -> None:
     dataloader_num_workers = 8
     logs_per_epoch = 100
     train_val_split = 0.95
+    use_ndm_loss = True
+    num_subspaces = 4
+    ndm_loss_coeff = 0.1
 
     if rank == 0:
         logging.info("Logging into and initializing wandb...")
@@ -508,6 +560,9 @@ def main() -> None:
                 "logs_per_epoch": logs_per_epoch,
                 "train_val_split": train_val_split,
                 "world_size": world_size,
+                "use_ndm_loss": use_ndm_loss,
+                "num_subspaces": num_subspaces,
+                "ndm_loss_coeff": ndm_loss_coeff,
             },
         )
 
@@ -541,6 +596,9 @@ def main() -> None:
         logging.info(f"# dataloader_num_workers={dataloader_num_workers}")
         logging.info(f"# logs_per_epoch={logs_per_epoch}")
         logging.info(f"# train_val_split={train_val_split}")
+        logging.info(f"# use_ndm_loss={use_ndm_loss}")
+        logging.info(f"# num_subspaces={num_subspaces}")
+        logging.info(f"# ndm_loss_coeff={ndm_loss_coeff}")
 
         # Create a new directory for the checkpoints
         run_name = datetime.now(tz=UTC).strftime("run_%Y-%m-%d_%H-%M-%S")
@@ -565,6 +623,8 @@ def main() -> None:
         b_pre=b_pre,
         dtype=dtype,
         normalize_eps=sae_normalization_eps,
+        use_ndm_loss=use_ndm_loss,
+        num_subspaces=num_subspaces,
     )
     if args.model_load_path:
         logging.info("Loading model weights from checkpoint...")
@@ -643,6 +703,7 @@ def main() -> None:
         optimizer_eps=optimizer_eps,
         k_aux=k_aux,
         aux_loss_coeff=aux_loss_coeff,
+        ndm_loss_coeff=ndm_loss_coeff,
         dead_steps_threshold=dead_steps_threshold,
         logs_per_epoch=logs_per_epoch,
         checkpoint_dir=args.checkpoint_dir,
