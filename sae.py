@@ -29,14 +29,16 @@ class TopKSparseAutoencoder(nn.Module):
 
         # Initialize encoder and decoder. The encoder has an additional bias term b_enc in addition to b_pre in the
         # forward pass, whereas the decoder does not have a bias term.
-        self.encoder = nn.Linear(d_model, n_latents, bias=True, dtype=dtype)
+        self.encoder_gate = nn.Linear(d_model, n_latents, bias=True, dtype=dtype)
+        self.encoder_mag = nn.Linear(d_model, n_latents, bias=True, dtype=dtype)
         self.decoder = nn.Linear(n_latents, d_model, bias=False, dtype=dtype)
 
         # Use orthogonal initialization for encoder to ensure well-distributed, independent directions and copy
         # the transposed encoder weights to decoder weights to ensure parallel initialization as per paper.
-        nn.init.orthogonal_(self.encoder.weight)
+        nn.init.orthogonal_(self.encoder_gate.weight)
+        nn.init.orthogonal_(self.encoder_mag.weight)
         with torch.no_grad():
-            self.decoder.weight.copy_(self.encoder.weight.t())
+            self.decoder.weight.copy_(self.encoder_gate.weight.t())
 
         self.normalize_decoder_weights()
 
@@ -97,17 +99,18 @@ class TopKSparseAutoencoder(nn.Module):
     def forward_1d_normalized(
         self,
         x: torch.Tensor,
-    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
         """
         :param x: input tensor of shape (batch_size, d_model)
         """
         # Subtract pre-bias and encode input
         x = x - self.b_pre
-        h = self.encoder(x)
+        h_gate = self.encoder_gate(x)
+        h_mag = self.encoder_mag(x)
 
         if self.h_bias is not None:
             # 获取最大的4个值及其索引
-            top_values, top_indices = torch.topk(h, k=4, dim=-1)
+            top_values, top_indices = torch.topk(h_gate, k=4, dim=-1)
 
             # 遍历每个样本的前4大值
             for batch_idx in range(top_indices.shape[0]):
@@ -118,21 +121,22 @@ class TopKSparseAutoencoder(nn.Module):
                         f"Top {i+1} value: h[{batch_idx}, {latent_idx}] = {value:.2f}"
                     )
 
-            h = h + self.h_bias
+            h_gate = h_gate + self.h_bias
             non_zero_idx = torch.nonzero(self.h_bias).squeeze()
-            logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
+            logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h_gate[:, non_zero_idx]}")
 
         # Reconstruct input and latent representation with default k sparsity
-        reconstructed, h_sparse = self.decode_latent(h=h, k=self.k)
+        reconstructed, h_sparse = self.decode_latent(h_gate=h_gate, h_mag=h_mag, k=self.k)
 
-        return reconstructed, h, h_sparse
+        return reconstructed, h_gate, h_mag, h_sparse
 
-    def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
+    def decode_latent(self, h_gate: torch.Tensor, h_mag: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
         """"""
         # Apply TopK activation, Relu to guarantee positive topk vals and then build sparse representation
-        topk_values, topk_indices = torch.topk(h, k=k, dim=-1)
+        _, topk_indices = torch.topk(h_gate, k=k, dim=-1)
+        topk_values = torch.gather(h_mag, 1, topk_indices)
         topk_values = torch.relu(topk_values)
-        h_sparse = torch.zeros_like(h).scatter_(1, topk_indices, topk_values)
+        h_sparse = torch.zeros_like(h_mag).scatter_(1, topk_indices, topk_values)
 
         # Decode h_sparse and add pre-bias
         reconstructed = self.decoder(h_sparse) + self.b_pre

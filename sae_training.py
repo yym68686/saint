@@ -88,7 +88,7 @@ def train_epoch(
 
         # Zero the gradients and perform forward pass
         optimizer.zero_grad()
-        reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+        reconstructed, h, h_mag, h_sparse = model.module.forward_1d_normalized(batch_normalized)
 
         # Compute main loss in normalized space
         loss = criterion(reconstructed, batch_normalized)
@@ -101,7 +101,7 @@ def train_epoch(
             # Calculate an auxiliary reconstruction with only dead latents and an additionaly amount (k_aux) of TopK
             # filtered latents.
             h_masked = h * dead_mask
-            reconstructed_aux, _ = model.module.decode_latent(h=h_masked, k=k_aux)
+            reconstructed_aux, _ = model.module.decode_latent(h_gate=h_masked, h_mag=h_mag, k=k_aux)
 
             # Compute auxiliary loss as MSE between residual and the aux reconstruction to make dead latents explain
             # what the main latents could not and thereby activate them again and make them useful again.
@@ -218,7 +218,7 @@ def validate_epoch(
             batch_normalized, mean, norm = model.module.preprocess_input(batch)
 
             # Perform forward pass
-            reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+            reconstructed, h, h_mag, h_sparse = model.module.forward_1d_normalized(batch_normalized)
 
             # Compute main loss in normalized space
             loss = criterion(reconstructed, batch_normalized)
@@ -228,7 +228,7 @@ def validate_epoch(
             dead_latents = dead_mask.sum().item()
             if dead_latents >= k_aux:
                 h_masked = h * dead_mask
-                reconstructed_aux, _ = model.module.decode_latent(h=h_masked, k=k_aux)
+                reconstructed_aux, _ = model.module.decode_latent(h_gate=h_masked, h_mag=h_mag, k=k_aux)
                 residual = batch_normalized - reconstructed.detach()
                 aux_loss = criterion(reconstructed_aux, residual)
             else:
