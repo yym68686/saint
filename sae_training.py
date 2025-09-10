@@ -72,6 +72,7 @@ def train_epoch(
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
     ndm_loss_acc = torch.tensor(0.0, device=device)
+    ndm_loss_acc = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
     accumulated_loss_count = dist.get_world_size() * log_interval
 
@@ -533,7 +534,7 @@ def main() -> None:
     train_val_split = 0.95
     use_ndm_loss = True
     num_subspaces = 4
-    ndm_loss_coeff = 0.1
+    ndm_loss_coeff = 100.0
 
     if rank == 0:
         logging.info("Logging into and initializing wandb...")
@@ -546,6 +547,7 @@ def main() -> None:
                 "k": k,
                 "k_aux": k_aux,
                 "aux_loss_coeff": aux_loss_coeff,
+                "ndm_loss_coeff": 100.0,
                 "dead_steps_threshold": dead_steps_threshold,
                 "sae_normalization_eps": sae_normalization_eps,
                 "batch_size": batch_size,
