@@ -33,8 +33,8 @@ class TopKSparseAutoencoder(nn.Module):
         self.decoder = nn.Linear(n_latents, d_model, bias=False, dtype=dtype)
 
         # Low-rank dense channel
-        self.dense_down = nn.Linear(d_model, 128, bias=False, dtype=dtype)
-        self.dense_up = nn.Linear(128, d_model, bias=False, dtype=dtype)
+        self.dense_down = nn.Linear(d_model, 256, bias=False, dtype=dtype)
+        self.dense_up = nn.Linear(256, d_model, bias=False, dtype=dtype)
 
         # Use orthogonal initialization for encoder to ensure well-distributed, independent directions and copy
         # the transposed encoder weights to decoder weights to ensure parallel initialization as per paper.
