@@ -105,9 +105,15 @@ class TopKSparseAutoencoder(nn.Module):
         """
         :param x: input tensor of shape (batch_size, d_model)
         """
-        # Subtract pre-bias and encode input
+        # Subtract pre-bias to get centered input
         x_centered = x - self.b_pre
-        h = self.encoder(x_centered)
+
+        # Dense path first to reconstruct the low-rank component
+        reconstructed_dense = self.dense_up(self.dense_down(x_centered))
+
+        # Calculate the residual, which will be the input to the sparse path
+        residual = x_centered - reconstructed_dense
+        h = self.encoder(residual)
 
         if self.h_bias is not None:
             # 获取最大的4个值及其索引
@@ -126,14 +132,11 @@ class TopKSparseAutoencoder(nn.Module):
             non_zero_idx = torch.nonzero(self.h_bias).squeeze()
             logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
 
-        # Reconstruct from sparse path (in centered space)
+        # Reconstruct the residual from the sparse path
         reconstructed_sparse, h_sparse = self.decode_latent(h=h, k=self.k)
 
-        # Reconstruct from dense path (in centered space)
-        reconstructed_dense = self.dense_up(self.dense_down(x_centered))
-
-        # Combine reconstructions in centered space and add pre-bias back
-        reconstructed = reconstructed_sparse + reconstructed_dense + self.b_pre
+        # Final reconstruction is dense part + sparse reconstruction of residual + pre-bias
+        reconstructed = reconstructed_dense + reconstructed_sparse + self.b_pre
 
         return reconstructed, h, h_sparse, reconstructed_dense
 
