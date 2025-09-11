@@ -34,6 +34,7 @@ class TopKSparseAutoencoder(nn.Module):
 
         # Low-rank dense channel
         self.dense_down = nn.Linear(d_model, 128, bias=False, dtype=dtype)
+        self.dense_relu = nn.ReLU()
         self.dense_up = nn.Linear(128, d_model, bias=False, dtype=dtype)
 
         # Use orthogonal initialization for encoder to ensure well-distributed, independent directions and copy
@@ -130,7 +131,7 @@ class TopKSparseAutoencoder(nn.Module):
         reconstructed_sparse, h_sparse = self.decode_latent(h=h, k=self.k)
 
         # Reconstruct from dense path (in centered space)
-        reconstructed_dense = self.dense_up(self.dense_down(x_centered))
+        reconstructed_dense = self.dense_up(self.dense_relu(self.dense_down(x_centered)))
 
         # Combine reconstructions in centered space and add pre-bias back
         reconstructed = reconstructed_sparse + reconstructed_dense + self.b_pre
