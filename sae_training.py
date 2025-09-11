@@ -473,7 +473,7 @@ def main() -> None:
     d_model = 3072
     n_latents = 2**16  # 65536
     k = 64
-    k_aux = 2048
+    k_aux = 128
     aux_loss_coeff = 1 / 32
     dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
     sae_normalization_eps = 1e-6
