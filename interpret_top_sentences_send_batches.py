@@ -157,7 +157,7 @@ def main() -> None:
     args.response_ids_filepath = args.response_ids_filepath.resolve()
 
     # Set up configuration
-    model = "claude-3-5-sonnet-20241022"
+    model = "claude-sonnet-4-20250514"
     max_tokens = 4096
     batch_size = 500
     samples_to_submit = 50
