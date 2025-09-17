@@ -106,8 +106,14 @@ def run_experiment(
     model_args = ModelArgs(**model_params)
     model_args.vocab_size = tokenizer.n_words
 
+    # Set default dtype to bfloat16 for memory efficiency, mirroring llama_3_inference.py
+    torch.set_default_dtype(torch.bfloat16)
+
     # Pass the SAE forward function during initialization
     model = Transformer(model_args, sae_layer_forward_fn=sae_layer_forward_fn)
+
+    # It's good practice to set it back after model initialization
+    torch.set_default_dtype(torch.float32)
 
     state_dict = torch.load(model_path, weights_only=True, map_location="cpu", mmap=True)
     model.load_state_dict(state_dict, strict=True)
