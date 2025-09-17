@@ -291,6 +291,73 @@ python run_ablation_experiment.py \
     --ablation_feature_indices 56750
 ```
 
+baseline 实验结果：
+
+```
+(llama3-interpretability-sae-py3.12) root@72c2eeb20451:~/saint# python run_ablation_experiment.py     --llama_model_dir ./llama_3.2-3B_model/original     --sae_model_path ./trained_sae-main.pt     --dataset_dir ./ablation_datasets     --sae_layer_idx 22     --ablation_feature_indices 56750
+[2025-09-17 17:16:21] [INFO] Loading datasets from ablation_datasets...
+[2025-09-17 17:16:21] [INFO] Loaded 136 target samples and 200 control samples.
+[2025-09-17 17:16:21] [INFO] Loading SAE model from trained_sae-main.pt...
+[2025-09-17 17:16:21] [INFO] Loading TopK SAE model weights and config from: trained_sae-main.pt
+[2025-09-17 17:16:22] [INFO] Initializing TopK SAE model and loading state dict...
+[2025-09-17 17:16:42] [INFO] Moving model to device cuda and setting to eval mode...
+[2025-09-17 17:16:44] [INFO]
+--- Running WITHOUT Feature Ablation (Baseline) ---
+[2025-09-17 17:16:44] [INFO] Ablation feature indices cleared.
+[2025-09-17 17:16:44] [INFO] Loading model parameters from llama_3.2-3B_model/original/params.json...
+[2025-09-17 17:17:34] [INFO] Llama 3 model loaded with SAE hooked at layer 22.
+[2025-09-17 17:17:34] [INFO]
+[Target Dataset Analysis]
+Calculating Perplexity: 100%|██████████████████| 136/136 [01:26<00:00,  1.57it/s]
+[2025-09-17 17:19:00] [INFO] Perplexity on Target Dataset: 30.7517
+[2025-09-17 17:19:00] [INFO]
+[Control Dataset Analysis]
+Calculating Perplexity: 100%|██████████████████| 200/200 [01:17<00:00,  2.58it/s]
+[2025-09-17 17:20:18] [INFO] Perplexity on Control Dataset: 32.6641
+[2025-09-17 17:20:19] [INFO] Loading SAE model from trained_sae-main.pt...
+[2025-09-17 17:20:19] [INFO] Loading TopK SAE model weights and config from: trained_sae-main.pt
+[2025-09-17 17:20:20] [INFO] Initializing TopK SAE model and loading state dict...
+[2025-09-17 17:20:42] [INFO] Moving model to device cuda and setting to eval mode...
+[2025-09-17 17:20:42] [INFO]
+--- Running WITH Feature Ablation (Features: [56750]) ---
+[2025-09-17 17:20:42] [INFO] Set ablation feature indices to: [56750]
+[2025-09-17 17:20:42] [INFO] Loading model parameters from llama_3.2-3B_model/original/params.json...
+[2025-09-17 17:21:26] [INFO] Llama 3 model loaded with SAE hooked at layer 22.
+[2025-09-17 17:21:26] [INFO]
+[Target Dataset Analysis]
+Calculating Perplexity: 100%|██████████████████| 136/136 [01:24<00:00,  1.60it/s]
+[2025-09-17 17:22:51] [INFO] Perplexity on Target Dataset: 30.7759
+[2025-09-17 17:22:51] [INFO]
+[Control Dataset Analysis]
+Calculating Perplexity: 100%|██████████████████| 200/200 [01:15<00:00,  2.64it/s]
+[2025-09-17 17:24:07] [INFO] Perplexity on Control Dataset: 32.6636
+[2025-09-17 17:24:08] [INFO]
+
+==================================================
+[2025-09-17 17:24:08] [INFO]           Feature Ablation Experiment Summary
+[2025-09-17 17:24:08] [INFO] ==================================================
+
+[2025-09-17 17:24:08] [INFO] Ablated Feature(s): [56750]
+[2025-09-17 17:24:08] [INFO] SAE Model: trained_sae-main.pt
+[2025-09-17 17:24:08] [INFO] SAE Layer: 22
+[2025-09-17 17:24:08] [INFO] --------------------------------------------------
+[2025-09-17 17:24:08] [INFO] Target Dataset Perplexity:
+[2025-09-17 17:24:08] [INFO]   - Baseline: 30.7517
+[2025-09-17 17:24:08] [INFO]   - Ablated:  30.7759
+[2025-09-17 17:24:08] [INFO]   - Change:   +0.08%
+[2025-09-17 17:24:08] [INFO] --------------------------------------------------
+[2025-09-17 17:24:08] [INFO] Control Dataset Perplexity:
+[2025-09-17 17:24:08] [INFO]   - Baseline: 32.6641
+[2025-09-17 17:24:08] [INFO]   - Ablated:  32.6636
+[2025-09-17 17:24:08] [INFO]   - Change:   -0.00%
+[2025-09-17 17:24:08] [INFO] ==================================================
+```
+
+exp11-dense-sae 实验结果：
+
+```
+```
+
 ## codebook
 
 更新代码：
