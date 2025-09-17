@@ -277,15 +277,18 @@ python create_ablation_datasets.py \
 
 ## 特征消融实验
 
+baseline 56750 为 太空探索
+exp11 为 8654 为 太空探索
+
 ```bash
 cd saint
 eval $(poetry env activate)
 python saint/run_ablation_experiment.py \
     --llama_model_dir ./llama_3.2-3B_model/original \
-    --sae_model_path ./trained_sae.pt \
+    --sae_model_path ./trained_sae-main.pt \
     --dataset_dir ./saint/ablation_datasets \
     --sae_layer_idx 22 \
-    --ablation_feature_indices 8654
+    --ablation_feature_indices 56750
 ```
 
 ## codebook
