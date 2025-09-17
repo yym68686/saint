@@ -18,36 +18,41 @@ logging.getLogger("saint.llama_3.tokenizer").setLevel(logging.WARNING)
 @torch.no_grad()
 def calculate_perplexity(model: Transformer, tokenizer: Tokenizer, texts: list[str], device: torch.device) -> float:
     """
-    Calculates the perplexity of a model on a given list of texts.
+    Calculates the perplexity of a model on a given list of texts using a memory-efficient,
+    token-by-token approach to avoid OOM errors.
     """
     model.eval()
     total_neg_log_likelihood = 0.0
     total_tokens = 0
+    loss_fct = torch.nn.CrossEntropyLoss()
 
     for text in tqdm(texts, desc="Calculating Perplexity"):
         tokens = tokenizer.encode(text, bos=True, eos=True)
-        # Model requires at least 2 tokens to predict something.
         if len(tokens) < 2:
             continue
 
-        input_ids = torch.tensor([tokens], device=device)
-        total_tokens += len(tokens) - 1 # We predict n-1 tokens
+        # Process token by token to save memory
+        for i in range(1, len(tokens)):
+            start_pos = i - 1
+            cur_token_tensor = torch.tensor([[tokens[start_pos]]], device=device, dtype=torch.long)
+            next_token_tensor = torch.tensor([tokens[i]], device=device, dtype=torch.long)
 
-        # Get logits for all tokens in the sequence
-        logits = model.forward(input_ids, start_pos=0)
+            # Get logits for the current token to predict the next one
+            logits = model.forward(cur_token_tensor, start_pos=start_pos)
+            # Logits shape: (1, 1, vocab_size), we need (1, vocab_size) for CrossEntropyLoss
+            logits_for_loss = logits.squeeze(0)
 
-        # Shift logits and labels for next-token prediction loss
-        # Logits for token i are used to predict token i+1
-        shift_logits = logits[..., :-1, :].contiguous()
-        shift_labels = input_ids[..., 1:].contiguous()
+            # Calculate loss for the single next token
+            loss = loss_fct(logits_for_loss, next_token_tensor)
+            total_neg_log_likelihood += loss.item()
 
-        # Calculate loss, which is the negative log likelihood
-        loss_fct = torch.nn.CrossEntropyLoss()
-        loss = loss_fct(shift_logits.view(-1, shift_logits.size(-1)), shift_labels.view(-1))
+        total_tokens += len(tokens) - 1
 
-        # Accumulate total negative log likelihood
-        # The loss is already averaged over the sequence length, so we multiply it back
-        total_neg_log_likelihood += loss.item() * (len(tokens) - 1)
+        # Reset KV cache for every layer for the next sentence
+        for layer in model.layers:
+            layer.attention.cache_k.zero_()
+            layer.attention.cache_v.zero_()
+
 
     if total_tokens == 0:
         return float('inf')
