@@ -23,6 +23,7 @@ class TopKSparseAutoencoder(nn.Module):
         self.dtype = dtype
         self.normalize_eps = normalize_eps
         self.h_bias = None
+        self.ablation_feature_indices = None
 
         # Initialize training data mean (or median) as shared trainable pre-bias Parameter for encoder and decoder
         self.b_pre = nn.Parameter(b_pre.to(dtype), requires_grad=True)
@@ -134,6 +135,12 @@ class TopKSparseAutoencoder(nn.Module):
         topk_values = torch.relu(topk_values)
         h_sparse = torch.zeros_like(h).scatter_(1, topk_indices, topk_values)
 
+        # Feature Ablation Logic
+        if self.ablation_feature_indices is not None:
+            # Clone h_sparse to avoid in-place modification issues with autograd
+            h_sparse = h_sparse.clone()
+            h_sparse[:, self.ablation_feature_indices] = 0
+
         # Decode h_sparse and add pre-bias
         reconstructed = self.decoder(h_sparse) + self.b_pre
 
@@ -147,6 +154,15 @@ class TopKSparseAutoencoder(nn.Module):
     def unset_latent_bias(self) -> None:
         """"""
         self.h_bias = None
+
+    def set_ablation_feature_indices(self, indices: list[int] | None) -> None:
+        """Sets the feature indices to be ablated during the forward pass."""
+        if indices is None:
+            self.ablation_feature_indices = None
+            logging.info("Ablation feature indices cleared.")
+        else:
+            self.ablation_feature_indices = indices
+            logging.info(f"Set ablation feature indices to: {self.ablation_feature_indices}")
 
 
 def load_sae_model(

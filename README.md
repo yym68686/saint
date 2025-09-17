@@ -264,6 +264,30 @@ Humanitarian staff coordinated their efforts
 Senior diplomats met to discuss
 ```
 
+## 创建ablation数据集
+
+```bash
+cd saint
+eval $(poetry env activate)
+python create_ablation_datasets.py \
+    --dataset_path ./dataset/train-00000-of-00082.parquet \
+    --target_keywords "space" "rocket" "nasa" "astronaut" "orbital" "spacecraft" \
+    --output_dir ./ablation_datasets
+```
+
+## 特征消融实验
+
+```bash
+cd saint
+eval $(poetry env activate)
+python saint/run_ablation_experiment.py \
+    --llama_model_dir ./llama_3.2-3B_model/original \
+    --sae_model_path ./trained_sae.pt \
+    --dataset_dir ./saint/ablation_datasets \
+    --sae_layer_idx 22 \
+    --ablation_feature_indices 8654
+```
+
 ## codebook
 
 更新代码：
