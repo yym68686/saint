@@ -2,6 +2,7 @@ import argparse
 import logging
 from pathlib import Path
 import torch
+import json
 import pandas as pd
 from tqdm import tqdm
 import math
@@ -93,7 +94,11 @@ def run_experiment(
     model_path = llama_model_dir / "consolidated.00.pth"
 
     tokenizer = Tokenizer(str(tokenizer_path))
-    model_args = ModelArgs.from_json_file(params_path)
+
+    logging.info(f"Loading model parameters from {params_path}...")
+    with params_path.open("r") as f:
+        model_params = json.load(f)
+    model_args = ModelArgs(**model_params)
     model_args.vocab_size = tokenizer.n_words
 
     # Pass the SAE forward function during initialization
