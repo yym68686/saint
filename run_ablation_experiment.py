@@ -109,7 +109,7 @@ def run_experiment(
     # Pass the SAE forward function during initialization
     model = Transformer(model_args, sae_layer_forward_fn=sae_layer_forward_fn)
 
-    state_dict = torch.load(model_path, map_location="cpu", mmap=True)
+    state_dict = torch.load(model_path, weights_only=True, map_location="cpu", mmap=True)
     model.load_state_dict(state_dict, strict=True)
     model.to(device)
     logging.info(f"Llama 3 model loaded with SAE hooked at layer {sae_layer_idx}.")
