@@ -49,11 +49,11 @@ def calculate_perplexity(model: Transformer, tokenizer: Tokenizer, texts: list[s
         total_tokens += len(tokens) - 1
 
         # Reset KV cache for every layer for the next sentence
-        # Temporarily enable gradient calculation to allow in-place modification of the KV cache
-        with torch.enable_grad():
-            for layer in model.layers:
-                layer.attention.cache_k.zero_()
-                layer.attention.cache_v.zero_()
+        # Reset KV cache for every layer for the next sentence.
+        # In-place modification of inference tensors is not allowed, so we re-initialize the cache.
+        for layer in model.layers:
+            layer.attention.cache_k = torch.zeros_like(layer.attention.cache_k)
+            layer.attention.cache_v = torch.zeros_like(layer.attention.cache_v)
 
 
     if total_tokens == 0:
