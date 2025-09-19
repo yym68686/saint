@@ -130,8 +130,8 @@ class TopKSparseAutoencoder(nn.Module):
     def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
         """"""
         # Apply TopK activation, Relu to guarantee positive topk vals and then build sparse representation
+        h = torch.relu(h)
         topk_values, topk_indices = torch.topk(h, k=k, dim=-1)
-        topk_values = torch.relu(topk_values)
         h_sparse = torch.zeros_like(h).scatter_(1, topk_indices, topk_values)
 
         # Decode h_sparse and add pre-bias
