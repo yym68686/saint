@@ -284,10 +284,11 @@ exp11 为 8654 为 太空探索， 27367 为 航空航天
 cd saint
 eval $(poetry env activate)
 
+# l22
 # baselinebaseline
 python run_ablation_experiment.py \
     --llama_model_dir ./llama_3.2-3B_model/original \
-    --sae_model_path ./trained_sae-main.pt \
+    --sae_model_path ./trained_sae-main-l22.pt \
     --dataset_dir ./ablation_datasets \
     --sae_layer_idx 22 \
     --ablation_feature_indices 56750
@@ -295,9 +296,26 @@ python run_ablation_experiment.py \
 # exp11-dense-sae
 python run_ablation_experiment.py \
     --llama_model_dir ./llama_3.2-3B_model/original \
-    --sae_model_path ./trained_sae-exp11.pt \
+    --sae_model_path ./trained_sae-dense-l22.pt \
     --dataset_dir ./ablation_datasets \
     --sae_layer_idx 22 \
+    --ablation_feature_indices 8654
+
+# l11
+# baselinebaseline
+python run_ablation_experiment.py \
+    --llama_model_dir ./llama_3.2-3B_model/original \
+    --sae_model_path ./trained_sae-main-l11.pt \
+    --dataset_dir ./ablation_datasets \
+    --sae_layer_idx 11 \
+    --ablation_feature_indices 56750
+
+# exp11-dense-sae
+python run_ablation_experiment.py \
+    --llama_model_dir ./llama_3.2-3B_model/original \
+    --sae_model_path ./trained_sae-dense-l11.pt \
+    --dataset_dir ./ablation_datasets \
+    --sae_layer_idx 11 \
     --ablation_feature_indices 8654
 ```
 
