@@ -55,6 +55,7 @@ def train_epoch(
     optimizer: optim.AdamW,
     k_aux: int,
     aux_loss_coeff: float,
+    dense_reg_coeff: float,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     logs_per_epoch: int,
@@ -69,8 +70,10 @@ def train_epoch(
     # Initialize epoch log variables and helpers
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
+    dense_reg_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
     dense_recon_norm_acc = torch.tensor(0.0, device=device)
+    sparse_recon_norm_acc = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
     accumulated_loss_count = dist.get_world_size() * log_interval
 
@@ -112,8 +115,10 @@ def train_epoch(
             # If there are not enough dead latents to activate, set auxiliary loss to 0.
             aux_loss = torch.tensor(0.0, device=device)
 
-        # Compute total loss with auxiliary loss coefficient
-        total_loss = loss + aux_loss_coeff * aux_loss
+        # Dense path regularization on reconstruction magnitude
+        dense_reg = dense_reg_coeff * reconstructed_dense.pow(2).mean()
+        # Compute total loss with auxiliary and dense regularization
+        total_loss = loss + aux_loss_coeff * aux_loss + dense_reg
 
         # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
         # and normalize the decoder weights again.
@@ -125,8 +130,11 @@ def train_epoch(
         # Accumulate losses
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
+        dense_reg_acc += dense_reg.detach()
         total_loss_acc += total_loss.detach()
         dense_recon_norm_acc += reconstructed_dense.detach().norm()
+        reconstructed_sparse = (reconstructed - reconstructed_dense).detach()
+        sparse_recon_norm_acc += reconstructed_sparse.norm()
 
         # Update the progress bar on main process
         if rank == 0:
@@ -145,16 +153,23 @@ def train_epoch(
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(dense_recon_norm_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(sparse_recon_norm_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(dense_reg_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
             avg_dense_recon_norm = dense_recon_norm_acc.item() / accumulated_loss_count
+            avg_sparse_recon_norm = sparse_recon_norm_acc.item() / accumulated_loss_count
+            avg_ratio_dense = avg_dense_recon_norm / (avg_dense_recon_norm + avg_sparse_recon_norm + 1e-12)
+            avg_dense_reg = dense_reg_acc.item() / accumulated_loss_count
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
+            dense_reg_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
             dense_recon_norm_acc = torch.tensor(0.0, device=device)
+            sparse_recon_norm_acc = torch.tensor(0.0, device=device)
 
             # Determine dead latent debug statistics
             dead_latents_ratio = dead_latents / dead_mask.numel()
@@ -168,7 +183,10 @@ def train_epoch(
                         "train/loss": avg_loss,
                         "train/aux_loss": avg_aux_loss,
                         "train/total_loss": avg_total_loss,
+                        "train/dense_reg": avg_dense_reg,
                         "debug/dense_recon_norm": avg_dense_recon_norm,
+                        "debug/sparse_recon_norm": avg_sparse_recon_norm,
+                        "debug/ratio_dense": avg_ratio_dense,
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
@@ -194,6 +212,7 @@ def validate_epoch(
     criterion: nn.MSELoss,
     k_aux: int,
     aux_loss_coeff: float,
+    dense_reg_coeff: float,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     dtype: torch.dtype,
@@ -224,7 +243,7 @@ def validate_epoch(
             batch_normalized, mean, norm = model.module.preprocess_input(batch)
 
             # Perform forward pass
-            reconstructed, h, h_sparse, _ = model.module.forward_1d_normalized(batch_normalized)
+            reconstructed, h, h_sparse, reconstructed_dense = model.module.forward_1d_normalized(batch_normalized)
 
             # Compute main loss in normalized space
             loss = criterion(reconstructed, batch_normalized)
@@ -240,8 +259,9 @@ def validate_epoch(
             else:
                 aux_loss = torch.tensor(0.0, device=device)
 
-            # Compute total loss with auxiliary loss coefficient
-            total_loss = loss + aux_loss_coeff * aux_loss
+            # Dense path regularization and total loss
+            dense_reg = dense_reg_coeff * reconstructed_dense.pow(2).mean()
+            total_loss = loss + aux_loss_coeff * aux_loss + dense_reg
 
             # Accumulate losses
             loss_acc += loss.detach()
@@ -293,8 +313,10 @@ def train_autoencoder(
     learning_rate_min: float,
     optimizer_betas: tuple[float, float],
     optimizer_eps: float,
+    weight_decay_dense: float,
     k_aux: int,
     aux_loss_coeff: float,
+    dense_reg_coeff: float,
     dead_steps_threshold: int,
     logs_per_epoch: int,
     checkpoint_dir: Path,
@@ -327,8 +349,14 @@ def train_autoencoder(
         logging.info(f"可训练参数量: {trainable_params:,}")
 
     logging.info("Setting up optimizer, scheduler and loss function...")
+    # Stronger decay for dense path to prevent overgrowth
+    dense_params = [p for n, p in model.module.named_parameters() if n in ("dense_down.weight", "dense_up.weight")]
+    other_params = [p for n, p in model.module.named_parameters() if n not in ("dense_down.weight", "dense_up.weight")]
     optimizer = optim.AdamW(
-        model.parameters(),
+        [
+            {"params": dense_params, "weight_decay": weight_decay_dense},
+            {"params": other_params, "weight_decay": 0.01},
+        ],
         lr=learning_rate,
         betas=optimizer_betas,
         eps=optimizer_eps,
@@ -364,6 +392,7 @@ def train_autoencoder(
             optimizer=optimizer,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
+            dense_reg_coeff=dense_reg_coeff,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             logs_per_epoch=logs_per_epoch,
@@ -381,6 +410,7 @@ def train_autoencoder(
             criterion=criterion,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
+            dense_reg_coeff=dense_reg_coeff,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             dtype=dtype,
@@ -475,6 +505,8 @@ def main() -> None:
     k = 64
     k_aux = 2048
     aux_loss_coeff = 1 / 32
+    dense_reg_coeff = 1e-4
+    weight_decay_dense = 5e-2
     dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
     sae_normalization_eps = 1e-6
     batch_size = args.batch_size
@@ -500,6 +532,8 @@ def main() -> None:
                 "k": k,
                 "k_aux": k_aux,
                 "aux_loss_coeff": aux_loss_coeff,
+                "dense_reg_coeff": dense_reg_coeff,
+                "weight_decay_dense": weight_decay_dense,
                 "dead_steps_threshold": dead_steps_threshold,
                 "sae_normalization_eps": sae_normalization_eps,
                 "batch_size": batch_size,
@@ -534,6 +568,8 @@ def main() -> None:
         logging.info(f"# k={k}")
         logging.info(f"# k_aux={k_aux}")
         logging.info(f"# aux_loss_coeff={aux_loss_coeff}")
+        logging.info(f"# dense_reg_coeff={dense_reg_coeff}")
+        logging.info(f"# weight_decay_dense={weight_decay_dense}")
         logging.info(f"# dead_steps_threshold={dead_steps_threshold}")
         logging.info(f"# sae_normalization_eps={sae_normalization_eps}")
         logging.info(f"# batch_size={batch_size}")
@@ -647,8 +683,10 @@ def main() -> None:
         learning_rate_min=learning_rate_min,
         optimizer_betas=optimizer_betas,
         optimizer_eps=optimizer_eps,
+        weight_decay_dense=weight_decay_dense,
         k_aux=k_aux,
         aux_loss_coeff=aux_loss_coeff,
+        dense_reg_coeff=dense_reg_coeff,
         dead_steps_threshold=dead_steps_threshold,
         logs_per_epoch=logs_per_epoch,
         checkpoint_dir=args.checkpoint_dir,

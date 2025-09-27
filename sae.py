@@ -35,6 +35,9 @@ class TopKSparseAutoencoder(nn.Module):
         # Low-rank dense channel
         self.dense_down = nn.Linear(d_model, 1024, bias=False, dtype=dtype)
         self.dense_up = nn.Linear(1024, d_model, bias=False, dtype=dtype)
+        # Initialize dense path: down=0 to suppress early, up=small to allow gradients to flow to down
+        nn.init.zeros_(self.dense_down.weight)
+        nn.init.normal_(self.dense_up.weight, mean=0.0, std=1e-3)
 
         # Use orthogonal initialization for encoder to ensure well-distributed, independent directions and copy
         # the transposed encoder weights to decoder weights to ensure parallel initialization as per paper.
@@ -45,17 +48,18 @@ class TopKSparseAutoencoder(nn.Module):
         self.normalize_decoder_weights()
 
     def normalize_decoder_weights(self) -> None:
-        """Normalize the decoder weights to unit norm for each latent (corresponding to decoder columns)."""
+        """Normalize the decoder weights to unit norm for each latent (decoder columns)."""
         with torch.no_grad():
-            self.decoder.weight.div_(self.decoder.weight.norm(dim=1, keepdim=True))
+            # decoder.weight shape: (d_model, n_latents); normalize per-column (per latent)
+            norms = self.decoder.weight.norm(dim=0, keepdim=True).clamp_min(1e-12)
+            self.decoder.weight.div_(norms)
 
     def project_decoder_grads(self):
-        """Project out gradient information parallel to dict vectors."""
+        """Project out gradient information parallel to dict vectors (per latent column)."""
         with torch.no_grad():
-            # Compute dot product of decoder weights and their grads, then subtract the projection from the grads
-            # in place to save memory
-            proj = torch.sum(self.decoder.weight * self.decoder.weight.grad, dim=1, keepdim=True)
-            self.decoder.weight.grad.sub_(proj * self.decoder.weight)
+            # Per-column dot product: sum over d_model for each latent
+            proj = torch.sum(self.decoder.weight * self.decoder.weight.grad, dim=0, keepdim=True)  # (1, n_latents)
+            self.decoder.weight.grad.sub_(self.decoder.weight * proj)
 
     def preprocess_input(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
         """Preprocess input by converting to model dtype, centering and normalizing."""
@@ -103,11 +107,10 @@ class TopKSparseAutoencoder(nn.Module):
         x: torch.Tensor,
     ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
         """
-        :param x: input tensor of shape (batch_size, d_model)
+        :param x: input tensor of shape (batch_size, d_model) already normalized
         """
-        # Subtract pre-bias and encode input
-        x_centered = x - self.b_pre
-        h = self.encoder(x_centered)
+        # Encode directly in normalized space (do not use b_pre here)
+        h = self.encoder(x)
 
         if self.h_bias is not None:
             # 获取最大的4个值及其索引
@@ -126,14 +129,14 @@ class TopKSparseAutoencoder(nn.Module):
             non_zero_idx = torch.nonzero(self.h_bias).squeeze()
             logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
 
-        # Reconstruct from sparse path (in centered space)
+        # Reconstruct from sparse path (in normalized space)
         reconstructed_sparse, h_sparse = self.decode_latent(h=h, k=self.k)
 
-        # Reconstruct from dense path (in centered space)
-        reconstructed_dense = self.dense_up(self.dense_down(x_centered))
+        # Reconstruct from dense path (in normalized space)
+        reconstructed_dense = self.dense_up(self.dense_down(x))
 
-        # Combine reconstructions in centered space and add pre-bias back
-        reconstructed = reconstructed_sparse + reconstructed_dense + self.b_pre
+        # Combine reconstructions in normalized space
+        reconstructed = reconstructed_sparse + reconstructed_dense
 
         return reconstructed, h, h_sparse, reconstructed_dense
 
