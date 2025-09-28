@@ -273,6 +273,18 @@ python create_ablation_datasets.py \
     --dataset_path ./dataset/train-00000-of-00082.parquet \
     --target_keywords "space" "rocket" "nasa" "astronaut" "orbital" "spacecraft" \
     --output_dir ./ablation_datasets
+
+python create_ablation_datasets_from_top_sentences.py \
+--top_sentences_filepath ./top_activating_sentences/top_sentences_mean.yaml \
+--dataset_path /root/lanyun-tmp/train-00000-of-00082.parquet \
+--feature_indices 28178 \
+--top_k_per_feature 100 \
+--num_target_samples 200 \
+--num_control_samples 200 \
+--controls_source yaml_others \
+--shuffle_seed 42 \
+--output_dir ./ablation_datasets \
+--save_metadata
 ```
 
 ## 特征消融实验
@@ -316,7 +328,7 @@ python run_ablation_experiment.py \
     --sae_model_path ./trained_sae-dense-l11.pt \
     --dataset_dir ./ablation_datasets \
     --sae_layer_idx 11 \
-    --ablation_feature_indices 8654
+    --ablation_feature_indices 28178
 ```
 
 baseline 实验结果：
@@ -427,6 +439,30 @@ exp11-dense-sae 实验结果：
 [2025-09-17 18:25:10] [INFO]   - Ablated:  32.9034
 [2025-09-17 18:25:10] [INFO]   - Change:   -0.00%
 [2025-09-17 18:25:10] [INFO] ==================================================
+```
+
+## 诱导“So/And so”开头率实验 失败
+
+```bash
+cd saint
+eval $(poetry env activate)
+
+# 创建诱导数据集
+python create_so_induction_dataset.py --num_prompts 200 --output_path ./ablation_datasets/so_induction_prompts.jsonl
+
+# 评估 dense-l11
+python evaluate_so_induction_ablation.py --llama_model_dir ./llama_3.2-3B_model/original --sae_model_path ./trained_sae-dense-l11.pt --sae_layer_idx 11 --prompts_path ./ablation_datasets/so_induction_prompts.jsonl --ablation_feature_indices 28178 --max_new_tokens 24 --temperature 0.7 --top_p 0.9 --batch_size 32 --save_outputs --output_dir ./ablation_datasets/so_eval-dense-l11
+```
+
+## 检测so激活大小区别 成功
+
+```bash
+cd saint
+eval $(poetry env activate)
+
+python create_so_presence_datasets.py --dataset_path /root/lanyun-tmp/train-00000-of-00082.parquet --num_target 200 --num_control 200 --shuffle --output_dir ./ablation_datasets/so_presence
+
+python analyze_feature_activation_so_presence.py --llama_model_dir ./llama_3.2-3B_model/original --sae_model_path ./trained_sae-dense-l11.pt --sae_layer_idx 11 --feature_index 28178 --so_presence_dir ./ablation_datasets/so_presence --output_path ./ablation_datasets/so_presence/feature_activation_summary.json --save_per_sample
 ```
 
 ## codebook
