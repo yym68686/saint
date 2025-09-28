@@ -274,6 +274,7 @@ python create_ablation_datasets.py \
     --target_keywords "space" "rocket" "nasa" "astronaut" "orbital" "spacecraft" \
     --output_dir ./ablation_datasets
 
+# trained_sae-dense-l11.pt 的 28178 号特征是含有so的句子
 python create_ablation_datasets_from_top_sentences.py \
 --top_sentences_filepath ./top_activating_sentences/top_sentences_mean.yaml \
 --dataset_path /root/lanyun-tmp/train-00000-of-00082.parquet \
@@ -455,6 +456,8 @@ python evaluate_so_induction_ablation.py --llama_model_dir ./llama_3.2-3B_model/
 ```
 
 ## 检测so激活大小区别 成功
+
+## dense-l11-f28178
 
 ```bash
 cd saint
