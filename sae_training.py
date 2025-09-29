@@ -15,7 +15,7 @@ from torch.utils.data import DataLoader, Dataset, Subset
 from torch.utils.data.distributed import DistributedSampler
 from tqdm import tqdm
 
-from sae import TopKSparseAutoencoder
+from sae import GatedSAE
 from utils.cuda_utils import set_up_cuda
 
 
@@ -53,10 +53,7 @@ def train_epoch(
     dataloader: DataLoader,
     criterion: nn.MSELoss,
     optimizer: optim.AdamW,
-    k_aux: int,
-    aux_loss_coeff: float,
     latent_last_nonzero: torch.Tensor,
-    dead_steps_threshold: int,
     logs_per_epoch: int,
     dtype: torch.dtype,
     device: torch.device,
@@ -93,26 +90,9 @@ def train_epoch(
         # Compute main loss in normalized space
         loss = criterion(reconstructed, batch_normalized)
 
-        # If enough latents haven't been activated in more than dead_steps_threshold training steps then calculate an
-        # auxiliary loss to help reactivate the latents.
-        dead_mask = latent_last_nonzero > dead_steps_threshold
-        dead_latents = dead_mask.sum().item()
-        if dead_latents >= k_aux:
-            # Calculate an auxiliary reconstruction with only dead latents and an additionaly amount (k_aux) of TopK
-            # filtered latents.
-            h_masked = h * dead_mask
-            reconstructed_aux, _ = model.module.decode_latent(h=h_masked, k=k_aux)
-
-            # Compute auxiliary loss as MSE between residual and the aux reconstruction to make dead latents explain
-            # what the main latents could not and thereby activate them again and make them useful again.
-            residual = batch_normalized - reconstructed.detach()
-            aux_loss = criterion(reconstructed_aux, residual)
-        else:
-            # If there are not enough dead latents to activate, set auxiliary loss to 0.
-            aux_loss = torch.tensor(0.0, device=device)
-
-        # Compute total loss with auxiliary loss coefficient
-        total_loss = loss + aux_loss_coeff * aux_loss
+        # For GatedSAE, total loss is just the reconstruction loss.
+        total_loss = loss
+        aux_loss = torch.tensor(0.0, device=device)
 
         # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
         # and normalize the decoder weights again.
@@ -152,7 +132,6 @@ def train_epoch(
             total_loss_acc = torch.tensor(0.0, device=device)
 
             # Determine dead latent debug statistics
-            dead_latents_ratio = dead_latents / dead_mask.numel()
             max_dead_latent = latent_last_nonzero.max().item()
             max_dead_latent_count = (latent_last_nonzero == max_dead_latent).sum().item()
 
@@ -163,7 +142,6 @@ def train_epoch(
                         "train/loss": avg_loss,
                         "train/aux_loss": avg_aux_loss,
                         "train/total_loss": avg_total_loss,
-                        "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
                     },
@@ -186,10 +164,7 @@ def validate_epoch(
     model: DistributedDataParallel,
     dataloader: DataLoader,
     criterion: nn.MSELoss,
-    k_aux: int,
-    aux_loss_coeff: float,
     latent_last_nonzero: torch.Tensor,
-    dead_steps_threshold: int,
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
@@ -223,19 +198,9 @@ def validate_epoch(
             # Compute main loss in normalized space
             loss = criterion(reconstructed, batch_normalized)
 
-            # Compute auxiliary loss if necessary
-            dead_mask = latent_last_nonzero > dead_steps_threshold
-            dead_latents = dead_mask.sum().item()
-            if dead_latents >= k_aux:
-                h_masked = h * dead_mask
-                reconstructed_aux, _ = model.module.decode_latent(h=h_masked, k=k_aux)
-                residual = batch_normalized - reconstructed.detach()
-                aux_loss = criterion(reconstructed_aux, residual)
-            else:
-                aux_loss = torch.tensor(0.0, device=device)
-
-            # Compute total loss with auxiliary loss coefficient
-            total_loss = loss + aux_loss_coeff * aux_loss
+            # For GatedSAE, total loss is just the reconstruction loss.
+            total_loss = loss
+            aux_loss = torch.tensor(0.0, device=device)
 
             # Accumulate losses
             loss_acc += loss.detach()
@@ -278,7 +243,7 @@ def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
             logging.error(f"Failed to remove checkpoint {checkpoint}: {e}")
 
 def train_autoencoder(
-    model: TopKSparseAutoencoder,
+    model: nn.Module,
     train_dataloader: DataLoader,
     val_dataloader: DataLoader,
     num_epochs: int,
@@ -287,15 +252,12 @@ def train_autoencoder(
     learning_rate_min: float,
     optimizer_betas: tuple[float, float],
     optimizer_eps: float,
-    k_aux: int,
-    aux_loss_coeff: float,
-    dead_steps_threshold: int,
     logs_per_epoch: int,
     checkpoint_dir: Path,
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
-) -> TopKSparseAutoencoder:
+) -> nn.Module:
     """"""
     logging.info("Sending model to device and wrapping in DistributedDataParallel...")
     model = model.to(device)
@@ -356,10 +318,7 @@ def train_autoencoder(
             dataloader=train_dataloader,
             criterion=criterion,
             optimizer=optimizer,
-            k_aux=k_aux,
-            aux_loss_coeff=aux_loss_coeff,
             latent_last_nonzero=latent_last_nonzero,
-            dead_steps_threshold=dead_steps_threshold,
             logs_per_epoch=logs_per_epoch,
             dtype=dtype,
             device=device,
@@ -373,10 +332,7 @@ def train_autoencoder(
             model=model,
             dataloader=val_dataloader,
             criterion=criterion,
-            k_aux=k_aux,
-            aux_loss_coeff=aux_loss_coeff,
             latent_last_nonzero=latent_last_nonzero,
-            dead_steps_threshold=dead_steps_threshold,
             dtype=dtype,
             device=device,
             rank=rank,
@@ -466,10 +422,6 @@ def main() -> None:
     # Set up configuration
     d_model = 3072
     n_latents = 2**16  # 65536
-    k = 64
-    k_aux = 2048
-    aux_loss_coeff = 1 / 32
-    dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
     sae_normalization_eps = 1e-6
     batch_size = args.batch_size
     num_epochs = 200
@@ -491,10 +443,6 @@ def main() -> None:
             config={
                 "d_model": d_model,
                 "n_latents": n_latents,
-                "k": k,
-                "k_aux": k_aux,
-                "aux_loss_coeff": aux_loss_coeff,
-                "dead_steps_threshold": dead_steps_threshold,
                 "sae_normalization_eps": sae_normalization_eps,
                 "batch_size": batch_size,
                 "num_epochs": num_epochs,
@@ -525,10 +473,6 @@ def main() -> None:
         logging.info("#### Configuration:")
         logging.info(f"# d_model={d_model}")
         logging.info(f"# n_latents={n_latents}")
-        logging.info(f"# k={k}")
-        logging.info(f"# k_aux={k_aux}")
-        logging.info(f"# aux_loss_coeff={aux_loss_coeff}")
-        logging.info(f"# dead_steps_threshold={dead_steps_threshold}")
         logging.info(f"# sae_normalization_eps={sae_normalization_eps}")
         logging.info(f"# batch_size={batch_size}")
         logging.info(f"# num_epochs={num_epochs}")
@@ -557,11 +501,10 @@ def main() -> None:
         f"b_pre shape mismatch. Expected {(d_model,)}, got {b_pre.shape}"
 
     # Initialize the model
-    logging.info("Initializing Sparse Autoencoder model...")
-    model = TopKSparseAutoencoder(
+    logging.info("Initializing Gated Sparse Autoencoder model...")
+    model = GatedSAE(
         d_model=d_model,
         n_latents=n_latents,
-        k=k,
         b_pre=b_pre,
         dtype=dtype,
         normalize_eps=sae_normalization_eps,
@@ -616,9 +559,6 @@ def main() -> None:
         pin_memory=True,
     )
 
-    dead_steps_threshold = len(train_dataloader) + 1
-    logging.info(f"Dead steps threshold: {dead_steps_threshold}")
-
     val_dataloader = DataLoader(
         val_dataset,
         batch_size=1,
@@ -641,9 +581,6 @@ def main() -> None:
         learning_rate_min=learning_rate_min,
         optimizer_betas=optimizer_betas,
         optimizer_eps=optimizer_eps,
-        k_aux=k_aux,
-        aux_loss_coeff=aux_loss_coeff,
-        dead_steps_threshold=dead_steps_threshold,
         logs_per_epoch=logs_per_epoch,
         checkpoint_dir=args.checkpoint_dir,
         dtype=dtype,
