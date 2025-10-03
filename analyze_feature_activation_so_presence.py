@@ -164,6 +164,49 @@ def summarize(values: List[float]) -> Dict[str, float]:
     }
 
 
+def calculate_auc(target_scores: List[float], control_scores: List[float]) -> float:
+    """不依赖 sklearn，手动计算 AUC-ROC 分数。
+
+    该方法基于 Wilcoxon-Mann-Whitney U 统计量，与标准 AUC-ROC 等价。
+    它能高效处理并正确计算平局（ties）的情况。
+    """
+    if not target_scores or not control_scores:
+        return 0.0
+
+    n_target = len(target_scores)
+    n_control = len(control_scores)
+
+    # 将所有分数与标签（1=target, 0=control）配对并排序
+    all_scores = sorted([(s, 1) for s in target_scores] + [(s, 0) for s in control_scores])
+
+    rank_sum = 0
+    i = 0
+    while i < len(all_scores):
+        # 找到所有得分相同的样本（处理平局）
+        j = i
+        while j < len(all_scores) and all_scores[j][0] == all_scores[i][0]:
+            j += 1
+
+        # 计算这组平局样本的平均秩次 (rank)
+        # 秩是从1开始的，所以索引 i 到 j-1 对应的秩是 i+1 到 j
+        avg_rank = (i + 1 + j) / 2
+
+        # 将平均秩累加到所有 target 样本上
+        for k in range(i, j):
+            _, label = all_scores[k]
+            if label == 1:
+                rank_sum += avg_rank
+
+        i = j
+
+    # 使用 U 统计量公式计算 AUC: AUC = U / (n_target * n_control)
+    # 其中 U = rank_sum - n_target * (n_target + 1) / 2
+    u_statistic = rank_sum - (n_target * (n_target + 1)) / 2
+    auc = u_statistic / (n_target * n_control)
+
+    return float(auc)
+
+
 def main():
     logging.basicConfig(level=logging.INFO, format="[%(asctime)s] [%(levelname)s] %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
     args = parse_args()
@@ -256,6 +299,11 @@ def main():
             "nonzero_any_rate": (
                 float(np.mean(t_nz) - np.mean(c_nz)) if (len(t_nz) > 0 and len(c_nz) > 0) else 0.0
             ),
+        },
+        "auc_roc": {
+            "mean": calculate_auc(t_means, c_means),
+            "max": calculate_auc(t_maxs, c_maxs),
+            "last": calculate_auc(t_lasts, c_lasts),
         },
     }
 
