@@ -165,8 +165,9 @@ class BatchTopKSparseAutoencoder(TopKSparseAutoencoder):
 
     def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
         """
-        Decodes the latent representation, applying either top-k sparsity (for training)
-        or threshold-based sparsity (for inference).
+        Decodes the latent representation.
+        During training (use_threshold=False), it applies batch-level top-k sparsity.
+        During inference (use_threshold=True), it uses a pre-computed threshold for sparsity.
         """
         h = torch.relu(h)
 
@@ -175,11 +176,33 @@ class BatchTopKSparseAutoencoder(TopKSparseAutoencoder):
                 raise ValueError(
                     "Threshold is not set. The threshold must be set to use it during inference"
                 )
+            # Inference uses a pre-computed global threshold
             h_sparse = h * (h > self.threshold)
         else:
-            # Fallback to TopK for training or when threshold is not used
-            topk_values, topk_indices = torch.topk(h, k=k, dim=-1)
-            h_sparse = torch.zeros_like(h).scatter_(1, topk_indices, topk_values)
+            # Training uses true batch-level top-k sparsity
+            batch_size = h.shape[0]
+            if batch_size == 0:
+                h_sparse = torch.zeros_like(h)
+            else:
+                total_activations_to_keep = batch_size * k
+
+                # Find the k-th largest activation value in the entire batch
+                flat_h = h.flatten()
+
+                # Ensure we don't request more elements than available
+                num_elements = flat_h.numel()
+                if total_activations_to_keep > num_elements:
+                    total_activations_to_keep = num_elements
+
+                if total_activations_to_keep == 0:
+                    threshold = float('inf')
+                else:
+                    threshold = torch.topk(
+                        flat_h, k=total_activations_to_keep, sorted=False
+                    ).values.min()
+
+                # Apply the dynamic threshold to get the sparse activations
+                h_sparse = h * (h >= threshold)
 
         # Decode h_sparse and add pre-bias
         reconstructed = self.decoder(h_sparse) + self.b_pre
