@@ -277,6 +277,82 @@ def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
         except Exception as e:
             logging.error(f"Failed to remove checkpoint {checkpoint}: {e}")
 
+
+def calculate_and_set_threshold(
+    model: DistributedDataParallel,
+    dataloader: DataLoader,
+    k: int,
+    dtype: torch.dtype,
+    device: torch.device,
+    rank: int,
+    world_size: int,
+) -> None:
+    """
+    Calculate the average activation threshold over the validation set and set it on the model.
+    """
+    model.eval()
+    local_thresholds = []
+
+    # Each rank calculates thresholds for its portion of the data
+    if rank == 0:
+        progress_bar = tqdm(total=len(dataloader), desc="Calculating Inference Threshold")
+
+    with torch.no_grad():
+        for batch in dataloader:
+            # Each process iterates over its slice of the dataloader
+            batch = batch.squeeze(0).to(dtype).to(device)
+            batch_normalized, _, _ = model.module.preprocess_input(batch)
+
+            x = batch_normalized - model.module.b_pre
+            h = model.module.encoder(x)
+            h = torch.relu(h)
+
+            batch_size = h.shape[0]
+            if batch_size > 0:
+                total_activations_to_keep = batch_size * k
+                flat_h = h.flatten()
+
+                num_elements = flat_h.numel()
+                if total_activations_to_keep > num_elements:
+                    total_activations_to_keep = num_elements
+
+                if total_activations_to_keep > 0:
+                    batch_threshold = torch.topk(
+                        flat_h, k=total_activations_to_keep, sorted=False
+                    ).values.min()
+                    local_thresholds.append(batch_threshold.item())
+
+            if rank == 0:
+                progress_bar.update(1)
+
+    if rank == 0:
+        progress_bar.close()
+
+    # Gather all thresholds at rank 0
+    all_thresholds_list = [None] * world_size
+    dist.gather_object(local_thresholds, all_thresholds_list if rank == 0 else None, dst=0)
+
+    avg_threshold = torch.tensor(0.0, device=device)
+    if rank == 0:
+        # Flatten the list of lists and calculate the average
+        all_thresholds = [item for sublist in all_thresholds_list for item in sublist]
+        if all_thresholds:
+            avg_threshold_val = sum(all_thresholds) / len(all_thresholds)
+            avg_threshold = torch.tensor(avg_threshold_val, device=device)
+            logging.info(f"Calculated average threshold from {len(all_thresholds)} validation batches.")
+        else:
+            logging.warning("No thresholds were calculated from the validation set.")
+
+    # Broadcast the average threshold from rank 0 to all other processes
+    dist.broadcast(avg_threshold, src=0)
+
+    # Set the threshold on the model instance on all processes
+    model.module.threshold.fill_(avg_threshold.item())
+
+    if rank == 0:
+        logging.info(f"Average activation threshold for inference set to: {model.module.threshold.item():.4f}")
+
+
 def train_autoencoder(
     model: TopKSparseAutoencoder,
     train_dataloader: DataLoader,
@@ -287,6 +363,7 @@ def train_autoencoder(
     learning_rate_min: float,
     optimizer_betas: tuple[float, float],
     optimizer_eps: float,
+    k: int,
     k_aux: int,
     aux_loss_coeff: float,
     dead_steps_threshold: int,
@@ -295,6 +372,7 @@ def train_autoencoder(
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
+    world_size: int,
 ) -> TopKSparseAutoencoder:
     """"""
     logging.info("Sending model to device and wrapping in DistributedDataParallel...")
@@ -421,6 +499,18 @@ def train_autoencoder(
         if patience_counter >= early_stopping_patience:
             logging.info(f"Early stopping triggered after {epoch + 1} epochs")
             break
+
+    # After training, calculate and set the inference threshold
+    logging.info("Training finished. Calculating average activation threshold for inference...")
+    calculate_and_set_threshold(
+        model=model,
+        dataloader=val_dataloader,
+        k=k,
+        dtype=dtype,
+        device=device,
+        rank=rank,
+        world_size=world_size,
+    )
 
     return model.module
 
@@ -641,6 +731,7 @@ def main() -> None:
         learning_rate_min=learning_rate_min,
         optimizer_betas=optimizer_betas,
         optimizer_eps=optimizer_eps,
+        k=k,
         k_aux=k_aux,
         aux_loss_coeff=aux_loss_coeff,
         dead_steps_threshold=dead_steps_threshold,
@@ -649,6 +740,7 @@ def main() -> None:
         dtype=dtype,
         device=device,
         rank=rank,
+        world_size=world_size,
     )
 
     # Save the model only on the main process
