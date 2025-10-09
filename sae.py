@@ -149,6 +149,44 @@ class TopKSparseAutoencoder(nn.Module):
         self.h_bias = None
 
 
+class BatchTopKSparseAutoencoder(TopKSparseAutoencoder):
+    def __init__(
+        self,
+        d_model: int,
+        n_latents: int,
+        k: int,
+        b_pre: torch.Tensor,
+        dtype: torch.dtype,
+        normalize_eps: float = 1e-6,
+    ):
+        super().__init__(d_model, n_latents, k, b_pre, dtype, normalize_eps)
+        self.use_threshold = False
+        self.register_buffer("threshold", torch.tensor(-1.0, dtype=self.dtype))
+
+    def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
+        """
+        Decodes the latent representation, applying either top-k sparsity (for training)
+        or threshold-based sparsity (for inference).
+        """
+        h = torch.relu(h)
+
+        if self.use_threshold:
+            if self.threshold < 0:
+                raise ValueError(
+                    "Threshold is not set. The threshold must be set to use it during inference"
+                )
+            h_sparse = h * (h > self.threshold)
+        else:
+            # Fallback to TopK for training or when threshold is not used
+            topk_values, topk_indices = torch.topk(h, k=k, dim=-1)
+            h_sparse = torch.zeros_like(h).scatter_(1, topk_indices, topk_values)
+
+        # Decode h_sparse and add pre-bias
+        reconstructed = self.decoder(h_sparse) + self.b_pre
+
+        return reconstructed, h_sparse
+
+
 def load_sae_model(
     model_path: Path,
     sae_top_k: int,

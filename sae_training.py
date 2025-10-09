@@ -15,7 +15,7 @@ from torch.utils.data import DataLoader, Dataset, Subset
 from torch.utils.data.distributed import DistributedSampler
 from tqdm import tqdm
 
-from sae import TopKSparseAutoencoder
+from sae import BatchTopKSparseAutoencoder, TopKSparseAutoencoder
 from utils.cuda_utils import set_up_cuda
 
 
@@ -558,7 +558,7 @@ def main() -> None:
 
     # Initialize the model
     logging.info("Initializing Sparse Autoencoder model...")
-    model = TopKSparseAutoencoder(
+    model = BatchTopKSparseAutoencoder(
         d_model=d_model,
         n_latents=n_latents,
         k=k,
