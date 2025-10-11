@@ -135,6 +135,13 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("--output_dir", type=Path, default=Path("activation_outs/"))
     parser.add_argument("--dataset_dir", type=Path, default=Path("dataset/"))
     parser.add_argument("--num_samples", type=int, default=None)
+    parser.add_argument(
+        "--layer",
+        type=int,
+        nargs="+",
+        default=[22],
+        help="The layer(s) to capture activations from.",
+    )
     return parser.parse_args()
 
 
@@ -165,7 +172,7 @@ def main() -> None:
     parquet_path = args.dataset_dir / "train-00000-of-00082.parquet"
 
     # Set up configuration
-    store_layer_activ = [11]
+    store_layer_activ = args.layer
     batch_size = 32
     dataloader_num_workers = 8
     dtype = torch.bfloat16
@@ -178,7 +185,9 @@ def main() -> None:
         logging.info("#### Arguments:")
         logging.info(f"# model_dir={args.model_dir}")
         logging.info(f"# output_dir={args.output_dir}")
+        logging.info(f"# dataset_dir={args.dataset_dir}")
         logging.info(f"# num_samples={args.num_samples}")
+        logging.info(f"# layer(s)={args.layer}")
         logging.info("#### Distributed Configuration:")
         logging.info(f"# world_size={world_size}")
         logging.info(f"# rank={rank}")
