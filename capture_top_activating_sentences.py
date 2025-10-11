@@ -155,6 +155,9 @@ def parse_arguments():
     parser.add_argument("--data_dir", type=Path, required=True)
     parser.add_argument("--model_path", type=Path, required=True)
     parser.add_argument("--captured_data_output_dir", type=Path, required=True)
+    parser.add_argument(
+        "--layer", type=int, default=22, help="The layer to process activations from."
+    )
     return parser.parse_args()
 
 
@@ -178,7 +181,7 @@ def main():
     sae_top_k = 64
     sae_normalization_eps = 1e-6
     batch_size = 128
-    layer = 22
+    layer = args.layer
     filename_prefix = f"activations_l{layer}_idx"
     dtype = torch.float32
     device = torch.device("cuda")
@@ -189,6 +192,7 @@ def main():
     logging.info(f"# data_dir={args.data_dir}")
     logging.info(f"# model_path={args.model_path}")
     logging.info(f"# captured_data_output_dir={args.captured_data_output_dir}")
+    logging.info(f"# layer={args.layer}")
     logging.info("#### Configuration:")
     logging.info(f"# top_n_sentences: {top_n_sentences}")
     logging.info(f"# sae_top_k: {sae_top_k}")
