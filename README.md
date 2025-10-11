@@ -86,6 +86,7 @@ num_samples 是训练数据集的样本数量，每个 parquet 文件一共 3749
 ```bash
 ln -s /root/autodl-fs/consolidated.00.pth /root/saint/llama_3.2-3B_model/original/consolidated.00.pth
 ln -s /root/lanyun-tmp/consolidated.00.pth /root/saint/llama_3.2-3B_model/original/consolidated.00.pth
+find activation_outputs/ -type f -name "*.pt" -print0 | sort -z | xargs -0 sha256sum | sha256sum
 
 cd saint
 eval $(poetry env activate)
@@ -98,6 +99,9 @@ torchrun --nproc_per_node=1 \
     --num_samples 50000
 ```
 
+l11 n50000 2b100484dcbf42f5d63630295d06d955c034a613c938d58256f73edcea3e2ac1
+l22 n50000 5ad410e97a7767104b6173bc97c76ac5cc163d73f0e62db7b538be2b51b2da4c
+
 ## SAE 训练的数据预处理
 
 num_processes 需要根据机器实际CPU核心数和内存情况合理设置这个参数。一般设置为逻辑核心的一半数量作为起点。
@@ -105,6 +109,8 @@ num_processes 需要根据机器实际CPU核心数和内存情况合理设置这
 num_processes 10，batch_size 2048，CPU：Intel(R) Xeon(R) Gold 5418Y * 10核 用时：6h
 
 ```bash
+find activation_outputs_batched/ -type f -name "*.pt" -print0 | sort -z | xargs -0 sha256sum | sha256sum
+
 cd saint
 eval $(poetry env activate)
 rm -rf activation_outputs_batched
@@ -113,6 +119,7 @@ python sae_preprocessing.py \
     --num_processes 10 \
     --batch_size 2048
 ```
+l11 n50000 b2048 5db69a892f4567425cc5215e1968bfbbf961a94725227860e5db6b447e62b975
 
 ## 训练 SAE 模型
 
