@@ -95,7 +95,8 @@ torchrun --nproc_per_node=1 \
     --model_dir llama_3.2-3B_model/original \
     --output_dir activation_outputs/ \
     --dataset_dir /root/lanyun-tmp \
-    --num_samples 50000
+    --num_samples 50000 \
+    --layer 22
 ```
 
 ## SAE 训练的数据预处理
@@ -186,7 +187,8 @@ eval $(poetry env activate)
 python capture_top_activating_sentences.py \
     --data_dir ./activation_outputs \
     --model_path ./trained_sae.pt \
-    --captured_data_output_dir ./top_activating_sentences
+    --captured_data_output_dir ./top_activating_sentences \
+    --layer 22
 ```
 
 ## 构建并发送批次以供 llm api 解释，获取语义解释
