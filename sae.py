@@ -216,7 +216,7 @@ def load_sae_model(
     sae_normalization_eps: float,
     device: torch.device,
     dtype: torch.dtype,
-) -> TopKSparseAutoencoder:
+) -> BatchTopKSparseAutoencoder:
     """"""
     logging.info(f"Loading TopK SAE model weights and config from: {model_path}")
     state_dict = torch.load(
@@ -229,7 +229,7 @@ def load_sae_model(
     n_latents = state_dict["encoder.weight"].shape[0]
 
     logging.info("Initializing TopK SAE model and loading state dict...")
-    model = TopKSparseAutoencoder(
+    model = BatchTopKSparseAutoencoder(
         d_model=d_model,
         n_latents=n_latents,
         k=sae_top_k,
