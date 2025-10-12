@@ -9,6 +9,8 @@ from torch.utils.data import DataLoader, Dataset
 from tqdm import tqdm
 
 from sae import TopKSparseAutoencoder, load_sae_model
+# from sae_exp11_dense import load_sae_model
+# from sae_batchtopk import load_sae_model
 from utils.cuda_utils import set_up_cuda
 
 

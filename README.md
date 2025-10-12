@@ -180,6 +180,7 @@ GPU 显存需求：17GB
 CPU 内存需求：5GB
 
 视情况需要修改 capture_top_activating_sentences.py 文件中 layer 参数。
+要修改 capture_top_activating_sentences.py 里面的 from sae import load_sae_model 如果使用了不同的架构。
 
 ```bash
 cd saint
@@ -188,7 +189,13 @@ python capture_top_activating_sentences.py \
     --data_dir ./activation_outputs \
     --model_path ./trained_sae.pt \
     --captured_data_output_dir ./top_activating_sentences \
-    --layer 22
+    --layer 11
+
+python capture_top_activating_sentences.py \
+    --data_dir ./activation_outputs \
+    --model_path ./trained_sae-batchtopk-l11.pt \
+    --captured_data_output_dir ./top_activating_sentences \
+    --layer 11
 ```
 
 ## 构建并发送批次以供 llm api 解释，获取语义解释
@@ -294,6 +301,8 @@ python create_ablation_datasets_from_top_sentences.py \
 
 baseline 56750 为 太空探索
 exp11 为 8654 为 太空探索， 27367 为 航空航天
+
+重要：要修改 run_ablation_experiment.py 里面的 from sae import load_sae_model 如果使用了不同的架构。
 
 ```bash
 cd saint
@@ -453,7 +462,7 @@ eval $(poetry env activate)
 # 创建诱导数据集
 python create_so_induction_dataset.py --num_prompts 200 --output_path ./ablation_datasets/so_induction_prompts.jsonl
 
-# 评估 dense-l11
+# 评估 dense-l11 重要：要修改 evaluate_so_induction_ablation.py 里面的 from sae import load_sae_model 如果使用了不同的架构。
 python evaluate_so_induction_ablation.py --llama_model_dir ./llama_3.2-3B_model/original --sae_model_path ./trained_sae-dense-l11.pt --sae_layer_idx 11 --prompts_path ./ablation_datasets/so_induction_prompts.jsonl --ablation_feature_indices 28178 --max_new_tokens 24 --temperature 0.7 --top_p 0.9 --batch_size 32 --save_outputs --output_dir ./ablation_datasets/so_eval-dense-l11
 ```
 
@@ -467,6 +476,7 @@ eval $(poetry env activate)
 
 python create_so_presence_datasets.py --dataset_path /root/lanyun-tmp/train-00000-of-00082.parquet --num_target 200 --num_control 200 --shuffle --output_dir ./ablation_datasets/so_presence
 
+# 重要：要修改 analyze_feature_activation_so_presence.py 里面的 from sae import load_sae_model 如果使用了不同的架构。
 python analyze_feature_activation_so_presence.py --llama_model_dir ./llama_3.2-3B_model/original --sae_model_path ./trained_sae-dense-l11.pt --sae_layer_idx 11 --feature_index 28178 --so_presence_dir ./ablation_datasets/so_presence --output_path ./ablation_datasets/so_presence/feature_activation_summary.json --save_per_sample
 ```
 
