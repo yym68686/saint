@@ -11,8 +11,7 @@ import torch
 
 from llama_3_inference import Llama3Inference
 
-from sae_exp11_dense import load_sae_model as _load_sae_model
-# from sae import load_sae_model as _load_sae_model
+from sae_loader import load_sae_model as _load_sae_model
 
 # 尝试使用项目内的统一种子设置函数，若不可用则退化到基础实现
 try:

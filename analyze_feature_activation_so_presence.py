@@ -13,11 +13,7 @@ from llama_3.args import ModelArgs
 from llama_3.model_text_only import Transformer
 from llama_3.tokenizer import Tokenizer
 
-# 优先使用 dense SAE 加载器，不可用则回退标准 SAE
-try:
-    from sae_exp11_dense import load_sae_model as _load_sae_model
-except Exception:
-    from sae import load_sae_model as _load_sae_model
+from sae_loader import load_sae_model as _load_sae_model
 
 
 def parse_args() -> argparse.Namespace:

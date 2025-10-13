@@ -180,7 +180,37 @@ GPU 显存需求：17GB
 CPU 内存需求：5GB
 
 视情况需要修改 capture_top_activating_sentences.py 文件中 layer 参数。
-要修改 capture_top_activating_sentences.py 里面的 from sae import load_sae_model 如果使用了不同的架构。
+修改
+
+### 动态选择 SAE 架构
+
+为了方便在不同的SAE架构（如`topk`、`dense`、`batchtopk`）之间切换，本项目引入了通过环境变量动态加载SAE模型的机制。你无需再手动修改代码中的`import`语句，只需在运行脚本前设置`SAE_ARCHITECTURE`环境变量即可。
+
+**使用方法：**
+
+在执行任何需要加载SAE模型的脚本（如`run_ablation_experiment.py`或`capture_top_activating_sentences.py`）之前，通过`export`命令设置环境变量：
+
+```bash
+# 加载 sae_exp11_dense.py 中的模型
+export SAE_ARCHITECTURE=dense
+
+# 加载 sae_batchtopk.py 中的模型
+export SAE_ARCHITECTURE=batchtopk
+
+# 加载默认的 sae.py 中的模型（默认行为）
+export SAE_ARCHITECTURE=topk
+```
+
+设置后，所有脚本将自动从指定模块加载`load_sae_model`函数。如果未设置该环境变量，系统将默认使用`sae.py`（topk）。
+
+例如，要使用`dense`架构运行特征消融实验：
+
+```bash
+export SAE_ARCHITECTURE=dense
+python run_ablation_experiment.py --llama_model_dir ... --sae_model_path ...
+```
+
+在同一次会话中，只需设置一次环境变量即可。
 
 ```bash
 cd saint

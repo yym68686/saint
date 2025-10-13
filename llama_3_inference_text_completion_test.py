@@ -6,7 +6,7 @@ from pathlib import Path
 import torch
 
 from llama_3_inference import Llama3Inference
-from sae import load_sae_model
+from sae_loader import load_sae_model
 from utils.cuda_utils import set_torch_seed_for_inference
 
 

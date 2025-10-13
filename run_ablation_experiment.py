@@ -10,8 +10,7 @@ import math
 # Use the correct model definition
 from llama_3.model_text_only import Transformer, ModelArgs
 from llama_3.tokenizer import Tokenizer
-# from sae import load_sae_model
-from sae_exp11_dense import load_sae_model
+from sae_loader import load_sae_model
 
 # Suppress tokenizer logs
 logging.getLogger("saint.llama_3.tokenizer").setLevel(logging.WARNING)

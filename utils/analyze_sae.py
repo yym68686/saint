@@ -1,6 +1,6 @@
 import torch
 import matplotlib.pyplot as plt
-from sae import load_sae_model
+from sae_loader import load_sae_model
 from pathlib import Path
 import numpy as np
 
