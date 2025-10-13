@@ -216,6 +216,7 @@ def load_sae_model(
     sae_normalization_eps: float,
     device: torch.device,
     dtype: torch.dtype,
+    use_threshold: bool = False,
 ) -> BatchTopKSparseAutoencoder:
     """"""
     logging.info(f"Loading TopK SAE model weights and config from: {model_path}")
@@ -243,5 +244,9 @@ def load_sae_model(
     logging.info(f"Moving model to device {device} and setting to eval mode...")
     model.to(device)
     model.eval()
+
+    if use_threshold:
+        model.use_threshold = True
+        logging.info(f"Model threshold for inference set to: {model.threshold.item()}")
 
     return model

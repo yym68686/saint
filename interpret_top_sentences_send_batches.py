@@ -3,6 +3,9 @@ import logging
 import os
 from pathlib import Path
 
+from dotenv import load_dotenv
+load_dotenv()
+
 import anthropic
 import yaml
 from anthropic.types.beta.message_create_params import MessageCreateParamsNonStreaming

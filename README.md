@@ -198,6 +198,13 @@ python capture_top_activating_sentences.py \
     --model_path ./trained_sae.pt \
     --captured_data_output_dir ./top_activating_sentences \
     --layer 22
+
+# batchtopk-l11
+python capture_top_activating_sentences.py \
+    --data_dir ./activation_outputs \
+    --model_path ./trained_sae-batchtopk-l11.pt \
+    --captured_data_output_dir ./top_activating_sentences \
+    --layer 11
 ```
 
 ## 构建并发送批次以供 llm api 解释，获取语义解释
@@ -213,6 +220,12 @@ python interpret_top_sentences_send_batches.py \
     --top_sentences_dict_filepath ./top_activating_sentences/top_sentences_mean.yaml \
     --response_ids_filepath ./top_activating_sentences/response_ids.yaml \
     --dataset_dir /root/autodl-fs
+
+# batchtopk-l11
+python interpret_top_sentences_send_batches.py \
+    --top_sentences_dict_filepath ./top_activating_sentences/top_sentences_mean.yaml \
+    --response_ids_filepath ./top_activating_sentences/response_ids.yaml \
+    --dataset_dir /root/lanyun-tmp
 ```
 
 ## 获取解释结果

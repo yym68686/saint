@@ -211,6 +211,7 @@ def main():
         sae_normalization_eps=sae_normalization_eps,
         device=device,
         dtype=dtype,
+        use_threshold=True,
     )
 
     logging.info("Creating SequenceActivation Dataset and Dataloader...")

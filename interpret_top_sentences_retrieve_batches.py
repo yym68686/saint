@@ -3,6 +3,9 @@ import logging
 import os
 from pathlib import Path
 
+from dotenv import load_dotenv
+load_dotenv()
+
 import anthropic
 import yaml
 from anthropic.types.beta.messages.beta_message_batch_individual_response import (
