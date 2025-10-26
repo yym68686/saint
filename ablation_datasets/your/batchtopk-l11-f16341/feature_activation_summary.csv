@@ -1,0 +1,1027 @@
+group,index,text,agg,val
+target,0,It takes you 30 min.,mean,28.938400268554688
+target,0,It takes you 30 min.,max,60.41825866699219
+target,0,It takes you 30 min.,last,43.05377960205078
+target,1,"When you are there, you have a lot more chances to score.",mean,25.403135299682617
+target,1,"When you are there, you have a lot more chances to score.",max,52.814659118652344
+target,1,"When you are there, you have a lot more chances to score.",last,15.61502742767334
+target,2,You’ll be in a better position to make informed decisions.,mean,30.827777862548828
+target,2,You’ll be in a better position to make informed decisions.,max,44.55995178222656
+target,2,You’ll be in a better position to make informed decisions.,last,30.16690444946289
+target,3,You only impinge on your eligibility when you represent Australia.,mean,26.53343391418457
+target,3,You only impinge on your eligibility when you represent Australia.,max,48.925048828125
+target,3,You only impinge on your eligibility when you represent Australia.,last,22.785675048828125
+target,4,You can form your own view.,mean,22.881534576416016
+target,4,You can form your own view.,max,38.1533203125
+target,4,You can form your own view.,last,0.0
+target,5,You only have aso you must be quick and precise.,mean,25.472347259521484
+target,5,You only have aso you must be quick and precise.,max,48.925048828125
+target,5,You only have aso you must be quick and precise.,last,24.60199546813965
+target,6,You need to make the most of it.,mean,26.941125869750977
+target,6,You need to make the most of it.,max,49.807682037353516
+target,6,You need to make the most of it.,last,29.494060516357422
+target,7,The conclusion is that you’re not very secure at all.,mean,23.370437622070312
+target,7,The conclusion is that you’re not very secure at all.,max,57.32707214355469
+target,7,The conclusion is that you’re not very secure at all.,last,26.63438606262207
+target,8,This way you’ll also get to personalize it.,mean,19.190324783325195
+target,8,This way you’ll also get to personalize it.,max,48.61113739013672
+target,8,This way you’ll also get to personalize it.,last,11.508673667907715
+target,9,You are living without it: you are on vacation.,mean,22.845623016357422
+target,9,You are living without it: you are on vacation.,max,41.444000244140625
+target,9,You are living without it: you are on vacation.,last,19.41465950012207
+target,10,"You’re also going to have to remember to eat, because you probably won’t get as hungry as normal.",mean,23.369157791137695
+target,10,"You’re also going to have to remember to eat, because you probably won’t get as hungry as normal.",max,54.629241943359375
+target,10,"You’re also going to have to remember to eat, because you probably won’t get as hungry as normal.",last,18.346437454223633
+target,11,You get to choose how he changes.,mean,19.436582565307617
+target,11,You get to choose how he changes.,max,46.20338439941406
+target,11,You get to choose how he changes.,last,0.0
+target,12,"However, you can’t communicate if you can’t express yourself!",mean,20.262840270996094
+target,12,"However, you can’t communicate if you can’t express yourself!",max,51.18495559692383
+target,12,"However, you can’t communicate if you can’t express yourself!",last,0.0
+target,13,What you really want to do is *drive* the car.,mean,21.679309844970703
+target,13,What you really want to do is *drive* the car.,max,52.43635940551758
+target,13,What you really want to do is *drive* the car.,last,17.391281127929688
+target,14,"Even before you save yourself, you should save others.",mean,18.578033447265625
+target,14,"Even before you save yourself, you should save others.",max,64.42488861083984
+target,14,"Even before you save yourself, you should save others.",last,0.0
+target,15,"You can't even be sick, or take vacation.""",mean,20.4837703704834
+target,15,"You can't even be sick, or take vacation.""",max,35.72183609008789
+target,15,"You can't even be sick, or take vacation.""",last,0.0
+target,16,Because you have your copy of his actions that you can uses against him.,mean,16.017744064331055
+target,16,Because you have your copy of his actions that you can uses against him.,max,43.138587951660156
+target,16,Because you have your copy of his actions that you can uses against him.,last,26.253175735473633
+target,17,"If you do criticize him, you’re out.",mean,18.07952117919922
+target,17,"If you do criticize him, you’re out.",max,33.971317291259766
+target,17,"If you do criticize him, you’re out.",last,0.0
+target,18,"When you do get paid for doing what you love, you appreciate it a lot more.",mean,18.216154098510742
+target,18,"When you do get paid for doing what you love, you appreciate it a lot more.",max,52.763763427734375
+target,18,"When you do get paid for doing what you love, you appreciate it a lot more.",last,0.0
+target,19,"You need to make enough money to do things like that.""",mean,20.911035537719727
+target,19,"You need to make enough money to do things like that.""",max,49.904624938964844
+target,19,"You need to make enough money to do things like that.""",last,0.0
+target,20,"), but you probably have to at least genuinely be curious to find out if you like it.",mean,20.68511199951172
+target,20,"), but you probably have to at least genuinely be curious to find out if you like it.",max,49.558380126953125
+target,20,"), but you probably have to at least genuinely be curious to find out if you like it.",last,11.258182525634766
+target,21,If you're confident then you get the best of you.,mean,15.44318962097168
+target,21,If you're confident then you get the best of you.,max,33.938453674316406
+target,21,If you're confident then you get the best of you.,last,0.0
+target,22,When you are in full plate armour YOU ARE A LIVING TANK!,mean,15.409408569335938
+target,22,When you are in full plate armour YOU ARE A LIVING TANK!,max,52.814659118652344
+target,22,When you are in full plate armour YOU ARE A LIVING TANK!,last,0.0
+target,23,You need to keep learning to stay marketable.,mean,19.899063110351562
+target,23,You need to keep learning to stay marketable.,max,49.807682037353516
+target,23,You need to keep learning to stay marketable.,last,0.0
+target,24,and you want your twitch stream link on your twitch stream?,mean,10.920944213867188
+target,24,and you want your twitch stream link on your twitch stream?,max,36.96514129638672
+target,24,and you want your twitch stream link on your twitch stream?,last,0.0
+target,25,You have it written on your birth certificate before you can even think.,mean,23.5767879486084
+target,25,You have it written on your birth certificate before you can even think.,max,40.153446197509766
+target,25,You have it written on your birth certificate before you can even think.,last,17.20672607421875
+target,26,You now have virtually no chance of selling your widgets at 2 BTC.,mean,20.278594970703125
+target,26,You now have virtually no chance of selling your widgets at 2 BTC.,max,46.928504943847656
+target,26,You now have virtually no chance of selling your widgets at 2 BTC.,last,12.595955848693848
+target,27,Your values should never be in competition with your interests.,mean,14.923746109008789
+target,27,Your values should never be in competition with your interests.,max,34.70718765258789
+target,27,Your values should never be in competition with your interests.,last,14.01352310180664
+target,28,"If you can reach the party faithful, you’re in good shape.",mean,15.995614051818848
+target,28,"If you can reach the party faithful, you’re in good shape.",max,33.938453674316406
+target,28,"If you can reach the party faithful, you’re in good shape.",last,15.247488021850586
+target,29,You do not have to continue to adhere to the Catholic ways of life to believe what you believe.,mean,18.264049530029297
+target,29,You do not have to continue to adhere to the Catholic ways of life to believe what you believe.,max,51.53459930419922
+target,29,You do not have to continue to adhere to the Catholic ways of life to believe what you believe.,last,13.030683517456055
+target,30,"You need to take care in handling them, precautions, as you don't know.",mean,18.86297035217285
+target,30,"You need to take care in handling them, precautions, as you don't know.",max,49.961692810058594
+target,30,"You need to take care in handling them, precautions, as you don't know.",last,0.0
+target,31,"No matter who you are in this league, you can’t do it on your own.",mean,15.781587600708008
+target,31,"No matter who you are in this league, you can’t do it on your own.",max,46.51688766479492
+target,31,"No matter who you are in this league, you can’t do it on your own.",last,0.0
+target,32,You will start by simply tracking people’s hand gestures.,mean,18.432788848876953
+target,32,You will start by simply tracking people’s hand gestures.,max,49.75669860839844
+target,32,You will start by simply tracking people’s hand gestures.,last,26.84256362915039
+target,33,You’re going to be under huge amounts of pressure to keep the relationship secret.,mean,22.7864933013916
+target,33,You’re going to be under huge amounts of pressure to keep the relationship secret.,max,42.73381042480469
+target,33,You’re going to be under huge amounts of pressure to keep the relationship secret.,last,19.25122833251953
+target,34,"You’re all invited, and you’ll have the best time.",mean,20.27436637878418
+target,34,"You’re all invited, and you’ll have the best time.",max,42.557579040527344
+target,34,"You’re all invited, and you’ll have the best time.",last,16.017549514770508
+target,35,After that date you’ll pay a penalty fee.,mean,14.113512992858887
+target,35,After that date you’ll pay a penalty fee.,max,43.77570343017578
+target,35,After that date you’ll pay a penalty fee.,last,23.85813331604004
+target,36,And it also means you're far less likely to end up changing nappies nine months later.,mean,18.152494430541992
+target,36,And it also means you're far less likely to end up changing nappies nine months later.,max,58.03350067138672
+target,36,And it also means you're far less likely to end up changing nappies nine months later.,last,13.287649154663086
+target,37,"And, you feel you can’t leave because you have a pension, health insurance, and job security.",mean,18.10013198852539
+target,37,"And, you feel you can’t leave because you have a pension, health insurance, and job security.",max,53.796287536621094
+target,37,"And, you feel you can’t leave because you have a pension, health insurance, and job security.",last,28.237125396728516
+target,38,You get a decent amount of plays from leveling up so you are not forced to buy them.,mean,20.221933364868164
+target,38,You get a decent amount of plays from leveling up so you are not forced to buy them.,max,48.38116455078125
+target,38,You get a decent amount of plays from leveling up so you are not forced to buy them.,last,24.253582000732422
+target,39,You will be able to enjoy the journey from the comfort of you warm arm chair!,mean,14.373234748840332
+target,39,You will be able to enjoy the journey from the comfort of you warm arm chair!,max,49.82281494140625
+target,39,You will be able to enjoy the journey from the comfort of you warm arm chair!,last,0.0
+target,40,"Even without this, you still have access to the whole of Google Play to fulfil your needs, of course.",mean,17.586589813232422
+target,40,"Even without this, you still have access to the whole of Google Play to fulfil your needs, of course.",max,53.42091369628906
+target,40,"Even without this, you still have access to the whole of Google Play to fulfil your needs, of course.",last,15.418909072875977
+target,41,So you're much more grounded in the world for this game.,mean,16.669429779052734
+target,41,So you're much more grounded in the world for this game.,max,41.027896881103516
+target,41,So you're much more grounded in the world for this game.,last,19.127099990844727
+target,42,"When you give your true self, a deeper intimacy than you ever thought possible will leave you spellbound.",mean,15.065595626831055
+target,42,"When you give your true self, a deeper intimacy than you ever thought possible will leave you spellbound.",max,52.763763427734375
+target,42,"When you give your true self, a deeper intimacy than you ever thought possible will leave you spellbound.",last,0.0
+target,43,You need join no silly feminist herd to prove yourself.,mean,18.35546875
+target,43,You need join no silly feminist herd to prove yourself.,max,49.904624938964844
+target,43,You need join no silly feminist herd to prove yourself.,last,13.438033103942871
+target,44,"“For the rest of your life, you might not be broke,” says Luis, “but you can be broken in spirit.",mean,15.526273727416992
+target,44,"“For the rest of your life, you might not be broke,” says Luis, “but you can be broken in spirit.",max,44.79135513305664
+target,44,"“For the rest of your life, you might not be broke,” says Luis, “but you can be broken in spirit.",last,0.0
+target,45,You also want to be sure the doors you install will keep your family and home safe.,mean,17.047605514526367
+target,45,You also want to be sure the doors you install will keep your family and home safe.,max,51.01856231689453
+target,45,You also want to be sure the doors you install will keep your family and home safe.,last,12.121926307678223
+target,46,"However, note that you won't be able to access any of your scraps or testimonials after you've deleted your account.",mean,15.068757057189941
+target,46,"However, note that you won't be able to access any of your scraps or testimonials after you've deleted your account.",max,47.31505584716797
+target,46,"However, note that you won't be able to access any of your scraps or testimonials after you've deleted your account.",last,0.0
+target,47,When you’re ready to launch your next project you’ll need somewhere to deploy it.,mean,12.503299713134766
+target,47,When you’re ready to launch your next project you’ll need somewhere to deploy it.,max,52.763763427734375
+target,47,When you’re ready to launch your next project you’ll need somewhere to deploy it.,last,0.0
+target,48,"And because you don’t have to move the Magus right away, you can spend ages exploring the regions.",mean,14.220512390136719
+target,48,"And because you don’t have to move the Magus right away, you can spend ages exploring the regions.",max,47.960514068603516
+target,48,"And because you don’t have to move the Magus right away, you can spend ages exploring the regions.",last,0.0
+target,49,Repair Yards improve your ability to refit your fleet.,mean,15.630746841430664
+target,49,Repair Yards improve your ability to refit your fleet.,max,53.75305938720703
+target,49,Repair Yards improve your ability to refit your fleet.,last,0.0
+target,50,"Once you are sentient, or are subjectively aware, you have one moral right — the right not to be used as a resource.",mean,15.275291442871094
+target,50,"Once you are sentient, or are subjectively aware, you have one moral right — the right not to be used as a resource.",max,50.47969055175781
+target,50,"Once you are sentient, or are subjectively aware, you have one moral right — the right not to be used as a resource.",last,13.527114868164062
+target,51,"But, you are also going to have the highest boost from PV during that same time under those same conditions.",mean,15.737056732177734
+target,51,"But, you are also going to have the highest boost from PV during that same time under those same conditions.",max,51.491249084472656
+target,51,"But, you are also going to have the highest boost from PV during that same time under those same conditions.",last,0.0
+target,52,"That’s where you have the advantage because as a white belt, you can develop your skills much faster than a black belt.",mean,17.298152923583984
+target,52,"That’s where you have the advantage because as a white belt, you can develop your skills much faster than a black belt.",max,54.185089111328125
+target,52,"That’s where you have the advantage because as a white belt, you can develop your skills much faster than a black belt.",last,22.419038772583008
+target,53,You do not tell them you are smart because you use this language.,mean,19.58879280090332
+target,53,You do not tell them you are smart because you use this language.,max,51.40669631958008
+target,53,You do not tell them you are smart because you use this language.,last,16.946910858154297
+target,54,It is not an easy job and you will take massive losses trying to carry it out.,mean,15.3163480758667
+target,54,It is not an easy job and you will take massive losses trying to carry it out.,max,50.20578384399414
+target,54,It is not an easy job and you will take massive losses trying to carry it out.,last,23.701520919799805
+target,55,You have to make sure to have good proportions while still maintaining the style.,mean,16.748783111572266
+target,55,You have to make sure to have good proportions while still maintaining the style.,max,41.515830993652344
+target,55,You have to make sure to have good proportions while still maintaining the style.,last,0.0
+target,56,"f you do not have time to perform the task in the first phase, you can continue during the second phase.",mean,9.922517776489258
+target,56,"f you do not have time to perform the task in the first phase, you can continue during the second phase.",max,38.87409973144531
+target,56,"f you do not have time to perform the task in the first phase, you can continue during the second phase.",last,16.93081283569336
+target,57,"You are going to love it.” You open it slowly, as everyone watches.",mean,14.84461498260498
+target,57,"You are going to love it.” You open it slowly, as everyone watches.",max,40.25263977050781
+target,57,"You are going to love it.” You open it slowly, as everyone watches.",last,0.0
+target,58,"But when you are in the role of a caregiver, you have to allow the patient to feel what they feel.",mean,14.168139457702637
+target,58,"But when you are in the role of a caregiver, you have to allow the patient to feel what they feel.",max,55.193702697753906
+target,58,"But when you are in the role of a caregiver, you have to allow the patient to feel what they feel.",last,0.0
+target,59,Maybe for a few years you are concentrating in your career and then in your family.,mean,12.000953674316406
+target,59,Maybe for a few years you are concentrating in your career and then in your family.,max,39.48286056518555
+target,59,Maybe for a few years you are concentrating in your career and then in your family.,last,15.423397064208984
+target,60,This means you will be able to help shape future designs and functionalities of your distro besides getting technical help from the community.,mean,12.384512901306152
+target,60,This means you will be able to help shape future designs and functionalities of your distro besides getting technical help from the community.,max,57.53927993774414
+target,60,This means you will be able to help shape future designs and functionalities of your distro besides getting technical help from the community.,last,13.479608535766602
+target,61,You really get the vibe that you don't want to screw around with him or disappoint him.,mean,16.17405128479004
+target,61,You really get the vibe that you don't want to screw around with him or disappoint him.,max,47.59098815917969
+target,61,You really get the vibe that you don't want to screw around with him or disappoint him.,last,13.909257888793945
+target,62,Starting your own fire is also optional because you’ll likely be staying indoors anyway.,mean,11.822279930114746
+target,62,Starting your own fire is also optional because you’ll likely be staying indoors anyway.,max,41.27198791503906
+target,62,Starting your own fire is also optional because you’ll likely be staying indoors anyway.,last,0.0
+target,63,You will be allowed to add any 50 coins if you backed the earlier Hegemonic campaign.,mean,13.514678955078125
+target,63,You will be allowed to add any 50 coins if you backed the earlier Hegemonic campaign.,max,49.82281494140625
+target,63,You will be allowed to add any 50 coins if you backed the earlier Hegemonic campaign.,last,0.0
+target,64,One of the things you do when you buy a competitor is you consolidate operations.,mean,12.191474914550781
+target,64,One of the things you do when you buy a competitor is you consolidate operations.,max,48.66193389892578
+target,64,One of the things you do when you buy a competitor is you consolidate operations.,last,0.0
+target,65,"If you're not in a queue, you have to activate modtools, by click on the tab.",mean,10.297986030578613
+target,65,"If you're not in a queue, you have to activate modtools, by click on the tab.",max,33.945587158203125
+target,65,"If you're not in a queue, you have to activate modtools, by click on the tab.",last,0.0
+target,66,"If you both have Qus, you can have a joint listening section.",mean,12.979547500610352
+target,66,"If you both have Qus, you can have a joint listening section.",max,33.938453674316406
+target,66,"If you both have Qus, you can have a joint listening section.",last,14.202784538269043
+target,67,"As a result you learn to manipulate people around you into feeling better, so that you can feel safe.",mean,12.923583030700684
+target,67,"As a result you learn to manipulate people around you into feeling better, so that you can feel safe.",max,49.270442962646484
+target,67,"As a result you learn to manipulate people around you into feeling better, so that you can feel safe.",last,20.761550903320312
+target,68,"You can qualify to be a citizen after a few years.”
+
+4.",mean,11.488558769226074
+target,68,"You can qualify to be a citizen after a few years.”
+
+4.",max,35.471492767333984
+target,68,"You can qualify to be a citizen after a few years.”
+
+4.",last,0.0
+target,69,"You can now look down to the lowest point you can, as fast as you can.",mean,9.990621566772461
+target,69,"You can now look down to the lowest point you can, as fast as you can.",max,35.58649444580078
+target,69,"You can now look down to the lowest point you can, as fast as you can.",last,13.433110237121582
+target,70,allowing you to choose between the passengers with whom you share common friends or similar interests making your travel experience less creepy.,mean,11.602242469787598
+target,70,allowing you to choose between the passengers with whom you share common friends or similar interests making your travel experience less creepy.,max,51.825870513916016
+target,70,allowing you to choose between the passengers with whom you share common friends or similar interests making your travel experience less creepy.,last,0.0
+target,71,"Office Entry
+
+Your entry tells others how you expect to be treated.",mean,10.734501838684082
+target,71,"Office Entry
+
+Your entry tells others how you expect to be treated.",max,38.522403717041016
+target,71,"Office Entry
+
+Your entry tells others how you expect to be treated.",last,18.643362045288086
+target,72,"By relying on this inner resource, your need to cling to others will lift.",mean,11.184563636779785
+target,72,"By relying on this inner resource, your need to cling to others will lift.",max,52.34135437011719
+target,72,"By relying on this inner resource, your need to cling to others will lift.",last,18.84341049194336
+target,73,"Until you are ready to embrace all the different implications and changes that will happen once you live your dream, you will not take action to make it come true.",mean,12.516683578491211
+target,73,"Until you are ready to embrace all the different implications and changes that will happen once you live your dream, you will not take action to make it come true.",max,53.87725067138672
+target,73,"Until you are ready to embrace all the different implications and changes that will happen once you live your dream, you will not take action to make it come true.",last,0.0
+target,74,"When you cannot yet vote, the fact that your friends’ parents are Republicans means little.",mean,11.783336639404297
+target,74,"When you cannot yet vote, the fact that your friends’ parents are Republicans means little.",max,52.763763427734375
+target,74,"When you cannot yet vote, the fact that your friends’ parents are Republicans means little.",last,16.21535873413086
+target,75,"Because you're collecting your propellant from the Martian atmosphere you're not limited by having to take propellant out from Earth.""",mean,12.984994888305664
+target,75,"Because you're collecting your propellant from the Martian atmosphere you're not limited by having to take propellant out from Earth.""",max,45.096595764160156
+target,75,"Because you're collecting your propellant from the Martian atmosphere you're not limited by having to take propellant out from Earth.""",last,0.0
+target,76,"That is because ""you don't know what you don't know"".",mean,14.995195388793945
+target,76,"That is because ""you don't know what you don't know"".",max,40.533668518066406
+target,76,"That is because ""you don't know what you don't know"".",last,15.864641189575195
+target,77,"If you don't, you'll find yourself in the third round, running out of gas while he's still walking forward, throwing punches.",mean,11.67568302154541
+target,77,"If you don't, you'll find yourself in the third round, running out of gas while he's still walking forward, throwing punches.",max,40.433128356933594
+target,77,"If you don't, you'll find yourself in the third round, running out of gas while he's still walking forward, throwing punches.",last,0.0
+target,78,"But if you expend most of your effort dealing with messes, you won’t have time to put better apparatus in place.",mean,12.940962791442871
+target,78,"But if you expend most of your effort dealing with messes, you won’t have time to put better apparatus in place.",max,40.14717102050781
+target,78,"But if you expend most of your effort dealing with messes, you won’t have time to put better apparatus in place.",last,18.446678161621094
+target,79,"As you enter into the specific phase, you want to get your body used to the muscular demands of running the full volume of the race at your goal pace.",mean,11.702701568603516
+target,79,"As you enter into the specific phase, you want to get your body used to the muscular demands of running the full volume of the race at your goal pace.",max,46.458045959472656
+target,79,"As you enter into the specific phase, you want to get your body used to the muscular demands of running the full volume of the race at your goal pace.",last,0.0
+target,80,"If you shut down quickly enough, you may be able to avoid downloading the mandatory 2 gigs of political banners on every blogger's website.",mean,11.611889839172363
+target,80,"If you shut down quickly enough, you may be able to avoid downloading the mandatory 2 gigs of political banners on every blogger's website.",max,38.932151794433594
+target,80,"If you shut down quickly enough, you may be able to avoid downloading the mandatory 2 gigs of political banners on every blogger's website.",last,0.0
+target,81,"However, you can still type commands if you wish, which is required for some weird stuff probably.",mean,11.043715476989746
+target,81,"However, you can still type commands if you wish, which is required for some weird stuff probably.",max,51.2313232421875
+target,81,"However, you can still type commands if you wish, which is required for some weird stuff probably.",last,11.919512748718262
+target,82,"You can't change the way you type and even if you did, they'll simply profile you again until the confidence level reaches acceptable limits.",mean,10.232481002807617
+target,82,"You can't change the way you type and even if you did, they'll simply profile you again until the confidence level reaches acceptable limits.",max,35.90781021118164
+target,82,"You can't change the way you type and even if you did, they'll simply profile you again until the confidence level reaches acceptable limits.",last,20.6501522064209
+target,83,"If you are very unlucky, you will take an autistic child to a doctor and learn that “autism” is a vague and flabby label.",mean,8.735715866088867
+target,83,"If you are very unlucky, you will take an autistic child to a doctor and learn that “autism” is a vague and flabby label.",max,33.91908264160156
+target,83,"If you are very unlucky, you will take an autistic child to a doctor and learn that “autism” is a vague and flabby label.",last,0.0
+target,84,If you were hoping it’d be a compelling or must-have upgrade you’ll be sadly disappointed.,mean,9.338983535766602
+target,84,If you were hoping it’d be a compelling or must-have upgrade you’ll be sadly disappointed.,max,33.919097900390625
+target,84,If you were hoping it’d be a compelling or must-have upgrade you’ll be sadly disappointed.,last,0.0
+target,85,If you’re not home by the curfew imposed by the occupier you could get hit by a sniper.,mean,8.733254432678223
+target,85,If you’re not home by the curfew imposed by the occupier you could get hit by a sniper.,max,33.919097900390625
+target,85,If you’re not home by the curfew imposed by the occupier you could get hit by a sniper.,last,0.0
+target,86,This is an area where you can really play a key role in educating your users about the dangers of bypassing warnings.,mean,9.235963821411133
+target,86,This is an area where you can really play a key role in educating your users about the dangers of bypassing warnings.,max,43.81192398071289
+target,86,This is an area where you can really play a key role in educating your users about the dangers of bypassing warnings.,last,0.0
+target,87,"If you question or resist the dominance of self-serving neoliberal elites, you're a Deplorable.",mean,8.720501899719238
+target,87,"If you question or resist the dominance of self-serving neoliberal elites, you're a Deplorable.",max,33.919097900390625
+target,87,"If you question or resist the dominance of self-serving neoliberal elites, you're a Deplorable.",last,0.0
+target,88,There are other factors such as weight and moist absorption which can also make you re-think your plan.,mean,10.735126495361328
+target,88,There are other factors such as weight and moist absorption which can also make you re-think your plan.,max,55.5599479675293
+target,88,There are other factors such as weight and moist absorption which can also make you re-think your plan.,last,19.54842758178711
+target,89,"These are very basic functions, and you’ll be able to use them in other languages as well.",mean,11.027352333068848
+target,89,"These are very basic functions, and you’ll be able to use them in other languages as well.",max,47.968101501464844
+target,89,"These are very basic functions, and you’ll be able to use them in other languages as well.",last,0.0
+target,90,"No one knows you better than yourself, so you can be honest with how badly you’re planning on screwing this up.",mean,12.056537628173828
+target,90,"No one knows you better than yourself, so you can be honest with how badly you’re planning on screwing this up.",max,43.19313049316406
+target,90,"No one knows you better than yourself, so you can be honest with how badly you’re planning on screwing this up.",last,15.571731567382812
+target,91,"Once you have it, you’ve always got it, and the best one can do is “manage” it as a chronic—but irreversible—condition.",mean,9.789044380187988
+target,91,"Once you have it, you’ve always got it, and the best one can do is “manage” it as a chronic—but irreversible—condition.",max,50.47969055175781
+target,91,"Once you have it, you’ve always got it, and the best one can do is “manage” it as a chronic—but irreversible—condition.",last,0.0
+target,92,"As we've stated before, you need to rollback the Preview for Developers for you to be able to install the Cyan update, if you have the preview installed.",mean,9.245766639709473
+target,92,"As we've stated before, you need to rollback the Preview for Developers for you to be able to install the Cyan update, if you have the preview installed.",max,48.58856201171875
+target,92,"As we've stated before, you need to rollback the Preview for Developers for you to be able to install the Cyan update, if you have the preview installed.",last,0.0
+target,93,"Once you make systematic mental practice a part of your everyday practice routine, I am certain you’ll soon wonder how you ever did without it.",mean,9.41455078125
+target,93,"Once you make systematic mental practice a part of your everyday practice routine, I am certain you’ll soon wonder how you ever did without it.",max,50.47969055175781
+target,93,"Once you make systematic mental practice a part of your everyday practice routine, I am certain you’ll soon wonder how you ever did without it.",last,0.0
+target,94,"It may be you're worried about your family so you want to stay connected and so on, but there will be different types of addictions or compulsive behaviour.",mean,9.052764892578125
+target,94,"It may be you're worried about your family so you want to stay connected and so on, but there will be different types of addictions or compulsive behaviour.",max,38.50248718261719
+target,94,"It may be you're worried about your family so you want to stay connected and so on, but there will be different types of addictions or compulsive behaviour.",last,0.0
+target,95,You then need to come back again in 2 days and run 20x 15 minutes on nodes to take the now freeport station.,mean,9.039759635925293
+target,95,You then need to come back again in 2 days and run 20x 15 minutes on nodes to take the now freeport station.,max,55.37497329711914
+target,95,You then need to come back again in 2 days and run 20x 15 minutes on nodes to take the now freeport station.,last,0.0
+target,96,"Some of them deliver extraordinary, impressive things, but you can’t even hope they will deliver on time, or exactly meet your specification.",mean,9.046019554138184
+target,96,"Some of them deliver extraordinary, impressive things, but you can’t even hope they will deliver on time, or exactly meet your specification.",max,50.89937973022461
+target,96,"Some of them deliver extraordinary, impressive things, but you can’t even hope they will deliver on time, or exactly meet your specification.",last,0.0
+target,97,"As a bank depositor, you expose yourself to the ability (or inability) of the bank to give you back your money when you want it.",mean,8.277863502502441
+target,97,"As a bank depositor, you expose yourself to the ability (or inability) of the bank to give you back your money when you want it.",max,46.859378814697266
+target,97,"As a bank depositor, you expose yourself to the ability (or inability) of the bank to give you back your money when you want it.",last,0.0
+target,98,"You’ll get the entire story, before the public, and our poster, to cover up the escape hole you’ve dug out in your cell.",mean,9.915139198303223
+target,98,"You’ll get the entire story, before the public, and our poster, to cover up the escape hole you’ve dug out in your cell.",max,44.214263916015625
+target,98,"You’ll get the entire story, before the public, and our poster, to cover up the escape hole you’ve dug out in your cell.",last,0.0
+target,99,"Try these bonus ones…
+
+Landing on Your Feet…err, Wheels
+
+As you progress as a player, you will begin to find yourself in the air more often.",mean,9.361278533935547
+target,99,"Try these bonus ones…
+
+Landing on Your Feet…err, Wheels
+
+As you progress as a player, you will begin to find yourself in the air more often.",max,41.76844787597656
+target,99,"Try these bonus ones…
+
+Landing on Your Feet…err, Wheels
+
+As you progress as a player, you will begin to find yourself in the air more often.",last,0.0
+control,0,Newcastle still want another forward and a winger after signing Ciaran Clark and Mohamed Diame this week.,mean,0.0
+control,0,Newcastle still want another forward and a winger after signing Ciaran Clark and Mohamed Diame this week.,max,0.0
+control,0,Newcastle still want another forward and a winger after signing Ciaran Clark and Mohamed Diame this week.,last,0.0
+control,1,"The phenomenon, which fluid dynamicists call the Magnus effect, can send a ping-pong ball curving up, down, left, or right -- always at a right angle to the direction of motion -- depending on which way the ball is spun.",mean,0.0
+control,1,"The phenomenon, which fluid dynamicists call the Magnus effect, can send a ping-pong ball curving up, down, left, or right -- always at a right angle to the direction of motion -- depending on which way the ball is spun.",max,0.0
+control,1,"The phenomenon, which fluid dynamicists call the Magnus effect, can send a ping-pong ball curving up, down, left, or right -- always at a right angle to the direction of motion -- depending on which way the ball is spun.",last,0.0
+control,2,"The company has retreated from its riskier annuity business, and life insurance in a zero-interest rate environment is challenging.",mean,0.0
+control,2,"The company has retreated from its riskier annuity business, and life insurance in a zero-interest rate environment is challenging.",max,0.0
+control,2,"The company has retreated from its riskier annuity business, and life insurance in a zero-interest rate environment is challenging.",last,0.0
+control,3,"Christie fired Kelly in January when an email from her to Wildstein surfaced stating, ""Time for some traffic problems in Fort Lee.""",mean,0.0
+control,3,"Christie fired Kelly in January when an email from her to Wildstein surfaced stating, ""Time for some traffic problems in Fort Lee.""",max,0.0
+control,3,"Christie fired Kelly in January when an email from her to Wildstein surfaced stating, ""Time for some traffic problems in Fort Lee.""",last,0.0
+control,4,"This plays into the hands of the Western imperialist powers and the far-right Ukrainian nationalist forces, who are stepping up ethnic conflict within Ukraine itself.",mean,0.0
+control,4,"This plays into the hands of the Western imperialist powers and the far-right Ukrainian nationalist forces, who are stepping up ethnic conflict within Ukraine itself.",max,0.0
+control,4,"This plays into the hands of the Western imperialist powers and the far-right Ukrainian nationalist forces, who are stepping up ethnic conflict within Ukraine itself.",last,0.0
+control,5,"Deadline: May 21, 2012 at 11:59PM PST
+
+On June 1, the project will be open to public funding.",mean,0.0
+control,5,"Deadline: May 21, 2012 at 11:59PM PST
+
+On June 1, the project will be open to public funding.",max,0.0
+control,5,"Deadline: May 21, 2012 at 11:59PM PST
+
+On June 1, the project will be open to public funding.",last,0.0
+control,6,He added such problems would not be solved just by changes to policing.,mean,0.0
+control,6,He added such problems would not be solved just by changes to policing.,max,0.0
+control,6,He added such problems would not be solved just by changes to policing.,last,0.0
+control,7,Some stand behind the iron gate; others sit just inside the church door.,mean,0.0
+control,7,Some stand behind the iron gate; others sit just inside the church door.,max,0.0
+control,7,Some stand behind the iron gate; others sit just inside the church door.,last,0.0
+control,8,He didn’t look to his parents to tell him how he should worship God or practice his religion (Christianity).,mean,0.0
+control,8,He didn’t look to his parents to tell him how he should worship God or practice his religion (Christianity).,max,0.0
+control,8,He didn’t look to his parents to tell him how he should worship God or practice his religion (Christianity).,last,0.0
+control,9,"It's an addendum thrown in at the end of the discussion just to make it seem more thorough, to make it seem like folks actually care about fielding.",mean,0.0
+control,9,"It's an addendum thrown in at the end of the discussion just to make it seem more thorough, to make it seem like folks actually care about fielding.",max,0.0
+control,9,"It's an addendum thrown in at the end of the discussion just to make it seem more thorough, to make it seem like folks actually care about fielding.",last,0.0
+control,10,"And, for the most part, they are.",mean,0.0
+control,10,"And, for the most part, they are.",max,0.0
+control,10,"And, for the most part, they are.",last,0.0
+control,11,"Maximum price $29.17, minimum price $23.50.",mean,0.0
+control,11,"Maximum price $29.17, minimum price $23.50.",max,0.0
+control,11,"Maximum price $29.17, minimum price $23.50.",last,0.0
+control,12,"Over the summer and through the early fall, T-Mobile disclosed deals with smaller A-Block spectrum license holders that cover a little under 18 million POPs.",mean,0.0
+control,12,"Over the summer and through the early fall, T-Mobile disclosed deals with smaller A-Block spectrum license holders that cover a little under 18 million POPs.",max,0.0
+control,12,"Over the summer and through the early fall, T-Mobile disclosed deals with smaller A-Block spectrum license holders that cover a little under 18 million POPs.",last,0.0
+control,13,"Finally, in the Emirates, I started working as a production manager and was doing quite well.",mean,0.0
+control,13,"Finally, in the Emirates, I started working as a production manager and was doing quite well.",max,0.0
+control,13,"Finally, in the Emirates, I started working as a production manager and was doing quite well.",last,0.0
+control,14,"“Of course, there is no proof that life on Earth evolved in armoured bubbles,” the story admits, adding, “but it is yet another indicator that the conditions in which life can flourish are more common and more likely to form than anyone could have imagine [ sic ] just a few years ago.” But as they said, the evidence for whether life can flourish in such an environment—let alone appear by chance—still lacks evidence!
+
+]",mean,0.0
+control,14,"“Of course, there is no proof that life on Earth evolved in armoured bubbles,” the story admits, adding, “but it is yet another indicator that the conditions in which life can flourish are more common and more likely to form than anyone could have imagine [ sic ] just a few years ago.” But as they said, the evidence for whether life can flourish in such an environment—let alone appear by chance—still lacks evidence!
+
+]",max,0.0
+control,14,"“Of course, there is no proof that life on Earth evolved in armoured bubbles,” the story admits, adding, “but it is yet another indicator that the conditions in which life can flourish are more common and more likely to form than anyone could have imagine [ sic ] just a few years ago.” But as they said, the evidence for whether life can flourish in such an environment—let alone appear by chance—still lacks evidence!
+
+]",last,0.0
+control,15,Riot police used water cannon to disperse thousands gathered in Istanbul's Taksim Square.,mean,0.0
+control,15,Riot police used water cannon to disperse thousands gathered in Istanbul's Taksim Square.,max,0.0
+control,15,Riot police used water cannon to disperse thousands gathered in Istanbul's Taksim Square.,last,0.0
+control,16,A further 55 percent said that the Tokyo Municipal Government gave little or no explanation on the details of the relocation to Toyosu.,mean,0.0
+control,16,A further 55 percent said that the Tokyo Municipal Government gave little or no explanation on the details of the relocation to Toyosu.,max,0.0
+control,16,A further 55 percent said that the Tokyo Municipal Government gave little or no explanation on the details of the relocation to Toyosu.,last,0.0
+control,17,"I know some of the best minds in the industry are hard at work making sure that the Steam Controller is a monumental leap forward in how we interact with video games, and I can’t wait to get much more hands-on time with the input device in the upcoming months.",mean,0.0
+control,17,"I know some of the best minds in the industry are hard at work making sure that the Steam Controller is a monumental leap forward in how we interact with video games, and I can’t wait to get much more hands-on time with the input device in the upcoming months.",max,0.0
+control,17,"I know some of the best minds in the industry are hard at work making sure that the Steam Controller is a monumental leap forward in how we interact with video games, and I can’t wait to get much more hands-on time with the input device in the upcoming months.",last,0.0
+control,18,Tesla owners in other parts of the country have expressed interest in hosting similar events in other states where Tesla has been barred.,mean,0.0
+control,18,Tesla owners in other parts of the country have expressed interest in hosting similar events in other states where Tesla has been barred.,max,0.0
+control,18,Tesla owners in other parts of the country have expressed interest in hosting similar events in other states where Tesla has been barred.,last,0.0
+control,19,"[more transcripts from James F. Linzey radio broadcasts]
+
+[video, below: In April 10, 2005 radio broadcast James F. Linzey claims Chinese troops are training an army of Mexican and illegal aliens who will kill millions of caucasian men and rape caucasian women and teenagers, thus altering the racial makeup of America.]",mean,0.0
+control,19,"[more transcripts from James F. Linzey radio broadcasts]
+
+[video, below: In April 10, 2005 radio broadcast James F. Linzey claims Chinese troops are training an army of Mexican and illegal aliens who will kill millions of caucasian men and rape caucasian women and teenagers, thus altering the racial makeup of America.]",max,0.0
+control,19,"[more transcripts from James F. Linzey radio broadcasts]
+
+[video, below: In April 10, 2005 radio broadcast James F. Linzey claims Chinese troops are training an army of Mexican and illegal aliens who will kill millions of caucasian men and rape caucasian women and teenagers, thus altering the racial makeup of America.]",last,0.0
+control,20,"Coming up, Maureen Corrigan reviews a new book that tells the stories of the 33 Chilean miners who were trapped underground for 69 days in 2010.",mean,0.0
+control,20,"Coming up, Maureen Corrigan reviews a new book that tells the stories of the 33 Chilean miners who were trapped underground for 69 days in 2010.",max,0.0
+control,20,"Coming up, Maureen Corrigan reviews a new book that tells the stories of the 33 Chilean miners who were trapped underground for 69 days in 2010.",last,0.0
+control,21,"Still, San Diego County prosecutors wanted to try the boys for Stephanie’s murder.",mean,0.0
+control,21,"Still, San Diego County prosecutors wanted to try the boys for Stephanie’s murder.",max,0.0
+control,21,"Still, San Diego County prosecutors wanted to try the boys for Stephanie’s murder.",last,0.0
+control,22,"Groups at high risk for listeria include older adults, people with weakened immune systems and pregnant women, officials have said.",mean,0.0
+control,22,"Groups at high risk for listeria include older adults, people with weakened immune systems and pregnant women, officials have said.",max,0.0
+control,22,"Groups at high risk for listeria include older adults, people with weakened immune systems and pregnant women, officials have said.",last,0.0
+control,23,We are not really a life in ourselves but a recipient of life.,mean,0.0
+control,23,We are not really a life in ourselves but a recipient of life.,max,0.0
+control,23,We are not really a life in ourselves but a recipient of life.,last,0.0
+control,24,I’ve only recently started collecting Joe again.,mean,0.0
+control,24,I’ve only recently started collecting Joe again.,max,0.0
+control,24,I’ve only recently started collecting Joe again.,last,0.0
+control,25,"Nevertheless, it will be worth keeping an eye on.As far as control, Burdi obviously had the major hiccup in his first pro appearance last summer, but otherwise had no issues, walking six hitters over his remaining 19 outings.",mean,0.0
+control,25,"Nevertheless, it will be worth keeping an eye on.As far as control, Burdi obviously had the major hiccup in his first pro appearance last summer, but otherwise had no issues, walking six hitters over his remaining 19 outings.",max,0.0
+control,25,"Nevertheless, it will be worth keeping an eye on.As far as control, Burdi obviously had the major hiccup in his first pro appearance last summer, but otherwise had no issues, walking six hitters over his remaining 19 outings.",last,0.0
+control,26,"As I said, Pokémon GO is extremely bare bones right now.",mean,0.0
+control,26,"As I said, Pokémon GO is extremely bare bones right now.",max,0.0
+control,26,"As I said, Pokémon GO is extremely bare bones right now.",last,0.0
+control,27,"On this particular morning, he receives a phone call from overseas.",mean,0.0
+control,27,"On this particular morning, he receives a phone call from overseas.",max,0.0
+control,27,"On this particular morning, he receives a phone call from overseas.",last,0.0
+control,28,"Steve was told by AES that he would need to speak to the original lender, National Collegiate Trust.",mean,0.0
+control,28,"Steve was told by AES that he would need to speak to the original lender, National Collegiate Trust.",max,0.0
+control,28,"Steve was told by AES that he would need to speak to the original lender, National Collegiate Trust.",last,0.0
+control,29,"He was firmly opposed to the liberal-socialist student movement after 1967, and published a book in 1972 in which he claimed that Germany was threatened by anarchy.",mean,0.0
+control,29,"He was firmly opposed to the liberal-socialist student movement after 1967, and published a book in 1972 in which he claimed that Germany was threatened by anarchy.",max,0.0
+control,29,"He was firmly opposed to the liberal-socialist student movement after 1967, and published a book in 1972 in which he claimed that Germany was threatened by anarchy.",last,0.0
+control,30,"Japan's Prime Minister Shinzo Abe has heralded a ""new era"" in Japanese - South Korean relations after the two countries reached a landmark deal on the issue of wartime sex slaves.",mean,0.0
+control,30,"Japan's Prime Minister Shinzo Abe has heralded a ""new era"" in Japanese - South Korean relations after the two countries reached a landmark deal on the issue of wartime sex slaves.",max,0.0
+control,30,"Japan's Prime Minister Shinzo Abe has heralded a ""new era"" in Japanese - South Korean relations after the two countries reached a landmark deal on the issue of wartime sex slaves.",last,0.0
+control,31,"Upon qualifying tonight, however, Qiao Gu's jungler Swift declared that the team plans to challenge Edward Gaming for the top spot of LPL.",mean,0.0
+control,31,"Upon qualifying tonight, however, Qiao Gu's jungler Swift declared that the team plans to challenge Edward Gaming for the top spot of LPL.",max,0.0
+control,31,"Upon qualifying tonight, however, Qiao Gu's jungler Swift declared that the team plans to challenge Edward Gaming for the top spot of LPL.",last,0.0
+control,32,"But in the meantime we're just going to monitor it on an hour-by-hour basis and make sure that it's used for the purposes for which it was intended.""",mean,0.0
+control,32,"But in the meantime we're just going to monitor it on an hour-by-hour basis and make sure that it's used for the purposes for which it was intended.""",max,0.0
+control,32,"But in the meantime we're just going to monitor it on an hour-by-hour basis and make sure that it's used for the purposes for which it was intended.""",last,0.0
+control,33,"It is estimated that it will take 652 weeks of labour time, or 12.5 years, to do the same in 2016.",mean,0.0
+control,33,"It is estimated that it will take 652 weeks of labour time, or 12.5 years, to do the same in 2016.",max,0.0
+control,33,"It is estimated that it will take 652 weeks of labour time, or 12.5 years, to do the same in 2016.",last,0.0
+control,34,"It's even worse, however, when that view is inflicted upon students — which brings us back to the Texas textbook.",mean,0.0
+control,34,"It's even worse, however, when that view is inflicted upon students — which brings us back to the Texas textbook.",max,0.0
+control,34,"It's even worse, however, when that view is inflicted upon students — which brings us back to the Texas textbook.",last,0.0
+control,35,Playground racism and religious-based bigotry were largely tolerated at my two schools to avoid offending religious and cultural sensitivities of migrant communities.,mean,0.0
+control,35,Playground racism and religious-based bigotry were largely tolerated at my two schools to avoid offending religious and cultural sensitivities of migrant communities.,max,0.0
+control,35,Playground racism and religious-based bigotry were largely tolerated at my two schools to avoid offending religious and cultural sensitivities of migrant communities.,last,0.0
+control,36,Evans was also sentenced to four months detention in July after pleading guilty to eight charges of using and supply cannabis and ecstasy.,mean,0.0
+control,36,Evans was also sentenced to four months detention in July after pleading guilty to eight charges of using and supply cannabis and ecstasy.,max,0.0
+control,36,Evans was also sentenced to four months detention in July after pleading guilty to eight charges of using and supply cannabis and ecstasy.,last,0.0
+control,37,"[33][67] Dr. Harleen Quinzel (Tara Strong),[68] Vicki Vale, Amanda Waller (C. C. H. Pounder),[57] Quincy Sharp (Tom Kane),[57] and Calendar Man make cameo appearances in the game.",mean,0.0
+control,37,"[33][67] Dr. Harleen Quinzel (Tara Strong),[68] Vicki Vale, Amanda Waller (C. C. H. Pounder),[57] Quincy Sharp (Tom Kane),[57] and Calendar Man make cameo appearances in the game.",max,0.0
+control,37,"[33][67] Dr. Harleen Quinzel (Tara Strong),[68] Vicki Vale, Amanda Waller (C. C. H. Pounder),[57] Quincy Sharp (Tom Kane),[57] and Calendar Man make cameo appearances in the game.",last,0.0
+control,38,Our spring is coming.,mean,0.0
+control,38,Our spring is coming.,max,0.0
+control,38,Our spring is coming.,last,0.0
+control,39,"'”
+
+This hatred is at least 60 years old, says Stephens, for Qutb wrote even before “Elvis, Playboy, the pill, women’s lib, acid tabs, gay rights, Studio 54, Jersey shore and … Lady Gaga.”
+
+Qutb’s revulsion at American degeneracy is why his legion of Islamic followers hate us.",mean,0.0
+control,39,"'”
+
+This hatred is at least 60 years old, says Stephens, for Qutb wrote even before “Elvis, Playboy, the pill, women’s lib, acid tabs, gay rights, Studio 54, Jersey shore and … Lady Gaga.”
+
+Qutb’s revulsion at American degeneracy is why his legion of Islamic followers hate us.",max,0.0
+control,39,"'”
+
+This hatred is at least 60 years old, says Stephens, for Qutb wrote even before “Elvis, Playboy, the pill, women’s lib, acid tabs, gay rights, Studio 54, Jersey shore and … Lady Gaga.”
+
+Qutb’s revulsion at American degeneracy is why his legion of Islamic followers hate us.",last,0.0
+control,40,I cut a 4 inch wide triangle taper out of each of the sides of main bag so that it would funnel when I sewed the tarp on.,mean,0.0
+control,40,I cut a 4 inch wide triangle taper out of each of the sides of main bag so that it would funnel when I sewed the tarp on.,max,0.0
+control,40,I cut a 4 inch wide triangle taper out of each of the sides of main bag so that it would funnel when I sewed the tarp on.,last,0.0
+control,41,But it’s difficult to find a handful of women to commit to the timeline and budget.,mean,0.0
+control,41,But it’s difficult to find a handful of women to commit to the timeline and budget.,max,0.0
+control,41,But it’s difficult to find a handful of women to commit to the timeline and budget.,last,0.0
+control,42,"Certainly another one that wasn't expected to be on the verge of failure at this point, the spiritual successor to Road Rash needs more nostalgics of the 90s to make it to the finish line.",mean,0.0
+control,42,"Certainly another one that wasn't expected to be on the verge of failure at this point, the spiritual successor to Road Rash needs more nostalgics of the 90s to make it to the finish line.",max,0.0
+control,42,"Certainly another one that wasn't expected to be on the verge of failure at this point, the spiritual successor to Road Rash needs more nostalgics of the 90s to make it to the finish line.",last,0.0
+control,43,"""A husband and father whose family (and dog) pirate alongside him.",mean,0.0
+control,43,"""A husband and father whose family (and dog) pirate alongside him.",max,0.0
+control,43,"""A husband and father whose family (and dog) pirate alongside him.",last,0.0
+control,44,"The system will have to recognize, for instance, the broad sudden movements of people with cerebral palsy as effectively as the slight, slow movements of people with severe spinal cord injuries.",mean,0.0
+control,44,"The system will have to recognize, for instance, the broad sudden movements of people with cerebral palsy as effectively as the slight, slow movements of people with severe spinal cord injuries.",max,0.0
+control,44,"The system will have to recognize, for instance, the broad sudden movements of people with cerebral palsy as effectively as the slight, slow movements of people with severe spinal cord injuries.",last,0.0
+control,45,"As much as we love maligning Buzzfeed and other basic things that normies enjoy, we sure do love our totally objective lists ranking different aspects of our cherished genre.",mean,0.0
+control,45,"As much as we love maligning Buzzfeed and other basic things that normies enjoy, we sure do love our totally objective lists ranking different aspects of our cherished genre.",max,0.0
+control,45,"As much as we love maligning Buzzfeed and other basic things that normies enjoy, we sure do love our totally objective lists ranking different aspects of our cherished genre.",last,0.0
+control,46,"Under the Corporate Manslaughter and Corporate Homicide Act, companies and organizations can be found guilty of corporate manslaughter ""as a result of serious management failures resulting in a gross breach of a duty of care,"" as the UK's Health and Safety Executive explains.",mean,0.0
+control,46,"Under the Corporate Manslaughter and Corporate Homicide Act, companies and organizations can be found guilty of corporate manslaughter ""as a result of serious management failures resulting in a gross breach of a duty of care,"" as the UK's Health and Safety Executive explains.",max,0.0
+control,46,"Under the Corporate Manslaughter and Corporate Homicide Act, companies and organizations can be found guilty of corporate manslaughter ""as a result of serious management failures resulting in a gross breach of a duty of care,"" as the UK's Health and Safety Executive explains.",last,0.0
+control,47,"His grandfather was one of Ibn Saud’s riders, and probably saw T.E.",mean,0.0
+control,47,"His grandfather was one of Ibn Saud’s riders, and probably saw T.E.",max,0.0
+control,47,"His grandfather was one of Ibn Saud’s riders, and probably saw T.E.",last,0.0
+control,48,"MAYU General information Sex Female Age 15 Voice Mayumi Morinaga Illustrator Hidari Product information Company EXIT TUNES Release December 5, 2012 Language Japanese Type VOCALOID3, VOCALOID NEO Code QWCE-00264 Affiliation YAMAHA Corporation Image Gallery Category Gallery
+
+MAYU (マユ) is a Japanese VOCALOID developed and distributed by EXIT TUNES, and was released in December 2012 for the VOCALOID3 engine.",mean,0.0
+control,48,"MAYU General information Sex Female Age 15 Voice Mayumi Morinaga Illustrator Hidari Product information Company EXIT TUNES Release December 5, 2012 Language Japanese Type VOCALOID3, VOCALOID NEO Code QWCE-00264 Affiliation YAMAHA Corporation Image Gallery Category Gallery
+
+MAYU (マユ) is a Japanese VOCALOID developed and distributed by EXIT TUNES, and was released in December 2012 for the VOCALOID3 engine.",max,0.0
+control,48,"MAYU General information Sex Female Age 15 Voice Mayumi Morinaga Illustrator Hidari Product information Company EXIT TUNES Release December 5, 2012 Language Japanese Type VOCALOID3, VOCALOID NEO Code QWCE-00264 Affiliation YAMAHA Corporation Image Gallery Category Gallery
+
+MAYU (マユ) is a Japanese VOCALOID developed and distributed by EXIT TUNES, and was released in December 2012 for the VOCALOID3 engine.",last,0.0
+control,49,“But then it’s better if I go on welfare because then I don’t have to worry about childcare because welfare won’t force me to go to work until my kid is six.,mean,0.0
+control,49,“But then it’s better if I go on welfare because then I don’t have to worry about childcare because welfare won’t force me to go to work until my kid is six.,max,0.0
+control,49,“But then it’s better if I go on welfare because then I don’t have to worry about childcare because welfare won’t force me to go to work until my kid is six.,last,0.0
+control,50,This is supported by the fact that in very early Mormonism Joseph and Oliver Cowdery were the two “elders” of the church (D&C 20:2-3).,mean,0.0
+control,50,This is supported by the fact that in very early Mormonism Joseph and Oliver Cowdery were the two “elders” of the church (D&C 20:2-3).,max,0.0
+control,50,This is supported by the fact that in very early Mormonism Joseph and Oliver Cowdery were the two “elders” of the church (D&C 20:2-3).,last,0.0
+control,51,"Then there's the IBM Selectric, an electric typewriter that introduced a major technological advancement.",mean,0.0
+control,51,"Then there's the IBM Selectric, an electric typewriter that introduced a major technological advancement.",max,0.0
+control,51,"Then there's the IBM Selectric, an electric typewriter that introduced a major technological advancement.",last,0.0
+control,52,"EL SEGUNDO, CA — The phrase, “Go West, young man!” has been around for many decades, and although it will take them 80 years, the American Hockey League is doing just that.",mean,0.0
+control,52,"EL SEGUNDO, CA — The phrase, “Go West, young man!” has been around for many decades, and although it will take them 80 years, the American Hockey League is doing just that.",max,0.0
+control,52,"EL SEGUNDO, CA — The phrase, “Go West, young man!” has been around for many decades, and although it will take them 80 years, the American Hockey League is doing just that.",last,0.0
+control,53,It’s not more or less “real” than other mental health issues.,mean,0.0
+control,53,It’s not more or less “real” than other mental health issues.,max,0.0
+control,53,It’s not more or less “real” than other mental health issues.,last,0.0
+control,54,But the FAO biofuel projection for 2050 is modest.,mean,0.0
+control,54,But the FAO biofuel projection for 2050 is modest.,max,0.0
+control,54,But the FAO biofuel projection for 2050 is modest.,last,0.0
+control,55,"Beginning August 31, each Taco Bell $5 Box will include a unique code for consumers to text in for a chance to win the new Xbox One X.",mean,0.0
+control,55,"Beginning August 31, each Taco Bell $5 Box will include a unique code for consumers to text in for a chance to win the new Xbox One X.",max,0.0
+control,55,"Beginning August 31, each Taco Bell $5 Box will include a unique code for consumers to text in for a chance to win the new Xbox One X.",last,0.0
+control,56,[21] Girls as young as eleven years old are reported to have been kidnapped for the purpose of marriage.,mean,0.0
+control,56,[21] Girls as young as eleven years old are reported to have been kidnapped for the purpose of marriage.,max,0.0
+control,56,[21] Girls as young as eleven years old are reported to have been kidnapped for the purpose of marriage.,last,0.0
+control,57,"He recently got hit with a $50,000 fine for ""recurring instances of unsportsmanlike conduct,"" via Scott Cacciola of The New York Times, the latest transgression coming when he tried to untie an opponent's shoes while awaiting a free-throw attempt—days after specifically being warned not to do exactly that.",mean,0.0
+control,57,"He recently got hit with a $50,000 fine for ""recurring instances of unsportsmanlike conduct,"" via Scott Cacciola of The New York Times, the latest transgression coming when he tried to untie an opponent's shoes while awaiting a free-throw attempt—days after specifically being warned not to do exactly that.",max,0.0
+control,57,"He recently got hit with a $50,000 fine for ""recurring instances of unsportsmanlike conduct,"" via Scott Cacciola of The New York Times, the latest transgression coming when he tried to untie an opponent's shoes while awaiting a free-throw attempt—days after specifically being warned not to do exactly that.",last,0.0
+control,58,"Those eight didn’t just come on catch-and-runs, as six occurred on passes that traveled at least 25 yards.",mean,0.0
+control,58,"Those eight didn’t just come on catch-and-runs, as six occurred on passes that traveled at least 25 yards.",max,0.0
+control,58,"Those eight didn’t just come on catch-and-runs, as six occurred on passes that traveled at least 25 yards.",last,0.0
+control,59,"(By sheer coincidence, the AP had recently obtained the North Korean government’s permission to open a bureau in Pyongyang.)",mean,0.0
+control,59,"(By sheer coincidence, the AP had recently obtained the North Korean government’s permission to open a bureau in Pyongyang.)",max,0.0
+control,59,"(By sheer coincidence, the AP had recently obtained the North Korean government’s permission to open a bureau in Pyongyang.)",last,0.0
+control,60,"In Nuccetelli, S. and G. Seay (eds.)",mean,0.0
+control,60,"In Nuccetelli, S. and G. Seay (eds.)",max,0.0
+control,60,"In Nuccetelli, S. and G. Seay (eds.)",last,0.0
+control,61,Improved relations between Washington and Havana were on full display as the US refrained from opposing a resolution aimed at ending the 56-year embargo.,mean,0.0
+control,61,Improved relations between Washington and Havana were on full display as the US refrained from opposing a resolution aimed at ending the 56-year embargo.,max,0.0
+control,61,Improved relations between Washington and Havana were on full display as the US refrained from opposing a resolution aimed at ending the 56-year embargo.,last,0.0
+control,62,"Following this unfortunate incident, the Consortium Ship Recycling is taking steps to implement the security service staff also positioned at the breakwater where the ship is moored and with the installation of cameras.",mean,0.0
+control,62,"Following this unfortunate incident, the Consortium Ship Recycling is taking steps to implement the security service staff also positioned at the breakwater where the ship is moored and with the installation of cameras.",max,0.0
+control,62,"Following this unfortunate incident, the Consortium Ship Recycling is taking steps to implement the security service staff also positioned at the breakwater where the ship is moored and with the installation of cameras.",last,0.0
+control,63,"Image caption Morris was a familiar face to viewers of Yorkshire's Calendar programme
+
+Former TV-am presenter Mike Morris has died aged 65.",mean,0.0
+control,63,"Image caption Morris was a familiar face to viewers of Yorkshire's Calendar programme
+
+Former TV-am presenter Mike Morris has died aged 65.",max,0.0
+control,63,"Image caption Morris was a familiar face to viewers of Yorkshire's Calendar programme
+
+Former TV-am presenter Mike Morris has died aged 65.",last,0.0
+control,64,"Closer (Unrecalled) 7:41
+
+A3.",mean,0.0
+control,64,"Closer (Unrecalled) 7:41
+
+A3.",max,0.0
+control,64,"Closer (Unrecalled) 7:41
+
+A3.",last,0.0
+control,65,"And to finish things off, here’s a video from Google I/O 2012 explaining requestAnimationFrame in nice friendly detail:",mean,0.0
+control,65,"And to finish things off, here’s a video from Google I/O 2012 explaining requestAnimationFrame in nice friendly detail:",max,0.0
+control,65,"And to finish things off, here’s a video from Google I/O 2012 explaining requestAnimationFrame in nice friendly detail:",last,0.0
+control,66,"‘The plan was never to operate it.’
+
+Advertisement
+
+The story is full of interesting details about Wright, but in the end, the author who spent six months with Wright still isn’t convinced that he’s the guy.",mean,0.0
+control,66,"‘The plan was never to operate it.’
+
+Advertisement
+
+The story is full of interesting details about Wright, but in the end, the author who spent six months with Wright still isn’t convinced that he’s the guy.",max,0.0
+control,66,"‘The plan was never to operate it.’
+
+Advertisement
+
+The story is full of interesting details about Wright, but in the end, the author who spent six months with Wright still isn’t convinced that he’s the guy.",last,0.0
+control,67,Read other contributed articles by Madison Ruppert here.,mean,0.0
+control,67,Read other contributed articles by Madison Ruppert here.,max,0.0
+control,67,Read other contributed articles by Madison Ruppert here.,last,0.0
+control,68,"Efforts were made to prevent reconstruction workers from using rubble from important ruins to repair roads, and to search for artefacts.",mean,0.0
+control,68,"Efforts were made to prevent reconstruction workers from using rubble from important ruins to repair roads, and to search for artefacts.",max,0.0
+control,68,"Efforts were made to prevent reconstruction workers from using rubble from important ruins to repair roads, and to search for artefacts.",last,0.0
+control,69,People with high empathy are better at recognising emotions in others.,mean,0.0
+control,69,People with high empathy are better at recognising emotions in others.,max,0.0
+control,69,People with high empathy are better at recognising emotions in others.,last,0.0
+control,70,"These tools have worked really well, however, they are fairly noisy creating a service and touching disk which will trigger modern defense tools such as Bit9 and other tools that detect rogue binaries on systems.",mean,0.0
+control,70,"These tools have worked really well, however, they are fairly noisy creating a service and touching disk which will trigger modern defense tools such as Bit9 and other tools that detect rogue binaries on systems.",max,0.0
+control,70,"These tools have worked really well, however, they are fairly noisy creating a service and touching disk which will trigger modern defense tools such as Bit9 and other tools that detect rogue binaries on systems.",last,0.0
+control,71,The time-lapse shows an interesting change over the period 1979 to 2014.,mean,0.0
+control,71,The time-lapse shows an interesting change over the period 1979 to 2014.,max,0.0
+control,71,The time-lapse shows an interesting change over the period 1979 to 2014.,last,0.0
+control,72,"The question is: Which Supreme Court case declared Corporations to be ""persons""?",mean,0.0
+control,72,"The question is: Which Supreme Court case declared Corporations to be ""persons""?",max,0.0
+control,72,"The question is: Which Supreme Court case declared Corporations to be ""persons""?",last,0.0
+control,73,"Doug finds Rachel living under a false identity in New Mexico, drives her into the desert, and eventually kills her.",mean,0.0
+control,73,"Doug finds Rachel living under a false identity in New Mexico, drives her into the desert, and eventually kills her.",max,0.0
+control,73,"Doug finds Rachel living under a false identity in New Mexico, drives her into the desert, and eventually kills her.",last,0.0
+control,74,"Point percentage: This variable works as a proxy for score effects, which cause a team in the lead to go into a defensive shell, artificially suppressing its shot differential.",mean,0.0
+control,74,"Point percentage: This variable works as a proxy for score effects, which cause a team in the lead to go into a defensive shell, artificially suppressing its shot differential.",max,0.0
+control,74,"Point percentage: This variable works as a proxy for score effects, which cause a team in the lead to go into a defensive shell, artificially suppressing its shot differential.",last,0.0
+control,75,"“This analysis by the staff of Sen. Warren reveals that despite decades of nearly identical promises, the United States repeatedly fails to enforce or adopts unenforceable labor standards in free trade agreements.”
+
+RELATED: Democrats wage civil war over trade deal
+
+I’ve joined @SenatorHeitkamp, @Sen_JoeManchin, & 12 other senators on an amdt: No Fast Track on any deal with ISDS: http://t.co/2wTmOt5oMh — Elizabeth Warren (@SenWarren) May 18, 2015 Broken Promises: Decades of Failure to Enforce Labor Standards in Free Trade Agreements,” takes the United States to task for consistently failing to enforce labor protections in its trade deals, and points to ongoing labor-related human rights abuses in 11 of the 20 countries with which the U.S. currently has free trade agreements.",mean,0.0
+control,75,"“This analysis by the staff of Sen. Warren reveals that despite decades of nearly identical promises, the United States repeatedly fails to enforce or adopts unenforceable labor standards in free trade agreements.”
+
+RELATED: Democrats wage civil war over trade deal
+
+I’ve joined @SenatorHeitkamp, @Sen_JoeManchin, & 12 other senators on an amdt: No Fast Track on any deal with ISDS: http://t.co/2wTmOt5oMh — Elizabeth Warren (@SenWarren) May 18, 2015 Broken Promises: Decades of Failure to Enforce Labor Standards in Free Trade Agreements,” takes the United States to task for consistently failing to enforce labor protections in its trade deals, and points to ongoing labor-related human rights abuses in 11 of the 20 countries with which the U.S. currently has free trade agreements.",max,0.0
+control,75,"“This analysis by the staff of Sen. Warren reveals that despite decades of nearly identical promises, the United States repeatedly fails to enforce or adopts unenforceable labor standards in free trade agreements.”
+
+RELATED: Democrats wage civil war over trade deal
+
+I’ve joined @SenatorHeitkamp, @Sen_JoeManchin, & 12 other senators on an amdt: No Fast Track on any deal with ISDS: http://t.co/2wTmOt5oMh — Elizabeth Warren (@SenWarren) May 18, 2015 Broken Promises: Decades of Failure to Enforce Labor Standards in Free Trade Agreements,” takes the United States to task for consistently failing to enforce labor protections in its trade deals, and points to ongoing labor-related human rights abuses in 11 of the 20 countries with which the U.S. currently has free trade agreements.",last,0.0
+control,76,"Kerley has more experience at the position, as he played quarterback in high school.",mean,0.0
+control,76,"Kerley has more experience at the position, as he played quarterback in high school.",max,0.0
+control,76,"Kerley has more experience at the position, as he played quarterback in high school.",last,0.0
+control,77,"...At about the same time as Dr William McBride (who unravelled the thalidomide mystery) was expressing alarm at the decreasing Birth Rate in Australia, the Government was actively pursuing a programme of increasing the Asian intake of immigrants and Dr Malcolm Potts was advocating abortions as a means of ""fertility control"".",mean,0.0
+control,77,"...At about the same time as Dr William McBride (who unravelled the thalidomide mystery) was expressing alarm at the decreasing Birth Rate in Australia, the Government was actively pursuing a programme of increasing the Asian intake of immigrants and Dr Malcolm Potts was advocating abortions as a means of ""fertility control"".",max,0.0
+control,77,"...At about the same time as Dr William McBride (who unravelled the thalidomide mystery) was expressing alarm at the decreasing Birth Rate in Australia, the Government was actively pursuing a programme of increasing the Asian intake of immigrants and Dr Malcolm Potts was advocating abortions as a means of ""fertility control"".",last,0.0
+control,78,Whether we are “radical” or “moderate” Counterjihadists will become irrelevant.,mean,0.0
+control,78,Whether we are “radical” or “moderate” Counterjihadists will become irrelevant.,max,0.0
+control,78,Whether we are “radical” or “moderate” Counterjihadists will become irrelevant.,last,0.0
+control,79,A first-rounder for Afflalo would have been a clear win.,mean,0.0
+control,79,A first-rounder for Afflalo would have been a clear win.,max,0.0
+control,79,A first-rounder for Afflalo would have been a clear win.,last,0.0
+control,80,Fixed latter 12 entity spawn flag check boxes not persisting.,mean,0.0
+control,80,Fixed latter 12 entity spawn flag check boxes not persisting.,max,0.0
+control,80,Fixed latter 12 entity spawn flag check boxes not persisting.,last,0.0
+control,81,"Whatever promises President Trump made that he hasn’t kept as yet, there is one that he is definitely keeping; trimming the bureaucracy in Washington.",mean,0.0
+control,81,"Whatever promises President Trump made that he hasn’t kept as yet, there is one that he is definitely keeping; trimming the bureaucracy in Washington.",max,0.0
+control,81,"Whatever promises President Trump made that he hasn’t kept as yet, there is one that he is definitely keeping; trimming the bureaucracy in Washington.",last,0.0
+control,82,"As a kid growing up in Fredericksburg, Virginia, he'd shoot VHS films with his friends, mostly about things blowing up.",mean,0.0
+control,82,"As a kid growing up in Fredericksburg, Virginia, he'd shoot VHS films with his friends, mostly about things blowing up.",max,0.0
+control,82,"As a kid growing up in Fredericksburg, Virginia, he'd shoot VHS films with his friends, mostly about things blowing up.",last,0.0
+control,83,"I’ve spent some time just thinking about this post, because I know from experience, there’s few greater threats to an introvert’s life than the triumph of meaninglessness within.",mean,0.0
+control,83,"I’ve spent some time just thinking about this post, because I know from experience, there’s few greater threats to an introvert’s life than the triumph of meaninglessness within.",max,0.0
+control,83,"I’ve spent some time just thinking about this post, because I know from experience, there’s few greater threats to an introvert’s life than the triumph of meaninglessness within.",last,0.0
+control,84,"In earnings, however, the average opening weekend for each film was the highest in the research, and over $13 million higher than the next most successful, Jurassic Park.",mean,0.0
+control,84,"In earnings, however, the average opening weekend for each film was the highest in the research, and over $13 million higher than the next most successful, Jurassic Park.",max,0.0
+control,84,"In earnings, however, the average opening weekend for each film was the highest in the research, and over $13 million higher than the next most successful, Jurassic Park.",last,0.0
+control,85,"We are running 9 recall elections and it will be like 9 congressional markets in every market in the state (and Twin Cities),' Walker wrote to Rove on May 4, 2011, the documents say.""",mean,0.0
+control,85,"We are running 9 recall elections and it will be like 9 congressional markets in every market in the state (and Twin Cities),' Walker wrote to Rove on May 4, 2011, the documents say.""",max,0.0
+control,85,"We are running 9 recall elections and it will be like 9 congressional markets in every market in the state (and Twin Cities),' Walker wrote to Rove on May 4, 2011, the documents say.""",last,0.0
+control,86,"Maybe until they advance, the name of the sub-genre should be changed to ""survival scary.""",mean,0.0
+control,86,"Maybe until they advance, the name of the sub-genre should be changed to ""survival scary.""",max,0.0
+control,86,"Maybe until they advance, the name of the sub-genre should be changed to ""survival scary.""",last,0.0
+control,87,"""I think we've been very effective and efficient in what we've been doing.",mean,0.0
+control,87,"""I think we've been very effective and efficient in what we've been doing.",max,0.0
+control,87,"""I think we've been very effective and efficient in what we've been doing.",last,0.0
+control,88,"""I don't know exactly what's wrong yet, so no.""",mean,0.0
+control,88,"""I don't know exactly what's wrong yet, so no.""",max,0.0
+control,88,"""I don't know exactly what's wrong yet, so no.""",last,0.0
+control,89,Many clans worshipped sun deities other than Amaterasu.,mean,0.0
+control,89,Many clans worshipped sun deities other than Amaterasu.,max,0.0
+control,89,Many clans worshipped sun deities other than Amaterasu.,last,0.0
+control,90,"In order for these potential types of firm to pick the contract, the fixed-payment should be larger, since they are less efficient.",mean,0.0
+control,90,"In order for these potential types of firm to pick the contract, the fixed-payment should be larger, since they are less efficient.",max,0.0
+control,90,"In order for these potential types of firm to pick the contract, the fixed-payment should be larger, since they are less efficient.",last,0.0
+control,91,"Ranger writes:
+
+on September 20th, 2009 at 11:23:25 PM
+
+f*ck...",mean,0.0
+control,91,"Ranger writes:
+
+on September 20th, 2009 at 11:23:25 PM
+
+f*ck...",max,0.0
+control,91,"Ranger writes:
+
+on September 20th, 2009 at 11:23:25 PM
+
+f*ck...",last,0.0
+control,92,"By having agents, editors and publishers making it so hard to break into the publishing world, it creates the perception that only the very best authors get their work published.",mean,0.0
+control,92,"By having agents, editors and publishers making it so hard to break into the publishing world, it creates the perception that only the very best authors get their work published.",max,0.0
+control,92,"By having agents, editors and publishers making it so hard to break into the publishing world, it creates the perception that only the very best authors get their work published.",last,0.0
+control,93,Gerald Hebert has revealed his contemporaneous notes and identifies Farr as being part of the voter intimidation scheme.,mean,0.0
+control,93,Gerald Hebert has revealed his contemporaneous notes and identifies Farr as being part of the voter intimidation scheme.,max,0.0
+control,93,Gerald Hebert has revealed his contemporaneous notes and identifies Farr as being part of the voter intimidation scheme.,last,0.0
+control,94,"Over time, various elements of modernity dulled Mi-Carême’s appeal to all but the most remote Acadian villages, where communities are close-knit and trusting, nobody is too fussy about crowds stomping over their hardwood or carpet, and a giddy, carnivalesque event brightening the wintery gloom is very welcome.",mean,0.0
+control,94,"Over time, various elements of modernity dulled Mi-Carême’s appeal to all but the most remote Acadian villages, where communities are close-knit and trusting, nobody is too fussy about crowds stomping over their hardwood or carpet, and a giddy, carnivalesque event brightening the wintery gloom is very welcome.",max,0.0
+control,94,"Over time, various elements of modernity dulled Mi-Carême’s appeal to all but the most remote Acadian villages, where communities are close-knit and trusting, nobody is too fussy about crowds stomping over their hardwood or carpet, and a giddy, carnivalesque event brightening the wintery gloom is very welcome.",last,0.0
+control,95,"Coretta Scott had been attending Unitarian churches for years before she met and married Martin, and they both attended Unitarian services while in Boston.",mean,0.0
+control,95,"Coretta Scott had been attending Unitarian churches for years before she met and married Martin, and they both attended Unitarian services while in Boston.",max,0.0
+control,95,"Coretta Scott had been attending Unitarian churches for years before she met and married Martin, and they both attended Unitarian services while in Boston.",last,0.0
+control,96,"The decisions, that critics said were components of a larger saffron project, enjoy a high degree of popularity among the people, suggested the survey that was conducted among 2,000 respondents spread across 20 districts of Uttar Pradesh.",mean,0.0
+control,96,"The decisions, that critics said were components of a larger saffron project, enjoy a high degree of popularity among the people, suggested the survey that was conducted among 2,000 respondents spread across 20 districts of Uttar Pradesh.",max,0.0
+control,96,"The decisions, that critics said were components of a larger saffron project, enjoy a high degree of popularity among the people, suggested the survey that was conducted among 2,000 respondents spread across 20 districts of Uttar Pradesh.",last,0.0
+control,97,'Jack had to be given up to 12 different medications up to four times a day but he only needs three different medications via a syringe at the moment.,mean,0.0
+control,97,'Jack had to be given up to 12 different medications up to four times a day but he only needs three different medications via a syringe at the moment.,max,0.0
+control,97,'Jack had to be given up to 12 different medications up to four times a day but he only needs three different medications via a syringe at the moment.,last,0.0
+control,98,"Plus, there are a few setpieces that still have a surprising impact, such as an early mission in a German nightclub with gorgeously garish psychedelic wallpaper.",mean,0.0
+control,98,"Plus, there are a few setpieces that still have a surprising impact, such as an early mission in a German nightclub with gorgeously garish psychedelic wallpaper.",max,0.0
+control,98,"Plus, there are a few setpieces that still have a surprising impact, such as an early mission in a German nightclub with gorgeously garish psychedelic wallpaper.",last,0.0
+control,99,I wrote this in a facebook forum where people discuss the implications of science on their religious faith.,mean,0.0
+control,99,I wrote this in a facebook forum where people discuss the implications of science on their religious faith.,max,0.0
+control,99,I wrote this in a facebook forum where people discuss the implications of science on their religious faith.,last,0.0
+control,100,"Likewise, it is on this site where the Republic of Réal de Kakarong de Sili of 1896, one of the first Philippine revolutionary republics, was established.",mean,0.0
+control,100,"Likewise, it is on this site where the Republic of Réal de Kakarong de Sili of 1896, one of the first Philippine revolutionary republics, was established.",max,0.0
+control,100,"Likewise, it is on this site where the Republic of Réal de Kakarong de Sili of 1896, one of the first Philippine revolutionary republics, was established.",last,0.0
+control,101,"The council has made provision for varying height limits, ranging from five to eight storeys for commercial blocks and six to 10 storeys for residential blocks.",mean,0.0
+control,101,"The council has made provision for varying height limits, ranging from five to eight storeys for commercial blocks and six to 10 storeys for residential blocks.",max,0.0
+control,101,"The council has made provision for varying height limits, ranging from five to eight storeys for commercial blocks and six to 10 storeys for residential blocks.",last,0.0
+control,102,"So although 12 miles to the gallon might not sound like great fuel economy, modern 4x4s are much more efficient than they used to be.",mean,0.0
+control,102,"So although 12 miles to the gallon might not sound like great fuel economy, modern 4x4s are much more efficient than they used to be.",max,0.0
+control,102,"So although 12 miles to the gallon might not sound like great fuel economy, modern 4x4s are much more efficient than they used to be.",last,0.0
+control,103,Secretly recorded conversations reveal a warm friendship: the men vacationed together with their families and joked easily with each other.,mean,0.0
+control,103,Secretly recorded conversations reveal a warm friendship: the men vacationed together with their families and joked easily with each other.,max,0.0
+control,103,Secretly recorded conversations reveal a warm friendship: the men vacationed together with their families and joked easily with each other.,last,0.0
+control,104,"In recent years, the U.S. military has significantly called back its use of the drug.",mean,0.0
+control,104,"In recent years, the U.S. military has significantly called back its use of the drug.",max,0.0
+control,104,"In recent years, the U.S. military has significantly called back its use of the drug.",last,0.0
+control,105,"Despite the improved ratio numbers, Herrera's strikeout rate dipped a bit last season, as he fanned nearly three less batters per nine innings than he did in his career-best 2013 campaign.",mean,0.0
+control,105,"Despite the improved ratio numbers, Herrera's strikeout rate dipped a bit last season, as he fanned nearly three less batters per nine innings than he did in his career-best 2013 campaign.",max,0.0
+control,105,"Despite the improved ratio numbers, Herrera's strikeout rate dipped a bit last season, as he fanned nearly three less batters per nine innings than he did in his career-best 2013 campaign.",last,0.0
+control,106,"They lack good boots, jackets or rain coats, essential for their job in a reserve, and work for very low pay.They forest guards have to keep the tiger habitat healthy and safeguard rhinos from poachers.",mean,0.0
+control,106,"They lack good boots, jackets or rain coats, essential for their job in a reserve, and work for very low pay.They forest guards have to keep the tiger habitat healthy and safeguard rhinos from poachers.",max,0.0
+control,106,"They lack good boots, jackets or rain coats, essential for their job in a reserve, and work for very low pay.They forest guards have to keep the tiger habitat healthy and safeguard rhinos from poachers.",last,0.0
+control,107,"Pebble functions excellently as an iPhone notifier, but to me, that’s actually secondary in importance.",mean,0.0
+control,107,"Pebble functions excellently as an iPhone notifier, but to me, that’s actually secondary in importance.",max,0.0
+control,107,"Pebble functions excellently as an iPhone notifier, but to me, that’s actually secondary in importance.",last,0.0
+control,108,"So Taniya backs away and the group quickly makes their way down the staircase, going deeper into the tomb, while the two ghosts look on in silence.",mean,0.0
+control,108,"So Taniya backs away and the group quickly makes their way down the staircase, going deeper into the tomb, while the two ghosts look on in silence.",max,0.0
+control,108,"So Taniya backs away and the group quickly makes their way down the staircase, going deeper into the tomb, while the two ghosts look on in silence.",last,0.0
+control,109,"Advertisement
+
+The NES30 also squeezes in a real game changer that fixes a major problem with the NES Classic Edition.",mean,0.0
+control,109,"Advertisement
+
+The NES30 also squeezes in a real game changer that fixes a major problem with the NES Classic Edition.",max,0.0
+control,109,"Advertisement
+
+The NES30 also squeezes in a real game changer that fixes a major problem with the NES Classic Edition.",last,0.0
+control,110,"page 42
+
+A: Somewhat, yes.",mean,0.0
+control,110,"page 42
+
+A: Somewhat, yes.",max,0.0
+control,110,"page 42
+
+A: Somewhat, yes.",last,0.0
+control,111,"According to the firm’s filings, £8.24m of that figure was paid in UK corporation tax – 18.1% of its £45.4m pre-tax profit.",mean,0.0
+control,111,"According to the firm’s filings, £8.24m of that figure was paid in UK corporation tax – 18.1% of its £45.4m pre-tax profit.",max,0.0
+control,111,"According to the firm’s filings, £8.24m of that figure was paid in UK corporation tax – 18.1% of its £45.4m pre-tax profit.",last,0.0
+control,112,"Targeted Expression of OptoA 2A R and MAPK Signaling by OptoA 2A R Activation in the Striatopallidal Neurons
+
+Two weeks after the injection of AAV5-EF1α-DIO-mCherry-optoA 2A R and its control vector into the striatum of the adora2a-Cre mice (Figure 1a), we verified the selective expression of optoA 2A R in the striatopallidal neurons.",mean,0.0
+control,112,"Targeted Expression of OptoA 2A R and MAPK Signaling by OptoA 2A R Activation in the Striatopallidal Neurons
+
+Two weeks after the injection of AAV5-EF1α-DIO-mCherry-optoA 2A R and its control vector into the striatum of the adora2a-Cre mice (Figure 1a), we verified the selective expression of optoA 2A R in the striatopallidal neurons.",max,0.0
+control,112,"Targeted Expression of OptoA 2A R and MAPK Signaling by OptoA 2A R Activation in the Striatopallidal Neurons
+
+Two weeks after the injection of AAV5-EF1α-DIO-mCherry-optoA 2A R and its control vector into the striatum of the adora2a-Cre mice (Figure 1a), we verified the selective expression of optoA 2A R in the striatopallidal neurons.",last,0.0
+control,113,"With the election of Federalist John Adams as president in 1797, French treatment of the United States grew still more hostile.",mean,0.0
+control,113,"With the election of Federalist John Adams as president in 1797, French treatment of the United States grew still more hostile.",max,0.0
+control,113,"With the election of Federalist John Adams as president in 1797, French treatment of the United States grew still more hostile.",last,0.0
+control,114,Our lives are going to be fine.,mean,0.0
+control,114,Our lives are going to be fine.,max,0.0
+control,114,Our lives are going to be fine.,last,0.0
+control,115,"In the process of this shift they didn't add any features that actually helped desktop users, though they did spend an absurd amount of money creating a custom background image.",mean,0.0
+control,115,"In the process of this shift they didn't add any features that actually helped desktop users, though they did spend an absurd amount of money creating a custom background image.",max,0.0
+control,115,"In the process of this shift they didn't add any features that actually helped desktop users, though they did spend an absurd amount of money creating a custom background image.",last,0.0
+control,116,"It is a well-defined concept relating to static type systems, and has proof techniques and all those bells and whistles.",mean,0.0
+control,116,"It is a well-defined concept relating to static type systems, and has proof techniques and all those bells and whistles.",max,0.0
+control,116,"It is a well-defined concept relating to static type systems, and has proof techniques and all those bells and whistles.",last,0.0
+control,117,But change is going to happen no matter what I do.,mean,0.0
+control,117,But change is going to happen no matter what I do.,max,0.0
+control,117,But change is going to happen no matter what I do.,last,0.0
+control,118,It also captured one of the team’s biggest strengths over the last few seasons: patience.,mean,0.0
+control,118,It also captured one of the team’s biggest strengths over the last few seasons: patience.,max,0.0
+control,118,It also captured one of the team’s biggest strengths over the last few seasons: patience.,last,0.0
+control,119,"Ameratasu (Japan)
+
+In feudal Japan, worshipers celebrated the return of Ameratasu, the sun goddess, who slept in a cold, remote cave.",mean,0.0
+control,119,"Ameratasu (Japan)
+
+In feudal Japan, worshipers celebrated the return of Ameratasu, the sun goddess, who slept in a cold, remote cave.",max,0.0
+control,119,"Ameratasu (Japan)
+
+In feudal Japan, worshipers celebrated the return of Ameratasu, the sun goddess, who slept in a cold, remote cave.",last,0.0
+control,120,Everyone ends up reading a lot of Latin aloud—and being corrected; suggesting Latin ways of saying things—and being corrected again; and translating—and being corrected yet a third time.,mean,0.0
+control,120,Everyone ends up reading a lot of Latin aloud—and being corrected; suggesting Latin ways of saying things—and being corrected again; and translating—and being corrected yet a third time.,max,0.0
+control,120,Everyone ends up reading a lot of Latin aloud—and being corrected; suggesting Latin ways of saying things—and being corrected again; and translating—and being corrected yet a third time.,last,0.0
+control,121,Grant: What are Edges and how are they used?,mean,0.0
+control,121,Grant: What are Edges and how are they used?,max,0.0
+control,121,Grant: What are Edges and how are they used?,last,0.0
+control,122,"Stockton Port City via Youtube Police in Stockton, California, tackled a black 16-year-old to the ground and put him in handcuffs after he allegedly walked in a bus lane and refused to comply with an officer's request to get back on the sidewalk.",mean,0.0
+control,122,"Stockton Port City via Youtube Police in Stockton, California, tackled a black 16-year-old to the ground and put him in handcuffs after he allegedly walked in a bus lane and refused to comply with an officer's request to get back on the sidewalk.",max,0.0
+control,122,"Stockton Port City via Youtube Police in Stockton, California, tackled a black 16-year-old to the ground and put him in handcuffs after he allegedly walked in a bus lane and refused to comply with an officer's request to get back on the sidewalk.",last,0.0
+control,123,"He appears to the heroes now in a form that could only be vaguely described as human- composed of rot-blackened organs that swell and split, clustered around his crumbling bones like sacks of stinking awful, with his intestines hanging in ropey coils from his belly.",mean,0.0
+control,123,"He appears to the heroes now in a form that could only be vaguely described as human- composed of rot-blackened organs that swell and split, clustered around his crumbling bones like sacks of stinking awful, with his intestines hanging in ropey coils from his belly.",max,0.0
+control,123,"He appears to the heroes now in a form that could only be vaguely described as human- composed of rot-blackened organs that swell and split, clustered around his crumbling bones like sacks of stinking awful, with his intestines hanging in ropey coils from his belly.",last,0.0
+control,124,"Crews have deployed more than 70,000 feet of containment boom, but corralling the oil has proved difficult.",mean,0.0
+control,124,"Crews have deployed more than 70,000 feet of containment boom, but corralling the oil has proved difficult.",max,0.0
+control,124,"Crews have deployed more than 70,000 feet of containment boom, but corralling the oil has proved difficult.",last,0.0
+control,125,"And as luck would have it, turns out these are not inconsistent requirements in Ruby 1.9.",mean,0.0
+control,125,"And as luck would have it, turns out these are not inconsistent requirements in Ruby 1.9.",max,0.0
+control,125,"And as luck would have it, turns out these are not inconsistent requirements in Ruby 1.9.",last,0.0
+control,126,It operates in many parts of the world and receives professional legal counsel in every country it operates.,mean,0.0
+control,126,It operates in many parts of the world and receives professional legal counsel in every country it operates.,max,0.0
+control,126,It operates in many parts of the world and receives professional legal counsel in every country it operates.,last,0.0
+control,127,"When we recall the past, what do we recall?",mean,0.0
+control,127,"When we recall the past, what do we recall?",max,0.0
+control,127,"When we recall the past, what do we recall?",last,0.0
+control,128,Critics say it could lead to increased unemployment as employers will be unable to afford higher wage bills.,mean,0.0
+control,128,Critics say it could lead to increased unemployment as employers will be unable to afford higher wage bills.,max,0.0
+control,128,Critics say it could lead to increased unemployment as employers will be unable to afford higher wage bills.,last,0.0
+control,129,"Over the course of 2015, Amazon gained market share in India at the expense of both Flipkart and Snapdeal, according to publicly available data and several company executives.",mean,0.0
+control,129,"Over the course of 2015, Amazon gained market share in India at the expense of both Flipkart and Snapdeal, according to publicly available data and several company executives.",max,0.0
+control,129,"Over the course of 2015, Amazon gained market share in India at the expense of both Flipkart and Snapdeal, according to publicly available data and several company executives.",last,0.0
+control,130,"[23][25]
+
+Covert surveillance capability [ edit ]
+
+The school loaded each student's computer with LANrev's remote activation and tracking software.",mean,0.0
+control,130,"[23][25]
+
+Covert surveillance capability [ edit ]
+
+The school loaded each student's computer with LANrev's remote activation and tracking software.",max,0.0
+control,130,"[23][25]
+
+Covert surveillance capability [ edit ]
+
+The school loaded each student's computer with LANrev's remote activation and tracking software.",last,0.0
+control,131,"Levy was one of the giants of the London property trade during that era, a bookmaker’s son who became an estate agent in partnership with his brother David in 1939, just before the outbreak of war.",mean,0.0
+control,131,"Levy was one of the giants of the London property trade during that era, a bookmaker’s son who became an estate agent in partnership with his brother David in 1939, just before the outbreak of war.",max,0.0
+control,131,"Levy was one of the giants of the London property trade during that era, a bookmaker’s son who became an estate agent in partnership with his brother David in 1939, just before the outbreak of war.",last,0.0
+control,132,"Meanwhile, the official logline of the film is: “Steve Rogers struggles to embrace his role in the modern world and teams up with Natasha Romanoff, a.k.a.",mean,0.0
+control,132,"Meanwhile, the official logline of the film is: “Steve Rogers struggles to embrace his role in the modern world and teams up with Natasha Romanoff, a.k.a.",max,0.0
+control,132,"Meanwhile, the official logline of the film is: “Steve Rogers struggles to embrace his role in the modern world and teams up with Natasha Romanoff, a.k.a.",last,0.0
+control,133,"Pencher does in fact mean ""to incline or rise,"" and finally, after a whole life of just vaguely knowing what the English word ""penchant"" means, I confirmed it does mean ""inclining towards"" (or ""preferring"" or ""having a habit of"" -- all derived from ""inclining towards"").",mean,0.0
+control,133,"Pencher does in fact mean ""to incline or rise,"" and finally, after a whole life of just vaguely knowing what the English word ""penchant"" means, I confirmed it does mean ""inclining towards"" (or ""preferring"" or ""having a habit of"" -- all derived from ""inclining towards"").",max,0.0
+control,133,"Pencher does in fact mean ""to incline or rise,"" and finally, after a whole life of just vaguely knowing what the English word ""penchant"" means, I confirmed it does mean ""inclining towards"" (or ""preferring"" or ""having a habit of"" -- all derived from ""inclining towards"").",last,0.0
+control,134,"""I would be in my home studio with my guitar and my tape machine, possibly with a baby crying in the distance, possibly with my beautiful wife lying in bed wondering where I was, thinking, 'We've got an album to make in three weeks – and between now and then, I've got to write the songs and we've got eight gigs.'""",mean,0.0
+control,134,"""I would be in my home studio with my guitar and my tape machine, possibly with a baby crying in the distance, possibly with my beautiful wife lying in bed wondering where I was, thinking, 'We've got an album to make in three weeks – and between now and then, I've got to write the songs and we've got eight gigs.'""",max,0.0
+control,134,"""I would be in my home studio with my guitar and my tape machine, possibly with a baby crying in the distance, possibly with my beautiful wife lying in bed wondering where I was, thinking, 'We've got an album to make in three weeks – and between now and then, I've got to write the songs and we've got eight gigs.'""",last,0.0
+control,135,I’m really proud of it.,mean,0.0
+control,135,I’m really proud of it.,max,0.0
+control,135,I’m really proud of it.,last,0.0
+control,136,We tell people they’re doing something “like a girl” when we’re explaining how they’re doing something awkwardly or weakly.,mean,0.0
+control,136,We tell people they’re doing something “like a girl” when we’re explaining how they’re doing something awkwardly or weakly.,max,0.0
+control,136,We tell people they’re doing something “like a girl” when we’re explaining how they’re doing something awkwardly or weakly.,last,0.0
+control,137,"WowWee plans to officially announce CHiP early next year, and may launch a Kickstarter or Indiegogo campaign to support it.",mean,0.0
+control,137,"WowWee plans to officially announce CHiP early next year, and may launch a Kickstarter or Indiegogo campaign to support it.",max,0.0
+control,137,"WowWee plans to officially announce CHiP early next year, and may launch a Kickstarter or Indiegogo campaign to support it.",last,0.0
+control,138,"""There are going to be human chains around (Immigrations and Customs Enforcement) offices.",mean,0.0
+control,138,"""There are going to be human chains around (Immigrations and Customs Enforcement) offices.",max,0.0
+control,138,"""There are going to be human chains around (Immigrations and Customs Enforcement) offices.",last,0.0
+control,139,The income of many of the people who are allowed to stay is so low that they don't meet the threshold for state or federal income taxes and probably get a check in the mail in January from the Earned IncomeTax Credit.,mean,0.0
+control,139,The income of many of the people who are allowed to stay is so low that they don't meet the threshold for state or federal income taxes and probably get a check in the mail in January from the Earned IncomeTax Credit.,max,0.0
+control,139,The income of many of the people who are allowed to stay is so low that they don't meet the threshold for state or federal income taxes and probably get a check in the mail in January from the Earned IncomeTax Credit.,last,0.0
+control,140,"In addition, Chinese analysts contended, large numbers of hydrophones had been installed “in Chinese waters” close to China’s submarine bases in Qingdao, Xiaopingdao, and Yulin on Hainan Island, even though it wasn’t fully clear if these sensors were all operational.",mean,0.0
+control,140,"In addition, Chinese analysts contended, large numbers of hydrophones had been installed “in Chinese waters” close to China’s submarine bases in Qingdao, Xiaopingdao, and Yulin on Hainan Island, even though it wasn’t fully clear if these sensors were all operational.",max,0.0
+control,140,"In addition, Chinese analysts contended, large numbers of hydrophones had been installed “in Chinese waters” close to China’s submarine bases in Qingdao, Xiaopingdao, and Yulin on Hainan Island, even though it wasn’t fully clear if these sensors were all operational.",last,0.0
+control,141,"By then, it is far past the time in which stomach pumping would yield an efficient result.",mean,0.0
+control,141,"By then, it is far past the time in which stomach pumping would yield an efficient result.",max,0.0
+control,141,"By then, it is far past the time in which stomach pumping would yield an efficient result.",last,0.0
+control,142,"For us, it’s good news, because we can ride on the same wave.""",mean,0.0
+control,142,"For us, it’s good news, because we can ride on the same wave.""",max,0.0
+control,142,"For us, it’s good news, because we can ride on the same wave.""",last,0.0
+control,143,Hage says the City of Trees has been successful in getting refugees in homes and getting them started.,mean,0.0
+control,143,Hage says the City of Trees has been successful in getting refugees in homes and getting them started.,max,0.0
+control,143,Hage says the City of Trees has been successful in getting refugees in homes and getting them started.,last,0.0
+control,144,"This process relies implicitly on two things — that base conversion between integers is exact, and that IEEE multiplication and division produce correctly rounded results.",mean,0.0
+control,144,"This process relies implicitly on two things — that base conversion between integers is exact, and that IEEE multiplication and division produce correctly rounded results.",max,0.0
+control,144,"This process relies implicitly on two things — that base conversion between integers is exact, and that IEEE multiplication and division produce correctly rounded results.",last,0.0
+control,145,Not all judges are willing to provide such an order.,mean,0.0
+control,145,Not all judges are willing to provide such an order.,max,0.0
+control,145,Not all judges are willing to provide such an order.,last,0.0
+control,146,"In his book “Debt: The First 5000 Years” David Graeber, makes an argument in favor of the “non-industrious” poor.",mean,0.0
+control,146,"In his book “Debt: The First 5000 Years” David Graeber, makes an argument in favor of the “non-industrious” poor.",max,0.0
+control,146,"In his book “Debt: The First 5000 Years” David Graeber, makes an argument in favor of the “non-industrious” poor.",last,0.0
+control,147,Doesn't even have a clasp or anything.,mean,0.0
+control,147,Doesn't even have a clasp or anything.,max,0.0
+control,147,Doesn't even have a clasp or anything.,last,0.0
+control,148,I'm able to keep the first owl in a large outdoor enclosure.,mean,0.0
+control,148,I'm able to keep the first owl in a large outdoor enclosure.,max,0.0
+control,148,I'm able to keep the first owl in a large outdoor enclosure.,last,0.0
+control,149,"In addition to Todd Palin, the subpoenas cover 11 members of the Palin administration, including the governor's chief of staff, deputy chief of staff and executive secretary; and Frank Bailey, an official suspended in August after Sarah Palin disclosed he had called a state police lieutenant to discuss Wooten.",mean,0.0
+control,149,"In addition to Todd Palin, the subpoenas cover 11 members of the Palin administration, including the governor's chief of staff, deputy chief of staff and executive secretary; and Frank Bailey, an official suspended in August after Sarah Palin disclosed he had called a state police lieutenant to discuss Wooten.",max,0.0
+control,149,"In addition to Todd Palin, the subpoenas cover 11 members of the Palin administration, including the governor's chief of staff, deputy chief of staff and executive secretary; and Frank Bailey, an official suspended in August after Sarah Palin disclosed he had called a state police lieutenant to discuss Wooten.",last,0.0
+control,150,"Again, all this suggests a less didactic library than Unkant's unbending dialectical materialism, though the one constant, the typography, an oversized chiseled upper case font, feels like a rhetorical flourish.",mean,0.0
+control,150,"Again, all this suggests a less didactic library than Unkant's unbending dialectical materialism, though the one constant, the typography, an oversized chiseled upper case font, feels like a rhetorical flourish.",max,0.0
+control,150,"Again, all this suggests a less didactic library than Unkant's unbending dialectical materialism, though the one constant, the typography, an oversized chiseled upper case font, feels like a rhetorical flourish.",last,0.0
+control,151,"Getty Images
+
+Bucs wide receiver Mike Evans lost his appeal and will miss Sunday’s game against the Jets.",mean,0.0
+control,151,"Getty Images
+
+Bucs wide receiver Mike Evans lost his appeal and will miss Sunday’s game against the Jets.",max,0.0
+control,151,"Getty Images
+
+Bucs wide receiver Mike Evans lost his appeal and will miss Sunday’s game against the Jets.",last,0.0
+control,152,"Governor calls for special session
+
+In other action related to Ferguson, Missouri Gov.",mean,0.0
+control,152,"Governor calls for special session
+
+In other action related to Ferguson, Missouri Gov.",max,0.0
+control,152,"Governor calls for special session
+
+In other action related to Ferguson, Missouri Gov.",last,0.0
+control,153,"A third planet that's potentially habitable, but not included in the Science study, is called Kepler-69c.",mean,0.0
+control,153,"A third planet that's potentially habitable, but not included in the Science study, is called Kepler-69c.",max,0.0
+control,153,"A third planet that's potentially habitable, but not included in the Science study, is called Kepler-69c.",last,0.0
+control,154,"Check this out:
+
+Democrat Jon Ossoff on the reportedly $40 million spent in the Georgia election: ""We need campaign finance reform.""",mean,0.0
+control,154,"Check this out:
+
+Democrat Jon Ossoff on the reportedly $40 million spent in the Georgia election: ""We need campaign finance reform.""",max,0.0
+control,154,"Check this out:
+
+Democrat Jon Ossoff on the reportedly $40 million spent in the Georgia election: ""We need campaign finance reform.""",last,0.0
+control,155,"Traditionalists might say iconic industries like forestry, agriculture, mining or fishing.",mean,0.0
+control,155,"Traditionalists might say iconic industries like forestry, agriculture, mining or fishing.",max,0.0
+control,155,"Traditionalists might say iconic industries like forestry, agriculture, mining or fishing.",last,0.0
+control,156,"Earnest stressed that Obama will eventually “support the Democratic nominee” and said that “we are getting very close to the end of the nomination process.”
+
+But the president wants to avoid provoking supporters of Sanders, who has vowed to carry on his campaign until the Democratic National Convention in late July.",mean,0.0
+control,156,"Earnest stressed that Obama will eventually “support the Democratic nominee” and said that “we are getting very close to the end of the nomination process.”
+
+But the president wants to avoid provoking supporters of Sanders, who has vowed to carry on his campaign until the Democratic National Convention in late July.",max,0.0
+control,156,"Earnest stressed that Obama will eventually “support the Democratic nominee” and said that “we are getting very close to the end of the nomination process.”
+
+But the president wants to avoid provoking supporters of Sanders, who has vowed to carry on his campaign until the Democratic National Convention in late July.",last,0.0
+control,157,"The Institute of Diabetes and Obesity (IDO) studies the diseases of the metabolic syndrome by means of systems biological and translational approaches on the basis of cellular systems, genetically modified mouse models and clinical intervention studies.",mean,0.0
+control,157,"The Institute of Diabetes and Obesity (IDO) studies the diseases of the metabolic syndrome by means of systems biological and translational approaches on the basis of cellular systems, genetically modified mouse models and clinical intervention studies.",max,0.0
+control,157,"The Institute of Diabetes and Obesity (IDO) studies the diseases of the metabolic syndrome by means of systems biological and translational approaches on the basis of cellular systems, genetically modified mouse models and clinical intervention studies.",last,0.0
+control,158,That's a good idea.,mean,0.0
+control,158,That's a good idea.,max,0.0
+control,158,That's a good idea.,last,0.0
+control,159,"Several left Qatar in September, although the Qataris insisted they had not been expelled.",mean,0.0
+control,159,"Several left Qatar in September, although the Qataris insisted they had not been expelled.",max,0.0
+control,159,"Several left Qatar in September, although the Qataris insisted they had not been expelled.",last,0.0
+control,160,"""And our potential adversaries study this as well, learning from us.",mean,0.0
+control,160,"""And our potential adversaries study this as well, learning from us.",max,0.0
+control,160,"""And our potential adversaries study this as well, learning from us.",last,0.0
+control,161,"The research report predicts that by 2019, PWR technology will continue to dominate the nuclear power market in BRIC countries.",mean,0.0
+control,161,"The research report predicts that by 2019, PWR technology will continue to dominate the nuclear power market in BRIC countries.",max,0.0
+control,161,"The research report predicts that by 2019, PWR technology will continue to dominate the nuclear power market in BRIC countries.",last,0.0
+control,162,This is not to say the rise of Ukip is insignificant.,mean,0.0
+control,162,This is not to say the rise of Ukip is insignificant.,max,0.0
+control,162,This is not to say the rise of Ukip is insignificant.,last,0.0
+control,163,Or work for the many enterprise consultancies that provide “big data solutions”.,mean,0.0
+control,163,Or work for the many enterprise consultancies that provide “big data solutions”.,max,0.0
+control,163,Or work for the many enterprise consultancies that provide “big data solutions”.,last,0.0
+control,164,Saves per goal on the other hand looks at how goalkeepers have responded when they’ve been called upon and virtually does not leave anything else open to interpretation.,mean,0.0
+control,164,Saves per goal on the other hand looks at how goalkeepers have responded when they’ve been called upon and virtually does not leave anything else open to interpretation.,max,0.0
+control,164,Saves per goal on the other hand looks at how goalkeepers have responded when they’ve been called upon and virtually does not leave anything else open to interpretation.,last,0.0
+control,165,"“I didn’t think we’d get to that number.”
+
+He sold 29 books that day, surpassing the 16 sales he averages at each event.",mean,0.0
+control,165,"“I didn’t think we’d get to that number.”
+
+He sold 29 books that day, surpassing the 16 sales he averages at each event.",max,0.0
+control,165,"“I didn’t think we’d get to that number.”
+
+He sold 29 books that day, surpassing the 16 sales he averages at each event.",last,0.0
+control,166,Campbell said some argue Exelon Power should be responsible for dealing with the sediment since they own the dam.,mean,0.0
+control,166,Campbell said some argue Exelon Power should be responsible for dealing with the sediment since they own the dam.,max,0.0
+control,166,Campbell said some argue Exelon Power should be responsible for dealing with the sediment since they own the dam.,last,0.0
+control,167,The evidence that the grand jury reviewed has made available to the public and can be found here.,mean,0.0
+control,167,The evidence that the grand jury reviewed has made available to the public and can be found here.,max,0.0
+control,167,The evidence that the grand jury reviewed has made available to the public and can be found here.,last,0.0
+control,168,"; Lascaratou, 2007 Lascaratou, C. 2007.",mean,0.0
+control,168,"; Lascaratou, 2007 Lascaratou, C. 2007.",max,0.0
+control,168,"; Lascaratou, 2007 Lascaratou, C. 2007.",last,0.0
+control,169,"He studied law at Bologna and was appointed as cardinal by his uncle, Alfons Borgia, Pope Callixtus III.",mean,0.0
+control,169,"He studied law at Bologna and was appointed as cardinal by his uncle, Alfons Borgia, Pope Callixtus III.",max,0.0
+control,169,"He studied law at Bologna and was appointed as cardinal by his uncle, Alfons Borgia, Pope Callixtus III.",last,0.0
+control,170,"Broad scientific agreement exists on many points, it said, including that the Earth’s climate is warming and that “human-related emissions of greenhouse gases and other pollutants have contributed to warming observed since the 1970s and, if continued, would tend to drive further warming, sea level rise, and other climate shifts.”
+
+To contact the reporters on this story: Dean Scott in Washington at DScott@bna.com; Renee Schoof in Washington at rschoof@bna.com
+
+To contact the editor responsible for this story: Larry Pearl at lpearl@bna.com
+
+Copyright © 2016 The Bureau of National Affairs, Inc. All Rights Reserved.",mean,0.0
+control,170,"Broad scientific agreement exists on many points, it said, including that the Earth’s climate is warming and that “human-related emissions of greenhouse gases and other pollutants have contributed to warming observed since the 1970s and, if continued, would tend to drive further warming, sea level rise, and other climate shifts.”
+
+To contact the reporters on this story: Dean Scott in Washington at DScott@bna.com; Renee Schoof in Washington at rschoof@bna.com
+
+To contact the editor responsible for this story: Larry Pearl at lpearl@bna.com
+
+Copyright © 2016 The Bureau of National Affairs, Inc. All Rights Reserved.",max,0.0
+control,170,"Broad scientific agreement exists on many points, it said, including that the Earth’s climate is warming and that “human-related emissions of greenhouse gases and other pollutants have contributed to warming observed since the 1970s and, if continued, would tend to drive further warming, sea level rise, and other climate shifts.”
+
+To contact the reporters on this story: Dean Scott in Washington at DScott@bna.com; Renee Schoof in Washington at rschoof@bna.com
+
+To contact the editor responsible for this story: Larry Pearl at lpearl@bna.com
+
+Copyright © 2016 The Bureau of National Affairs, Inc. All Rights Reserved.",last,0.0
+control,171,The weapon balance of H5 is the best it's ever been in Halo.,mean,0.0
+control,171,The weapon balance of H5 is the best it's ever been in Halo.,max,0.0
+control,171,The weapon balance of H5 is the best it's ever been in Halo.,last,0.0
+control,172,"Under Johnson in 1965 and 1966, the Democrats twice failed to repeal Section 14b of Taft-Hartley , the section that enabled states to outlaw union shops (so-called “right-to-work” laws).",mean,0.0
+control,172,"Under Johnson in 1965 and 1966, the Democrats twice failed to repeal Section 14b of Taft-Hartley , the section that enabled states to outlaw union shops (so-called “right-to-work” laws).",max,0.0
+control,172,"Under Johnson in 1965 and 1966, the Democrats twice failed to repeal Section 14b of Taft-Hartley , the section that enabled states to outlaw union shops (so-called “right-to-work” laws).",last,0.0
+control,173,"A small group of protesters, although “no body knows who they are“, have responded by throwing fireworks and stones at police.",mean,0.0
+control,173,"A small group of protesters, although “no body knows who they are“, have responded by throwing fireworks and stones at police.",max,0.0
+control,173,"A small group of protesters, although “no body knows who they are“, have responded by throwing fireworks and stones at police.",last,0.0
+control,174,"Lacking a governing record after squandering the start of his presidency, he used his first full cabinet meeting to stage a televised display of loyalty.",mean,0.0
+control,174,"Lacking a governing record after squandering the start of his presidency, he used his first full cabinet meeting to stage a televised display of loyalty.",max,0.0
+control,174,"Lacking a governing record after squandering the start of his presidency, he used his first full cabinet meeting to stage a televised display of loyalty.",last,0.0
+control,175,"In certain cases, pets may be the closest connection an owner may have at home, which can distract them from mental health symptoms such as suicidal thoughts or panic attacks.",mean,0.0
+control,175,"In certain cases, pets may be the closest connection an owner may have at home, which can distract them from mental health symptoms such as suicidal thoughts or panic attacks.",max,0.0
+control,175,"In certain cases, pets may be the closest connection an owner may have at home, which can distract them from mental health symptoms such as suicidal thoughts or panic attacks.",last,0.0
+control,176,"At this point, it does not, and I'm almost done with the book.",mean,0.0
+control,176,"At this point, it does not, and I'm almost done with the book.",max,0.0
+control,176,"At this point, it does not, and I'm almost done with the book.",last,0.0
+control,177,My friend and I immediately mark out since we were HUGE wrestling fans.,mean,0.0
+control,177,My friend and I immediately mark out since we were HUGE wrestling fans.,max,0.0
+control,177,My friend and I immediately mark out since we were HUGE wrestling fans.,last,0.0

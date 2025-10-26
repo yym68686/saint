@@ -23,9 +23,9 @@ def parse_args() -> argparse.Namespace:
     p.add_argument("--llama_model_dir", type=Path, required=True, help="Llama 3 模型目录（含 tokenizer.model/params.json/consolidated.00.pth）")
     p.add_argument("--sae_model_path", type=Path, required=True, help="SAE 模型路径 .pt")
     p.add_argument("--sae_layer_idx", type=int, required=True, help="SAE 对应的层（捕获残差激活的层）")
-    p.add_argument("--so_presence_dir", type=Path, default=Path("ablation_datasets/so_presence"), help="包含 target/control JSONL 的目录")
-    p.add_argument("--target_path", type=Path, default=None, help="可选：含 so 的 JSONL 路径（字段 text），默认 so_presence_dir/target_dataset.jsonl")
-    p.add_argument("--control_path", type=Path, default=None, help="可选：不含 so 的 JSONL 路径（字段 text），默认 so_presence_dir/control_dataset.jsonl")
+    p.add_argument("--control_target_dir", type=Path, default=Path("ablation_datasets/so_presence"), help="包含 target/control JSONL 的目录")
+    p.add_argument("--target_path", type=Path, default=None, help="可选：含该特征的 JSONL 路径（字段 text），默认 control_target_dir/target_dataset.jsonl")
+    p.add_argument("--control_path", type=Path, default=None, help="可选：不含该特征的 JSONL 路径（字段 text），默认 control_target_dir/control_dataset.jsonl")
     p.add_argument("--feature_index", type=int, default=28178, help="要检查的 SAE 特征编号（默认 28178）")
     p.add_argument("--max_token_length", type=int, default=192, help="token 上限，超长将被截断（默认 192）")
     p.add_argument("--device", type=str, default="cuda", help="设备（默认 cuda）")
@@ -213,7 +213,7 @@ def main():
         logging.warning("CUDA 不可用，回落到 CPU。")
 
     # 路径与数据载入
-    so_dir = args.so_presence_dir.resolve()
+    so_dir = args.control_target_dir.resolve()
     target_path = args.target_path.resolve() if args.target_path else (so_dir / "target_dataset.jsonl")
     control_path = args.control_path.resolve() if args.control_path else (so_dir / "control_dataset.jsonl")
 
@@ -265,10 +265,10 @@ def main():
             nz_any.append(stats["nonzero_any"])
         return means, maxs, lasts, nz_any
 
-    logging.info("处理 target 组（含 'so'）...")
+    logging.info("处理 target 组（含该特征）...")
     t_means, t_maxs, t_lasts, t_nz = eval_group(target_texts)
 
-    logging.info("处理 control 组（不含 'so'）...")
+    logging.info("处理 control 组（不含该特征）...")
     c_means, c_maxs, c_lasts, c_nz = eval_group(control_texts)
 
     # 汇总

@@ -325,6 +325,19 @@ python create_ablation_datasets_from_top_sentences.py \
 --shuffle_seed 42 \
 --output_dir ./ablation_datasets \
 --save_metadata
+
+# trained_sae-batchtopk-l11.pt 的 16341 号特征是含有 your 的句子
+python create_ablation_datasets_from_top_sentences.py \
+--top_sentences_filepath ./top_activating_sentences/top_sentences_mean.yaml \
+--dataset_path /root/lanyun-tmp/train-00000-of-00082.parquet \
+--feature_indices 16341 \
+--top_k_per_feature 100 \
+--num_target_samples 200 \
+--num_control_samples 200 \
+--controls_source yaml_others \
+--shuffle_seed 42 \
+--output_dir ./ablation_datasets/your \
+--save_metadata
 ```
 
 ## 特征消融实验
@@ -496,18 +509,28 @@ python create_so_induction_dataset.py --num_prompts 200 --output_path ./ablation
 python evaluate_so_induction_ablation.py --llama_model_dir ./llama_3.2-3B_model/original --sae_model_path ./trained_sae-dense-l11.pt --sae_layer_idx 11 --prompts_path ./ablation_datasets/so_induction_prompts.jsonl --ablation_feature_indices 28178 --max_new_tokens 24 --temperature 0.7 --top_p 0.9 --batch_size 32 --save_outputs --output_dir ./ablation_datasets/so_eval-dense-l11
 ```
 
-## 检测so激活大小区别 成功
-
-## dense-l11-f28178
+## 检测特征激活大小区别 成功
 
 ```bash
 cd saint
 eval $(poetry env activate)
 
 python create_so_presence_datasets.py --dataset_path /root/lanyun-tmp/train-00000-of-00082.parquet --num_target 200 --num_control 200 --shuffle --output_dir ./ablation_datasets/so_presence
+```
 
-# 重要：要修改 analyze_feature_activation_so_presence.py 里面的 from sae import load_sae_model 如果使用了不同的架构。
-python analyze_feature_activation_so_presence.py --llama_model_dir ./llama_3.2-3B_model/original --sae_model_path ./trained_sae-dense-l11.pt --sae_layer_idx 11 --feature_index 28178 --so_presence_dir ./ablation_datasets/so_presence --output_path ./ablation_datasets/so_presence/feature_activation_summary.json --save_per_sample
+比较control和target的特征检出率
+
+重要！！：要修改环境变量 SAE_ARCHITECTURE，compare_feature_activation_between_datasets.py 里面的 from sae import load_sae_model 如果使用了不同的架构。
+
+```bash
+cd saint
+eval $(poetry env activate)
+
+# dense-l11-f28178 so 特征
+SAE_ARCHITECTURE=dense python compare_feature_activation_between_datasets.py --llama_model_dir ./llama_3.2-3B_model/original --sae_model_path ./trained_sae-dense-l11.pt --sae_layer_idx 11 --feature_index 28178 --control_target_dir ./ablation_datasets/so_presence --output_path ./ablation_datasets/so_presence/dense-l11-f28178/feature_activation_summary.json --save_per_sample
+
+# batchtopk-l11-f16341 含有your的句子
+SAE_ARCHITECTURE=batchtopk python compare_feature_activation_between_datasets.py --llama_model_dir ./llama_3.2-3B_model/original --sae_model_path ./trained_sae-batchtopk-l11.pt --sae_layer_idx 11 --feature_index 16341 --control_target_dir ./ablation_datasets/your --output_path ./ablation_datasets/your/batchtopk-l11-f16341/feature_activation_summary.json --save_per_sample
 ```
 
 ## codebook
