@@ -1,5 +1,6 @@
 import argparse
 import logging
+import os
 from collections import defaultdict
 from pathlib import Path
 
@@ -98,7 +99,11 @@ def capture_top_activating_sentences(
         # Forward pass through the model
         batch_normalized, mean, norm = model.preprocess_input(batch)
         with torch.no_grad():
-            _, _, h_sparse = model.forward_1d_normalized(batch_normalized)
+            SAE_ARCHITECTURE = os.environ.get("SAE_ARCHITECTURE", "topk").lower()
+            if SAE_ARCHITECTURE == "dense":
+                _, _, h_sparse, _ = model.forward_1d_normalized(batch_normalized)
+            else:
+                _, _, h_sparse = model.forward_1d_normalized(batch_normalized)
 
         # Unbatch the h_sparse tensor into sequences using the predetermined boundaries
         sequence_h_sparse = []

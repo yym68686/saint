@@ -215,13 +215,13 @@ python run_ablation_experiment.py --llama_model_dir ... --sae_model_path ...
 ```bash
 cd saint
 eval $(poetry env activate)
-python capture_top_activating_sentences.py \
+SAE_ARCHITECTURE=dense python capture_top_activating_sentences.py \
     --data_dir ./activation_outputs \
-    --model_path ./trained_sae.pt \
+    --model_path ./trained_sae-dense-l11.pt \
     --captured_data_output_dir ./top_activating_sentences \
     --layer 11
 
-python capture_top_activating_sentences.py \
+SAE_ARCHITECTURE=batchtopk python capture_top_activating_sentences.py \
     --data_dir ./activation_outputs \
     --model_path ./trained_sae-batchtopk-l11.pt \
     --captured_data_output_dir ./top_activating_sentences \
@@ -326,17 +326,17 @@ python create_ablation_datasets_from_top_sentences.py \
 --output_dir ./ablation_datasets \
 --save_metadata
 
-# trained_sae-batchtopk-l11.pt 的 16341 号特征是含有 your 的句子
+# trained_sae-batchtopk-l11.pt 的含有某号特征的句子，下面的命令只需要改 feature_indices，output_dir
 python create_ablation_datasets_from_top_sentences.py \
 --top_sentences_filepath ./top_activating_sentences/top_sentences_mean.yaml \
 --dataset_path /root/lanyun-tmp/train-00000-of-00082.parquet \
---feature_indices 16341 \
+--feature_indices 37802 \
 --top_k_per_feature 100 \
 --num_target_samples 200 \
 --num_control_samples 200 \
 --controls_source yaml_others \
 --shuffle_seed 42 \
---output_dir ./ablation_datasets/your \
+--output_dir ./ablation_datasets/photo_captions \
 --save_metadata
 ```
 
@@ -526,11 +526,11 @@ python create_so_presence_datasets.py --dataset_path /root/lanyun-tmp/train-0000
 cd saint
 eval $(poetry env activate)
 
-# dense-l11-f28178 so 特征
-SAE_ARCHITECTURE=dense python compare_feature_activation_between_datasets.py --llama_model_dir ./llama_3.2-3B_model/original --sae_model_path ./trained_sae-dense-l11.pt --sae_layer_idx 11 --feature_index 28178 --control_target_dir ./ablation_datasets/so_presence --output_path ./ablation_datasets/so_presence/dense-l11-f28178/feature_activation_summary.json --save_per_sample
+# dense-l11-fxxx 含有某号特征的句子，下面的命令只需要改feature_index，control_target_dir，output_path
+SAE_ARCHITECTURE=dense python compare_feature_activation_between_datasets.py --llama_model_dir ./llama_3.2-3B_model/original --sae_model_path ./trained_sae-dense-l11.pt --sae_layer_idx 11 --feature_index 37802 --control_target_dir ./ablation_datasets/photo_captions --output_path ./ablation_datasets/photo_captions/dense-l11-f37802/feature_activation_summary.json --save_per_sample
 
-# batchtopk-l11-f16341 含有your的句子
-SAE_ARCHITECTURE=batchtopk python compare_feature_activation_between_datasets.py --llama_model_dir ./llama_3.2-3B_model/original --sae_model_path ./trained_sae-batchtopk-l11.pt --sae_layer_idx 11 --feature_index 16341 --control_target_dir ./ablation_datasets/your --output_path ./ablation_datasets/your/batchtopk-l11-f16341/feature_activation_summary.json --save_per_sample
+# batchtopk-l11-fxxx 含有某号特征的句子，下面的命令只需要改feature_index，control_target_dir，output_path
+SAE_ARCHITECTURE=batchtopk python compare_feature_activation_between_datasets.py --llama_model_dir ./llama_3.2-3B_model/original --sae_model_path ./trained_sae-batchtopk-l11.pt --sae_layer_idx 11 --feature_index 59639 --control_target_dir ./ablation_datasets/photo_captions --output_path ./ablation_datasets/photo_captions/batchtopk-l11-f59639/feature_activation_summary.json --save_per_sample
 ```
 
 ## codebook
