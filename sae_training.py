@@ -15,7 +15,7 @@ from torch.utils.data import DataLoader, Dataset, Subset
 from torch.utils.data.distributed import DistributedSampler
 from tqdm import tqdm
 
-from sae import TopKSparseAutoencoder
+from sae import ReluSAE
 from utils.cuda_utils import set_up_cuda
 
 
@@ -55,6 +55,7 @@ def train_epoch(
     optimizer: optim.AdamW,
     k_aux: int,
     aux_loss_coeff: float,
+    l1_coeff: float,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     logs_per_epoch: int,
@@ -93,6 +94,9 @@ def train_epoch(
         # Compute main loss in normalized space
         loss = criterion(reconstructed, batch_normalized)
 
+        # Calculate L1 loss
+        l1_loss = torch.norm(h_sparse, p=1, dim=-1).mean()
+
         # If enough latents haven't been activated in more than dead_steps_threshold training steps then calculate an
         # auxiliary loss to help reactivate the latents.
         dead_mask = latent_last_nonzero > dead_steps_threshold
@@ -112,7 +116,7 @@ def train_epoch(
             aux_loss = torch.tensor(0.0, device=device)
 
         # Compute total loss with auxiliary loss coefficient
-        total_loss = loss + aux_loss_coeff * aux_loss
+        total_loss = loss + aux_loss_coeff * aux_loss + l1_coeff * l1_loss
 
         # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
         # and normalize the decoder weights again.
@@ -188,6 +192,7 @@ def validate_epoch(
     criterion: nn.MSELoss,
     k_aux: int,
     aux_loss_coeff: float,
+    l1_coeff: float,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     dtype: torch.dtype,
@@ -223,6 +228,9 @@ def validate_epoch(
             # Compute main loss in normalized space
             loss = criterion(reconstructed, batch_normalized)
 
+            # Calculate L1 loss
+            l1_loss = torch.norm(h_sparse, p=1, dim=-1).mean()
+
             # Compute auxiliary loss if necessary
             dead_mask = latent_last_nonzero > dead_steps_threshold
             dead_latents = dead_mask.sum().item()
@@ -235,7 +243,7 @@ def validate_epoch(
                 aux_loss = torch.tensor(0.0, device=device)
 
             # Compute total loss with auxiliary loss coefficient
-            total_loss = loss + aux_loss_coeff * aux_loss
+            total_loss = loss + aux_loss_coeff * aux_loss + l1_coeff * l1_loss
 
             # Accumulate losses
             loss_acc += loss.detach()
@@ -278,7 +286,7 @@ def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
             logging.error(f"Failed to remove checkpoint {checkpoint}: {e}")
 
 def train_autoencoder(
-    model: TopKSparseAutoencoder,
+    model: ReluSAE,
     train_dataloader: DataLoader,
     val_dataloader: DataLoader,
     num_epochs: int,
@@ -289,13 +297,14 @@ def train_autoencoder(
     optimizer_eps: float,
     k_aux: int,
     aux_loss_coeff: float,
+    l1_coeff: float,
     dead_steps_threshold: int,
     logs_per_epoch: int,
     checkpoint_dir: Path,
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
-) -> TopKSparseAutoencoder:
+) -> ReluSAE:
     """"""
     logging.info("Sending model to device and wrapping in DistributedDataParallel...")
     model = model.to(device)
@@ -358,6 +367,7 @@ def train_autoencoder(
             optimizer=optimizer,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
+            l1_coeff=l1_coeff,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             logs_per_epoch=logs_per_epoch,
@@ -375,6 +385,7 @@ def train_autoencoder(
             criterion=criterion,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
+            l1_coeff=l1_coeff,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             dtype=dtype,
@@ -469,6 +480,7 @@ def main() -> None:
     k = 64
     k_aux = 2048
     aux_loss_coeff = 1 / 32
+    l1_coeff = 1e-4
     dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
     sae_normalization_eps = 1e-6
     batch_size = args.batch_size
@@ -494,6 +506,7 @@ def main() -> None:
                 "k": k,
                 "k_aux": k_aux,
                 "aux_loss_coeff": aux_loss_coeff,
+                "l1_coeff": l1_coeff,
                 "dead_steps_threshold": dead_steps_threshold,
                 "sae_normalization_eps": sae_normalization_eps,
                 "batch_size": batch_size,
@@ -528,6 +541,7 @@ def main() -> None:
         logging.info(f"# k={k}")
         logging.info(f"# k_aux={k_aux}")
         logging.info(f"# aux_loss_coeff={aux_loss_coeff}")
+        logging.info(f"# l1_coeff={l1_coeff}")
         logging.info(f"# dead_steps_threshold={dead_steps_threshold}")
         logging.info(f"# sae_normalization_eps={sae_normalization_eps}")
         logging.info(f"# batch_size={batch_size}")
@@ -558,7 +572,7 @@ def main() -> None:
 
     # Initialize the model
     logging.info("Initializing Sparse Autoencoder model...")
-    model = TopKSparseAutoencoder(
+    model = ReluSAE(
         d_model=d_model,
         n_latents=n_latents,
         k=k,
@@ -643,6 +657,7 @@ def main() -> None:
         optimizer_eps=optimizer_eps,
         k_aux=k_aux,
         aux_loss_coeff=aux_loss_coeff,
+        l1_coeff=l1_coeff,
         dead_steps_threshold=dead_steps_threshold,
         logs_per_epoch=logs_per_epoch,
         checkpoint_dir=args.checkpoint_dir,

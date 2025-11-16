@@ -5,7 +5,7 @@ import torch
 from torch import nn
 
 
-class TopKSparseAutoencoder(nn.Module):
+class ReluSAE(nn.Module):
     def __init__(
         self,
         d_model: int,
@@ -122,8 +122,9 @@ class TopKSparseAutoencoder(nn.Module):
             non_zero_idx = torch.nonzero(self.h_bias).squeeze()
             logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
 
-        # Reconstruct input and latent representation with default k sparsity
-        reconstructed, h_sparse = self.decode_latent(h=h, k=self.k)
+        # In ReluSAE, we use all positive activations, not just the top-k
+        h_sparse = torch.relu(h)
+        reconstructed = self.decoder(h_sparse) + self.b_pre
 
         return reconstructed, h, h_sparse
 
@@ -134,7 +135,7 @@ class TopKSparseAutoencoder(nn.Module):
         topk_values, topk_indices = torch.topk(h, k=k, dim=-1)
         h_sparse = torch.zeros_like(h).scatter_(1, topk_indices, topk_values)
 
-        # Decode h_sparse and add pre-bias
+        # Decode h_sparse; optionally add pre-bias depending on caller's space
         reconstructed = self.decoder(h_sparse) + self.b_pre
 
         return reconstructed, h_sparse
@@ -155,9 +156,9 @@ def load_sae_model(
     sae_normalization_eps: float,
     device: torch.device,
     dtype: torch.dtype,
-) -> TopKSparseAutoencoder:
+) -> ReluSAE:
     """"""
-    logging.info(f"Loading TopK SAE model weights and config from: {model_path}")
+    logging.info(f"Loading Relu SAE model weights and config from: {model_path}")
     state_dict = torch.load(
         model_path,
         map_location=torch.device("cpu"),
@@ -167,8 +168,8 @@ def load_sae_model(
     d_model = b_pre.shape[0]
     n_latents = state_dict["encoder.weight"].shape[0]
 
-    logging.info("Initializing TopK SAE model and loading state dict...")
-    model = TopKSparseAutoencoder(
+    logging.info("Initializing Relu SAE model and loading state dict...")
+    model = ReluSAE(
         d_model=d_model,
         n_latents=n_latents,
         k=sae_top_k,
