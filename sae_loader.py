@@ -7,7 +7,7 @@ load_dotenv()
 logging.basicConfig(level=logging.INFO, format="[%(asctime)s] [%(levelname)s] %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
 
 # Get the desired SAE architecture from an environment variable. Default to 'topk'.
-# Valid options are 'topk', 'dense', 'batchtopk'.
+# Valid options are 'topk', 'dense', 'batchtopk', 'relu'.
 SAE_ARCHITECTURE = os.environ.get("SAE_ARCHITECTURE", "topk").lower()
 
 if SAE_ARCHITECTURE == "dense":
@@ -16,6 +16,9 @@ if SAE_ARCHITECTURE == "dense":
 elif SAE_ARCHITECTURE == "batchtopk":
     logging.info("Using 'batchtopk' SAE architecture from 'sae_batchtopk'.")
     from sae_batchtopk import load_sae_model, BatchTopKSparseAutoencoder as TopKSparseAutoencoder
+elif SAE_ARCHITECTURE == "relu":
+    logging.info("Using 'relu' SAE architecture from 'sae_relu'.")
+    from sae_relu import load_sae_model, ReluSAE as TopKSparseAutoencoder
 elif SAE_ARCHITECTURE == "topk":
     logging.info("Using 'topk' SAE architecture from 'sae'.")
     from sae import load_sae_model, TopKSparseAutoencoder
