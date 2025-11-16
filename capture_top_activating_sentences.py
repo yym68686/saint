@@ -8,7 +8,7 @@ import yaml
 from torch.utils.data import DataLoader, Dataset
 from tqdm import tqdm
 
-from sae import TopKSparseAutoencoder, load_sae_model
+from sae import ReluSAE, load_sae_model
 from utils.cuda_utils import set_up_cuda
 
 
@@ -79,7 +79,7 @@ def update_top_sentences_dict(
 
 
 def capture_top_activating_sentences(
-    model: TopKSparseAutoencoder,
+    model: ReluSAE,
     dataloader: DataLoader,
     top_n_sentences: int,
     dtype: torch.dtype,
