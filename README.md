@@ -95,7 +95,8 @@ torchrun --nproc_per_node=1 \
     --model_dir llama_3.2-3B_model/original \
     --output_dir activation_outputs/ \
     --dataset_dir /root/lanyun-tmp \
-    --num_samples 50000
+    --num_samples 50000 \
+    --layer 22
 ```
 
 ## SAE 训练的数据预处理
