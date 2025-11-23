@@ -10,14 +10,16 @@ class GatedSAE(nn.Module):
         self,
         d_model: int,
         n_latents: int,
+        k: int,
         b_pre: torch.Tensor,
         dtype: torch.dtype,
         normalize_eps: float = 1e-6,
     ):
-        """ """
+        """"""
         super().__init__()
         self.d_model = d_model
         self.n_latents = n_latents
+        self.k = k
         self.dtype = dtype
         self.normalize_eps = normalize_eps
         self.h_bias = None
@@ -86,7 +88,7 @@ class GatedSAE(nn.Module):
         x = x.reshape(-1, d_model)
 
         # Forward pass through model in normalized space
-        normalized_recon, _, _ = self.forward_1d_normalized(x)
+        normalized_recon, h, _ = self.forward_1d_normalized(x)
 
         # Reshape back to (batch_size, seq_len, d_model)
         normalized_recon = normalized_recon.reshape(batch_size, seq_len, -1)
@@ -103,18 +105,32 @@ class GatedSAE(nn.Module):
         :param x: input tensor of shape (batch_size, d_model)
         """
         # Subtract pre-bias and encode input
-        x_centered = x - self.b_pre
-        x_enc = self.encoder(x_centered)
+        x = x - self.b_pre
+        h = self.encoder(x)
 
         if self.h_bias is not None:
-            x_enc = x_enc + self.h_bias
+            # 获取最大的4个值及其索引
+            top_values, top_indices = torch.topk(h, k=4, dim=-1)
+
+            # 遍历每个样本的前4大值
+            for batch_idx in range(top_indices.shape[0]):
+                for i in range(4):
+                    latent_idx = top_indices[batch_idx, i].item()
+                    value = top_values[batch_idx, i].item()
+                    logging.info(
+                        f"Top {i+1} value: h[{batch_idx}, {latent_idx}] = {value:.2f}"
+                    )
+
+            h = h + self.h_bias
+            non_zero_idx = torch.nonzero(self.h_bias).squeeze()
+            logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
 
         # Gated network
-        pi_gate = x_enc + self.gate_bias
+        pi_gate = h + self.gate_bias
         f_gate = (pi_gate > 0).to(dtype=self.dtype)
 
         # Magnitude network
-        pi_mag = self.r_mag.exp() * x_enc + self.b_mag
+        pi_mag = self.r_mag.exp() * h + self.b_mag
         f_mag = torch.nn.functional.relu(pi_mag)
 
         # Final sparse activations
@@ -123,20 +139,33 @@ class GatedSAE(nn.Module):
         # Decode h_sparse and add pre-bias
         reconstructed = self.decoder(h_sparse) + self.b_pre
 
-        return reconstructed, x_enc, h_sparse
+        return reconstructed, h, h_sparse
+
+    def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
+        """"""
+        # Apply TopK activation, Relu to guarantee positive topk vals and then build sparse representation
+        h = torch.relu(h)
+        topk_values, topk_indices = torch.topk(h, k=k, dim=-1)
+        h_sparse = torch.zeros_like(h).scatter_(1, topk_indices, topk_values)
+
+        # Decode h_sparse; optionally add pre-bias depending on caller's space
+        reconstructed = self.decoder(h_sparse) + self.b_pre
+
+        return reconstructed, h_sparse
 
     def set_latent_bias(self, h_bias: torch.Tensor) -> None:
-        """ """
+        """"""
         assert h_bias.shape == (self.n_latents,), "h_bias shape must be of shape (n_latents,)"
         self.h_bias = h_bias.to(self.dtype)
 
     def unset_latent_bias(self) -> None:
-        """ """
+        """"""
         self.h_bias = None
 
 
 def load_sae_model(
     model_path: Path,
+    sae_top_k: int,
     sae_normalization_eps: float,
     device: torch.device,
     dtype: torch.dtype,
@@ -156,6 +185,7 @@ def load_sae_model(
     model = GatedSAE(
         d_model=d_model,
         n_latents=n_latents,
+        k=sae_top_k,
         b_pre=b_pre,
         dtype=dtype,
         normalize_eps=sae_normalization_eps,
