@@ -186,7 +186,8 @@ eval $(poetry env activate)
 python capture_top_activating_sentences.py \
     --data_dir ./activation_outputs \
     --model_path ./trained_sae.pt \
-    --captured_data_output_dir ./top_activating_sentences
+    --captured_data_output_dir ./top_activating_sentences \
+    --layer 22
 ```
 
 ## 构建并发送批次以供 llm api 解释，获取语义解释
