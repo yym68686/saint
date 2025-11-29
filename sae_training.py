@@ -15,7 +15,7 @@ from torch.utils.data import DataLoader, Dataset, Subset
 from torch.utils.data.distributed import DistributedSampler
 from tqdm import tqdm
 
-from sae import ReluSAE
+from sae import JumpReLUSAE, L0StepFunction
 from utils.cuda_utils import set_up_cuda
 
 
@@ -72,6 +72,7 @@ def train_epoch(
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
+    l0_acc = torch.tensor(0.0, device=device)
     accumulated_loss_count = dist.get_world_size() * log_interval
 
     # Create epoch progress bar on main process
@@ -94,8 +95,10 @@ def train_epoch(
         # Compute main loss in normalized space
         loss = criterion(reconstructed, batch_normalized)
 
-        # Calculate L1 loss
-        l1_loss = torch.norm(h_sparse, p=1, dim=-1).mean()
+        # JumpReLU L0 sparsity: average active feature count per example (STE).
+        l0_mask = L0StepFunction.apply(h, model.module.log_threshold)
+        l0_per_example = l0_mask.sum(dim=-1)
+        l0_loss = l0_per_example.mean()
 
         # If enough latents haven't been activated in more than dead_steps_threshold training steps then calculate an
         # auxiliary loss to help reactivate the latents.
@@ -115,8 +118,8 @@ def train_epoch(
             # If there are not enough dead latents to activate, set auxiliary loss to 0.
             aux_loss = torch.tensor(0.0, device=device)
 
-        # Compute total loss with auxiliary loss coefficient
-        total_loss = loss + aux_loss_coeff * aux_loss + l1_coeff * l1_loss
+        # Compute total loss with auxiliary loss coefficient (l1_coeff now used as L0 sparsity weight λ)
+        total_loss = loss + aux_loss_coeff * aux_loss + l1_coeff * l0_loss
 
         # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
         # and normalize the decoder weights again.
@@ -129,6 +132,7 @@ def train_epoch(
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
         total_loss_acc += total_loss.detach()
+        l0_acc += l0_loss.detach()
 
         # Update the progress bar on main process
         if rank == 0:
@@ -146,27 +150,39 @@ def train_epoch(
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(l0_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
+            avg_l0 = l0_acc.item() / accumulated_loss_count
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
+            l0_acc = torch.tensor(0.0, device=device)
 
             # Determine dead latent debug statistics
             dead_latents_ratio = dead_latents / dead_mask.numel()
             max_dead_latent = latent_last_nonzero.max().item()
             max_dead_latent_count = (latent_last_nonzero == max_dead_latent).sum().item()
 
-            # Log to wandb and tqdm
+            # Log to wandb and tqdm, together with L0 and theta statistics
             if rank == 0:
+                theta = model.module.log_threshold.detach().exp()
+                theta_mean = theta.mean().item()
+                theta_min = theta.min().item()
+                theta_max = theta.max().item()
+
                 wandb.log(
                     data={
                         "train/loss": avg_loss,
                         "train/aux_loss": avg_aux_loss,
                         "train/total_loss": avg_total_loss,
+                        "train/l0": avg_l0,
+                        "train/theta_mean": theta_mean,
+                        "train/theta_min": theta_min,
+                        "train/theta_max": theta_max,
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
@@ -177,6 +193,7 @@ def train_epoch(
                     loss=f"{avg_loss:.6f}",
                     aux_loss=f"{avg_aux_loss:.6f}",
                     total_loss=f"{avg_total_loss:.6f}",
+                    l0=f"{avg_l0:.1f}",
                 )
 
     # Close the progress bar on main process
@@ -207,6 +224,7 @@ def validate_epoch(
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+    l0_acc = torch.tensor(0.0, device=device)
 
     # Create epoch progress bar on main process
     if rank == 0:
@@ -228,8 +246,10 @@ def validate_epoch(
             # Compute main loss in normalized space
             loss = criterion(reconstructed, batch_normalized)
 
-            # Calculate L1 loss
-            l1_loss = torch.norm(h_sparse, p=1, dim=-1).mean()
+            # JumpReLU L0 sparsity: average active feature count per example (no grad needed in eval).
+            l0_mask = L0StepFunction.apply(h, model.module.log_threshold)
+            l0_per_example = l0_mask.sum(dim=-1)
+            l0_loss = l0_per_example.mean()
 
             # Compute auxiliary loss if necessary
             dead_mask = latent_last_nonzero > dead_steps_threshold
@@ -243,12 +263,13 @@ def validate_epoch(
                 aux_loss = torch.tensor(0.0, device=device)
 
             # Compute total loss with auxiliary loss coefficient
-            total_loss = loss + aux_loss_coeff * aux_loss + l1_coeff * l1_loss
+            total_loss = loss + aux_loss_coeff * aux_loss + l1_coeff * l0_loss
 
             # Accumulate losses
             loss_acc += loss.detach()
             aux_loss_acc += aux_loss.detach()
             total_loss_acc += total_loss.detach()
+            l0_acc += l0_loss.detach()
 
             # Update the progress bar on main process
             if rank == 0:
@@ -262,11 +283,14 @@ def validate_epoch(
     dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
-    avg_loss = loss_acc.item() / (dist.get_world_size() * len(dataloader))
-    avg_aux_loss = aux_loss_acc.item() / (dist.get_world_size() * len(dataloader))
-    avg_total_loss = total_loss_acc.item() / (dist.get_world_size() * len(dataloader))
+    dist.all_reduce(l0_acc, op=dist.ReduceOp.SUM)
+    denom = dist.get_world_size() * len(dataloader)
+    avg_loss = loss_acc.item() / denom
+    avg_aux_loss = aux_loss_acc.item() / denom
+    avg_total_loss = total_loss_acc.item() / denom
+    avg_l0 = l0_acc.item() / denom
 
-    return avg_loss, avg_aux_loss, avg_total_loss
+    return avg_loss, avg_aux_loss, avg_total_loss, avg_l0
 
 def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
     """清理旧的检查点，只保留最新的 N 个"""
@@ -286,7 +310,7 @@ def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
             logging.error(f"Failed to remove checkpoint {checkpoint}: {e}")
 
 def train_autoencoder(
-    model: ReluSAE,
+    model: JumpReLUSAE,
     train_dataloader: DataLoader,
     val_dataloader: DataLoader,
     num_epochs: int,
@@ -304,7 +328,7 @@ def train_autoencoder(
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
-) -> ReluSAE:
+) -> JumpReLUSAE:
     """"""
     logging.info("Sending model to device and wrapping in DistributedDataParallel...")
     model = model.to(device)
@@ -330,16 +354,39 @@ def train_autoencoder(
         logging.info(f"可训练参数量: {trainable_params:,}")
 
     logging.info("Setting up optimizer, scheduler and loss function...")
+
+    # Use a larger learning rate for log_threshold to speed up JumpReLU threshold learning.
+    theta_params = [model.module.log_threshold]
+    other_params = [p for p in model.module.parameters() if p is not model.module.log_threshold]
+
+    theta_learning_rate = 1e-3
+
     optimizer = optim.AdamW(
-        model.parameters(),
-        lr=learning_rate,
-        betas=optimizer_betas,
-        eps=optimizer_eps,
+        [
+            {
+                "params": other_params,
+                "lr": learning_rate,
+                "betas": optimizer_betas,
+                "eps": optimizer_eps,
+            },
+            {
+                "params": theta_params,
+                "lr": theta_learning_rate,
+                "betas": optimizer_betas,
+                "eps": optimizer_eps,
+            },
+        ],
     )
     scheduler = CosineAnnealingLR(optimizer, T_max=num_epochs, eta_min=learning_rate_min)
     criterion = nn.MSELoss()
     if rank == 0:
-        wandb.log(data={"learning_rate": learning_rate}, step=0)
+        wandb.log(
+            data={
+                "learning_rate": learning_rate,
+                "theta_learning_rate": theta_learning_rate,
+            },
+            step=0,
+        )
 
     # Initialize latent_last_nonzero tensor to keep track of the last non-zero step for each latent
     latent_last_nonzero = torch.zeros(model.module.n_latents, dtype=torch.long, device=device)
@@ -377,7 +424,7 @@ def train_autoencoder(
         )
 
         # Validate an epoch
-        val_avg_loss, val_avg_aux_loss, val_avg_total_loss = validate_epoch(
+        val_avg_loss, val_avg_aux_loss, val_avg_total_loss, val_avg_l0 = validate_epoch(
             epoch=epoch,
             num_epochs=num_epochs,
             model=model,
@@ -399,11 +446,20 @@ def train_autoencoder(
 
         # Log metrics in wandb and console and save checkpoint
         if rank == 0:
+            theta = model.module.log_threshold.detach().exp()
+            theta_mean = theta.mean().item()
+            theta_min = theta.min().item()
+            theta_max = theta.max().item()
+
             wandb.log(
                 data={
                     "val/loss": val_avg_loss,
                     "val/aux_loss": val_avg_aux_loss,
                     "val/total_loss": val_avg_total_loss,
+                    "val/l0": val_avg_l0,
+                    "val/theta_mean": theta_mean,
+                    "val/theta_min": theta_min,
+                    "val/theta_max": theta_max,
                     "learning_rate": updated_lr,
                 },
                 step=(epoch + 1) * len(train_dataloader),
@@ -572,7 +628,7 @@ def main() -> None:
 
     # Initialize the model
     logging.info("Initializing Sparse Autoencoder model...")
-    model = ReluSAE(
+    model = JumpReLUSAE(
         d_model=d_model,
         n_latents=n_latents,
         k=k,

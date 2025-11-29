@@ -1,11 +1,76 @@
 import logging
 from pathlib import Path
+import math
 
 import torch
 from torch import nn
 
 
-class ReluSAE(nn.Module):
+# Bandwidth parameter for JumpReLU STE kernel; tune if needed.
+EPSILON = 1e-3
+
+
+def kernel_pdf(u: torch.Tensor) -> torch.Tensor:
+    """Rectangle kernel: 1 on (-0.5, 0.5), 0 elsewhere."""
+    return ((u > -0.5) & (u < 0.5)).float()
+
+
+class JumpReLUFunction(torch.autograd.Function):
+    """JumpReLU with STE w.r.t. log-threshold (vector over latents)."""
+
+    @staticmethod
+    def forward(ctx, x: torch.Tensor, log_threshold: torch.Tensor) -> torch.Tensor:
+        # log_threshold has shape (n_latents,), broadcasts over batch dimension
+        threshold = torch.exp(log_threshold)
+        mask = (x > threshold).float()
+        out = x * mask
+        ctx.save_for_backward(x, threshold)
+        return out
+
+    @staticmethod
+    def backward(ctx, grad_output: torch.Tensor):
+        x, threshold = ctx.saved_tensors
+
+        # Gradient w.r.t. x: straight-through of identity above threshold.
+        grad_x = grad_output * (x > threshold).float()
+
+        # Gradient w.r.t. log-threshold via KDE-based pseudo-derivative (Eq. 11)
+        u = (x - threshold) / EPSILON
+        k_val = kernel_pdf(u)
+        d_jumprelu_d_theta = -(threshold / EPSILON) * k_val
+        # Sum over batch dimension, keep per-latent gradient
+        grad_theta = (d_jumprelu_d_theta * grad_output).sum(dim=0)
+        grad_log_threshold = grad_theta * threshold
+        return grad_x, grad_log_threshold
+
+
+class L0StepFunction(torch.autograd.Function):
+    """Heaviside step for L0 sparsity with STE w.r.t. log-threshold."""
+
+    @staticmethod
+    def forward(ctx, x: torch.Tensor, log_threshold: torch.Tensor) -> torch.Tensor:
+        threshold = torch.exp(log_threshold)
+        mask = (x > threshold).float()
+        ctx.save_for_backward(x, threshold)
+        return mask
+
+    @staticmethod
+    def backward(ctx, grad_output: torch.Tensor):
+        x, threshold = ctx.saved_tensors
+
+        # No gradient w.r.t. x for the sparsity term.
+        grad_x = torch.zeros_like(x)
+
+        # Pseudo-derivative for Heaviside (Eq. 12)
+        u = (x - threshold) / EPSILON
+        k_val = kernel_pdf(u)
+        d_step_d_theta = -(1.0 / EPSILON) * k_val
+        grad_theta = (d_step_d_theta * grad_output).sum(dim=0)
+        grad_log_threshold = grad_theta * threshold
+        return grad_x, grad_log_threshold
+
+
+class JumpReLUSAE(nn.Module):
     def __init__(
         self,
         d_model: int,
@@ -24,8 +89,15 @@ class ReluSAE(nn.Module):
         self.normalize_eps = normalize_eps
         self.h_bias = None
 
-        # Initialize training data mean (or median) as shared trainable pre-bias Parameter for encoder and decoder
+        # Initialize training data mean (or median) as shared trainable pre-bias Parameter for encoder and decoder.
         self.b_pre = nn.Parameter(b_pre.to(dtype), requires_grad=True)
+
+        # Per-latent JumpReLU log-threshold parameter; initialized to a small positive threshold.
+        init_threshold = 1e-3
+        self.log_threshold = nn.Parameter(
+            torch.full((n_latents,), math.log(init_threshold), dtype=dtype),
+            requires_grad=True,
+        )
 
         # Initialize encoder and decoder. The encoder has an additional bias term b_enc in addition to b_pre in the
         # forward pass, whereas the decoder does not have a bias term.
@@ -122,11 +194,12 @@ class ReluSAE(nn.Module):
             non_zero_idx = torch.nonzero(self.h_bias).squeeze()
             logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
 
-        # In ReluSAE, we use all positive activations, not just the top-k
-        h_sparse = torch.relu(h)
+        # Pre-activations are ReLUed encoder outputs; JumpReLU then applies a learnable threshold.
+        pre_activations = torch.relu(h)
+        h_sparse = JumpReLUFunction.apply(pre_activations, self.log_threshold)
         reconstructed = self.decoder(h_sparse) + self.b_pre
 
-        return reconstructed, h, h_sparse
+        return reconstructed, pre_activations, h_sparse
 
     def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
         """"""
@@ -156,7 +229,7 @@ def load_sae_model(
     sae_normalization_eps: float,
     device: torch.device,
     dtype: torch.dtype,
-) -> ReluSAE:
+) -> JumpReLUSAE:
     """"""
     logging.info(f"Loading Relu SAE model weights and config from: {model_path}")
     state_dict = torch.load(
@@ -169,7 +242,7 @@ def load_sae_model(
     n_latents = state_dict["encoder.weight"].shape[0]
 
     logging.info("Initializing Relu SAE model and loading state dict...")
-    model = ReluSAE(
+    model = JumpReLUSAE(
         d_model=d_model,
         n_latents=n_latents,
         k=sae_top_k,
