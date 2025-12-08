@@ -529,7 +529,7 @@ eval $(poetry env activate)
 # dense-l11-fxxx 含有某号特征的句子，下面的命令只需要改 feature_index,control_target_dir,output_path
 SAE_ARCHITECTURE=dense python compare_feature_activation_between_datasets.py --llama_model_dir ./llama_3.2-3B_model/original --sae_model_path ./trained_sae-dense-l11.pt --sae_layer_idx 11 --feature_index 37802 --control_target_dir ./ablation_datasets/photo_captions --output_path ./ablation_datasets/photo_captions/dense-l11-f37802/feature_activation_summary.json --save_per_sample
 
-# batchtopk-l11-fxxx 含有某号特征的句子，下面的命令只需要改feature_index，control_target_dir，output_path
+# batchtopk-l11-fxxx 含有某号特征的句子，下面的命令只需要改 feature_index,control_target_dir,output_path
 SAE_ARCHITECTURE=batchtopk python compare_feature_activation_between_datasets.py --llama_model_dir ./llama_3.2-3B_model/original --sae_model_path ./trained_sae-batchtopk-l11.pt --sae_layer_idx 11 --feature_index 59639 --control_target_dir ./ablation_datasets/photo_captions --output_path ./ablation_datasets/photo_captions/batchtopk-l11-f59639/feature_activation_summary.json --save_per_sample
 ```
 
