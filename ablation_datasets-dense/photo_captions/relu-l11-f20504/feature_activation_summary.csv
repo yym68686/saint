@@ -1,0 +1,1231 @@
+group,index,text,agg,val
+target,0,"FILE PHOTO: Belgian and French police secure access during a police operation to search an apartment complex in the Brussels district of Uccle, Belgium, April 12, 2016.",mean,10.919482231140137
+target,0,"FILE PHOTO: Belgian and French police secure access during a police operation to search an apartment complex in the Brussels district of Uccle, Belgium, April 12, 2016.",max,22.544326782226562
+target,0,"FILE PHOTO: Belgian and French police secure access during a police operation to search an apartment complex in the Brussels district of Uccle, Belgium, April 12, 2016.",last,16.399778366088867
+target,1,"A field of dead almond trees is seen during a drought in Coalinga in the Central Valley, California, United States May 6, 2015.",mean,12.4168062210083
+target,1,"A field of dead almond trees is seen during a drought in Coalinga in the Central Valley, California, United States May 6, 2015.",max,28.221281051635742
+target,1,"A field of dead almond trees is seen during a drought in Coalinga in the Central Valley, California, United States May 6, 2015.",last,16.309188842773438
+target,2,"FC Dallas goalkeeper Jesse Gonzalez, left, takes control of the ball under pressure from Houston Dynamo midfielder Alex, right, in the first half of an MLS soccer game, Sunday, May 28, 2017, in Frisco, Texas.",mean,12.029826164245605
+target,2,"FC Dallas goalkeeper Jesse Gonzalez, left, takes control of the ball under pressure from Houston Dynamo midfielder Alex, right, in the first half of an MLS soccer game, Sunday, May 28, 2017, in Frisco, Texas.",max,25.314956665039062
+target,2,"FC Dallas goalkeeper Jesse Gonzalez, left, takes control of the ball under pressure from Houston Dynamo midfielder Alex, right, in the first half of an MLS soccer game, Sunday, May 28, 2017, in Frisco, Texas.",last,19.74905014038086
+target,3,"News_Image_File: Pro-Russia protestors ... work to remove a Ukrainian flag from a flagpole which they took from the regional governance Security Service of Ukraine building during a rally in Donetsk, Ukraine.",mean,11.199244499206543
+target,3,"News_Image_File: Pro-Russia protestors ... work to remove a Ukrainian flag from a flagpole which they took from the regional governance Security Service of Ukraine building during a rally in Donetsk, Ukraine.",max,28.87362289428711
+target,3,"News_Image_File: Pro-Russia protestors ... work to remove a Ukrainian flag from a flagpole which they took from the regional governance Security Service of Ukraine building during a rally in Donetsk, Ukraine.",last,24.32842445373535
+target,4,"REUTERS/Philippe Wojazer French President elect Emmanuel Macron and his wife Brigitte Trogneux celebrate on the stage at his victory rally near the Louvre in Paris, France May 7, 2017.",mean,10.142393112182617
+target,4,"REUTERS/Philippe Wojazer French President elect Emmanuel Macron and his wife Brigitte Trogneux celebrate on the stage at his victory rally near the Louvre in Paris, France May 7, 2017.",max,29.554645538330078
+target,4,"REUTERS/Philippe Wojazer French President elect Emmanuel Macron and his wife Brigitte Trogneux celebrate on the stage at his victory rally near the Louvre in Paris, France May 7, 2017.",last,15.538333892822266
+target,5,"(Louis DeLuca/The Dallas Morning News)
+
+Dallas Cowboys quarterback Matt Cassel (16) reacts during the fourth quarter as New York Giants middle linebacker Jon Beason (52) looks on during the Dallas Cowboys versus the New York Giants NFL football game at MetLife Stadium in East Rutherford, NJ on Sunday, October 25, 2015.",mean,11.058865547180176
+target,5,"(Louis DeLuca/The Dallas Morning News)
+
+Dallas Cowboys quarterback Matt Cassel (16) reacts during the fourth quarter as New York Giants middle linebacker Jon Beason (52) looks on during the Dallas Cowboys versus the New York Giants NFL football game at MetLife Stadium in East Rutherford, NJ on Sunday, October 25, 2015.",max,26.10369110107422
+target,5,"(Louis DeLuca/The Dallas Morning News)
+
+Dallas Cowboys quarterback Matt Cassel (16) reacts during the fourth quarter as New York Giants middle linebacker Jon Beason (52) looks on during the Dallas Cowboys versus the New York Giants NFL football game at MetLife Stadium in East Rutherford, NJ on Sunday, October 25, 2015.",last,24.61323356628418
+target,6,"Apr 10, 2015; Orlando, FL, USA; Orlando Magic guard Victor Oladipo (5) drives to the basket against the Toronto Raptors during the second half at Amway Center.",mean,11.040979385375977
+target,6,"Apr 10, 2015; Orlando, FL, USA; Orlando Magic guard Victor Oladipo (5) drives to the basket against the Toronto Raptors during the second half at Amway Center.",max,26.352170944213867
+target,6,"Apr 10, 2015; Orlando, FL, USA; Orlando Magic guard Victor Oladipo (5) drives to the basket against the Toronto Raptors during the second half at Amway Center.",last,21.50010108947754
+target,7,"Gas pumps at a Shell gas station are pictured in Westminster, Colorado January 17, 2014.",mean,13.42745304107666
+target,7,"Gas pumps at a Shell gas station are pictured in Westminster, Colorado January 17, 2014.",max,26.285093307495117
+target,7,"Gas pumps at a Shell gas station are pictured in Westminster, Colorado January 17, 2014.",last,17.567852020263672
+target,8,"Militant Islamist fighters hold the flag of Islamic State (IS) while taking part in a military parade along the streets of northern Raqqa province in this June 30, 2014 file photo.",mean,11.31662654876709
+target,8,"Militant Islamist fighters hold the flag of Islamic State (IS) while taking part in a military parade along the streets of northern Raqqa province in this June 30, 2014 file photo.",max,24.519023895263672
+target,8,"Militant Islamist fighters hold the flag of Islamic State (IS) while taking part in a military parade along the streets of northern Raqqa province in this June 30, 2014 file photo.",last,15.01748275756836
+target,9,"USA TODAY Sports
+
+In this 1997 file photo, San Francisco Giants outfielder Barry Bonds celebrates on top of the Giants dugout after they beat the San Diego Padres to win the National League West title.",mean,9.691781044006348
+target,9,"USA TODAY Sports
+
+In this 1997 file photo, San Francisco Giants outfielder Barry Bonds celebrates on top of the Giants dugout after they beat the San Diego Padres to win the National League West title.",max,22.756498336791992
+target,9,"USA TODAY Sports
+
+In this 1997 file photo, San Francisco Giants outfielder Barry Bonds celebrates on top of the Giants dugout after they beat the San Diego Padres to win the National League West title.",last,12.978713989257812
+target,10,"Andrew Caballero/AFP/Getty Images
+
+2/12 A lone protester wears tape printed with the U.S. flag on her mouth while attending an open hearing of the House Permanent Select Committee on Intelligence where intelligence chiefs, including Director of National Intelligence James Clapper, testified at the U.S. Capitol February 25, 2016 in Washington, DC.",mean,9.59425163269043
+target,10,"Andrew Caballero/AFP/Getty Images
+
+2/12 A lone protester wears tape printed with the U.S. flag on her mouth while attending an open hearing of the House Permanent Select Committee on Intelligence where intelligence chiefs, including Director of National Intelligence James Clapper, testified at the U.S. Capitol February 25, 2016 in Washington, DC.",max,29.88588523864746
+target,10,"Andrew Caballero/AFP/Getty Images
+
+2/12 A lone protester wears tape printed with the U.S. flag on her mouth while attending an open hearing of the House Permanent Select Committee on Intelligence where intelligence chiefs, including Director of National Intelligence James Clapper, testified at the U.S. Capitol February 25, 2016 in Washington, DC.",last,21.756973266601562
+target,11,"© AP Photo/Andrew Harnik Democratic presidential candidate Hillary Clinton speaks to members of the media before boarding her campaign plane at Westchester County Airport in White Plains, N.Y., Monday, Nov. 7, 2016, to travel to Pittsburgh.",mean,10.488611221313477
+target,11,"© AP Photo/Andrew Harnik Democratic presidential candidate Hillary Clinton speaks to members of the media before boarding her campaign plane at Westchester County Airport in White Plains, N.Y., Monday, Nov. 7, 2016, to travel to Pittsburgh.",max,26.840412139892578
+target,11,"© AP Photo/Andrew Harnik Democratic presidential candidate Hillary Clinton speaks to members of the media before boarding her campaign plane at Westchester County Airport in White Plains, N.Y., Monday, Nov. 7, 2016, to travel to Pittsburgh.",last,22.48368263244629
+target,12,"Labourers work on the exterior of a new Tesla showroom in Shanghai, April 22, 2014.",mean,12.344512939453125
+target,12,"Labourers work on the exterior of a new Tesla showroom in Shanghai, April 22, 2014.",max,23.432762145996094
+target,12,"Labourers work on the exterior of a new Tesla showroom in Shanghai, April 22, 2014.",last,21.934295654296875
+target,13,"Border police from Romania and Bulgaria stand in front of their vehicles during the official launch of the European Union's Border and Coast Guard Agency at a border crossing on the Bulgarian-Turkish border in Kapitan Andreevo, Bulgaria, October 6, 2016.",mean,9.584364891052246
+target,13,"Border police from Romania and Bulgaria stand in front of their vehicles during the official launch of the European Union's Border and Coast Guard Agency at a border crossing on the Bulgarian-Turkish border in Kapitan Andreevo, Bulgaria, October 6, 2016.",max,25.058237075805664
+target,13,"Border police from Romania and Bulgaria stand in front of their vehicles during the official launch of the European Union's Border and Coast Guard Agency at a border crossing on the Bulgarian-Turkish border in Kapitan Andreevo, Bulgaria, October 6, 2016.",last,18.71199607849121
+target,14,Palestinian boys wave national flags near the Erez border crossing between Gaza and Israel on Friday.,mean,10.756451606750488
+target,14,Palestinian boys wave national flags near the Erez border crossing between Gaza and Israel on Friday.,max,24.916622161865234
+target,14,Palestinian boys wave national flags near the Erez border crossing between Gaza and Israel on Friday.,last,11.758667945861816
+target,15,"People attend a rally demanding the liberation of Savchenko by Russia in Tbilisi, Georgia, on Monday.",mean,10.487292289733887
+target,15,"People attend a rally demanding the liberation of Savchenko by Russia in Tbilisi, Georgia, on Monday.",max,20.97052764892578
+target,15,"People attend a rally demanding the liberation of Savchenko by Russia in Tbilisi, Georgia, on Monday.",last,9.852300643920898
+target,16,A member of Afghanistan's Special Forces unit jumps from a wall during patrol in Pandola village near the site of a U.S. bombing in eastern Afghanistan in April.,mean,9.995423316955566
+target,16,A member of Afghanistan's Special Forces unit jumps from a wall during patrol in Pandola village near the site of a U.S. bombing in eastern Afghanistan in April.,max,23.687767028808594
+target,16,A member of Afghanistan's Special Forces unit jumps from a wall during patrol in Pandola village near the site of a U.S. bombing in eastern Afghanistan in April.,last,10.833446502685547
+target,17,"Elsa, Getty Images Garett Bolles of Utah and his son Kingston pose with Commissioner of the National Football League Roger Goodell after being picked #20 overall by the Denver Broncosduring the first round of the 2017 NFL Draft at the Philadelphia Museum of Art on April 27, 2017 in Philadelphia.",mean,8.404058456420898
+target,17,"Elsa, Getty Images Garett Bolles of Utah and his son Kingston pose with Commissioner of the National Football League Roger Goodell after being picked #20 overall by the Denver Broncosduring the first round of the 2017 NFL Draft at the Philadelphia Museum of Art on April 27, 2017 in Philadelphia.",max,24.284324645996094
+target,17,"Elsa, Getty Images Garett Bolles of Utah and his son Kingston pose with Commissioner of the National Football League Roger Goodell after being picked #20 overall by the Denver Broncosduring the first round of the 2017 NFL Draft at the Philadelphia Museum of Art on April 27, 2017 in Philadelphia.",last,20.89881706237793
+target,18,"Seahawks strong safety Kam Chancellor stands on the sidelines during organized team activities practice at Virginia Mason Athletic Center in Renton on Wednesday, June 1, 2016.",mean,9.724822998046875
+target,18,"Seahawks strong safety Kam Chancellor stands on the sidelines during organized team activities practice at Virginia Mason Athletic Center in Renton on Wednesday, June 1, 2016.",max,25.271493911743164
+target,18,"Seahawks strong safety Kam Chancellor stands on the sidelines during organized team activities practice at Virginia Mason Athletic Center in Renton on Wednesday, June 1, 2016.",last,23.236661911010742
+target,19,"Anti-Mubarak protesters shout slogans against government and military rules after the verdict of former Egyptian President Hosni Mubarak's trial, around Abdel Moneim Riad square in downtown Cairo November 29, 2014.",mean,8.790468215942383
+target,19,"Anti-Mubarak protesters shout slogans against government and military rules after the verdict of former Egyptian President Hosni Mubarak's trial, around Abdel Moneim Riad square in downtown Cairo November 29, 2014.",max,25.168067932128906
+target,19,"Anti-Mubarak protesters shout slogans against government and military rules after the verdict of former Egyptian President Hosni Mubarak's trial, around Abdel Moneim Riad square in downtown Cairo November 29, 2014.",last,16.24811363220215
+target,20,"FILE - This Feb. 3, 2014, file photo, provided by Clark County Fire Department, shows Prince & Princess Puppy Boutique owner Gloria Eun Hye Lee at the Clark County Detention Center in Las Vegas.",mean,8.725714683532715
+target,20,"FILE - This Feb. 3, 2014, file photo, provided by Clark County Fire Department, shows Prince & Princess Puppy Boutique owner Gloria Eun Hye Lee at the Clark County Detention Center in Las Vegas.",max,22.87914276123047
+target,20,"FILE - This Feb. 3, 2014, file photo, provided by Clark County Fire Department, shows Prince & Princess Puppy Boutique owner Gloria Eun Hye Lee at the Clark County Detention Center in Las Vegas.",last,16.40843391418457
+target,21,Hide Caption 20 of 37 Photos: Divisions in Spain over Catalonia crisis People help a man injured by a rubber bullet fired by Spanish police officers outside the Ramon Llull polling station in Barcelona.,mean,9.55495548248291
+target,21,Hide Caption 20 of 37 Photos: Divisions in Spain over Catalonia crisis People help a man injured by a rubber bullet fired by Spanish police officers outside the Ramon Llull polling station in Barcelona.,max,24.176565170288086
+target,21,Hide Caption 20 of 37 Photos: Divisions in Spain over Catalonia crisis People help a man injured by a rubber bullet fired by Spanish police officers outside the Ramon Llull polling station in Barcelona.,last,12.567882537841797
+target,22,"/ AFP PHOTO / Brendan Smialowski (Photo credit should read BRENDAN SMIALOWSKI/AFP/Getty Images) WASHINGTON, DC - APRIL 17: U.S. first lady Melania Trump reads to children from the book ï¿½arty Animalsï¿½during the 139th Easter Egg Roll on the South Lawn of the White House April 17, 2017 in Washington, DC.",mean,9.888409614562988
+target,22,"/ AFP PHOTO / Brendan Smialowski (Photo credit should read BRENDAN SMIALOWSKI/AFP/Getty Images) WASHINGTON, DC - APRIL 17: U.S. first lady Melania Trump reads to children from the book ï¿½arty Animalsï¿½during the 139th Easter Egg Roll on the South Lawn of the White House April 17, 2017 in Washington, DC.",max,25.664735794067383
+target,22,"/ AFP PHOTO / Brendan Smialowski (Photo credit should read BRENDAN SMIALOWSKI/AFP/Getty Images) WASHINGTON, DC - APRIL 17: U.S. first lady Melania Trump reads to children from the book ï¿½arty Animalsï¿½during the 139th Easter Egg Roll on the South Lawn of the White House April 17, 2017 in Washington, DC.",last,21.023122787475586
+target,23,"Majdi Fathi APA images
+
+Young couples wearing traditional dress take part in a wedding during the opening of Heritage Week in Birzeit village near Ramallah in the occupied West Bank, 27 June.",mean,10.225475311279297
+target,23,"Majdi Fathi APA images
+
+Young couples wearing traditional dress take part in a wedding during the opening of Heritage Week in Birzeit village near Ramallah in the occupied West Bank, 27 June.",max,25.941852569580078
+target,23,"Majdi Fathi APA images
+
+Young couples wearing traditional dress take part in a wedding during the opening of Heritage Week in Birzeit village near Ramallah in the occupied West Bank, 27 June.",last,16.847946166992188
+target,24,Hide Caption 10 of 42 Photos: Unrest in Yemen People search for survivors under the rubble of houses destroyed by airstrikes near the Sanaa Airport on March 26.,mean,10.345149040222168
+target,24,Hide Caption 10 of 42 Photos: Unrest in Yemen People search for survivors under the rubble of houses destroyed by airstrikes near the Sanaa Airport on March 26.,max,23.20108413696289
+target,24,Hide Caption 10 of 42 Photos: Unrest in Yemen People search for survivors under the rubble of houses destroyed by airstrikes near the Sanaa Airport on March 26.,last,10.904722213745117
+target,25,"/ AFP / MANDEL NGAN (Photo credit should read MANDEL NGAN/AFP/Getty Images) US Republican presidential candidate Donald Trump speaks during the final presidential debate at the Thomas & Mack Center on the campus of the University of Las Vegas in Las Vegas, Nevada on October 19, 2016.",mean,9.021369934082031
+target,25,"/ AFP / MANDEL NGAN (Photo credit should read MANDEL NGAN/AFP/Getty Images) US Republican presidential candidate Donald Trump speaks during the final presidential debate at the Thomas & Mack Center on the campus of the University of Las Vegas in Las Vegas, Nevada on October 19, 2016.",max,25.511613845825195
+target,25,"/ AFP / MANDEL NGAN (Photo credit should read MANDEL NGAN/AFP/Getty Images) US Republican presidential candidate Donald Trump speaks during the final presidential debate at the Thomas & Mack Center on the campus of the University of Las Vegas in Las Vegas, Nevada on October 19, 2016.",last,20.858192443847656
+target,26,Chemical protective suit on display at the Matisec booth at Eurosatory International Weapons Show in France.,mean,6.768040180206299
+target,26,Chemical protective suit on display at the Matisec booth at Eurosatory International Weapons Show in France.,max,18.96038818359375
+target,26,Chemical protective suit on display at the Matisec booth at Eurosatory International Weapons Show in France.,last,18.96038818359375
+target,27,"NINA HINDMARSH Leander Rose, 18, sits at his campsite where he lives on the edge of the riverbank.",mean,6.977024555206299
+target,27,"NINA HINDMARSH Leander Rose, 18, sits at his campsite where he lives on the edge of the riverbank.",max,24.90589714050293
+target,27,"NINA HINDMARSH Leander Rose, 18, sits at his campsite where he lives on the edge of the riverbank.",last,21.135639190673828
+target,28,"An undated image released from North Korea's KCNA news agency on November 23, 2015 shows North Korean leader Kim Jong Un visiting an army Fishery Station.",mean,8.87962532043457
+target,28,"An undated image released from North Korea's KCNA news agency on November 23, 2015 shows North Korean leader Kim Jong Un visiting an army Fishery Station.",max,19.364009857177734
+target,28,"An undated image released from North Korea's KCNA news agency on November 23, 2015 shows North Korean leader Kim Jong Un visiting an army Fishery Station.",last,15.616127967834473
+target,29,[John Wall celebrates with the crowd after winning Game 6.,mean,7.314813613891602
+target,29,[John Wall celebrates with the crowd after winning Game 6.,max,15.930253982543945
+target,29,[John Wall celebrates with the crowd after winning Game 6.,last,6.892391681671143
+target,30,"(Photo by James Leynse/Corbis via Getty Images) NEW YORK - SEPTEMBER 28: Al Franken attends the New York Friars Club Roast September 28, 2002 in New York City.",mean,8.8621826171875
+target,30,"(Photo by James Leynse/Corbis via Getty Images) NEW YORK - SEPTEMBER 28: Al Franken attends the New York Friars Club Roast September 28, 2002 in New York City.",max,20.81455421447754
+target,30,"(Photo by James Leynse/Corbis via Getty Images) NEW YORK - SEPTEMBER 28: Al Franken attends the New York Friars Club Roast September 28, 2002 in New York City.",last,19.40470314025879
+target,31,"Commercial vessels spray water to extinguish a platform fire on board the West Delta 32 oil rig in the Gulf of Mexico off Grand Isle, Louisiana on November 16, 2012.",mean,8.387284278869629
+target,31,"Commercial vessels spray water to extinguish a platform fire on board the West Delta 32 oil rig in the Gulf of Mexico off Grand Isle, Louisiana on November 16, 2012.",max,23.640464782714844
+target,31,"Commercial vessels spray water to extinguish a platform fire on board the West Delta 32 oil rig in the Gulf of Mexico off Grand Isle, Louisiana on November 16, 2012.",last,23.42637825012207
+target,32,"Picture: AFP/Behrouz Mehri
+
+People wait to carry a large phallus-like statue during the annual Kanamara Festival at Kanayama Shrine in Kawasaki on April 2, 2017.",mean,9.31647777557373
+target,32,"Picture: AFP/Behrouz Mehri
+
+People wait to carry a large phallus-like statue during the annual Kanamara Festival at Kanayama Shrine in Kawasaki on April 2, 2017.",max,24.953418731689453
+target,32,"Picture: AFP/Behrouz Mehri
+
+People wait to carry a large phallus-like statue during the annual Kanamara Festival at Kanayama Shrine in Kawasaki on April 2, 2017.",last,24.953418731689453
+target,33,Photo: Sinopix; A trader looks at jade stones in the Myanmar capital Naypyitaw.,mean,7.850625514984131
+target,33,Photo: Sinopix; A trader looks at jade stones in the Myanmar capital Naypyitaw.,max,19.314556121826172
+target,33,Photo: Sinopix; A trader looks at jade stones in the Myanmar capital Naypyitaw.,last,8.745367050170898
+target,34,Travelers at JFK airport in New York City check newly purchased generators on flights to San Juan.,mean,7.420623779296875
+target,34,Travelers at JFK airport in New York City check newly purchased generators on flights to San Juan.,max,22.31816291809082
+target,34,Travelers at JFK airport in New York City check newly purchased generators on flights to San Juan.,last,16.566261291503906
+target,35,"Sen. Bernie Sanders addresses a campaign rally in Grand Prairie on February 27, 2016.",mean,8.54426383972168
+target,35,"Sen. Bernie Sanders addresses a campaign rally in Grand Prairie on February 27, 2016.",max,19.492210388183594
+target,35,"Sen. Bernie Sanders addresses a campaign rally in Grand Prairie on February 27, 2016.",last,19.492210388183594
+target,36,"NBC journalist Megyn Kelly attends the St. Petersburg International Economic Forum in St. Petersburg, Russia, Friday, June 2, 2017.",mean,8.46552848815918
+target,36,"NBC journalist Megyn Kelly attends the St. Petersburg International Economic Forum in St. Petersburg, Russia, Friday, June 2, 2017.",max,22.275388717651367
+target,36,"NBC journalist Megyn Kelly attends the St. Petersburg International Economic Forum in St. Petersburg, Russia, Friday, June 2, 2017.",last,22.275388717651367
+target,37,"Shelley Mays / Tennessean
+
+Buy Photo Democratic presidential candidate and former Secretary of State Hillary Clinton made a campaign stop at Meharry Medical College on Sunday in Nashville.",mean,7.613345623016357
+target,37,"Shelley Mays / Tennessean
+
+Buy Photo Democratic presidential candidate and former Secretary of State Hillary Clinton made a campaign stop at Meharry Medical College on Sunday in Nashville.",max,23.973901748657227
+target,37,"Shelley Mays / Tennessean
+
+Buy Photo Democratic presidential candidate and former Secretary of State Hillary Clinton made a campaign stop at Meharry Medical College on Sunday in Nashville.",last,23.973901748657227
+target,38,"Kenneth Chatman walks to the Reflections Treatment Center on December 10, 2015 in Margate, Florida.",mean,8.463580131530762
+target,38,"Kenneth Chatman walks to the Reflections Treatment Center on December 10, 2015 in Margate, Florida.",max,24.718997955322266
+target,38,"Kenneth Chatman walks to the Reflections Treatment Center on December 10, 2015 in Margate, Florida.",last,24.718997955322266
+target,39,"US President Donald Trump speaks during the Arabic Islamic American Summit at the King Abdulaziz Conference Center in Riyadh on May 21, 2017.",mean,7.881749153137207
+target,39,"US President Donald Trump speaks during the Arabic Islamic American Summit at the King Abdulaziz Conference Center in Riyadh on May 21, 2017.",max,25.35416603088379
+target,39,"US President Donald Trump speaks during the Arabic Islamic American Summit at the King Abdulaziz Conference Center in Riyadh on May 21, 2017.",last,19.73293113708496
+target,40,(JIM WATSON/AFP/Getty Images) Former first lady Barbara Bush waives to friends as former President George H.W.,mean,6.588472843170166
+target,40,(JIM WATSON/AFP/Getty Images) Former first lady Barbara Bush waives to friends as former President George H.W.,max,23.338890075683594
+target,40,(JIM WATSON/AFP/Getty Images) Former first lady Barbara Bush waives to friends as former President George H.W.,last,6.6432785987854
+target,41,"Buy Photo Punta Gorda police officer, Lee Coel, center right, exits the Charlotte County Jail with attorney, Jerry Berry on Wednesday.",mean,9.863404273986816
+target,41,"Buy Photo Punta Gorda police officer, Lee Coel, center right, exits the Charlotte County Jail with attorney, Jerry Berry on Wednesday.",max,24.307334899902344
+target,41,"Buy Photo Punta Gorda police officer, Lee Coel, center right, exits the Charlotte County Jail with attorney, Jerry Berry on Wednesday.",last,21.699220657348633
+target,42,Iranian President Hassan Rouhani speaks during the inauguration of the new parliament.,mean,8.825451850891113
+target,42,Iranian President Hassan Rouhani speaks during the inauguration of the new parliament.,max,24.261423110961914
+target,42,Iranian President Hassan Rouhani speaks during the inauguration of the new parliament.,last,16.150001525878906
+target,43,"Jason Wolf/ The Tennessean
+
+Tennessee Titans running back Derrick Henry (22) runs against Oakland Raiders strong safety T.J. Carrie (38) in the first half at Nissan Stadium Sunday, Sept. 10, 2017 in Nashville, Tenn. (Photo: Andrew Nelles / Tennessean.com)
+
+Terry Robiskie pored over the statistics Sunday night, after the Titans lost their second consecutive game, 16-10, to the Dolphins in Miami.",mean,7.619251728057861
+target,43,"Jason Wolf/ The Tennessean
+
+Tennessee Titans running back Derrick Henry (22) runs against Oakland Raiders strong safety T.J. Carrie (38) in the first half at Nissan Stadium Sunday, Sept. 10, 2017 in Nashville, Tenn. (Photo: Andrew Nelles / Tennessean.com)
+
+Terry Robiskie pored over the statistics Sunday night, after the Titans lost their second consecutive game, 16-10, to the Dolphins in Miami.",max,26.200572967529297
+target,43,"Jason Wolf/ The Tennessean
+
+Tennessee Titans running back Derrick Henry (22) runs against Oakland Raiders strong safety T.J. Carrie (38) in the first half at Nissan Stadium Sunday, Sept. 10, 2017 in Nashville, Tenn. (Photo: Andrew Nelles / Tennessean.com)
+
+Terry Robiskie pored over the statistics Sunday night, after the Titans lost their second consecutive game, 16-10, to the Dolphins in Miami.",last,0.3221481442451477
+target,44,"Hide Caption 28 of 42 Photos: Unrest in Yemen A Houthi militiaman sits near a tank near the presidential palace in Sanaa on Thursday, January 22.",mean,10.100456237792969
+target,44,"Hide Caption 28 of 42 Photos: Unrest in Yemen A Houthi militiaman sits near a tank near the presidential palace in Sanaa on Thursday, January 22.",max,25.001148223876953
+target,44,"Hide Caption 28 of 42 Photos: Unrest in Yemen A Houthi militiaman sits near a tank near the presidential palace in Sanaa on Thursday, January 22.",last,11.185846328735352
+target,45,"Jamaica’s Darren Mattocks, right, challenges Omar Gonzalez during the second half of the Gold Cup final in Santa Clara, Calif., on July 26.",mean,8.66127872467041
+target,45,"Jamaica’s Darren Mattocks, right, challenges Omar Gonzalez during the second half of the Gold Cup final in Santa Clara, Calif., on July 26.",max,25.788238525390625
+target,45,"Jamaica’s Darren Mattocks, right, challenges Omar Gonzalez during the second half of the Gold Cup final in Santa Clara, Calif., on July 26.",last,9.109716415405273
+target,46,"A rescued chinchilla is held by a veterinarian at the San Diego Humane Society in Oceanside, California after Hollywood mogul and co-creator of The Simpsons, Sam Simon, financed the purchase of a chinchilla farm in order to rescue over 400 chinchillas and close the Vista, California business August 19, 2014.",mean,6.224562168121338
+target,46,"A rescued chinchilla is held by a veterinarian at the San Diego Humane Society in Oceanside, California after Hollywood mogul and co-creator of The Simpsons, Sam Simon, financed the purchase of a chinchilla farm in order to rescue over 400 chinchillas and close the Vista, California business August 19, 2014.",max,24.6883487701416
+target,46,"A rescued chinchilla is held by a veterinarian at the San Diego Humane Society in Oceanside, California after Hollywood mogul and co-creator of The Simpsons, Sam Simon, financed the purchase of a chinchilla farm in order to rescue over 400 chinchillas and close the Vista, California business August 19, 2014.",last,19.779888153076172
+target,47,"British athlete Alistair Brownlee (L) helps his brother Jonathan Brownlee (R) before crossing the line in second and third place during the ITU World Triathlon Championships 2016 in Cozumel, Quintana Roo, Mexico on September 18, 2016.AFP
+
+""I'm a bit biased but I think it is a fantastic sport, and it embodies so much of what the Olympics is about.",mean,6.032598495483398
+target,47,"British athlete Alistair Brownlee (L) helps his brother Jonathan Brownlee (R) before crossing the line in second and third place during the ITU World Triathlon Championships 2016 in Cozumel, Quintana Roo, Mexico on September 18, 2016.AFP
+
+""I'm a bit biased but I think it is a fantastic sport, and it embodies so much of what the Olympics is about.",max,27.115755081176758
+target,47,"British athlete Alistair Brownlee (L) helps his brother Jonathan Brownlee (R) before crossing the line in second and third place during the ITU World Triathlon Championships 2016 in Cozumel, Quintana Roo, Mexico on September 18, 2016.AFP
+
+""I'm a bit biased but I think it is a fantastic sport, and it embodies so much of what the Olympics is about.",last,0.17402470111846924
+target,48,"This story is about Published Aug. 2016
+
+Sturm: Kellen Moore injury only forces Cowboys to address backup QB issue that existed all along Share This Story On... Twitter
+
+Facebook
+
+Email
+
+Vernon Bryant/Staff Photographer Dallas Cowboys offensive coordinator Scott Linehan talks to Dallas Cowboys quarterback Kellen Moore (17) late in the fourth quarter at Ralph Wilson Stadium in Orchard Park, New York on Sunday, December 27, 2015.",mean,6.25868558883667
+target,48,"This story is about Published Aug. 2016
+
+Sturm: Kellen Moore injury only forces Cowboys to address backup QB issue that existed all along Share This Story On... Twitter
+
+Facebook
+
+Email
+
+Vernon Bryant/Staff Photographer Dallas Cowboys offensive coordinator Scott Linehan talks to Dallas Cowboys quarterback Kellen Moore (17) late in the fourth quarter at Ralph Wilson Stadium in Orchard Park, New York on Sunday, December 27, 2015.",max,28.449798583984375
+target,48,"This story is about Published Aug. 2016
+
+Sturm: Kellen Moore injury only forces Cowboys to address backup QB issue that existed all along Share This Story On... Twitter
+
+Facebook
+
+Email
+
+Vernon Bryant/Staff Photographer Dallas Cowboys offensive coordinator Scott Linehan talks to Dallas Cowboys quarterback Kellen Moore (17) late in the fourth quarter at Ralph Wilson Stadium in Orchard Park, New York on Sunday, December 27, 2015.",last,28.449798583984375
+target,49,"© Olivier Douliery/Pool/Sipa USA/TNS The CIA seal is seen on the floor during a visit by U.S. President Donald Trump on Jan. 21, 2017 at the CIA headquarters in Langley, Va.
+
+WASHINGTON — When wayward contract employees at the CIA began pilfering snacks from vending machines back in 2013, the Office of the Inspector General sprang into action.",mean,5.989314556121826
+target,49,"© Olivier Douliery/Pool/Sipa USA/TNS The CIA seal is seen on the floor during a visit by U.S. President Donald Trump on Jan. 21, 2017 at the CIA headquarters in Langley, Va.
+
+WASHINGTON — When wayward contract employees at the CIA began pilfering snacks from vending machines back in 2013, the Office of the Inspector General sprang into action.",max,29.266525268554688
+target,49,"© Olivier Douliery/Pool/Sipa USA/TNS The CIA seal is seen on the floor during a visit by U.S. President Donald Trump on Jan. 21, 2017 at the CIA headquarters in Langley, Va.
+
+WASHINGTON — When wayward contract employees at the CIA began pilfering snacks from vending machines back in 2013, the Office of the Inspector General sprang into action.",last,0.7582606673240662
+target,50,Anita Colon looks at photos of her brother Robert and other family members when he was younger.,mean,5.309580326080322
+target,50,Anita Colon looks at photos of her brother Robert and other family members when he was younger.,max,17.22701072692871
+target,50,Anita Colon looks at photos of her brother Robert and other family members when he was younger.,last,17.22701072692871
+target,51,(Photo by Paul Hames/California Department of Water Resources via Getty Images).,mean,6.506715297698975
+target,51,(Photo by Paul Hames/California Department of Water Resources via Getty Images).,max,14.29460334777832
+target,51,(Photo by Paul Hames/California Department of Water Resources via Getty Images).,last,6.106814861297607
+target,52,"Democratic presidential candidate Hillary Clinton and her vice-presidential choice, Sen. Tim Kaine of Virginia, campaigned together in Miami on Saturday.",mean,4.385963439941406
+target,52,"Democratic presidential candidate Hillary Clinton and her vice-presidential choice, Sen. Tim Kaine of Virginia, campaigned together in Miami on Saturday.",max,15.621345520019531
+target,52,"Democratic presidential candidate Hillary Clinton and her vice-presidential choice, Sen. Tim Kaine of Virginia, campaigned together in Miami on Saturday.",last,7.311983108520508
+target,53,"Migrants sleep wrapped in blankets inside a registration camp in Presevo, Serbia, amid plummeting temperatures
+
+She said there had been occasions when the refugees had taken photographs of the women without asking their permission first.",mean,5.153522491455078
+target,53,"Migrants sleep wrapped in blankets inside a registration camp in Presevo, Serbia, amid plummeting temperatures
+
+She said there had been occasions when the refugees had taken photographs of the women without asking their permission first.",max,23.92557716369629
+target,53,"Migrants sleep wrapped in blankets inside a registration camp in Presevo, Serbia, amid plummeting temperatures
+
+She said there had been occasions when the refugees had taken photographs of the women without asking their permission first.",last,0.0
+target,54,"A searcher walks through the debris of a deadly mudslide in Oso, Wash. At least 18 people have been confirmed dead.",mean,8.454008102416992
+target,54,"A searcher walks through the debris of a deadly mudslide in Oso, Wash. At least 18 people have been confirmed dead.",max,22.727481842041016
+target,54,"A searcher walks through the debris of a deadly mudslide in Oso, Wash. At least 18 people have been confirmed dead.",last,9.728885650634766
+target,55,Former U.S. House speaker J. Dennis Hastert arrives at the federal courthouse in Chicago last June for his arraignment on federal charges in his hush-money case.,mean,5.200736045837402
+target,55,Former U.S. House speaker J. Dennis Hastert arrives at the federal courthouse in Chicago last June for his arraignment on federal charges in his hush-money case.,max,19.139095306396484
+target,55,Former U.S. House speaker J. Dennis Hastert arrives at the federal courthouse in Chicago last June for his arraignment on federal charges in his hush-money case.,last,10.111959457397461
+target,56,"University of Cincinnati student Alexander Shelton, 25, president of UC Students Against Injustice, speaks to community members demanding answers in a police shooting July 19, 2015, that killed 43-year-old Samuel Dubose.",mean,5.516811370849609
+target,56,"University of Cincinnati student Alexander Shelton, 25, president of UC Students Against Injustice, speaks to community members demanding answers in a police shooting July 19, 2015, that killed 43-year-old Samuel Dubose.",max,22.94623565673828
+target,56,"University of Cincinnati student Alexander Shelton, 25, president of UC Students Against Injustice, speaks to community members demanding answers in a police shooting July 19, 2015, that killed 43-year-old Samuel Dubose.",last,18.42493438720703
+target,57,"(Photo11: Scott Craven/The Republic)
+
+Pueblo Vida Brewing Co.",mean,3.2816803455352783
+target,57,"(Photo11: Scott Craven/The Republic)
+
+Pueblo Vida Brewing Co.",max,9.812873840332031
+target,57,"(Photo11: Scott Craven/The Republic)
+
+Pueblo Vida Brewing Co.",last,9.812873840332031
+target,58,"File photo of a fire truck leaving a fire house in New York above
+
+The department had also received a complaint about material posted in a firehouse, a source said.",mean,4.914200782775879
+target,58,"File photo of a fire truck leaving a fire house in New York above
+
+The department had also received a complaint about material posted in a firehouse, a source said.",max,18.790081024169922
+target,58,"File photo of a fire truck leaving a fire house in New York above
+
+The department had also received a complaint about material posted in a firehouse, a source said.",last,0.41847696900367737
+target,59,"Riot police at the Rozke detention camp where 300 migrants broke out yesterday in scenes of utter desperation and anguish
+
+An anti-migrant protest by the far-Right Jobbikparty on Hungary's border with Serbia yesterday.",mean,3.6998322010040283
+target,59,"Riot police at the Rozke detention camp where 300 migrants broke out yesterday in scenes of utter desperation and anguish
+
+An anti-migrant protest by the far-Right Jobbikparty on Hungary's border with Serbia yesterday.",max,13.351818084716797
+target,59,"Riot police at the Rozke detention camp where 300 migrants broke out yesterday in scenes of utter desperation and anguish
+
+An anti-migrant protest by the far-Right Jobbikparty on Hungary's border with Serbia yesterday.",last,8.446477890014648
+target,60,"Michael Arrington has a new blog, scolds TechCrunch editor
+
+Ashton Kutcher talks 'Two and a Half Men' and tech investing
+
+-- Nathan Olivarez-Giles
+
+Twitter.com/nateog
+
+Photo: MC Hammer watches warmups before an NFL game between the Oakland Raiders and the Cleveland Browns at O.co Coliseum in Oakland.",mean,3.964376211166382
+target,60,"Michael Arrington has a new blog, scolds TechCrunch editor
+
+Ashton Kutcher talks 'Two and a Half Men' and tech investing
+
+-- Nathan Olivarez-Giles
+
+Twitter.com/nateog
+
+Photo: MC Hammer watches warmups before an NFL game between the Oakland Raiders and the Cleveland Browns at O.co Coliseum in Oakland.",max,23.874574661254883
+target,60,"Michael Arrington has a new blog, scolds TechCrunch editor
+
+Ashton Kutcher talks 'Two and a Half Men' and tech investing
+
+-- Nathan Olivarez-Giles
+
+Twitter.com/nateog
+
+Photo: MC Hammer watches warmups before an NFL game between the Oakland Raiders and the Cleveland Browns at O.co Coliseum in Oakland.",last,14.654232025146484
+target,61,"Stacks of handwritten visa applications sit in a packed immigration office, waiting for embassies to sign off on their citizens.",mean,5.380306720733643
+target,61,"Stacks of handwritten visa applications sit in a packed immigration office, waiting for embassies to sign off on their citizens.",max,18.86011505126953
+target,61,"Stacks of handwritten visa applications sit in a packed immigration office, waiting for embassies to sign off on their citizens.",last,3.793304443359375
+target,62,"© AP Photo / Edvard Molnar Hungarian Soldiers Start Work on Anti-Immigrant Fence on Border with Serbia
+
+The Western Balkan route isn’t as infamous in the European press as perhaps the Mediterranean Sea route.",mean,3.1881139278411865
+target,62,"© AP Photo / Edvard Molnar Hungarian Soldiers Start Work on Anti-Immigrant Fence on Border with Serbia
+
+The Western Balkan route isn’t as infamous in the European press as perhaps the Mediterranean Sea route.",max,17.824905395507812
+target,62,"© AP Photo / Edvard Molnar Hungarian Soldiers Start Work on Anti-Immigrant Fence on Border with Serbia
+
+The Western Balkan route isn’t as infamous in the European press as perhaps the Mediterranean Sea route.",last,0.4763045012950897
+target,63,An anti-American Legislative Exchange Council (ALEC) protest in front of the Palmer House in Chicago has taken a turn for the worse as police make violent arrests of protesters gathered to protest the lobbying group’s conference.,mean,2.7377841472625732
+target,63,An anti-American Legislative Exchange Council (ALEC) protest in front of the Palmer House in Chicago has taken a turn for the worse as police make violent arrests of protesters gathered to protest the lobbying group’s conference.,max,12.434701919555664
+target,63,An anti-American Legislative Exchange Council (ALEC) protest in front of the Palmer House in Chicago has taken a turn for the worse as police make violent arrests of protesters gathered to protest the lobbying group’s conference.,last,1.2792890071868896
+control,0,"Its compass is not the centre of Melbourne, but the satellite city of Broadmeadows, around which the surrounding suburbs hover.",mean,0.27439814805984497
+control,0,"Its compass is not the centre of Melbourne, but the satellite city of Broadmeadows, around which the surrounding suburbs hover.",max,0.9227298498153687
+control,0,"Its compass is not the centre of Melbourne, but the satellite city of Broadmeadows, around which the surrounding suburbs hover.",last,0.502318263053894
+control,1,A little later he discussed for a moment with one of the regular officers the direction from which the Spanish fire was coming.,mean,0.2817729413509369
+control,1,A little later he discussed for a moment with one of the regular officers the direction from which the Spanish fire was coming.,max,0.9945354461669922
+control,1,A little later he discussed for a moment with one of the regular officers the direction from which the Spanish fire was coming.,last,0.20537009835243225
+control,2,"00:10:17
+
+On the individual guitars those strums sound like: So that's a lot of the ring.",mean,0.29525619745254517
+control,2,"00:10:17
+
+On the individual guitars those strums sound like: So that's a lot of the ring.",max,0.8978070616722107
+control,2,"00:10:17
+
+On the individual guitars those strums sound like: So that's a lot of the ring.",last,0.23709532618522644
+control,3,Green Chimneys is a leader in the field of supporting at-risk youth.,mean,0.26747941970825195
+control,3,Green Chimneys is a leader in the field of supporting at-risk youth.,max,0.9770291447639465
+control,3,Green Chimneys is a leader in the field of supporting at-risk youth.,last,0.9770291447639465
+control,4,"Oddly enough, the most fantasy-relevant factor in this trade is the fact that, in a corresponding move, the Twins called up Kennys Vargas to take Fuld’s roster spot.",mean,0.23443035781383514
+control,4,"Oddly enough, the most fantasy-relevant factor in this trade is the fact that, in a corresponding move, the Twins called up Kennys Vargas to take Fuld’s roster spot.",max,1.233669638633728
+control,4,"Oddly enough, the most fantasy-relevant factor in this trade is the fact that, in a corresponding move, the Twins called up Kennys Vargas to take Fuld’s roster spot.",last,0.019503403455018997
+control,5,The islands of Teleki Tokolau and Teleli Tonga were born At this point I would like to digress for a moment.,mean,0.3593396842479706
+control,5,The islands of Teleki Tokolau and Teleli Tonga were born At this point I would like to digress for a moment.,max,1.0298906564712524
+control,5,The islands of Teleki Tokolau and Teleli Tonga were born At this point I would like to digress for a moment.,last,0.6840195655822754
+control,6,"""We are in the Highlands, are we not?""",mean,0.20643958449363708
+control,6,"""We are in the Highlands, are we not?""",max,0.7432970404624939
+control,6,"""We are in the Highlands, are we not?""",last,0.23902162909507751
+control,7,"This article was originally written for Foreign Cultures 80, taught by David McCann.",mean,0.25850996375083923
+control,7,"This article was originally written for Foreign Cultures 80, taught by David McCann.",max,1.7688008546829224
+control,7,"This article was originally written for Foreign Cultures 80, taught by David McCann.",last,1.7688008546829224
+control,8,"And coming off injured reserve, CB Makinton Dorleant also practice on Wednesday.",mean,0.4871305823326111
+control,8,"And coming off injured reserve, CB Makinton Dorleant also practice on Wednesday.",max,2.7592952251434326
+control,8,"And coming off injured reserve, CB Makinton Dorleant also practice on Wednesday.",last,0.3827316462993622
+control,9,"THE field of robotics is not delivering on any level, experts have claimed.",mean,0.539493978023529
+control,9,"THE field of robotics is not delivering on any level, experts have claimed.",max,1.2221150398254395
+control,9,"THE field of robotics is not delivering on any level, experts have claimed.",last,0.0
+control,10,"He corrupts our sincerity function, perverts it, encourages us never to mean what we say.",mean,0.12329374253749847
+control,10,"He corrupts our sincerity function, perverts it, encourages us never to mean what we say.",max,0.5730099678039551
+control,10,"He corrupts our sincerity function, perverts it, encourages us never to mean what we say.",last,0.4011033773422241
+control,11,"But with the parade of Apple Watch apps coming out now, I'm guessing Wear's third party ecosystem is about to grow substantially, so that's something to [potentially] look forward to.",mean,0.3056766092777252
+control,11,"But with the parade of Apple Watch apps coming out now, I'm guessing Wear's third party ecosystem is about to grow substantially, so that's something to [potentially] look forward to.",max,1.065415859222412
+control,11,"But with the parade of Apple Watch apps coming out now, I'm guessing Wear's third party ecosystem is about to grow substantially, so that's something to [potentially] look forward to.",last,0.5797376036643982
+control,12,Today you could say schools are rotten to the core — the Common Core.,mean,0.239177405834198
+control,12,Today you could say schools are rotten to the core — the Common Core.,max,0.7491137981414795
+control,12,Today you could say schools are rotten to the core — the Common Core.,last,0.4501214027404785
+control,13,The price of each unit is 1.25 mBTC (0.00125 BTC).,mean,0.3136887550354004
+control,13,The price of each unit is 1.25 mBTC (0.00125 BTC).,max,1.768243670463562
+control,13,The price of each unit is 1.25 mBTC (0.00125 BTC).,last,0.0
+control,14,"""I used to go to villages in the 90s to bust superstitions and miracles of godmen.",mean,0.08334845304489136
+control,14,"""I used to go to villages in the 90s to bust superstitions and miracles of godmen.",max,0.7786259055137634
+control,14,"""I used to go to villages in the 90s to bust superstitions and miracles of godmen.",last,0.0
+control,15,"Ashok Vajpeyi, former chairman of Lalit Kala Academy, strongly condemned the attack, saying, ""This is a violation of an artist's freedom of expression.",mean,0.41473624110221863
+control,15,"Ashok Vajpeyi, former chairman of Lalit Kala Academy, strongly condemned the attack, saying, ""This is a violation of an artist's freedom of expression.",max,2.1914353370666504
+control,15,"Ashok Vajpeyi, former chairman of Lalit Kala Academy, strongly condemned the attack, saying, ""This is a violation of an artist's freedom of expression.",last,0.0
+control,16,This is especially when you have multiple closing parentheses in a row.,mean,0.36627188324928284
+control,16,This is especially when you have multiple closing parentheses in a row.,max,1.3181307315826416
+control,16,This is especially when you have multiple closing parentheses in a row.,last,0.37836042046546936
+control,17,"The post will stop changing after
+
+Sebastian Briglia‘s debut at the Parkside Lounge on July 29, 2014, where he will read one of the bits from his novella New Wave and the Art of Heroin Maintenance that were published in Horror Sleaze Trash Magazine.",mean,0.4780181646347046
+control,17,"The post will stop changing after
+
+Sebastian Briglia‘s debut at the Parkside Lounge on July 29, 2014, where he will read one of the bits from his novella New Wave and the Art of Heroin Maintenance that were published in Horror Sleaze Trash Magazine.",max,2.127561330795288
+control,17,"The post will stop changing after
+
+Sebastian Briglia‘s debut at the Parkside Lounge on July 29, 2014, where he will read one of the bits from his novella New Wave and the Art of Heroin Maintenance that were published in Horror Sleaze Trash Magazine.",last,1.3593668937683105
+control,18,"Samoa were probably the most disappointing team on the night; I thought they had a genuine opportunity of upsetting England, but they were poor, made a lot of mistakes and couldn't match England's control.",mean,0.3926052451133728
+control,18,"Samoa were probably the most disappointing team on the night; I thought they had a genuine opportunity of upsetting England, but they were poor, made a lot of mistakes and couldn't match England's control.",max,1.3421144485473633
+control,18,"Samoa were probably the most disappointing team on the night; I thought they had a genuine opportunity of upsetting England, but they were poor, made a lot of mistakes and couldn't match England's control.",last,0.685309112071991
+control,19,"The grouping is approximate, as paradoxes may fit into more than one category.",mean,0.09227482974529266
+control,19,"The grouping is approximate, as paradoxes may fit into more than one category.",max,0.5428180694580078
+control,19,"The grouping is approximate, as paradoxes may fit into more than one category.",last,0.000681757926940918
+control,20,"In his one-hour and 20-minute closing statements, Gough on eight ocassions told jurors their dislike for Adkins could not be enough to convict him.",mean,0.33497458696365356
+control,20,"In his one-hour and 20-minute closing statements, Gough on eight ocassions told jurors their dislike for Adkins could not be enough to convict him.",max,1.6155223846435547
+control,20,"In his one-hour and 20-minute closing statements, Gough on eight ocassions told jurors their dislike for Adkins could not be enough to convict him.",last,0.0
+control,21,"M Kapp, business analyst
+
+Patrick J. Tangney, settlement attorney
+
+Thomas Mitchell III, arbitrator
+
+Now that secret circle of Obamas eunuchs is out, thanks to the sleuths of Pizzagate, it becomes clearer as to why all the lackeys jumped on the fake news bandwagon.",mean,0.24535389244556427
+control,21,"M Kapp, business analyst
+
+Patrick J. Tangney, settlement attorney
+
+Thomas Mitchell III, arbitrator
+
+Now that secret circle of Obamas eunuchs is out, thanks to the sleuths of Pizzagate, it becomes clearer as to why all the lackeys jumped on the fake news bandwagon.",max,1.8069499731063843
+control,21,"M Kapp, business analyst
+
+Patrick J. Tangney, settlement attorney
+
+Thomas Mitchell III, arbitrator
+
+Now that secret circle of Obamas eunuchs is out, thanks to the sleuths of Pizzagate, it becomes clearer as to why all the lackeys jumped on the fake news bandwagon.",last,0.0
+control,22,"Drupal core: 6.22 -> 7.12
+
+1.2.",mean,0.3571928143501282
+control,22,"Drupal core: 6.22 -> 7.12
+
+1.2.",max,1.2092828750610352
+control,22,"Drupal core: 6.22 -> 7.12
+
+1.2.",last,0.0
+control,23,"The sleeve tattoo is shorter than in the airport photos and he has a tattooed belly in this video, which he did not have at the airport.",mean,0.7619579434394836
+control,23,"The sleeve tattoo is shorter than in the airport photos and he has a tattooed belly in this video, which he did not have at the airport.",max,2.1987626552581787
+control,23,"The sleeve tattoo is shorter than in the airport photos and he has a tattooed belly in this video, which he did not have at the airport.",last,1.1190481185913086
+control,24,"“Once I stopped using heroin for good, I never used cannabis again.”
+
+On top of providing relief from the physical pain associated with opioid withdrawal, Kevin says it helped his emotional state of mind as well.",mean,0.08922845125198364
+control,24,"“Once I stopped using heroin for good, I never used cannabis again.”
+
+On top of providing relief from the physical pain associated with opioid withdrawal, Kevin says it helped his emotional state of mind as well.",max,0.8266181349754333
+control,24,"“Once I stopped using heroin for good, I never used cannabis again.”
+
+On top of providing relief from the physical pain associated with opioid withdrawal, Kevin says it helped his emotional state of mind as well.",last,0.0
+control,25,The league just began accepting claims against the settlement about eight months ago.,mean,0.38346368074417114
+control,25,The league just began accepting claims against the settlement about eight months ago.,max,1.209114909172058
+control,25,The league just began accepting claims against the settlement about eight months ago.,last,1.209114909172058
+control,26,"If you missed it, check it out.",mean,0.2752099633216858
+control,26,"If you missed it, check it out.",max,0.683009684085846
+control,26,"If you missed it, check it out.",last,0.0
+control,27,"Keratoacanthoma: A clinico-pathologic enigma.. 2004;30:2, Part 2, 326-333.",mean,0.23302172124385834
+control,27,"Keratoacanthoma: A clinico-pathologic enigma.. 2004;30:2, Part 2, 326-333.",max,1.1906757354736328
+control,27,"Keratoacanthoma: A clinico-pathologic enigma.. 2004;30:2, Part 2, 326-333.",last,0.0
+control,28,"From the June 1 edition of Premiere Radio Networks' The Rush Limbaugh Show:
+
+LIMBAUGH: How many of you saw the story in the English-language version of Pravda over the weekend?",mean,0.5451411604881287
+control,28,"From the June 1 edition of Premiere Radio Networks' The Rush Limbaugh Show:
+
+LIMBAUGH: How many of you saw the story in the English-language version of Pravda over the weekend?",max,2.4346771240234375
+control,28,"From the June 1 edition of Premiere Radio Networks' The Rush Limbaugh Show:
+
+LIMBAUGH: How many of you saw the story in the English-language version of Pravda over the weekend?",last,0.16883419454097748
+control,29,"Fair Chance Housing is one of the dozens of recommendations in Mayor Murray’s Housing Affordability and Livability Agenda (HALA) meant to address public safety and racial equity in housing by lowering barriers for those re-entering society, who are disproportionately people of color.",mean,0.4801948666572571
+control,29,"Fair Chance Housing is one of the dozens of recommendations in Mayor Murray’s Housing Affordability and Livability Agenda (HALA) meant to address public safety and racial equity in housing by lowering barriers for those re-entering society, who are disproportionately people of color.",max,1.4931039810180664
+control,29,"Fair Chance Housing is one of the dozens of recommendations in Mayor Murray’s Housing Affordability and Livability Agenda (HALA) meant to address public safety and racial equity in housing by lowering barriers for those re-entering society, who are disproportionately people of color.",last,1.056046962738037
+control,30,"The District has more residents than either the states of Vermont or Wyoming but has no voting representation in Congress, and all of its locally passed laws and spending decisions must go before Congress for review.",mean,0.3380769193172455
+control,30,"The District has more residents than either the states of Vermont or Wyoming but has no voting representation in Congress, and all of its locally passed laws and spending decisions must go before Congress for review.",max,1.0583213567733765
+control,30,"The District has more residents than either the states of Vermont or Wyoming but has no voting representation in Congress, and all of its locally passed laws and spending decisions must go before Congress for review.",last,0.7627172470092773
+control,31,"Maybe it was missing out on most of the expansion in the NFL, MLB, NBA and NHL, but it's cool to be a bigger part of this round.",mean,0.5810707211494446
+control,31,"Maybe it was missing out on most of the expansion in the NFL, MLB, NBA and NHL, but it's cool to be a bigger part of this round.",max,1.6828103065490723
+control,31,"Maybe it was missing out on most of the expansion in the NFL, MLB, NBA and NHL, but it's cool to be a bigger part of this round.",last,0.3298720419406891
+control,32,"The Communication setting out the 2030 framework is accompanied by a Report on energy prices and costs, which assesses the key drivers and compares EU prices with those of its main trading partners.",mean,0.3547845184803009
+control,32,"The Communication setting out the 2030 framework is accompanied by a Report on energy prices and costs, which assesses the key drivers and compares EU prices with those of its main trading partners.",max,1.2693572044372559
+control,32,"The Communication setting out the 2030 framework is accompanied by a Report on energy prices and costs, which assesses the key drivers and compares EU prices with those of its main trading partners.",last,0.0
+control,33,"A lot of scientists agree on the fact that a peptide does not conform to one particular pattern, while it is a bit easier to distinguish a protein.",mean,0.23864294588565826
+control,33,"A lot of scientists agree on the fact that a peptide does not conform to one particular pattern, while it is a bit easier to distinguish a protein.",max,1.362297773361206
+control,33,"A lot of scientists agree on the fact that a peptide does not conform to one particular pattern, while it is a bit easier to distinguish a protein.",last,0.5734525918960571
+control,34,"Isn’t this exactly the kind of behavior you all have been complaining about?""",mean,0.23694635927677155
+control,34,"Isn’t this exactly the kind of behavior you all have been complaining about?""",max,1.2322245836257935
+control,34,"Isn’t this exactly the kind of behavior you all have been complaining about?""",last,0.0
+control,35,But this requires lots and lots of rebuilding over and over and lots of manual $PATH additions.,mean,0.18177686631679535
+control,35,But this requires lots and lots of rebuilding over and over and lots of manual $PATH additions.,max,0.7027856111526489
+control,35,But this requires lots and lots of rebuilding over and over and lots of manual $PATH additions.,last,0.37995395064353943
+control,36,"Clearly, many historians also accept premise 2 (there is a significant number of Biblical historians who remain sceptical about the miracle claims made in the New Testament, and most will surely accept 2) .",mean,0.19508448243141174
+control,36,"Clearly, many historians also accept premise 2 (there is a significant number of Biblical historians who remain sceptical about the miracle claims made in the New Testament, and most will surely accept 2) .",max,1.1190340518951416
+control,36,"Clearly, many historians also accept premise 2 (there is a significant number of Biblical historians who remain sceptical about the miracle claims made in the New Testament, and most will surely accept 2) .",last,0.0
+control,37,League Two Wimbledon have made giant strides since reforming in 2002 and lifelong Liverpool fan Akinfenwa is counting down the hours to one of the biggest days of his life.,mean,0.17100213468074799
+control,37,League Two Wimbledon have made giant strides since reforming in 2002 and lifelong Liverpool fan Akinfenwa is counting down the hours to one of the biggest days of his life.,max,0.8281551599502563
+control,37,League Two Wimbledon have made giant strides since reforming in 2002 and lifelong Liverpool fan Akinfenwa is counting down the hours to one of the biggest days of his life.,last,0.0
+control,38,"_________________________
+
+ACTION ITEM:
+
+The University has shut off the water supply.",mean,0.35189467668533325
+control,38,"_________________________
+
+ACTION ITEM:
+
+The University has shut off the water supply.",max,1.4616092443466187
+control,38,"_________________________
+
+ACTION ITEM:
+
+The University has shut off the water supply.",last,0.8028097748756409
+control,39,(Read more Phyllis Schlafly stories.),mean,0.17701369524002075
+control,39,(Read more Phyllis Schlafly stories.),max,1.0992724895477295
+control,39,(Read more Phyllis Schlafly stories.),last,0.0
+control,40,"Share this: Email
+
+Tumblr
+
+Print
+
+Facebook
+
+LinkedIn
+
+Twitter
+
+Reddit
+
+Pinterest
+
+Like this: Like Loading...",mean,0.24725255370140076
+control,40,"Share this: Email
+
+Tumblr
+
+Print
+
+Facebook
+
+LinkedIn
+
+Twitter
+
+Reddit
+
+Pinterest
+
+Like this: Like Loading...",max,0.9799978733062744
+control,40,"Share this: Email
+
+Tumblr
+
+Print
+
+Facebook
+
+LinkedIn
+
+Twitter
+
+Reddit
+
+Pinterest
+
+Like this: Like Loading...",last,0.0
+control,41,Ryan will be exploring both a pure Haskell approach and one based on wrapping foreign data structures with the FFI.,mean,0.2286718636751175
+control,41,Ryan will be exploring both a pure Haskell approach and one based on wrapping foreign data structures with the FFI.,max,0.9060690999031067
+control,41,Ryan will be exploring both a pure Haskell approach and one based on wrapping foreign data structures with the FFI.,last,0.6506842970848083
+control,42,"In an interview with the paper, Cunningham, now 72, said the scandal cost him his family.",mean,0.25326281785964966
+control,42,"In an interview with the paper, Cunningham, now 72, said the scandal cost him his family.",max,1.4304097890853882
+control,42,"In an interview with the paper, Cunningham, now 72, said the scandal cost him his family.",last,0.00851324200630188
+control,43,The protests in Venezuela have nothing in common with Occupy Wall Street or the anti-austerity protests in other countries.,mean,0.40991565585136414
+control,43,The protests in Venezuela have nothing in common with Occupy Wall Street or the anti-austerity protests in other countries.,max,1.076132893562317
+control,43,The protests in Venezuela have nothing in common with Occupy Wall Street or the anti-austerity protests in other countries.,last,0.5035027265548706
+control,44,"Self healing was perfected by Rambo in Rambo: First Blood when he stitched his arm shut after he cracked a kid's back while jumping off a cliff (and the only reason his arm split open was because he's so tough he wanted to make the bad guys think they had a chance, but yeah right.. it was like Rambo sent them all Christmas cards, but instead of cards it was murder).",mean,0.27787452936172485
+control,44,"Self healing was perfected by Rambo in Rambo: First Blood when he stitched his arm shut after he cracked a kid's back while jumping off a cliff (and the only reason his arm split open was because he's so tough he wanted to make the bad guys think they had a chance, but yeah right.. it was like Rambo sent them all Christmas cards, but instead of cards it was murder).",max,1.495814323425293
+control,44,"Self healing was perfected by Rambo in Rambo: First Blood when he stitched his arm shut after he cracked a kid's back while jumping off a cliff (and the only reason his arm split open was because he's so tough he wanted to make the bad guys think they had a chance, but yeah right.. it was like Rambo sent them all Christmas cards, but instead of cards it was murder).",last,0.0
+control,45,"For example, we need not remember everything about an enemy in order to remember that someone is an enemy.",mean,0.12012390047311783
+control,45,"For example, we need not remember everything about an enemy in order to remember that someone is an enemy.",max,1.0022032260894775
+control,45,"For example, we need not remember everything about an enemy in order to remember that someone is an enemy.",last,0.0
+control,46,"“I would have done anything to go to Brooks when I was 17,” Maassen says.",mean,0.07588666677474976
+control,46,"“I would have done anything to go to Brooks when I was 17,” Maassen says.",max,0.3959249258041382
+control,46,"“I would have done anything to go to Brooks when I was 17,” Maassen says.",last,0.2802858352661133
+control,47,Bei gleichen Ausbildungskosten sinkt der volkswirtschaftliche Nutzen durch die Frauenförderung massiv.,mean,0.3169611394405365
+control,47,Bei gleichen Ausbildungskosten sinkt der volkswirtschaftliche Nutzen durch die Frauenförderung massiv.,max,1.2770776748657227
+control,47,Bei gleichen Ausbildungskosten sinkt der volkswirtschaftliche Nutzen durch die Frauenförderung massiv.,last,0.5508927702903748
+control,48,Do You Need Antibiotics For Dental Work With Mitral Valve Prolapse?,mean,0.6677842736244202
+control,48,Do You Need Antibiotics For Dental Work With Mitral Valve Prolapse?,max,1.8303544521331787
+control,48,Do You Need Antibiotics For Dental Work With Mitral Valve Prolapse?,last,0.15772834420204163
+control,49,No arrests.,mean,0.17732635140419006
+control,49,No arrests.,max,0.6159225106239319
+control,49,No arrests.,last,0.6159225106239319
+control,50,They’d bring back the electric chair.,mean,0.15088091790676117
+control,50,They’d bring back the electric chair.,max,0.37330320477485657
+control,50,They’d bring back the electric chair.,last,0.3050049841403961
+control,51,But lower and higher energies all have a non-zero probability.,mean,0.20186039805412292
+control,51,But lower and higher energies all have a non-zero probability.,max,0.8059815764427185
+control,51,But lower and higher energies all have a non-zero probability.,last,0.4987727701663971
+control,52,Twin Shadow is repped by Paradigm/Windish and manager Eddie Bezalel.,mean,0.24279294908046722
+control,52,Twin Shadow is repped by Paradigm/Windish and manager Eddie Bezalel.,max,1.508726954460144
+control,52,Twin Shadow is repped by Paradigm/Windish and manager Eddie Bezalel.,last,0.5472356081008911
+control,53,"Even Goldman acknowledges this point:
+
+The debt limit vote often focuses the nation’s attention, albeit briefly, on the amount of outstanding US obligations.",mean,0.22295084595680237
+control,53,"Even Goldman acknowledges this point:
+
+The debt limit vote often focuses the nation’s attention, albeit briefly, on the amount of outstanding US obligations.",max,0.8536008596420288
+control,53,"Even Goldman acknowledges this point:
+
+The debt limit vote often focuses the nation’s attention, albeit briefly, on the amount of outstanding US obligations.",last,0.8407053351402283
+control,54,"""Possibly, the First Order was sending out communications before we jammed their distress signal.",mean,0.25441041588783264
+control,54,"""Possibly, the First Order was sending out communications before we jammed their distress signal.",max,1.6802998781204224
+control,54,"""Possibly, the First Order was sending out communications before we jammed their distress signal.",last,0.0
+control,55,"Millions of pieces of space debris are orbiting the Earth, from tiny pellets of escaped coolant to spent rocket stages and dead satellites, said Brian Weeden, a former Air Force space operations officer who is now the technical adviser for the Secure World Foundation, a Colorado think tank and advocacy group that focuses on the use of space.",mean,0.5118381977081299
+control,55,"Millions of pieces of space debris are orbiting the Earth, from tiny pellets of escaped coolant to spent rocket stages and dead satellites, said Brian Weeden, a former Air Force space operations officer who is now the technical adviser for the Secure World Foundation, a Colorado think tank and advocacy group that focuses on the use of space.",max,1.7163474559783936
+control,55,"Millions of pieces of space debris are orbiting the Earth, from tiny pellets of escaped coolant to spent rocket stages and dead satellites, said Brian Weeden, a former Air Force space operations officer who is now the technical adviser for the Secure World Foundation, a Colorado think tank and advocacy group that focuses on the use of space.",last,0.797229528427124
+control,56,"As a result, I was the first ""first boot,"" after 22 seasons of the show, to be invited back again for a second season.",mean,0.4914889931678772
+control,56,"As a result, I was the first ""first boot,"" after 22 seasons of the show, to be invited back again for a second season.",max,1.5413181781768799
+control,56,"As a result, I was the first ""first boot,"" after 22 seasons of the show, to be invited back again for a second season.",last,1.5413181781768799
+control,57,Dynamo Dresden won eight titles in the DDR-Oberliga.,mean,0.4718210697174072
+control,57,Dynamo Dresden won eight titles in the DDR-Oberliga.,max,1.9008405208587646
+control,57,Dynamo Dresden won eight titles in the DDR-Oberliga.,last,1.5232748985290527
+control,58,"His subscription covered a combination of services for a flat fee, and allowed him to use his login to use other telecommunications accounts and access techniques.",mean,0.31218886375427246
+control,58,"His subscription covered a combination of services for a flat fee, and allowed him to use his login to use other telecommunications accounts and access techniques.",max,1.109666347503662
+control,58,"His subscription covered a combination of services for a flat fee, and allowed him to use his login to use other telecommunications accounts and access techniques.",last,0.9421411752700806
+control,59,"To be sure, there were some who knew him better—comrades who worked with him in Durban and King Williamstown, family who bore their personal and public grief, others who remembered the impact that he had had on their own lives.",mean,0.10867002606391907
+control,59,"To be sure, there were some who knew him better—comrades who worked with him in Durban and King Williamstown, family who bore their personal and public grief, others who remembered the impact that he had had on their own lives.",max,0.66763836145401
+control,59,"To be sure, there were some who knew him better—comrades who worked with him in Durban and King Williamstown, family who bore their personal and public grief, others who remembered the impact that he had had on their own lives.",last,0.0
+control,60,The dogs' task was to find the one that was different and to press that panel.,mean,0.3265393376350403
+control,60,The dogs' task was to find the one that was different and to press that panel.,max,1.2325799465179443
+control,60,The dogs' task was to find the one that was different and to press that panel.,last,0.6865562200546265
+control,61,more..,mean,0.16541537642478943
+control,61,more..,max,0.4962461292743683
+control,61,more..,last,0.4962461292743683
+control,62,"When asked why such a clear member of the 1% would bother with the Occupy movement, St. Simmons responded “It’s part of human kindness and I feel it is my moral duty to do this.”
+
+Miley Cyrus
+
+Image Source
+
+Miley Cyrus was born rich off a stupid song that no one can stand.",mean,0.35880765318870544
+control,62,"When asked why such a clear member of the 1% would bother with the Occupy movement, St. Simmons responded “It’s part of human kindness and I feel it is my moral duty to do this.”
+
+Miley Cyrus
+
+Image Source
+
+Miley Cyrus was born rich off a stupid song that no one can stand.",max,1.3788927793502808
+control,62,"When asked why such a clear member of the 1% would bother with the Occupy movement, St. Simmons responded “It’s part of human kindness and I feel it is my moral duty to do this.”
+
+Miley Cyrus
+
+Image Source
+
+Miley Cyrus was born rich off a stupid song that no one can stand.",last,0.6216278076171875
+control,63,"Unfortunately, such harmony proved difficult to come by, at least on the earthly side, and much of Miracles in the Storm concerns the in-fighting and mutual suspicion that led to the group's downfall.",mean,0.26812320947647095
+control,63,"Unfortunately, such harmony proved difficult to come by, at least on the earthly side, and much of Miracles in the Storm concerns the in-fighting and mutual suspicion that led to the group's downfall.",max,1.3447712659835815
+control,63,"Unfortunately, such harmony proved difficult to come by, at least on the earthly side, and much of Miracles in the Storm concerns the in-fighting and mutual suspicion that led to the group's downfall.",last,0.0
+control,64,"I decided I’d spend the night serving with him.”
+
+The pair sat out the night of 13 April in the same cell, having a conversation described to WRAL by the judge as a personal, ‘father son conversation’.",mean,0.11639903485774994
+control,64,"I decided I’d spend the night serving with him.”
+
+The pair sat out the night of 13 April in the same cell, having a conversation described to WRAL by the judge as a personal, ‘father son conversation’.",max,0.9448378086090088
+control,64,"I decided I’d spend the night serving with him.”
+
+The pair sat out the night of 13 April in the same cell, having a conversation described to WRAL by the judge as a personal, ‘father son conversation’.",last,0.0
+control,65,Sewing Tips Tips for Sewing Our Kits Ray-Way Products Ray & Jenny Jardine Ray-Way Sewing Tips How to achieve a balanced stitch From a sewing machine manual: How to achieve a balanced stitch.,mean,0.29984334111213684
+control,65,Sewing Tips Tips for Sewing Our Kits Ray-Way Products Ray & Jenny Jardine Ray-Way Sewing Tips How to achieve a balanced stitch From a sewing machine manual: How to achieve a balanced stitch.,max,1.1851987838745117
+control,65,Sewing Tips Tips for Sewing Our Kits Ray-Way Products Ray & Jenny Jardine Ray-Way Sewing Tips How to achieve a balanced stitch From a sewing machine manual: How to achieve a balanced stitch.,last,0.24438905715942383
+control,66,"Also during the panel, Gearbox Software gave new details about its 2013 Community Day event.",mean,0.1685798168182373
+control,66,"Also during the panel, Gearbox Software gave new details about its 2013 Community Day event.",max,0.8607484102249146
+control,66,"Also during the panel, Gearbox Software gave new details about its 2013 Community Day event.",last,0.0
+control,67,He previously owned a few dollars’ worth of bitcoin.,mean,0.21708951890468597
+control,67,He previously owned a few dollars’ worth of bitcoin.,max,1.2088972330093384
+control,67,He previously owned a few dollars’ worth of bitcoin.,last,0.0
+control,68,But what she was witnessing in the lab was telling her something very different.,mean,0.25831061601638794
+control,68,But what she was witnessing in the lab was telling her something very different.,max,0.686468780040741
+control,68,But what she was witnessing in the lab was telling her something very different.,last,0.04181724041700363
+control,69,"• Shortness of breath, lightheadedness and nausea:
+
+If you are having difficulty in breathing without any possible reason, then you could have a heart attack.",mean,0.2073052078485489
+control,69,"• Shortness of breath, lightheadedness and nausea:
+
+If you are having difficulty in breathing without any possible reason, then you could have a heart attack.",max,2.4067211151123047
+control,69,"• Shortness of breath, lightheadedness and nausea:
+
+If you are having difficulty in breathing without any possible reason, then you could have a heart attack.",last,0.0
+control,70,"""I think we have a group here that can make sure.",mean,0.02691527083516121
+control,70,"""I think we have a group here that can make sure.",max,0.22939461469650269
+control,70,"""I think we have a group here that can make sure.",last,0.22939461469650269
+control,71,"As Gandhi once said, “Happiness is when what you think, what you say, and what you do are in harmony.” It’s about making choices and taking actions that speak to your soul.",mean,0.3408137857913971
+control,71,"As Gandhi once said, “Happiness is when what you think, what you say, and what you do are in harmony.” It’s about making choices and taking actions that speak to your soul.",max,1.348282814025879
+control,71,"As Gandhi once said, “Happiness is when what you think, what you say, and what you do are in harmony.” It’s about making choices and taking actions that speak to your soul.",last,0.055235356092453
+control,72,Any rape survivor can tell you that the two are not even close.,mean,0.1467534899711609
+control,72,Any rape survivor can tell you that the two are not even close.,max,0.76860111951828
+control,72,Any rape survivor can tell you that the two are not even close.,last,0.76860111951828
+control,73,I'm sorry.,mean,0.26969146728515625
+control,73,I'm sorry.,max,0.7215458750724792
+control,73,I'm sorry.,last,0.626911461353302
+control,74,"Men's mental and physical health fared worst in the years they were the primary breadwinners of the household, the team found.",mean,0.3348482549190521
+control,74,"Men's mental and physical health fared worst in the years they were the primary breadwinners of the household, the team found.",max,1.948442816734314
+control,74,"Men's mental and physical health fared worst in the years they were the primary breadwinners of the household, the team found.",last,0.1392715871334076
+control,75,"However, he returned the following year at age 38 to fight Larry Holmes, in an attempt to win a fourth world heavyweight boxing championship.",mean,0.16998662054538727
+control,75,"However, he returned the following year at age 38 to fight Larry Holmes, in an attempt to win a fourth world heavyweight boxing championship.",max,2.0855326652526855
+control,75,"However, he returned the following year at age 38 to fight Larry Holmes, in an attempt to win a fourth world heavyweight boxing championship.",last,0.5405786037445068
+control,76,Too cautious!,mean,0.14375847578048706
+control,76,Too cautious!,max,0.5750339031219482
+control,76,Too cautious!,last,0.0
+control,77,"Top the pork belly with cilantro, garlic, peanuts and sesame seeds and pour the sauce around, mix everything well and serve.",mean,0.7799333930015564
+control,77,"Top the pork belly with cilantro, garlic, peanuts and sesame seeds and pour the sauce around, mix everything well and serve.",max,2.433255672454834
+control,77,"Top the pork belly with cilantro, garlic, peanuts and sesame seeds and pour the sauce around, mix everything well and serve.",last,0.5846918225288391
+control,78,"Officers who arrived at the scene found McCord just inside the front door of the home, the investigator wrote.",mean,0.29462069272994995
+control,78,"Officers who arrived at the scene found McCord just inside the front door of the home, the investigator wrote.",max,1.6154148578643799
+control,78,"Officers who arrived at the scene found McCord just inside the front door of the home, the investigator wrote.",last,1.6154148578643799
+control,79,"Max mana increased to 300
+
+Spells Edit
+
+See also: List of Wizards Beta spells
+
+There are three types of spells, each with their own class of abilities.",mean,0.11129322648048401
+control,79,"Max mana increased to 300
+
+Spells Edit
+
+See also: List of Wizards Beta spells
+
+There are three types of spells, each with their own class of abilities.",max,1.0744129419326782
+control,79,"Max mana increased to 300
+
+Spells Edit
+
+See also: List of Wizards Beta spells
+
+There are three types of spells, each with their own class of abilities.",last,0.0
+control,80,"Thomas Drake is a former senior executive and technical director for software engineering at the National Security Agency, where he blew the whistle on massive multi-billion dollar fraud, waste and abuse, the failure of 9/11, as well as the widespread violations of the rights of citizens through secret mass surveillance programs after 9/11.",mean,0.3995196223258972
+control,80,"Thomas Drake is a former senior executive and technical director for software engineering at the National Security Agency, where he blew the whistle on massive multi-billion dollar fraud, waste and abuse, the failure of 9/11, as well as the widespread violations of the rights of citizens through secret mass surveillance programs after 9/11.",max,1.7375104427337646
+control,80,"Thomas Drake is a former senior executive and technical director for software engineering at the National Security Agency, where he blew the whistle on massive multi-billion dollar fraud, waste and abuse, the failure of 9/11, as well as the widespread violations of the rights of citizens through secret mass surveillance programs after 9/11.",last,1.7375104427337646
+control,81,"That dashing reporter apparently created a climate of hate, all by himself.",mean,0.08035965263843536
+control,81,"That dashing reporter apparently created a climate of hate, all by himself.",max,0.5947287678718567
+control,81,"That dashing reporter apparently created a climate of hate, all by himself.",last,0.1415908932685852
+control,82,"Eventually you'll start to see patterns in bugs, or documentation.",mean,0.47182345390319824
+control,82,"Eventually you'll start to see patterns in bugs, or documentation.",max,1.061169981956482
+control,82,"Eventually you'll start to see patterns in bugs, or documentation.",last,0.9782318472862244
+control,83,Pledge $200 or more and you will get the previous rewards plus your title will be raised to a Count.,mean,0.879086971282959
+control,83,Pledge $200 or more and you will get the previous rewards plus your title will be raised to a Count.,max,1.9349894523620605
+control,83,Pledge $200 or more and you will get the previous rewards plus your title will be raised to a Count.,last,1.2616183757781982
+control,84,"I take every opportunity possible to develop in my role in order to give my best performance.”
+
+The first looks to me the most passive – or realistic – of these choices, and the third the eagerest, beaverest.",mean,0.6151724457740784
+control,84,"I take every opportunity possible to develop in my role in order to give my best performance.”
+
+The first looks to me the most passive – or realistic – of these choices, and the third the eagerest, beaverest.",max,1.8266382217407227
+control,84,"I take every opportunity possible to develop in my role in order to give my best performance.”
+
+The first looks to me the most passive – or realistic – of these choices, and the third the eagerest, beaverest.",last,1.0349044799804688
+control,85,"The Falls is full, for instance, of telling passing references to developments in the Scottish capital.",mean,0.2091963142156601
+control,85,"The Falls is full, for instance, of telling passing references to developments in the Scottish capital.",max,1.089229702949524
+control,85,"The Falls is full, for instance, of telling passing references to developments in the Scottish capital.",last,0.1670708954334259
+control,86,Something I often have to do is pulling only certain properties from a list of objects.,mean,0.5778818130493164
+control,86,Something I often have to do is pulling only certain properties from a list of objects.,max,1.3437963724136353
+control,86,Something I often have to do is pulling only certain properties from a list of objects.,last,0.9794068336486816
+control,87,"Cream Filling:
+
+1 1/4 tsp unflavored (kosher/vegan) gelatin
+
+2 T cold water
+
+1 1/2 cups chilled heavy cream
+
+1/2 cup powdered sugar
+
+1 tbsp vanilla bean paste (or a teaspoon of vanilla extract)
+
+flaky sea salt
+
+Put 2 T cold water in a small microwave safe bowl and add the gelatin.",mean,0.3349135220050812
+control,87,"Cream Filling:
+
+1 1/4 tsp unflavored (kosher/vegan) gelatin
+
+2 T cold water
+
+1 1/2 cups chilled heavy cream
+
+1/2 cup powdered sugar
+
+1 tbsp vanilla bean paste (or a teaspoon of vanilla extract)
+
+flaky sea salt
+
+Put 2 T cold water in a small microwave safe bowl and add the gelatin.",max,2.5062010288238525
+control,87,"Cream Filling:
+
+1 1/4 tsp unflavored (kosher/vegan) gelatin
+
+2 T cold water
+
+1 1/2 cups chilled heavy cream
+
+1/2 cup powdered sugar
+
+1 tbsp vanilla bean paste (or a teaspoon of vanilla extract)
+
+flaky sea salt
+
+Put 2 T cold water in a small microwave safe bowl and add the gelatin.",last,0.5583571791648865
+control,88,"I don’t think it’s clear, from the beginning, what that looks like.",mean,0.2506370544433594
+control,88,"I don’t think it’s clear, from the beginning, what that looks like.",max,0.9359493255615234
+control,88,"I don’t think it’s clear, from the beginning, what that looks like.",last,0.035032033920288086
+control,89,"If all three are close to each other, the system is unstable and one may go flying off, Burgasser said.",mean,0.15452493727207184
+control,89,"If all three are close to each other, the system is unstable and one may go flying off, Burgasser said.",max,1.1706204414367676
+control,89,"If all three are close to each other, the system is unstable and one may go flying off, Burgasser said.",last,0.8934402465820312
+control,90,"Tumblr was a place where, for once, it was a predominantly female crowd.",mean,0.4709262251853943
+control,90,"Tumblr was a place where, for once, it was a predominantly female crowd.",max,1.572837233543396
+control,90,"Tumblr was a place where, for once, it was a predominantly female crowd.",last,1.572837233543396
+control,91,They were all young with the exception of Williams.,mean,0.40418508648872375
+control,91,They were all young with the exception of Williams.,max,1.055596947669983
+control,91,They were all young with the exception of Williams.,last,1.055596947669983
+control,92,Our next stop would shed some light on this.,mean,0.035604327917099
+control,92,Our next stop would shed some light on this.,max,0.23006585240364075
+control,92,Our next stop would shed some light on this.,last,0.07378002256155014
+control,93,"And that's too bad, because behind the bars at places like Goodnight, Barchef, and Miller's Tavern, exciting things are happening.",mean,0.15049168467521667
+control,93,"And that's too bad, because behind the bars at places like Goodnight, Barchef, and Miller's Tavern, exciting things are happening.",max,1.0690101385116577
+control,93,"And that's too bad, because behind the bars at places like Goodnight, Barchef, and Miller's Tavern, exciting things are happening.",last,0.6539390087127686
+control,94,"You may remember that Cantor has been one of the most outspoken critics of the Occupy Wall Street movement, referring to protesters as a mob and criticizing supporters as ""condoning pitting Americans against Americans.""",mean,0.3065966069698334
+control,94,"You may remember that Cantor has been one of the most outspoken critics of the Occupy Wall Street movement, referring to protesters as a mob and criticizing supporters as ""condoning pitting Americans against Americans.""",max,0.9380239248275757
+control,94,"You may remember that Cantor has been one of the most outspoken critics of the Occupy Wall Street movement, referring to protesters as a mob and criticizing supporters as ""condoning pitting Americans against Americans.""",last,0.14824433624744415
+control,95,If the British vote to leave the shock will be so ghastly that they will finally wake up and realize that they can no longer ignore demands for democratic reform.,mean,0.41832616925239563
+control,95,If the British vote to leave the shock will be so ghastly that they will finally wake up and realize that they can no longer ignore demands for democratic reform.,max,1.4684336185455322
+control,95,If the British vote to leave the shock will be so ghastly that they will finally wake up and realize that they can no longer ignore demands for democratic reform.,last,0.6282742023468018
+control,96,"This semester, none did.",mean,0.4299756586551666
+control,96,"This semester, none did.",max,1.2694700956344604
+control,96,"This semester, none did.",last,0.0
+control,97,I worried about anorexia rumors.,mean,0.1640528440475464
+control,97,I worried about anorexia rumors.,max,0.7562776803970337
+control,97,I worried about anorexia rumors.,last,0.5511440634727478
+control,98,"Taking Advantage of the Tripartite Powers of the Twentysomething Brain
+
+I like to think of things like starting your own business, landing your dream job, getting married, committing to a faith, and even catalyzing a cultural or political movement, as akin to traveling to space.",mean,0.15059030055999756
+control,98,"Taking Advantage of the Tripartite Powers of the Twentysomething Brain
+
+I like to think of things like starting your own business, landing your dream job, getting married, committing to a faith, and even catalyzing a cultural or political movement, as akin to traveling to space.",max,0.8064607381820679
+control,98,"Taking Advantage of the Tripartite Powers of the Twentysomething Brain
+
+I like to think of things like starting your own business, landing your dream job, getting married, committing to a faith, and even catalyzing a cultural or political movement, as akin to traveling to space.",last,0.1929604411125183
+control,99,"With change accelerating at an exponential pace, it is crucial for the survival of mankind that an orderly method of social change be found.",mean,0.2849535346031189
+control,99,"With change accelerating at an exponential pace, it is crucial for the survival of mankind that an orderly method of social change be found.",max,1.2444307804107666
+control,99,"With change accelerating at an exponential pace, it is crucial for the survival of mankind that an orderly method of social change be found.",last,0.7233818769454956
+control,100,Let us know what you want to see in Season 4 below and stay tuned for more inside information on The Boondocks season 4 right here at Junkie Monkeys!,mean,0.16290536522865295
+control,100,Let us know what you want to see in Season 4 below and stay tuned for more inside information on The Boondocks season 4 right here at Junkie Monkeys!,max,0.9826787710189819
+control,100,Let us know what you want to see in Season 4 below and stay tuned for more inside information on The Boondocks season 4 right here at Junkie Monkeys!,last,0.1966017633676529
+control,101,Rear-wheel drive and abundant power place one steering mechanism in your hands and the other below your right foot.,mean,0.2829960882663727
+control,101,Rear-wheel drive and abundant power place one steering mechanism in your hands and the other below your right foot.,max,1.0534977912902832
+control,101,Rear-wheel drive and abundant power place one steering mechanism in your hands and the other below your right foot.,last,1.0231178998947144
+control,102,"How does “jihadism” match up with the lives of tens of millions of innocent civilians, destroyed since 1900 by state terrorism—west and east, north and south—or the continuing efforts seeking to seize or occupy territory?",mean,0.24429428577423096
+control,102,"How does “jihadism” match up with the lives of tens of millions of innocent civilians, destroyed since 1900 by state terrorism—west and east, north and south—or the continuing efforts seeking to seize or occupy territory?",max,1.1655325889587402
+control,102,"How does “jihadism” match up with the lives of tens of millions of innocent civilians, destroyed since 1900 by state terrorism—west and east, north and south—or the continuing efforts seeking to seize or occupy territory?",last,0.0
+control,103,Pittsburgh could easily make this trade and still make a signing for the final starter spot with Ivan Nova.,mean,0.38577553629875183
+control,103,Pittsburgh could easily make this trade and still make a signing for the final starter spot with Ivan Nova.,max,1.3458564281463623
+control,103,Pittsburgh could easily make this trade and still make a signing for the final starter spot with Ivan Nova.,last,0.4521981477737427
+control,104,"Medium-Upper (Random Regions, ~$0.40-0.50/g)
+
+This price-range seems to be the going rate for decent quality “gushu” that’s a bit further away from the ultra hyped.",mean,0.2015858143568039
+control,104,"Medium-Upper (Random Regions, ~$0.40-0.50/g)
+
+This price-range seems to be the going rate for decent quality “gushu” that’s a bit further away from the ultra hyped.",max,0.9015560150146484
+control,104,"Medium-Upper (Random Regions, ~$0.40-0.50/g)
+
+This price-range seems to be the going rate for decent quality “gushu” that’s a bit further away from the ultra hyped.",last,0.0
+control,105,"After that, it’ll be a matter of either refining UBI to best meet the demands of modern life or looking for an entirely new solution to the problems caused by automation and AI.",mean,0.14644671976566315
+control,105,"After that, it’ll be a matter of either refining UBI to best meet the demands of modern life or looking for an entirely new solution to the problems caused by automation and AI.",max,1.1551188230514526
+control,105,"After that, it’ll be a matter of either refining UBI to best meet the demands of modern life or looking for an entirely new solution to the problems caused by automation and AI.",last,0.0
+control,106,"Colorado Sen. Cory Gardner, who chairs the National Republican Senatorial Committee, had said the Senate should expel Moore if he wins.",mean,0.5128892064094543
+control,106,"Colorado Sen. Cory Gardner, who chairs the National Republican Senatorial Committee, had said the Senate should expel Moore if he wins.",max,2.7870450019836426
+control,106,"Colorado Sen. Cory Gardner, who chairs the National Republican Senatorial Committee, had said the Senate should expel Moore if he wins.",last,1.5656076669692993
+control,107,Whatever you college kids get up to for fun these days.,mean,0.9150369167327881
+control,107,Whatever you college kids get up to for fun these days.,max,2.2241783142089844
+control,107,Whatever you college kids get up to for fun these days.,last,2.2241783142089844
+control,108,"css ( ' [value=""add""] ' )); it ( ' should navigate to the AngularJS homepage ' , function () { browser .",mean,0.3962305188179016
+control,108,"css ( ' [value=""add""] ' )); it ( ' should navigate to the AngularJS homepage ' , function () { browser .",max,1.9976820945739746
+control,108,"css ( ' [value=""add""] ' )); it ( ' should navigate to the AngularJS homepage ' , function () { browser .",last,0.0
+control,109,This was for two reasons.,mean,0.7589281797409058
+control,109,This was for two reasons.,max,1.9428372383117676
+control,109,This was for two reasons.,last,0.258745938539505
+control,110,"***
+
+PORTLAND, 6:17 p.m.: Interstate 84 westbout
+
+The right westbound lane of I-84 is blocked by a crash.",mean,0.7232820391654968
+control,110,"***
+
+PORTLAND, 6:17 p.m.: Interstate 84 westbout
+
+The right westbound lane of I-84 is blocked by a crash.",max,2.0794620513916016
+control,110,"***
+
+PORTLAND, 6:17 p.m.: Interstate 84 westbout
+
+The right westbound lane of I-84 is blocked by a crash.",last,0.08450055122375488
+control,111,"IT WAS Greg Mankiw's turn in the New York Times' rotation of weekend economic columnists on Sunday, and Mr Mankiw used his column space to take on the unenviable job of defending John McCain's economic policies.",mean,0.330712229013443
+control,111,"IT WAS Greg Mankiw's turn in the New York Times' rotation of weekend economic columnists on Sunday, and Mr Mankiw used his column space to take on the unenviable job of defending John McCain's economic policies.",max,1.7958786487579346
+control,111,"IT WAS Greg Mankiw's turn in the New York Times' rotation of weekend economic columnists on Sunday, and Mr Mankiw used his column space to take on the unenviable job of defending John McCain's economic policies.",last,0.4866064786911011
+control,112,"“They deserve effective representation in Lansing, and it is clear Smith can no longer fulfill that duty.”
+
+Smith is due back in court March 28 so attorneys can address additional matters in the case.",mean,0.3764073848724365
+control,112,"“They deserve effective representation in Lansing, and it is clear Smith can no longer fulfill that duty.”
+
+Smith is due back in court March 28 so attorneys can address additional matters in the case.",max,1.4875037670135498
+control,112,"“They deserve effective representation in Lansing, and it is clear Smith can no longer fulfill that duty.”
+
+Smith is due back in court March 28 so attorneys can address additional matters in the case.",last,0.0
+control,113,"Desde dezembro de 2015, oferece carona por meio do aplicativo Blablacar para o trajeto de ida e volta.",mean,0.20126381516456604
+control,113,"Desde dezembro de 2015, oferece carona por meio do aplicativo Blablacar para o trajeto de ida e volta.",max,1.1975483894348145
+control,113,"Desde dezembro de 2015, oferece carona por meio do aplicativo Blablacar para o trajeto de ida e volta.",last,0.5493533611297607
+control,114,Here’s what she had to say.,mean,0.2211710810661316
+control,114,Here’s what she had to say.,max,0.7866868376731873
+control,114,Here’s what she had to say.,last,0.32578250765800476
+control,115,She is very talented and I would love to see more of her work in the future.,mean,0.33118292689323425
+control,115,She is very talented and I would love to see more of her work in the future.,max,0.9110367298126221
+control,115,She is very talented and I would love to see more of her work in the future.,last,0.19002389907836914
+control,116,"I feel like I’ve proven that I could be out there when my name’s called, so that helps me have confidence in what I can do.",mean,0.30100899934768677
+control,116,"I feel like I’ve proven that I could be out there when my name’s called, so that helps me have confidence in what I can do.",max,1.3016588687896729
+control,116,"I feel like I’ve proven that I could be out there when my name’s called, so that helps me have confidence in what I can do.",last,0.8063644766807556
+control,117,"***
+
+If you look at photographs of Walden’s founders, Blanche Hirsch and Clara Altschul, you see a family resemblance to Etta and Claribel Cone or Gertrude Stein, who were their Victorian contemporaries and came from the same milieu: German Jewish women born in the United States in the 1860s or 1870s, upright, buxom, portly in middle age, progressive, and secular.",mean,0.362435519695282
+control,117,"***
+
+If you look at photographs of Walden’s founders, Blanche Hirsch and Clara Altschul, you see a family resemblance to Etta and Claribel Cone or Gertrude Stein, who were their Victorian contemporaries and came from the same milieu: German Jewish women born in the United States in the 1860s or 1870s, upright, buxom, portly in middle age, progressive, and secular.",max,1.6567007303237915
+control,117,"***
+
+If you look at photographs of Walden’s founders, Blanche Hirsch and Clara Altschul, you see a family resemblance to Etta and Claribel Cone or Gertrude Stein, who were their Victorian contemporaries and came from the same milieu: German Jewish women born in the United States in the 1860s or 1870s, upright, buxom, portly in middle age, progressive, and secular.",last,1.2020745277404785
+control,118,"(Photo: JAMIE GERMANO, @jgermano1/Staff Photographer)
+
+1.",mean,3.248652219772339
+control,118,"(Photo: JAMIE GERMANO, @jgermano1/Staff Photographer)
+
+1.",max,8.610616683959961
+control,118,"(Photo: JAMIE GERMANO, @jgermano1/Staff Photographer)
+
+1.",last,0.32914668321609497
+control,119,No tickets are required and the experience is free to use.,mean,0.3961337208747864
+control,119,No tickets are required and the experience is free to use.,max,1.2590599060058594
+control,119,No tickets are required and the experience is free to use.,last,0.4310266673564911
+control,120,"Step 1: Download Modernizr and Yepnope
+
+The new custom Modernizr builder allows you to bundle yepnope right into Modernizr, so let’s do that.",mean,0.17633408308029175
+control,120,"Step 1: Download Modernizr and Yepnope
+
+The new custom Modernizr builder allows you to bundle yepnope right into Modernizr, so let’s do that.",max,1.4399021863937378
+control,120,"Step 1: Download Modernizr and Yepnope
+
+The new custom Modernizr builder allows you to bundle yepnope right into Modernizr, so let’s do that.",last,0.2899805009365082
+control,121,"""He used to visit me for advice about twice a month: we would talk through jobs, careers, life, hopes and dreams.""",mean,0.059490885585546494
+control,121,"""He used to visit me for advice about twice a month: we would talk through jobs, careers, life, hopes and dreams.""",max,0.8430842757225037
+control,121,"""He used to visit me for advice about twice a month: we would talk through jobs, careers, life, hopes and dreams.""",last,0.0
+control,122,Wikipedia can oblige.,mean,0.35214346647262573
+control,122,Wikipedia can oblige.,max,0.8069682717323303
+control,122,Wikipedia can oblige.,last,0.27875927090644836
+control,123,"(credit: USAF) All along the watchtower On Tuesday, February 12, two television programs will focus on little known aspects of the Cold War space program.",mean,0.9494257569313049
+control,123,"(credit: USAF) All along the watchtower On Tuesday, February 12, two television programs will focus on little known aspects of the Cold War space program.",max,4.758780479431152
+control,123,"(credit: USAF) All along the watchtower On Tuesday, February 12, two television programs will focus on little known aspects of the Cold War space program.",last,0.0
+control,124,"Then we can plot the entropy as follows
+
+The horizontal axis is the bias , and the vertical axis is the value of , which with some algebra is .",mean,0.4244763255119324
+control,124,"Then we can plot the entropy as follows
+
+The horizontal axis is the bias , and the vertical axis is the value of , which with some algebra is .",max,1.3567854166030884
+control,124,"Then we can plot the entropy as follows
+
+The horizontal axis is the bias , and the vertical axis is the value of , which with some algebra is .",last,0.6282438635826111
+control,125,[50] Turnout was reportedly low.,mean,0.11911164969205856
+control,125,[50] Turnout was reportedly low.,max,0.7142590880393982
+control,125,[50] Turnout was reportedly low.,last,0.3845372200012207
+control,126,I can relate to that.,mean,0.09006168693304062
+control,126,I can relate to that.,max,0.18919768929481506
+control,126,I can relate to that.,last,0.09565963596105576
+control,127,"Still, pretty amazing to hear:
+
+When Dave sent his recording to XFM, he was told that it was the first stereo recording they had ever heard from a “stand alone” type receiver.",mean,0.29570725560188293
+control,127,"Still, pretty amazing to hear:
+
+When Dave sent his recording to XFM, he was told that it was the first stereo recording they had ever heard from a “stand alone” type receiver.",max,1.527026653289795
+control,127,"Still, pretty amazing to hear:
+
+When Dave sent his recording to XFM, he was told that it was the first stereo recording they had ever heard from a “stand alone” type receiver.",last,1.527026653289795
+control,128,"Would you describe yourself as atheist or agnostic now, or prefer not to use a label?",mean,0.3297772705554962
+control,128,"Would you describe yourself as atheist or agnostic now, or prefer not to use a label?",max,1.1770949363708496
+control,128,"Would you describe yourself as atheist or agnostic now, or prefer not to use a label?",last,0.07680690288543701
+control,129,"This also essentially voids the possibility of getting an original Game Boy, as the processor, though very versatile, can sometimes fail on you.",mean,0.2687362730503082
+control,129,"This also essentially voids the possibility of getting an original Game Boy, as the processor, though very versatile, can sometimes fail on you.",max,1.1938886642456055
+control,129,"This also essentially voids the possibility of getting an original Game Boy, as the processor, though very versatile, can sometimes fail on you.",last,0.10284250974655151
+control,130,"“It’s like you’re not even listening,” Robber said, sadly shaking his head.",mean,0.14945466816425323
+control,130,"“It’s like you’re not even listening,” Robber said, sadly shaking his head.",max,0.6738798022270203
+control,130,"“It’s like you’re not even listening,” Robber said, sadly shaking his head.",last,0.30537331104278564
+control,131,"While it would certainly bring long-term economic benefits, the short-term social, financial, and political consequences of a rapid clearing of the housing mess are too much to bear.",mean,0.1446225792169571
+control,131,"While it would certainly bring long-term economic benefits, the short-term social, financial, and political consequences of a rapid clearing of the housing mess are too much to bear.",max,0.8878699541091919
+control,131,"While it would certainly bring long-term economic benefits, the short-term social, financial, and political consequences of a rapid clearing of the housing mess are too much to bear.",last,0.30192866921424866
+control,132,"""There is no question that having players of that stature makes a huge difference in that it is a signal to everyone that our company makes the best products,"" Redman said.",mean,0.1807771474123001
+control,132,"""There is no question that having players of that stature makes a huge difference in that it is a signal to everyone that our company makes the best products,"" Redman said.",max,0.6721639633178711
+control,132,"""There is no question that having players of that stature makes a huge difference in that it is a signal to everyone that our company makes the best products,"" Redman said.",last,0.4433329105377197
+control,133,"Nonetheless, his enthusiasm is exciting for fans of Telltale and the unsettling sci-fi series.",mean,0.178059384226799
+control,133,"Nonetheless, his enthusiasm is exciting for fans of Telltale and the unsettling sci-fi series.",max,0.9281988143920898
+control,133,"Nonetheless, his enthusiasm is exciting for fans of Telltale and the unsettling sci-fi series.",last,0.6566668748855591
+control,134,"To date, Rob Lowe has been the only celebrity to suffer physical indignities in Grey's DirecTV campaign making fun of cable customers.",mean,0.43088099360466003
+control,134,"To date, Rob Lowe has been the only celebrity to suffer physical indignities in Grey's DirecTV campaign making fun of cable customers.",max,1.7991538047790527
+control,134,"To date, Rob Lowe has been the only celebrity to suffer physical indignities in Grey's DirecTV campaign making fun of cable customers.",last,0.9500887393951416
+control,135,"And there are only three biblical manners in which a minister of the Word, (Apostle, prophets, evangelists or pastors/teachers) may be called to that office; Owen says “1.",mean,0.27018997073173523
+control,135,"And there are only three biblical manners in which a minister of the Word, (Apostle, prophets, evangelists or pastors/teachers) may be called to that office; Owen says “1.",max,1.4463980197906494
+control,135,"And there are only three biblical manners in which a minister of the Word, (Apostle, prophets, evangelists or pastors/teachers) may be called to that office; Owen says “1.",last,0.5802046060562134
+control,136,"For a short period between 1204 and 1261 it was converted into a Roman Catholic cathedral by the invading Crusaders, but after they left it resumed its function as a Greek Orthodox patriarchal basilica.",mean,0.22097532451152802
+control,136,"For a short period between 1204 and 1261 it was converted into a Roman Catholic cathedral by the invading Crusaders, but after they left it resumed its function as a Greek Orthodox patriarchal basilica.",max,1.2557926177978516
+control,136,"For a short period between 1204 and 1261 it was converted into a Roman Catholic cathedral by the invading Crusaders, but after they left it resumed its function as a Greek Orthodox patriarchal basilica.",last,0.27665412425994873
+control,137,"Let me conclude by saying that whatever we do, there is one thing we must do for the Arctic, and that is work with our international partners to address climate change and to limit global temperature increases to less than 2°C.",mean,0.3598712980747223
+control,137,"Let me conclude by saying that whatever we do, there is one thing we must do for the Arctic, and that is work with our international partners to address climate change and to limit global temperature increases to less than 2°C.",max,1.3437626361846924
+control,137,"Let me conclude by saying that whatever we do, there is one thing we must do for the Arctic, and that is work with our international partners to address climate change and to limit global temperature increases to less than 2°C.",last,0.7087433934211731
+control,138,"The assault squad is the choice that most obviously benefits from the doctrine system, but even then their damage output is lacklustre.",mean,0.4974757730960846
+control,138,"The assault squad is the choice that most obviously benefits from the doctrine system, but even then their damage output is lacklustre.",max,1.6245673894882202
+control,138,"The assault squad is the choice that most obviously benefits from the doctrine system, but even then their damage output is lacklustre.",last,0.48101645708084106
+control,139,"Casey Bishop, Georgetown University School of Medicine
+
+1003.",mean,0.5342886447906494
+control,139,"Casey Bishop, Georgetown University School of Medicine
+
+1003.",max,1.8755358457565308
+control,139,"Casey Bishop, Georgetown University School of Medicine
+
+1003.",last,0.0
+control,140,"Now Stephano is set to enter the Pro League with EG-TL, and is interested in competing in the GSL, as he is able to stay in Korea for a longer period of time.",mean,0.2467207908630371
+control,140,"Now Stephano is set to enter the Pro League with EG-TL, and is interested in competing in the GSL, as he is able to stay in Korea for a longer period of time.",max,1.3939075469970703
+control,140,"Now Stephano is set to enter the Pro League with EG-TL, and is interested in competing in the GSL, as he is able to stay in Korea for a longer period of time.",last,0.18238258361816406
+control,141,"Shortly after the duel, Joey suddenly has irrational dreams about Kaiba and himself being a dog.",mean,0.4821966588497162
+control,141,"Shortly after the duel, Joey suddenly has irrational dreams about Kaiba and himself being a dog.",max,1.8855973482131958
+control,141,"Shortly after the duel, Joey suddenly has irrational dreams about Kaiba and himself being a dog.",last,0.3807092308998108
+control,142,"The pier, the dock, the walkway connecting the wooden structure to the land, the stone steps patiently winding their way up the slope to the castle itself, all were filled with workers, servants, handmaidens, dressmakers, tailors, stablehands, cooks, maids, coopers, farriers, carpenters, blacksmiths, pages and other castle workers.",mean,0.39374127984046936
+control,142,"The pier, the dock, the walkway connecting the wooden structure to the land, the stone steps patiently winding their way up the slope to the castle itself, all were filled with workers, servants, handmaidens, dressmakers, tailors, stablehands, cooks, maids, coopers, farriers, carpenters, blacksmiths, pages and other castle workers.",max,1.7440969944000244
+control,142,"The pier, the dock, the walkway connecting the wooden structure to the land, the stone steps patiently winding their way up the slope to the castle itself, all were filled with workers, servants, handmaidens, dressmakers, tailors, stablehands, cooks, maids, coopers, farriers, carpenters, blacksmiths, pages and other castle workers.",last,0.721882164478302
+control,143,He went on to assure Sparta Report that his position in Alabama and national business circles was far too valuable to risk in any association with persons of anything other than impeccable ethical or moral standing.,mean,0.1214844286441803
+control,143,He went on to assure Sparta Report that his position in Alabama and national business circles was far too valuable to risk in any association with persons of anything other than impeccable ethical or moral standing.,max,0.7827473878860474
+control,143,He went on to assure Sparta Report that his position in Alabama and national business circles was far too valuable to risk in any association with persons of anything other than impeccable ethical or moral standing.,last,0.15540756285190582
+control,144,HTC’s woes continue as its One smartphone just isn’t the one.,mean,0.5107795596122742
+control,144,HTC’s woes continue as its One smartphone just isn’t the one.,max,1.1943128108978271
+control,144,HTC’s woes continue as its One smartphone just isn’t the one.,last,0.03393743187189102
+control,145,"Having the option to either “shift” or toggle does take some getting used to, but it all falls into place pretty quickly, with text entry being nice and fast.",mean,0.3025837242603302
+control,145,"Having the option to either “shift” or toggle does take some getting used to, but it all falls into place pretty quickly, with text entry being nice and fast.",max,1.2857458591461182
+control,145,"Having the option to either “shift” or toggle does take some getting used to, but it all falls into place pretty quickly, with text entry being nice and fast.",last,0.6707828044891357
+control,146,"(Christ conquers, He reigns, He commands; may He defend His people from all evil.)",mean,0.8571021556854248
+control,146,"(Christ conquers, He reigns, He commands; may He defend His people from all evil.)",max,3.611724853515625
+control,146,"(Christ conquers, He reigns, He commands; may He defend His people from all evil.)",last,0.0
+control,147,"Only a few hundred of these balloons made it to the States, and even fewer exploded.",mean,0.4418213665485382
+control,147,"Only a few hundred of these balloons made it to the States, and even fewer exploded.",max,2.466390609741211
+control,147,"Only a few hundred of these balloons made it to the States, and even fewer exploded.",last,0.0
+control,148,"[132] At the more advanced OT levels, Scientologists act as their own auditors (""solo auditors"").",mean,0.14722678065299988
+control,148,"[132] At the more advanced OT levels, Scientologists act as their own auditors (""solo auditors"").",max,1.0052164793014526
+control,148,"[132] At the more advanced OT levels, Scientologists act as their own auditors (""solo auditors"").",last,0.0
+control,149,They also made a profit of more than $1.5 million by selling fetal body parts between 2013 and 2015.,mean,0.23030787706375122
+control,149,They also made a profit of more than $1.5 million by selling fetal body parts between 2013 and 2015.,max,0.9604870676994324
+control,149,They also made a profit of more than $1.5 million by selling fetal body parts between 2013 and 2015.,last,0.3180359899997711
+control,150,"I don't think Admiral Truly, who's the boss of this program, would have a guy my age.",mean,0.2693687975406647
+control,150,"I don't think Admiral Truly, who's the boss of this program, would have a guy my age.",max,1.0844577550888062
+control,150,"I don't think Admiral Truly, who's the boss of this program, would have a guy my age.",last,0.3594755232334137
+control,151,Republic reporter Paul Giblin contributed to this article.,mean,0.8985514640808105
+control,151,Republic reporter Paul Giblin contributed to this article.,max,1.665856122970581
+control,151,Republic reporter Paul Giblin contributed to this article.,last,0.8298367857933044
+control,152,Sometimes the teacher just got fed up with his students and so it happened that day.,mean,0.2694845199584961
+control,152,Sometimes the teacher just got fed up with his students and so it happened that day.,max,0.9192205667495728
+control,152,Sometimes the teacher just got fed up with his students and so it happened that day.,last,0.21197353303432465
+control,153,The soundtrack.,mean,0.22122174501419067
+control,153,The soundtrack.,max,0.5783898234367371
+control,153,The soundtrack.,last,0.5783898234367371
+control,154,"And wherever you go, you carry a message of hope, a message that is ancient and ever new.",mean,0.10155414789915085
+control,154,"And wherever you go, you carry a message of hope, a message that is ancient and ever new.",max,0.7481601238250732
+control,154,"And wherever you go, you carry a message of hope, a message that is ancient and ever new.",last,0.0
+control,155,"People are just followers, but if people step out of that, then they aren’t.",mean,0.46416985988616943
+control,155,"People are just followers, but if people step out of that, then they aren’t.",max,1.6802830696105957
+control,155,"People are just followers, but if people step out of that, then they aren’t.",last,1.4554345607757568
+control,156,The National Transportation Safety Board will be responsible for examining the wreckage.,mean,0.6911100745201111
+control,156,The National Transportation Safety Board will be responsible for examining the wreckage.,max,1.9709328413009644
+control,156,The National Transportation Safety Board will be responsible for examining the wreckage.,last,0.896745502948761
+control,157,"Here is his statement:
+
+“It not infrequently happens that something about the earth…may be known with the greatest certainty by reasoning or by experience, even by one who is not a Christian.",mean,0.12776100635528564
+control,157,"Here is his statement:
+
+“It not infrequently happens that something about the earth…may be known with the greatest certainty by reasoning or by experience, even by one who is not a Christian.",max,1.3079510927200317
+control,157,"Here is his statement:
+
+“It not infrequently happens that something about the earth…may be known with the greatest certainty by reasoning or by experience, even by one who is not a Christian.",last,0.37301576137542725
+control,158,Fans are attached to it.,mean,1.0365043878555298
+control,158,Fans are attached to it.,max,2.5561094284057617
+control,158,Fans are attached to it.,last,0.639568030834198
+control,159,metadata > *Originally posted by **[DaWayne33](/forums/2468/topics/465863?page=1#posts-8883344):*** > > They will cost regular energy (we scheduled it so it doesn’t overlap with other mission events) > > Each battle only has to be beaten once (unless you lose then you have to start over on the next campaign) > > You may choose new cards each time you attempt a campaign.,mean,0.29796484112739563
+control,159,metadata > *Originally posted by **[DaWayne33](/forums/2468/topics/465863?page=1#posts-8883344):*** > > They will cost regular energy (we scheduled it so it doesn’t overlap with other mission events) > > Each battle only has to be beaten once (unless you lose then you have to start over on the next campaign) > > You may choose new cards each time you attempt a campaign.,max,1.4841583967208862
+control,159,metadata > *Originally posted by **[DaWayne33](/forums/2468/topics/465863?page=1#posts-8883344):*** > > They will cost regular energy (we scheduled it so it doesn’t overlap with other mission events) > > Each battle only has to be beaten once (unless you lose then you have to start over on the next campaign) > > You may choose new cards each time you attempt a campaign.,last,0.24499744176864624
+control,160,"The murdered-out color scheme is only the beginning, though.",mean,0.4087044894695282
+control,160,"The murdered-out color scheme is only the beginning, though.",max,1.3637512922286987
+control,160,"The murdered-out color scheme is only the beginning, though.",last,0.0
+control,161,The system allows the 'cut and paste' manipulation of strands of DNA with a precision not seen before.,mean,0.0666358694434166
+control,161,The system allows the 'cut and paste' manipulation of strands of DNA with a precision not seen before.,max,0.5239500999450684
+control,161,The system allows the 'cut and paste' manipulation of strands of DNA with a precision not seen before.,last,0.5239500999450684
+control,162,These retail versions were packaged with an inaccurate synopsis of Atlas Shrugged.,mean,0.6132981777191162
+control,162,These retail versions were packaged with an inaccurate synopsis of Atlas Shrugged.,max,1.6938164234161377
+control,162,These retail versions were packaged with an inaccurate synopsis of Atlas Shrugged.,last,0.0
+control,163,"Keep the customer in mind
+
+Often when working on larger site, you'll work with a small group of people with different job descriptions and skill sets.",mean,0.32741501927375793
+control,163,"Keep the customer in mind
+
+Often when working on larger site, you'll work with a small group of people with different job descriptions and skill sets.",max,1.5293513536453247
+control,163,"Keep the customer in mind
+
+Often when working on larger site, you'll work with a small group of people with different job descriptions and skill sets.",last,0.0
+control,164,"Allergy 21, 569–572 (1991).",mean,0.3592904210090637
+control,164,"Allergy 21, 569–572 (1991).",max,1.255763292312622
+control,164,"Allergy 21, 569–572 (1991).",last,0.9460043907165527
+control,165,"We analyse the 20 000 most highly cited papers for the years 2007–2013, representing a sample size between 1.12% and 1.53% of all papers published in each of these years.",mean,0.4633380174636841
+control,165,"We analyse the 20 000 most highly cited papers for the years 2007–2013, representing a sample size between 1.12% and 1.53% of all papers published in each of these years.",max,1.597564935684204
+control,165,"We analyse the 20 000 most highly cited papers for the years 2007–2013, representing a sample size between 1.12% and 1.53% of all papers published in each of these years.",last,0.0
+control,166,"The government received 70% of the vote, an improvement from 60% in the 2011 “breakthrough” election – its worst electoral performance.",mean,0.20884273946285248
+control,166,"The government received 70% of the vote, an improvement from 60% in the 2011 “breakthrough” election – its worst electoral performance.",max,1.2165563106536865
+control,166,"The government received 70% of the vote, an improvement from 60% in the 2011 “breakthrough” election – its worst electoral performance.",last,0.57466059923172
+control,167,Yet ultimately military force made the empire possible.,mean,0.12654085457324982
+control,167,Yet ultimately military force made the empire possible.,max,0.6914440989494324
+control,167,Yet ultimately military force made the empire possible.,last,0.33355990052223206
+control,168,"According to KSL, 40 bats were removed on Thursday and Friday from courtrooms, the attic, ceilings, and other areas of the building, and ""perhaps dozens more"" are still inside.",mean,0.38751327991485596
+control,168,"According to KSL, 40 bats were removed on Thursday and Friday from courtrooms, the attic, ceilings, and other areas of the building, and ""perhaps dozens more"" are still inside.",max,1.23272705078125
+control,168,"According to KSL, 40 bats were removed on Thursday and Friday from courtrooms, the attic, ceilings, and other areas of the building, and ""perhaps dozens more"" are still inside.",last,0.6528524160385132
+control,169,Was it merely an issue of limited resources or man hours?,mean,0.39257124066352844
+control,169,Was it merely an issue of limited resources or man hours?,max,1.1810930967330933
+control,169,Was it merely an issue of limited resources or man hours?,last,0.3315736949443817
+control,170,"The page has a target of $10,000, which the firm hopes to reach by 16 September.",mean,0.12524791061878204
+control,170,"The page has a target of $10,000, which the firm hopes to reach by 16 September.",max,0.9688041806221008
+control,170,"The page has a target of $10,000, which the firm hopes to reach by 16 September.",last,0.0
+control,171,"There are already promises in many other languages: Scala has Future, Java has CompletableFuture, and C# has Task.",mean,0.30129683017730713
+control,171,"There are already promises in many other languages: Scala has Future, Java has CompletableFuture, and C# has Task.",max,1.5028395652770996
+control,171,"There are already promises in many other languages: Scala has Future, Java has CompletableFuture, and C# has Task.",last,1.5028395652770996
+control,172,But I also am able to understand the current fear more clearly now than I once did.,mean,0.14538656175136566
+control,172,But I also am able to understand the current fear more clearly now than I once did.,max,0.5152655839920044
+control,172,But I also am able to understand the current fear more clearly now than I once did.,last,0.24513134360313416
+control,173,"Previous attacks focused the exchanges, this is targeting individuals.",mean,0.11441689729690552
+control,173,"Previous attacks focused the exchanges, this is targeting individuals.",max,0.6162101626396179
+control,173,"Previous attacks focused the exchanges, this is targeting individuals.",last,0.4498600661754608
+control,174,Goku told him to release his full power to finally end the threat of Cell.,mean,0.5219857096672058
+control,174,Goku told him to release his full power to finally end the threat of Cell.,max,1.2049636840820312
+control,174,Goku told him to release his full power to finally end the threat of Cell.,last,0.6602134704589844
+control,175,"""Since starting out as a photographer, I always wanted to do a project related to a beach in Brazil... What matters is not looking good for the camera, but rather feeling the sun on one's skin, getting drunk on cachaca (Brazilian rum) and splashing the time away.""",mean,0.5740472078323364
+control,175,"""Since starting out as a photographer, I always wanted to do a project related to a beach in Brazil... What matters is not looking good for the camera, but rather feeling the sun on one's skin, getting drunk on cachaca (Brazilian rum) and splashing the time away.""",max,1.896836519241333
+control,175,"""Since starting out as a photographer, I always wanted to do a project related to a beach in Brazil... What matters is not looking good for the camera, but rather feeling the sun on one's skin, getting drunk on cachaca (Brazilian rum) and splashing the time away.""",last,0.9224943518638611
+control,176,"That person told a KDFW-TV reporter police arrived on the scene and handcuffed several party attendees, including some who were not participants in the fight.",mean,0.14233681559562683
+control,176,"That person told a KDFW-TV reporter police arrived on the scene and handcuffed several party attendees, including some who were not participants in the fight.",max,1.0361474752426147
+control,176,"That person told a KDFW-TV reporter police arrived on the scene and handcuffed several party attendees, including some who were not participants in the fight.",last,0.0
+control,177,[18][19] His 1895 squad finished with a record of 4–3.,mean,0.15573002398014069
+control,177,[18][19] His 1895 squad finished with a record of 4–3.,max,1.0252444744110107
+control,177,[18][19] His 1895 squad finished with a record of 4–3.,last,0.0
+control,178,"But McClary's evangelical beliefs as such aren't the central reason for rescinding his speaking invitation writes Don Byrd, in a January 27th post for the Baptist Joint Committee For Religious Liberty--which upholds traditional Baptist support for separation of church and state,
+
+If there is a problem with inviting McClary, it is not the fact that he is an evangelical Christian, nor his religious views generally, divisive as they may be.",mean,0.22669951617717743
+control,178,"But McClary's evangelical beliefs as such aren't the central reason for rescinding his speaking invitation writes Don Byrd, in a January 27th post for the Baptist Joint Committee For Religious Liberty--which upholds traditional Baptist support for separation of church and state,
+
+If there is a problem with inviting McClary, it is not the fact that he is an evangelical Christian, nor his religious views generally, divisive as they may be.",max,1.1148353815078735
+control,178,"But McClary's evangelical beliefs as such aren't the central reason for rescinding his speaking invitation writes Don Byrd, in a January 27th post for the Baptist Joint Committee For Religious Liberty--which upholds traditional Baptist support for separation of church and state,
+
+If there is a problem with inviting McClary, it is not the fact that he is an evangelical Christian, nor his religious views generally, divisive as they may be.",last,0.20881283283233643
+control,179,"In 1989, all-star casts were assembled for Who reunion performances in New York and Los Angeles.",mean,0.4236949682235718
+control,179,"In 1989, all-star casts were assembled for Who reunion performances in New York and Los Angeles.",max,1.5443840026855469
+control,179,"In 1989, all-star casts were assembled for Who reunion performances in New York and Los Angeles.",last,1.5443840026855469
+control,180,The agents and deputies approached the home and obtained a voluntary consent to search from the caretaker.,mean,0.30702176690101624
+control,180,The agents and deputies approached the home and obtained a voluntary consent to search from the caretaker.,max,1.3460924625396729
+control,180,The agents and deputies approached the home and obtained a voluntary consent to search from the caretaker.,last,1.0470160245895386
+control,181,"Finally, the Second National Climate Assessment identified the highest priority uncertainties about which further study is needed to understand climate impacts, vulnerabilities, and America's ability to adapt.",mean,0.08817586302757263
+control,181,"Finally, the Second National Climate Assessment identified the highest priority uncertainties about which further study is needed to understand climate impacts, vulnerabilities, and America's ability to adapt.",max,0.790436327457428
+control,181,"Finally, the Second National Climate Assessment identified the highest priority uncertainties about which further study is needed to understand climate impacts, vulnerabilities, and America's ability to adapt.",last,0.0
+control,182,"The Whetstone of Witte is also the work that used, for the first time, the equals sign.",mean,0.4898073077201843
+control,182,"The Whetstone of Witte is also the work that used, for the first time, the equals sign.",max,1.7927342653274536
+control,182,"The Whetstone of Witte is also the work that used, for the first time, the equals sign.",last,0.647506833076477
+control,183,These files are small and a single font file can contain multiple types of fonts.,mean,0.4074302017688751
+control,183,These files are small and a single font file can contain multiple types of fonts.,max,1.6781721115112305
+control,183,These files are small and a single font file can contain multiple types of fonts.,last,0.0
+control,184,"Lovie Smith, on Richie Incognito
+
+Buccaneers coach Lovie Smith addressed the team's interest in Incognito on Monday, saying that he believes in second chances.",mean,0.7801154851913452
+control,184,"Lovie Smith, on Richie Incognito
+
+Buccaneers coach Lovie Smith addressed the team's interest in Incognito on Monday, saying that he believes in second chances.",max,2.7488136291503906
+control,184,"Lovie Smith, on Richie Incognito
+
+Buccaneers coach Lovie Smith addressed the team's interest in Incognito on Monday, saying that he believes in second chances.",last,0.0
+control,185,By making themselves appealing to a demographic beyond that of 18 to 40-year-old men.,mean,0.10434683412313461
+control,185,By making themselves appealing to a demographic beyond that of 18 to 40-year-old men.,max,0.6230184435844421
+control,185,By making themselves appealing to a demographic beyond that of 18 to 40-year-old men.,last,0.0
+control,186,"He shows that people who seek to be likable tend to end up healthier, in better relationships, with more fulfilling work, and even live longer.",mean,0.09038075804710388
+control,186,"He shows that people who seek to be likable tend to end up healthier, in better relationships, with more fulfilling work, and even live longer.",max,0.7232557535171509
+control,186,"He shows that people who seek to be likable tend to end up healthier, in better relationships, with more fulfilling work, and even live longer.",last,0.4390398859977722
+control,187,"She's been working on other issues - Syria, the DPRK [North Korea] today.",mean,0.5209817886352539
+control,187,"She's been working on other issues - Syria, the DPRK [North Korea] today.",max,2.0029079914093018
+control,187,"She's been working on other issues - Syria, the DPRK [North Korea] today.",last,0.8852013945579529
+control,188,The evidence that the grand jury reviewed has made available to the public and can be found here.,mean,0.2529948353767395
+control,188,The evidence that the grand jury reviewed has made available to the public and can be found here.,max,0.8603203892707825
+control,188,The evidence that the grand jury reviewed has made available to the public and can be found here.,last,0.854487955570221
+control,189,"Two weeks later, three members of the Panama Unit, including Jonathan Treviño and Alexis Espinoza, the son of Hidalgo Police Chief Rudy Espinoza, were indicted by a federal grand jury after an investigation by Immigration and Customs Enforcement and the FBI.",mean,0.2796117663383484
+control,189,"Two weeks later, three members of the Panama Unit, including Jonathan Treviño and Alexis Espinoza, the son of Hidalgo Police Chief Rudy Espinoza, were indicted by a federal grand jury after an investigation by Immigration and Customs Enforcement and the FBI.",max,1.1831368207931519
+control,189,"Two weeks later, three members of the Panama Unit, including Jonathan Treviño and Alexis Espinoza, the son of Hidalgo Police Chief Rudy Espinoza, were indicted by a federal grand jury after an investigation by Immigration and Customs Enforcement and the FBI.",last,0.07283085584640503
+control,190,"Unlike traditional cities, the private contractors have a profit motive that serves as a natural incentive to reduce costs and operate efficiently.",mean,0.26742279529571533
+control,190,"Unlike traditional cities, the private contractors have a profit motive that serves as a natural incentive to reduce costs and operate efficiently.",max,0.859815776348114
+control,190,"Unlike traditional cities, the private contractors have a profit motive that serves as a natural incentive to reduce costs and operate efficiently.",last,0.0
+control,191,Wikileak’s Julian Assange has said himself in the past that he does not release any information to the public without first running it by Israel.,mean,0.3692958950996399
+control,191,Wikileak’s Julian Assange has said himself in the past that he does not release any information to the public without first running it by Israel.,max,1.9665799140930176
+control,191,Wikileak’s Julian Assange has said himself in the past that he does not release any information to the public without first running it by Israel.,last,0.12200058251619339
+control,192,"Knowing of the [impending] shortage from my produce supplier, I sourced about 4,000 pounds at the end of the season from a variety of suppliers.",mean,0.2243288904428482
+control,192,"Knowing of the [impending] shortage from my produce supplier, I sourced about 4,000 pounds at the end of the season from a variety of suppliers.",max,1.2258143424987793
+control,192,"Knowing of the [impending] shortage from my produce supplier, I sourced about 4,000 pounds at the end of the season from a variety of suppliers.",last,0.11708192527294159
+control,193,"When the previously banished Queen Margaret, widow of the murdered Henry VI from the previous episode, slinks into the court to give her own warnings, she brings with her a small mirror that fits in the palm of her hand.",mean,0.4339226484298706
+control,193,"When the previously banished Queen Margaret, widow of the murdered Henry VI from the previous episode, slinks into the court to give her own warnings, she brings with her a small mirror that fits in the palm of her hand.",max,1.9146006107330322
+control,193,"When the previously banished Queen Margaret, widow of the murdered Henry VI from the previous episode, slinks into the court to give her own warnings, she brings with her a small mirror that fits in the palm of her hand.",last,0.6274722814559937
+control,194,What about the relievers getting it done when it matters?,mean,0.3420741856098175
+control,194,What about the relievers getting it done when it matters?,max,1.0829272270202637
+control,194,What about the relievers getting it done when it matters?,last,0.2632666528224945
+control,195,"Trump claims to have given away millions, but refuses to produce any records of this.",mean,0.28237006068229675
+control,195,"Trump claims to have given away millions, but refuses to produce any records of this.",max,1.2344629764556885
+control,195,"Trump claims to have given away millions, but refuses to produce any records of this.",last,0.6645141243934631
+control,196,"Other camps were established in Silopi, Turkey the first troops to arrive were the 36h CES from Bitburg Air Base Germany, the 36th CES which built all base camp and facilities for multi-national troops sent to assist with the operation.",mean,0.5061078667640686
+control,196,"Other camps were established in Silopi, Turkey the first troops to arrive were the 36h CES from Bitburg Air Base Germany, the 36th CES which built all base camp and facilities for multi-national troops sent to assist with the operation.",max,2.5501720905303955
+control,196,"Other camps were established in Silopi, Turkey the first troops to arrive were the 36h CES from Bitburg Air Base Germany, the 36th CES which built all base camp and facilities for multi-national troops sent to assist with the operation.",last,0.5223098993301392
+control,197,This team can’t commit turnovers and win … *The Jaguars were plus-four takeaway/giveaway in Week 1 against Houston and won by 22 points; they were minus-two in Week 2 against Tennessee and lost by 21 points.,mean,0.3374224007129669
+control,197,This team can’t commit turnovers and win … *The Jaguars were plus-four takeaway/giveaway in Week 1 against Houston and won by 22 points; they were minus-two in Week 2 against Tennessee and lost by 21 points.,max,1.9966981410980225
+control,197,This team can’t commit turnovers and win … *The Jaguars were plus-four takeaway/giveaway in Week 1 against Houston and won by 22 points; they were minus-two in Week 2 against Tennessee and lost by 21 points.,last,0.0
+control,198,"Rickers is planning a bus tour through key battleground states coming up, and is hardly alone: Several other Democrats, as Breitbart News has already reported, are standing up with him—more in those key states than the handful of Republican D.C. insiders who have switched teams to back Hillary Clinton.",mean,0.425458163022995
+control,198,"Rickers is planning a bus tour through key battleground states coming up, and is hardly alone: Several other Democrats, as Breitbart News has already reported, are standing up with him—more in those key states than the handful of Republican D.C. insiders who have switched teams to back Hillary Clinton.",max,1.4158918857574463
+control,198,"Rickers is planning a bus tour through key battleground states coming up, and is hardly alone: Several other Democrats, as Breitbart News has already reported, are standing up with him—more in those key states than the handful of Republican D.C. insiders who have switched teams to back Hillary Clinton.",last,1.1653355360031128
+control,199,You'll see bad code transformed into good code.,mean,0.29723411798477173
+control,199,You'll see bad code transformed into good code.,max,1.6997157335281372
+control,199,You'll see bad code transformed into good code.,last,1.046695590019226
