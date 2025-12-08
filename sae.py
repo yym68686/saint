@@ -231,7 +231,7 @@ def load_sae_model(
     dtype: torch.dtype,
 ) -> JumpReLUSAE:
     """"""
-    logging.info(f"Loading Relu SAE model weights and config from: {model_path}")
+    logging.info(f"Loading JumpReLU SAE model weights and config from: {model_path}")
     state_dict = torch.load(
         model_path,
         map_location=torch.device("cpu"),
@@ -241,7 +241,7 @@ def load_sae_model(
     d_model = b_pre.shape[0]
     n_latents = state_dict["encoder.weight"].shape[0]
 
-    logging.info("Initializing Relu SAE model and loading state dict...")
+    logging.info("Initializing JumpReLU SAE model and loading state dict...")
     model = JumpReLUSAE(
         d_model=d_model,
         n_latents=n_latents,
