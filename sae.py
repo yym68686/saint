@@ -97,17 +97,17 @@ class TopKSparseAutoencoder(nn.Module):
     def forward_1d_normalized(
         self,
         x: torch.Tensor,
-    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
         """
         :param x: input tensor of shape (batch_size, d_model)
         """
-        # Subtract pre-bias and encode input
-        x = x - self.b_pre
-        h = self.encoder(x)
+        # Step 1: First reconstruction
+        x_minus_b_pre_1 = x - self.b_pre
+        h_1 = self.encoder(x_minus_b_pre_1)
 
         if self.h_bias is not None:
             # 获取最大的4个值及其索引
-            top_values, top_indices = torch.topk(h, k=4, dim=-1)
+            top_values, top_indices = torch.topk(h_1, k=4, dim=-1)
 
             # 遍历每个样本的前4大值
             for batch_idx in range(top_indices.shape[0]):
@@ -118,14 +118,29 @@ class TopKSparseAutoencoder(nn.Module):
                         f"Top {i+1} value: h[{batch_idx}, {latent_idx}] = {value:.2f}"
                     )
 
-            h = h + self.h_bias
+            h_1 = h_1 + self.h_bias
             non_zero_idx = torch.nonzero(self.h_bias).squeeze()
-            logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
+            logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h_1[:, non_zero_idx]}")
 
-        # Reconstruct input and latent representation with default k sparsity
-        reconstructed, h_sparse = self.decode_latent(h=h, k=self.k)
+        reconstructed_1, h_sparse_1 = self.decode_latent(h=h_1, k=self.k)
 
-        return reconstructed, h, h_sparse
+        # Step 2: Calculate residual and detach to stop gradients
+        residual_1 = x - reconstructed_1.detach()
+
+        # Step 3: Second reconstruction on the residual
+        x_minus_b_pre_2 = residual_1 - self.b_pre
+        h_2 = self.encoder(x_minus_b_pre_2)
+
+        if self.h_bias is not None:
+            h_2 = h_2 + self.h_bias
+        
+        reconstructed_2, _ = self.decode_latent(h=h_2, k=self.k)
+
+        # Step 4: Final reconstruction is the sum of the two
+        reconstructed_final = reconstructed_1 + reconstructed_2
+
+        # Return h_1 and h_sparse_1 for aux loss and logging
+        return reconstructed_final, h_1, h_sparse_1, reconstructed_1, residual_1, reconstructed_2
 
     def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
         """"""

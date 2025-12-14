@@ -70,6 +70,9 @@ def train_epoch(
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+    loss_step1_acc = torch.tensor(0.0, device=device)
+    loss_step2_acc = torch.tensor(0.0, device=device)
+    residual_norm_acc = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
     accumulated_loss_count = dist.get_world_size() * log_interval
 
@@ -88,10 +91,15 @@ def train_epoch(
 
         # Zero the gradients and perform forward pass
         optimizer.zero_grad()
-        reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+        reconstructed, h, h_sparse, reconstructed_1, residual_1, reconstructed_2 = model.module.forward_1d_normalized(
+            batch_normalized
+        )
 
         # Compute main loss in normalized space
         loss = criterion(reconstructed, batch_normalized)
+        loss_step1 = criterion(reconstructed_1.detach(), batch_normalized)
+        loss_step2 = criterion(reconstructed_2.detach(), residual_1.detach())
+        residual_norm = torch.linalg.norm(residual_1.detach(), dim=-1).mean()
 
         # If enough latents haven't been activated in more than dead_steps_threshold training steps then calculate an
         # auxiliary loss to help reactivate the latents.
@@ -105,7 +113,7 @@ def train_epoch(
 
             # Compute auxiliary loss as MSE between residual and the aux reconstruction to make dead latents explain
             # what the main latents could not and thereby activate them again and make them useful again.
-            residual = batch_normalized - reconstructed.detach()
+            residual = batch_normalized - reconstructed_1.detach()
             aux_loss = criterion(reconstructed_aux, residual)
         else:
             # If there are not enough dead latents to activate, set auxiliary loss to 0.
@@ -125,6 +133,9 @@ def train_epoch(
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
         total_loss_acc += total_loss.detach()
+        loss_step1_acc += loss_step1.detach()
+        loss_step2_acc += loss_step2.detach()
+        residual_norm_acc += residual_norm.detach()
 
         # Update the progress bar on main process
         if rank == 0:
@@ -142,14 +153,23 @@ def train_epoch(
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(loss_step1_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(loss_step2_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(residual_norm_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
+            avg_loss_step1 = loss_step1_acc.item() / accumulated_loss_count
+            avg_loss_step2 = loss_step2_acc.item() / accumulated_loss_count
+            avg_residual_norm = residual_norm_acc.item() / accumulated_loss_count
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
+            loss_step1_acc = torch.tensor(0.0, device=device)
+            loss_step2_acc = torch.tensor(0.0, device=device)
+            residual_norm_acc = torch.tensor(0.0, device=device)
 
             # Determine dead latent debug statistics
             dead_latents_ratio = dead_latents / dead_mask.numel()
@@ -163,6 +183,9 @@ def train_epoch(
                         "train/loss": avg_loss,
                         "train/aux_loss": avg_aux_loss,
                         "train/total_loss": avg_total_loss,
+                        "train/loss_step1": avg_loss_step1,
+                        "train/loss_step2": avg_loss_step2,
+                        "train/residual_norm": avg_residual_norm,
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
@@ -193,7 +216,7 @@ def validate_epoch(
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
-) -> tuple[float, float, float]:
+) -> tuple[float, float, float, float, float, float]:
     """"""
     # Set the model to eval mode
     model.eval()
@@ -202,6 +225,9 @@ def validate_epoch(
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+    loss_step1_acc = torch.tensor(0.0, device=device)
+    loss_step2_acc = torch.tensor(0.0, device=device)
+    residual_norm_acc = torch.tensor(0.0, device=device)
 
     # Create epoch progress bar on main process
     if rank == 0:
@@ -218,10 +244,15 @@ def validate_epoch(
             batch_normalized, mean, norm = model.module.preprocess_input(batch)
 
             # Perform forward pass
-            reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+            reconstructed, h, h_sparse, reconstructed_1, residual_1, reconstructed_2 = model.module.forward_1d_normalized(
+                batch_normalized
+            )
 
             # Compute main loss in normalized space
             loss = criterion(reconstructed, batch_normalized)
+            loss_step1 = criterion(reconstructed_1.detach(), batch_normalized)
+            loss_step2 = criterion(reconstructed_2.detach(), residual_1.detach())
+            residual_norm = torch.linalg.norm(residual_1.detach(), dim=-1).mean()
 
             # Compute auxiliary loss if necessary
             dead_mask = latent_last_nonzero > dead_steps_threshold
@@ -229,7 +260,7 @@ def validate_epoch(
             if dead_latents >= k_aux:
                 h_masked = h * dead_mask
                 reconstructed_aux, _ = model.module.decode_latent(h=h_masked, k=k_aux)
-                residual = batch_normalized - reconstructed.detach()
+                residual = batch_normalized - reconstructed_1.detach()
                 aux_loss = criterion(reconstructed_aux, residual)
             else:
                 aux_loss = torch.tensor(0.0, device=device)
@@ -241,6 +272,9 @@ def validate_epoch(
             loss_acc += loss.detach()
             aux_loss_acc += aux_loss.detach()
             total_loss_acc += total_loss.detach()
+            loss_step1_acc += loss_step1.detach()
+            loss_step2_acc += loss_step2.detach()
+            residual_norm_acc += residual_norm.detach()
 
             # Update the progress bar on main process
             if rank == 0:
@@ -254,11 +288,18 @@ def validate_epoch(
     dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
-    avg_loss = loss_acc.item() / (dist.get_world_size() * len(dataloader))
-    avg_aux_loss = aux_loss_acc.item() / (dist.get_world_size() * len(dataloader))
-    avg_total_loss = total_loss_acc.item() / (dist.get_world_size() * len(dataloader))
+    dist.all_reduce(loss_step1_acc, op=dist.ReduceOp.SUM)
+    dist.all_reduce(loss_step2_acc, op=dist.ReduceOp.SUM)
+    dist.all_reduce(residual_norm_acc, op=dist.ReduceOp.SUM)
+    world_size_len_dataloader = dist.get_world_size() * len(dataloader)
+    avg_loss = loss_acc.item() / world_size_len_dataloader
+    avg_aux_loss = aux_loss_acc.item() / world_size_len_dataloader
+    avg_total_loss = total_loss_acc.item() / world_size_len_dataloader
+    avg_loss_step1 = loss_step1_acc.item() / world_size_len_dataloader
+    avg_loss_step2 = loss_step2_acc.item() / world_size_len_dataloader
+    avg_residual_norm = residual_norm_acc.item() / world_size_len_dataloader
 
-    return avg_loss, avg_aux_loss, avg_total_loss
+    return avg_loss, avg_aux_loss, avg_total_loss, avg_loss_step1, avg_loss_step2, avg_residual_norm
 
 def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
     """清理旧的检查点，只保留最新的 N 个"""
@@ -367,7 +408,7 @@ def train_autoencoder(
         )
 
         # Validate an epoch
-        val_avg_loss, val_avg_aux_loss, val_avg_total_loss = validate_epoch(
+        val_avg_loss, val_avg_aux_loss, val_avg_total_loss, val_avg_loss_step1, val_avg_loss_step2, val_avg_residual_norm = validate_epoch(
             epoch=epoch,
             num_epochs=num_epochs,
             model=model,
@@ -393,6 +434,9 @@ def train_autoencoder(
                     "val/loss": val_avg_loss,
                     "val/aux_loss": val_avg_aux_loss,
                     "val/total_loss": val_avg_total_loss,
+                    "val/loss_step1": val_avg_loss_step1,
+                    "val/loss_step2": val_avg_loss_step2,
+                    "val/residual_norm": val_avg_residual_norm,
                     "learning_rate": updated_lr,
                 },
                 step=(epoch + 1) * len(train_dataloader),
@@ -402,6 +446,11 @@ def train_autoencoder(
                 f"val/loss: {val_avg_loss:.6f} "
                 f"| val/aux_loss: {val_avg_aux_loss:.6f} "
                 f"| val/total_loss: {val_avg_total_loss:.6f}",
+            )
+            logging.info(
+                f"val/loss_step1: {val_avg_loss_step1:.6f} "
+                f"| val/loss_step2: {val_avg_loss_step2:.6f} "
+                f"| val/residual_norm: {val_avg_residual_norm:.6f}",
             )
 
             checkpoint_path = checkpoint_dir / f"model_checkpoint_epoch-{epoch + 1}.pth"
