@@ -55,6 +55,8 @@ def train_epoch(
     optimizer: optim.AdamW,
     k_aux: int,
     aux_loss_coeff: float,
+    balance_loss_coeff: float,
+    num_experts: int,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     logs_per_epoch: int,
@@ -69,8 +71,13 @@ def train_epoch(
     # Initialize epoch log variables and helpers
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
+    balance_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+    router_entropy_acc = torch.tensor(0.0, device=device)
+    expert_usage_acc = torch.zeros(num_experts, device=device)
     log_interval = len(dataloader) // logs_per_epoch
+    if log_interval == 0:
+        log_interval = 1
     accumulated_loss_count = dist.get_world_size() * log_interval
 
     # Create epoch progress bar on main process
@@ -88,7 +95,9 @@ def train_epoch(
 
         # Zero the gradients and perform forward pass
         optimizer.zero_grad()
-        reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+        reconstructed, h, h_sparse, router_logits, expert_indices = model.module.forward_1d_normalized(
+            batch_normalized
+        )
 
         # Compute main loss in normalized space
         loss = criterion(reconstructed, batch_normalized)
@@ -111,8 +120,29 @@ def train_epoch(
             # If there are not enough dead latents to activate, set auxiliary loss to 0.
             aux_loss = torch.tensor(0.0, device=device)
 
+        # --- MoE Load Balancing Loss ---
+        if router_logits is not None and expert_indices is not None:
+            n_tokens = expert_indices.shape[0]
+
+            # f_i: fraction of tokens dispatched to expert i
+            f_i = torch.bincount(expert_indices, minlength=num_experts).float() / n_tokens
+
+            # P_i: average probability of routing to expert i
+            router_probs = torch.softmax(router_logits.float(), dim=-1) # Use float32 for stability
+            P_i = router_probs.mean(dim=0)
+
+            # L_balance
+            balance_loss = num_experts * torch.sum(f_i * P_i)
+
+            # Also accumulate router entropy and expert usage for logging
+            router_entropy = -torch.sum(router_probs * torch.log(router_probs + 1e-9), dim=-1).mean()
+            router_entropy_acc += router_entropy.detach()
+            expert_usage_acc += f_i.detach() * n_tokens
+        else:
+            balance_loss = torch.tensor(0.0, device=device)
+
         # Compute total loss with auxiliary loss coefficient
-        total_loss = loss + aux_loss_coeff * aux_loss
+        total_loss = loss + aux_loss_coeff * aux_loss + balance_loss_coeff * balance_loss
 
         # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
         # and normalize the decoder weights again.
@@ -124,6 +154,8 @@ def train_epoch(
         # Accumulate losses
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
+        if router_logits is not None:
+            balance_loss_acc += balance_loss.detach()
         total_loss_acc += total_loss.detach()
 
         # Update the progress bar on main process
@@ -141,15 +173,26 @@ def train_epoch(
         if (batch_idx + 1) % log_interval == 0:
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(balance_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(router_entropy_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(expert_usage_acc, op=dist.ReduceOp.SUM)
+            
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
+            avg_balance_loss = balance_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
+            avg_router_entropy = router_entropy_acc.item() / (dist.get_world_size() * log_interval)
+            total_expert_tokens = expert_usage_acc.sum().item()
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
+            balance_loss_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
+            router_entropy_acc = torch.tensor(0.0, device=device)
+            expert_usage_acc = torch.zeros(num_experts, device=device)
+
 
             # Determine dead latent debug statistics
             dead_latents_ratio = dead_latents / dead_mask.numel()
@@ -158,20 +201,29 @@ def train_epoch(
 
             # Log to wandb and tqdm
             if rank == 0:
-                wandb.log(
-                    data={
-                        "train/loss": avg_loss,
-                        "train/aux_loss": avg_aux_loss,
-                        "train/total_loss": avg_total_loss,
-                        "debug/dead_latents_ratio": dead_latents_ratio,
-                        "debug/max_dead_latent": max_dead_latent,
-                        "debug/max_dead_latent_count": max_dead_latent_count,
-                    },
-                    step=epoch * len(dataloader) + batch_idx + 1,
-                )
+                log_data = {
+                    "train/loss": avg_loss,
+                    "train/aux_loss": avg_aux_loss,
+                    "train/total_loss": avg_total_loss,
+                    "debug/dead_latents_ratio": dead_latents_ratio,
+                    "debug/max_dead_latent": max_dead_latent,
+                    "debug/max_dead_latent_count": max_dead_latent_count,
+                }
+                if num_experts > 1:
+                    log_data.update({
+                        "train/balance_loss": avg_balance_loss,
+                        "train/router_entropy": avg_router_entropy,
+                    })
+                    for i in range(num_experts):
+                        usage_percent = (expert_usage_acc[i].item() / total_expert_tokens * 100) if total_expert_tokens > 0 else 0
+                        log_data[f"train/expert_{i}_usage_percent"] = usage_percent
+
+                wandb.log(log_data, step=epoch * len(dataloader) + batch_idx + 1)
+                
                 progress_bar.set_postfix(
                     loss=f"{avg_loss:.6f}",
                     aux_loss=f"{avg_aux_loss:.6f}",
+                    balance_loss=f"{avg_balance_loss:.6f}",
                     total_loss=f"{avg_total_loss:.6f}",
                 )
 
@@ -188,12 +240,14 @@ def validate_epoch(
     criterion: nn.MSELoss,
     k_aux: int,
     aux_loss_coeff: float,
+    balance_loss_coeff: float,
+    num_experts: int,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
-) -> tuple[float, float, float]:
+) -> dict[str, float]:
     """"""
     # Set the model to eval mode
     model.eval()
@@ -201,7 +255,10 @@ def validate_epoch(
     # Initialize epoch log variables
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
+    balance_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+    router_entropy_acc = torch.tensor(0.0, device=device)
+    expert_usage_acc = torch.zeros(num_experts, device=device)
 
     # Create epoch progress bar on main process
     if rank == 0:
@@ -218,7 +275,9 @@ def validate_epoch(
             batch_normalized, mean, norm = model.module.preprocess_input(batch)
 
             # Perform forward pass
-            reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+            reconstructed, h, h_sparse, router_logits, expert_indices = model.module.forward_1d_normalized(
+                batch_normalized
+            )
 
             # Compute main loss in normalized space
             loss = criterion(reconstructed, batch_normalized)
@@ -234,12 +293,28 @@ def validate_epoch(
             else:
                 aux_loss = torch.tensor(0.0, device=device)
 
+            # --- MoE Load Balancing Loss ---
+            if router_logits is not None and expert_indices is not None:
+                n_tokens = expert_indices.shape[0]
+                f_i = torch.bincount(expert_indices, minlength=num_experts).float() / n_tokens
+                router_probs = torch.softmax(router_logits.float(), dim=-1)
+                P_i = router_probs.mean(dim=0)
+                balance_loss = num_experts * torch.sum(f_i * P_i)
+                router_entropy = -torch.sum(router_probs * torch.log(router_probs + 1e-9), dim=-1).mean()
+                router_entropy_acc += router_entropy.detach()
+                expert_usage_acc += f_i.detach() * n_tokens
+            else:
+                balance_loss = torch.tensor(0.0, device=device)
+
+
             # Compute total loss with auxiliary loss coefficient
-            total_loss = loss + aux_loss_coeff * aux_loss
+            total_loss = loss + aux_loss_coeff * aux_loss + balance_loss_coeff * balance_loss
 
             # Accumulate losses
             loss_acc += loss.detach()
             aux_loss_acc += aux_loss.detach()
+            if router_logits is not None:
+                balance_loss_acc += balance_loss.detach()
             total_loss_acc += total_loss.detach()
 
             # Update the progress bar on main process
@@ -253,12 +328,30 @@ def validate_epoch(
     # Gather and average losses across processes
     dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
+    dist.all_reduce(balance_loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
+    dist.all_reduce(router_entropy_acc, op=dist.ReduceOp.SUM)
+    dist.all_reduce(expert_usage_acc, op=dist.ReduceOp.SUM)
+    
     avg_loss = loss_acc.item() / (dist.get_world_size() * len(dataloader))
     avg_aux_loss = aux_loss_acc.item() / (dist.get_world_size() * len(dataloader))
+    avg_balance_loss = balance_loss_acc.item() / (dist.get_world_size() * len(dataloader))
     avg_total_loss = total_loss_acc.item() / (dist.get_world_size() * len(dataloader))
+    avg_router_entropy = router_entropy_acc.item() / (dist.get_world_size() * len(dataloader))
+    total_expert_tokens = expert_usage_acc.sum().item()
 
-    return avg_loss, avg_aux_loss, avg_total_loss
+    val_metrics = {
+        "val/loss": avg_loss,
+        "val/aux_loss": avg_aux_loss,
+        "val/balance_loss": avg_balance_loss,
+        "val/total_loss": avg_total_loss,
+        "val/router_entropy": avg_router_entropy,
+    }
+    for i in range(num_experts):
+        usage_percent = (expert_usage_acc[i].item() / total_expert_tokens * 100) if total_expert_tokens > 0 else 0
+        val_metrics[f"val/expert_{i}_usage_percent"] = usage_percent
+        
+    return val_metrics
 
 def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
     """清理旧的检查点，只保留最新的 N 个"""
@@ -289,6 +382,8 @@ def train_autoencoder(
     optimizer_eps: float,
     k_aux: int,
     aux_loss_coeff: float,
+    balance_loss_coeff: float,
+    num_experts: int,
     dead_steps_threshold: int,
     logs_per_epoch: int,
     checkpoint_dir: Path,
@@ -358,6 +453,8 @@ def train_autoencoder(
             optimizer=optimizer,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
+            balance_loss_coeff=balance_loss_coeff,
+            num_experts=num_experts,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             logs_per_epoch=logs_per_epoch,
@@ -367,7 +464,7 @@ def train_autoencoder(
         )
 
         # Validate an epoch
-        val_avg_loss, val_avg_aux_loss, val_avg_total_loss = validate_epoch(
+        val_metrics = validate_epoch(
             epoch=epoch,
             num_epochs=num_epochs,
             model=model,
@@ -375,12 +472,15 @@ def train_autoencoder(
             criterion=criterion,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
+            balance_loss_coeff=balance_loss_coeff,
+            num_experts=num_experts,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             dtype=dtype,
             device=device,
             rank=rank,
         )
+        val_avg_total_loss = val_metrics["val/total_loss"]
 
         # Step the scheduler
         scheduler.step()
@@ -388,21 +488,16 @@ def train_autoencoder(
 
         # Log metrics in wandb and console and save checkpoint
         if rank == 0:
-            wandb.log(
-                data={
-                    "val/loss": val_avg_loss,
-                    "val/aux_loss": val_avg_aux_loss,
-                    "val/total_loss": val_avg_total_loss,
-                    "learning_rate": updated_lr,
-                },
-                step=(epoch + 1) * len(train_dataloader),
-            )
+            log_data = {
+                "learning_rate": updated_lr,
+                **val_metrics,
+            }
+            wandb.log(log_data, step=(epoch + 1) * len(train_dataloader))
+            
             logging.info(f"Epoch {epoch + 1}/{num_epochs}, Updated LR: {updated_lr:.2e}")
-            logging.info(
-                f"val/loss: {val_avg_loss:.6f} "
-                f"| val/aux_loss: {val_avg_aux_loss:.6f} "
-                f"| val/total_loss: {val_avg_total_loss:.6f}",
-            )
+            
+            log_str = " | ".join([f"{k}: {v:.6f}" for k, v in val_metrics.items() if isinstance(v, float)])
+            logging.info(log_str)
 
             checkpoint_path = checkpoint_dir / f"model_checkpoint_epoch-{epoch + 1}.pth"
             torch.save(model.module.state_dict(), checkpoint_path)
@@ -469,6 +564,8 @@ def main() -> None:
     k = 64
     k_aux = 2048
     aux_loss_coeff = 1 / 32
+    num_experts = 4
+    balance_loss_coeff = 4.0
     dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
     sae_normalization_eps = 1e-6
     batch_size = args.batch_size
@@ -494,6 +591,8 @@ def main() -> None:
                 "k": k,
                 "k_aux": k_aux,
                 "aux_loss_coeff": aux_loss_coeff,
+                "num_experts": num_experts,
+                "balance_loss_coeff": balance_loss_coeff,
                 "dead_steps_threshold": dead_steps_threshold,
                 "sae_normalization_eps": sae_normalization_eps,
                 "batch_size": batch_size,
@@ -528,6 +627,8 @@ def main() -> None:
         logging.info(f"# k={k}")
         logging.info(f"# k_aux={k_aux}")
         logging.info(f"# aux_loss_coeff={aux_loss_coeff}")
+        logging.info(f"# num_experts={num_experts}")
+        logging.info(f"# balance_loss_coeff={balance_loss_coeff}")
         logging.info(f"# dead_steps_threshold={dead_steps_threshold}")
         logging.info(f"# sae_normalization_eps={sae_normalization_eps}")
         logging.info(f"# batch_size={batch_size}")
@@ -565,6 +666,7 @@ def main() -> None:
         b_pre=b_pre,
         dtype=dtype,
         normalize_eps=sae_normalization_eps,
+        num_experts=num_experts,
     )
     if args.model_load_path:
         logging.info("Loading model weights from checkpoint...")
@@ -643,6 +745,8 @@ def main() -> None:
         optimizer_eps=optimizer_eps,
         k_aux=k_aux,
         aux_loss_coeff=aux_loss_coeff,
+        balance_loss_coeff=balance_loss_coeff,
+        num_experts=num_experts,
         dead_steps_threshold=dead_steps_threshold,
         logs_per_epoch=logs_per_epoch,
         checkpoint_dir=args.checkpoint_dir,
