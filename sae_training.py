@@ -70,6 +70,9 @@ def train_epoch(
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+    router_entropy_acc = torch.tensor(0.0, device=device)
+    expert_usage_acc = torch.zeros(model.module.num_experts, device=device, dtype=torch.float32)
+    total_tokens_acc = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
     accumulated_loss_count = dist.get_world_size() * log_interval
 
@@ -88,7 +91,7 @@ def train_epoch(
 
         # Zero the gradients and perform forward pass
         optimizer.zero_grad()
-        reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+        reconstructed, h, h_sparse, router_logits = model.module.forward_1d_normalized(batch_normalized)
 
         # Compute main loss in normalized space
         loss = criterion(reconstructed, batch_normalized)
@@ -125,6 +128,11 @@ def train_epoch(
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
         total_loss_acc += total_loss.detach()
+        probs = torch.softmax(router_logits.detach(), dim=-1)
+        router_entropy_acc += -torch.sum(probs * torch.log(probs + 1e-9), dim=-1).mean()
+        expert_indices = torch.argmax(router_logits.detach(), dim=-1)
+        expert_usage_acc += torch.bincount(expert_indices, minlength=model.module.num_experts).float()
+        total_tokens_acc += router_logits.shape[0]
 
         # Update the progress bar on main process
         if rank == 0:
@@ -142,14 +150,23 @@ def train_epoch(
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(router_entropy_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(expert_usage_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(total_tokens_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
+            avg_router_entropy = router_entropy_acc.item() / accumulated_loss_count
+            expert_usage_percent = (expert_usage_acc / total_tokens_acc) * 100 if total_tokens_acc > 0 else torch.zeros_like(expert_usage_acc)
+
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
+            router_entropy_acc = torch.tensor(0.0, device=device)
+            expert_usage_acc = torch.zeros(model.module.num_experts, device=device, dtype=torch.float32)
+            total_tokens_acc = torch.tensor(0.0, device=device)
 
             # Determine dead latent debug statistics
             dead_latents_ratio = dead_latents / dead_mask.numel()
@@ -158,15 +175,20 @@ def train_epoch(
 
             # Log to wandb and tqdm
             if rank == 0:
+                wandb_log_data = {
+                    "train/loss": avg_loss,
+                    "train/aux_loss": avg_aux_loss,
+                    "train/total_loss": avg_total_loss,
+                    "train/router_entropy": avg_router_entropy,
+                    "debug/dead_latents_ratio": dead_latents_ratio,
+                    "debug/max_dead_latent": max_dead_latent,
+                    "debug/max_dead_latent_count": max_dead_latent_count,
+                }
+                expert_usage_log = {f"train/expert_{i}_usage_percent": percent.item() for i, percent in enumerate(expert_usage_percent)}
+                wandb_log_data.update(expert_usage_log)
+
                 wandb.log(
-                    data={
-                        "train/loss": avg_loss,
-                        "train/aux_loss": avg_aux_loss,
-                        "train/total_loss": avg_total_loss,
-                        "debug/dead_latents_ratio": dead_latents_ratio,
-                        "debug/max_dead_latent": max_dead_latent,
-                        "debug/max_dead_latent_count": max_dead_latent_count,
-                    },
+                    data=wandb_log_data,
                     step=epoch * len(dataloader) + batch_idx + 1,
                 )
                 progress_bar.set_postfix(
@@ -218,7 +240,7 @@ def validate_epoch(
             batch_normalized, mean, norm = model.module.preprocess_input(batch)
 
             # Perform forward pass
-            reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+            reconstructed, h, h_sparse, _ = model.module.forward_1d_normalized(batch_normalized)
 
             # Compute main loss in normalized space
             loss = criterion(reconstructed, batch_normalized)
@@ -228,7 +250,7 @@ def validate_epoch(
             dead_latents = dead_mask.sum().item()
             if dead_latents >= k_aux:
                 h_masked = h * dead_mask
-                reconstructed_aux, _ = model.module.decode_latent(h=h_masked, k=k_aux)
+                reconstructed_aux, _ = model.module.decode_all_experts(h=h_masked, k=k_aux)
                 residual = batch_normalized - reconstructed.detach()
                 aux_loss = criterion(reconstructed_aux, residual)
             else:
@@ -482,6 +504,7 @@ def main() -> None:
     dataloader_num_workers = 8
     logs_per_epoch = 100
     train_val_split = 0.95
+    num_experts = 4
 
     if rank == 0:
         logging.info("Logging into and initializing wandb...")
@@ -508,6 +531,7 @@ def main() -> None:
                 "logs_per_epoch": logs_per_epoch,
                 "train_val_split": train_val_split,
                 "world_size": world_size,
+                "num_experts": num_experts,
             },
         )
 
@@ -565,6 +589,7 @@ def main() -> None:
         b_pre=b_pre,
         dtype=dtype,
         normalize_eps=sae_normalization_eps,
+        num_experts=num_experts,
     )
     if args.model_load_path:
         logging.info("Loading model weights from checkpoint...")
