@@ -565,7 +565,7 @@ def main() -> None:
     k_aux = 2048
     aux_loss_coeff = 1 / 32
     num_experts = 4
-    balance_loss_coeff = 4.0
+    balance_loss_coeff = 0.05
     dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
     sae_normalization_eps = 1e-6
     batch_size = args.batch_size
