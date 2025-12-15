@@ -31,6 +31,7 @@ class TopKSparseAutoencoder(nn.Module):
         # forward pass, whereas the decoder does not have a bias term.
         self.encoder = nn.Linear(d_model, n_latents, bias=True, dtype=dtype)
         self.decoder = nn.Linear(n_latents, d_model, bias=False, dtype=dtype)
+        self.gate = nn.Linear(d_model, 1, bias=True, dtype=dtype)
 
         # Use orthogonal initialization for encoder to ensure well-distributed, independent directions and copy
         # the transposed encoder weights to decoder weights to ensure parallel initialization as per paper.
@@ -97,35 +98,38 @@ class TopKSparseAutoencoder(nn.Module):
     def forward_1d_normalized(
         self,
         x: torch.Tensor,
-    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
         """
         :param x: input tensor of shape (batch_size, d_model)
         """
-        # Subtract pre-bias and encode input
-        x = x - self.b_pre
-        h = self.encoder(x)
+        # Gate the residual contribution
+        g = torch.sigmoid(self.gate(x))
+
+        # --- Step 1: Initial Reconstruction ---
+        x_minus_b_pre = x - self.b_pre
+        h = self.encoder(x_minus_b_pre)
 
         if self.h_bias is not None:
-            # 获取最大的4个值及其索引
-            top_values, top_indices = torch.topk(h, k=4, dim=-1)
-
-            # 遍历每个样本的前4大值
-            for batch_idx in range(top_indices.shape[0]):
-                for i in range(4):
-                    latent_idx = top_indices[batch_idx, i].item()
-                    value = top_values[batch_idx, i].item()
-                    logging.info(
-                        f"Top {i+1} value: h[{batch_idx}, {latent_idx}] = {value:.2f}"
-                    )
-
             h = h + self.h_bias
-            non_zero_idx = torch.nonzero(self.h_bias).squeeze()
-            logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
 
-        # Reconstruct input and latent representation with default k sparsity
-        reconstructed, h_sparse = self.decode_latent(h=h, k=self.k)
+        reconstructed_1, h_sparse_1 = self.decode_latent(h=h, k=self.k)
+        
+        # --- Step 2: Residual Reconstruction ---
+        residual_1 = x - reconstructed_1.detach()
+        residual_1_minus_b_pre = residual_1 - self.b_pre
+        h_2 = self.encoder(residual_1_minus_b_pre)
+        reconstructed_2, _ = self.decode_latent(h=h_2, k=self.k)
 
-        return reconstructed, h, h_sparse
+        # --- Final Gated Reconstruction ---
+        reconstructed_final = reconstructed_1 + g * reconstructed_2
+        
+        # --- Metrics for Logging ---
+        criterion = nn.MSELoss()
+        loss_step1 = criterion(reconstructed_1, x).detach()
+        loss_step2 = criterion(reconstructed_2, residual_1).detach()
+        residual_norm = torch.norm(residual_1, p=2, dim=-1).mean().detach()
+
+        return reconstructed_final, h, h_sparse_1, g.detach(), loss_step1, loss_step2, residual_norm
 
     def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
         """"""
