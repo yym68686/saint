@@ -68,6 +68,11 @@ def train_epoch(
 
     # Initialize epoch log variables and helpers
     loss_acc = torch.tensor(0.0, device=device)
+    loss_step1_acc = torch.tensor(0.0, device=device)
+    loss_step2_acc = torch.tensor(0.0, device=device)
+    residual_norm_acc = torch.tensor(0.0, device=device)
+    gate_mean_acc = torch.tensor(0.0, device=device)
+    gate_std_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
@@ -88,10 +93,18 @@ def train_epoch(
 
         # Zero the gradients and perform forward pass
         optimizer.zero_grad()
-        reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+        reconstructed, h, h_sparse, reconstructed_1, reconstructed_2, g = model.module.forward_1d_normalized(
+            batch_normalized
+        )
 
         # Compute main loss in normalized space
         loss = criterion(reconstructed, batch_normalized)
+        loss_step1 = criterion(reconstructed_1, batch_normalized)
+        residual_1 = batch_normalized - reconstructed_1.detach()
+        loss_step2 = criterion(reconstructed_2, residual_1)
+        residual_norm = torch.norm(residual_1, p=2, dim=-1).mean()
+        gate_mean = g.mean()
+        gate_std = g.std()
 
         # If enough latents haven't been activated in more than dead_steps_threshold training steps then calculate an
         # auxiliary loss to help reactivate the latents.
@@ -123,6 +136,11 @@ def train_epoch(
 
         # Accumulate losses
         loss_acc += loss.detach()
+        loss_step1_acc += loss_step1.detach()
+        loss_step2_acc += loss_step2.detach()
+        residual_norm_acc += residual_norm.detach()
+        gate_mean_acc += gate_mean.detach()
+        gate_std_acc += gate_std.detach()
         aux_loss_acc += aux_loss.detach()
         total_loss_acc += total_loss.detach()
 
@@ -140,14 +158,29 @@ def train_epoch(
         # log to wandb and tqdm
         if (batch_idx + 1) % log_interval == 0:
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(loss_step1_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(loss_step2_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(residual_norm_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(gate_mean_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(gate_std_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
+            avg_loss_step1 = loss_step1_acc.item() / accumulated_loss_count
+            avg_loss_step2 = loss_step2_acc.item() / accumulated_loss_count
+            avg_residual_norm = residual_norm_acc.item() / accumulated_loss_count
+            avg_gate_mean = gate_mean_acc.item() / accumulated_loss_count
+            avg_gate_std = gate_std_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
+            loss_step1_acc = torch.tensor(0.0, device=device)
+            loss_step2_acc = torch.tensor(0.0, device=device)
+            residual_norm_acc = torch.tensor(0.0, device=device)
+            gate_mean_acc = torch.tensor(0.0, device=device)
+            gate_std_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
 
@@ -161,6 +194,11 @@ def train_epoch(
                 wandb.log(
                     data={
                         "train/loss": avg_loss,
+                        "train/loss_step1": avg_loss_step1,
+                        "train/loss_step2": avg_loss_step2,
+                        "train/residual_norm": avg_residual_norm,
+                        "train/gate_mean": avg_gate_mean,
+                        "train/gate_std": avg_gate_std,
                         "train/aux_loss": avg_aux_loss,
                         "train/total_loss": avg_total_loss,
                         "debug/dead_latents_ratio": dead_latents_ratio,
@@ -193,13 +231,18 @@ def validate_epoch(
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
-) -> tuple[float, float, float]:
+) -> tuple[float, float, float, float, float, float, float, float]:
     """"""
     # Set the model to eval mode
     model.eval()
 
     # Initialize epoch log variables
     loss_acc = torch.tensor(0.0, device=device)
+    loss_step1_acc = torch.tensor(0.0, device=device)
+    loss_step2_acc = torch.tensor(0.0, device=device)
+    residual_norm_acc = torch.tensor(0.0, device=device)
+    gate_mean_acc = torch.tensor(0.0, device=device)
+    gate_std_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
 
@@ -218,10 +261,18 @@ def validate_epoch(
             batch_normalized, mean, norm = model.module.preprocess_input(batch)
 
             # Perform forward pass
-            reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+            reconstructed, h, h_sparse, reconstructed_1, reconstructed_2, g = model.module.forward_1d_normalized(
+                batch_normalized
+            )
 
             # Compute main loss in normalized space
             loss = criterion(reconstructed, batch_normalized)
+            loss_step1 = criterion(reconstructed_1, batch_normalized)
+            residual_1 = batch_normalized - reconstructed_1.detach()
+            loss_step2 = criterion(reconstructed_2, residual_1)
+            residual_norm = torch.norm(residual_1, p=2, dim=-1).mean()
+            gate_mean = g.mean()
+            gate_std = g.std()
 
             # Compute auxiliary loss if necessary
             dead_mask = latent_last_nonzero > dead_steps_threshold
@@ -239,6 +290,11 @@ def validate_epoch(
 
             # Accumulate losses
             loss_acc += loss.detach()
+            loss_step1_acc += loss_step1.detach()
+            loss_step2_acc += loss_step2.detach()
+            residual_norm_acc += residual_norm.detach()
+            gate_mean_acc += gate_mean.detach()
+            gate_std_acc += gate_std.detach()
             aux_loss_acc += aux_loss.detach()
             total_loss_acc += total_loss.detach()
 
@@ -252,13 +308,33 @@ def validate_epoch(
 
     # Gather and average losses across processes
     dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
+    dist.all_reduce(loss_step1_acc, op=dist.ReduceOp.SUM)
+    dist.all_reduce(loss_step2_acc, op=dist.ReduceOp.SUM)
+    dist.all_reduce(residual_norm_acc, op=dist.ReduceOp.SUM)
+    dist.all_reduce(gate_mean_acc, op=dist.ReduceOp.SUM)
+    dist.all_reduce(gate_std_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
-    avg_loss = loss_acc.item() / (dist.get_world_size() * len(dataloader))
-    avg_aux_loss = aux_loss_acc.item() / (dist.get_world_size() * len(dataloader))
-    avg_total_loss = total_loss_acc.item() / (dist.get_world_size() * len(dataloader))
+    denominator = dist.get_world_size() * len(dataloader)
+    avg_loss = loss_acc.item() / denominator
+    avg_loss_step1 = loss_step1_acc.item() / denominator
+    avg_loss_step2 = loss_step2_acc.item() / denominator
+    avg_residual_norm = residual_norm_acc.item() / denominator
+    avg_gate_mean = gate_mean_acc.item() / denominator
+    avg_gate_std = gate_std_acc.item() / denominator
+    avg_aux_loss = aux_loss_acc.item() / denominator
+    avg_total_loss = total_loss_acc.item() / denominator
 
-    return avg_loss, avg_aux_loss, avg_total_loss
+    return (
+        avg_loss,
+        avg_loss_step1,
+        avg_loss_step2,
+        avg_residual_norm,
+        avg_gate_mean,
+        avg_gate_std,
+        avg_aux_loss,
+        avg_total_loss,
+    )
 
 def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
     """清理旧的检查点，只保留最新的 N 个"""
@@ -367,7 +443,16 @@ def train_autoencoder(
         )
 
         # Validate an epoch
-        val_avg_loss, val_avg_aux_loss, val_avg_total_loss = validate_epoch(
+        (
+            val_avg_loss,
+            val_avg_loss_step1,
+            val_avg_loss_step2,
+            val_avg_residual_norm,
+            val_avg_gate_mean,
+            val_avg_gate_std,
+            val_avg_aux_loss,
+            val_avg_total_loss,
+        ) = validate_epoch(
             epoch=epoch,
             num_epochs=num_epochs,
             model=model,
@@ -391,6 +476,11 @@ def train_autoencoder(
             wandb.log(
                 data={
                     "val/loss": val_avg_loss,
+                    "val/loss_step1": val_avg_loss_step1,
+                    "val/loss_step2": val_avg_loss_step2,
+                    "val/residual_norm": val_avg_residual_norm,
+                    "val/gate_mean": val_avg_gate_mean,
+                    "val/gate_std": val_avg_gate_std,
                     "val/aux_loss": val_avg_aux_loss,
                     "val/total_loss": val_avg_total_loss,
                     "learning_rate": updated_lr,

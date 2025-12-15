@@ -38,6 +38,12 @@ class TopKSparseAutoencoder(nn.Module):
         with torch.no_grad():
             self.decoder.weight.copy_(self.encoder.weight.t())
 
+        self.gate = nn.Sequential(
+            nn.Linear(d_model, 256, bias=True, dtype=dtype),
+            nn.ReLU(),
+            nn.Linear(256, 1, bias=True, dtype=dtype),
+        )
+
         self.normalize_decoder_weights()
 
     def normalize_decoder_weights(self) -> None:
@@ -97,35 +103,44 @@ class TopKSparseAutoencoder(nn.Module):
     def forward_1d_normalized(
         self,
         x: torch.Tensor,
-    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
         """
         :param x: input tensor of shape (batch_size, d_model)
         """
-        # Subtract pre-bias and encode input
-        x = x - self.b_pre
-        h = self.encoder(x)
+        # Calculate gate values from original normalized input
+        g = torch.sigmoid(self.gate(x))
+
+        # --- Step 1: First reconstruction ---
+        x_centered = x - self.b_pre
+        h1 = self.encoder(x_centered)
 
         if self.h_bias is not None:
             # 获取最大的4个值及其索引
-            top_values, top_indices = torch.topk(h, k=4, dim=-1)
+            top_values, top_indices = torch.topk(h1, k=4, dim=-1)
 
             # 遍历每个样本的前4大值
             for batch_idx in range(top_indices.shape[0]):
                 for i in range(4):
                     latent_idx = top_indices[batch_idx, i].item()
                     value = top_values[batch_idx, i].item()
-                    logging.info(
-                        f"Top {i+1} value: h[{batch_idx}, {latent_idx}] = {value:.2f}"
-                    )
+                    logging.info(f"Top {i+1} value: h[{batch_idx}, {latent_idx}] = {value:.2f}")
 
-            h = h + self.h_bias
+            h1 = h1 + self.h_bias
             non_zero_idx = torch.nonzero(self.h_bias).squeeze()
-            logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
+            logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h1[:, non_zero_idx]}")
 
-        # Reconstruct input and latent representation with default k sparsity
-        reconstructed, h_sparse = self.decode_latent(h=h, k=self.k)
+        reconstructed_1, h_sparse_1 = self.decode_latent(h=h1, k=self.k)
 
-        return reconstructed, h, h_sparse
+        # --- Step 2: Calculate residual and perform second reconstruction ---
+        residual_1 = x - reconstructed_1.detach()
+        residual_1_centered = residual_1 - self.b_pre
+        h2 = self.encoder(residual_1_centered)
+        reconstructed_2, _ = self.decode_latent(h=h2, k=self.k)
+
+        # --- Step 3: Gated final reconstruction ---
+        reconstructed_final = reconstructed_1 + g * reconstructed_2
+
+        return reconstructed_final, h1, h_sparse_1, reconstructed_1, reconstructed_2, g
 
     def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
         """"""
