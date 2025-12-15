@@ -70,6 +70,7 @@ def train_epoch(
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+    individual_k_loss_accs = {k: torch.tensor(0.0, device=device) for k in model.module.k_values}
     log_interval = len(dataloader) // logs_per_epoch
     accumulated_loss_count = dist.get_world_size() * log_interval
 
@@ -88,10 +89,15 @@ def train_epoch(
 
         # Zero the gradients and perform forward pass
         optimizer.zero_grad()
-        reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+        reconstructions, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
 
         # Compute main loss in normalized space
-        loss = criterion(reconstructed, batch_normalized)
+        total_reconstruction_loss = 0
+        for k_val, recon_k in reconstructions.items():
+            loss_k = criterion(recon_k, batch_normalized)
+            total_reconstruction_loss += loss_k
+            individual_k_loss_accs[k_val] += loss_k.detach()
+        loss = total_reconstruction_loss
 
         # If enough latents haven't been activated in more than dead_steps_threshold training steps then calculate an
         # auxiliary loss to help reactivate the latents.
@@ -105,7 +111,8 @@ def train_epoch(
 
             # Compute auxiliary loss as MSE between residual and the aux reconstruction to make dead latents explain
             # what the main latents could not and thereby activate them again and make them useful again.
-            residual = batch_normalized - reconstructed.detach()
+            reconstructed_baseline = reconstructions[model.module.k]
+            residual = batch_normalized - reconstructed_baseline.detach()
             aux_loss = criterion(reconstructed_aux, residual)
         else:
             # If there are not enough dead latents to activate, set auxiliary loss to 0.
@@ -142,14 +149,22 @@ def train_epoch(
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
+            for k_val in individual_k_loss_accs:
+                dist.all_reduce(individual_k_loss_accs[k_val], op=dist.ReduceOp.SUM)
+
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
+            avg_individual_k_losses = {
+                k: v.item() / accumulated_loss_count for k, v in individual_k_loss_accs.items()
+            }
 
             # Reset log variables for next interval
-            loss_acc = torch.tensor(0.0, device=device)
-            aux_loss_acc = torch.tensor(0.0, device=device)
-            total_loss_acc = torch.tensor(0.0, device=device)
+            loss_acc.zero_()
+            aux_loss_acc.zero_()
+            total_loss_acc.zero_()
+            for k_val in individual_k_loss_accs:
+                individual_k_loss_accs[k_val].zero_()
 
             # Determine dead latent debug statistics
             dead_latents_ratio = dead_latents / dead_mask.numel()
@@ -158,15 +173,18 @@ def train_epoch(
 
             # Log to wandb and tqdm
             if rank == 0:
+                wandb_data = {
+                    "train/loss": avg_loss,
+                    "train/aux_loss": avg_aux_loss,
+                    "train/total_loss": avg_total_loss,
+                    "debug/dead_latents_ratio": dead_latents_ratio,
+                    "debug/max_dead_latent": max_dead_latent,
+                    "debug/max_dead_latent_count": max_dead_latent_count,
+                }
+                for k, v in avg_individual_k_losses.items():
+                    wandb_data[f"train/loss_k{k}"] = v
                 wandb.log(
-                    data={
-                        "train/loss": avg_loss,
-                        "train/aux_loss": avg_aux_loss,
-                        "train/total_loss": avg_total_loss,
-                        "debug/dead_latents_ratio": dead_latents_ratio,
-                        "debug/max_dead_latent": max_dead_latent,
-                        "debug/max_dead_latent_count": max_dead_latent_count,
-                    },
+                    data=wandb_data,
                     step=epoch * len(dataloader) + batch_idx + 1,
                 )
                 progress_bar.set_postfix(
@@ -193,7 +211,7 @@ def validate_epoch(
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
-) -> tuple[float, float, float]:
+) -> tuple[float, float, float, dict[int, float]]:
     """"""
     # Set the model to eval mode
     model.eval()
@@ -202,6 +220,7 @@ def validate_epoch(
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+    individual_k_loss_accs = {k: torch.tensor(0.0, device=device) for k in model.module.k_values}
 
     # Create epoch progress bar on main process
     if rank == 0:
@@ -218,10 +237,16 @@ def validate_epoch(
             batch_normalized, mean, norm = model.module.preprocess_input(batch)
 
             # Perform forward pass
-            reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+            reconstructions, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
 
-            # Compute main loss in normalized space
-            loss = criterion(reconstructed, batch_normalized)
+            # Compute main loss in normalized space (based on baseline k for comparability)
+            reconstructed_baseline = reconstructions[model.module.k]
+            loss = criterion(reconstructed_baseline, batch_normalized)
+
+            # Compute individual k losses for logging
+            for k_val, recon_k in reconstructions.items():
+                loss_k = criterion(recon_k, batch_normalized)
+                individual_k_loss_accs[k_val] += loss_k.detach()
 
             # Compute auxiliary loss if necessary
             dead_mask = latent_last_nonzero > dead_steps_threshold
@@ -229,7 +254,7 @@ def validate_epoch(
             if dead_latents >= k_aux:
                 h_masked = h * dead_mask
                 reconstructed_aux, _ = model.module.decode_latent(h=h_masked, k=k_aux)
-                residual = batch_normalized - reconstructed.detach()
+                residual = batch_normalized - reconstructed_baseline.detach()
                 aux_loss = criterion(reconstructed_aux, residual)
             else:
                 aux_loss = torch.tensor(0.0, device=device)
@@ -254,11 +279,16 @@ def validate_epoch(
     dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
+    for k_val in individual_k_loss_accs:
+        dist.all_reduce(individual_k_loss_accs[k_val], op=dist.ReduceOp.SUM)
     avg_loss = loss_acc.item() / (dist.get_world_size() * len(dataloader))
     avg_aux_loss = aux_loss_acc.item() / (dist.get_world_size() * len(dataloader))
     avg_total_loss = total_loss_acc.item() / (dist.get_world_size() * len(dataloader))
+    avg_individual_k_losses = {
+        k: v.item() / (dist.get_world_size() * len(dataloader)) for k, v in individual_k_loss_accs.items()
+    }
 
-    return avg_loss, avg_aux_loss, avg_total_loss
+    return avg_loss, avg_aux_loss, avg_total_loss, avg_individual_k_losses
 
 def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
     """清理旧的检查点，只保留最新的 N 个"""
@@ -367,7 +397,7 @@ def train_autoencoder(
         )
 
         # Validate an epoch
-        val_avg_loss, val_avg_aux_loss, val_avg_total_loss = validate_epoch(
+        val_avg_loss, val_avg_aux_loss, val_avg_total_loss, val_avg_individual_k_losses = validate_epoch(
             epoch=epoch,
             num_epochs=num_epochs,
             model=model,
@@ -388,13 +418,16 @@ def train_autoencoder(
 
         # Log metrics in wandb and console and save checkpoint
         if rank == 0:
+            wandb_data = {
+                "val/loss": val_avg_loss,
+                "val/aux_loss": val_avg_aux_loss,
+                "val/total_loss": val_avg_total_loss,
+                "learning_rate": updated_lr,
+            }
+            for k, v in val_avg_individual_k_losses.items():
+                wandb_data[f"val/loss_k{k}"] = v
             wandb.log(
-                data={
-                    "val/loss": val_avg_loss,
-                    "val/aux_loss": val_avg_aux_loss,
-                    "val/total_loss": val_avg_total_loss,
-                    "learning_rate": updated_lr,
-                },
+                data=wandb_data,
                 step=(epoch + 1) * len(train_dataloader),
             )
             logging.info(f"Epoch {epoch + 1}/{num_epochs}, Updated LR: {updated_lr:.2e}")
@@ -466,7 +499,8 @@ def main() -> None:
     # Set up configuration
     d_model = 3072
     n_latents = 2**16  # 65536
-    k = 64
+    k_values = [16, 32, 64, 128]
+    k = 64  # for wandb config logging
     k_aux = 2048
     aux_loss_coeff = 1 / 32
     dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
@@ -491,6 +525,7 @@ def main() -> None:
             config={
                 "d_model": d_model,
                 "n_latents": n_latents,
+                "k_values": k_values,
                 "k": k,
                 "k_aux": k_aux,
                 "aux_loss_coeff": aux_loss_coeff,
@@ -525,6 +560,7 @@ def main() -> None:
         logging.info("#### Configuration:")
         logging.info(f"# d_model={d_model}")
         logging.info(f"# n_latents={n_latents}")
+        logging.info(f"# k_values={k_values}")
         logging.info(f"# k={k}")
         logging.info(f"# k_aux={k_aux}")
         logging.info(f"# aux_loss_coeff={aux_loss_coeff}")
@@ -561,7 +597,7 @@ def main() -> None:
     model = TopKSparseAutoencoder(
         d_model=d_model,
         n_latents=n_latents,
-        k=k,
+        k_values=k_values,
         b_pre=b_pre,
         dtype=dtype,
         normalize_eps=sae_normalization_eps,

@@ -10,7 +10,7 @@ class TopKSparseAutoencoder(nn.Module):
         self,
         d_model: int,
         n_latents: int,
-        k: int,
+        k_values: list[int],
         b_pre: torch.Tensor,
         dtype: torch.dtype,
         normalize_eps: float = 1e-6,
@@ -19,7 +19,9 @@ class TopKSparseAutoencoder(nn.Module):
         super().__init__()
         self.d_model = d_model
         self.n_latents = n_latents
-        self.k = k
+        self.k_values = k_values
+        self.k = 64  # Use a fixed k for aux_loss and validation metric baseline
+        assert self.k in self.k_values, "The baseline k must be in k_values"
         self.dtype = dtype
         self.normalize_eps = normalize_eps
         self.h_bias = None
@@ -97,13 +99,13 @@ class TopKSparseAutoencoder(nn.Module):
     def forward_1d_normalized(
         self,
         x: torch.Tensor,
-    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+    ) -> tuple[dict[int, torch.Tensor], torch.Tensor, torch.Tensor]:
         """
         :param x: input tensor of shape (batch_size, d_model)
         """
         # Subtract pre-bias and encode input
-        x = x - self.b_pre
-        h = self.encoder(x)
+        x_centered = x - self.b_pre
+        h = self.encoder(x_centered)
 
         if self.h_bias is not None:
             # 获取最大的4个值及其索引
@@ -114,18 +116,22 @@ class TopKSparseAutoencoder(nn.Module):
                 for i in range(4):
                     latent_idx = top_indices[batch_idx, i].item()
                     value = top_values[batch_idx, i].item()
-                    logging.info(
-                        f"Top {i+1} value: h[{batch_idx}, {latent_idx}] = {value:.2f}"
-                    )
+                    logging.info(f"Top {i + 1} value: h[{batch_idx}, {latent_idx}] = {value:.2f}")
 
             h = h + self.h_bias
             non_zero_idx = torch.nonzero(self.h_bias).squeeze()
             logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
 
-        # Reconstruct input and latent representation with default k sparsity
-        reconstructed, h_sparse = self.decode_latent(h=h, k=self.k)
+        reconstructions = {}
+        # Reconstruct input for all k values
+        for k_val in self.k_values:
+            reconstructed_k, _ = self.decode_latent(h=h, k=k_val)
+            reconstructions[k_val] = reconstructed_k
 
-        return reconstructed, h, h_sparse
+        # Get sparse representation for baseline k for aux_loss calculation
+        _, h_sparse_baseline = self.decode_latent(h=h, k=self.k)
+
+        return reconstructions, h, h_sparse_baseline
 
     def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
         """"""
@@ -171,7 +177,7 @@ def load_sae_model(
     model = TopKSparseAutoencoder(
         d_model=d_model,
         n_latents=n_latents,
-        k=sae_top_k,
+        k_values=[sae_top_k],
         b_pre=b_pre,
         dtype=dtype,
         normalize_eps=sae_normalization_eps,
