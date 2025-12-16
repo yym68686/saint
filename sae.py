@@ -121,11 +121,11 @@ class TopKSparseAutoencoder(nn.Module):
         h1 = self.encoder1(x_minus_b_pre)
         reconstructed_1, h_sparse_1 = self.decode_latent(h=h1, k=self.k, decoder=self.decoder1, use_b_pre=True)
 
-        # --- Gating ---
-        g = torch.sigmoid(self.gate(x))
-
         # --- Stage 2 (Residual) ---
         residual_1 = x - reconstructed_1.detach()
+
+        # --- Gating ---
+        g = torch.sigmoid(self.gate(residual_1.detach()))
         h2 = self.encoder2(residual_1)
         reconstructed_2, h_sparse_2 = self.decode_latent(h=h2, k=self.k, decoder=self.decoder2, use_b_pre=False)
 
