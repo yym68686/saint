@@ -7,6 +7,7 @@ from pathlib import Path
 
 import torch
 import torch.distributed as dist
+import torch.nn.functional as F
 import wandb
 from torch import nn, optim
 from torch.nn.parallel import DistributedDataParallel
@@ -121,6 +122,17 @@ def train_epoch(
         optimizer.step()
         model.module.normalize_decoder_weights()
 
+        # ADD START
+        if model.module.is_archetypal:
+            coeffs = model.module.archetype_coeffs
+            probs = F.softmax(coeffs, dim=0)
+            # Add epsilon for numerical stability in log
+            entropy = -(probs * (probs + 1e-9).log()).sum(dim=0)
+            avg_entropy = entropy.mean().item()
+        else:
+            avg_entropy = 0.0
+        # ADD END
+
         # Accumulate losses
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
@@ -166,6 +178,7 @@ def train_epoch(
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
+                        "debug/archetype_entropy": avg_entropy,
                     },
                     step=epoch * len(dataloader) + batch_idx + 1,
                 )
@@ -468,6 +481,7 @@ def main() -> None:
     n_latents = 2**16  # 65536
     k = 64
     k_aux = 2048
+    n_centroids = 4096
     aux_loss_coeff = 1 / 32
     dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
     sae_normalization_eps = 1e-6
@@ -491,6 +505,7 @@ def main() -> None:
             config={
                 "d_model": d_model,
                 "n_latents": n_latents,
+                "n_centroids": n_centroids,
                 "k": k,
                 "k_aux": k_aux,
                 "aux_loss_coeff": aux_loss_coeff,
@@ -556,6 +571,19 @@ def main() -> None:
     assert b_pre.shape == (d_model,), \
         f"b_pre shape mismatch. Expected {(d_model,)}, got {b_pre.shape}"
 
+    # Load centroids
+    centroids_path = Path("/root/saint/sae_centroids.pt")
+    if not centroids_path.exists():
+        if rank == 0:
+            logging.error(f"Centroids file not found at {centroids_path}. Please run compute_centroids.py first.")
+        raise FileNotFoundError(f"Centroids file not found at {centroids_path}")
+    if rank == 0:
+        logging.info(f"Loading centroids from {centroids_path}...")
+    centroids = torch.load(centroids_path, weights_only=True)
+    assert centroids.shape == (n_centroids, d_model), \
+        f"Centroids shape mismatch. Expected {(n_centroids, d_model)}, got {centroids.shape}"
+
+
     # Initialize the model
     logging.info("Initializing Sparse Autoencoder model...")
     model = TopKSparseAutoencoder(
@@ -565,6 +593,7 @@ def main() -> None:
         b_pre=b_pre,
         dtype=dtype,
         normalize_eps=sae_normalization_eps,
+        centroids=centroids,
     )
     if args.model_load_path:
         logging.info("Loading model weights from checkpoint...")

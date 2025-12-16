@@ -3,6 +3,7 @@ from pathlib import Path
 
 import torch
 from torch import nn
+import torch.nn.functional as F
 
 
 class TopKSparseAutoencoder(nn.Module):
@@ -14,6 +15,7 @@ class TopKSparseAutoencoder(nn.Module):
         b_pre: torch.Tensor,
         dtype: torch.dtype,
         normalize_eps: float = 1e-6,
+        centroids: torch.Tensor = None,
     ):
         """"""
         super().__init__()
@@ -23,35 +25,48 @@ class TopKSparseAutoencoder(nn.Module):
         self.dtype = dtype
         self.normalize_eps = normalize_eps
         self.h_bias = None
+        self.is_archetypal = centroids is not None
 
         # Initialize training data mean (or median) as shared trainable pre-bias Parameter for encoder and decoder
         self.b_pre = nn.Parameter(b_pre.to(dtype), requires_grad=True)
 
-        # Initialize encoder and decoder. The encoder has an additional bias term b_enc in addition to b_pre in the
-        # forward pass, whereas the decoder does not have a bias term.
+        # Initialize encoder.
         self.encoder = nn.Linear(d_model, n_latents, bias=True, dtype=dtype)
-        self.decoder = nn.Linear(n_latents, d_model, bias=False, dtype=dtype)
-
-        # Use orthogonal initialization for encoder to ensure well-distributed, independent directions and copy
-        # the transposed encoder weights to decoder weights to ensure parallel initialization as per paper.
+        # Use orthogonal initialization for encoder
         nn.init.orthogonal_(self.encoder.weight)
-        with torch.no_grad():
-            self.decoder.weight.copy_(self.encoder.weight.t())
 
-        self.normalize_decoder_weights()
+        # Initialize decoder based on whether it's archetypal or not.
+        if self.is_archetypal:
+            n_centroids = centroids.shape[0]
+            # Store centroids as (d_model, n_centroids) for easier matrix multiplication
+            self.register_buffer("centroids", centroids.to(dtype).t())
+            self.archetype_coeffs = nn.Parameter(torch.randn(n_centroids, n_latents, dtype=dtype))
+            self.decoder = None  # No persistent decoder module
+        else:
+            self.decoder = nn.Linear(n_latents, d_model, bias=False, dtype=dtype)
+            # copy the transposed encoder weights to decoder weights to ensure parallel initialization as per paper.
+            with torch.no_grad():
+                self.decoder.weight.copy_(self.encoder.weight.t())
+            self.normalize_decoder_weights()
 
     def normalize_decoder_weights(self) -> None:
         """Normalize the decoder weights to unit norm for each latent (corresponding to decoder columns)."""
+        if self.is_archetypal:
+            return
         with torch.no_grad():
-            self.decoder.weight.div_(self.decoder.weight.norm(dim=1, keepdim=True))
+            if self.decoder is not None:
+                self.decoder.weight.div_(self.decoder.weight.norm(dim=1, keepdim=True))
 
     def project_decoder_grads(self):
         """Project out gradient information parallel to dict vectors."""
+        if self.is_archetypal:
+            return
         with torch.no_grad():
-            # Compute dot product of decoder weights and their grads, then subtract the projection from the grads
-            # in place to save memory
-            proj = torch.sum(self.decoder.weight * self.decoder.weight.grad, dim=1, keepdim=True)
-            self.decoder.weight.grad.sub_(proj * self.decoder.weight)
+            if self.decoder is not None and self.decoder.weight.grad is not None:
+                # Compute dot product of decoder weights and their grads, then subtract the projection from the grads
+                # in place to save memory
+                proj = torch.sum(self.decoder.weight * self.decoder.weight.grad, dim=1, keepdim=True)
+                self.decoder.weight.grad.sub_(proj * self.decoder.weight)
 
     def preprocess_input(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
         """Preprocess input by converting to model dtype, centering and normalizing."""
@@ -135,7 +150,16 @@ class TopKSparseAutoencoder(nn.Module):
         h_sparse = torch.zeros_like(h).scatter_(1, topk_indices, topk_values)
 
         # Decode h_sparse and add pre-bias
-        reconstructed = self.decoder(h_sparse) + self.b_pre
+        if self.is_archetypal:
+            softmax_coeffs = F.softmax(self.archetype_coeffs, dim=0)
+            # self.centroids is (d_model, n_centroids)
+            # softmax_coeffs is (n_centroids, n_latents)
+            # decoder_weights becomes (d_model, n_latents)
+            decoder_weights = self.centroids @ softmax_coeffs
+            # F.linear expects the weight matrix (d_model, n_latents) and performs h_sparse @ W.T internally.
+            reconstructed = F.linear(h_sparse, decoder_weights) + self.b_pre
+        else:
+            reconstructed = self.decoder(h_sparse) + self.b_pre
 
         return reconstructed, h_sparse
 
