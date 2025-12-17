@@ -45,7 +45,7 @@ class TopKSparseAutoencoder(nn.Module):
         self.gate = nn.Sequential(
             nn.Linear(d_model, 256),
             nn.ReLU(),
-            nn.Linear(256, 1)
+            nn.Linear(256, self.d_model)
         ).to(dtype)
 
         self.normalize_decoder_weights()
@@ -100,7 +100,7 @@ class TopKSparseAutoencoder(nn.Module):
         x = x.reshape(-1, d_model)
 
         # Forward pass through model in normalized space
-        normalized_recon, h, _ = self.forward_1d_normalized(x)
+        normalized_recon, h, _, _, _, _ = self.forward_1d_normalized(x)
 
         # Reshape back to (batch_size, seq_len, d_model)
         normalized_recon = normalized_recon.reshape(batch_size, seq_len, -1)
@@ -180,7 +180,7 @@ def load_sae_model(
     )
     b_pre = state_dict["b_pre"]
     d_model = b_pre.shape[0]
-    n_latents = state_dict["encoder.weight"].shape[0]
+    n_latents = state_dict["encoder1.weight"].shape[0]
 
     logging.info("Initializing TopK SAE model and loading state dict...")
     model = TopKSparseAutoencoder(
