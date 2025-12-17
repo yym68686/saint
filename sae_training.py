@@ -55,6 +55,7 @@ def train_epoch(
     optimizer: optim.AdamW,
     k_aux: int,
     aux_loss_coeff: float,
+    lambda_norm_penalty: float,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     logs_per_epoch: int,
@@ -70,6 +71,7 @@ def train_epoch(
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+    perturbation_loss_acc = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
     accumulated_loss_count = dist.get_world_size() * log_interval
 
@@ -111,20 +113,24 @@ def train_epoch(
             # If there are not enough dead latents to activate, set auxiliary loss to 0.
             aux_loss = torch.tensor(0.0, device=device)
 
-        # Compute total loss with auxiliary loss coefficient
-        total_loss = loss + aux_loss_coeff * aux_loss
+        # Compute total loss with auxiliary loss coefficient and RA-SAE penalty
+        perturbation_loss = torch.tensor(0.0, device=device)
+        perturbation_norm = torch.tensor(0.0, device=device)
+        if model.module.is_archetypal:
+            perturbation_norm = torch.norm(model.module.perturbation_matrix, p="fro")
+            perturbation_loss = lambda_norm_penalty * (perturbation_norm**2)
 
-        # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
-        # and normalize the decoder weights again.
+        total_loss = loss + aux_loss_coeff * aux_loss + perturbation_loss
+
+        # Perform backward pass, then step the optimizer
         total_loss.backward()
-        model.module.project_decoder_grads()
         optimizer.step()
-        model.module.normalize_decoder_weights()
 
         # Accumulate losses
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
         total_loss_acc += total_loss.detach()
+        perturbation_loss_acc += perturbation_loss.detach()
 
         # Update the progress bar on main process
         if rank == 0:
@@ -142,14 +148,17 @@ def train_epoch(
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(perturbation_loss_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
+            avg_perturbation_loss = perturbation_loss_acc.item() / accumulated_loss_count
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
+            perturbation_loss_acc = torch.tensor(0.0, device=device)
 
             # Determine dead latent debug statistics
             dead_latents_ratio = dead_latents / dead_mask.numel()
@@ -163,6 +172,8 @@ def train_epoch(
                         "train/loss": avg_loss,
                         "train/aux_loss": avg_aux_loss,
                         "train/total_loss": avg_total_loss,
+                        "train/perturbation_loss": avg_perturbation_loss,
+                        "debug/perturbation_norm": perturbation_norm.item(),
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
@@ -188,12 +199,13 @@ def validate_epoch(
     criterion: nn.MSELoss,
     k_aux: int,
     aux_loss_coeff: float,
+    lambda_norm_penalty: float,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
-) -> tuple[float, float, float]:
+) -> tuple[float, float, float, float, float]:
     """"""
     # Set the model to eval mode
     model.eval()
@@ -202,6 +214,8 @@ def validate_epoch(
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+    perturbation_loss_acc = torch.tensor(0.0, device=device)
+    latest_perturbation_norm = torch.tensor(0.0, device=device)
 
     # Create epoch progress bar on main process
     if rank == 0:
@@ -234,13 +248,19 @@ def validate_epoch(
             else:
                 aux_loss = torch.tensor(0.0, device=device)
 
-            # Compute total loss with auxiliary loss coefficient
-            total_loss = loss + aux_loss_coeff * aux_loss
+            # Compute total loss with auxiliary loss coefficient and RA-SAE penalty
+            perturbation_loss = torch.tensor(0.0, device=device)
+            if model.module.is_archetypal:
+                latest_perturbation_norm = torch.norm(model.module.perturbation_matrix, p="fro")
+                perturbation_loss = lambda_norm_penalty * (latest_perturbation_norm**2)
+
+            total_loss = loss + aux_loss_coeff * aux_loss + perturbation_loss
 
             # Accumulate losses
             loss_acc += loss.detach()
             aux_loss_acc += aux_loss.detach()
             total_loss_acc += total_loss.detach()
+            perturbation_loss_acc += perturbation_loss.detach()
 
             # Update the progress bar on main process
             if rank == 0:
@@ -254,11 +274,13 @@ def validate_epoch(
     dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
+    dist.all_reduce(perturbation_loss_acc, op=dist.ReduceOp.SUM)
     avg_loss = loss_acc.item() / (dist.get_world_size() * len(dataloader))
     avg_aux_loss = aux_loss_acc.item() / (dist.get_world_size() * len(dataloader))
     avg_total_loss = total_loss_acc.item() / (dist.get_world_size() * len(dataloader))
+    avg_perturbation_loss = perturbation_loss_acc.item() / (dist.get_world_size() * len(dataloader))
 
-    return avg_loss, avg_aux_loss, avg_total_loss
+    return avg_loss, avg_aux_loss, avg_total_loss, avg_perturbation_loss, latest_perturbation_norm.item()
 
 def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
     """清理旧的检查点，只保留最新的 N 个"""
@@ -289,6 +311,7 @@ def train_autoencoder(
     optimizer_eps: float,
     k_aux: int,
     aux_loss_coeff: float,
+    lambda_norm_penalty: float,
     dead_steps_threshold: int,
     logs_per_epoch: int,
     checkpoint_dir: Path,
@@ -358,6 +381,7 @@ def train_autoencoder(
             optimizer=optimizer,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
+            lambda_norm_penalty=lambda_norm_penalty,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             logs_per_epoch=logs_per_epoch,
@@ -367,7 +391,7 @@ def train_autoencoder(
         )
 
         # Validate an epoch
-        val_avg_loss, val_avg_aux_loss, val_avg_total_loss = validate_epoch(
+        val_avg_loss, val_avg_aux_loss, val_avg_total_loss, val_avg_perturbation_loss, val_perturbation_norm = validate_epoch(
             epoch=epoch,
             num_epochs=num_epochs,
             model=model,
@@ -375,6 +399,7 @@ def train_autoencoder(
             criterion=criterion,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
+            lambda_norm_penalty=lambda_norm_penalty,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             dtype=dtype,
@@ -393,6 +418,8 @@ def train_autoencoder(
                     "val/loss": val_avg_loss,
                     "val/aux_loss": val_avg_aux_loss,
                     "val/total_loss": val_avg_total_loss,
+                    "val/perturbation_loss": val_avg_perturbation_loss,
+                    "val/perturbation_norm": val_perturbation_norm,
                     "learning_rate": updated_lr,
                 },
                 step=(epoch + 1) * len(train_dataloader),
@@ -432,6 +459,7 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("--b_pre_path", type=Path, required=True)
     parser.add_argument("--model_save_path", type=Path, required=True)
     parser.add_argument("--model_load_path", type=Path, default=None)
+    parser.add_argument("--centroids_path", type=Path, default=None, help="Path to pre-computed centroids for RA-SAE.")
     parser.add_argument("--batch_size", type=int, default=1024)
     parser.add_argument("--checkpoint_dir", type=Path, default=Path("sae_checkpoints"))
     return parser.parse_args()
@@ -462,6 +490,8 @@ def main() -> None:
     args.checkpoint_dir = args.checkpoint_dir.resolve()
     if args.model_load_path:
         args.model_load_path = args.model_load_path.resolve()
+    if args.centroids_path:
+        args.centroids_path = args.centroids_path.resolve()
 
     # Set up configuration
     d_model = 3072
@@ -482,6 +512,7 @@ def main() -> None:
     dataloader_num_workers = 8
     logs_per_epoch = 100
     train_val_split = 0.95
+    lambda_norm_penalty = 1e-4  # For RA-SAE
 
     if rank == 0:
         logging.info("Logging into and initializing wandb...")
@@ -494,6 +525,7 @@ def main() -> None:
                 "k": k,
                 "k_aux": k_aux,
                 "aux_loss_coeff": aux_loss_coeff,
+                "lambda_norm_penalty": lambda_norm_penalty,
                 "dead_steps_threshold": dead_steps_threshold,
                 "sae_normalization_eps": sae_normalization_eps,
                 "batch_size": batch_size,
@@ -517,6 +549,7 @@ def main() -> None:
         logging.info(f"# b_pre_path={args.b_pre_path}")
         logging.info(f"# model_save_path={args.model_save_path}")
         logging.info(f"# model_load_path={args.model_load_path}")
+        logging.info(f"# centroids_path={args.centroids_path}")
         logging.info(f"# checkpoint_dir={args.checkpoint_dir}")
         logging.info("#### Distributed Configuration:")
         logging.info(f"# world_size={world_size}")
@@ -528,6 +561,7 @@ def main() -> None:
         logging.info(f"# k={k}")
         logging.info(f"# k_aux={k_aux}")
         logging.info(f"# aux_loss_coeff={aux_loss_coeff}")
+        logging.info(f"# lambda_norm_penalty={lambda_norm_penalty}")
         logging.info(f"# dead_steps_threshold={dead_steps_threshold}")
         logging.info(f"# sae_normalization_eps={sae_normalization_eps}")
         logging.info(f"# batch_size={batch_size}")
@@ -556,6 +590,14 @@ def main() -> None:
     assert b_pre.shape == (d_model,), \
         f"b_pre shape mismatch. Expected {(d_model,)}, got {b_pre.shape}"
 
+    # Load centroids if path is provided
+    centroids = None
+    if args.centroids_path:
+        logging.info(f"Loading pre-computed centroids from {args.centroids_path}...")
+        centroids = torch.load(args.centroids_path, weights_only=True)
+        # centroids are (n_centroids, d_model), but model expects (d_model, n_centroids)
+        centroids = centroids.t()
+
     # Initialize the model
     logging.info("Initializing Sparse Autoencoder model...")
     model = TopKSparseAutoencoder(
@@ -565,6 +607,7 @@ def main() -> None:
         b_pre=b_pre,
         dtype=dtype,
         normalize_eps=sae_normalization_eps,
+        centroids=centroids,
     )
     if args.model_load_path:
         logging.info("Loading model weights from checkpoint...")
@@ -643,6 +686,7 @@ def main() -> None:
         optimizer_eps=optimizer_eps,
         k_aux=k_aux,
         aux_loss_coeff=aux_loss_coeff,
+        lambda_norm_penalty=lambda_norm_penalty,
         dead_steps_threshold=dead_steps_threshold,
         logs_per_epoch=logs_per_epoch,
         checkpoint_dir=args.checkpoint_dir,

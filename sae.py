@@ -3,6 +3,7 @@ from pathlib import Path
 
 import torch
 from torch import nn
+import torch.nn.functional as F
 
 
 class TopKSparseAutoencoder(nn.Module):
@@ -14,6 +15,7 @@ class TopKSparseAutoencoder(nn.Module):
         b_pre: torch.Tensor,
         dtype: torch.dtype,
         normalize_eps: float = 1e-6,
+        centroids: torch.Tensor = None,  # Add centroids for RA-SAE
     ):
         """"""
         super().__init__()
@@ -23,30 +25,42 @@ class TopKSparseAutoencoder(nn.Module):
         self.dtype = dtype
         self.normalize_eps = normalize_eps
         self.h_bias = None
+        self.is_archetypal = centroids is not None
 
         # Initialize training data mean (or median) as shared trainable pre-bias Parameter for encoder and decoder
         self.b_pre = nn.Parameter(b_pre.to(dtype), requires_grad=True)
 
-        # Initialize encoder and decoder. The encoder has an additional bias term b_enc in addition to b_pre in the
-        # forward pass, whereas the decoder does not have a bias term.
+        # Initialize encoder.
         self.encoder = nn.Linear(d_model, n_latents, bias=True, dtype=dtype)
-        self.decoder = nn.Linear(n_latents, d_model, bias=False, dtype=dtype)
-
-        # Use orthogonal initialization for encoder to ensure well-distributed, independent directions and copy
-        # the transposed encoder weights to decoder weights to ensure parallel initialization as per paper.
         nn.init.orthogonal_(self.encoder.weight)
-        with torch.no_grad():
-            self.decoder.weight.copy_(self.encoder.weight.t())
 
-        self.normalize_decoder_weights()
+        if self.is_archetypal:
+            # RA-SAE specific parameters
+            n_centroids = centroids.shape[1]
+            self.register_buffer("centroids", centroids.to(dtype)) # (d_model, n_centroids)
+            self.archetype_coeffs = nn.Parameter(torch.randn(n_centroids, self.n_latents, dtype=dtype))
+            self.perturbation_matrix = nn.Parameter(torch.zeros(d_model, self.n_latents, dtype=dtype))
+        else:
+            # Standard SAE decoder
+            self.decoder = nn.Linear(n_latents, d_model, bias=False, dtype=dtype)
+            with torch.no_grad():
+                self.decoder.weight.copy_(self.encoder.weight.t())
+            self.normalize_decoder_weights()
+
 
     def normalize_decoder_weights(self) -> None:
         """Normalize the decoder weights to unit norm for each latent (corresponding to decoder columns)."""
+        if self.is_archetypal:
+            # This method is not applicable for archetypal SAEs
+            return
         with torch.no_grad():
             self.decoder.weight.div_(self.decoder.weight.norm(dim=1, keepdim=True))
 
     def project_decoder_grads(self):
         """Project out gradient information parallel to dict vectors."""
+        if self.is_archetypal:
+            # This method is not applicable for archetypal SAEs
+            return
         with torch.no_grad():
             # Compute dot product of decoder weights and their grads, then subtract the projection from the grads
             # in place to save memory
@@ -131,11 +145,17 @@ class TopKSparseAutoencoder(nn.Module):
         """"""
         # Apply TopK activation, Relu to guarantee positive topk vals and then build sparse representation
         h = torch.relu(h)
-        topk_values, topk_indices = torch.topk(h, k=k, dim=-1)
-        h_sparse = torch.zeros_like(h).scatter_(1, topk_indices, topk_values)
+        topk_values, top_indices = torch.topk(h, k=k, dim=-1)
+        h_sparse = torch.zeros_like(h).scatter_(1, top_indices, topk_values)
 
         # Decode h_sparse and add pre-bias
-        reconstructed = self.decoder(h_sparse) + self.b_pre
+        if self.is_archetypal:
+            # Dynamically construct the decoder weights for RA-SAE
+            softmax_archetype_coeffs = F.softmax(self.archetype_coeffs, dim=0)
+            decoder_weights = (self.centroids @ softmax_archetype_coeffs) + self.perturbation_matrix
+            reconstructed = F.linear(h_sparse, decoder_weights) + self.b_pre
+        else:
+            reconstructed = self.decoder(h_sparse) + self.b_pre
 
         return reconstructed, h_sparse
 
@@ -167,6 +187,10 @@ def load_sae_model(
     d_model = b_pre.shape[0]
     n_latents = state_dict["encoder.weight"].shape[0]
 
+    # For RA-SAE, centroids are not in the state_dict, so we can't load it directly this way
+    # This function will need to be adapted or bypassed if loading an RA-SAE model.
+    # For now, it will fail if `centroids` are needed.
+
     logging.info("Initializing TopK SAE model and loading state dict...")
     model = TopKSparseAutoencoder(
         d_model=d_model,
@@ -176,7 +200,7 @@ def load_sae_model(
         dtype=dtype,
         normalize_eps=sae_normalization_eps,
     )
-    model.load_state_dict(state_dict)
+    model.load_state_dict(state_dict, strict=False) # Use strict=False to handle missing decoder/archetypal params
     del state_dict
 
     logging.info(f"Moving model to device {device} and setting to eval mode...")
