@@ -98,7 +98,7 @@ def capture_top_activating_sentences(
         # Forward pass through the model
         batch_normalized, mean, norm = model.preprocess_input(batch)
         with torch.no_grad():
-            _, _, h_sparse = model.forward_1d_normalized(batch_normalized)
+            reconstructed_final, h, h_sparse, reconstructed_1, reconstructed_2, g = model.forward_1d_normalized(batch_normalized)
 
         # Unbatch the h_sparse tensor into sequences using the predetermined boundaries
         sequence_h_sparse = []
