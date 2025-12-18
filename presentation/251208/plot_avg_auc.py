@@ -16,7 +16,7 @@ def get_architecture_auc(base_dir, feature_key, arch_name):
 
     # Try to find the directory for the architecture
     try:
-        arch_dir = next(feature_dir.glob(f"{arch_name}-l11-f*"))
+        arch_dir = next(feature_dir.glob(f"{arch_name}-l*"))
     except StopIteration:
         return None
 
@@ -40,7 +40,7 @@ def plot_average_auc(architectures=None):
 
     # Configuration
     if architectures is None:
-        architectures = ['topk', 'dense', 'batchtopk', 'relu', 'jumprelu', 'gatedsae']
+        architectures = ['topk', 'dense', 'sigreg', 'batchtopk', 'relu', 'jumprelu', 'gatedsae']
 
     # Handle directory search
     base_dir_candidates = [Path("ablation_datasets-dense"), Path("ablation_datasets")]
@@ -148,7 +148,7 @@ if __name__ == "__main__":
     # Default list excluding 'topk' initially to match current environment status
     # but keeping the full structure logic available
     # python3 presentation/251208/plot_avg_auc.py
-    default_archs = ['dense', 'batchtopk', 'relu', 'jumprelu', 'gatedsae']
+    default_archs = ['dense', 'sigreg', 'batchtopk', 'relu', 'jumprelu', 'gatedsae']
 
     parser = argparse.ArgumentParser(description="Plot average AUC for multiple architectures.")
     parser.add_argument('--archs', nargs='+', default=default_archs,

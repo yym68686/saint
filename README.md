@@ -531,7 +531,7 @@ SAE_ARCHITECTURE=dense python compare_feature_activation_between_datasets.py --l
 
 # batchtopk-l11-fxxx 含有某号特征的句子，下面的命令只需要改 feature_index,control_target_dir,output_path
 SAE_ARCHITECTURE=batchtopk python compare_feature_activation_between_datasets.py --llama_model_dir ./llama_3.2-3B_model/original --sae_model_path ./trained_sae-batchtopk-l11.pt --sae_layer_idx 11 --feature_index 59639 --control_target_dir ./ablation_datasets/photo_captions --output_path ./ablation_datasets/photo_captions/batchtopk-l11-f59639/feature_activation_summary.json --save_per_sample
-SAE_ARCHITECTURE=relu python compare_feature_activation_between_datasets.py --llama_model_dir ./llama_3.2-3B_model/original --sae_model_path ./trained_sae-relu-l11.pt --sae_layer_idx 11 --feature_index 2188 --control_target_dir ./ablation_datasets-dense/football --output_path ./ablation_datasets-dense/football/relu-l11-f2188/feature_activation_summary.json --save_per_sample
+SAE_ARCHITECTURE=sigreg python compare_feature_activation_between_datasets.py --llama_model_dir ./llama_3.2-3B_model/original --sae_model_path ./trained_sae-sigreg-l22.pt --sae_layer_idx 22 --feature_index 12116 --control_target_dir ./ablation_datasets-dense/female_subjects --output_path ./ablation_datasets-dense/female_subjects/sigreg-l22-f12116/feature_activation_summary.json --save_per_sample
 ```
 
 ## codebook

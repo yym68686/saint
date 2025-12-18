@@ -1,0 +1,1075 @@
+group,index,text,agg,val
+target,0,Check her out!,mean,11.311986923217773
+target,0,Check her out!,max,28.82210350036621
+target,0,Check her out!,last,0.0
+target,1,She does not.,mean,26.06879997253418
+target,1,She does not.,max,43.865726470947266
+target,1,She does not.,last,15.432097434997559
+target,2,She too died.,mean,23.702180862426758
+target,2,She too died.,max,43.865726470947266
+target,2,She too died.,last,14.38121223449707
+target,3,She looks concerned.,mean,25.595067977905273
+target,3,She looks concerned.,max,43.865726470947266
+target,3,She looks concerned.,last,21.959070205688477
+target,4,She is cunning.,mean,20.38343048095703
+target,4,She is cunning.,max,43.865726470947266
+target,4,She is cunning.,last,16.583194732666016
+target,5,Now she has indicated that she will support Trump.,mean,19.89999771118164
+target,5,Now she has indicated that she will support Trump.,max,54.207401275634766
+target,5,Now she has indicated that she will support Trump.,last,8.457551002502441
+target,6,She started screaming.,mean,25.982675552368164
+target,6,She started screaming.,max,43.865726470947266
+target,6,She started screaming.,last,16.528596878051758
+target,7,and she could not have been more right!,mean,19.049596786499023
+target,7,and she could not have been more right!,max,62.73717498779297
+target,7,and she could not have been more right!,last,0.0
+target,8,she asked.,mean,23.130935668945312
+target,8,she asked.,max,44.140987396240234
+target,8,she asked.,last,10.06895923614502
+target,9,she asked.,mean,23.130935668945312
+target,9,she asked.,max,44.140987396240234
+target,9,she asked.,last,10.06895923614502
+target,10,And she’s Dutch.,mean,16.710086822509766
+target,10,And she’s Dutch.,max,53.5935173034668
+target,10,And she’s Dutch.,last,12.096887588500977
+target,11,She screamed.,mean,22.787845611572266
+target,11,She screamed.,max,43.865726470947266
+target,11,She screamed.,last,17.20848846435547
+target,12,She’s a marine biologist.,mean,15.547289848327637
+target,12,She’s a marine biologist.,max,43.865726470947266
+target,12,She’s a marine biologist.,last,12.413270950317383
+target,13,She too turned around.,mean,27.980636596679688
+target,13,She too turned around.,max,43.865726470947266
+target,13,She too turned around.,last,27.75547218322754
+target,14,“ She's everywhere and she's nowhere.,mean,16.18515396118164
+target,14,“ She's everywhere and she's nowhere.,max,50.06800842285156
+target,14,“ She's everywhere and she's nowhere.,last,11.532432556152344
+target,15,She’s a fantastic teacher.,mean,17.311389923095703
+target,15,She’s a fantastic teacher.,max,43.865726470947266
+target,15,She’s a fantastic teacher.,last,9.220735549926758
+target,16,She was a teenage girl.,mean,17.121402740478516
+target,16,She was a teenage girl.,max,43.865726470947266
+target,16,She was a teenage girl.,last,19.113513946533203
+target,17,She was not hurt.,mean,21.109914779663086
+target,17,She was not hurt.,max,43.865726470947266
+target,17,She was not hurt.,last,17.95250701904297
+target,18,She refused.,mean,22.742069244384766
+target,18,She refused.,max,43.865726470947266
+target,18,She refused.,last,18.46558380126953
+target,19,She could certainly have been a woman just like me.,mean,19.221717834472656
+target,19,She could certainly have been a woman just like me.,max,43.93913269042969
+target,19,She could certainly have been a woman just like me.,last,12.884900093078613
+target,20,She shook her head.,mean,27.30828857421875
+target,20,She shook her head.,max,43.979736328125
+target,20,She shook her head.,last,26.659046173095703
+target,21,"She cried, smiling.",mean,28.106229782104492
+target,21,"She cried, smiling.",max,43.865726470947266
+target,21,"She cried, smiling.",last,20.635662078857422
+target,22,She was done.,mean,21.07343864440918
+target,22,She was done.,max,43.865726470947266
+target,22,She was done.,last,17.144758224487305
+target,23,Anna continued.,mean,16.010494232177734
+target,23,Anna continued.,max,40.06106185913086
+target,23,Anna continued.,last,23.980918884277344
+target,24,Her fav.,mean,12.037629127502441
+target,24,Her fav.,max,19.252168655395508
+target,24,Her fav.,last,14.411998748779297
+target,25,"But unfortunately she is in terrible fear.""",mean,16.62558937072754
+target,25,"But unfortunately she is in terrible fear.""",max,48.92173385620117
+target,25,"But unfortunately she is in terrible fear.""",last,0.0
+target,26,She was not quite right.',mean,18.38525390625
+target,26,She was not quite right.',max,43.865726470947266
+target,26,She was not quite right.',last,8.282249450683594
+target,27,"She was untrained, destructive.",mean,20.371313095092773
+target,27,"She was untrained, destructive.",max,43.865726470947266
+target,27,"She was untrained, destructive.",last,15.305989265441895
+target,28,Then she started drinking.,mean,19.968420028686523
+target,28,Then she started drinking.,max,43.75566482543945
+target,28,Then she started drinking.,last,17.408615112304688
+target,29,She was a reluctant scholar.,mean,18.695903778076172
+target,29,She was a reluctant scholar.,max,43.865726470947266
+target,29,She was a reluctant scholar.,last,15.651174545288086
+target,30,"""She was a wild child.",mean,20.622968673706055
+target,30,"""She was a wild child.",max,47.7360954284668
+target,30,"""She was a wild child.",last,21.06521224975586
+target,31,"“She has changed our lives,” she says.",mean,19.53987693786621
+target,31,"“She has changed our lives,” she says.",max,45.574440002441406
+target,31,"“She has changed our lives,” she says.",last,8.20226764678955
+target,32,"“Oh, but she’s quite muddy,” Mrs.",mean,8.937278747558594
+target,32,"“Oh, but she’s quite muddy,” Mrs.",max,46.83284378051758
+target,32,"“Oh, but she’s quite muddy,” Mrs.",last,0.0
+target,33,I think she would laugh.,mean,16.66799545288086
+target,33,I think she would laugh.,max,44.89167022705078
+target,33,I think she would laugh.,last,10.214765548706055
+target,34,Her interpretation.,mean,13.915971755981445
+target,34,Her interpretation.,max,22.170297622680664
+target,34,Her interpretation.,last,14.24142074584961
+target,35,And she still maintains her pride and hard headed nature.,mean,23.218425750732422
+target,35,And she still maintains her pride and hard headed nature.,max,53.5273551940918
+target,35,And she still maintains her pride and hard headed nature.,last,12.927594184875488
+target,36,Becky is cute.,mean,7.7267680168151855
+target,36,Becky is cute.,max,20.884082794189453
+target,36,Becky is cute.,last,14.299918174743652
+target,37,"She's already here, sire.",mean,16.114418029785156
+target,37,"She's already here, sire.",max,43.865726470947266
+target,37,"She's already here, sire.",last,0.0
+target,38,"Heather pauses and then adds, ""She's a wonderful nurse.""",mean,17.65363311767578
+target,38,"Heather pauses and then adds, ""She's a wonderful nurse.""",max,47.88640213012695
+target,38,"Heather pauses and then adds, ""She's a wonderful nurse.""",last,8.286365509033203
+target,39,Vanessa!,mean,0.0
+target,39,Vanessa!,max,0.0
+target,39,Vanessa!,last,0.0
+target,40,She couldn’t let herself get distracted.,mean,18.534725189208984
+target,40,She couldn’t let herself get distracted.,max,43.865726470947266
+target,40,She couldn’t let herself get distracted.,last,14.032711029052734
+target,41,"""Elsa?",mean,0.0
+target,41,"""Elsa?",max,0.0
+target,41,"""Elsa?",last,0.0
+target,42,She's trying to hold your hand!,mean,18.50299835205078
+target,42,She's trying to hold your hand!,max,43.865726470947266
+target,42,She's trying to hold your hand!,last,0.0
+target,43,“And she sleeps with him.,mean,17.21967887878418
+target,43,“And she sleeps with him.,max,50.47401809692383
+target,43,“And she sleeps with him.,last,9.661246299743652
+target,44,That’s her right.,mean,11.673667907714844
+target,44,That’s her right.,max,36.09194564819336
+target,44,That’s her right.,last,13.70155143737793
+target,45,She wants a gun.,mean,18.11197280883789
+target,45,She wants a gun.,max,43.865726470947266
+target,45,She wants a gun.,last,11.693279266357422
+target,46,She is more vocal with her scolding of Harold than her husband.,mean,16.293996810913086
+target,46,She is more vocal with her scolding of Harold than her husband.,max,43.93913269042969
+target,46,She is more vocal with her scolding of Harold than her husband.,last,0.0
+target,47,“She talks about gun control.,mean,20.887914657592773
+target,47,“She talks about gun control.,max,45.574440002441406
+target,47,“She talks about gun control.,last,12.940229415893555
+target,48,"She’s Laura (Johnson), a not especially pretty housewife.",mean,10.615655899047852
+target,48,"She’s Laura (Johnson), a not especially pretty housewife.",max,43.93913269042969
+target,48,"She’s Laura (Johnson), a not especially pretty housewife.",last,17.520544052124023
+target,49,Anna slumped.,mean,12.239518165588379
+target,49,Anna slumped.,max,33.97621154785156
+target,49,Anna slumped.,last,27.221378326416016
+target,50,She may even have a little bit more game than I do.,mean,17.89012336730957
+target,50,She may even have a little bit more game than I do.,max,43.93913269042969
+target,50,She may even have a little bit more game than I do.,last,0.0
+target,51,"Whatever-she-is, she turned around and faced myself, tossing the tissues aside.",mean,20.897727966308594
+target,51,"Whatever-she-is, she turned around and faced myself, tossing the tissues aside.",max,44.059486389160156
+target,51,"Whatever-she-is, she turned around and faced myself, tossing the tissues aside.",last,25.662281036376953
+target,52,She was just glad she wasn't in it.,mean,21.90494155883789
+target,52,She was just glad she wasn't in it.,max,43.865726470947266
+target,52,She was just glad she wasn't in it.,last,13.576789855957031
+target,53,She didn't want their pity.,mean,15.779348373413086
+target,53,She didn't want their pity.,max,43.865726470947266
+target,53,She didn't want their pity.,last,0.0
+target,54,Sara called from her room.,mean,17.582698822021484
+target,54,Sara called from her room.,max,34.80485916137695
+target,54,Sara called from her room.,last,21.740528106689453
+target,55,"When she was 12 years old, her father gave it to her.'",mean,10.422868728637695
+target,55,"When she was 12 years old, her father gave it to her.'",max,41.43095016479492
+target,55,"When she was 12 years old, her father gave it to her.'",last,9.381925582885742
+target,56,OL continues her pursuit.,mean,10.176346778869629
+target,56,OL continues her pursuit.,max,27.31987762451172
+target,56,OL continues her pursuit.,last,10.943099975585938
+target,57,"She does not have Geneva's power but she has a good technique.""",mean,22.599510192871094
+target,57,"She does not have Geneva's power but she has a good technique.""",max,43.93913269042969
+target,57,"She does not have Geneva's power but she has a good technique.""",last,0.0
+target,58,I wonder why Brittney still hates her guts?,mean,11.449590682983398
+target,58,I wonder why Brittney still hates her guts?,max,30.84205436706543
+target,58,I wonder why Brittney still hates her guts?,last,10.051505088806152
+target,59,"""Tch... She didn't have to do that...",mean,15.051994323730469
+target,59,"""Tch... She didn't have to do that...",max,51.44111251831055
+target,59,"""Tch... She didn't have to do that...",last,9.934309005737305
+target,60,She said she doesn't live like that.,mean,23.770326614379883
+target,60,She said she doesn't live like that.,max,45.54773712158203
+target,60,She said she doesn't live like that.,last,14.675599098205566
+target,61,"Yet she had been with him alone, afterwards.",mean,17.406147003173828
+target,61,"Yet she had been with him alone, afterwards.",max,51.654090881347656
+target,61,"Yet she had been with him alone, afterwards.",last,0.0
+target,62,"She now has a knife in her hand, and she has duck-taped his mouth shut.",mean,20.592193603515625
+target,62,"She now has a knife in her hand, and she has duck-taped his mouth shut.",max,43.789642333984375
+target,62,"She now has a knife in her hand, and she has duck-taped his mouth shut.",last,0.0
+target,63,Paula could only laugh and consent.,mean,15.099002838134766
+target,63,Paula could only laugh and consent.,max,31.068153381347656
+target,63,Paula could only laugh and consent.,last,18.506118774414062
+target,64,She’s all about making me give myself advice.,mean,13.738818168640137
+target,64,She’s all about making me give myself advice.,max,43.865726470947266
+target,64,She’s all about making me give myself advice.,last,9.99937629699707
+target,65,She’s never mentioned the Gore meeting.,mean,16.185001373291016
+target,65,She’s never mentioned the Gore meeting.,max,43.865726470947266
+target,65,She’s never mentioned the Gore meeting.,last,10.358236312866211
+target,66,Simply loving her for her physical charms is lust.,mean,10.963713645935059
+target,66,Simply loving her for her physical charms is lust.,max,32.5283317565918
+target,66,Simply loving her for her physical charms is lust.,last,0.0
+target,67,She died the day before.,mean,18.24014663696289
+target,67,She died the day before.,max,43.865726470947266
+target,67,She died the day before.,last,14.116962432861328
+target,68,She is pro-free trade.,mean,12.01476001739502
+target,68,She is pro-free trade.,max,43.865726470947266
+target,68,She is pro-free trade.,last,9.672858238220215
+target,69,Josephine felt helpless.,mean,11.14942455291748
+target,69,Josephine felt helpless.,max,28.019824981689453
+target,69,Josephine felt helpless.,last,17.323719024658203
+target,70,"""As you can see, she was such a nice, outgoing, happy girl,"" her mother said.",mean,12.114909172058105
+target,70,"""As you can see, she was such a nice, outgoing, happy girl,"" her mother said.",max,48.22601318359375
+target,70,"""As you can see, she was such a nice, outgoing, happy girl,"" her mother said.",last,9.092903137207031
+target,71,She knows about my past.,mean,14.90791130065918
+target,71,She knows about my past.,max,43.865726470947266
+target,71,She knows about my past.,last,8.462397575378418
+target,72,Or look at a girl named Juthika.,mean,3.116328239440918
+target,72,Or look at a girl named Juthika.,max,19.50389862060547
+target,72,Or look at a girl named Juthika.,last,14.77570915222168
+target,73,Without Crescent Rose she felt vulnerable.,mean,13.96542739868164
+target,73,Without Crescent Rose she felt vulnerable.,max,48.50143814086914
+target,73,Without Crescent Rose she felt vulnerable.,last,14.673023223876953
+target,74,She comes in and makes a complete fucking mess and then disappears.,mean,18.571935653686523
+target,74,She comes in and makes a complete fucking mess and then disappears.,max,43.93913269042969
+target,74,She comes in and makes a complete fucking mess and then disappears.,last,9.981184959411621
+target,75,She appears to be living in a different century.,mean,22.3048095703125
+target,75,She appears to be living in a different century.,max,43.865726470947266
+target,75,She appears to be living in a different century.,last,17.556352615356445
+target,76,But she had run off with an Argentine lover.,mean,17.774356842041016
+target,76,But she had run off with an Argentine lover.,max,52.4150390625
+target,76,But she had run off with an Argentine lover.,last,0.0
+target,77,She had been his favourite child.,mean,13.13094711303711
+target,77,She had been his favourite child.,max,44.62543869018555
+target,77,She had been his favourite child.,last,0.0
+target,78,It’s crazy – she’s very much like me.,mean,13.207971572875977
+target,78,It’s crazy – she’s very much like me.,max,52.89437484741211
+target,78,It’s crazy – she’s very much like me.,last,13.536589622497559
+target,79,"She simply beamed at Weiss and said, ""Thanks.""",mean,18.284727096557617
+target,79,"She simply beamed at Weiss and said, ""Thanks.""",max,43.93913269042969
+target,79,"She simply beamed at Weiss and said, ""Thanks.""",last,17.048843383789062
+target,80,Susana Victoria Perez (@susana_vp) has more.,mean,1.6666511297225952
+target,80,Susana Victoria Perez (@susana_vp) has more.,max,11.100273132324219
+target,80,Susana Victoria Perez (@susana_vp) has more.,last,0.0
+target,81,She’s thinking about every lift that she’s doing.,mean,17.936235427856445
+target,81,She’s thinking about every lift that she’s doing.,max,43.93913269042969
+target,81,She’s thinking about every lift that she’s doing.,last,13.825624465942383
+target,82,"Camilla, Diane’s lover – and her rival – is dead.",mean,11.010529518127441
+target,82,"Camilla, Diane’s lover – and her rival – is dead.",max,25.176082611083984
+target,82,"Camilla, Diane’s lover – and her rival – is dead.",last,16.009349822998047
+target,83,She is a gray Toulouse goose named Maria.,mean,8.472977638244629
+target,83,She is a gray Toulouse goose named Maria.,max,43.865726470947266
+target,83,She is a gray Toulouse goose named Maria.,last,10.008356094360352
+target,84,“Daisy?,mean,0.0
+target,84,“Daisy?,max,0.0
+target,84,“Daisy?,last,0.0
+target,85,"“I was proud,” she said.",mean,9.954567909240723
+target,85,"“I was proud,” she said.",max,34.23833465576172
+target,85,"“I was proud,” she said.",last,13.471708297729492
+target,86,She made her reputation working against labor so she’s in the right position.,mean,20.05327033996582
+target,86,She made her reputation working against labor so she’s in the right position.,max,43.93913269042969
+target,86,She made her reputation working against labor so she’s in the right position.,last,11.846672058105469
+target,87,"She seems keen on taking this huntress business very seriously.""",mean,18.897790908813477
+target,87,"She seems keen on taking this huntress business very seriously.""",max,43.93913269042969
+target,87,"She seems keen on taking this huntress business very seriously.""",last,0.0
+target,88,She was able to foot a hotel bill.,mean,17.384933471679688
+target,88,She was able to foot a hotel bill.,max,43.865726470947266
+target,88,She was able to foot a hotel bill.,last,15.210003852844238
+target,89,"She was barely sleeping, exhausted, stressed, and scared.",mean,24.107086181640625
+target,89,"She was barely sleeping, exhausted, stressed, and scared.",max,43.93913269042969
+target,89,"She was barely sleeping, exhausted, stressed, and scared.",last,14.945810317993164
+target,90,But her findings met strong resistance.,mean,5.384786605834961
+target,90,But her findings met strong resistance.,max,31.75777244567871
+target,90,But her findings met strong resistance.,last,0.0
+target,91,She’s vice president of the student council.,mean,14.567375183105469
+target,91,She’s vice president of the student council.,max,43.865726470947266
+target,91,She’s vice president of the student council.,last,10.955648422241211
+target,92,"“Eventually she quit running away, but would not let me near her,” she said.",mean,19.255775451660156
+target,92,"“Eventually she quit running away, but would not let me near her,” she said.",max,43.859046936035156
+target,92,"“Eventually she quit running away, but would not let me near her,” she said.",last,9.352864265441895
+target,93,"“She thinks that she is Oprah plus Jesus or something, I don’t know.",mean,17.36450958251953
+target,93,"“She thinks that she is Oprah plus Jesus or something, I don’t know.",max,45.531044006347656
+target,93,"“She thinks that she is Oprah plus Jesus or something, I don’t know.",last,9.509411811828613
+target,94,She’s denied proper medical care.,mean,20.125417709350586
+target,94,She’s denied proper medical care.,max,43.865726470947266
+target,94,She’s denied proper medical care.,last,17.64257049560547
+target,95,But Celestia knows better.,mean,7.208887100219727
+target,95,But Celestia knows better.,max,24.194026947021484
+target,95,But Celestia knows better.,last,13.376031875610352
+target,96,Rachel’s nose.,mean,6.484403133392334
+target,96,Rachel’s nose.,max,11.677124977111816
+target,96,Rachel’s nose.,last,11.677124977111816
+target,97,"""The only thing she said was, ‘I want my mom.",mean,9.569528579711914
+target,97,"""The only thing she said was, ‘I want my mom.",max,40.82094955444336
+target,97,"""The only thing she said was, ‘I want my mom.",last,0.0
+target,98,We waited until she swallowed.,mean,9.594829559326172
+target,98,We waited until she swallowed.,max,36.89107894897461
+target,98,We waited until she swallowed.,last,0.0
+target,99,"Her queen bee, capable of living years, survived.",mean,16.685583114624023
+target,99,"Her queen bee, capable of living years, survived.",max,24.970983505249023
+target,99,"Her queen bee, capable of living years, survived.",last,16.119003295898438
+control,0,"He was taken to a local hospital, where he succumbed to his injuries Thursday.",mean,0.0
+control,0,"He was taken to a local hospital, where he succumbed to his injuries Thursday.",max,0.0
+control,0,"He was taken to a local hospital, where he succumbed to his injuries Thursday.",last,0.0
+control,1,.,mean,0.0
+control,1,.,max,0.0
+control,1,.,last,0.0
+control,2,It is hard to see racism when we are white because the systems and institutions are set up to look like us and advantage us.,mean,0.0
+control,2,It is hard to see racism when we are white because the systems and institutions are set up to look like us and advantage us.,max,0.0
+control,2,It is hard to see racism when we are white because the systems and institutions are set up to look like us and advantage us.,last,0.0
+control,3,And it also doesn’t lend itself to the expediency that I think we want to — help get a new health care system in place.,mean,0.0
+control,3,And it also doesn’t lend itself to the expediency that I think we want to — help get a new health care system in place.,max,0.0
+control,3,And it also doesn’t lend itself to the expediency that I think we want to — help get a new health care system in place.,last,0.0
+control,4,A U.S. federal proposal that could see B.C.,mean,0.0
+control,4,A U.S. federal proposal that could see B.C.,max,0.0
+control,4,A U.S. federal proposal that could see B.C.,last,0.0
+control,5,"Just as with Amazon's health care plan, these benefits are egalitarian – they are the same for fulfillment center and customer service employees as they are for Amazon's most senior executives.",mean,0.0
+control,5,"Just as with Amazon's health care plan, these benefits are egalitarian – they are the same for fulfillment center and customer service employees as they are for Amazon's most senior executives.",max,0.0
+control,5,"Just as with Amazon's health care plan, these benefits are egalitarian – they are the same for fulfillment center and customer service employees as they are for Amazon's most senior executives.",last,0.0
+control,6,"“Of course we do, Charlie,” Ade assured him.",mean,3.3136510848999023
+control,6,"“Of course we do, Charlie,” Ade assured him.",max,21.13319969177246
+control,6,"“Of course we do, Charlie,” Ade assured him.",last,14.121057510375977
+control,7,We hope you enjoy Fraps 3!,mean,0.0
+control,7,We hope you enjoy Fraps 3!,max,0.0
+control,7,We hope you enjoy Fraps 3!,last,0.0
+control,8,"As in any of the big households of yesteryear (one thinks of Downton Abbey, to take a popular example), what the servants knew about the masters was a great deal more than the masters knew about them.",mean,0.0
+control,8,"As in any of the big households of yesteryear (one thinks of Downton Abbey, to take a popular example), what the servants knew about the masters was a great deal more than the masters knew about them.",max,0.0
+control,8,"As in any of the big households of yesteryear (one thinks of Downton Abbey, to take a popular example), what the servants knew about the masters was a great deal more than the masters knew about them.",last,0.0
+control,9,It was tremendous.,mean,0.0
+control,9,It was tremendous.,max,0.0
+control,9,It was tremendous.,last,0.0
+control,10,"""Battletoads.""",mean,0.0
+control,10,"""Battletoads.""",max,0.0
+control,10,"""Battletoads.""",last,0.0
+control,11,"It's a favorite among growers for its easy cultivation, fast flowering and mood-lifting high.",mean,0.0
+control,11,"It's a favorite among growers for its easy cultivation, fast flowering and mood-lifting high.",max,0.0
+control,11,"It's a favorite among growers for its easy cultivation, fast flowering and mood-lifting high.",last,0.0
+control,12,"While the emotional spectrum remains — indeed, barely any part of Johns' Green Lantern stories were rebooted during the New 52 (which happens where your comics sell well and you're the Chief Creative Officer).",mean,0.0
+control,12,"While the emotional spectrum remains — indeed, barely any part of Johns' Green Lantern stories were rebooted during the New 52 (which happens where your comics sell well and you're the Chief Creative Officer).",max,0.0
+control,12,"While the emotional spectrum remains — indeed, barely any part of Johns' Green Lantern stories were rebooted during the New 52 (which happens where your comics sell well and you're the Chief Creative Officer).",last,0.0
+control,13,"Alongside growing competition or a weak yen, companies now mention the risk of the Trump administration doing what it says it will do.",mean,0.0
+control,13,"Alongside growing competition or a weak yen, companies now mention the risk of the Trump administration doing what it says it will do.",max,0.0
+control,13,"Alongside growing competition or a weak yen, companies now mention the risk of the Trump administration doing what it says it will do.",last,0.0
+control,14,"""Coach Alfie.""",mean,0.0
+control,14,"""Coach Alfie.""",max,0.0
+control,14,"""Coach Alfie.""",last,0.0
+control,15,“They’re not restricted by how they play here.,mean,0.0
+control,15,“They’re not restricted by how they play here.,max,0.0
+control,15,“They’re not restricted by how they play here.,last,0.0
+control,16,"We tend to look at the new things coming, play with them, try to learn them, and evolve with the technology.",mean,0.0
+control,16,"We tend to look at the new things coming, play with them, try to learn them, and evolve with the technology.",max,0.0
+control,16,"We tend to look at the new things coming, play with them, try to learn them, and evolve with the technology.",last,0.0
+control,17,Use this design filled with symbolism as a greeting ecard for your company or to talk about Chinese traditions.,mean,0.0
+control,17,Use this design filled with symbolism as a greeting ecard for your company or to talk about Chinese traditions.,max,0.0
+control,17,Use this design filled with symbolism as a greeting ecard for your company or to talk about Chinese traditions.,last,0.0
+control,18,"""They help us always and give us the courage to fight more.",mean,0.0
+control,18,"""They help us always and give us the courage to fight more.",max,0.0
+control,18,"""They help us always and give us the courage to fight more.",last,0.0
+control,19,Then you draw textures.,mean,0.0
+control,19,Then you draw textures.,max,0.0
+control,19,Then you draw textures.,last,0.0
+control,20,.,mean,0.0
+control,20,.,max,0.0
+control,20,.,last,0.0
+control,21,He completed his bachelor’s degree in electrical engineering from Mangalore University in India.,mean,0.0
+control,21,He completed his bachelor’s degree in electrical engineering from Mangalore University in India.,max,0.0
+control,21,He completed his bachelor’s degree in electrical engineering from Mangalore University in India.,last,0.0
+control,22,But this way of measuring time can be juxtaposed onto Belgarath and his daughter Polgara.,mean,0.0
+control,22,But this way of measuring time can be juxtaposed onto Belgarath and his daughter Polgara.,max,0.0
+control,22,But this way of measuring time can be juxtaposed onto Belgarath and his daughter Polgara.,last,0.0
+control,23,"This is the little cartoon that could, and is still Must See TV in my household, including reruns.",mean,0.0
+control,23,"This is the little cartoon that could, and is still Must See TV in my household, including reruns.",max,0.0
+control,23,"This is the little cartoon that could, and is still Must See TV in my household, including reruns.",last,0.0
+control,24,"As Flynn has correctly indicated, it is apparent that Obama’s policy in the Middle East has been a disaster.",mean,0.0
+control,24,"As Flynn has correctly indicated, it is apparent that Obama’s policy in the Middle East has been a disaster.",max,0.0
+control,24,"As Flynn has correctly indicated, it is apparent that Obama’s policy in the Middle East has been a disaster.",last,0.0
+control,25,Advertisements,mean,0.0
+control,25,Advertisements,max,0.0
+control,25,Advertisements,last,0.0
+control,26,Ten years is a long time in terms of college.,mean,0.0
+control,26,Ten years is a long time in terms of college.,max,0.0
+control,26,Ten years is a long time in terms of college.,last,0.0
+control,27,"On top of that, it requires more than a cursory glance to really see the benefit of these two very different styles of programming.",mean,0.0
+control,27,"On top of that, it requires more than a cursory glance to really see the benefit of these two very different styles of programming.",max,0.0
+control,27,"On top of that, it requires more than a cursory glance to really see the benefit of these two very different styles of programming.",last,0.0
+control,28,"“I came out of that conversation saying that this was a formidable adversary,” she said.",mean,2.9458937644958496
+control,28,"“I came out of that conversation saying that this was a formidable adversary,” she said.",max,30.903549194335938
+control,28,"“I came out of that conversation saying that this was a formidable adversary,” she said.",last,0.0
+control,29,Can they drink alcoholic beverages if they bring their own (BYOB) and it is not provided by me?,mean,0.0
+control,29,Can they drink alcoholic beverages if they bring their own (BYOB) and it is not provided by me?,max,0.0
+control,29,Can they drink alcoholic beverages if they bring their own (BYOB) and it is not provided by me?,last,0.0
+control,30,"The principality's capital, Nain, is named after Nain in Galilee.",mean,0.0
+control,30,"The principality's capital, Nain, is named after Nain in Galilee.",max,0.0
+control,30,"The principality's capital, Nain, is named after Nain in Galilee.",last,0.0
+control,31,So how much do you need?,mean,0.0
+control,31,So how much do you need?,max,0.0
+control,31,So how much do you need?,last,0.0
+control,32,"Nevertheless, it is more common these days to be invited to a thought shower, which no doubt sounds like a naked romp among Bergman-loving Scandinavian intellectuals only to those with already irredeemably dirty minds.",mean,0.0
+control,32,"Nevertheless, it is more common these days to be invited to a thought shower, which no doubt sounds like a naked romp among Bergman-loving Scandinavian intellectuals only to those with already irredeemably dirty minds.",max,0.0
+control,32,"Nevertheless, it is more common these days to be invited to a thought shower, which no doubt sounds like a naked romp among Bergman-loving Scandinavian intellectuals only to those with already irredeemably dirty minds.",last,0.0
+control,33,Candida species-level classification of ITS sequences was performed using STIRRUPS (55) with a custom sequence library of 31 nonredundant representative sequences pulled from the trimmed THF database.,mean,0.0
+control,33,Candida species-level classification of ITS sequences was performed using STIRRUPS (55) with a custom sequence library of 31 nonredundant representative sequences pulled from the trimmed THF database.,max,0.0
+control,33,Candida species-level classification of ITS sequences was performed using STIRRUPS (55) with a custom sequence library of 31 nonredundant representative sequences pulled from the trimmed THF database.,last,0.0
+control,34,"If there are certain apps that you frequently use and want quick access, place them in the top pyramid.",mean,0.0
+control,34,"If there are certain apps that you frequently use and want quick access, place them in the top pyramid.",max,0.0
+control,34,"If there are certain apps that you frequently use and want quick access, place them in the top pyramid.",last,0.0
+control,35,Under Rule number 1 it says: 'Don't dry your scrotum or your behind with the communal hairdryer in the swimming pool or the gym.,mean,0.0
+control,35,Under Rule number 1 it says: 'Don't dry your scrotum or your behind with the communal hairdryer in the swimming pool or the gym.,max,0.0
+control,35,Under Rule number 1 it says: 'Don't dry your scrotum or your behind with the communal hairdryer in the swimming pool or the gym.,last,0.0
+control,36,Buob was critically injured in the crash and died a short time later at a local hospital.,mean,2.266718626022339
+control,36,Buob was critically injured in the crash and died a short time later at a local hospital.,max,10.387947082519531
+control,36,Buob was critically injured in the crash and died a short time later at a local hospital.,last,0.0
+control,37,"Once in space, damaged IV bags and saline cannot be replaced with a simple phone call to a distributor.",mean,0.0
+control,37,"Once in space, damaged IV bags and saline cannot be replaced with a simple phone call to a distributor.",max,0.0
+control,37,"Once in space, damaged IV bags and saline cannot be replaced with a simple phone call to a distributor.",last,0.0
+control,38,"""Brian Cobby, who sadly passed away last year, had the most beautiful, rich, Shakespearian voice.",mean,0.0
+control,38,"""Brian Cobby, who sadly passed away last year, had the most beautiful, rich, Shakespearian voice.",max,0.0
+control,38,"""Brian Cobby, who sadly passed away last year, had the most beautiful, rich, Shakespearian voice.",last,0.0
+control,39,"But Paul started and closed his speech by saying that most Republicans are beginning to see things his way, saying that they are ""starting to use our language.""",mean,0.0
+control,39,"But Paul started and closed his speech by saying that most Republicans are beginning to see things his way, saying that they are ""starting to use our language.""",max,0.0
+control,39,"But Paul started and closed his speech by saying that most Republicans are beginning to see things his way, saying that they are ""starting to use our language.""",last,0.0
+control,40,"It wasn’t long before scientists realized there would be more transits in the future, and there were: in 1761, 1769, 1874, 1882, 2004 and 2012.",mean,0.0
+control,40,"It wasn’t long before scientists realized there would be more transits in the future, and there were: in 1761, 1769, 1874, 1882, 2004 and 2012.",max,0.0
+control,40,"It wasn’t long before scientists realized there would be more transits in the future, and there were: in 1761, 1769, 1874, 1882, 2004 and 2012.",last,0.0
+control,41,"At McNeese State, Viator was 77-33 in 10 seasons with 5 FCS playoff appearances and 3 first-round wins.",mean,0.0
+control,41,"At McNeese State, Viator was 77-33 in 10 seasons with 5 FCS playoff appearances and 3 first-round wins.",max,0.0
+control,41,"At McNeese State, Viator was 77-33 in 10 seasons with 5 FCS playoff appearances and 3 first-round wins.",last,0.0
+control,42,"After a downturn in violence in the early years after the turn of the century, deaths related to Mexican drug wars totaled 121,669 between 2006 and 2012, according to a recent report from the Justice in Mexico project at the University of California- San Diego's Department of Politic Science and International Relations.",mean,0.0
+control,42,"After a downturn in violence in the early years after the turn of the century, deaths related to Mexican drug wars totaled 121,669 between 2006 and 2012, according to a recent report from the Justice in Mexico project at the University of California- San Diego's Department of Politic Science and International Relations.",max,0.0
+control,42,"After a downturn in violence in the early years after the turn of the century, deaths related to Mexican drug wars totaled 121,669 between 2006 and 2012, according to a recent report from the Justice in Mexico project at the University of California- San Diego's Department of Politic Science and International Relations.",last,0.0
+control,43,His hope is that younger comics artists read the paper and then get inspired to do their own thing.,mean,0.0
+control,43,His hope is that younger comics artists read the paper and then get inspired to do their own thing.,max,0.0
+control,43,His hope is that younger comics artists read the paper and then get inspired to do their own thing.,last,0.0
+control,44,"I could hear heavy breathing, as something began to scratch at the door.",mean,0.0
+control,44,"I could hear heavy breathing, as something began to scratch at the door.",max,0.0
+control,44,"I could hear heavy breathing, as something began to scratch at the door.",last,0.0
+control,45,Kelly had a 46-7 record with the Ducks and qualified for a BCS bowl in each of his four seasons.,mean,2.5122549533843994
+control,45,Kelly had a 46-7 record with the Ducks and qualified for a BCS bowl in each of his four seasons.,max,25.653404235839844
+control,45,Kelly had a 46-7 record with the Ducks and qualified for a BCS bowl in each of his four seasons.,last,0.0
+control,46,Tour said the researchers have also tried putting GNRs under the polyurethane paint with good results.,mean,0.0
+control,46,Tour said the researchers have also tried putting GNRs under the polyurethane paint with good results.,max,0.0
+control,46,Tour said the researchers have also tried putting GNRs under the polyurethane paint with good results.,last,0.0
+control,47,"Rose’s shots were noticeably ‘cooler,’ to make the host’s make-up more subtle.",mean,4.9810099601745605
+control,47,"Rose’s shots were noticeably ‘cooler,’ to make the host’s make-up more subtle.",max,17.301891326904297
+control,47,"Rose’s shots were noticeably ‘cooler,’ to make the host’s make-up more subtle.",last,0.0
+control,48,You have to know about the unorthodox priest who mentored him.,mean,0.0
+control,48,You have to know about the unorthodox priest who mentored him.,max,0.0
+control,48,You have to know about the unorthodox priest who mentored him.,last,0.0
+control,49,"When Wright had finished cooking dinner, she went upstairs to get ""Bubba"", who often napped at that time.",mean,7.519337177276611
+control,49,"When Wright had finished cooking dinner, she went upstairs to get ""Bubba"", who often napped at that time.",max,29.616382598876953
+control,49,"When Wright had finished cooking dinner, she went upstairs to get ""Bubba"", who often napped at that time.",last,0.0
+control,50,"621 - Schwinn Sierra, 21"" frame ............. $91.95
+
+623 - Schwinn Sierra, 23"" frame ............. $91.95
+
+Schwinn quality features
+
+Derailleur - sprint derailleur, 15 speeds extra wide 36 to 100 gear, allows ""fine tuning"" to fit the ability to the rider to the demands of road and riding conditions.",mean,0.0
+control,50,"621 - Schwinn Sierra, 21"" frame ............. $91.95
+
+623 - Schwinn Sierra, 23"" frame ............. $91.95
+
+Schwinn quality features
+
+Derailleur - sprint derailleur, 15 speeds extra wide 36 to 100 gear, allows ""fine tuning"" to fit the ability to the rider to the demands of road and riding conditions.",max,0.0
+control,50,"621 - Schwinn Sierra, 21"" frame ............. $91.95
+
+623 - Schwinn Sierra, 23"" frame ............. $91.95
+
+Schwinn quality features
+
+Derailleur - sprint derailleur, 15 speeds extra wide 36 to 100 gear, allows ""fine tuning"" to fit the ability to the rider to the demands of road and riding conditions.",last,0.0
+control,51,"The bot side of the connection drives all communications.”
+
+The next layer up acts as a transport for the communications, which are split into “sessions” consisting of five DNS requests and replies.",mean,0.0
+control,51,"The bot side of the connection drives all communications.”
+
+The next layer up acts as a transport for the communications, which are split into “sessions” consisting of five DNS requests and replies.",max,0.0
+control,51,"The bot side of the connection drives all communications.”
+
+The next layer up acts as a transport for the communications, which are split into “sessions” consisting of five DNS requests and replies.",last,0.0
+control,52,"“It’s a great day for hockey, and it’s really going to enhance our development,” said Lowe.",mean,0.0
+control,52,"“It’s a great day for hockey, and it’s really going to enhance our development,” said Lowe.",max,0.0
+control,52,"“It’s a great day for hockey, and it’s really going to enhance our development,” said Lowe.",last,0.0
+control,53,"How­ev­er, I would like to see the Fed­er­al tax removed for the right to own a short bar­reled rifle or shot­gun.",mean,0.0
+control,53,"How­ev­er, I would like to see the Fed­er­al tax removed for the right to own a short bar­reled rifle or shot­gun.",max,0.0
+control,53,"How­ev­er, I would like to see the Fed­er­al tax removed for the right to own a short bar­reled rifle or shot­gun.",last,0.0
+control,54,at p.,mean,0.0
+control,54,at p.,max,0.0
+control,54,at p.,last,0.0
+control,55,"Yet Chertoff kept repeating that assertion two or three times, including in written statements.",mean,0.448802649974823
+control,55,"Yet Chertoff kept repeating that assertion two or three times, including in written statements.",max,8.527250289916992
+control,55,"Yet Chertoff kept repeating that assertion two or three times, including in written statements.",last,0.0
+control,56,"Adaptive Optics increases the ""seeing"" that can be achieved by any telescope.",mean,0.0
+control,56,"Adaptive Optics increases the ""seeing"" that can be achieved by any telescope.",max,0.0
+control,56,"Adaptive Optics increases the ""seeing"" that can be achieved by any telescope.",last,0.0
+control,57,"It opens new opportunities to be used, the minister said.",mean,0.736590564250946
+control,57,"It opens new opportunities to be used, the minister said.",max,9.575676918029785
+control,57,"It opens new opportunities to be used, the minister said.",last,0.0
+control,58,"Prior to Saturday’s announcement the ACT government had pledged to reach 90 per cent renewables by 2020, and the finer details of how the extra 10 per cent to take the Territory to 100 per cent renewable by 2025 have not yet been fully outlined.",mean,0.0
+control,58,"Prior to Saturday’s announcement the ACT government had pledged to reach 90 per cent renewables by 2020, and the finer details of how the extra 10 per cent to take the Territory to 100 per cent renewable by 2025 have not yet been fully outlined.",max,0.0
+control,58,"Prior to Saturday’s announcement the ACT government had pledged to reach 90 per cent renewables by 2020, and the finer details of how the extra 10 per cent to take the Territory to 100 per cent renewable by 2025 have not yet been fully outlined.",last,0.0
+control,59,"""We are going back to review all of the data to determine whether there is a cause-and-effect relationship.""",mean,0.0
+control,59,"""We are going back to review all of the data to determine whether there is a cause-and-effect relationship.""",max,0.0
+control,59,"""We are going back to review all of the data to determine whether there is a cause-and-effect relationship.""",last,0.0
+control,60,"The Giants may have sold every ticket at its disposal this year, but the Giants’ attendance was 400,000 behind the Dodgers, who don’t always sell out, but who always play in the park with the most seats in baseball.",mean,0.0
+control,60,"The Giants may have sold every ticket at its disposal this year, but the Giants’ attendance was 400,000 behind the Dodgers, who don’t always sell out, but who always play in the park with the most seats in baseball.",max,0.0
+control,60,"The Giants may have sold every ticket at its disposal this year, but the Giants’ attendance was 400,000 behind the Dodgers, who don’t always sell out, but who always play in the park with the most seats in baseball.",last,0.0
+control,61,"I hope readers will add their own wisdom and comments, respond to my questions, ask their own questions, and correct me if I get something wrong.",mean,0.0
+control,61,"I hope readers will add their own wisdom and comments, respond to my questions, ask their own questions, and correct me if I get something wrong.",max,0.0
+control,61,"I hope readers will add their own wisdom and comments, respond to my questions, ask their own questions, and correct me if I get something wrong.",last,0.0
+control,62,"Across a population of millions, widely-understood social expectations result in tectonic shifts of behavior.",mean,0.0
+control,62,"Across a population of millions, widely-understood social expectations result in tectonic shifts of behavior.",max,0.0
+control,62,"Across a population of millions, widely-understood social expectations result in tectonic shifts of behavior.",last,0.0
+control,63,"Aftermath, like previous expansions, will introduce four brand new maps to the mix, two of which have been revealed thus far; Epicenter and Markaz Monolith.",mean,0.0
+control,63,"Aftermath, like previous expansions, will introduce four brand new maps to the mix, two of which have been revealed thus far; Epicenter and Markaz Monolith.",max,0.0
+control,63,"Aftermath, like previous expansions, will introduce four brand new maps to the mix, two of which have been revealed thus far; Epicenter and Markaz Monolith.",last,0.0
+control,64,"“They don’t,” said Suradanna.",mean,0.0
+control,64,"“They don’t,” said Suradanna.",max,0.0
+control,64,"“They don’t,” said Suradanna.",last,0.0
+control,65,"hero concept
+
+Drek'Thar Frostwolf Chieftain
+
+The elder shaman of the Frostwolf clan, Drek'Thar served as Thrall's tutor many years ago.",mean,0.0
+control,65,"hero concept
+
+Drek'Thar Frostwolf Chieftain
+
+The elder shaman of the Frostwolf clan, Drek'Thar served as Thrall's tutor many years ago.",max,0.0
+control,65,"hero concept
+
+Drek'Thar Frostwolf Chieftain
+
+The elder shaman of the Frostwolf clan, Drek'Thar served as Thrall's tutor many years ago.",last,0.0
+control,66,"Be warned, though: It might not last long.",mean,0.0
+control,66,"Be warned, though: It might not last long.",max,0.0
+control,66,"Be warned, though: It might not last long.",last,0.0
+control,67,"Within a short life of 5 years, a single bitcoin has went from being virtually worthless, to being worth several hundred dollars.",mean,0.0
+control,67,"Within a short life of 5 years, a single bitcoin has went from being virtually worthless, to being worth several hundred dollars.",max,0.0
+control,67,"Within a short life of 5 years, a single bitcoin has went from being virtually worthless, to being worth several hundred dollars.",last,0.0
+control,68,"To be honest, no.",mean,0.0
+control,68,"To be honest, no.",max,0.0
+control,68,"To be honest, no.",last,0.0
+control,69,"As you meet certain conditions in the game you unlock new recipes, which can be used to create medicines, bombs, equippable accessories and other materials for weapon/armour upgrades.",mean,0.0
+control,69,"As you meet certain conditions in the game you unlock new recipes, which can be used to create medicines, bombs, equippable accessories and other materials for weapon/armour upgrades.",max,0.0
+control,69,"As you meet certain conditions in the game you unlock new recipes, which can be used to create medicines, bombs, equippable accessories and other materials for weapon/armour upgrades.",last,0.0
+control,70,"A ""Dublin University man born in a Georgian villa near Phoenix Park"", he is said to have ""the Celt's far vision of weird and hidden things, but the logician's quick eye for the outwardly unconvincing...",mean,0.0
+control,70,"A ""Dublin University man born in a Georgian villa near Phoenix Park"", he is said to have ""the Celt's far vision of weird and hidden things, but the logician's quick eye for the outwardly unconvincing...",max,0.0
+control,70,"A ""Dublin University man born in a Georgian villa near Phoenix Park"", he is said to have ""the Celt's far vision of weird and hidden things, but the logician's quick eye for the outwardly unconvincing...",last,0.0
+control,71,µ,mean,0.0
+control,71,µ,max,0.0
+control,71,µ,last,0.0
+control,72,"Go back to Add-ons menu, and you will find the new YouTube add-on under the Programs Add-ons folder.",mean,0.0
+control,72,"Go back to Add-ons menu, and you will find the new YouTube add-on under the Programs Add-ons folder.",max,0.0
+control,72,"Go back to Add-ons menu, and you will find the new YouTube add-on under the Programs Add-ons folder.",last,0.0
+control,73,"We are playing at Old Trafford, one of the best grounds in world football, so it is definitely going to be an amazing game.",mean,0.0
+control,73,"We are playing at Old Trafford, one of the best grounds in world football, so it is definitely going to be an amazing game.",max,0.0
+control,73,"We are playing at Old Trafford, one of the best grounds in world football, so it is definitely going to be an amazing game.",last,0.0
+control,74,"No one should be treated that way.”
+
+Meanwhile, lawyers for Dao filed an emergency bill of discovery in Cook County Circuit Court, asking that items in possession of United Airlines or the City of Chicago — which may contain information related to Sunday’s incident, including video footage of the boarding process, a passenger list and cockpit voice recordings from the flight — be preserved.",mean,0.0
+control,74,"No one should be treated that way.”
+
+Meanwhile, lawyers for Dao filed an emergency bill of discovery in Cook County Circuit Court, asking that items in possession of United Airlines or the City of Chicago — which may contain information related to Sunday’s incident, including video footage of the boarding process, a passenger list and cockpit voice recordings from the flight — be preserved.",max,0.0
+control,74,"No one should be treated that way.”
+
+Meanwhile, lawyers for Dao filed an emergency bill of discovery in Cook County Circuit Court, asking that items in possession of United Airlines or the City of Chicago — which may contain information related to Sunday’s incident, including video footage of the boarding process, a passenger list and cockpit voice recordings from the flight — be preserved.",last,0.0
+control,75,"When Galvatron attempted to betray the Autobots, Sky Lynx's swift speed enabled him to grab Galvatron's cannon when it was knocked away.",mean,0.0
+control,75,"When Galvatron attempted to betray the Autobots, Sky Lynx's swift speed enabled him to grab Galvatron's cannon when it was knocked away.",max,0.0
+control,75,"When Galvatron attempted to betray the Autobots, Sky Lynx's swift speed enabled him to grab Galvatron's cannon when it was knocked away.",last,0.0
+control,76,"Isn’t this exactly the kind of behavior you all have been complaining about?""",mean,0.0
+control,76,"Isn’t this exactly the kind of behavior you all have been complaining about?""",max,0.0
+control,76,"Isn’t this exactly the kind of behavior you all have been complaining about?""",last,0.0
+control,77,"During the most recent decade, he won 22 major tournaments, covering multiple disciplines: 4 one-pocket crowns, 4 eight-ball titles, and 15 nine-ball titles.",mean,0.0
+control,77,"During the most recent decade, he won 22 major tournaments, covering multiple disciplines: 4 one-pocket crowns, 4 eight-ball titles, and 15 nine-ball titles.",max,0.0
+control,77,"During the most recent decade, he won 22 major tournaments, covering multiple disciplines: 4 one-pocket crowns, 4 eight-ball titles, and 15 nine-ball titles.",last,0.0
+control,78,Kinda?,mean,0.0
+control,78,Kinda?,max,0.0
+control,78,Kinda?,last,0.0
+control,79,"Within the framework of the Arab-Israeli confrontation, Iran will further seek to depict itself as the main frontline power working in the interests of the Palestinians.",mean,0.6172648668289185
+control,79,"Within the framework of the Arab-Israeli confrontation, Iran will further seek to depict itself as the main frontline power working in the interests of the Palestinians.",max,10.164861679077148
+control,79,"Within the framework of the Arab-Israeli confrontation, Iran will further seek to depict itself as the main frontline power working in the interests of the Palestinians.",last,0.0
+control,80,"""Eager Reply: Present, and most eager to commence with the unadulterated violence.""",mean,0.0
+control,80,"""Eager Reply: Present, and most eager to commence with the unadulterated violence.""",max,0.0
+control,80,"""Eager Reply: Present, and most eager to commence with the unadulterated violence.""",last,0.0
+control,81,A good guarantee for the necessary resemblance of the partners in the nonsexual realm is their belonging to the same generation.,mean,0.0
+control,81,A good guarantee for the necessary resemblance of the partners in the nonsexual realm is their belonging to the same generation.,max,0.0
+control,81,A good guarantee for the necessary resemblance of the partners in the nonsexual realm is their belonging to the same generation.,last,0.0
+control,82,"Stern cited Rock's condemnation of neo-Nazis, along with support of gay rights and pro-choice positions.",mean,0.0
+control,82,"Stern cited Rock's condemnation of neo-Nazis, along with support of gay rights and pro-choice positions.",max,0.0
+control,82,"Stern cited Rock's condemnation of neo-Nazis, along with support of gay rights and pro-choice positions.",last,0.0
+control,83,"It gives you a full analysis, including the “fully loaded time,” which is how long it takes to load everything on your page.",mean,0.0
+control,83,"It gives you a full analysis, including the “fully loaded time,” which is how long it takes to load everything on your page.",max,0.0
+control,83,"It gives you a full analysis, including the “fully loaded time,” which is how long it takes to load everything on your page.",last,0.0
+control,84,Will the FBI probe continue after Comey’s dismissal?,mean,0.0
+control,84,Will the FBI probe continue after Comey’s dismissal?,max,0.0
+control,84,Will the FBI probe continue after Comey’s dismissal?,last,0.0
+control,85,"British Foreign Secretary William Hague said Monday before the meeting of 28 foreign ministers that it is essential to show Moscow that the bloc is ready to step up measures ""depending on Russia's attitude toward the elections"" in Ukraine.",mean,0.0
+control,85,"British Foreign Secretary William Hague said Monday before the meeting of 28 foreign ministers that it is essential to show Moscow that the bloc is ready to step up measures ""depending on Russia's attitude toward the elections"" in Ukraine.",max,0.0
+control,85,"British Foreign Secretary William Hague said Monday before the meeting of 28 foreign ministers that it is essential to show Moscow that the bloc is ready to step up measures ""depending on Russia's attitude toward the elections"" in Ukraine.",last,0.0
+control,86,Just before their report was published the committee received evidence which caused to add to the report that the topic required further investigation.,mean,0.0
+control,86,Just before their report was published the committee received evidence which caused to add to the report that the topic required further investigation.,max,0.0
+control,86,Just before their report was published the committee received evidence which caused to add to the report that the topic required further investigation.,last,0.0
+control,87,"The two met aged just nine while playing for the same cricket team, and shared wicket-keeping duties for the first few years until the combination of a new wicket-keeper arrival and the coach’s suggestion Mitchell try his hand at bowling saw their paths start to take different directions – a subsequent growth spurt then fully cementing Mitchell’s role as a fast bowler.",mean,0.0
+control,87,"The two met aged just nine while playing for the same cricket team, and shared wicket-keeping duties for the first few years until the combination of a new wicket-keeper arrival and the coach’s suggestion Mitchell try his hand at bowling saw their paths start to take different directions – a subsequent growth spurt then fully cementing Mitchell’s role as a fast bowler.",max,0.0
+control,87,"The two met aged just nine while playing for the same cricket team, and shared wicket-keeping duties for the first few years until the combination of a new wicket-keeper arrival and the coach’s suggestion Mitchell try his hand at bowling saw their paths start to take different directions – a subsequent growth spurt then fully cementing Mitchell’s role as a fast bowler.",last,0.0
+control,88,"Now perhaps this is a little unfair, since economists have also probed the political economy of trade policy—to help explain why protectionist policies persist, despite their inefficiency—but Bauer’s larger point—that we economists tend to overestimate our impact on policy outcomes, especially when they go our way—is surely valid.",mean,0.0
+control,88,"Now perhaps this is a little unfair, since economists have also probed the political economy of trade policy—to help explain why protectionist policies persist, despite their inefficiency—but Bauer’s larger point—that we economists tend to overestimate our impact on policy outcomes, especially when they go our way—is surely valid.",max,0.0
+control,88,"Now perhaps this is a little unfair, since economists have also probed the political economy of trade policy—to help explain why protectionist policies persist, despite their inefficiency—but Bauer’s larger point—that we economists tend to overestimate our impact on policy outcomes, especially when they go our way—is surely valid.",last,0.0
+control,89,"aprovechar la ocasión para expr expresión: Expresiones idiomáticas, dichos, refranes y frases hechas de tres o más palabras (""Dios nos libre"", ""a lo hecho, pecho"").",mean,0.0
+control,89,"aprovechar la ocasión para expr expresión: Expresiones idiomáticas, dichos, refranes y frases hechas de tres o más palabras (""Dios nos libre"", ""a lo hecho, pecho"").",max,0.0
+control,89,"aprovechar la ocasión para expr expresión: Expresiones idiomáticas, dichos, refranes y frases hechas de tres o más palabras (""Dios nos libre"", ""a lo hecho, pecho"").",last,0.0
+control,90,I often conceptualize it as the algorithm of fractal creation or the engine of fractal creation.,mean,0.0
+control,90,I often conceptualize it as the algorithm of fractal creation or the engine of fractal creation.,max,0.0
+control,90,I often conceptualize it as the algorithm of fractal creation or the engine of fractal creation.,last,0.0
+control,91,"The towel-folding robot, however, is doing something very new, according to the researchers, doctoral student Jeremy Maitin-Shepard and assistant professor Pieter Abbeel, both of UC Berkeley's Department of Electrical Engineering and Computer Sciences.",mean,0.2950010299682617
+control,91,"The towel-folding robot, however, is doing something very new, according to the researchers, doctoral student Jeremy Maitin-Shepard and assistant professor Pieter Abbeel, both of UC Berkeley's Department of Electrical Engineering and Computer Sciences.",max,15.045051574707031
+control,91,"The towel-folding robot, however, is doing something very new, according to the researchers, doctoral student Jeremy Maitin-Shepard and assistant professor Pieter Abbeel, both of UC Berkeley's Department of Electrical Engineering and Computer Sciences.",last,0.0
+control,92,He seems to have proper feet that attach at the bottom of the leg limb-bots.,mean,0.0
+control,92,He seems to have proper feet that attach at the bottom of the leg limb-bots.,max,0.0
+control,92,He seems to have proper feet that attach at the bottom of the leg limb-bots.,last,0.0
+control,93,"“I was raped almost on a daily basis by different men,” said Rukiyat, who managed to escape one night when militants who were supposed to be watching the camp had fallen asleep.",mean,4.164519309997559
+control,93,"“I was raped almost on a daily basis by different men,” said Rukiyat, who managed to escape one night when militants who were supposed to be watching the camp had fallen asleep.",max,31.367938995361328
+control,93,"“I was raped almost on a daily basis by different men,” said Rukiyat, who managed to escape one night when militants who were supposed to be watching the camp had fallen asleep.",last,0.0
+control,94,His remarks were far from a call to arms.,mean,0.0
+control,94,His remarks were far from a call to arms.,max,0.0
+control,94,His remarks were far from a call to arms.,last,0.0
+control,95,"Advertisement
+
+I don’t think I’ve really bought into Ghost and Angela’s relationship.",mean,0.0
+control,95,"Advertisement
+
+I don’t think I’ve really bought into Ghost and Angela’s relationship.",max,0.0
+control,95,"Advertisement
+
+I don’t think I’ve really bought into Ghost and Angela’s relationship.",last,0.0
+control,96,Tenant harassment became the driving force behind Tishman Speyer’s business model.,mean,0.0
+control,96,Tenant harassment became the driving force behind Tishman Speyer’s business model.,max,0.0
+control,96,Tenant harassment became the driving force behind Tishman Speyer’s business model.,last,0.0
+control,97,MUSOUsGAME: Can we believe it to be so?,mean,0.0
+control,97,MUSOUsGAME: Can we believe it to be so?,max,0.0
+control,97,MUSOUsGAME: Can we believe it to be so?,last,0.0
+control,98,The mission will pioneer precision landing methods during the spacecraft's crucial dive through Mars' atmosphere next August to place the rover onto a smaller landing target than any previously for a Mars mission.,mean,0.0
+control,98,The mission will pioneer precision landing methods during the spacecraft's crucial dive through Mars' atmosphere next August to place the rover onto a smaller landing target than any previously for a Mars mission.,max,0.0
+control,98,The mission will pioneer precision landing methods during the spacecraft's crucial dive through Mars' atmosphere next August to place the rover onto a smaller landing target than any previously for a Mars mission.,last,0.0
+control,99,"The majority of the zombie submissions we get cover the initial outbreak, and it almost always is about a man trying to travel across a great distance to save his woman.",mean,0.0
+control,99,"The majority of the zombie submissions we get cover the initial outbreak, and it almost always is about a man trying to travel across a great distance to save his woman.",max,0.0
+control,99,"The majority of the zombie submissions we get cover the initial outbreak, and it almost always is about a man trying to travel across a great distance to save his woman.",last,0.0
+control,100,"“Over 600 images are alleged,” the judge said in his reasoning behind denying a release.",mean,0.34993526339530945
+control,100,"“Over 600 images are alleged,” the judge said in his reasoning behind denying a release.",max,6.99870491027832
+control,100,"“Over 600 images are alleged,” the judge said in his reasoning behind denying a release.",last,0.0
+control,101,"However, if over 500 people signed up than it would be extended to more tournaments.",mean,0.0
+control,101,"However, if over 500 people signed up than it would be extended to more tournaments.",max,0.0
+control,101,"However, if over 500 people signed up than it would be extended to more tournaments.",last,0.0
+control,102,"Why Top MMA News Says: ‘The Score is No More’
+
+This past week, Top MMA News broke the very unfortunate news that one of Canada’s top MMA promotions was closing their doors – The Score Fighting Series was ceasing operations.",mean,0.0
+control,102,"Why Top MMA News Says: ‘The Score is No More’
+
+This past week, Top MMA News broke the very unfortunate news that one of Canada’s top MMA promotions was closing their doors – The Score Fighting Series was ceasing operations.",max,0.0
+control,102,"Why Top MMA News Says: ‘The Score is No More’
+
+This past week, Top MMA News broke the very unfortunate news that one of Canada’s top MMA promotions was closing their doors – The Score Fighting Series was ceasing operations.",last,0.0
+control,103,"It sucks that many parts of the directive function signature are duplicated in the function returned from Factory, the instantiation call, and the constructor signature.",mean,0.0
+control,103,"It sucks that many parts of the directive function signature are duplicated in the function returned from Factory, the instantiation call, and the constructor signature.",max,0.0
+control,103,"It sucks that many parts of the directive function signature are duplicated in the function returned from Factory, the instantiation call, and the constructor signature.",last,0.0
+control,104,"The workers would take away the total wealth, power, and position of the ruling class.",mean,0.0
+control,104,"The workers would take away the total wealth, power, and position of the ruling class.",max,0.0
+control,104,"The workers would take away the total wealth, power, and position of the ruling class.",last,0.0
+control,105,"Together we’ve set the bar high, planning to match the technical quality of Jurassic Park or Peter Jackson’s King Kong, as opposed to what you might find on your typical science fiction-themed channel.",mean,0.0
+control,105,"Together we’ve set the bar high, planning to match the technical quality of Jurassic Park or Peter Jackson’s King Kong, as opposed to what you might find on your typical science fiction-themed channel.",max,0.0
+control,105,"Together we’ve set the bar high, planning to match the technical quality of Jurassic Park or Peter Jackson’s King Kong, as opposed to what you might find on your typical science fiction-themed channel.",last,0.0
+control,106,"Now the Ubuntu phones are landing all over the world, so it's very likely that the number of devs willing to port apps will increase as well.",mean,0.0
+control,106,"Now the Ubuntu phones are landing all over the world, so it's very likely that the number of devs willing to port apps will increase as well.",max,0.0
+control,106,"Now the Ubuntu phones are landing all over the world, so it's very likely that the number of devs willing to port apps will increase as well.",last,0.0
+control,107,We're far more likely to vote based on where we are in our menstrual cycle or whether we're having a good hair day.,mean,0.0
+control,107,We're far more likely to vote based on where we are in our menstrual cycle or whether we're having a good hair day.,max,0.0
+control,107,We're far more likely to vote based on where we are in our menstrual cycle or whether we're having a good hair day.,last,0.0
+control,108,"The latest Around The NFL Podcast discusses Geno Smith and the Jets' QB position and much, much more with special co-host Colleen Wolfe.",mean,0.4439111351966858
+control,108,"The latest Around The NFL Podcast discusses Geno Smith and the Jets' QB position and much, much more with special co-host Colleen Wolfe.",max,13.317333221435547
+control,108,"The latest Around The NFL Podcast discusses Geno Smith and the Jets' QB position and much, much more with special co-host Colleen Wolfe.",last,0.0
+control,109,Because they never came to me.,mean,0.0
+control,109,Because they never came to me.,max,0.0
+control,109,Because they never came to me.,last,0.0
+control,110,"First and foremost, it is a story of extraordinary personal generosity.",mean,0.0
+control,110,"First and foremost, it is a story of extraordinary personal generosity.",max,0.0
+control,110,"First and foremost, it is a story of extraordinary personal generosity.",last,0.0
+control,111,"And, no, I don’t know when the wi-fi model is coming out!",mean,0.0
+control,111,"And, no, I don’t know when the wi-fi model is coming out!",max,0.0
+control,111,"And, no, I don’t know when the wi-fi model is coming out!",last,0.0
+control,112,They had two Louisville-bound stars in Billy Thompson and Kevin Walls.,mean,0.0
+control,112,They had two Louisville-bound stars in Billy Thompson and Kevin Walls.,max,0.0
+control,112,They had two Louisville-bound stars in Billy Thompson and Kevin Walls.,last,0.0
+control,113,"But to those so inclined, reading this book should have you nodding along, comforted at least that you are not alone in your concern that the role of expertise is in peril.",mean,0.0
+control,113,"But to those so inclined, reading this book should have you nodding along, comforted at least that you are not alone in your concern that the role of expertise is in peril.",max,0.0
+control,113,"But to those so inclined, reading this book should have you nodding along, comforted at least that you are not alone in your concern that the role of expertise is in peril.",last,0.0
+control,114,"She had already been spotted around the filming location, but there was still speculation that she might have just been there for a visit.",mean,15.65466022491455
+control,114,"She had already been spotted around the filming location, but there was still speculation that she might have just been there for a visit.",max,44.745487213134766
+control,114,"She had already been spotted around the filming location, but there was still speculation that she might have just been there for a visit.",last,0.0
+control,115,There are a few gadgets in the kernel which allow us to set the cr4 value.,mean,0.0
+control,115,There are a few gadgets in the kernel which allow us to set the cr4 value.,max,0.0
+control,115,There are a few gadgets in the kernel which allow us to set the cr4 value.,last,0.0
+control,116,"So many flavors are dancing around in this bread; if you like cranberries, you’re in for a treat!",mean,0.3691057860851288
+control,116,"So many flavors are dancing around in this bread; if you like cranberries, you’re in for a treat!",max,8.858538627624512
+control,116,"So many flavors are dancing around in this bread; if you like cranberries, you’re in for a treat!",last,0.0
+control,117,"and anger, of course, is the one emotion men are taught that it’s natural to express.",mean,0.0
+control,117,"and anger, of course, is the one emotion men are taught that it’s natural to express.",max,0.0
+control,117,"and anger, of course, is the one emotion men are taught that it’s natural to express.",last,0.0
+control,118,"In the final, stunning denouement, Smith's freedom and independence are resolved by his race performance in the most unpredictable way.",mean,0.45209449529647827
+control,118,"In the final, stunning denouement, Smith's freedom and independence are resolved by his race performance in the most unpredictable way.",max,12.206551551818848
+control,118,"In the final, stunning denouement, Smith's freedom and independence are resolved by his race performance in the most unpredictable way.",last,0.0
+control,119,Const.,mean,0.0
+control,119,Const.,max,0.0
+control,119,Const.,last,0.0
+control,120,"In √2 the Fibonacci sequence is included: 1, 1, 2, 3, 5, 8(6+2), 13(3+7+3).",mean,0.0
+control,120,"In √2 the Fibonacci sequence is included: 1, 1, 2, 3, 5, 8(6+2), 13(3+7+3).",max,0.0
+control,120,"In √2 the Fibonacci sequence is included: 1, 1, 2, 3, 5, 8(6+2), 13(3+7+3).",last,0.0
+control,121,"From the outside, it is inside the South-facing door with the Gaming Club flier on the Northeast corner of 30th and Jefferson.",mean,0.0
+control,121,"From the outside, it is inside the South-facing door with the Gaming Club flier on the Northeast corner of 30th and Jefferson.",max,0.0
+control,121,"From the outside, it is inside the South-facing door with the Gaming Club flier on the Northeast corner of 30th and Jefferson.",last,0.0
+control,122,"Nike spokesman Brian Strong said that the brand offers three tiers of the jerseys to serve a variety of consumers, but would not specify reasons as to why the price changed occurred.",mean,0.0
+control,122,"Nike spokesman Brian Strong said that the brand offers three tiers of the jerseys to serve a variety of consumers, but would not specify reasons as to why the price changed occurred.",max,0.0
+control,122,"Nike spokesman Brian Strong said that the brand offers three tiers of the jerseys to serve a variety of consumers, but would not specify reasons as to why the price changed occurred.",last,0.0
+control,123,A Gulfstream aircraft stuffed with Colombian cocaine crashed in the jungle of Mexico's Yucatan Peninsula in 2007.,mean,0.0
+control,123,A Gulfstream aircraft stuffed with Colombian cocaine crashed in the jungle of Mexico's Yucatan Peninsula in 2007.,max,0.0
+control,123,A Gulfstream aircraft stuffed with Colombian cocaine crashed in the jungle of Mexico's Yucatan Peninsula in 2007.,last,0.0
+control,124,"The game’s visuals look noticeably better on a television screen, and I did prefer to comfortably sit on a couch rather than have a bulky headset and headphones on.",mean,0.0
+control,124,"The game’s visuals look noticeably better on a television screen, and I did prefer to comfortably sit on a couch rather than have a bulky headset and headphones on.",max,0.0
+control,124,"The game’s visuals look noticeably better on a television screen, and I did prefer to comfortably sit on a couch rather than have a bulky headset and headphones on.",last,0.0
+control,125,"California faced similarly widespread blackouts in 2000 and 2001, triggered in part by an energy supply shortage.",mean,0.0
+control,125,"California faced similarly widespread blackouts in 2000 and 2001, triggered in part by an energy supply shortage.",max,0.0
+control,125,"California faced similarly widespread blackouts in 2000 and 2001, triggered in part by an energy supply shortage.",last,0.0
+control,126,"This is because executable files contain different sections: text , data , rodata , bss … each has a different meaning and is mapped differently.",mean,0.0
+control,126,"This is because executable files contain different sections: text , data , rodata , bss … each has a different meaning and is mapped differently.",max,0.0
+control,126,"This is because executable files contain different sections: text , data , rodata , bss … each has a different meaning and is mapped differently.",last,0.0
+control,127,"On the college level, Artis could score from many different areas on the floor as you can see in the video below.",mean,0.0
+control,127,"On the college level, Artis could score from many different areas on the floor as you can see in the video below.",max,0.0
+control,127,"On the college level, Artis could score from many different areas on the floor as you can see in the video below.",last,0.0
+control,128,"She's been working on other issues - Syria, the DPRK [North Korea] today.",mean,12.019828796386719
+control,128,"She's been working on other issues - Syria, the DPRK [North Korea] today.",max,43.789642333984375
+control,128,"She's been working on other issues - Syria, the DPRK [North Korea] today.",last,15.20833683013916
+control,129,(Daniel B. Ravicher is the Law Center's legal director.),mean,0.0
+control,129,(Daniel B. Ravicher is the Law Center's legal director.),max,0.0
+control,129,(Daniel B. Ravicher is the Law Center's legal director.),last,0.0
+control,130,"He stood in the top lane, did the dirty work, and was repaid by his team by putting on good carry performances and helping CJ lock down a top three seed in the regular season.",mean,0.0
+control,130,"He stood in the top lane, did the dirty work, and was repaid by his team by putting on good carry performances and helping CJ lock down a top three seed in the regular season.",max,0.0
+control,130,"He stood in the top lane, did the dirty work, and was repaid by his team by putting on good carry performances and helping CJ lock down a top three seed in the regular season.",last,0.0
+control,131,"Evolutionary biology has helped scientists understand why the world looks the way it does for more than 150 years, since Charles Darwin released On the Origin of Species back in 1859.",mean,0.0
+control,131,"Evolutionary biology has helped scientists understand why the world looks the way it does for more than 150 years, since Charles Darwin released On the Origin of Species back in 1859.",max,0.0
+control,131,"Evolutionary biology has helped scientists understand why the world looks the way it does for more than 150 years, since Charles Darwin released On the Origin of Species back in 1859.",last,0.0
+control,132,"“This application needs to be seen as a once-in-a-lifetime opportunity to transition the local economy to one based upon high skills and high wages,” Miller Argent said.",mean,0.0
+control,132,"“This application needs to be seen as a once-in-a-lifetime opportunity to transition the local economy to one based upon high skills and high wages,” Miller Argent said.",max,0.0
+control,132,"“This application needs to be seen as a once-in-a-lifetime opportunity to transition the local economy to one based upon high skills and high wages,” Miller Argent said.",last,0.0
+control,133,It is passed down from people like the man who wrote me that email.,mean,0.0
+control,133,It is passed down from people like the man who wrote me that email.,max,0.0
+control,133,It is passed down from people like the man who wrote me that email.,last,0.0
+control,134,"They lay it out pretty clearly, especially for those authors who maybe didn't do so well in economics classes:Amazon then goes one step further, driving a real wedge between Hachette and authors with the following paragraph:Are there legitimate concerns that some may have about Amazon's position in the marketplace?",mean,0.0
+control,134,"They lay it out pretty clearly, especially for those authors who maybe didn't do so well in economics classes:Amazon then goes one step further, driving a real wedge between Hachette and authors with the following paragraph:Are there legitimate concerns that some may have about Amazon's position in the marketplace?",max,0.0
+control,134,"They lay it out pretty clearly, especially for those authors who maybe didn't do so well in economics classes:Amazon then goes one step further, driving a real wedge between Hachette and authors with the following paragraph:Are there legitimate concerns that some may have about Amazon's position in the marketplace?",last,0.0
+control,135,"Finance Minister Arun Jaitley said that it would take two to three weeks to re-calibrate the machines, according to the Financial Times.",mean,0.0
+control,135,"Finance Minister Arun Jaitley said that it would take two to three weeks to re-calibrate the machines, according to the Financial Times.",max,0.0
+control,135,"Finance Minister Arun Jaitley said that it would take two to three weeks to re-calibrate the machines, according to the Financial Times.",last,0.0
+control,136,"Suffer from Temporary Hypoglycemia (low blood sugar if I don’t eat)
+
+Acid Reflux/Gastritis.",mean,0.0
+control,136,"Suffer from Temporary Hypoglycemia (low blood sugar if I don’t eat)
+
+Acid Reflux/Gastritis.",max,0.0
+control,136,"Suffer from Temporary Hypoglycemia (low blood sugar if I don’t eat)
+
+Acid Reflux/Gastritis.",last,0.0
+control,137,40.,mean,0.0
+control,137,40.,max,0.0
+control,137,40.,last,0.0
+control,138,"There are a tremendous amount of theories put out about the way porn potentially affects people's brains, but these theories are not being critically assessed.",mean,0.0
+control,138,"There are a tremendous amount of theories put out about the way porn potentially affects people's brains, but these theories are not being critically assessed.",max,0.0
+control,138,"There are a tremendous amount of theories put out about the way porn potentially affects people's brains, but these theories are not being critically assessed.",last,0.0
+control,139,"These include reducing the need for electric lighting by creating new, enlarged windows and skylights, designed to protect interior spaces from direct sun in the summer, while also encouraging winter sun.",mean,0.0
+control,139,"These include reducing the need for electric lighting by creating new, enlarged windows and skylights, designed to protect interior spaces from direct sun in the summer, while also encouraging winter sun.",max,0.0
+control,139,"These include reducing the need for electric lighting by creating new, enlarged windows and skylights, designed to protect interior spaces from direct sun in the summer, while also encouraging winter sun.",last,0.0
+control,140,What additional information should you hunt out to make a more balanced viewpoint?,mean,0.0
+control,140,What additional information should you hunt out to make a more balanced viewpoint?,max,0.0
+control,140,What additional information should you hunt out to make a more balanced viewpoint?,last,0.0
+control,141,"“We were getting flak, which was rightly deserved at the time, but those are the times you have to show a bit of steel and character.",mean,0.0
+control,141,"“We were getting flak, which was rightly deserved at the time, but those are the times you have to show a bit of steel and character.",max,0.0
+control,141,"“We were getting flak, which was rightly deserved at the time, but those are the times you have to show a bit of steel and character.",last,0.0
+control,142,"[53]
+
+Muhammad al-Baqir, the Fourth (Isma'ili) or Fifth (Twelver) Imam said of the Mahdi:
+
+The Master of the Command was named as the Mahdi because he will dig out the Torah and other heavenly books from the cave in Antioch.",mean,0.0
+control,142,"[53]
+
+Muhammad al-Baqir, the Fourth (Isma'ili) or Fifth (Twelver) Imam said of the Mahdi:
+
+The Master of the Command was named as the Mahdi because he will dig out the Torah and other heavenly books from the cave in Antioch.",max,0.0
+control,142,"[53]
+
+Muhammad al-Baqir, the Fourth (Isma'ili) or Fifth (Twelver) Imam said of the Mahdi:
+
+The Master of the Command was named as the Mahdi because he will dig out the Torah and other heavenly books from the cave in Antioch.",last,0.0
+control,143,"Other start-ups offering less expensive consumer products include Casper, which sells mail-order mattresses to consumers online for as little as $500, nearly a tenth of the cost of high-end bed sets.",mean,0.0
+control,143,"Other start-ups offering less expensive consumer products include Casper, which sells mail-order mattresses to consumers online for as little as $500, nearly a tenth of the cost of high-end bed sets.",max,0.0
+control,143,"Other start-ups offering less expensive consumer products include Casper, which sells mail-order mattresses to consumers online for as little as $500, nearly a tenth of the cost of high-end bed sets.",last,0.0
+control,144,"The attorney general slammed what she described as the state's attempt to get into the business of ""legislating identity.""",mean,1.265088677406311
+control,144,"The attorney general slammed what she described as the state's attempt to get into the business of ""legislating identity.""",max,19.95037078857422
+control,144,"The attorney general slammed what she described as the state's attempt to get into the business of ""legislating identity.""",last,0.0
+control,145,World's 10 deadliest street drugs 1/10 10.,mean,0.0
+control,145,World's 10 deadliest street drugs 1/10 10.,max,0.0
+control,145,World's 10 deadliest street drugs 1/10 10.,last,0.0
+control,146,"Acknowledgments
+
+Machine-readable bibliographic record - MARC, RIS, BibTeX
+
+Document Object Identifier (DOI): 10.3386/w21003
+
+Published: Danny Yagan, 2015.",mean,0.0
+control,146,"Acknowledgments
+
+Machine-readable bibliographic record - MARC, RIS, BibTeX
+
+Document Object Identifier (DOI): 10.3386/w21003
+
+Published: Danny Yagan, 2015.",max,0.0
+control,146,"Acknowledgments
+
+Machine-readable bibliographic record - MARC, RIS, BibTeX
+
+Document Object Identifier (DOI): 10.3386/w21003
+
+Published: Danny Yagan, 2015.",last,0.0
+control,147,"Kelly — who in his application called affirmative action and slavery the same morally — will replace retiring Justice David Prosser on Aug. 1, the start of the court's new term.",mean,0.7243015170097351
+control,147,"Kelly — who in his application called affirmative action and slavery the same morally — will replace retiring Justice David Prosser on Aug. 1, the start of the court's new term.",max,18.854604721069336
+control,147,"Kelly — who in his application called affirmative action and slavery the same morally — will replace retiring Justice David Prosser on Aug. 1, the start of the court's new term.",last,0.0
+control,148,"Windows Home Server, Windows Server 2003 and Windows XP: 256 MB, or 128 MB with 4GT.",mean,0.0
+control,148,"Windows Home Server, Windows Server 2003 and Windows XP: 256 MB, or 128 MB with 4GT.",max,0.0
+control,148,"Windows Home Server, Windows Server 2003 and Windows XP: 256 MB, or 128 MB with 4GT.",last,0.0
+control,149,"According to the app's iTunes description, users can:
+
+*Stay up to date on the latest campaign news
+
+*Meet and communicate with fellow supporters
+
+*Earn points for taking action to unlock special activist badges and win prizes
+
+*RSVP, get directions, and check-in at official events and rallies
+
+*Sign up to vote, sign up to volunteer, and make a difference
+
+*Invite your friends to join you on the app!",mean,0.0
+control,149,"According to the app's iTunes description, users can:
+
+*Stay up to date on the latest campaign news
+
+*Meet and communicate with fellow supporters
+
+*Earn points for taking action to unlock special activist badges and win prizes
+
+*RSVP, get directions, and check-in at official events and rallies
+
+*Sign up to vote, sign up to volunteer, and make a difference
+
+*Invite your friends to join you on the app!",max,0.0
+control,149,"According to the app's iTunes description, users can:
+
+*Stay up to date on the latest campaign news
+
+*Meet and communicate with fellow supporters
+
+*Earn points for taking action to unlock special activist badges and win prizes
+
+*RSVP, get directions, and check-in at official events and rallies
+
+*Sign up to vote, sign up to volunteer, and make a difference
+
+*Invite your friends to join you on the app!",last,0.0
+control,150,"Point percentage: This variable works as a proxy for score effects, which cause a team in the lead to go into a defensive shell, artificially suppressing its shot differential.",mean,0.0
+control,150,"Point percentage: This variable works as a proxy for score effects, which cause a team in the lead to go into a defensive shell, artificially suppressing its shot differential.",max,0.0
+control,150,"Point percentage: This variable works as a proxy for score effects, which cause a team in the lead to go into a defensive shell, artificially suppressing its shot differential.",last,0.0
+control,151,Team officials have said all winter they plan on Danny Espinosa to be their utility infielder.,mean,0.0
+control,151,Team officials have said all winter they plan on Danny Espinosa to be their utility infielder.,max,0.0
+control,151,Team officials have said all winter they plan on Danny Espinosa to be their utility infielder.,last,0.0
+control,152,“The innovative and financially strong Smilegate with its billion-dollar CROSSFIRE franchise is a perfect partner for us.,mean,0.0
+control,152,“The innovative and financially strong Smilegate with its billion-dollar CROSSFIRE franchise is a perfect partner for us.,max,0.0
+control,152,“The innovative and financially strong Smilegate with its billion-dollar CROSSFIRE franchise is a perfect partner for us.,last,0.0
+control,153,"As such, gender is important in defining susceptibility and exposure to a number of mental health risks.",mean,0.0
+control,153,"As such, gender is important in defining susceptibility and exposure to a number of mental health risks.",max,0.0
+control,153,"As such, gender is important in defining susceptibility and exposure to a number of mental health risks.",last,0.0
+control,154,Warden Adam Gormely said he’s gotten into arguments at accident scenes with people who want to cut off the moose’s antlers but leave the rest.,mean,0.0
+control,154,Warden Adam Gormely said he’s gotten into arguments at accident scenes with people who want to cut off the moose’s antlers but leave the rest.,max,0.0
+control,154,Warden Adam Gormely said he’s gotten into arguments at accident scenes with people who want to cut off the moose’s antlers but leave the rest.,last,0.0
+control,155,"Condemning them to life in the shadows means that they will have less stable home lives than they should, be denied the opportunity to acquire skills and education, contribute less to the economy, and play a less positive role in society.",mean,0.0
+control,155,"Condemning them to life in the shadows means that they will have less stable home lives than they should, be denied the opportunity to acquire skills and education, contribute less to the economy, and play a less positive role in society.",max,0.0
+control,155,"Condemning them to life in the shadows means that they will have less stable home lives than they should, be denied the opportunity to acquire skills and education, contribute less to the economy, and play a less positive role in society.",last,0.0
+control,156,"Here is his statement:
+
+“It not infrequently happens that something about the earth…may be known with the greatest certainty by reasoning or by experience, even by one who is not a Christian.",mean,0.0
+control,156,"Here is his statement:
+
+“It not infrequently happens that something about the earth…may be known with the greatest certainty by reasoning or by experience, even by one who is not a Christian.",max,0.0
+control,156,"Here is his statement:
+
+“It not infrequently happens that something about the earth…may be known with the greatest certainty by reasoning or by experience, even by one who is not a Christian.",last,0.0
+control,157,"Sasser drove me to one of the sugar mills, this one run by the Sugarcane Growers Cooperative of Florida, an organization of 45 small and medium-sized farms.",mean,0.0
+control,157,"Sasser drove me to one of the sugar mills, this one run by the Sugarcane Growers Cooperative of Florida, an organization of 45 small and medium-sized farms.",max,0.0
+control,157,"Sasser drove me to one of the sugar mills, this one run by the Sugarcane Growers Cooperative of Florida, an organization of 45 small and medium-sized farms.",last,0.0
+control,158,"""Hard disk, hard disk...hmmm -- is that little rectangle in the top right?""",mean,0.0
+control,158,"""Hard disk, hard disk...hmmm -- is that little rectangle in the top right?""",max,0.0
+control,158,"""Hard disk, hard disk...hmmm -- is that little rectangle in the top right?""",last,0.0
+control,159,The upshot comes down to a very simple rule.,mean,0.0
+control,159,The upshot comes down to a very simple rule.,max,0.0
+control,159,The upshot comes down to a very simple rule.,last,0.0
+control,160,"Research has shown that disorder may confer certain advantages that make psychopaths particularly suited to a life on the public stage and able to handle high-pressure situations: psychopaths score low on measures of stress reactivity, anxiety and depression, and high on measures of competitive achievement, positive impressions on first encounters, and fearlessness.",mean,0.0
+control,160,"Research has shown that disorder may confer certain advantages that make psychopaths particularly suited to a life on the public stage and able to handle high-pressure situations: psychopaths score low on measures of stress reactivity, anxiety and depression, and high on measures of competitive achievement, positive impressions on first encounters, and fearlessness.",max,0.0
+control,160,"Research has shown that disorder may confer certain advantages that make psychopaths particularly suited to a life on the public stage and able to handle high-pressure situations: psychopaths score low on measures of stress reactivity, anxiety and depression, and high on measures of competitive achievement, positive impressions on first encounters, and fearlessness.",last,0.0
+control,161,"It’s an altercation that sparked a brief cri de coeur online this Saturday, when conservatives thought they’d found the clip that could undermine the entire pro-union movement.",mean,0.263295978307724
+control,161,"It’s an altercation that sparked a brief cri de coeur online this Saturday, when conservatives thought they’d found the clip that could undermine the entire pro-union movement.",max,9.21535873413086
+control,161,"It’s an altercation that sparked a brief cri de coeur online this Saturday, when conservatives thought they’d found the clip that could undermine the entire pro-union movement.",last,0.0
+control,162,The solution isn't less spying -- despite the Snowden revelations -- but more policies.,mean,0.0
+control,162,The solution isn't less spying -- despite the Snowden revelations -- but more policies.,max,0.0
+control,162,The solution isn't less spying -- despite the Snowden revelations -- but more policies.,last,0.0
+control,163,"For the past two years, health insurers selling on Obamacare marketplaces had little information to estimate how much medical care their members would use.",mean,0.0
+control,163,"For the past two years, health insurers selling on Obamacare marketplaces had little information to estimate how much medical care their members would use.",max,0.0
+control,163,"For the past two years, health insurers selling on Obamacare marketplaces had little information to estimate how much medical care their members would use.",last,0.0
+control,164,"However, it still packs a punch – at its core, the LimeSDR Mini uses the same LMS7002M radio transceiver as its big sibling.""",mean,0.0
+control,164,"However, it still packs a punch – at its core, the LimeSDR Mini uses the same LMS7002M radio transceiver as its big sibling.""",max,0.0
+control,164,"However, it still packs a punch – at its core, the LimeSDR Mini uses the same LMS7002M radio transceiver as its big sibling.""",last,0.0
+control,165,"(In the biz, ""climate sensitivity"" refers to the rise in temperature that would result from a doubling in global greenhouses gases from pre-industrial levels.)",mean,0.0
+control,165,"(In the biz, ""climate sensitivity"" refers to the rise in temperature that would result from a doubling in global greenhouses gases from pre-industrial levels.)",max,0.0
+control,165,"(In the biz, ""climate sensitivity"" refers to the rise in temperature that would result from a doubling in global greenhouses gases from pre-industrial levels.)",last,0.0
+control,166,"In all cases, our customers will proactively be informed about these VoIP charges in advance through the company’s standard communication channels like SMS, USSD pop-up, email etc.",mean,0.0
+control,166,"In all cases, our customers will proactively be informed about these VoIP charges in advance through the company’s standard communication channels like SMS, USSD pop-up, email etc.",max,0.0
+control,166,"In all cases, our customers will proactively be informed about these VoIP charges in advance through the company’s standard communication channels like SMS, USSD pop-up, email etc.",last,0.0
+control,167,Moleskine or some a cheap one found at the store.,mean,0.0
+control,167,Moleskine or some a cheap one found at the store.,max,0.0
+control,167,Moleskine or some a cheap one found at the store.,last,0.0
+control,168,"Children are seen as extensions of their parents, which is why so many Asian parents feel free to tell their children what major or career to pursue.",mean,0.0
+control,168,"Children are seen as extensions of their parents, which is why so many Asian parents feel free to tell their children what major or career to pursue.",max,0.0
+control,168,"Children are seen as extensions of their parents, which is why so many Asian parents feel free to tell their children what major or career to pursue.",last,0.0
+control,169,Part of the problem is that we develop bad habits over the years.,mean,0.0
+control,169,Part of the problem is that we develop bad habits over the years.,max,0.0
+control,169,Part of the problem is that we develop bad habits over the years.,last,0.0
+control,170,"There are already promises in many other languages: Scala has Future, Java has CompletableFuture, and C# has Task.",mean,0.0
+control,170,"There are already promises in many other languages: Scala has Future, Java has CompletableFuture, and C# has Task.",max,0.0
+control,170,"There are already promises in many other languages: Scala has Future, Java has CompletableFuture, and C# has Task.",last,0.0
+control,171,"[24]
+
+Famous historical cases [ edit ]
+
+Famous instances of great economic and social mobility include Benjamin Franklin and Henry Ford,[3] Additional popular examples of upward social mobility between generations in America include Abraham Lincoln and Bill Clinton, who were born into working-class families yet achieved high political office in adult life.",mean,0.0
+control,171,"[24]
+
+Famous historical cases [ edit ]
+
+Famous instances of great economic and social mobility include Benjamin Franklin and Henry Ford,[3] Additional popular examples of upward social mobility between generations in America include Abraham Lincoln and Bill Clinton, who were born into working-class families yet achieved high political office in adult life.",max,0.0
+control,171,"[24]
+
+Famous historical cases [ edit ]
+
+Famous instances of great economic and social mobility include Benjamin Franklin and Henry Ford,[3] Additional popular examples of upward social mobility between generations in America include Abraham Lincoln and Bill Clinton, who were born into working-class families yet achieved high political office in adult life.",last,0.0
+control,172,"But the expansion would depend on being successful on competitive bids, Hoffman added.",mean,0.0
+control,172,"But the expansion would depend on being successful on competitive bids, Hoffman added.",max,0.0
+control,172,"But the expansion would depend on being successful on competitive bids, Hoffman added.",last,0.0
+control,173,"The Salt-N-Pepa-led “I Love The ‘90s"" tour attracted 10,141 and Kid Rock, the highest paid act in Grandstand history, brought in 10,115.",mean,0.0
+control,173,"The Salt-N-Pepa-led “I Love The ‘90s"" tour attracted 10,141 and Kid Rock, the highest paid act in Grandstand history, brought in 10,115.",max,0.0
+control,173,"The Salt-N-Pepa-led “I Love The ‘90s"" tour attracted 10,141 and Kid Rock, the highest paid act in Grandstand history, brought in 10,115.",last,0.0
+control,174,"Requirements
+
+Use Homebrew Cask?",mean,0.0
+control,174,"Requirements
+
+Use Homebrew Cask?",max,0.0
+control,174,"Requirements
+
+Use Homebrew Cask?",last,0.0
+control,175,In the end four teams climbed the route that day – an instant classic!,mean,0.0
+control,175,In the end four teams climbed the route that day – an instant classic!,max,0.0
+control,175,In the end four teams climbed the route that day – an instant classic!,last,0.0
+control,176,"If Obama has continued to push for Assad’s ouster, moreover, it has been mainly at Saudi behest since the Wahhabists who rule in Riyadh cannot countenance the idea of a Shi‘ite remaining in power in neighboring Syria.",mean,0.0
+control,176,"If Obama has continued to push for Assad’s ouster, moreover, it has been mainly at Saudi behest since the Wahhabists who rule in Riyadh cannot countenance the idea of a Shi‘ite remaining in power in neighboring Syria.",max,0.0
+control,176,"If Obama has continued to push for Assad’s ouster, moreover, it has been mainly at Saudi behest since the Wahhabists who rule in Riyadh cannot countenance the idea of a Shi‘ite remaining in power in neighboring Syria.",last,0.0
+control,177,"This truth and justice men presently endeavour to make application of, to the measuring of land, the apportionment of service, the protection of life and property.",mean,0.0
+control,177,"This truth and justice men presently endeavour to make application of, to the measuring of land, the apportionment of service, the protection of life and property.",max,0.0
+control,177,"This truth and justice men presently endeavour to make application of, to the measuring of land, the apportionment of service, the protection of life and property.",last,0.0
+control,178,"We shouldn’t hold them to it for the rest of their careers; he later told The Guardian that “I have no qualms about admitting it was a promotional gimmick.”
+
+After Illinois, it seemed like everything was on the table for Stevens.",mean,0.0
+control,178,"We shouldn’t hold them to it for the rest of their careers; he later told The Guardian that “I have no qualms about admitting it was a promotional gimmick.”
+
+After Illinois, it seemed like everything was on the table for Stevens.",max,0.0
+control,178,"We shouldn’t hold them to it for the rest of their careers; he later told The Guardian that “I have no qualms about admitting it was a promotional gimmick.”
+
+After Illinois, it seemed like everything was on the table for Stevens.",last,0.0
+control,179,Might of the Bear - Now works with Staves.,mean,0.0
+control,179,Might of the Bear - Now works with Staves.,max,0.0
+control,179,Might of the Bear - Now works with Staves.,last,0.0
+control,180,"Its compass is not the centre of Melbourne, but the satellite city of Broadmeadows, around which the surrounding suburbs hover.",mean,0.0
+control,180,"Its compass is not the centre of Melbourne, but the satellite city of Broadmeadows, around which the surrounding suburbs hover.",max,0.0
+control,180,"Its compass is not the centre of Melbourne, but the satellite city of Broadmeadows, around which the surrounding suburbs hover.",last,0.0
+control,181,“That is not to say they are giving instructions to it; they do not.,mean,0.0
+control,181,“That is not to say they are giving instructions to it; they do not.,max,0.0
+control,181,“That is not to say they are giving instructions to it; they do not.,last,0.0
+control,182,I had tears in my eyes.”,mean,0.0
+control,182,I had tears in my eyes.”,max,0.0
+control,182,I had tears in my eyes.”,last,0.0
+control,183,"Step 1: Conservation
+
+First, we need to do whatever it takes to make sure our current stocks of antibiotics remain effective for as long as possible.",mean,0.0
+control,183,"Step 1: Conservation
+
+First, we need to do whatever it takes to make sure our current stocks of antibiotics remain effective for as long as possible.",max,0.0
+control,183,"Step 1: Conservation
+
+First, we need to do whatever it takes to make sure our current stocks of antibiotics remain effective for as long as possible.",last,0.0
+control,184,"But If you live in UK and US ,you must try it .",mean,0.0
+control,184,"But If you live in UK and US ,you must try it .",max,0.0
+control,184,"But If you live in UK and US ,you must try it .",last,0.0
+control,185,"Likewise, electricity came chiefly from the mainland, most of it from Ukrainian power stations.",mean,0.0
+control,185,"Likewise, electricity came chiefly from the mainland, most of it from Ukrainian power stations.",max,0.0
+control,185,"Likewise, electricity came chiefly from the mainland, most of it from Ukrainian power stations.",last,0.0
+control,186,He played shortstop and second base on the same field where his dad once pitched.,mean,0.0
+control,186,He played shortstop and second base on the same field where his dad once pitched.,max,0.0
+control,186,He played shortstop and second base on the same field where his dad once pitched.,last,0.0
+control,187,"For that reason alone, document-stores (Tokyo, CouchDB, MongoDB), graph stores (Neo4J), and other alternative data structure databases (Redis) are finding fertile ground for adoption.",mean,0.0
+control,187,"For that reason alone, document-stores (Tokyo, CouchDB, MongoDB), graph stores (Neo4J), and other alternative data structure databases (Redis) are finding fertile ground for adoption.",max,0.0
+control,187,"For that reason alone, document-stores (Tokyo, CouchDB, MongoDB), graph stores (Neo4J), and other alternative data structure databases (Redis) are finding fertile ground for adoption.",last,0.0
+control,188,"Two weeks later, three members of the Panama Unit, including Jonathan Treviño and Alexis Espinoza, the son of Hidalgo Police Chief Rudy Espinoza, were indicted by a federal grand jury after an investigation by Immigration and Customs Enforcement and the FBI.",mean,0.0
+control,188,"Two weeks later, three members of the Panama Unit, including Jonathan Treviño and Alexis Espinoza, the son of Hidalgo Police Chief Rudy Espinoza, were indicted by a federal grand jury after an investigation by Immigration and Customs Enforcement and the FBI.",max,0.0
+control,188,"Two weeks later, three members of the Panama Unit, including Jonathan Treviño and Alexis Espinoza, the son of Hidalgo Police Chief Rudy Espinoza, were indicted by a federal grand jury after an investigation by Immigration and Customs Enforcement and the FBI.",last,0.0
+control,189,"Wael Ghonim, a cyberactivist who is a Google executive on leave, wrote Friday on his Twitter account, ""Dear Egyptians, Go back to your work on Sunday, work like never before and help Egypt become a developed country.""",mean,0.0
+control,189,"Wael Ghonim, a cyberactivist who is a Google executive on leave, wrote Friday on his Twitter account, ""Dear Egyptians, Go back to your work on Sunday, work like never before and help Egypt become a developed country.""",max,0.0
+control,189,"Wael Ghonim, a cyberactivist who is a Google executive on leave, wrote Friday on his Twitter account, ""Dear Egyptians, Go back to your work on Sunday, work like never before and help Egypt become a developed country.""",last,0.0
+control,190,"The fossil fuel industry, led by oil and coal, received $72 billion in total federal subsidies from 2002 to 2008, but earlier this year President Obama called for those subsidies to end.About $2.3 billion of the $72 billion went to so carbon capture and sequestration projects and research, which seek to trap carbon dioxide and bury it underground.",mean,0.0
+control,190,"The fossil fuel industry, led by oil and coal, received $72 billion in total federal subsidies from 2002 to 2008, but earlier this year President Obama called for those subsidies to end.About $2.3 billion of the $72 billion went to so carbon capture and sequestration projects and research, which seek to trap carbon dioxide and bury it underground.",max,0.0
+control,190,"The fossil fuel industry, led by oil and coal, received $72 billion in total federal subsidies from 2002 to 2008, but earlier this year President Obama called for those subsidies to end.About $2.3 billion of the $72 billion went to so carbon capture and sequestration projects and research, which seek to trap carbon dioxide and bury it underground.",last,0.0
+control,191,"Practice What You Preach – Barry White
+
+82.",mean,0.0
+control,191,"Practice What You Preach – Barry White
+
+82.",max,0.0
+control,191,"Practice What You Preach – Barry White
+
+82.",last,0.0
+control,192,"You’d also hope that having partnered with IBM, Elemental Path will invest plenty of time in securing the dinosaur from more devious developers.",mean,0.0
+control,192,"You’d also hope that having partnered with IBM, Elemental Path will invest plenty of time in securing the dinosaur from more devious developers.",max,0.0
+control,192,"You’d also hope that having partnered with IBM, Elemental Path will invest plenty of time in securing the dinosaur from more devious developers.",last,0.0
+control,193,"I’m going to stand up along side the likes of Janet and say loudly and clearly…
+
+Back The Fuck Off.",mean,0.6528793573379517
+control,193,"I’m going to stand up along side the likes of Janet and say loudly and clearly…
+
+Back The Fuck Off.",max,15.669103622436523
+control,193,"I’m going to stand up along side the likes of Janet and say loudly and clearly…
+
+Back The Fuck Off.",last,0.0
+control,194,4.Cornerback: The Patriots have a pretty young cornerback depth chart.,mean,0.0
+control,194,4.Cornerback: The Patriots have a pretty young cornerback depth chart.,max,0.0
+control,194,4.Cornerback: The Patriots have a pretty young cornerback depth chart.,last,0.0
+control,195,"He wants to transfer to a school closer to home (Norcross, Ga.) so his family can see him play.""",mean,0.0
+control,195,"He wants to transfer to a school closer to home (Norcross, Ga.) so his family can see him play.""",max,0.0
+control,195,"He wants to transfer to a school closer to home (Norcross, Ga.) so his family can see him play.""",last,0.0
+control,196,There is a tremendous shortage of drilling rigs and manpower.,mean,0.0
+control,196,There is a tremendous shortage of drilling rigs and manpower.,max,0.0
+control,196,There is a tremendous shortage of drilling rigs and manpower.,last,0.0
+control,197,"Based on these findings, Smith and co-workers (846, 1114) proposed that especially simple motor tasks require stage 2 sleep, whereas complex motor tasks may require REM sleep.",mean,0.0
+control,197,"Based on these findings, Smith and co-workers (846, 1114) proposed that especially simple motor tasks require stage 2 sleep, whereas complex motor tasks may require REM sleep.",max,0.0
+control,197,"Based on these findings, Smith and co-workers (846, 1114) proposed that especially simple motor tasks require stage 2 sleep, whereas complex motor tasks may require REM sleep.",last,0.0
+control,198,God is often believed to be forgiving.,mean,0.0
+control,198,God is often believed to be forgiving.,max,0.0
+control,198,God is often believed to be forgiving.,last,0.0
+control,199,"“Easy Top 10,” Bolden said.",mean,0.0
+control,199,"“Easy Top 10,” Bolden said.",max,0.0
+control,199,"“Easy Top 10,” Bolden said.",last,0.0
