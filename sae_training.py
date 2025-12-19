@@ -521,7 +521,7 @@ def main() -> None:
     k = 64
     k_aux = 2048
     aux_loss_coeff = 1 / 32
-    dict_reg_coeff = 1e-3
+    dict_reg_coeff = 3e-3
     m_sample_size = 4096
     p_projections = 32
     dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
