@@ -127,6 +127,14 @@ class TopKSparseAutoencoder(nn.Module):
 
         return reconstructed, h, h_sparse
 
+    def get_decoder_dictionary_sample(self, m: int) -> torch.Tensor:
+        """Randomly sample m decoder weight vectors."""
+        # The decoder weights are of shape (d_model, n_latents), so we transpose to sample column vectors.
+        dictionary_vectors = self.decoder.weight.t()
+        num_latents = dictionary_vectors.shape[0]
+        indices = torch.randint(0, num_latents, (m,), device=dictionary_vectors.device)
+        return dictionary_vectors[indices]
+
     def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
         """"""
         # Apply TopK activation, Relu to guarantee positive topk vals and then build sparse representation

@@ -61,6 +61,9 @@ def train_epoch(
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
+    dict_reg_coeff: float,
+    m_sample_size: int,
+    p_projections: int,
 ) -> None:
     """"""
     # Set the model to train mode
@@ -70,6 +73,7 @@ def train_epoch(
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+    dict_reg_loss_acc = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
     accumulated_loss_count = dist.get_world_size() * log_interval
 
@@ -111,8 +115,33 @@ def train_epoch(
             # If there are not enough dead latents to activate, set auxiliary loss to 0.
             aux_loss = torch.tensor(0.0, device=device)
 
+        # SIGReg Loss Calculation
+        d_model = model.module.d_model
+        with torch.no_grad():
+            dict_sample = model.module.get_decoder_dictionary_sample(m_sample_size)
+
+        dict_sample_scaled = dict_sample * (d_model**0.5)
+
+        projections = torch.randn(d_model, p_projections, device=device, dtype=dtype)
+        projections = projections / torch.norm(projections, dim=0, keepdim=True)
+
+        projected_dict = torch.matmul(dict_sample_scaled, projections)
+
+        t = torch.linspace(0, 1, 100, device=device, dtype=dtype)
+        phi_t = torch.exp(-(t**2) / 2)
+
+        cos_t_z = torch.cos(t.unsqueeze(0) * projected_dict.unsqueeze(-1))
+        sin_t_z = torch.sin(t.unsqueeze(0) * projected_dict.unsqueeze(-1))
+
+        ecf_cos = torch.mean(cos_t_z, dim=[0, 1])
+        ecf_sin = torch.mean(sin_t_z, dim=[0, 1])
+
+        err_t = (ecf_cos - phi_t)**2 + ecf_sin**2
+        
+        dict_reg_loss = torch.trapz(err_t, t) if hasattr(torch, 'trapz') else torch.trapezoid(err_t, t)
+
         # Compute total loss with auxiliary loss coefficient
-        total_loss = loss + aux_loss_coeff * aux_loss
+        total_loss = loss + aux_loss_coeff * aux_loss + dict_reg_coeff * dict_reg_loss
 
         # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
         # and normalize the decoder weights again.
@@ -125,6 +154,7 @@ def train_epoch(
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
         total_loss_acc += total_loss.detach()
+        dict_reg_loss_acc += dict_reg_loss.detach()
 
         # Update the progress bar on main process
         if rank == 0:
@@ -142,19 +172,32 @@ def train_epoch(
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(dict_reg_loss_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
+            avg_dict_reg_loss = dict_reg_loss_acc.item() / accumulated_loss_count
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
+            dict_reg_loss_acc = torch.tensor(0.0, device=device)
 
             # Determine dead latent debug statistics
             dead_latents_ratio = dead_latents / dead_mask.numel()
             max_dead_latent = latent_last_nonzero.max().item()
             max_dead_latent_count = (latent_last_nonzero == max_dead_latent).sum().item()
+
+            # Coherence Calculation
+            with torch.no_grad():
+                dict_sample_coh = model.module.get_decoder_dictionary_sample(2048)
+                dict_sample_norm = dict_sample_coh / torch.norm(dict_sample_coh, dim=1, keepdim=True)
+                cos_sim = torch.abs(torch.matmul(dict_sample_norm, dict_sample_norm.t()))
+                cos_sim.fill_diagonal_(0)
+                mean_coherence = torch.mean(cos_sim[torch.triu_indices(2048, 2048, offset=1).unbind()]).item()
+                max_coherence = torch.max(cos_sim).item()
+
 
             # Log to wandb and tqdm
             if rank == 0:
@@ -163,9 +206,12 @@ def train_epoch(
                         "train/loss": avg_loss,
                         "train/aux_loss": avg_aux_loss,
                         "train/total_loss": avg_total_loss,
+                        "train/dict_reg_loss": avg_dict_reg_loss,
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
+                        "debug/dict_coherence_max": max_coherence,
+                        "debug/dict_coherence_mean": mean_coherence,
                     },
                     step=epoch * len(dataloader) + batch_idx + 1,
                 )
@@ -295,6 +341,9 @@ def train_autoencoder(
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
+    dict_reg_coeff: float,
+    m_sample_size: int,
+    p_projections: int,
 ) -> TopKSparseAutoencoder:
     """"""
     logging.info("Sending model to device and wrapping in DistributedDataParallel...")
@@ -364,6 +413,9 @@ def train_autoencoder(
             dtype=dtype,
             device=device,
             rank=rank,
+            dict_reg_coeff=dict_reg_coeff,
+            m_sample_size=m_sample_size,
+            p_projections=p_projections,
         )
 
         # Validate an epoch
@@ -482,6 +534,9 @@ def main() -> None:
     dataloader_num_workers = 8
     logs_per_epoch = 100
     train_val_split = 0.95
+    dict_reg_coeff = 1e-3
+    m_sample_size = 4096
+    p_projections = 64
 
     if rank == 0:
         logging.info("Logging into and initializing wandb...")
@@ -508,6 +563,9 @@ def main() -> None:
                 "logs_per_epoch": logs_per_epoch,
                 "train_val_split": train_val_split,
                 "world_size": world_size,
+                "dict_reg_coeff": dict_reg_coeff,
+                "m_sample_size": m_sample_size,
+                "p_projections": p_projections,
             },
         )
 
@@ -541,6 +599,9 @@ def main() -> None:
         logging.info(f"# dataloader_num_workers={dataloader_num_workers}")
         logging.info(f"# logs_per_epoch={logs_per_epoch}")
         logging.info(f"# train_val_split={train_val_split}")
+        logging.info(f"# dict_reg_coeff={dict_reg_coeff}")
+        logging.info(f"# m_sample_size={m_sample_size}")
+        logging.info(f"# p_projections={p_projections}")
 
         # Create a new directory for the checkpoints
         run_name = datetime.now(tz=UTC).strftime("run_%Y-%m-%d_%H-%M-%S")
@@ -649,6 +710,9 @@ def main() -> None:
         dtype=dtype,
         device=device,
         rank=rank,
+        dict_reg_coeff=dict_reg_coeff,
+        m_sample_size=m_sample_size,
+        p_projections=p_projections,
     )
 
     # Save the model only on the main process
