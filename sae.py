@@ -139,6 +139,13 @@ class TopKSparseAutoencoder(nn.Module):
 
         return reconstructed, h_sparse
 
+    def get_decoder_dictionary_sample(self, m: int) -> torch.Tensor:
+        """Randomly sample m decoder weight vectors."""
+        dictionary_vectors = self.decoder.weight.t()
+        num_latents = dictionary_vectors.shape[0]
+        indices = torch.randint(0, num_latents, (m,), device=dictionary_vectors.device)
+        return dictionary_vectors[indices]
+
     def set_latent_bias(self, h_bias: torch.Tensor) -> None:
         """"""
         assert h_bias.shape == (self.n_latents,), "h_bias shape must be of shape (n_latents,)"

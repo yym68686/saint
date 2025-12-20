@@ -61,6 +61,9 @@ def train_epoch(
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
+    cov_reg_coeff: float,
+    m_sample_size_cov: int,
+    q_projections: int,
 ) -> None:
     """"""
     # Set the model to train mode
@@ -70,6 +73,7 @@ def train_epoch(
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+    cov_reg_loss_acc = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
     accumulated_loss_count = dist.get_world_size() * log_interval
 
@@ -111,8 +115,32 @@ def train_epoch(
             # If there are not enough dead latents to activate, set auxiliary loss to 0.
             aux_loss = torch.tensor(0.0, device=device)
 
+        # Covariance Isotropy Loss Calculation
+        if cov_reg_coeff > 0:
+            d_model = model.module.d_model
+            with torch.no_grad():
+                dict_sample = model.module.get_decoder_dictionary_sample(m_sample_size_cov)
+            
+            # Project to lower dimension
+            proj_matrix = torch.randn(d_model, q_projections, device=device, dtype=dtype)
+            proj_matrix = proj_matrix / torch.norm(proj_matrix, dim=0, keepdim=True)
+            dict_sample_proj = torch.matmul(dict_sample, proj_matrix)
+
+            # Center the projected samples
+            dict_sample_centered = dict_sample_proj - dict_sample_proj.mean(dim=0, keepdim=True)
+            
+            # Calculate covariance matrix
+            cov_matrix = torch.matmul(dict_sample_centered.t(), dict_sample_centered) / m_sample_size_cov
+            
+            # Calculate penalty
+            alpha = torch.trace(cov_matrix) / q_projections
+            identity = torch.eye(q_projections, device=device, dtype=dtype)
+            cov_reg_loss = torch.sum((cov_matrix - alpha * identity) ** 2)
+        else:
+            cov_reg_loss = torch.tensor(0.0, device=device)
+
         # Compute total loss with auxiliary loss coefficient
-        total_loss = loss + aux_loss_coeff * aux_loss
+        total_loss = loss + aux_loss_coeff * aux_loss + cov_reg_coeff * cov_reg_loss
 
         # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
         # and normalize the decoder weights again.
@@ -125,6 +153,7 @@ def train_epoch(
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
         total_loss_acc += total_loss.detach()
+        cov_reg_loss_acc += cov_reg_loss.detach()
 
         # Update the progress bar on main process
         if rank == 0:
@@ -142,14 +171,17 @@ def train_epoch(
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(cov_reg_loss_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
+            avg_cov_reg_loss = cov_reg_loss_acc.item() / accumulated_loss_count
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
+            cov_reg_loss_acc = torch.tensor(0.0, device=device)
 
             # Determine dead latent debug statistics
             dead_latents_ratio = dead_latents / dead_mask.numel()
@@ -158,14 +190,26 @@ def train_epoch(
 
             # Log to wandb and tqdm
             if rank == 0:
+                # Coherence Calculation
+                with torch.no_grad():
+                    dict_sample_coh = model.module.get_decoder_dictionary_sample(2048)
+                    dict_sample_norm = dict_sample_coh / torch.norm(dict_sample_coh, dim=1, keepdim=True)
+                    cos_sim = torch.abs(torch.matmul(dict_sample_norm, dict_sample_norm.t()))
+                    cos_sim.fill_diagonal_(0)
+                    max_coherence = torch.max(cos_sim).item()
+                    mean_coherence = torch.mean(cos_sim[torch.triu_indices(2048, 2048, offset=1).unbind()]).item()
+
                 wandb.log(
                     data={
                         "train/loss": avg_loss,
                         "train/aux_loss": avg_aux_loss,
                         "train/total_loss": avg_total_loss,
+                        "train/dict_cov_reg_loss": avg_cov_reg_loss,
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
+                        "debug/dict_coherence_max": max_coherence,
+                        "debug/dict_coherence_mean": mean_coherence,
                     },
                     step=epoch * len(dataloader) + batch_idx + 1,
                 )
@@ -173,6 +217,7 @@ def train_epoch(
                     loss=f"{avg_loss:.6f}",
                     aux_loss=f"{avg_aux_loss:.6f}",
                     total_loss=f"{avg_total_loss:.6f}",
+                    cov_reg_loss=f"{avg_cov_reg_loss:.6f}",
                 )
 
     # Close the progress bar on main process
@@ -295,6 +340,9 @@ def train_autoencoder(
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
+    cov_reg_coeff: float,
+    m_sample_size_cov: int,
+    q_projections: int,
 ) -> TopKSparseAutoencoder:
     """"""
     logging.info("Sending model to device and wrapping in DistributedDataParallel...")
@@ -364,6 +412,9 @@ def train_autoencoder(
             dtype=dtype,
             device=device,
             rank=rank,
+            cov_reg_coeff=cov_reg_coeff,
+            m_sample_size_cov=m_sample_size_cov,
+            q_projections=q_projections,
         )
 
         # Validate an epoch
@@ -483,6 +534,11 @@ def main() -> None:
     logs_per_epoch = 100
     train_val_split = 0.95
 
+    # Covariance regularization hyperparameters
+    cov_reg_coeff = 1e-3
+    m_sample_size_cov = 4096
+    q_projections = 128
+
     if rank == 0:
         logging.info("Logging into and initializing wandb...")
         wandb.login()
@@ -508,6 +564,9 @@ def main() -> None:
                 "logs_per_epoch": logs_per_epoch,
                 "train_val_split": train_val_split,
                 "world_size": world_size,
+                "cov_reg_coeff": cov_reg_coeff,
+                "m_sample_size_cov": m_sample_size_cov,
+                "q_projections": q_projections,
             },
         )
 
@@ -649,6 +708,9 @@ def main() -> None:
         dtype=dtype,
         device=device,
         rank=rank,
+        cov_reg_coeff=cov_reg_coeff,
+        m_sample_size_cov=m_sample_size_cov,
+        q_projections=q_projections,
     )
 
     # Save the model only on the main process
