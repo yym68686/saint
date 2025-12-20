@@ -10,7 +10,7 @@ class TopKSparseAutoencoder(nn.Module):
         self,
         d_model: int,
         n_latents: int,
-        k: int,
+        k_values: list[int],
         b_pre: torch.Tensor,
         dtype: torch.dtype,
         normalize_eps: float = 1e-6,
@@ -19,7 +19,8 @@ class TopKSparseAutoencoder(nn.Module):
         super().__init__()
         self.d_model = d_model
         self.n_latents = n_latents
-        self.k = k
+        self.k_values = sorted(k_values)
+        self.k = self.k_values[-1]  # Use the max k for aux loss calculation and latent bias logic
         self.dtype = dtype
         self.normalize_eps = normalize_eps
         self.h_bias = None
@@ -122,22 +123,31 @@ class TopKSparseAutoencoder(nn.Module):
             non_zero_idx = torch.nonzero(self.h_bias).squeeze()
             logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
 
-        # Reconstruct input and latent representation with default k sparsity
-        reconstructed, h_sparse = self.decode_latent(h=h, k=self.k)
+        # Reconstruct input and latent representation with multiple k sparsities for MSAE
+        reconstructed_list, h_sparse = self.decode_latent(h=h, k_values=self.k_values)
 
-        return reconstructed, h, h_sparse
+        return reconstructed_list, h, h_sparse
 
-    def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
+    def decode_latent(
+        self, h: torch.Tensor, k_values: list[int]
+    ) -> tuple[list[torch.Tensor], torch.Tensor]:
         """"""
-        # Apply TopK activation, Relu to guarantee positive topk vals and then build sparse representation
         h = torch.relu(h)
-        topk_values, topk_indices = torch.topk(h, k=k, dim=-1)
-        h_sparse = torch.zeros_like(h).scatter_(1, topk_indices, topk_values)
+        reconstructed_list = []
+        h_sparse_max_k = None
 
-        # Decode h_sparse and add pre-bias
-        reconstructed = self.decoder(h_sparse) + self.b_pre
+        for k in k_values:
+            topk_values, topk_indices = torch.topk(h, k=k, dim=-1)
+            h_sparse = torch.zeros_like(h).scatter_(1, topk_indices, topk_values)
 
-        return reconstructed, h_sparse
+            # Decode h_sparse and add pre-bias
+            reconstructed = self.decoder(h_sparse) + self.b_pre
+            reconstructed_list.append(reconstructed)
+
+            if k == self.k:  # self.k is the max k_value
+                h_sparse_max_k = h_sparse
+
+        return reconstructed_list, h_sparse_max_k
 
     def set_latent_bias(self, h_bias: torch.Tensor) -> None:
         """"""
@@ -151,7 +161,7 @@ class TopKSparseAutoencoder(nn.Module):
 
 def load_sae_model(
     model_path: Path,
-    sae_top_k: int,
+    sae_k_values: list[int],
     sae_normalization_eps: float,
     device: torch.device,
     dtype: torch.dtype,
@@ -171,7 +181,7 @@ def load_sae_model(
     model = TopKSparseAutoencoder(
         d_model=d_model,
         n_latents=n_latents,
-        k=sae_top_k,
+        k_values=sae_k_values,
         b_pre=b_pre,
         dtype=dtype,
         normalize_eps=sae_normalization_eps,
