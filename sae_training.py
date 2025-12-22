@@ -88,10 +88,13 @@ def train_epoch(
 
         # Zero the gradients and perform forward pass
         optimizer.zero_grad()
-        reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+        reconstructions, h, h_sparses = model.module.forward_1d_normalized(batch_normalized)
 
-        # Compute main loss in normalized space
-        loss = criterion(reconstructed, batch_normalized)
+        # Compute main loss in normalized space, using only the reconstruction from the largest k
+        loss = criterion(reconstructions[-1], batch_normalized)
+
+        # Log individual losses for each k value for debugging
+        losses_k = {k: criterion(recon, batch_normalized).detach() for k, recon in zip(model.module.k_values, reconstructions)}
 
         # If enough latents haven't been activated in more than dead_steps_threshold training steps then calculate an
         # auxiliary loss to help reactivate the latents.
@@ -101,11 +104,13 @@ def train_epoch(
             # Calculate an auxiliary reconstruction with only dead latents and an additionaly amount (k_aux) of TopK
             # filtered latents.
             h_masked = h * dead_mask
+            # Note: k_aux is applied on top of the dead latents
             reconstructed_aux, _ = model.module.decode_latent(h=h_masked, k=k_aux)
 
             # Compute auxiliary loss as MSE between residual and the aux reconstruction to make dead latents explain
             # what the main latents could not and thereby activate them again and make them useful again.
-            residual = batch_normalized - reconstructed.detach()
+            # The residual is calculated based on the reconstruction from the largest k
+            residual = batch_normalized - reconstructions[-1].detach()
             aux_loss = criterion(reconstructed_aux, residual)
         else:
             # If there are not enough dead latents to activate, set auxiliary loss to 0.
@@ -132,7 +137,9 @@ def train_epoch(
 
         # Update and blocking sync latent_last_zero at end of batch to not create a barrier mid batch processing.
         # Take minimum in case a latent was activated in another process.
-        latent_last_nonzero *= (h_sparse == 0).all(dim=0).long()
+        # A latent is considered dead only if it's not activated for ANY of the k values.
+        h_sparse_combined = torch.stack(h_sparses).sum(dim=0)
+        latent_last_nonzero *= (h_sparse_combined == 0).all(dim=0).long()
         latent_last_nonzero += 1
         dist.all_reduce(latent_last_nonzero, op=dist.ReduceOp.MIN)
 
@@ -218,10 +225,10 @@ def validate_epoch(
             batch_normalized, mean, norm = model.module.preprocess_input(batch)
 
             # Perform forward pass
-            reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+            reconstructions, h, h_sparses = model.module.forward_1d_normalized(batch_normalized)
 
-            # Compute main loss in normalized space
-            loss = criterion(reconstructed, batch_normalized)
+            # Compute main loss in normalized space, using only the reconstruction from the largest k
+            loss = criterion(reconstructions[-1], batch_normalized)
 
             # Compute auxiliary loss if necessary
             dead_mask = latent_last_nonzero > dead_steps_threshold
@@ -229,7 +236,8 @@ def validate_epoch(
             if dead_latents >= k_aux:
                 h_masked = h * dead_mask
                 reconstructed_aux, _ = model.module.decode_latent(h=h_masked, k=k_aux)
-                residual = batch_normalized - reconstructed.detach()
+                # The residual is calculated based on the reconstruction from the largest k
+                residual = batch_normalized - reconstructions[-1].detach()
                 aux_loss = criterion(reconstructed_aux, residual)
             else:
                 aux_loss = torch.tensor(0.0, device=device)
@@ -466,7 +474,7 @@ def main() -> None:
     # Set up configuration
     d_model = 3072
     n_latents = 2**16  # 65536
-    k = 64
+    k_values = [16, 32, 64]
     k_aux = 2048
     aux_loss_coeff = 1 / 32
     dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
@@ -491,7 +499,7 @@ def main() -> None:
             config={
                 "d_model": d_model,
                 "n_latents": n_latents,
-                "k": k,
+                "k_values": k_values,
                 "k_aux": k_aux,
                 "aux_loss_coeff": aux_loss_coeff,
                 "dead_steps_threshold": dead_steps_threshold,
@@ -525,7 +533,7 @@ def main() -> None:
         logging.info("#### Configuration:")
         logging.info(f"# d_model={d_model}")
         logging.info(f"# n_latents={n_latents}")
-        logging.info(f"# k={k}")
+        logging.info(f"# k_values={k_values}")
         logging.info(f"# k_aux={k_aux}")
         logging.info(f"# aux_loss_coeff={aux_loss_coeff}")
         logging.info(f"# dead_steps_threshold={dead_steps_threshold}")
@@ -561,7 +569,7 @@ def main() -> None:
     model = TopKSparseAutoencoder(
         d_model=d_model,
         n_latents=n_latents,
-        k=k,
+        k_values=k_values,
         b_pre=b_pre,
         dtype=dtype,
         normalize_eps=sae_normalization_eps,
