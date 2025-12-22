@@ -99,33 +99,32 @@ class TopKSparseAutoencoder(nn.Module):
         x: torch.Tensor,
     ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
         """
+        Perform a forward pass using Matching Pursuit.
         :param x: input tensor of shape (batch_size, d_model)
+        :return: A tuple containing:
+                 - reconstructed (torch.Tensor): The reconstructed input.
+                 - h_sparse (torch.Tensor): The sparse latent activations.
+                 - final_residual_norm (torch.Tensor): The norm of the final residual for logging.
         """
-        # Subtract pre-bias and encode input
-        x = x - self.b_pre
-        h = self.encoder(x)
+        residual = x - self.b_pre
+        h_sparse = torch.zeros(x.shape[0], self.n_latents, device=x.device, dtype=x.dtype)
 
-        if self.h_bias is not None:
-            # 获取最大的4个值及其索引
-            top_values, top_indices = torch.topk(h, k=4, dim=-1)
+        dictionary = self.decoder.weight.t()
 
-            # 遍历每个样本的前4大值
-            for batch_idx in range(top_indices.shape[0]):
-                for i in range(4):
-                    latent_idx = top_indices[batch_idx, i].item()
-                    value = top_values[batch_idx, i].item()
-                    logging.info(
-                        f"Top {i+1} value: h[{batch_idx}, {latent_idx}] = {value:.2f}"
-                    )
+        for _ in range(self.k):
+            correlations = torch.matmul(residual, dictionary.t())
+            _, best_indices = torch.max(correlations, dim=1)
+            best_atoms = dictionary[best_indices]
+            activations = torch.sum(residual * best_atoms, dim=1)
+            h_sparse.scatter_add_(1, best_indices.unsqueeze(1), activations.unsqueeze(1))
+            residual = residual - activations.unsqueeze(1) * best_atoms
 
-            h = h + self.h_bias
-            non_zero_idx = torch.nonzero(self.h_bias).squeeze()
-            logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
+        reconstructed = self.decoder(h_sparse) + self.b_pre
+        final_residual_norm = torch.norm(residual, dim=1).mean()
 
-        # Reconstruct input and latent representation with default k sparsity
-        reconstructed, h_sparse = self.decode_latent(h=h, k=self.k)
-
-        return reconstructed, h, h_sparse
+        # Note: The return signature is changed. We return final_residual_norm instead of h.
+        # The training script must be adapted to this.
+        return reconstructed, h_sparse, final_residual_norm
 
     def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
         """"""
