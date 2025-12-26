@@ -66,9 +66,16 @@ def train_epoch(
     # Set the model to train mode
     model.train()
 
+    # Repulsion regularizer hyperparameters
+    repulsion_coeff = 3e-4
+    repulsion_tau = 0.1
+    repulsion_sample_size = 1024
+    repulsion_every_n_steps = 4
+
     # Initialize epoch log variables and helpers
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
+    rep_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
     accumulated_loss_count = dist.get_world_size() * log_interval
@@ -79,6 +86,9 @@ def train_epoch(
             total=len(dataloader),
             desc=f"Training | Epoch {epoch + 1}/{num_epochs}",
         )
+
+    coh_max = 0.0
+    coh_mean = 0.0
 
     for batch_idx, batch in enumerate(dataloader):
         # batch shape is [1, preprocessed_batch_size, d_model]. Squeeze to [preprocessed_batch_size, d_model] and
@@ -111,8 +121,24 @@ def train_epoch(
             # If there are not enough dead latents to activate, set auxiliary loss to 0.
             aux_loss = torch.tensor(0.0, device=device)
 
+        # ---- dictionary repulsion regularizer ----
+        dict_rep_loss = torch.tensor(0.0, device=device)
+        if (batch_idx + 1) % repulsion_every_n_steps == 0:
+            dict_sample = model.module.sample_decoder_dictionary(repulsion_sample_size)  # [m, d_model]
+            dict_sample = dict_sample / (dict_sample.norm(dim=-1, keepdim=True) + 1e-8)
+
+            sim = torch.abs(dict_sample @ dict_sample.t())  # [m, m]
+            sim.fill_diagonal_(0.0)
+
+            # hinge version (recommended)
+            dict_rep_loss = torch.relu(sim - repulsion_tau).pow(2).mean()
+
+            with torch.no_grad():
+                coh_max = sim.max().item()
+                coh_mean = sim.sum().item() / (sim.numel() - sim.shape[0])
+
         # Compute total loss with auxiliary loss coefficient
-        total_loss = loss + aux_loss_coeff * aux_loss
+        total_loss = loss + aux_loss_coeff * aux_loss + repulsion_coeff * dict_rep_loss
 
         # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
         # and normalize the decoder weights again.
@@ -124,6 +150,7 @@ def train_epoch(
         # Accumulate losses
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
+        rep_loss_acc += dict_rep_loss.detach()
         total_loss_acc += total_loss.detach()
 
         # Update the progress bar on main process
@@ -141,14 +168,17 @@ def train_epoch(
         if (batch_idx + 1) % log_interval == 0:
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(rep_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
+            avg_rep_loss = rep_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
+            rep_loss_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
 
             # Determine dead latent debug statistics
@@ -162,10 +192,13 @@ def train_epoch(
                     data={
                         "train/loss": avg_loss,
                         "train/aux_loss": avg_aux_loss,
+                        "train/dict_rep_loss": avg_rep_loss,
                         "train/total_loss": avg_total_loss,
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
+                        "debug/dict_coherence_max": coh_max,
+                        "debug/dict_coherence_mean": coh_mean,
                     },
                     step=epoch * len(dataloader) + batch_idx + 1,
                 )
