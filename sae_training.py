@@ -71,6 +71,7 @@ def train_epoch(
     repulsion_tau = 0.1
     repulsion_sample_size = 1024
     repulsion_every_n_steps = 4
+    repulsion_k_nn = 16
 
     # Initialize epoch log variables and helpers
     loss_acc = torch.tensor(0.0, device=device)
@@ -130,8 +131,9 @@ def train_epoch(
             sim = torch.abs(dict_sample @ dict_sample.t())  # [m, m]
             sim.fill_diagonal_(0.0)
 
-            # hinge version (recommended)
-            dict_rep_loss = torch.relu(sim - repulsion_tau).pow(2).mean()
+            # Top-k nearest neighbors version
+            top_k_sim, _ = torch.topk(sim, repulsion_k_nn, dim=-1)
+            dict_rep_loss = torch.relu(top_k_sim - repulsion_tau).pow(2).mean()
 
             with torch.no_grad():
                 coh_max = sim.max().item()
