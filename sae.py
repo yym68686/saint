@@ -148,6 +148,13 @@ class TopKSparseAutoencoder(nn.Module):
         """"""
         self.h_bias = None
 
+    def sample_decoder_dictionary(self, m: int) -> torch.Tensor:
+        # decoder.weight: [d_model, n_latents]
+        # dictionary vectors (per latent): columns -> transpose to [n_latents, d_model]
+        dict_vectors = self.decoder.weight.t()
+        idx = torch.randint(0, dict_vectors.shape[0], (m,), device=dict_vectors.device)
+        return dict_vectors[idx]  # [m, d_model]
+
 
 def load_sae_model(
     model_path: Path,
