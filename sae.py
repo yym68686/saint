@@ -40,6 +40,13 @@ class TopKSparseAutoencoder(nn.Module):
 
         self.normalize_decoder_weights()
 
+    def sample_decoder_dictionary(self, m: int) -> torch.Tensor:
+        # decoder.weight: [d_model, n_latents]
+        # dictionary vectors (per latent): columns -> transpose to [n_latents, d_model]
+        dict_vectors = self.decoder.weight.t()
+        idx = torch.randint(0, dict_vectors.shape[0], (m,), device=dict_vectors.device)
+        return dict_vectors[idx]  # [m, d_model]
+
     def normalize_decoder_weights(self) -> None:
         """Normalize the decoder weights to unit norm for each latent (corresponding to decoder columns)."""
         with torch.no_grad():

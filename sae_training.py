@@ -66,10 +66,18 @@ def train_epoch(
     # Set the model to train mode
     model.train()
 
+    # Repulsion regularizer hyperparameters
+    repulsion_coeff = 3e-4
+    repulsion_tau = 0.1
+    repulsion_sample_size = 1024
+    repulsion_every_n_steps = 4
+    repulsion_warmup_epochs = 40
+
     # Initialize epoch log variables and helpers
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+    rep_loss_acc = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
     accumulated_loss_count = dist.get_world_size() * log_interval
 
@@ -111,8 +119,31 @@ def train_epoch(
             # If there are not enough dead latents to activate, set auxiliary loss to 0.
             aux_loss = torch.tensor(0.0, device=device)
 
+        # Calculate current repulsion coefficient based on epoch for scheduled warmup
+        current_repulsion_coeff = repulsion_coeff
+        if epoch < repulsion_warmup_epochs:
+            current_repulsion_coeff *= (epoch + 1) / repulsion_warmup_epochs  # epoch starts from 0, so +1
+
+        # ---- dictionary repulsion regularizer ----
+        dict_rep_loss = torch.tensor(0.0, device=device)
+        coh_max = 0.0
+        coh_mean = 0.0
+        if current_repulsion_coeff > 0 and (batch_idx + 1) % repulsion_every_n_steps == 0:
+            dict_sample = model.module.sample_decoder_dictionary(repulsion_sample_size)  # [m, d_model]
+            dict_sample = dict_sample / (dict_sample.norm(dim=-1, keepdim=True) + 1e-8)
+
+            sim = torch.abs(dict_sample @ dict_sample.t())  # [m, m]
+            sim.fill_diagonal_(0.0)
+
+            # hinge version
+            dict_rep_loss = torch.relu(sim - repulsion_tau).pow(2).mean()
+
+            with torch.no_grad():
+                coh_max = sim.max().item()
+                coh_mean = sim.sum().item() / (sim.numel() - sim.shape[0])
+
         # Compute total loss with auxiliary loss coefficient
-        total_loss = loss + aux_loss_coeff * aux_loss
+        total_loss = loss + aux_loss_coeff * aux_loss + current_repulsion_coeff * dict_rep_loss
 
         # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
         # and normalize the decoder weights again.
@@ -125,6 +156,7 @@ def train_epoch(
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
         total_loss_acc += total_loss.detach()
+        rep_loss_acc += dict_rep_loss.detach()
 
         # Update the progress bar on main process
         if rank == 0:
@@ -142,14 +174,17 @@ def train_epoch(
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(rep_loss_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
+            avg_rep_loss = rep_loss_acc.item() / accumulated_loss_count
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
+            rep_loss_acc = torch.tensor(0.0, device=device)
 
             # Determine dead latent debug statistics
             dead_latents_ratio = dead_latents / dead_mask.numel()
@@ -163,6 +198,10 @@ def train_epoch(
                         "train/loss": avg_loss,
                         "train/aux_loss": avg_aux_loss,
                         "train/total_loss": avg_total_loss,
+                        "train/dict_rep_loss": avg_rep_loss,
+                        "train/repulsion_coeff": current_repulsion_coeff,
+                        "debug/dict_coherence_max": coh_max,
+                        "debug/dict_coherence_mean": coh_mean,
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
