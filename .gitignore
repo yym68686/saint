@@ -8,3 +8,5 @@ test
 .gradio/
 .env
 .be*
+activation_outputs
+activation_outputs_batched
