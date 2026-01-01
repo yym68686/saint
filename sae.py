@@ -148,6 +148,33 @@ class TopKSparseAutoencoder(nn.Module):
         """"""
         self.h_bias = None
 
+    @torch.no_grad()
+    def resample_dead_features(self, dead_indices, poorly_reconstructed_inputs):
+        """
+        Resamples the weights of dead features.
+        - Decoder weights are set to the normalized poorly reconstructed inputs.
+        - Encoder weights are set to the new decoder weights (transposed).
+        - Encoder biases are reset to zero.
+        """
+        n_dead = dead_indices.shape[0]
+        if n_dead == 0:
+            return
+
+        # Select random poorly reconstructed inputs for resampling
+        inputs_for_resampling = poorly_reconstructed_inputs[torch.randperm(poorly_reconstructed_inputs.shape[0])[:n_dead]]
+
+        # Normalize the inputs before assigning to decoder weights
+        inputs_for_resampling_normalized = inputs_for_resampling / (inputs_for_resampling.norm(dim=-1, keepdim=True) + self.normalize_eps)
+
+        # Resample decoder weights. Note that decoder weight is [d_model, n_latents], so we need to transpose.
+        self.decoder.weight.data[:, dead_indices] = inputs_for_resampling_normalized.t()
+        
+        # Resample encoder weights
+        self.encoder.weight.data[dead_indices] = inputs_for_resampling_normalized
+        
+        # Reset encoder biases for dead latents
+        self.encoder.bias.data[dead_indices] = 0.0
+
 
 def load_sae_model(
     model_path: Path,

@@ -121,6 +121,35 @@ def train_epoch(
         optimizer.step()
         model.module.normalize_decoder_weights()
 
+        # ---- Dead feature resampling ----
+        resample_every_n_steps = 2000
+        num_inputs_for_resampling = 32
+        # Re-calculate dead_mask here for accuracy, as some might have been activated in this step
+        dead_mask = latent_last_nonzero > dead_steps_threshold
+
+        if (batch_idx + 1) % resample_every_n_steps == 0:
+            dead_indices = torch.nonzero(dead_mask).squeeze(-1)
+            if dead_indices.numel() > 0:
+                with torch.no_grad():
+                    # Get the residual (error)
+                    residual = batch_normalized - reconstructed.detach()
+                    # Find the inputs with the highest reconstruction error (L2 norm of the residual)
+                    losses = torch.sum(residual.pow(2), dim=-1)
+                    # Ensure k is not greater than the number of available losses
+                    k_resample = min(len(losses), num_inputs_for_resampling)
+                    _, top_indices = torch.topk(losses, k=k_resample)
+                    poorly_reconstructed_inputs = batch_normalized[top_indices]
+
+                model.module.resample_dead_features(dead_indices, poorly_reconstructed_inputs)
+                
+                # Reset the counters for the resampled latents
+                latent_last_nonzero[dead_indices] = 0
+                
+                # Log how many features were resampled
+                num_resampled = dead_indices.numel()
+                if rank == 0:
+                    wandb.log({"debug/num_resampled_features": num_resampled}, step=epoch * len(dataloader) + batch_idx + 1)
+
         # Accumulate losses
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
