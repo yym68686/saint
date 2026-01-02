@@ -70,6 +70,7 @@ def train_epoch(
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+    side_channel_loss_acc = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
     accumulated_loss_count = dist.get_world_size() * log_interval
 
@@ -88,7 +89,7 @@ def train_epoch(
 
         # Zero the gradients and perform forward pass
         optimizer.zero_grad()
-        reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+        reconstructed, h, h_sparse, side_channel_reconstructed = model.module.forward_1d_normalized(batch_normalized)
 
         # Compute main loss in normalized space
         loss = criterion(reconstructed, batch_normalized)
@@ -125,6 +126,8 @@ def train_epoch(
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
         total_loss_acc += total_loss.detach()
+        with torch.no_grad():
+            side_channel_loss_acc += criterion(side_channel_reconstructed, batch_normalized).detach()
 
         # Update the progress bar on main process
         if rank == 0:
@@ -142,14 +145,17 @@ def train_epoch(
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(side_channel_loss_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
+            avg_side_channel_loss = side_channel_loss_acc.item() / accumulated_loss_count
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
+            side_channel_loss_acc = torch.tensor(0.0, device=device)
 
             # Determine dead latent debug statistics
             dead_latents_ratio = dead_latents / dead_mask.numel()
@@ -163,6 +169,7 @@ def train_epoch(
                         "train/loss": avg_loss,
                         "train/aux_loss": avg_aux_loss,
                         "train/total_loss": avg_total_loss,
+                        "train/side_channel_reconstruction_error": avg_side_channel_loss,
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
@@ -218,7 +225,7 @@ def validate_epoch(
             batch_normalized, mean, norm = model.module.preprocess_input(batch)
 
             # Perform forward pass
-            reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+            reconstructed, h, h_sparse, _ = model.module.forward_1d_normalized(batch_normalized)
 
             # Compute main loss in normalized space
             loss = criterion(reconstructed, batch_normalized)
@@ -508,6 +515,7 @@ def main() -> None:
                 "logs_per_epoch": logs_per_epoch,
                 "train_val_split": train_val_split,
                 "world_size": world_size,
+                "side_channel_rank": 128,
             },
         )
 

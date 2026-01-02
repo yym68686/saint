@@ -40,6 +40,11 @@ class TopKSparseAutoencoder(nn.Module):
 
         self.normalize_decoder_weights()
 
+        # Side channel for capturing linear reconstruction error
+        self.side_channel_rank = 128
+        self.side_channel_down = nn.Linear(self.d_model, self.side_channel_rank, bias=False, dtype=self.dtype)
+        self.side_channel_up = nn.Linear(self.side_channel_rank, self.d_model, bias=False, dtype=self.dtype)
+
     def normalize_decoder_weights(self) -> None:
         """Normalize the decoder weights to unit norm for each latent (corresponding to decoder columns)."""
         with torch.no_grad():
@@ -97,13 +102,16 @@ class TopKSparseAutoencoder(nn.Module):
     def forward_1d_normalized(
         self,
         x: torch.Tensor,
-    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
         """
         :param x: input tensor of shape (batch_size, d_model)
         """
+        # Side channel path
+        side_channel_reconstructed = self.side_channel_up(self.side_channel_down(x))
+        
         # Subtract pre-bias and encode input
-        x = x - self.b_pre
-        h = self.encoder(x)
+        x_sae = x - self.b_pre
+        h = self.encoder(x_sae)
 
         if self.h_bias is not None:
             # 获取最大的4个值及其索引
@@ -123,9 +131,12 @@ class TopKSparseAutoencoder(nn.Module):
             logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
 
         # Reconstruct input and latent representation with default k sparsity
-        reconstructed, h_sparse = self.decode_latent(h=h, k=self.k)
+        sae_reconstructed, h_sparse = self.decode_latent(h=h, k=self.k)
 
-        return reconstructed, h, h_sparse
+        # Combine reconstructions
+        reconstructed = sae_reconstructed + side_channel_reconstructed
+
+        return reconstructed, h, h_sparse, side_channel_reconstructed
 
     def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
         """"""
