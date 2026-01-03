@@ -58,11 +58,6 @@ def train_epoch(
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     logs_per_epoch: int,
-    repulsion_coeff: float,
-    repulsion_tau: float,
-    repulsion_sample_size: int,
-    repulsion_every_n_steps: int,
-    repulsion_warmup_epochs: int,
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
@@ -76,7 +71,6 @@ def train_epoch(
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
     side_channel_error_acc = torch.tensor(0.0, device=device)
-    dict_rep_loss_acc = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
     accumulated_loss_count = dist.get_world_size() * log_interval
 
@@ -122,29 +116,8 @@ def train_epoch(
             # If there are not enough dead latents to activate, set auxiliary loss to 0.
             aux_loss = torch.tensor(0.0, device=device)
 
-        # ---- dictionary repulsion regularizer ----
-        # Calculate current repulsion coefficient based on epoch for scheduled warmup
-        current_repulsion_coeff = repulsion_coeff
-        if epoch < repulsion_warmup_epochs:
-            current_repulsion_coeff *= (epoch + 1) / repulsion_warmup_epochs
-
-        dict_rep_loss = torch.tensor(0.0, device=device)
-        coh_max = 0.0
-        coh_mean = 0.0
-
-        if current_repulsion_coeff > 0 and (batch_idx + 1) % repulsion_every_n_steps == 0:
-            dict_sample = model.module.sample_decoder_dictionary(repulsion_sample_size)
-            dict_sample = dict_sample / (dict_sample.norm(dim=-1, keepdim=True) + 1e-8)
-            sim = torch.abs(dict_sample @ dict_sample.t())
-            sim.fill_diagonal_(0.0)
-            dict_rep_loss = torch.relu(sim - repulsion_tau).pow(2).mean()
-
-            with torch.no_grad():
-                coh_max = sim.max().item()
-                coh_mean = sim.sum().item() / (sim.numel() - sim.shape[0])
-
         # Compute total loss with auxiliary loss coefficient
-        total_loss = loss + aux_loss_coeff * aux_loss + current_repulsion_coeff * dict_rep_loss
+        total_loss = loss + aux_loss_coeff * aux_loss
 
         # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
         # and normalize the decoder weights again.
@@ -152,13 +125,39 @@ def train_epoch(
         model.module.project_decoder_grads()
         optimizer.step()
         model.module.normalize_decoder_weights()
+        
+        # ---- Dead feature resampling ----
+        resample_every_n_steps = 2000
+        num_inputs_for_resampling = 32
+        
+        if (batch_idx + 1) % resample_every_n_steps == 0:
+            dead_mask = latent_last_nonzero > dead_steps_threshold # Re-calculate dead_mask here for accuracy
+            dead_indices = torch.nonzero(dead_mask).squeeze(-1)
+            if dead_indices.numel() > 0:
+                with torch.no_grad():
+                    # Get the residual (error) based on the combined reconstruction
+                    residual = batch_normalized - reconstructed.detach()
+                    # Find the inputs with the highest reconstruction error (L2 norm of the residual)
+                    losses = torch.sum(residual.pow(2), dim=-1)
+                    _, top_indices = torch.topk(losses, k=min(len(losses), num_inputs_for_resampling))
+                    poorly_reconstructed_inputs = batch_normalized[top_indices]
+
+                model.module.resample_dead_features(dead_indices, poorly_reconstructed_inputs)
+                
+                # Reset the counters for the resampled latents
+                latent_last_nonzero[dead_indices] = 0
+                
+                # Log how many features were resampled
+                num_resampled = dead_indices.numel()
+                if rank == 0:
+                    wandb.log({"debug/num_resampled_features": num_resampled}, step=epoch * len(dataloader) + batch_idx + 1)
+
 
         # Accumulate losses
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
         total_loss_acc += total_loss.detach()
         side_channel_error_acc += side_channel_error.detach()
-        dict_rep_loss_acc += dict_rep_loss.detach()
 
         # Update the progress bar on main process
         if rank == 0:
@@ -177,19 +176,16 @@ def train_epoch(
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(side_channel_error_acc, op=dist.ReduceOp.SUM)
-            dist.all_reduce(dict_rep_loss_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
             avg_side_channel_error = side_channel_error_acc.item() / accumulated_loss_count
-            avg_dict_rep_loss = dict_rep_loss_acc.item() / accumulated_loss_count
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
             side_channel_error_acc = torch.tensor(0.0, device=device)
-            dict_rep_loss_acc = torch.tensor(0.0, device=device)
 
             # Determine dead latent debug statistics
             dead_latents_ratio = dead_latents / dead_mask.numel()
@@ -204,10 +200,6 @@ def train_epoch(
                         "train/aux_loss": avg_aux_loss,
                         "train/total_loss": avg_total_loss,
                         "train/side_channel_reconstruction_error": avg_side_channel_error,
-                        "train/dict_rep_loss": avg_dict_rep_loss,
-                        "train/repulsion_coeff": current_repulsion_coeff,
-                        "debug/dict_coherence_max": coh_max,
-                        "debug/dict_coherence_mean": coh_mean,
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
@@ -354,11 +346,6 @@ def train_autoencoder(
     aux_loss_coeff: float,
     dead_steps_threshold: int,
     logs_per_epoch: int,
-    repulsion_coeff: float,
-    repulsion_tau: float,
-    repulsion_sample_size: int,
-    repulsion_every_n_steps: int,
-    repulsion_warmup_epochs: int,
     checkpoint_dir: Path,
     dtype: torch.dtype,
     device: torch.device,
@@ -429,11 +416,6 @@ def train_autoencoder(
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             logs_per_epoch=logs_per_epoch,
-            repulsion_coeff=repulsion_coeff,
-            repulsion_tau=repulsion_tau,
-            repulsion_sample_size=repulsion_sample_size,
-            repulsion_every_n_steps=repulsion_every_n_steps,
-            repulsion_warmup_epochs=repulsion_warmup_epochs,
             dtype=dtype,
             device=device,
             rank=rank,
@@ -546,11 +528,6 @@ def main() -> None:
     dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
     sae_normalization_eps = 1e-6
     side_channel_rank = 128
-    repulsion_coeff = 3e-4
-    repulsion_tau = 0.1
-    repulsion_sample_size = 1024
-    repulsion_every_n_steps = 4
-    repulsion_warmup_epochs = 40
     batch_size = args.batch_size
     num_epochs = 200
     early_stopping_patience = 10  # disabled
@@ -577,11 +554,6 @@ def main() -> None:
                 "dead_steps_threshold": dead_steps_threshold,
                 "sae_normalization_eps": sae_normalization_eps,
                 "side_channel_rank": side_channel_rank,
-                "repulsion_coeff": repulsion_coeff,
-                "repulsion_tau": repulsion_tau,
-                "repulsion_sample_size": repulsion_sample_size,
-                "repulsion_every_n_steps": repulsion_every_n_steps,
-                "repulsion_warmup_epochs": repulsion_warmup_epochs,
                 "batch_size": batch_size,
                 "num_epochs": num_epochs,
                 "early_stopping_patience": early_stopping_patience,
@@ -617,11 +589,6 @@ def main() -> None:
         logging.info(f"# dead_steps_threshold={dead_steps_threshold}")
         logging.info(f"# sae_normalization_eps={sae_normalization_eps}")
         logging.info(f"# side_channel_rank={side_channel_rank}")
-        logging.info(f"# repulsion_coeff={repulsion_coeff}")
-        logging.info(f"# repulsion_tau={repulsion_tau}")
-        logging.info(f"# repulsion_sample_size={repulsion_sample_size}")
-        logging.info(f"# repulsion_every_n_steps={repulsion_every_n_steps}")
-        logging.info(f"# repulsion_warmup_epochs={repulsion_warmup_epochs}")
         logging.info(f"# batch_size={batch_size}")
         logging.info(f"# num_epochs={num_epochs}")
         logging.info(f"# early_stopping_patience={early_stopping_patience}")
@@ -743,11 +710,6 @@ def main() -> None:
         aux_loss_coeff=aux_loss_coeff,
         dead_steps_threshold=dead_steps_threshold,
         logs_per_epoch=logs_per_epoch,
-        repulsion_coeff=repulsion_coeff,
-        repulsion_tau=repulsion_tau,
-        repulsion_sample_size=repulsion_sample_size,
-        repulsion_every_n_steps=repulsion_every_n_steps,
-        repulsion_warmup_epochs=repulsion_warmup_epochs,
         checkpoint_dir=args.checkpoint_dir,
         dtype=dtype,
         device=device,
