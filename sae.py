@@ -22,6 +22,7 @@ class TopKSparseAutoencoder(nn.Module):
         self.k = k
         self.dtype = dtype
         self.normalize_eps = normalize_eps
+        self.side_channel_rank = 128
         self.h_bias = None
 
         # Initialize training data mean (or median) as shared trainable pre-bias Parameter for encoder and decoder
@@ -32,6 +33,11 @@ class TopKSparseAutoencoder(nn.Module):
         self.encoder = nn.Linear(d_model, n_latents, bias=True, dtype=dtype)
         self.decoder = nn.Linear(n_latents, d_model, bias=False, dtype=dtype)
 
+        # Initialize side channel layers if rank is positive
+        if self.side_channel_rank > 0:
+            self.side_channel_down = nn.Linear(d_model, self.side_channel_rank, bias=False, dtype=dtype)
+            self.side_channel_up = nn.Linear(self.side_channel_rank, d_model, bias=False, dtype=dtype)
+
         # Use orthogonal initialization for encoder to ensure well-distributed, independent directions and copy
         # the transposed encoder weights to decoder weights to ensure parallel initialization as per paper.
         nn.init.orthogonal_(self.encoder.weight)
@@ -39,6 +45,13 @@ class TopKSparseAutoencoder(nn.Module):
             self.decoder.weight.copy_(self.encoder.weight.t())
 
         self.normalize_decoder_weights()
+
+    def sample_decoder_dictionary(self, m: int) -> torch.Tensor:
+        # decoder.weight: [d_model, n_latents]
+        # dictionary vectors (per latent): columns -> transpose to [n_latents, d_model]
+        dict_vectors = self.decoder.weight.t()
+        idx = torch.randint(0, dict_vectors.shape[0], (m,), device=dict_vectors.device)
+        return dict_vectors[idx]  # [m, d_model]
 
     def normalize_decoder_weights(self) -> None:
         """Normalize the decoder weights to unit norm for each latent (corresponding to decoder columns)."""
@@ -85,7 +98,7 @@ class TopKSparseAutoencoder(nn.Module):
         x = x.reshape(-1, d_model)
 
         # Forward pass through model in normalized space
-        normalized_recon, h, _ = self.forward_1d_normalized(x)
+        normalized_recon, _, _, _ = self.forward_1d_normalized(x)
 
         # Reshape back to (batch_size, seq_len, d_model)
         normalized_recon = normalized_recon.reshape(batch_size, seq_len, -1)
@@ -97,13 +110,13 @@ class TopKSparseAutoencoder(nn.Module):
     def forward_1d_normalized(
         self,
         x: torch.Tensor,
-    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
         """
         :param x: input tensor of shape (batch_size, d_model)
         """
         # Subtract pre-bias and encode input
-        x = x - self.b_pre
-        h = self.encoder(x)
+        x_centered = x - self.b_pre
+        h = self.encoder(x_centered)
 
         if self.h_bias is not None:
             # 获取最大的4个值及其索引
@@ -123,9 +136,17 @@ class TopKSparseAutoencoder(nn.Module):
             logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
 
         # Reconstruct input and latent representation with default k sparsity
-        reconstructed, h_sparse = self.decode_latent(h=h, k=self.k)
+        sae_reconstructed, h_sparse = self.decode_latent(h=h, k=self.k)
 
-        return reconstructed, h, h_sparse
+        # Side channel path
+        side_channel_reconstructed = torch.zeros_like(x)
+        if self.side_channel_rank > 0:
+            side_channel_reconstructed = self.side_channel_up(self.side_channel_down(x))
+            reconstructed = sae_reconstructed + side_channel_reconstructed
+        else:
+            reconstructed = sae_reconstructed
+
+        return reconstructed, h, h_sparse, side_channel_reconstructed
 
     def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
         """"""
