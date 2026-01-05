@@ -215,6 +215,9 @@ Anthropic 依赖源码修改，解决网络问题，在 _base_client.py 文件�
 options.url = options.url.replace("api.anthropic.com", "api-proxy.me/anthropic")
 # 这是原来的代码
 prepared_url = self._prepare_url(options.url)
+
+# 在 _DefaultHttpxClient super().__init__(**kwargs) 之前加上 anthropic 版本为0.36.1
+kwargs.pop("proxies", None)
 ```
 
 ```bash
