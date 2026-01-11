@@ -99,8 +99,7 @@ def train_epoch(
 
         # SIGReg Loss Calculation
         d_model = model.module.d_model
-        with torch.no_grad():
-            dict_sample = model.module.get_decoder_dictionary_sample(m_sample_size)
+        dict_sample = model.module.get_decoder_dictionary_sample(m_sample_size)
 
         dict_sample_scaled = dict_sample * (d_model**0.5)
 
