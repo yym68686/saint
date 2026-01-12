@@ -55,9 +55,18 @@ def train_epoch(
     optimizer: optim.AdamW,
     k_aux: int,
     aux_loss_coeff: float,
-    dict_reg_coeff: float,
-    m_sample_size: int,
-    p_projections: int,
+    sigreg_coeff: float,
+    sigreg_m_sample_size: int,
+    sigreg_p_projections: int,
+    sigreg_every_n_steps: int,
+    sigreg_warmup_epochs: int,
+    sigreg_t_points: int,
+    sigreg_t_max: float,
+    repulsion_coeff: float,
+    repulsion_tau: float,
+    repulsion_sample_size: int,
+    repulsion_every_n_steps: int,
+    repulsion_warmup_epochs: int,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     logs_per_epoch: int,
@@ -69,11 +78,16 @@ def train_epoch(
     # Set the model to train mode
     model.train()
 
+    d_model = model.module.d_model
+    t = torch.linspace(0, sigreg_t_max, sigreg_t_points, device=device, dtype=dtype)
+    phi_t = torch.exp(-(t**2) / 2)
+
     # Initialize epoch log variables and helpers
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
-    dict_reg_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+    sigreg_loss_acc = torch.tensor(0.0, device=device)
+    rep_loss_acc = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
     accumulated_loss_count = dist.get_world_size() * log_interval
 
@@ -97,30 +111,6 @@ def train_epoch(
         # Compute main loss in normalized space
         loss = criterion(reconstructed, batch_normalized)
 
-        # SIGReg Loss Calculation
-        d_model = model.module.d_model
-        dict_sample = model.module.get_decoder_dictionary_sample(m_sample_size)
-
-        dict_sample_scaled = dict_sample * (d_model**0.5)
-
-        projections = torch.randn(d_model, p_projections, device=device, dtype=dtype)
-        projections = projections / torch.norm(projections, dim=0, keepdim=True)
-
-        projected_dict = torch.matmul(dict_sample_scaled, projections)
-
-        t = torch.linspace(0, 1, 100, device=device, dtype=dtype)
-        phi_t = torch.exp(-(t**2) / 2)
-
-        cos_t_z = torch.cos(t.unsqueeze(0) * projected_dict.unsqueeze(-1))
-        sin_t_z = torch.sin(t.unsqueeze(0) * projected_dict.unsqueeze(-1))
-
-        ecf_cos = torch.mean(cos_t_z, dim=[0, 1])
-        ecf_sin = torch.mean(sin_t_z, dim=[0, 1])
-
-        err_t = (ecf_cos - phi_t)**2 + ecf_sin**2
-
-        dict_reg_loss = torch.trapezoid(err_t, t)
-
         # If enough latents haven't been activated in more than dead_steps_threshold training steps then calculate an
         # auxiliary loss to help reactivate the latents.
         dead_mask = latent_last_nonzero > dead_steps_threshold
@@ -139,8 +129,61 @@ def train_epoch(
             # If there are not enough dead latents to activate, set auxiliary loss to 0.
             aux_loss = torch.tensor(0.0, device=device)
 
+        # Calculate current SIGReg coefficient based on epoch for scheduled warmup
+        current_sigreg_coeff = sigreg_coeff
+        if epoch < sigreg_warmup_epochs:
+            current_sigreg_coeff *= (epoch + 1) / sigreg_warmup_epochs  # epoch starts from 0, so +1
+
+        # ---- dictionary SIGReg regularizer ----
+        dict_reg_loss = torch.tensor(0.0, device=device)
+        if current_sigreg_coeff > 0 and (batch_idx + 1) % sigreg_every_n_steps == 0:
+            dict_sample = model.module.get_decoder_dictionary_sample(sigreg_m_sample_size, replace=False)
+            dict_sample_scaled = dict_sample * (d_model**0.5)
+
+            projections = torch.randn(d_model, sigreg_p_projections, device=device, dtype=dtype)
+            projections = projections / torch.norm(projections, dim=0, keepdim=True)
+            projected_dict = torch.matmul(dict_sample_scaled, projections)  # [m, p]
+
+            z = projected_dict.unsqueeze(-1) * t  # [m, p, t_points]
+            cos_t_z = torch.cos(z)
+            sin_t_z = torch.sin(z)
+
+            ecf_cos = torch.mean(cos_t_z, dim=(0, 1))
+            ecf_sin = torch.mean(sin_t_z, dim=(0, 1))
+            err_t = (ecf_cos - phi_t) ** 2 + ecf_sin**2
+
+            dict_reg_loss = torch.trapezoid(err_t, t)
+
+        # Calculate current repulsion coefficient based on epoch for scheduled warmup
+        current_repulsion_coeff = repulsion_coeff
+        if epoch < repulsion_warmup_epochs:
+            current_repulsion_coeff *= (epoch + 1) / repulsion_warmup_epochs  # epoch starts from 0, so +1
+
+        # ---- dictionary repulsion regularizer ----
+        dict_rep_loss = torch.tensor(0.0, device=device)
+        coh_max = 0.0
+        coh_mean = 0.0
+        if current_repulsion_coeff > 0 and (batch_idx + 1) % repulsion_every_n_steps == 0:
+            dict_sample = model.module.sample_decoder_dictionary(repulsion_sample_size)  # [m, d_model]
+            dict_sample = dict_sample / (dict_sample.norm(dim=-1, keepdim=True) + 1e-8)
+
+            sim = torch.abs(dict_sample @ dict_sample.t())  # [m, m]
+            sim.fill_diagonal_(0.0)
+
+            # hinge version
+            dict_rep_loss = torch.relu(sim - repulsion_tau).pow(2).mean()
+
+            with torch.no_grad():
+                coh_max = sim.max().item()
+                coh_mean = sim.sum().item() / (sim.numel() - sim.shape[0])
+
         # Compute total loss with auxiliary loss coefficient
-        total_loss = loss + aux_loss_coeff * aux_loss + dict_reg_coeff * dict_reg_loss
+        total_loss = (
+            loss
+            + aux_loss_coeff * aux_loss
+            + current_sigreg_coeff * dict_reg_loss
+            + current_repulsion_coeff * dict_rep_loss
+        )
 
         # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
         # and normalize the decoder weights again.
@@ -152,8 +195,9 @@ def train_epoch(
         # Accumulate losses
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
-        dict_reg_loss_acc += dict_reg_loss.detach()
         total_loss_acc += total_loss.detach()
+        sigreg_loss_acc += dict_reg_loss.detach()
+        rep_loss_acc += dict_rep_loss.detach()
 
         # Update the progress bar on main process
         if rank == 0:
@@ -170,27 +214,21 @@ def train_epoch(
         if (batch_idx + 1) % log_interval == 0:
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
-            dist.all_reduce(dict_reg_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(sigreg_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(rep_loss_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
-            avg_dict_reg_loss = dict_reg_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
+            avg_sigreg_loss = sigreg_loss_acc.item() / accumulated_loss_count
+            avg_rep_loss = rep_loss_acc.item() / accumulated_loss_count
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
-            dict_reg_loss_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
-
-            # Coherence Calculation
-            with torch.no_grad():
-                dict_sample_coh = model.module.get_decoder_dictionary_sample(2048)  # smaller sample
-                dict_sample_norm = dict_sample_coh / torch.norm(dict_sample_coh, dim=1, keepdim=True)
-                cos_sim = torch.abs(torch.matmul(dict_sample_norm, dict_sample_norm.t()))
-                cos_sim.fill_diagonal_(0)
-                max_coherence = torch.max(cos_sim).item()
-                mean_coherence = torch.mean(cos_sim[torch.triu_indices(2048, 2048, offset=1).unbind()]).item()
+            sigreg_loss_acc = torch.tensor(0.0, device=device)
+            rep_loss_acc = torch.tensor(0.0, device=device)
 
             # Determine dead latent debug statistics
             dead_latents_ratio = dead_latents / dead_mask.numel()
@@ -203,10 +241,13 @@ def train_epoch(
                     data={
                         "train/loss": avg_loss,
                         "train/aux_loss": avg_aux_loss,
-                        "train/dict_reg_loss": avg_dict_reg_loss,
                         "train/total_loss": avg_total_loss,
-                        "debug/dict_coherence_max": max_coherence,
-                        "debug/dict_coherence_mean": mean_coherence,
+                        "train/dict_reg_loss": avg_sigreg_loss,
+                        "train/sigreg_coeff": current_sigreg_coeff,
+                        "train/dict_rep_loss": avg_rep_loss,
+                        "train/repulsion_coeff": current_repulsion_coeff,
+                        "debug/dict_coherence_max": coh_max,
+                        "debug/dict_coherence_mean": coh_mean,
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
@@ -216,7 +257,6 @@ def train_epoch(
                 progress_bar.set_postfix(
                     loss=f"{avg_loss:.6f}",
                     aux_loss=f"{avg_aux_loss:.6f}",
-                    dict_reg_loss=f"{avg_dict_reg_loss:.6f}",
                     total_loss=f"{avg_total_loss:.6f}",
                 )
 
@@ -334,9 +374,18 @@ def train_autoencoder(
     optimizer_eps: float,
     k_aux: int,
     aux_loss_coeff: float,
-    dict_reg_coeff: float,
-    m_sample_size: int,
-    p_projections: int,
+    sigreg_coeff: float,
+    sigreg_m_sample_size: int,
+    sigreg_p_projections: int,
+    sigreg_every_n_steps: int,
+    sigreg_warmup_epochs: int,
+    sigreg_t_points: int,
+    sigreg_t_max: float,
+    repulsion_coeff: float,
+    repulsion_tau: float,
+    repulsion_sample_size: int,
+    repulsion_every_n_steps: int,
+    repulsion_warmup_epochs: int,
     dead_steps_threshold: int,
     logs_per_epoch: int,
     checkpoint_dir: Path,
@@ -406,9 +455,18 @@ def train_autoencoder(
             optimizer=optimizer,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
-            dict_reg_coeff=dict_reg_coeff,
-            m_sample_size=m_sample_size,
-            p_projections=p_projections,
+            sigreg_coeff=sigreg_coeff,
+            sigreg_m_sample_size=sigreg_m_sample_size,
+            sigreg_p_projections=sigreg_p_projections,
+            sigreg_every_n_steps=sigreg_every_n_steps,
+            sigreg_warmup_epochs=sigreg_warmup_epochs,
+            sigreg_t_points=sigreg_t_points,
+            sigreg_t_max=sigreg_t_max,
+            repulsion_coeff=repulsion_coeff,
+            repulsion_tau=repulsion_tau,
+            repulsion_sample_size=repulsion_sample_size,
+            repulsion_every_n_steps=repulsion_every_n_steps,
+            repulsion_warmup_epochs=repulsion_warmup_epochs,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             logs_per_epoch=logs_per_epoch,
@@ -520,9 +578,6 @@ def main() -> None:
     k = 64
     k_aux = 2048
     aux_loss_coeff = 1 / 32
-    dict_reg_coeff = 1e-3
-    m_sample_size = 4096
-    p_projections = 32
     dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
     sae_normalization_eps = 1e-6
     batch_size = args.batch_size
@@ -537,6 +592,21 @@ def main() -> None:
     logs_per_epoch = 100
     train_val_split = 0.95
 
+    # Regularizers (SIGReg + repulsion)
+    sigreg_coeff = 1e-3
+    sigreg_m_sample_size = 4096
+    sigreg_p_projections = 32
+    sigreg_every_n_steps = 4
+    sigreg_warmup_epochs = 40
+    sigreg_t_points = 100
+    sigreg_t_max = 1.0
+
+    repulsion_coeff = 3e-4
+    repulsion_tau = 0.1
+    repulsion_sample_size = 1024
+    repulsion_every_n_steps = 4
+    repulsion_warmup_epochs = 40
+
     if rank == 0:
         logging.info("Logging into and initializing wandb...")
         wandb.login()
@@ -548,9 +618,6 @@ def main() -> None:
                 "k": k,
                 "k_aux": k_aux,
                 "aux_loss_coeff": aux_loss_coeff,
-                "dict_reg_coeff": dict_reg_coeff,
-                "m_sample_size": m_sample_size,
-                "p_projections": p_projections,
                 "dead_steps_threshold": dead_steps_threshold,
                 "sae_normalization_eps": sae_normalization_eps,
                 "batch_size": batch_size,
@@ -564,6 +631,18 @@ def main() -> None:
                 "dataloader_num_workers": dataloader_num_workers,
                 "logs_per_epoch": logs_per_epoch,
                 "train_val_split": train_val_split,
+                "sigreg_coeff": sigreg_coeff,
+                "sigreg_m_sample_size": sigreg_m_sample_size,
+                "sigreg_p_projections": sigreg_p_projections,
+                "sigreg_every_n_steps": sigreg_every_n_steps,
+                "sigreg_warmup_epochs": sigreg_warmup_epochs,
+                "sigreg_t_points": sigreg_t_points,
+                "sigreg_t_max": sigreg_t_max,
+                "repulsion_coeff": repulsion_coeff,
+                "repulsion_tau": repulsion_tau,
+                "repulsion_sample_size": repulsion_sample_size,
+                "repulsion_every_n_steps": repulsion_every_n_steps,
+                "repulsion_warmup_epochs": repulsion_warmup_epochs,
                 "world_size": world_size,
             },
         )
@@ -585,9 +664,6 @@ def main() -> None:
         logging.info(f"# k={k}")
         logging.info(f"# k_aux={k_aux}")
         logging.info(f"# aux_loss_coeff={aux_loss_coeff}")
-        logging.info(f"# dict_reg_coeff={dict_reg_coeff}")
-        logging.info(f"# m_sample_size={m_sample_size}")
-        logging.info(f"# p_projections={p_projections}")
         logging.info(f"# dead_steps_threshold={dead_steps_threshold}")
         logging.info(f"# sae_normalization_eps={sae_normalization_eps}")
         logging.info(f"# batch_size={batch_size}")
@@ -601,6 +677,18 @@ def main() -> None:
         logging.info(f"# dataloader_num_workers={dataloader_num_workers}")
         logging.info(f"# logs_per_epoch={logs_per_epoch}")
         logging.info(f"# train_val_split={train_val_split}")
+        logging.info(f"# sigreg_coeff={sigreg_coeff}")
+        logging.info(f"# sigreg_m_sample_size={sigreg_m_sample_size}")
+        logging.info(f"# sigreg_p_projections={sigreg_p_projections}")
+        logging.info(f"# sigreg_every_n_steps={sigreg_every_n_steps}")
+        logging.info(f"# sigreg_warmup_epochs={sigreg_warmup_epochs}")
+        logging.info(f"# sigreg_t_points={sigreg_t_points}")
+        logging.info(f"# sigreg_t_max={sigreg_t_max}")
+        logging.info(f"# repulsion_coeff={repulsion_coeff}")
+        logging.info(f"# repulsion_tau={repulsion_tau}")
+        logging.info(f"# repulsion_sample_size={repulsion_sample_size}")
+        logging.info(f"# repulsion_every_n_steps={repulsion_every_n_steps}")
+        logging.info(f"# repulsion_warmup_epochs={repulsion_warmup_epochs}")
 
         # Create a new directory for the checkpoints
         run_name = datetime.now(tz=UTC).strftime("run_%Y-%m-%d_%H-%M-%S")
@@ -703,9 +791,18 @@ def main() -> None:
         optimizer_eps=optimizer_eps,
         k_aux=k_aux,
         aux_loss_coeff=aux_loss_coeff,
-        dict_reg_coeff=dict_reg_coeff,
-        m_sample_size=m_sample_size,
-        p_projections=p_projections,
+        sigreg_coeff=sigreg_coeff,
+        sigreg_m_sample_size=sigreg_m_sample_size,
+        sigreg_p_projections=sigreg_p_projections,
+        sigreg_every_n_steps=sigreg_every_n_steps,
+        sigreg_warmup_epochs=sigreg_warmup_epochs,
+        sigreg_t_points=sigreg_t_points,
+        sigreg_t_max=sigreg_t_max,
+        repulsion_coeff=repulsion_coeff,
+        repulsion_tau=repulsion_tau,
+        repulsion_sample_size=repulsion_sample_size,
+        repulsion_every_n_steps=repulsion_every_n_steps,
+        repulsion_warmup_epochs=repulsion_warmup_epochs,
         dead_steps_threshold=dead_steps_threshold,
         logs_per_epoch=logs_per_epoch,
         checkpoint_dir=args.checkpoint_dir,

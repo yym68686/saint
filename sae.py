@@ -40,6 +40,25 @@ class TopKSparseAutoencoder(nn.Module):
 
         self.normalize_decoder_weights()
 
+    def get_decoder_dictionary_sample(self, m: int, *, replace: bool = False) -> torch.Tensor:
+        # decoder.weight: [d_model, n_latents]
+        # dictionary vectors (per latent): columns -> transpose to [n_latents, d_model]
+        dict_vectors = self.decoder.weight.t()
+        num_latents = dict_vectors.shape[0]
+
+        if not replace and m > num_latents:
+            raise ValueError(f"Cannot sample {m=} without replacement from {num_latents=}.")
+
+        if replace:
+            idx = torch.randint(0, num_latents, (m,), device=dict_vectors.device)
+        else:
+            idx = torch.randperm(num_latents, device=dict_vectors.device)[:m]
+
+        return dict_vectors[idx]  # [m, d_model]
+
+    def sample_decoder_dictionary(self, m: int) -> torch.Tensor:
+        return self.get_decoder_dictionary_sample(m, replace=False)
+
     def normalize_decoder_weights(self) -> None:
         """Normalize the decoder weights to unit norm for each latent (corresponding to decoder columns)."""
         with torch.no_grad():
@@ -147,14 +166,6 @@ class TopKSparseAutoencoder(nn.Module):
     def unset_latent_bias(self) -> None:
         """"""
         self.h_bias = None
-
-    def get_decoder_dictionary_sample(self, m: int) -> torch.Tensor:
-        """Randomly sample m decoder weight vectors."""
-        # The decoder weights are of shape (d_model, n_latents), so we transpose to sample column vectors.
-        dictionary_vectors = self.decoder.weight.t()
-        num_latents = dictionary_vectors.shape[0]
-        indices = torch.randint(0, num_latents, (m,), device=dictionary_vectors.device)
-        return dictionary_vectors[indices]
 
 
 def load_sae_model(
