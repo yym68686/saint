@@ -1,0 +1,1111 @@
+group,index,text,agg,val
+target,0,"Prime Minister Stephen Harper answers a question during question period in the House of Commons in Ottawa on Wednesday, Feb. 18, 2015.",mean,60.32440948486328
+target,0,"Prime Minister Stephen Harper answers a question during question period in the House of Commons in Ottawa on Wednesday, Feb. 18, 2015.",max,126.44132232666016
+target,0,"Prime Minister Stephen Harper answers a question during question period in the House of Commons in Ottawa on Wednesday, Feb. 18, 2015.",last,102.36265563964844
+target,1,With a report from CTV Kitchener and files from The Canadian Press,mean,53.74984359741211
+target,1,With a report from CTV Kitchener and files from The Canadian Press,max,129.06202697753906
+target,1,With a report from CTV Kitchener and files from The Canadian Press,last,90.0658950805664
+target,2,"The honourable Judy Sgro, who represents York West for the Liberals is also a Tory backer.",mean,60.92235565185547
+target,2,"The honourable Judy Sgro, who represents York West for the Liberals is also a Tory backer.",max,129.67218017578125
+target,2,"The honourable Judy Sgro, who represents York West for the Liberals is also a Tory backer.",last,97.05801391601562
+target,3,Bill C-33 will repeal those restrictions.,mean,59.62213134765625
+target,3,Bill C-33 will repeal those restrictions.,max,110.98235321044922
+target,3,Bill C-33 will repeal those restrictions.,last,106.02749633789062
+target,4,She was assigned to Maritime Forces Atlantic (MARLANT) homeported at CFB Halifax.,mean,43.36580276489258
+target,4,She was assigned to Maritime Forces Atlantic (MARLANT) homeported at CFB Halifax.,max,93.25264739990234
+target,4,She was assigned to Maritime Forces Atlantic (MARLANT) homeported at CFB Halifax.,last,69.01976776123047
+target,5,Former Calgary Health CEO Jack Davis is also appealing the release of his expenses to CBC News.,mean,69.87677764892578
+target,5,Former Calgary Health CEO Jack Davis is also appealing the release of his expenses to CBC News.,max,114.80284118652344
+target,5,Former Calgary Health CEO Jack Davis is also appealing the release of his expenses to CBC News.,last,111.4949951171875
+target,6,Premier Rachel Notley has already stacked her inner circle with the best NDP brains in the country.,mean,59.63385009765625
+target,6,Premier Rachel Notley has already stacked her inner circle with the best NDP brains in the country.,max,104.98408508300781
+target,6,Premier Rachel Notley has already stacked her inner circle with the best NDP brains in the country.,last,104.98408508300781
+target,7,"[3] Parliament responded to Parker by introducing the Marihuana Medical Access Regulations, SOR/2001-227, as amended (“MMAR”).",mean,33.964630126953125
+target,7,"[3] Parliament responded to Parker by introducing the Marihuana Medical Access Regulations, SOR/2001-227, as amended (“MMAR”).",max,94.92630767822266
+target,7,"[3] Parliament responded to Parker by introducing the Marihuana Medical Access Regulations, SOR/2001-227, as amended (“MMAR”).",last,82.85015106201172
+target,8,CBC News reported Tuesday Harper is under pressure from Conservative senators to start filling up those empty seats.,mean,70.39604949951172
+target,8,CBC News reported Tuesday Harper is under pressure from Conservative senators to start filling up those empty seats.,max,125.50782775878906
+target,8,CBC News reported Tuesday Harper is under pressure from Conservative senators to start filling up those empty seats.,last,125.50782775878906
+target,9,With a report from CTV Vancouver's Scott Hurst,mean,31.964065551757812
+target,9,With a report from CTV Vancouver's Scott Hurst,max,86.75142669677734
+target,9,With a report from CTV Vancouver's Scott Hurst,last,63.2139892578125
+target,10,The Trudeau government is trying to abandon their promise to upgrade Canada’s voting system ahead of the 2019 election.,mean,73.56976318359375
+target,10,The Trudeau government is trying to abandon their promise to upgrade Canada’s voting system ahead of the 2019 election.,max,132.041259765625
+target,10,The Trudeau government is trying to abandon their promise to upgrade Canada’s voting system ahead of the 2019 election.,last,116.62085723876953
+target,11,Government of Canada test methods used.,mean,38.6710319519043
+target,11,Government of Canada test methods used.,max,96.41551208496094
+target,11,Government of Canada test methods used.,last,43.7925910949707
+target,12,"With the Manitoba fires, and the addition of fires across the prairies and northern territories, many parts of Manitoba could see smoky conditions.",mean,54.889366149902344
+target,12,"With the Manitoba fires, and the addition of fires across the prairies and northern territories, many parts of Manitoba could see smoky conditions.",max,106.2796859741211
+target,12,"With the Manitoba fires, and the addition of fires across the prairies and northern territories, many parts of Manitoba could see smoky conditions.",last,106.2796859741211
+target,13,"Tory MLA Ted Flemming, the Opposition's justice critic, said Smith’s letter shows the Liberals have to pull the legislative amendments.",mean,65.8785400390625
+target,13,"Tory MLA Ted Flemming, the Opposition's justice critic, said Smith’s letter shows the Liberals have to pull the legislative amendments.",max,123.1457290649414
+target,13,"Tory MLA Ted Flemming, the Opposition's justice critic, said Smith’s letter shows the Liberals have to pull the legislative amendments.",last,117.60159301757812
+target,14,GUELPH — Cooperator's Hall at the River Run Centre was packed Thursday evening with supporters of Green Party leader Elizabeth May and local candidate Gord Miller.,mean,63.753562927246094
+target,14,GUELPH — Cooperator's Hall at the River Run Centre was packed Thursday evening with supporters of Green Party leader Elizabeth May and local candidate Gord Miller.,max,123.30711364746094
+target,14,GUELPH — Cooperator's Hall at the River Run Centre was packed Thursday evening with supporters of Green Party leader Elizabeth May and local candidate Gord Miller.,last,86.35452270507812
+target,15,"Sources tell CBC Toronto the team had the alleged gunman under surveillance, but Halton police have never confirmed why.",mean,50.66146469116211
+target,15,"Sources tell CBC Toronto the team had the alleged gunman under surveillance, but Halton police have never confirmed why.",max,126.32933044433594
+target,15,"Sources tell CBC Toronto the team had the alleged gunman under surveillance, but Halton police have never confirmed why.",last,126.32933044433594
+target,16,"National voter support for the NDP, Conservatives and Liberals from January to August of 2015.",mean,58.24579620361328
+target,16,"National voter support for the NDP, Conservatives and Liberals from January to August of 2015.",max,115.57681274414062
+target,16,"National voter support for the NDP, Conservatives and Liberals from January to August of 2015.",last,93.30265808105469
+target,17,Federal Finance Minister Bill Morneau said the intent is to have all taxes included within that price.,mean,61.034461975097656
+target,17,Federal Finance Minister Bill Morneau said the intent is to have all taxes included within that price.,max,117.26596069335938
+target,17,Federal Finance Minister Bill Morneau said the intent is to have all taxes included within that price.,last,113.15272521972656
+target,18,"NDP Leader Thomas Mulcair has waded into the TPP debate during the campaign, pledging an NDP government would fight for stronger rules in the Trans-Pacific Partnership accord to protect homegrown manufacturing.",mean,60.529937744140625
+target,18,"NDP Leader Thomas Mulcair has waded into the TPP debate during the campaign, pledging an NDP government would fight for stronger rules in the Trans-Pacific Partnership accord to protect homegrown manufacturing.",max,128.01031494140625
+target,18,"NDP Leader Thomas Mulcair has waded into the TPP debate during the campaign, pledging an NDP government would fight for stronger rules in the Trans-Pacific Partnership accord to protect homegrown manufacturing.",last,128.01031494140625
+target,19,Mélanie Meloche-Holubowski is a journalist intern at EvidenceNetwork.ca and a journalist with Radio-Canada.,mean,49.81229782104492
+target,19,Mélanie Meloche-Holubowski is a journalist intern at EvidenceNetwork.ca and a journalist with Radio-Canada.,max,130.18809509277344
+target,19,Mélanie Meloche-Holubowski is a journalist intern at EvidenceNetwork.ca and a journalist with Radio-Canada.,last,56.507694244384766
+target,20,"; Eric Howard, Brantford Harlequins, Ottawa; Jake Ilnicki, Manawatu Turbos (New Zealand), Williams Lake, B.C.",mean,37.0685920715332
+target,20,"; Eric Howard, Brantford Harlequins, Ottawa; Jake Ilnicki, Manawatu Turbos (New Zealand), Williams Lake, B.C.",max,121.96987915039062
+target,20,"; Eric Howard, Brantford Harlequins, Ottawa; Jake Ilnicki, Manawatu Turbos (New Zealand), Williams Lake, B.C.",last,69.83013916015625
+target,21,Girl Guides of Canada and MADD Canada were among the charities whose expenses didn’t add up to the total.,mean,56.123897552490234
+target,21,Girl Guides of Canada and MADD Canada were among the charities whose expenses didn’t add up to the total.,max,124.45436096191406
+target,21,Girl Guides of Canada and MADD Canada were among the charities whose expenses didn’t add up to the total.,last,123.45437622070312
+target,22,"Three Toronto police officers have been charged with assault causing bodily harm following a probe into a 2013 arrest that landed a man in hospital with a ""serious injury,"" the Special Investigations Unit announced Tuesday.",mean,66.76640319824219
+target,22,"Three Toronto police officers have been charged with assault causing bodily harm following a probe into a 2013 arrest that landed a man in hospital with a ""serious injury,"" the Special Investigations Unit announced Tuesday.",max,126.26731872558594
+target,22,"Three Toronto police officers have been charged with assault causing bodily harm following a probe into a 2013 arrest that landed a man in hospital with a ""serious injury,"" the Special Investigations Unit announced Tuesday.",last,99.92227172851562
+target,23,"On July 10, Andrew Baryluk, 52, saw Manitoba's top court deny his appeal of a recent Residential Tenancies Board order granting possession of 512 Stella Ave. to another family member.",mean,48.629905700683594
+target,23,"On July 10, Andrew Baryluk, 52, saw Manitoba's top court deny his appeal of a recent Residential Tenancies Board order granting possession of 512 Stella Ave. to another family member.",max,107.04302978515625
+target,23,"On July 10, Andrew Baryluk, 52, saw Manitoba's top court deny his appeal of a recent Residential Tenancies Board order granting possession of 512 Stella Ave. to another family member.",last,93.55760192871094
+target,24,"Burnaby Community Services has teamed up with car-sharing company, Modo, as part of the Seniors on the Move regional program.",mean,54.35575866699219
+target,24,"Burnaby Community Services has teamed up with car-sharing company, Modo, as part of the Seniors on the Move regional program.",max,112.07141876220703
+target,24,"Burnaby Community Services has teamed up with car-sharing company, Modo, as part of the Seniors on the Move regional program.",last,55.32503128051758
+target,25,"""It would be a great 150th birthday present for Canada if [the court] could restore the original founding vision of free trade,"" Anglin said in an interview with CTVNews.ca.",mean,55.38020706176758
+target,25,"""It would be a great 150th birthday present for Canada if [the court] could restore the original founding vision of free trade,"" Anglin said in an interview with CTVNews.ca.",max,132.63327026367188
+target,25,"""It would be a great 150th birthday present for Canada if [the court] could restore the original founding vision of free trade,"" Anglin said in an interview with CTVNews.ca.",last,103.69503784179688
+target,26,"(Robert Short/CBC)
+
+Just after 8 a.m., police in Halifax were called to another report of a suspicious package in the area of the old Spring Garden Road Memorial Library, at 5381 Spring Garden Rd.",mean,54.77538299560547
+target,26,"(Robert Short/CBC)
+
+Just after 8 a.m., police in Halifax were called to another report of a suspicious package in the area of the old Spring Garden Road Memorial Library, at 5381 Spring Garden Rd.",max,124.21296691894531
+target,26,"(Robert Short/CBC)
+
+Just after 8 a.m., police in Halifax were called to another report of a suspicious package in the area of the old Spring Garden Road Memorial Library, at 5381 Spring Garden Rd.",last,86.16702270507812
+target,27,"NDP Leader Dominic Cardy, meanwhile, failed to win his Fredericton-area seat and has resigned.",mean,55.5190315246582
+target,27,"NDP Leader Dominic Cardy, meanwhile, failed to win his Fredericton-area seat and has resigned.",max,106.6884765625
+target,27,"NDP Leader Dominic Cardy, meanwhile, failed to win his Fredericton-area seat and has resigned.",last,106.6884765625
+target,28,"In his last go-around as Canadian Tire CEO, Mr. Wetmore – a New Brunswick native and former CEO of Bell Aliant – spearheaded the acquisition of sports retailer Forzani Group Ltd., whose banners include Sport Chek, and streamlined administrative functions at head office.",mean,56.479278564453125
+target,28,"In his last go-around as Canadian Tire CEO, Mr. Wetmore – a New Brunswick native and former CEO of Bell Aliant – spearheaded the acquisition of sports retailer Forzani Group Ltd., whose banners include Sport Chek, and streamlined administrative functions at head office.",max,137.17208862304688
+target,28,"In his last go-around as Canadian Tire CEO, Mr. Wetmore – a New Brunswick native and former CEO of Bell Aliant – spearheaded the acquisition of sports retailer Forzani Group Ltd., whose banners include Sport Chek, and streamlined administrative functions at head office.",last,73.50154876708984
+target,29,The public can come watch in person as prime minister-designate Justin Trudeau and his incoming cabinet ministers arrive at the official residence of the Governor General for the 10:30 a.m.,mean,56.73990249633789
+target,29,The public can come watch in person as prime minister-designate Justin Trudeau and his incoming cabinet ministers arrive at the official residence of the Governor General for the 10:30 a.m.,max,124.1073989868164
+target,29,The public can come watch in person as prime minister-designate Justin Trudeau and his incoming cabinet ministers arrive at the official residence of the Governor General for the 10:30 a.m.,last,83.27617645263672
+target,30,"Driver refused to go to hospital
+
+An RCMP vehicle and a car collided in front of the Supreme Court of Canada after a short police pursuit Sunday.",mean,49.456825256347656
+target,30,"Driver refused to go to hospital
+
+An RCMP vehicle and a car collided in front of the Supreme Court of Canada after a short police pursuit Sunday.",max,129.26046752929688
+target,30,"Driver refused to go to hospital
+
+An RCMP vehicle and a car collided in front of the Supreme Court of Canada after a short police pursuit Sunday.",last,99.28470611572266
+target,31,"In Melville, Sask., 145 km north east of Regina, families also receive a season ticket for each player they host.",mean,45.7867317199707
+target,31,"In Melville, Sask., 145 km north east of Regina, families also receive a season ticket for each player they host.",max,104.30677795410156
+target,31,"In Melville, Sask., 145 km north east of Regina, families also receive a season ticket for each player they host.",last,72.63542938232422
+target,32,"Federal Justice Minister Jody Wilson-Raybould
+
+The most powerful Aboriginal in Canada
+
+Federal Justice Minister Jody Wilson-Raybould was marked for great things early.",mean,54.42896270751953
+target,32,"Federal Justice Minister Jody Wilson-Raybould
+
+The most powerful Aboriginal in Canada
+
+Federal Justice Minister Jody Wilson-Raybould was marked for great things early.",max,121.27395629882812
+target,32,"Federal Justice Minister Jody Wilson-Raybould
+
+The most powerful Aboriginal in Canada
+
+Federal Justice Minister Jody Wilson-Raybould was marked for great things early.",last,67.96176147460938
+target,33,"He said he has had long conversations with former Veterans Affairs Minister Erin O’Toole, but hasn’t heard much from the new federal government.",mean,44.262046813964844
+target,33,"He said he has had long conversations with former Veterans Affairs Minister Erin O’Toole, but hasn’t heard much from the new federal government.",max,132.67474365234375
+target,33,"He said he has had long conversations with former Veterans Affairs Minister Erin O’Toole, but hasn’t heard much from the new federal government.",last,132.67474365234375
+target,34,"In a piece published in the Ottawa Citizen last week, he wrote that the Prime Minister “is pro-war.",mean,48.55106735229492
+target,34,"In a piece published in the Ottawa Citizen last week, he wrote that the Prime Minister “is pro-war.",max,153.43496704101562
+target,34,"In a piece published in the Ottawa Citizen last week, he wrote that the Prime Minister “is pro-war.",last,89.2740478515625
+target,35,"Dean Del Mastro separately filed a complaint to the Ethics Commissioner, but she later referred the issue back to Elections Canada as well.",mean,70.06700134277344
+target,35,"Dean Del Mastro separately filed a complaint to the Ethics Commissioner, but she later referred the issue back to Elections Canada as well.",max,134.2220916748047
+target,35,"Dean Del Mastro separately filed a complaint to the Ethics Commissioner, but she later referred the issue back to Elections Canada as well.",last,134.2220916748047
+target,36,"(Bank of Canada/CBC)
+
+The selected person will not be the first Canadian female to appear on a banknote.",mean,57.2748908996582
+target,36,"(Bank of Canada/CBC)
+
+The selected person will not be the first Canadian female to appear on a banknote.",max,121.23197937011719
+target,36,"(Bank of Canada/CBC)
+
+The selected person will not be the first Canadian female to appear on a banknote.",last,121.23197937011719
+target,37,Crown Attorney Alex Smith read an agreed statement of facts to Halifax Provincial Court Judge Greg Lenehan.,mean,50.5180778503418
+target,37,Crown Attorney Alex Smith read an agreed statement of facts to Halifax Provincial Court Judge Greg Lenehan.,max,101.4797592163086
+target,37,Crown Attorney Alex Smith read an agreed statement of facts to Halifax Provincial Court Judge Greg Lenehan.,last,101.4797592163086
+target,38,"""Manitoba Warriors have been on our radar for some time now,"" Staff Sgt.",mean,29.395652770996094
+target,38,"""Manitoba Warriors have been on our radar for some time now,"" Staff Sgt.",max,103.23334503173828
+target,38,"""Manitoba Warriors have been on our radar for some time now,"" Staff Sgt.",last,103.23334503173828
+target,39,(Regan Burden/CBC) Stacey Seward works as a bartender at Erin's Pub on Water Street and regularly walks home.,mean,43.71550750732422
+target,39,(Regan Burden/CBC) Stacey Seward works as a bartender at Erin's Pub on Water Street and regularly walks home.,max,127.89373779296875
+target,39,(Regan Burden/CBC) Stacey Seward works as a bartender at Erin's Pub on Water Street and regularly walks home.,last,80.3763427734375
+target,40,"Three high-profile cases in Calgary are also in danger of being thrown out with pending Jordan applications including a kidnapping, second-degree murder and manslaughter.",mean,52.809661865234375
+target,40,"Three high-profile cases in Calgary are also in danger of being thrown out with pending Jordan applications including a kidnapping, second-degree murder and manslaughter.",max,117.38545989990234
+target,40,"Three high-profile cases in Calgary are also in danger of being thrown out with pending Jordan applications including a kidnapping, second-degree murder and manslaughter.",last,117.38545989990234
+target,41,"The policy, released at a news conference at the downtown YMCA in Toronto, puts together two years of research into housing discrimination that involved hundreds of people and dozens of organizations in Toronto, Ottawa, Kitchener and Sudbury.",mean,50.77269744873047
+target,41,"The policy, released at a news conference at the downtown YMCA in Toronto, puts together two years of research into housing discrimination that involved hundreds of people and dozens of organizations in Toronto, Ottawa, Kitchener and Sudbury.",max,123.33614349365234
+target,41,"The policy, released at a news conference at the downtown YMCA in Toronto, puts together two years of research into housing discrimination that involved hundreds of people and dozens of organizations in Toronto, Ottawa, Kitchener and Sudbury.",last,116.05482482910156
+target,42,"But Foreign Affairs Minister John Baird said Russia had ""invaded"" Ukraine.",mean,22.65804100036621
+target,42,"But Foreign Affairs Minister John Baird said Russia had ""invaded"" Ukraine.",max,106.3387451171875
+target,42,"But Foreign Affairs Minister John Baird said Russia had ""invaded"" Ukraine.",last,70.35305786132812
+target,43,Canada sanctioned a program that allowed the kidnapping of native children in order to assimilate them.,mean,41.435089111328125
+target,43,Canada sanctioned a program that allowed the kidnapping of native children in order to assimilate them.,max,91.09837341308594
+target,43,Canada sanctioned a program that allowed the kidnapping of native children in order to assimilate them.,last,72.69900512695312
+target,44,"Halifax, with about 130,000 more people than Saskatoon, elects full-time councillors.",mean,50.692161560058594
+target,44,"Halifax, with about 130,000 more people than Saskatoon, elects full-time councillors.",max,106.48045349121094
+target,44,"Halifax, with about 130,000 more people than Saskatoon, elects full-time councillors.",last,106.48045349121094
+target,45,"Wynne referred to the recent death of Toronto physician Elana Fric-Shamji, whose remains were found in a suitcase outside of Vaughan, Ont.",mean,52.704036712646484
+target,45,"Wynne referred to the recent death of Toronto physician Elana Fric-Shamji, whose remains were found in a suitcase outside of Vaughan, Ont.",max,117.6356201171875
+target,45,"Wynne referred to the recent death of Toronto physician Elana Fric-Shamji, whose remains were found in a suitcase outside of Vaughan, Ont.",last,103.8134765625
+target,46,"Mr. Poilievre specifically defended the budget bill measures, which would give cabinet the power to issue orders to Crown corporations that lay out the terms for pay, benefits and other labour relations issues with both unionized and non-unionized staff.",mean,61.00382995605469
+target,46,"Mr. Poilievre specifically defended the budget bill measures, which would give cabinet the power to issue orders to Crown corporations that lay out the terms for pay, benefits and other labour relations issues with both unionized and non-unionized staff.",max,117.9542236328125
+target,46,"Mr. Poilievre specifically defended the budget bill measures, which would give cabinet the power to issue orders to Crown corporations that lay out the terms for pay, benefits and other labour relations issues with both unionized and non-unionized staff.",last,117.9542236328125
+target,47,"National security law experts Craig Forcese and Kent Roach warned in an essay published earlier this year by The Walrus magazine that the new CSIS powers are the most ""radical"" aspect of Bill C-51.",mean,54.86164474487305
+target,47,"National security law experts Craig Forcese and Kent Roach warned in an essay published earlier this year by The Walrus magazine that the new CSIS powers are the most ""radical"" aspect of Bill C-51.",max,131.28433227539062
+target,47,"National security law experts Craig Forcese and Kent Roach warned in an essay published earlier this year by The Walrus magazine that the new CSIS powers are the most ""radical"" aspect of Bill C-51.",last,114.98359680175781
+target,48,"The doctored image appeared on several government websites, including Canada’s Economic Action Plan and Citizenship and Immigration Canada.",mean,39.32395935058594
+target,48,"The doctored image appeared on several government websites, including Canada’s Economic Action Plan and Citizenship and Immigration Canada.",max,129.1241455078125
+target,48,"The doctored image appeared on several government websites, including Canada’s Economic Action Plan and Citizenship and Immigration Canada.",last,100.18077850341797
+target,49,Ontario Premier Kathleen Wynne’s electricity plan is short term gain for long term pain.,mean,47.6167106628418
+target,49,Ontario Premier Kathleen Wynne’s electricity plan is short term gain for long term pain.,max,97.54708099365234
+target,49,Ontario Premier Kathleen Wynne’s electricity plan is short term gain for long term pain.,last,97.54708099365234
+target,50,Proposed name change for Scarborough Bluffs Park by CityNewsToronto on Scribd,mean,31.97788429260254
+target,50,Proposed name change for Scarborough Bluffs Park by CityNewsToronto on Scribd,max,96.00821685791016
+target,50,Proposed name change for Scarborough Bluffs Park by CityNewsToronto on Scribd,last,0.0
+target,51,"“That is the darkest part of this poll result for the NDP I would think,” Geddes told 680 NEWS.",mean,36.90187454223633
+target,51,"“That is the darkest part of this poll result for the NDP I would think,” Geddes told 680 NEWS.",max,139.89981079101562
+target,51,"“That is the darkest part of this poll result for the NDP I would think,” Geddes told 680 NEWS.",last,101.43594360351562
+target,52,The MP also apologized to Liberal MP Marc Garneau in 2013 after he insulted him while responding to a question from an NDP MP.,mean,57.360069274902344
+target,52,The MP also apologized to Liberal MP Marc Garneau in 2013 after he insulted him while responding to a question from an NDP MP.,max,132.4853057861328
+target,52,The MP also apologized to Liberal MP Marc Garneau in 2013 after he insulted him while responding to a question from an NDP MP.,last,132.4853057861328
+target,53,Mulcair’s input into the Quebec strategy was significant.,mean,60.6946907043457
+target,53,Mulcair’s input into the Quebec strategy was significant.,max,127.64170837402344
+target,53,Mulcair’s input into the Quebec strategy was significant.,last,124.98844146728516
+target,54,"7 election after the Parti Québécois accused Ontarians and other Canadians of trying to steal the result, but many are still confused about who is allowed a ballot.",mean,57.49753952026367
+target,54,"7 election after the Parti Québécois accused Ontarians and other Canadians of trying to steal the result, but many are still confused about who is allowed a ballot.",max,124.58273315429688
+target,54,"7 election after the Parti Québécois accused Ontarians and other Canadians of trying to steal the result, but many are still confused about who is allowed a ballot.",last,124.58273315429688
+target,55,"""I detest any action by a Canadian Armed Forces member that is intended to show disrespect towards the very people and cultures we value in Canada,"" said Vance.",mean,46.24614334106445
+target,55,"""I detest any action by a Canadian Armed Forces member that is intended to show disrespect towards the very people and cultures we value in Canada,"" said Vance.",max,126.44950866699219
+target,55,"""I detest any action by a Canadian Armed Forces member that is intended to show disrespect towards the very people and cultures we value in Canada,"" said Vance.",last,109.05149841308594
+target,56,"""It would have been ideal for the government to hold on to the shares and use that to leverage General Motors to make a strong commitment to the facility in Oshawa,"" said Hassan Yussuff, President of the Canadian Labour Congress, in an interview Monday.",mean,29.28481674194336
+target,56,"""It would have been ideal for the government to hold on to the shares and use that to leverage General Motors to make a strong commitment to the facility in Oshawa,"" said Hassan Yussuff, President of the Canadian Labour Congress, in an interview Monday.",max,118.75226593017578
+target,56,"""It would have been ideal for the government to hold on to the shares and use that to leverage General Motors to make a strong commitment to the facility in Oshawa,"" said Hassan Yussuff, President of the Canadian Labour Congress, in an interview Monday.",last,111.26461791992188
+target,57,"Lijphart’s criticism of referenda was countered by committee witness Benoit Pelletier, a University of Ottawa constitutional expert on electoral reform and former Liberal Quebec cabinet minister in the Jean Charest government.",mean,39.05094528198242
+target,57,"Lijphart’s criticism of referenda was countered by committee witness Benoit Pelletier, a University of Ottawa constitutional expert on electoral reform and former Liberal Quebec cabinet minister in the Jean Charest government.",max,114.60797119140625
+target,57,"Lijphart’s criticism of referenda was countered by committee witness Benoit Pelletier, a University of Ottawa constitutional expert on electoral reform and former Liberal Quebec cabinet minister in the Jean Charest government.",last,75.54600524902344
+target,58,"Just ask Premier Kathleen Wynne, who is escalating her feud with Toronto Mayor John Tory after his complaints that last Thursdays’ provincial budget did not do enough for the city.",mean,62.43193817138672
+target,58,"Just ask Premier Kathleen Wynne, who is escalating her feud with Toronto Mayor John Tory after his complaints that last Thursdays’ provincial budget did not do enough for the city.",max,139.50747680664062
+target,58,"Just ask Premier Kathleen Wynne, who is escalating her feud with Toronto Mayor John Tory after his complaints that last Thursdays’ provincial budget did not do enough for the city.",last,102.01566314697266
+target,59,"JASON FRANSON/THE CANADIAN PRESS
+
+Once the public-relations director for the Edmonton Oilers, Bill Tuele served as host in October of 2014 when the 30th anniversary of the team's first Stanley Cup was celebrated at Rexall Place.",mean,47.96931076049805
+target,59,"JASON FRANSON/THE CANADIAN PRESS
+
+Once the public-relations director for the Edmonton Oilers, Bill Tuele served as host in October of 2014 when the 30th anniversary of the team's first Stanley Cup was celebrated at Rexall Place.",max,135.22286987304688
+target,59,"JASON FRANSON/THE CANADIAN PRESS
+
+Once the public-relations director for the Edmonton Oilers, Bill Tuele served as host in October of 2014 when the 30th anniversary of the team's first Stanley Cup was celebrated at Rexall Place.",last,75.4908447265625
+target,60,"Kathleen Wynne makes her way to a Liberal caucus meeting, where she sat down with Liberal MPPs for the first time since being chosen to succeed Premier Dalton McGuinty.",mean,60.949371337890625
+target,60,"Kathleen Wynne makes her way to a Liberal caucus meeting, where she sat down with Liberal MPPs for the first time since being chosen to succeed Premier Dalton McGuinty.",max,123.36849212646484
+target,60,"Kathleen Wynne makes her way to a Liberal caucus meeting, where she sat down with Liberal MPPs for the first time since being chosen to succeed Premier Dalton McGuinty.",last,91.55982208251953
+target,61,"""This is a massive problem on the Pacific Rim, here in B.C., and we are all at risk,"" Ms. Mark said.",mean,27.302732467651367
+target,61,"""This is a massive problem on the Pacific Rim, here in B.C., and we are all at risk,"" Ms. Mark said.",max,97.73983001708984
+target,61,"""This is a massive problem on the Pacific Rim, here in B.C., and we are all at risk,"" Ms. Mark said.",last,90.53419494628906
+target,62,Surrey Councillor Barinder Rasode expects her government will take a lot of heat tonight but she agrees change is needed.,mean,38.13374328613281
+target,62,Surrey Councillor Barinder Rasode expects her government will take a lot of heat tonight but she agrees change is needed.,max,96.61105346679688
+target,62,Surrey Councillor Barinder Rasode expects her government will take a lot of heat tonight but she agrees change is needed.,last,96.61105346679688
+target,63,"A new bus station and staging ground for buses may be built near Investors Group Field, Winnipeg Transit director Dave Wardrop said.",mean,31.07447624206543
+target,63,"A new bus station and staging ground for buses may be built near Investors Group Field, Winnipeg Transit director Dave Wardrop said.",max,110.9982681274414
+target,63,"A new bus station and staging ground for buses may be built near Investors Group Field, Winnipeg Transit director Dave Wardrop said.",last,104.94947814941406
+target,64,"Melissa Kate Wheeler, president of the Concordia Student Union, thinks some are victims of ""political profiling"" influenced by broader debates on issues such as the proposed charter of values.",mean,41.510955810546875
+target,64,"Melissa Kate Wheeler, president of the Concordia Student Union, thinks some are victims of ""political profiling"" influenced by broader debates on issues such as the proposed charter of values.",max,124.27923583984375
+target,64,"Melissa Kate Wheeler, president of the Concordia Student Union, thinks some are victims of ""political profiling"" influenced by broader debates on issues such as the proposed charter of values.",last,98.94195556640625
+target,65,"“Then we want a free, open and fair debate that is ideas-driven, and this just has no place in politics in Saskatchewan today.”
+
+Following his party’s campaign launch in Saskatoon on Monday, NDP leader Cam Broten condemned both incidents of vandalism.",mean,36.00604248046875
+target,65,"“Then we want a free, open and fair debate that is ideas-driven, and this just has no place in politics in Saskatchewan today.”
+
+Following his party’s campaign launch in Saskatoon on Monday, NDP leader Cam Broten condemned both incidents of vandalism.",max,119.99134826660156
+target,65,"“Then we want a free, open and fair debate that is ideas-driven, and this just has no place in politics in Saskatchewan today.”
+
+Following his party’s campaign launch in Saskatoon on Monday, NDP leader Cam Broten condemned both incidents of vandalism.",last,88.88719940185547
+target,66,"Therrien did praise the RCMP for the access it granted his office during his investigation, but warned the RCMP to ""continue to make efforts toward openness and accountability in terms of the technologies it employs in its law enforcement activities.""",mean,49.15571975708008
+target,66,"Therrien did praise the RCMP for the access it granted his office during his investigation, but warned the RCMP to ""continue to make efforts toward openness and accountability in terms of the technologies it employs in its law enforcement activities.""",max,109.63375091552734
+target,66,"Therrien did praise the RCMP for the access it granted his office during his investigation, but warned the RCMP to ""continue to make efforts toward openness and accountability in terms of the technologies it employs in its law enforcement activities.""",last,109.63375091552734
+target,67,Sex worker advocacy groups in British Columbia and Ontario have also asked for the operation to end.,mean,50.2895622253418
+target,67,Sex worker advocacy groups in British Columbia and Ontario have also asked for the operation to end.,max,126.1937255859375
+target,67,Sex worker advocacy groups in British Columbia and Ontario have also asked for the operation to end.,last,113.16645812988281
+target,68,Ottawa is trying to salvage its goal of having four wireless competitors in every regional market.,mean,61.68756866455078
+target,68,Ottawa is trying to salvage its goal of having four wireless competitors in every regional market.,max,120.40814208984375
+target,68,Ottawa is trying to salvage its goal of having four wireless competitors in every regional market.,last,120.40814208984375
+target,69,"Last week, a spokesperson for Housakos relayed to CBC News the senator's previous statement that he had never been involved in illegal fundraising.",mean,45.05859375
+target,69,"Last week, a spokesperson for Housakos relayed to CBC News the senator's previous statement that he had never been involved in illegal fundraising.",max,122.61970520019531
+target,69,"Last week, a spokesperson for Housakos relayed to CBC News the senator's previous statement that he had never been involved in illegal fundraising.",last,112.43623352050781
+target,70,"No fewer than seven NDP riding associations, for example, want the party to advocate for the legalization of marijuana, even though current policy – and Mulcair – endorses decriminalization instead.",mean,51.69637680053711
+target,70,"No fewer than seven NDP riding associations, for example, want the party to advocate for the legalization of marijuana, even though current policy – and Mulcair – endorses decriminalization instead.",max,120.39988708496094
+target,70,"No fewer than seven NDP riding associations, for example, want the party to advocate for the legalization of marijuana, even though current policy – and Mulcair – endorses decriminalization instead.",last,120.39988708496094
+target,71,"Proulx, as every CFL fan knows, can have a little trouble with the English language, which is understandable considering he was born and raised in Drummondville, Que., and still lives there today.",mean,32.11756896972656
+target,71,"Proulx, as every CFL fan knows, can have a little trouble with the English language, which is understandable considering he was born and raised in Drummondville, Que., and still lives there today.",max,87.22016143798828
+target,71,"Proulx, as every CFL fan knows, can have a little trouble with the English language, which is understandable considering he was born and raised in Drummondville, Que., and still lives there today.",last,68.66804504394531
+target,72,The Liberal leader said before the October election that he would like to reopen Canada's embassy in Tehran.,mean,63.69215774536133
+target,72,The Liberal leader said before the October election that he would like to reopen Canada's embassy in Tehran.,max,121.01594543457031
+target,72,The Liberal leader said before the October election that he would like to reopen Canada's embassy in Tehran.,last,121.01594543457031
+target,73,(The Harper government says Canada’s law targets just dual nationals because a United Nations treaty prohibits the feds from rendering anyone stateless.),mean,44.52764129638672
+target,73,(The Harper government says Canada’s law targets just dual nationals because a United Nations treaty prohibits the feds from rendering anyone stateless.),max,115.86615753173828
+target,73,(The Harper government says Canada’s law targets just dual nationals because a United Nations treaty prohibits the feds from rendering anyone stateless.),last,99.98457336425781
+target,74,"At the Ontario provincial level, then leader John Tory, after his defeat in the 2007 election, had to fight off activists from the party's evangelical wing, the leader of which was (and is) MPP Frank Klees.",mean,64.0702133178711
+target,74,"At the Ontario provincial level, then leader John Tory, after his defeat in the 2007 election, had to fight off activists from the party's evangelical wing, the leader of which was (and is) MPP Frank Klees.",max,118.79893493652344
+target,74,"At the Ontario provincial level, then leader John Tory, after his defeat in the 2007 election, had to fight off activists from the party's evangelical wing, the leader of which was (and is) MPP Frank Klees.",last,72.01490783691406
+target,75,"During the March 30 question period, Education Minister Don Morgan outlined the government's reasons behind cutting library budgets.",mean,46.5915641784668
+target,75,"During the March 30 question period, Education Minister Don Morgan outlined the government's reasons behind cutting library budgets.",max,99.29611206054688
+target,75,"During the March 30 question period, Education Minister Don Morgan outlined the government's reasons behind cutting library budgets.",last,99.29611206054688
+target,76,"I think most bookstores are feeling wind in their sails for the first time in about 10 years.”
+
+Sales are also on the rise at Bookmark (with locations in Halifax, Nova Scotia and Charlottetown, PE.I.).",mean,21.50361442565918
+target,76,"I think most bookstores are feeling wind in their sails for the first time in about 10 years.”
+
+Sales are also on the rise at Bookmark (with locations in Halifax, Nova Scotia and Charlottetown, PE.I.).",max,95.53981018066406
+target,76,"I think most bookstores are feeling wind in their sails for the first time in about 10 years.”
+
+Sales are also on the rise at Bookmark (with locations in Halifax, Nova Scotia and Charlottetown, PE.I.).",last,60.08449935913086
+target,77,"Others have pointed out the Conservative plan made no mention of the Alberta oilsands, the fastest growing source of emissions in Canada.",mean,37.975830078125
+target,77,"Others have pointed out the Conservative plan made no mention of the Alberta oilsands, the fastest growing source of emissions in Canada.",max,124.2364730834961
+target,77,"Others have pointed out the Conservative plan made no mention of the Alberta oilsands, the fastest growing source of emissions in Canada.",last,124.2364730834961
+target,78,"Located in Calgary, District Ventures connects innovative early-stage entrepreneurs in the food and beverage and health and wellness sectors with a network of peers, investors and business support.",mean,38.48073959350586
+target,78,"Located in Calgary, District Ventures connects innovative early-stage entrepreneurs in the food and beverage and health and wellness sectors with a network of peers, investors and business support.",max,94.2099838256836
+target,78,"Located in Calgary, District Ventures connects innovative early-stage entrepreneurs in the food and beverage and health and wellness sectors with a network of peers, investors and business support.",last,48.635826110839844
+target,79,"1486 was passed under the War Measures Act allowing for the forced removal of any and all Canadians of Japanese descent from British Columbia, as well as the prohibiting them from returning to the province.",mean,45.55086898803711
+target,79,"1486 was passed under the War Measures Act allowing for the forced removal of any and all Canadians of Japanese descent from British Columbia, as well as the prohibiting them from returning to the province.",max,94.42989349365234
+target,79,"1486 was passed under the War Measures Act allowing for the forced removal of any and all Canadians of Japanese descent from British Columbia, as well as the prohibiting them from returning to the province.",last,68.43824005126953
+target,80,"Uncle Milty weighs in in tomorow's Spec and I'll post that in the a.m.
+
+• Ticat QB Henry Burris and CFL commish Mark Cohon are in Moncton to promote the latest version of TD Atlantic.",mean,27.267417907714844
+target,80,"Uncle Milty weighs in in tomorow's Spec and I'll post that in the a.m.
+
+• Ticat QB Henry Burris and CFL commish Mark Cohon are in Moncton to promote the latest version of TD Atlantic.",max,89.95651245117188
+target,80,"Uncle Milty weighs in in tomorow's Spec and I'll post that in the a.m.
+
+• Ticat QB Henry Burris and CFL commish Mark Cohon are in Moncton to promote the latest version of TD Atlantic.",last,53.367713928222656
+target,81,"Pitching in public and private
+
+Trudeau spoke of Canada's well-educated workforce, and its stable of young entrepreneurs who've started companies like Shopify and Hootsuite that compete globally.",mean,46.1434326171875
+target,81,"Pitching in public and private
+
+Trudeau spoke of Canada's well-educated workforce, and its stable of young entrepreneurs who've started companies like Shopify and Hootsuite that compete globally.",max,144.65769958496094
+target,81,"Pitching in public and private
+
+Trudeau spoke of Canada's well-educated workforce, and its stable of young entrepreneurs who've started companies like Shopify and Hootsuite that compete globally.",last,122.54389953613281
+target,82,"Speaking about investing our tax dollars, the Joseph Brant Hospital expansion and redevelopment is progressing.",mean,29.581655502319336
+target,82,"Speaking about investing our tax dollars, the Joseph Brant Hospital expansion and redevelopment is progressing.",max,92.88485717773438
+target,82,"Speaking about investing our tax dollars, the Joseph Brant Hospital expansion and redevelopment is progressing.",last,85.39924621582031
+target,83,The Conservative approach has been to shut out community voices and it fails to fulfill the Crown's obligation to consult and accommodate Aboriginal and treaty rights in the course of reviewing development proposals.,mean,40.640438079833984
+target,83,The Conservative approach has been to shut out community voices and it fails to fulfill the Crown's obligation to consult and accommodate Aboriginal and treaty rights in the course of reviewing development proposals.,max,112.65599060058594
+target,83,The Conservative approach has been to shut out community voices and it fails to fulfill the Crown's obligation to consult and accommodate Aboriginal and treaty rights in the course of reviewing development proposals.,last,101.57511901855469
+target,84,"Stoner, 30, acknowledged through his lawyer Wednesday that he had breached the provincial Wildlife Act during the hunt in May 2013.",mean,27.439226150512695
+target,84,"Stoner, 30, acknowledged through his lawyer Wednesday that he had breached the provincial Wildlife Act during the hunt in May 2013.",max,103.56242370605469
+target,84,"Stoner, 30, acknowledged through his lawyer Wednesday that he had breached the provincial Wildlife Act during the hunt in May 2013.",last,103.56242370605469
+target,85,"Linden Lea
+
+The proposed apartment building on Linden Lea in downtown Dartmouth violates the spirit of the upcoming Centre Plan, argues Dartmouth city council candidate Sam Austin in Spacings.",mean,34.7407341003418
+target,85,"Linden Lea
+
+The proposed apartment building on Linden Lea in downtown Dartmouth violates the spirit of the upcoming Centre Plan, argues Dartmouth city council candidate Sam Austin in Spacings.",max,86.3228530883789
+target,85,"Linden Lea
+
+The proposed apartment building on Linden Lea in downtown Dartmouth violates the spirit of the upcoming Centre Plan, argues Dartmouth city council candidate Sam Austin in Spacings.",last,65.31716918945312
+target,86,"Posted on by lskenazy
+
+Gotta thank Amy Bronee, host of the show Real Parenting on C-FAX in Canada for alerting me to this story in the National Post:
+
+Minding your marshmallows Katherine Dedyna, Canwest News Service Published: Friday, July 24, 2009 There’s no such thing as being too careful when it comes to kids and camping – even for hyper-vigilant parents.",mean,24.690170288085938
+target,86,"Posted on by lskenazy
+
+Gotta thank Amy Bronee, host of the show Real Parenting on C-FAX in Canada for alerting me to this story in the National Post:
+
+Minding your marshmallows Katherine Dedyna, Canwest News Service Published: Friday, July 24, 2009 There’s no such thing as being too careful when it comes to kids and camping – even for hyper-vigilant parents.",max,109.2415771484375
+target,86,"Posted on by lskenazy
+
+Gotta thank Amy Bronee, host of the show Real Parenting on C-FAX in Canada for alerting me to this story in the National Post:
+
+Minding your marshmallows Katherine Dedyna, Canwest News Service Published: Friday, July 24, 2009 There’s no such thing as being too careful when it comes to kids and camping – even for hyper-vigilant parents.",last,78.53836822509766
+target,87,'s Christian university says the Trinity Western grad was eminently unqualified for the position for which she applied.,mean,20.255319595336914
+target,87,'s Christian university says the Trinity Western grad was eminently unqualified for the position for which she applied.,max,71.11813354492188
+target,87,'s Christian university says the Trinity Western grad was eminently unqualified for the position for which she applied.,last,71.11813354492188
+target,88,"While Liberal MPs support Trudeau's action as the only one he could have taken under the political circumstances, some of them say the men now deserve to have the matter dealt with as quickly as possible.",mean,51.287208557128906
+target,88,"While Liberal MPs support Trudeau's action as the only one he could have taken under the political circumstances, some of them say the men now deserve to have the matter dealt with as quickly as possible.",max,120.75448608398438
+target,88,"While Liberal MPs support Trudeau's action as the only one he could have taken under the political circumstances, some of them say the men now deserve to have the matter dealt with as quickly as possible.",last,31.470298767089844
+target,89,"“If we have stood up for fairness and equality and tolerance, than how do we turn a blind eye to what will clearly be an infringement of the Charter of Rights and Freedoms,” Murphy said.",mean,18.455364227294922
+target,89,"“If we have stood up for fairness and equality and tolerance, than how do we turn a blind eye to what will clearly be an infringement of the Charter of Rights and Freedoms,” Murphy said.",max,120.52261352539062
+target,89,"“If we have stood up for fairness and equality and tolerance, than how do we turn a blind eye to what will clearly be an infringement of the Charter of Rights and Freedoms,” Murphy said.",last,120.52261352539062
+target,90,"The latter has been successful in the nearby resort town of Whistler, B.C., which struggles to find affordable housing for its resident workforce.",mean,26.19349479675293
+target,90,"The latter has been successful in the nearby resort town of Whistler, B.C., which struggles to find affordable housing for its resident workforce.",max,74.79398345947266
+target,90,"The latter has been successful in the nearby resort town of Whistler, B.C., which struggles to find affordable housing for its resident workforce.",last,74.51473236083984
+target,91,It also asked the Institute for Research on Public Policy to convene a roundtable to further study robocalls and other new communications technology and consulted with political parties.,mean,39.877723693847656
+target,91,It also asked the Institute for Research on Public Policy to convene a roundtable to further study robocalls and other new communications technology and consulted with political parties.,max,131.19918823242188
+target,91,It also asked the Institute for Research on Public Policy to convene a roundtable to further study robocalls and other new communications technology and consulted with political parties.,last,131.19918823242188
+target,92,"A downtown councillor will ask the city to extend the deadline for heritage grants available to preserve 1800s-era Gore Park storefronts set for redevelopment, even though the owners have no interest in applying for the money.",mean,50.68574905395508
+target,92,"A downtown councillor will ask the city to extend the deadline for heritage grants available to preserve 1800s-era Gore Park storefronts set for redevelopment, even though the owners have no interest in applying for the money.",max,98.95130920410156
+target,92,"A downtown councillor will ask the city to extend the deadline for heritage grants available to preserve 1800s-era Gore Park storefronts set for redevelopment, even though the owners have no interest in applying for the money.",last,98.95130920410156
+target,93,"It was not for nothing that Anders was known as ""Canada's worst MP"" -- a sobriquet he was stuck with not by some mere blogger like the author of this post, but one of the most conservative columnists in Canada writing for one of the country's most avowedly conservative newspapers, the candidate's own home town Calgary Herald.",mean,40.441932678222656
+target,93,"It was not for nothing that Anders was known as ""Canada's worst MP"" -- a sobriquet he was stuck with not by some mere blogger like the author of this post, but one of the most conservative columnists in Canada writing for one of the country's most avowedly conservative newspapers, the candidate's own home town Calgary Herald.",max,135.21969604492188
+target,93,"It was not for nothing that Anders was known as ""Canada's worst MP"" -- a sobriquet he was stuck with not by some mere blogger like the author of this post, but one of the most conservative columnists in Canada writing for one of the country's most avowedly conservative newspapers, the candidate's own home town Calgary Herald.",last,79.81927490234375
+target,94,"Dangerous idiots poster #ualberta against Womens studies prof and in favour of ignoring or supporting sex assault pic.twitter.com/m0e6gOvldX — James Muir (@ephraim_quin) September 16, 2013
+
+""We want feminism to fall into the same disrepute as Nazism or KKK, that sort of thing,” Raz, a member of the group, told Metro News.",mean,27.39632797241211
+target,94,"Dangerous idiots poster #ualberta against Womens studies prof and in favour of ignoring or supporting sex assault pic.twitter.com/m0e6gOvldX — James Muir (@ephraim_quin) September 16, 2013
+
+""We want feminism to fall into the same disrepute as Nazism or KKK, that sort of thing,” Raz, a member of the group, told Metro News.",max,105.73089599609375
+target,94,"Dangerous idiots poster #ualberta against Womens studies prof and in favour of ignoring or supporting sex assault pic.twitter.com/m0e6gOvldX — James Muir (@ephraim_quin) September 16, 2013
+
+""We want feminism to fall into the same disrepute as Nazism or KKK, that sort of thing,” Raz, a member of the group, told Metro News.",last,68.59947967529297
+target,95,"There is no escaping the fact that, if the party does return to power, such a measured pace will be hard on those hot to unravel what the Liberals have done, says Vancouver city councillor Geoff Meggs, a friend since he worked with Mr. Dix for Glen Clark.",mean,28.933135986328125
+target,95,"There is no escaping the fact that, if the party does return to power, such a measured pace will be hard on those hot to unravel what the Liberals have done, says Vancouver city councillor Geoff Meggs, a friend since he worked with Mr. Dix for Glen Clark.",max,122.07020568847656
+target,95,"There is no escaping the fact that, if the party does return to power, such a measured pace will be hard on those hot to unravel what the Liberals have done, says Vancouver city councillor Geoff Meggs, a friend since he worked with Mr. Dix for Glen Clark.",last,106.49032592773438
+control,0,It also did try to leverage data a lot more.,mean,0.0
+control,0,It also did try to leverage data a lot more.,max,0.0
+control,0,It also did try to leverage data a lot more.,last,0.0
+control,1,It passed the state legislature with flying colors and not a single dissenting vote and now awaits Governor Jerry Brown's signature to become law.,mean,0.0
+control,1,It passed the state legislature with flying colors and not a single dissenting vote and now awaits Governor Jerry Brown's signature to become law.,max,0.0
+control,1,It passed the state legislature with flying colors and not a single dissenting vote and now awaits Governor Jerry Brown's signature to become law.,last,0.0
+control,2,"00:10:17
+
+On the individual guitars those strums sound like: So that's a lot of the ring.",mean,0.0
+control,2,"00:10:17
+
+On the individual guitars those strums sound like: So that's a lot of the ring.",max,0.0
+control,2,"00:10:17
+
+On the individual guitars those strums sound like: So that's a lot of the ring.",last,0.0
+control,3,"[22] A year later, following his bout of pneumonia which had left him bed-ridden for several weeks, he scored 52 not out and took 5 wickets against a Somerset XI.",mean,0.0
+control,3,"[22] A year later, following his bout of pneumonia which had left him bed-ridden for several weeks, he scored 52 not out and took 5 wickets against a Somerset XI.",max,0.0
+control,3,"[22] A year later, following his bout of pneumonia which had left him bed-ridden for several weeks, he scored 52 not out and took 5 wickets against a Somerset XI.",last,0.0
+control,4,"Where there was nothing but your inner-yard, the land to support you, and the Gods to watch over it all.",mean,0.0
+control,4,"Where there was nothing but your inner-yard, the land to support you, and the Gods to watch over it all.",max,0.0
+control,4,"Where there was nothing but your inner-yard, the land to support you, and the Gods to watch over it all.",last,0.0
+control,5,"When a horse, worked to the bone, plopped over dead, the city then had a rotting carcass to address, not to mention the flies and road congestion that accompanied it.",mean,0.0
+control,5,"When a horse, worked to the bone, plopped over dead, the city then had a rotting carcass to address, not to mention the flies and road congestion that accompanied it.",max,0.0
+control,5,"When a horse, worked to the bone, plopped over dead, the city then had a rotting carcass to address, not to mention the flies and road congestion that accompanied it.",last,0.0
+control,6,"""While the case was primarily about the CFAA, the government's venue theory was very dangerous, presenting a real risk that defendants could be hailed anywhere in the country to face a criminal trial,"" Fakhoury said.",mean,0.18786364793777466
+control,6,"""While the case was primarily about the CFAA, the government's venue theory was very dangerous, presenting a real risk that defendants could be hailed anywhere in the country to face a criminal trial,"" Fakhoury said.",max,8.641727447509766
+control,6,"""While the case was primarily about the CFAA, the government's venue theory was very dangerous, presenting a real risk that defendants could be hailed anywhere in the country to face a criminal trial,"" Fakhoury said.",last,0.0
+control,7,"California faced similarly widespread blackouts in 2000 and 2001, triggered in part by an energy supply shortage.",mean,0.0
+control,7,"California faced similarly widespread blackouts in 2000 and 2001, triggered in part by an energy supply shortage.",max,0.0
+control,7,"California faced similarly widespread blackouts in 2000 and 2001, triggered in part by an energy supply shortage.",last,0.0
+control,8,It’s a game where you have to climb from the starting line to the finish line.,mean,0.0
+control,8,It’s a game where you have to climb from the starting line to the finish line.,max,0.0
+control,8,It’s a game where you have to climb from the starting line to the finish line.,last,0.0
+control,9,The design process for the cards is fairly involved.,mean,0.0
+control,9,The design process for the cards is fairly involved.,max,0.0
+control,9,The design process for the cards is fairly involved.,last,0.0
+control,10,What are the grounds for thinking they are merely analytic and lack 'import' for the concrete world?,mean,0.0
+control,10,What are the grounds for thinking they are merely analytic and lack 'import' for the concrete world?,max,0.0
+control,10,What are the grounds for thinking they are merely analytic and lack 'import' for the concrete world?,last,0.0
+control,11,"Adaptors between standards are not included in the standards, so have no formal quality criteria defined.",mean,0.0
+control,11,"Adaptors between standards are not included in the standards, so have no formal quality criteria defined.",max,0.0
+control,11,"Adaptors between standards are not included in the standards, so have no formal quality criteria defined.",last,0.0
+control,12,"In the days of the original StarCraft, things were different.",mean,0.0
+control,12,"In the days of the original StarCraft, things were different.",max,0.0
+control,12,"In the days of the original StarCraft, things were different.",last,0.0
+control,13,"They’re not an inherent part of the writing system, but a made-up method of arranging dictionaries that came about only after the writing system had been around for more than 1500 years.",mean,0.0
+control,13,"They’re not an inherent part of the writing system, but a made-up method of arranging dictionaries that came about only after the writing system had been around for more than 1500 years.",max,0.0
+control,13,"They’re not an inherent part of the writing system, but a made-up method of arranging dictionaries that came about only after the writing system had been around for more than 1500 years.",last,0.0
+control,14,Jago Russell of campaign group Fair Trials International has attacked Sweden over its use of pre-trial detention.,mean,0.0
+control,14,Jago Russell of campaign group Fair Trials International has attacked Sweden over its use of pre-trial detention.,max,0.0
+control,14,Jago Russell of campaign group Fair Trials International has attacked Sweden over its use of pre-trial detention.,last,0.0
+control,15,"In spite of similarly low levels of knowledge about the EU, in the UK there are three times more respondents willing to use the ECI than in Germany.",mean,0.0
+control,15,"In spite of similarly low levels of knowledge about the EU, in the UK there are three times more respondents willing to use the ECI than in Germany.",max,0.0
+control,15,"In spite of similarly low levels of knowledge about the EU, in the UK there are three times more respondents willing to use the ECI than in Germany.",last,0.0
+control,16,"""I don't even know what to say anymore, I'm just speechless,"" she said.",mean,0.41924601793289185
+control,16,"""I don't even know what to say anymore, I'm just speechless,"" she said.",max,8.384920120239258
+control,16,"""I don't even know what to say anymore, I'm just speechless,"" she said.",last,8.384920120239258
+control,17,"LOOKING TO IMPROVE
+
+While we’re excited about our three veteran additions, we’re also really excited about the younger players we have coming back.",mean,0.0
+control,17,"LOOKING TO IMPROVE
+
+While we’re excited about our three veteran additions, we’re also really excited about the younger players we have coming back.",max,0.0
+control,17,"LOOKING TO IMPROVE
+
+While we’re excited about our three veteran additions, we’re also really excited about the younger players we have coming back.",last,0.0
+control,18,The notion of calypso cricket was always a crude generalisation: alongside Viv Richards there was Larry Gomes; alongside Brian Lara there was Shivnarine Chanderpaul.,mean,0.0
+control,18,The notion of calypso cricket was always a crude generalisation: alongside Viv Richards there was Larry Gomes; alongside Brian Lara there was Shivnarine Chanderpaul.,max,0.0
+control,18,The notion of calypso cricket was always a crude generalisation: alongside Viv Richards there was Larry Gomes; alongside Brian Lara there was Shivnarine Chanderpaul.,last,0.0
+control,19,They use 3.5 million motor vehicles.,mean,0.0
+control,19,They use 3.5 million motor vehicles.,max,0.0
+control,19,They use 3.5 million motor vehicles.,last,0.0
+control,20,"“We did a lot of interiors that way,” Cameron recalls.",mean,0.0
+control,20,"“We did a lot of interiors that way,” Cameron recalls.",max,0.0
+control,20,"“We did a lot of interiors that way,” Cameron recalls.",last,0.0
+control,21,There's Elf and Wizard for ranged combat and Valkyrie and Warrior for melee; each comes with its own duo of basic attacks and a special that really lays on the damage.,mean,0.0
+control,21,There's Elf and Wizard for ranged combat and Valkyrie and Warrior for melee; each comes with its own duo of basic attacks and a special that really lays on the damage.,max,0.0
+control,21,There's Elf and Wizard for ranged combat and Valkyrie and Warrior for melee; each comes with its own duo of basic attacks and a special that really lays on the damage.,last,0.0
+control,22,I won two of them in a single year which no one had ever done before.,mean,0.0
+control,22,I won two of them in a single year which no one had ever done before.,max,0.0
+control,22,I won two of them in a single year which no one had ever done before.,last,0.0
+control,23,"The sleeve tattoo is shorter than in the airport photos and he has a tattooed belly in this video, which he did not have at the airport.",mean,0.0
+control,23,"The sleeve tattoo is shorter than in the airport photos and he has a tattooed belly in this video, which he did not have at the airport.",max,0.0
+control,23,"The sleeve tattoo is shorter than in the airport photos and he has a tattooed belly in this video, which he did not have at the airport.",last,0.0
+control,24,The dams across the country have caused havoc to people and the environment.,mean,0.0
+control,24,The dams across the country have caused havoc to people and the environment.,max,0.0
+control,24,The dams across the country have caused havoc to people and the environment.,last,0.0
+control,25,Advertisements,mean,0.0
+control,25,Advertisements,max,0.0
+control,25,Advertisements,last,0.0
+control,26,"Seven years ago, before FACET was even proposed, the same team had used single bunches of about 10 billion 42-GeV electrons and accelerated them over the full 3.2-kilometre length of SLAC's main machine to drive a similar plasma wave5.",mean,0.0
+control,26,"Seven years ago, before FACET was even proposed, the same team had used single bunches of about 10 billion 42-GeV electrons and accelerated them over the full 3.2-kilometre length of SLAC's main machine to drive a similar plasma wave5.",max,0.0
+control,26,"Seven years ago, before FACET was even proposed, the same team had used single bunches of about 10 billion 42-GeV electrons and accelerated them over the full 3.2-kilometre length of SLAC's main machine to drive a similar plasma wave5.",last,0.0
+control,27,"An investigation of liver function in a mutant SOD1G93A mouse model of ALS revealed a dramatic increase in the levels of natural killer T (NKT) cells in the liver, along with organ atrophy and the accumulation of stored fats.",mean,0.0
+control,27,"An investigation of liver function in a mutant SOD1G93A mouse model of ALS revealed a dramatic increase in the levels of natural killer T (NKT) cells in the liver, along with organ atrophy and the accumulation of stored fats.",max,0.0
+control,27,"An investigation of liver function in a mutant SOD1G93A mouse model of ALS revealed a dramatic increase in the levels of natural killer T (NKT) cells in the liver, along with organ atrophy and the accumulation of stored fats.",last,0.0
+control,28,All right!,mean,0.0
+control,28,All right!,max,0.0
+control,28,All right!,last,0.0
+control,29,"This conversion could have been rather easily accomplished by simply adding a short barrel extension to a barrel assembly, with attached loading block, magazine tube, and even sights, from a disabled Girandoni-system airgun into the Heiberger receiver.",mean,0.0
+control,29,"This conversion could have been rather easily accomplished by simply adding a short barrel extension to a barrel assembly, with attached loading block, magazine tube, and even sights, from a disabled Girandoni-system airgun into the Heiberger receiver.",max,0.0
+control,29,"This conversion could have been rather easily accomplished by simply adding a short barrel extension to a barrel assembly, with attached loading block, magazine tube, and even sights, from a disabled Girandoni-system airgun into the Heiberger receiver.",last,0.0
+control,30,"The team worked in close collaboration with the Charlotte police force, which volunteered for the program to upgrade its early warning system and prevent misconduct, despite having a relatively low rate of officer-involved violence.",mean,0.0
+control,30,"The team worked in close collaboration with the Charlotte police force, which volunteered for the program to upgrade its early warning system and prevent misconduct, despite having a relatively low rate of officer-involved violence.",max,0.0
+control,30,"The team worked in close collaboration with the Charlotte police force, which volunteered for the program to upgrade its early warning system and prevent misconduct, despite having a relatively low rate of officer-involved violence.",last,0.0
+control,31,"There were other fires and so on, but now when somebody died it wasn’t so bad.",mean,0.0
+control,31,"There were other fires and so on, but now when somebody died it wasn’t so bad.",max,0.0
+control,31,"There were other fires and so on, but now when somebody died it wasn’t so bad.",last,0.0
+control,32,"By this you mimic the horns of a bull or an ox (the term in Long Sword), Lecküchner named this position: “Stier” – bull.",mean,0.0
+control,32,"By this you mimic the horns of a bull or an ox (the term in Long Sword), Lecküchner named this position: “Stier” – bull.",max,0.0
+control,32,"By this you mimic the horns of a bull or an ox (the term in Long Sword), Lecküchner named this position: “Stier” – bull.",last,0.0
+control,33,"Heisenberg explains this principle by exposing how a scientist trying to take a photograph of an electron, has to bounce a light particle off its surface.",mean,0.0
+control,33,"Heisenberg explains this principle by exposing how a scientist trying to take a photograph of an electron, has to bounce a light particle off its surface.",max,0.0
+control,33,"Heisenberg explains this principle by exposing how a scientist trying to take a photograph of an electron, has to bounce a light particle off its surface.",last,0.0
+control,34,"In fact, it’s right on time.",mean,0.0
+control,34,"In fact, it’s right on time.",max,0.0
+control,34,"In fact, it’s right on time.",last,0.0
+control,35,"Ten billion dollars, less than the one fifth of the increase to the military/defense budget of $54 Billion.",mean,0.0
+control,35,"Ten billion dollars, less than the one fifth of the increase to the military/defense budget of $54 Billion.",max,0.0
+control,35,"Ten billion dollars, less than the one fifth of the increase to the military/defense budget of $54 Billion.",last,0.0
+control,36,"One of the biggest problems with Xur's inventory hasn't been his weapons or his armor, it's been the fact that he hasn't been consistently selling heavy weapon ammo.",mean,0.0
+control,36,"One of the biggest problems with Xur's inventory hasn't been his weapons or his armor, it's been the fact that he hasn't been consistently selling heavy weapon ammo.",max,0.0
+control,36,"One of the biggest problems with Xur's inventory hasn't been his weapons or his armor, it's been the fact that he hasn't been consistently selling heavy weapon ammo.",last,0.0
+control,37,So for that moment in my life I felt good about myself.,mean,0.0
+control,37,So for that moment in my life I felt good about myself.,max,0.0
+control,37,So for that moment in my life I felt good about myself.,last,0.0
+control,38,I struggle to see how we are going to improve.,mean,0.0
+control,38,I struggle to see how we are going to improve.,max,0.0
+control,38,I struggle to see how we are going to improve.,last,0.0
+control,39,"In the end, one of the primary intentions of typography is to make the act of reading text comfortable and understandable.",mean,0.0
+control,39,"In the end, one of the primary intentions of typography is to make the act of reading text comfortable and understandable.",max,0.0
+control,39,"In the end, one of the primary intentions of typography is to make the act of reading text comfortable and understandable.",last,0.0
+control,40,"I wanted to reach more American fans, reach another country of people.""",mean,0.0
+control,40,"I wanted to reach more American fans, reach another country of people.""",max,0.0
+control,40,"I wanted to reach more American fans, reach another country of people.""",last,0.0
+control,41,"However, I’ll happily take his irrational confidence over the past Grizzly guards who were reluctant to even look toward the rim, let alone heave a fadeaway from deep.",mean,0.0
+control,41,"However, I’ll happily take his irrational confidence over the past Grizzly guards who were reluctant to even look toward the rim, let alone heave a fadeaway from deep.",max,0.0
+control,41,"However, I’ll happily take his irrational confidence over the past Grizzly guards who were reluctant to even look toward the rim, let alone heave a fadeaway from deep.",last,0.0
+control,42,"Figure 8, ultimately, isn't as good a record as XO or Either/Or, though the man's not out of the picture yet.",mean,0.8626813292503357
+control,42,"Figure 8, ultimately, isn't as good a record as XO or Either/Or, though the man's not out of the picture yet.",max,26.743122100830078
+control,42,"Figure 8, ultimately, isn't as good a record as XO or Either/Or, though the man's not out of the picture yet.",last,0.0
+control,43,"Calvary might be underestimated and seen by few as an indie film from Ireland but thanks to an Oscar worthy performance from Brendan Gleeson, a fantastic script and grade A direction it is one of the best films of 2014 thus far.",mean,0.0
+control,43,"Calvary might be underestimated and seen by few as an indie film from Ireland but thanks to an Oscar worthy performance from Brendan Gleeson, a fantastic script and grade A direction it is one of the best films of 2014 thus far.",max,0.0
+control,43,"Calvary might be underestimated and seen by few as an indie film from Ireland but thanks to an Oscar worthy performance from Brendan Gleeson, a fantastic script and grade A direction it is one of the best films of 2014 thus far.",last,0.0
+control,44,You know what to do.,mean,0.0
+control,44,You know what to do.,max,0.0
+control,44,You know what to do.,last,0.0
+control,45,At 11.31% I am very happy with the returns on this account but I will not be adding to it any time soon.,mean,0.0
+control,45,At 11.31% I am very happy with the returns on this account but I will not be adding to it any time soon.,max,0.0
+control,45,At 11.31% I am very happy with the returns on this account but I will not be adding to it any time soon.,last,0.0
+control,46,"On 10 May Israeli authorities called residents in al-Zaim, threatening to confiscate the blue Jerusalem ID cards of anyone who participates in the demonstrations.",mean,0.0
+control,46,"On 10 May Israeli authorities called residents in al-Zaim, threatening to confiscate the blue Jerusalem ID cards of anyone who participates in the demonstrations.",max,0.0
+control,46,"On 10 May Israeli authorities called residents in al-Zaim, threatening to confiscate the blue Jerusalem ID cards of anyone who participates in the demonstrations.",last,0.0
+control,47,"Under Soviet leader Josef Stalin, Eastern Catholic churches were handed over to the Russian Orthodox Church.",mean,0.0
+control,47,"Under Soviet leader Josef Stalin, Eastern Catholic churches were handed over to the Russian Orthodox Church.",max,0.0
+control,47,"Under Soviet leader Josef Stalin, Eastern Catholic churches were handed over to the Russian Orthodox Church.",last,0.0
+control,48,"In particular, that’s the case for Halcyon 6, the game that was kickstarted for $187,706 CAD, despite only targetting $40,000 CAD.",mean,7.8528876304626465
+control,48,"In particular, that’s the case for Halcyon 6, the game that was kickstarted for $187,706 CAD, despite only targetting $40,000 CAD.",max,60.655086517333984
+control,48,"In particular, that’s the case for Halcyon 6, the game that was kickstarted for $187,706 CAD, despite only targetting $40,000 CAD.",last,36.18123245239258
+control,49,"0 SHARES Facebook Twitter Google Whatsapp Pinterest Print Mail Flipboard
+
+Sen. Bernie Sanders is calling out Hillary Clinton for being concerned about climate change, but refusing to take a stand against Keystone XL.",mean,1.8773776292800903
+control,49,"0 SHARES Facebook Twitter Google Whatsapp Pinterest Print Mail Flipboard
+
+Sen. Bernie Sanders is calling out Hillary Clinton for being concerned about climate change, but refusing to take a stand against Keystone XL.",max,39.23540115356445
+control,49,"0 SHARES Facebook Twitter Google Whatsapp Pinterest Print Mail Flipboard
+
+Sen. Bernie Sanders is calling out Hillary Clinton for being concerned about climate change, but refusing to take a stand against Keystone XL.",last,14.615026473999023
+control,50,"We do know al-Qaeda and the Islamic—
+
+GREGG JARRETT: Yeah.",mean,0.0
+control,50,"We do know al-Qaeda and the Islamic—
+
+GREGG JARRETT: Yeah.",max,0.0
+control,50,"We do know al-Qaeda and the Islamic—
+
+GREGG JARRETT: Yeah.",last,0.0
+control,51,"It is a disgusting practice that must, with the help of outspoken individuals like Ambassador Haley (and a united Senate), come to an end.",mean,0.0
+control,51,"It is a disgusting practice that must, with the help of outspoken individuals like Ambassador Haley (and a united Senate), come to an end.",max,0.0
+control,51,"It is a disgusting practice that must, with the help of outspoken individuals like Ambassador Haley (and a united Senate), come to an end.",last,0.0
+control,52,"""Applejack thought.Still, Magnolia was happy, and Rarity was happy, and that was almost enough for Applejack to hold back a wince as another hank of purple hair was crudely slashed off.",mean,0.0
+control,52,"""Applejack thought.Still, Magnolia was happy, and Rarity was happy, and that was almost enough for Applejack to hold back a wince as another hank of purple hair was crudely slashed off.",max,0.0
+control,52,"""Applejack thought.Still, Magnolia was happy, and Rarity was happy, and that was almost enough for Applejack to hold back a wince as another hank of purple hair was crudely slashed off.",last,0.0
+control,53,"When I say ""move"", I also mean that you don't slow down or get sped up at any time, and that you don't veer to one side at all.",mean,0.0
+control,53,"When I say ""move"", I also mean that you don't slow down or get sped up at any time, and that you don't veer to one side at all.",max,0.0
+control,53,"When I say ""move"", I also mean that you don't slow down or get sped up at any time, and that you don't veer to one side at all.",last,0.0
+control,54,"Religious philosophy: not so gud, akshually.",mean,0.0
+control,54,"Religious philosophy: not so gud, akshually.",max,0.0
+control,54,"Religious philosophy: not so gud, akshually.",last,0.0
+control,55,"When Ron Miscavige brings out his book on May 3, he won’t have to wait for the same treatment.",mean,0.0
+control,55,"When Ron Miscavige brings out his book on May 3, he won’t have to wait for the same treatment.",max,0.0
+control,55,"When Ron Miscavige brings out his book on May 3, he won’t have to wait for the same treatment.",last,0.0
+control,56,Are you intrigued yet?,mean,0.0
+control,56,Are you intrigued yet?,max,0.0
+control,56,Are you intrigued yet?,last,0.0
+control,57,"background, window decoration, tooltips)
+
+change sizes of widgets (e.g.",mean,0.0
+control,57,"background, window decoration, tooltips)
+
+change sizes of widgets (e.g.",max,0.0
+control,57,"background, window decoration, tooltips)
+
+change sizes of widgets (e.g.",last,0.0
+control,58,regarding designing ships from scratch.,mean,0.0
+control,58,regarding designing ships from scratch.,max,0.0
+control,58,regarding designing ships from scratch.,last,0.0
+control,59,"http://toronto.nooneisillegal.org/node/422
+
+** May Day Festival 2010 **
+
+On May 1, over 200 people gathered for It Will Work!, Mayworks closing party in partnership with No One Is Illegal.",mean,36.90391159057617
+control,59,"http://toronto.nooneisillegal.org/node/422
+
+** May Day Festival 2010 **
+
+On May 1, over 200 people gathered for It Will Work!, Mayworks closing party in partnership with No One Is Illegal.",max,119.44329071044922
+control,59,"http://toronto.nooneisillegal.org/node/422
+
+** May Day Festival 2010 **
+
+On May 1, over 200 people gathered for It Will Work!, Mayworks closing party in partnership with No One Is Illegal.",last,50.96931457519531
+control,60,We have been talking with a lot of soccer fans around town who would love to see professional soccer in Baltimore.,mean,0.0
+control,60,We have been talking with a lot of soccer fans around town who would love to see professional soccer in Baltimore.,max,0.0
+control,60,We have been talking with a lot of soccer fans around town who would love to see professional soccer in Baltimore.,last,0.0
+control,61,Todd Kelly’s brand new Nissan Altima will sport an eye-catching new colour scheme in the Virgin Australia Supercars Championship this season.,mean,0.0
+control,61,Todd Kelly’s brand new Nissan Altima will sport an eye-catching new colour scheme in the Virgin Australia Supercars Championship this season.,max,0.0
+control,61,Todd Kelly’s brand new Nissan Altima will sport an eye-catching new colour scheme in the Virgin Australia Supercars Championship this season.,last,0.0
+control,62,"It would have required throwing the explosive or incendiary device out of the cockpit without hitting the plane’s lower wing span or, in the case of an incendiary, catching the plane on fire.",mean,0.0
+control,62,"It would have required throwing the explosive or incendiary device out of the cockpit without hitting the plane’s lower wing span or, in the case of an incendiary, catching the plane on fire.",max,0.0
+control,62,"It would have required throwing the explosive or incendiary device out of the cockpit without hitting the plane’s lower wing span or, in the case of an incendiary, catching the plane on fire.",last,0.0
+control,63,"John Smith (US: John Doe) is the same in Hungarian; Kovács János or Gipsz Jakab (John Smith or Jake Gypsum, or Jakob Gipsch, with given name last, the Hungarian standard).",mean,0.0
+control,63,"John Smith (US: John Doe) is the same in Hungarian; Kovács János or Gipsz Jakab (John Smith or Jake Gypsum, or Jakob Gipsch, with given name last, the Hungarian standard).",max,0.0
+control,63,"John Smith (US: John Doe) is the same in Hungarian; Kovács János or Gipsz Jakab (John Smith or Jake Gypsum, or Jakob Gipsch, with given name last, the Hungarian standard).",last,0.0
+control,64,"The NDP lost one-third of its support from 2011 and dropped to just 16 seats in what was its 59-seat Quebec power base, while losing all its Atlantic and Toronto MPs.",mean,64.8894271850586
+control,64,"The NDP lost one-third of its support from 2011 and dropped to just 16 seats in what was its 59-seat Quebec power base, while losing all its Atlantic and Toronto MPs.",max,140.2897186279297
+control,64,"The NDP lost one-third of its support from 2011 and dropped to just 16 seats in what was its 59-seat Quebec power base, while losing all its Atlantic and Toronto MPs.",last,140.2897186279297
+control,65,But Moyes may now be forced to face Premier League leaders Arsenal without a specialist right back if the youngster fails to respond to treatment this week.,mean,0.0
+control,65,But Moyes may now be forced to face Premier League leaders Arsenal without a specialist right back if the youngster fails to respond to treatment this week.,max,0.0
+control,65,But Moyes may now be forced to face Premier League leaders Arsenal without a specialist right back if the youngster fails to respond to treatment this week.,last,0.0
+control,66,"“It honestly makes me want to vomit,” Hill says.",mean,0.0
+control,66,"“It honestly makes me want to vomit,” Hill says.",max,0.0
+control,66,"“It honestly makes me want to vomit,” Hill says.",last,0.0
+control,67,"‘That’s unfair,’ he’d say.",mean,0.0
+control,67,"‘That’s unfair,’ he’d say.",max,0.0
+control,67,"‘That’s unfair,’ he’d say.",last,0.0
+control,68,Ullr’s prime objective in the mid game remains securing Gold Fury and towers off the backfoot of rotations and team fights.,mean,0.0
+control,68,Ullr’s prime objective in the mid game remains securing Gold Fury and towers off the backfoot of rotations and team fights.,max,0.0
+control,68,Ullr’s prime objective in the mid game remains securing Gold Fury and towers off the backfoot of rotations and team fights.,last,0.0
+control,69,Barrett.,mean,0.0
+control,69,Barrett.,max,0.0
+control,69,Barrett.,last,0.0
+control,70,"So, if you’re buying a laptop that features hardware devices (mainly CPU & the GPU) that have been very recently released, then it’s better to wait 2 or 3 months before buying the laptop to see if there are any major issues in ‘Linux’.",mean,0.0
+control,70,"So, if you’re buying a laptop that features hardware devices (mainly CPU & the GPU) that have been very recently released, then it’s better to wait 2 or 3 months before buying the laptop to see if there are any major issues in ‘Linux’.",max,0.0
+control,70,"So, if you’re buying a laptop that features hardware devices (mainly CPU & the GPU) that have been very recently released, then it’s better to wait 2 or 3 months before buying the laptop to see if there are any major issues in ‘Linux’.",last,0.0
+control,71,"That said, not everyone hated Bush's address, especially after the follow-up Q&A.",mean,0.0
+control,71,"That said, not everyone hated Bush's address, especially after the follow-up Q&A.",max,0.0
+control,71,"That said, not everyone hated Bush's address, especially after the follow-up Q&A.",last,0.0
+control,72,She was not hurt.,mean,0.0
+control,72,She was not hurt.,max,0.0
+control,72,She was not hurt.,last,0.0
+control,73,"“I support generally what he’s doing, and he’s off to a roaring start,” said Chaffetz, who might try to run for Senate in 2018.",mean,0.0
+control,73,"“I support generally what he’s doing, and he’s off to a roaring start,” said Chaffetz, who might try to run for Senate in 2018.",max,0.0
+control,73,"“I support generally what he’s doing, and he’s off to a roaring start,” said Chaffetz, who might try to run for Senate in 2018.",last,0.0
+control,74,None of them were BBB members.,mean,0.0
+control,74,None of them were BBB members.,max,0.0
+control,74,None of them were BBB members.,last,0.0
+control,75,"PARIS, France — French far-right leader Marine Le Pen would win the first round of presidential elections in 2017, beating Socialist incumbent Francois Hollande and any candidate from the right, an opinion poll said Friday.",mean,0.0
+control,75,"PARIS, France — French far-right leader Marine Le Pen would win the first round of presidential elections in 2017, beating Socialist incumbent Francois Hollande and any candidate from the right, an opinion poll said Friday.",max,0.0
+control,75,"PARIS, France — French far-right leader Marine Le Pen would win the first round of presidential elections in 2017, beating Socialist incumbent Francois Hollande and any candidate from the right, an opinion poll said Friday.",last,0.0
+control,76,Clinton couldn't have said it better herself.,mean,0.0
+control,76,Clinton couldn't have said it better herself.,max,0.0
+control,76,Clinton couldn't have said it better herself.,last,0.0
+control,77,"22:21, Rom.",mean,0.0
+control,77,"22:21, Rom.",max,0.0
+control,77,"22:21, Rom.",last,0.0
+control,78,"#debate pic.twitter.com/V4eEIjnMlG — Frank Luntz (@FrankLuntz) October 10, 2016
+
+The pundits are saying Trump's ""special prosecutor"" line was the worst part of the #debate.",mean,0.0
+control,78,"#debate pic.twitter.com/V4eEIjnMlG — Frank Luntz (@FrankLuntz) October 10, 2016
+
+The pundits are saying Trump's ""special prosecutor"" line was the worst part of the #debate.",max,0.0
+control,78,"#debate pic.twitter.com/V4eEIjnMlG — Frank Luntz (@FrankLuntz) October 10, 2016
+
+The pundits are saying Trump's ""special prosecutor"" line was the worst part of the #debate.",last,0.0
+control,79,"This paper does not address the possibility that there are other minds outside of Earth, though if we were to learn about them, we certainly would have an obligation to reduce their suffering.",mean,0.0
+control,79,"This paper does not address the possibility that there are other minds outside of Earth, though if we were to learn about them, we certainly would have an obligation to reduce their suffering.",max,0.0
+control,79,"This paper does not address the possibility that there are other minds outside of Earth, though if we were to learn about them, we certainly would have an obligation to reduce their suffering.",last,0.0
+control,80,"In an era when going the distance was all the rage, sprint races kept the action short and sweet.",mean,0.0
+control,80,"In an era when going the distance was all the rage, sprint races kept the action short and sweet.",max,0.0
+control,80,"In an era when going the distance was all the rage, sprint races kept the action short and sweet.",last,0.0
+control,81,Did he know who the author Abu Sulayman al-Nasir was?,mean,0.0
+control,81,Did he know who the author Abu Sulayman al-Nasir was?,max,0.0
+control,81,Did he know who the author Abu Sulayman al-Nasir was?,last,0.0
+control,82,"Arizona, Colorado and Maine are considering phased-in $12 hourly minimum wages by 2020.",mean,0.0
+control,82,"Arizona, Colorado and Maine are considering phased-in $12 hourly minimum wages by 2020.",max,0.0
+control,82,"Arizona, Colorado and Maine are considering phased-in $12 hourly minimum wages by 2020.",last,0.0
+control,83,"In its dying days, the Conservative government went on an appointment spree, filling every available position and making 49 ""future appointments.""",mean,17.449098587036133
+control,83,"In its dying days, the Conservative government went on an appointment spree, filling every available position and making 49 ""future appointments.""",max,73.84587097167969
+control,83,"In its dying days, the Conservative government went on an appointment spree, filling every available position and making 49 ""future appointments.""",last,73.84587097167969
+control,84,"Many of the studies reviewed focused on aggregate food categories, with little (if any) consideration for disentangling healthier and less healthy options within categories.",mean,0.0
+control,84,"Many of the studies reviewed focused on aggregate food categories, with little (if any) consideration for disentangling healthier and less healthy options within categories.",max,0.0
+control,84,"Many of the studies reviewed focused on aggregate food categories, with little (if any) consideration for disentangling healthier and less healthy options within categories.",last,0.0
+control,85,"As promised, Google has finally brought the Google Play store to Chrome OS.",mean,0.0
+control,85,"As promised, Google has finally brought the Google Play store to Chrome OS.",max,0.0
+control,85,"As promised, Google has finally brought the Google Play store to Chrome OS.",last,0.0
+control,86,"App Installation : search for ‘opensprinkler’ in iOS App Store, Android Play Store, or Windows Phone Store, and you should be able to find and install the app.",mean,0.0
+control,86,"App Installation : search for ‘opensprinkler’ in iOS App Store, Android Play Store, or Windows Phone Store, and you should be able to find and install the app.",max,0.0
+control,86,"App Installation : search for ‘opensprinkler’ in iOS App Store, Android Play Store, or Windows Phone Store, and you should be able to find and install the app.",last,0.0
+control,87,A peace supporter wastes their vote in these states by voting for a militarist candidate.,mean,0.7143692970275879
+control,87,A peace supporter wastes their vote in these states by voting for a militarist candidate.,max,12.858647346496582
+control,87,A peace supporter wastes their vote in these states by voting for a militarist candidate.,last,0.0
+control,88,"If you just have two cable boxes, you will be paying $192 a year for electrical alone.",mean,0.0
+control,88,"If you just have two cable boxes, you will be paying $192 a year for electrical alone.",max,0.0
+control,88,"If you just have two cable boxes, you will be paying $192 a year for electrical alone.",last,0.0
+control,89,"""I don't know how when you're miserable,"" she answered one of the conversation's dual meanings.",mean,0.0
+control,89,"""I don't know how when you're miserable,"" she answered one of the conversation's dual meanings.",max,0.0
+control,89,"""I don't know how when you're miserable,"" she answered one of the conversation's dual meanings.",last,0.0
+control,90,"So, I decided to write a story with more mature characters, more detailed art and a unique and fleshed-out fantasy world that was lighthearted, yet contained themes of dark fantasy.",mean,0.0
+control,90,"So, I decided to write a story with more mature characters, more detailed art and a unique and fleshed-out fantasy world that was lighthearted, yet contained themes of dark fantasy.",max,0.0
+control,90,"So, I decided to write a story with more mature characters, more detailed art and a unique and fleshed-out fantasy world that was lighthearted, yet contained themes of dark fantasy.",last,0.0
+control,91,"He had the unfortunate job of trying to stop Parker on defense, especially in the second half, and he still managed to put up 24 points on 9-of-13 shooting to keep his team close when Duke was in showcase mode.",mean,0.0
+control,91,"He had the unfortunate job of trying to stop Parker on defense, especially in the second half, and he still managed to put up 24 points on 9-of-13 shooting to keep his team close when Duke was in showcase mode.",max,0.0
+control,91,"He had the unfortunate job of trying to stop Parker on defense, especially in the second half, and he still managed to put up 24 points on 9-of-13 shooting to keep his team close when Duke was in showcase mode.",last,0.0
+control,92,Note: Statements from Campbell’s and Nestle were received after first publication of this story and then added.,mean,0.4348240792751312
+control,92,Note: Statements from Campbell’s and Nestle were received after first publication of this story and then added.,max,9.566129684448242
+control,92,Note: Statements from Campbell’s and Nestle were received after first publication of this story and then added.,last,0.0
+control,93,What does this have to do with TF2?,mean,0.0
+control,93,What does this have to do with TF2?,max,0.0
+control,93,What does this have to do with TF2?,last,0.0
+control,94,"Evidently, we have yet to robbed of the things we (will learn to) cherish the most.",mean,0.0
+control,94,"Evidently, we have yet to robbed of the things we (will learn to) cherish the most.",max,0.0
+control,94,"Evidently, we have yet to robbed of the things we (will learn to) cherish the most.",last,0.0
+control,95,The word ‘hydrophobic’ means that it avoids water.,mean,0.0
+control,95,The word ‘hydrophobic’ means that it avoids water.,max,0.0
+control,95,The word ‘hydrophobic’ means that it avoids water.,last,0.0
+control,96,The Mexican government was outraged that he would involve himself in what it regards as a bilateral issue.,mean,0.5663654208183289
+control,96,The Mexican government was outraged that he would involve himself in what it regards as a bilateral issue.,max,11.32730770111084
+control,96,The Mexican government was outraged that he would involve himself in what it regards as a bilateral issue.,last,0.0
+control,97,url ; const password = options .,mean,0.0
+control,97,url ; const password = options .,max,0.0
+control,97,url ; const password = options .,last,0.0
+control,98,He objects to the idea that functional aspects in biological systems can be investigated via a material focus.,mean,0.0
+control,98,He objects to the idea that functional aspects in biological systems can be investigated via a material focus.,max,0.0
+control,98,He objects to the idea that functional aspects in biological systems can be investigated via a material focus.,last,0.0
+control,99,"What's more, there aren't going to be any Hall of Famers here, so you can't even fudge it.",mean,0.0
+control,99,"What's more, there aren't going to be any Hall of Famers here, so you can't even fudge it.",max,0.0
+control,99,"What's more, there aren't going to be any Hall of Famers here, so you can't even fudge it.",last,0.0
+control,100,"In retirement, she was president of APNM (Association for the Publication of New Music) and produced a number of CDs of her own performances, as well as the compositions of her late husband Godfrey Winham, and her friend Arlene Zallman.",mean,0.0
+control,100,"In retirement, she was president of APNM (Association for the Publication of New Music) and produced a number of CDs of her own performances, as well as the compositions of her late husband Godfrey Winham, and her friend Arlene Zallman.",max,0.0
+control,100,"In retirement, she was president of APNM (Association for the Publication of New Music) and produced a number of CDs of her own performances, as well as the compositions of her late husband Godfrey Winham, and her friend Arlene Zallman.",last,0.0
+control,101,"This video of a 9-year-old Khabib Nurmagomedov wrestling a bear made the rounds of the internet with a fair degree of humor attached, but let's take it seriously for a moment as an artifact of a particular kind of culture.",mean,0.0
+control,101,"This video of a 9-year-old Khabib Nurmagomedov wrestling a bear made the rounds of the internet with a fair degree of humor attached, but let's take it seriously for a moment as an artifact of a particular kind of culture.",max,0.0
+control,101,"This video of a 9-year-old Khabib Nurmagomedov wrestling a bear made the rounds of the internet with a fair degree of humor attached, but let's take it seriously for a moment as an artifact of a particular kind of culture.",last,0.0
+control,102,I was beyond shocked.,mean,0.0
+control,102,I was beyond shocked.,max,0.0
+control,102,I was beyond shocked.,last,0.0
+control,103,"Crosses and statues jutting from tomb surfaces cast contrasting shadows, adding to the sense of mystery.",mean,0.0
+control,103,"Crosses and statues jutting from tomb surfaces cast contrasting shadows, adding to the sense of mystery.",max,0.0
+control,103,"Crosses and statues jutting from tomb surfaces cast contrasting shadows, adding to the sense of mystery.",last,0.0
+control,104,why did it take me half a day to fix it?,mean,0.0
+control,104,why did it take me half a day to fix it?,max,0.0
+control,104,why did it take me half a day to fix it?,last,0.0
+control,105,"I thought if you just loosened up some of the restrictions that are on Kinect games, and stop thinking about them in the way that we normally think... We think of them in terms of these goals and objectives that can be demanding on the player, because the buttons on the controller are so accurate.",mean,0.0
+control,105,"I thought if you just loosened up some of the restrictions that are on Kinect games, and stop thinking about them in the way that we normally think... We think of them in terms of these goals and objectives that can be demanding on the player, because the buttons on the controller are so accurate.",max,0.0
+control,105,"I thought if you just loosened up some of the restrictions that are on Kinect games, and stop thinking about them in the way that we normally think... We think of them in terms of these goals and objectives that can be demanding on the player, because the buttons on the controller are so accurate.",last,0.0
+control,106,They stared at each other for what seemed like an hour.,mean,0.0
+control,106,They stared at each other for what seemed like an hour.,max,0.0
+control,106,They stared at each other for what seemed like an hour.,last,0.0
+control,107,"• University of Michigan-Flint, up 4.9 percent.",mean,0.0
+control,107,"• University of Michigan-Flint, up 4.9 percent.",max,0.0
+control,107,"• University of Michigan-Flint, up 4.9 percent.",last,0.0
+control,108,"While Washington, state capitols, and large corporations win, taxpayers, consumers, and small business owners lose.",mean,0.0
+control,108,"While Washington, state capitols, and large corporations win, taxpayers, consumers, and small business owners lose.",max,0.0
+control,108,"While Washington, state capitols, and large corporations win, taxpayers, consumers, and small business owners lose.",last,0.0
+control,109,Oklahoma health officials said immigrant children housed at Fort Sill who had communicable diseases were quarantined.,mean,0.0
+control,109,Oklahoma health officials said immigrant children housed at Fort Sill who had communicable diseases were quarantined.,max,0.0
+control,109,Oklahoma health officials said immigrant children housed at Fort Sill who had communicable diseases were quarantined.,last,0.0
+control,110,"You saw the sticks, you could see them putting wrenches into their sleeves.",mean,0.0
+control,110,"You saw the sticks, you could see them putting wrenches into their sleeves.",max,0.0
+control,110,"You saw the sticks, you could see them putting wrenches into their sleeves.",last,0.0
+control,111,"Then there's the IBM Selectric, an electric typewriter that introduced a major technological advancement.",mean,0.0
+control,111,"Then there's the IBM Selectric, an electric typewriter that introduced a major technological advancement.",max,0.0
+control,111,"Then there's the IBM Selectric, an electric typewriter that introduced a major technological advancement.",last,0.0
+control,112,Unfortunately this can be tricky to get right.,mean,0.0
+control,112,Unfortunately this can be tricky to get right.,max,0.0
+control,112,Unfortunately this can be tricky to get right.,last,0.0
+control,113,"So here it is: Phyllis, you are beautiful.",mean,0.0
+control,113,"So here it is: Phyllis, you are beautiful.",max,0.0
+control,113,"So here it is: Phyllis, you are beautiful.",last,0.0
+control,114,"The son of a Pashtun father and a Tajik mother, he represents Afghanistan’s two largest ethnic groups.",mean,0.0
+control,114,"The son of a Pashtun father and a Tajik mother, he represents Afghanistan’s two largest ethnic groups.",max,0.0
+control,114,"The son of a Pashtun father and a Tajik mother, he represents Afghanistan’s two largest ethnic groups.",last,0.0
+control,115,"SEE ALSO :Chinese ""Ivory Queen"" smuggler sentenced to 15 years jail in Tanzania
+
+Foreign Ministry spokesman Hong Lei described the report as ""groundless"" at a regular briefing in Beijing Thursday, adding that China was ""strongly dissatisfied"" with it.",mean,0.0
+control,115,"SEE ALSO :Chinese ""Ivory Queen"" smuggler sentenced to 15 years jail in Tanzania
+
+Foreign Ministry spokesman Hong Lei described the report as ""groundless"" at a regular briefing in Beijing Thursday, adding that China was ""strongly dissatisfied"" with it.",max,0.0
+control,115,"SEE ALSO :Chinese ""Ivory Queen"" smuggler sentenced to 15 years jail in Tanzania
+
+Foreign Ministry spokesman Hong Lei described the report as ""groundless"" at a regular briefing in Beijing Thursday, adding that China was ""strongly dissatisfied"" with it.",last,0.0
+control,116,"If this squad fails, what would that say about Löw?",mean,0.0
+control,116,"If this squad fails, what would that say about Löw?",max,0.0
+control,116,"If this squad fails, what would that say about Löw?",last,0.0
+control,117,"Underwood also uses Russo in a plot to end a teachers' strike and pass an education bill, which improves Underwood's standing with Walker.",mean,0.0
+control,117,"Underwood also uses Russo in a plot to end a teachers' strike and pass an education bill, which improves Underwood's standing with Walker.",max,0.0
+control,117,"Underwood also uses Russo in a plot to end a teachers' strike and pass an education bill, which improves Underwood's standing with Walker.",last,0.0
+control,118,"""And how'd that go?""",mean,0.0
+control,118,"""And how'd that go?""",max,0.0
+control,118,"""And how'd that go?""",last,0.0
+control,119,"Where are the Generators?¶ I can only speculate but it seems self evident, OCaml doesn’t have native support for generators because it doesn’t really need it.",mean,0.0
+control,119,"Where are the Generators?¶ I can only speculate but it seems self evident, OCaml doesn’t have native support for generators because it doesn’t really need it.",max,0.0
+control,119,"Where are the Generators?¶ I can only speculate but it seems self evident, OCaml doesn’t have native support for generators because it doesn’t really need it.",last,0.0
+control,120,“value” is a partially-evaluated interpret_value_instruction .,mean,0.0
+control,120,“value” is a partially-evaluated interpret_value_instruction .,max,0.0
+control,120,“value” is a partially-evaluated interpret_value_instruction .,last,0.0
+control,121,The Campaign of the Century: Upton Sinclair and the EPIC Campaign in California.,mean,0.0
+control,121,The Campaign of the Century: Upton Sinclair and the EPIC Campaign in California.,max,0.0
+control,121,The Campaign of the Century: Upton Sinclair and the EPIC Campaign in California.,last,0.0
+control,122,"1977
+
+Brooks Vantage, with a “varus wedge” (higher arch side for more support), ranks #1 in RW’s annual guide.",mean,0.0
+control,122,"1977
+
+Brooks Vantage, with a “varus wedge” (higher arch side for more support), ranks #1 in RW’s annual guide.",max,0.0
+control,122,"1977
+
+Brooks Vantage, with a “varus wedge” (higher arch side for more support), ranks #1 in RW’s annual guide.",last,0.0
+control,123,"But former Tory leader Iain Duncan Smith, one of six cabinet ministers campaigning for the UK to leave the EU, said the UK's membership exposed it to greater security risks.",mean,0.24205128848552704
+control,123,"But former Tory leader Iain Duncan Smith, one of six cabinet ministers campaigning for the UK to leave the EU, said the UK's membership exposed it to greater security risks.",max,8.713846206665039
+control,123,"But former Tory leader Iain Duncan Smith, one of six cabinet ministers campaigning for the UK to leave the EU, said the UK's membership exposed it to greater security risks.",last,0.0
+control,124,Francis said on Tuesday he hoped his visit could be a “consolation and ... encouragement to all Christians in the Middle East”.,mean,0.0
+control,124,Francis said on Tuesday he hoped his visit could be a “consolation and ... encouragement to all Christians in the Middle East”.,max,0.0
+control,124,Francis said on Tuesday he hoped his visit could be a “consolation and ... encouragement to all Christians in the Middle East”.,last,0.0
+control,125,"When video game historians look back on their medium’s history, they won’t want to remember 2014.",mean,0.0
+control,125,"When video game historians look back on their medium’s history, they won’t want to remember 2014.",max,0.0
+control,125,"When video game historians look back on their medium’s history, they won’t want to remember 2014.",last,0.0
+control,126,"The assignment of fresh meaning to the sentence as a whole results from a more local assignment of fresh meaning to one or more of the sentence’s constituent words or phrases, the ones we take metaphorically, the focal words or phrases.",mean,0.0
+control,126,"The assignment of fresh meaning to the sentence as a whole results from a more local assignment of fresh meaning to one or more of the sentence’s constituent words or phrases, the ones we take metaphorically, the focal words or phrases.",max,0.0
+control,126,"The assignment of fresh meaning to the sentence as a whole results from a more local assignment of fresh meaning to one or more of the sentence’s constituent words or phrases, the ones we take metaphorically, the focal words or phrases.",last,0.0
+control,127,"Meanwhile, I have made inquiries in the fleshpots of Paris, and your feckless rascal of a husband is known here only as a dab hand at piquet even when deep in his cups, so I expect your union will be a happy one so long as you continue to avoid the card table.",mean,0.0
+control,127,"Meanwhile, I have made inquiries in the fleshpots of Paris, and your feckless rascal of a husband is known here only as a dab hand at piquet even when deep in his cups, so I expect your union will be a happy one so long as you continue to avoid the card table.",max,0.0
+control,127,"Meanwhile, I have made inquiries in the fleshpots of Paris, and your feckless rascal of a husband is known here only as a dab hand at piquet even when deep in his cups, so I expect your union will be a happy one so long as you continue to avoid the card table.",last,0.0
+control,128,"The NEW problem I'm referring to: My recovered wallet now shows 110 ""LOL"" instead of the original and expected 100!",mean,0.0
+control,128,"The NEW problem I'm referring to: My recovered wallet now shows 110 ""LOL"" instead of the original and expected 100!",max,0.0
+control,128,"The NEW problem I'm referring to: My recovered wallet now shows 110 ""LOL"" instead of the original and expected 100!",last,0.0
+control,129,"Mandatory Credit: Andrew Weber-USA TODAY Sports
+
+Two weeks after the California courts released nearly 500 pages of documents relating to Todd McNair’s defamation lawsuit against the NCAA and USC athletic director Pat Haden issued a harsh statement blasting the NCAA for breaking its own rules, the Trojan response to the NCAA sanctions is only heating up.",mean,0.0
+control,129,"Mandatory Credit: Andrew Weber-USA TODAY Sports
+
+Two weeks after the California courts released nearly 500 pages of documents relating to Todd McNair’s defamation lawsuit against the NCAA and USC athletic director Pat Haden issued a harsh statement blasting the NCAA for breaking its own rules, the Trojan response to the NCAA sanctions is only heating up.",max,0.0
+control,129,"Mandatory Credit: Andrew Weber-USA TODAY Sports
+
+Two weeks after the California courts released nearly 500 pages of documents relating to Todd McNair’s defamation lawsuit against the NCAA and USC athletic director Pat Haden issued a harsh statement blasting the NCAA for breaking its own rules, the Trojan response to the NCAA sanctions is only heating up.",last,0.0
+control,130,First Secretary Vezirov decamped to Moscow and Ayaz Mutalibov was appointed his successor in a free vote of party officials.,mean,0.0
+control,130,First Secretary Vezirov decamped to Moscow and Ayaz Mutalibov was appointed his successor in a free vote of party officials.,max,0.0
+control,130,First Secretary Vezirov decamped to Moscow and Ayaz Mutalibov was appointed his successor in a free vote of party officials.,last,0.0
+control,131,The younger male partner may not want to become a step-father to existing children.,mean,0.0
+control,131,The younger male partner may not want to become a step-father to existing children.,max,0.0
+control,131,The younger male partner may not want to become a step-father to existing children.,last,0.0
+control,132,The dystopian visions of Orwell and Huxley were not that far off the mark.,mean,0.0
+control,132,The dystopian visions of Orwell and Huxley were not that far off the mark.,max,0.0
+control,132,The dystopian visions of Orwell and Huxley were not that far off the mark.,last,0.0
+control,133,He was smiling ear to ear.,mean,0.0
+control,133,He was smiling ear to ear.,max,0.0
+control,133,He was smiling ear to ear.,last,0.0
+control,134,"“What we do know is that a major accident involving a tanker carrying approximately 9,000 gallons of gas was rear-ended by a trash truck at approximately 45 mph,” Rincon City Manager Wesley Corbitt told SavannahNow.",mean,0.4468737244606018
+control,134,"“What we do know is that a major accident involving a tanker carrying approximately 9,000 gallons of gas was rear-ended by a trash truck at approximately 45 mph,” Rincon City Manager Wesley Corbitt told SavannahNow.",max,11.134486198425293
+control,134,"“What we do know is that a major accident involving a tanker carrying approximately 9,000 gallons of gas was rear-ended by a trash truck at approximately 45 mph,” Rincon City Manager Wesley Corbitt told SavannahNow.",last,0.0
+control,135,"Thanks to the deal with Microsoft, additional capital allowed Seattle Computer to expand its memory business into providing additional memory for PC products.",mean,0.0
+control,135,"Thanks to the deal with Microsoft, additional capital allowed Seattle Computer to expand its memory business into providing additional memory for PC products.",max,0.0
+control,135,"Thanks to the deal with Microsoft, additional capital allowed Seattle Computer to expand its memory business into providing additional memory for PC products.",last,0.0
+control,136,"“As you say, it will come in big drops.",mean,0.0
+control,136,"“As you say, it will come in big drops.",max,0.0
+control,136,"“As you say, it will come in big drops.",last,0.0
+control,137,"In the Facebook Group Annapolis Green, a member posted a fundraising campaign underway by the MPN.",mean,0.0
+control,137,"In the Facebook Group Annapolis Green, a member posted a fundraising campaign underway by the MPN.",max,0.0
+control,137,"In the Facebook Group Annapolis Green, a member posted a fundraising campaign underway by the MPN.",last,0.0
+control,138,Spot and croaker are still not in full summertime mode.,mean,0.0
+control,138,Spot and croaker are still not in full summertime mode.,max,0.0
+control,138,Spot and croaker are still not in full summertime mode.,last,0.0
+control,139,"She later added that, given the boy's intelligence, he could aspire to any job he might want, and implored him to make friends and ""reengage with the real world.""",mean,0.0
+control,139,"She later added that, given the boy's intelligence, he could aspire to any job he might want, and implored him to make friends and ""reengage with the real world.""",max,0.0
+control,139,"She later added that, given the boy's intelligence, he could aspire to any job he might want, and implored him to make friends and ""reengage with the real world.""",last,0.0
+control,140,"So taking into consideration the economic policy
+
+01:40 put in place by France; I think there are forms
+
+01:44 of reparations more subtle than financial ones.",mean,0.0
+control,140,"So taking into consideration the economic policy
+
+01:40 put in place by France; I think there are forms
+
+01:44 of reparations more subtle than financial ones.",max,0.0
+control,140,"So taking into consideration the economic policy
+
+01:40 put in place by France; I think there are forms
+
+01:44 of reparations more subtle than financial ones.",last,0.0
+control,141,"Mahiro immediately corrects them, saying she's merely trapped in another dimension, and a short scene from episode 6 showing Nyarko destroying the room changing device to also show she's not dead.",mean,0.0
+control,141,"Mahiro immediately corrects them, saying she's merely trapped in another dimension, and a short scene from episode 6 showing Nyarko destroying the room changing device to also show she's not dead.",max,0.0
+control,141,"Mahiro immediately corrects them, saying she's merely trapped in another dimension, and a short scene from episode 6 showing Nyarko destroying the room changing device to also show she's not dead.",last,0.0
+control,142,"Eco Lecom
+
+Eco Lecom website uses beautiful and elegant watercolor paintings of plants and birds as decoration, creating a relaxing feel for the site.",mean,0.0
+control,142,"Eco Lecom
+
+Eco Lecom website uses beautiful and elegant watercolor paintings of plants and birds as decoration, creating a relaxing feel for the site.",max,0.0
+control,142,"Eco Lecom
+
+Eco Lecom website uses beautiful and elegant watercolor paintings of plants and birds as decoration, creating a relaxing feel for the site.",last,0.0
+control,143,"And so, just to remind folks that we're here, we will have to continue to march in parades and sing ""Somewhere Over the Rainbow.""",mean,0.0
+control,143,"And so, just to remind folks that we're here, we will have to continue to march in parades and sing ""Somewhere Over the Rainbow.""",max,0.0
+control,143,"And so, just to remind folks that we're here, we will have to continue to march in parades and sing ""Somewhere Over the Rainbow.""",last,0.0
+control,144,"Oscar Pareja's coaching has evolved and matured quite a bit between the two seasons as well, which has helped prevent quite as many heartbreakers as we saw last year.",mean,0.0
+control,144,"Oscar Pareja's coaching has evolved and matured quite a bit between the two seasons as well, which has helped prevent quite as many heartbreakers as we saw last year.",max,0.0
+control,144,"Oscar Pareja's coaching has evolved and matured quite a bit between the two seasons as well, which has helped prevent quite as many heartbreakers as we saw last year.",last,0.0
+control,145,"Blake said, getting all their attentions.",mean,0.0
+control,145,"Blake said, getting all their attentions.",max,0.0
+control,145,"Blake said, getting all their attentions.",last,0.0
+control,146,"Beitashour makes probing runs down the right flank, and like his teammate on the other side of the midfield, he’s known for his positioning, defensive awareness and consistent play.",mean,1.3275750875473022
+control,146,"Beitashour makes probing runs down the right flank, and like his teammate on the other side of the midfield, he’s known for his positioning, defensive awareness and consistent play.",max,15.61166000366211
+control,146,"Beitashour makes probing runs down the right flank, and like his teammate on the other side of the midfield, he’s known for his positioning, defensive awareness and consistent play.",last,0.0
+control,147,"To obtain the bulk of the available driver-assist safety features, you’ll need to look at the Pathfinder SL.",mean,0.0
+control,147,"To obtain the bulk of the available driver-assist safety features, you’ll need to look at the Pathfinder SL.",max,0.0
+control,147,"To obtain the bulk of the available driver-assist safety features, you’ll need to look at the Pathfinder SL.",last,0.0
+control,148,You can dismiss this spell and return the bow to its original state as a bonus action.,mean,0.0
+control,148,You can dismiss this spell and return the bow to its original state as a bonus action.,max,0.0
+control,148,You can dismiss this spell and return the bow to its original state as a bonus action.,last,0.0
+control,149,"It caused minor damage to buildings in Trinidad, Colorado, about 15 miles from the epicenter.",mean,0.45132729411125183
+control,149,"It caused minor damage to buildings in Trinidad, Colorado, about 15 miles from the epicenter.",max,9.477872848510742
+control,149,"It caused minor damage to buildings in Trinidad, Colorado, about 15 miles from the epicenter.",last,0.0
+control,150,[HT @HistoricalRyan],mean,0.0
+control,150,[HT @HistoricalRyan],max,0.0
+control,150,[HT @HistoricalRyan],last,0.0
+control,151,"When we recall the past, what do we recall?",mean,0.0
+control,151,"When we recall the past, what do we recall?",max,0.0
+control,151,"When we recall the past, what do we recall?",last,0.0
+control,152,"A Brigham Young University study, tracing couples over two decades, found that more arguments correlated with poorer —and concluded that couples who don’t argue actually live longer.",mean,0.0
+control,152,"A Brigham Young University study, tracing couples over two decades, found that more arguments correlated with poorer —and concluded that couples who don’t argue actually live longer.",max,0.0
+control,152,"A Brigham Young University study, tracing couples over two decades, found that more arguments correlated with poorer —and concluded that couples who don’t argue actually live longer.",last,0.0
+control,153,"""It is a huge deal,"" he said.",mean,0.0
+control,153,"""It is a huge deal,"" he said.",max,0.0
+control,153,"""It is a huge deal,"" he said.",last,0.0
+control,154,The absurdity is just too much.,mean,0.0
+control,154,The absurdity is just too much.,max,0.0
+control,154,The absurdity is just too much.,last,0.0
+control,155,"Despite some early stumbles -- such as a squabble with the New York Times over its new ""super charger"" network and push back from traditional car dealers over its sales strategy -- Tesla seems to humming along, at least for now.",mean,0.0
+control,155,"Despite some early stumbles -- such as a squabble with the New York Times over its new ""super charger"" network and push back from traditional car dealers over its sales strategy -- Tesla seems to humming along, at least for now.",max,0.0
+control,155,"Despite some early stumbles -- such as a squabble with the New York Times over its new ""super charger"" network and push back from traditional car dealers over its sales strategy -- Tesla seems to humming along, at least for now.",last,0.0
+control,156,"Here is his statement:
+
+“It not infrequently happens that something about the earth…may be known with the greatest certainty by reasoning or by experience, even by one who is not a Christian.",mean,0.0
+control,156,"Here is his statement:
+
+“It not infrequently happens that something about the earth…may be known with the greatest certainty by reasoning or by experience, even by one who is not a Christian.",max,0.0
+control,156,"Here is his statement:
+
+“It not infrequently happens that something about the earth…may be known with the greatest certainty by reasoning or by experience, even by one who is not a Christian.",last,0.0
+control,157,He went to Boston in 2007 to chase championships.,mean,0.0
+control,157,He went to Boston in 2007 to chase championships.,max,0.0
+control,157,He went to Boston in 2007 to chase championships.,last,0.0
+control,158,It may make sense for some to sit on the couch.,mean,0.0
+control,158,It may make sense for some to sit on the couch.,max,0.0
+control,158,It may make sense for some to sit on the couch.,last,0.0
+control,159,Bigly.,mean,0.0
+control,159,Bigly.,max,0.0
+control,159,Bigly.,last,0.0
+control,160,"Though this year was not the ideal swan song for Clijsters, she was able to finally play for Belgium at the Olympics which she was not able to do in 2004 and 2008.",mean,0.0
+control,160,"Though this year was not the ideal swan song for Clijsters, she was able to finally play for Belgium at the Olympics which she was not able to do in 2004 and 2008.",max,0.0
+control,160,"Though this year was not the ideal swan song for Clijsters, she was able to finally play for Belgium at the Olympics which she was not able to do in 2004 and 2008.",last,0.0
+control,161,The report projects a future in which the gas tax will fall farther and farther behind needs.,mean,0.0
+control,161,The report projects a future in which the gas tax will fall farther and farther behind needs.,max,0.0
+control,161,The report projects a future in which the gas tax will fall farther and farther behind needs.,last,0.0
+control,162,"Israel's security cabinet had earlier authorised police to seal off or impose a curfew on parts of the city in a bid to stop ""those who try murder and...all those who assist them"".",mean,0.0
+control,162,"Israel's security cabinet had earlier authorised police to seal off or impose a curfew on parts of the city in a bid to stop ""those who try murder and...all those who assist them"".",max,0.0
+control,162,"Israel's security cabinet had earlier authorised police to seal off or impose a curfew on parts of the city in a bid to stop ""those who try murder and...all those who assist them"".",last,0.0
+control,163,"“I adored my mother,” Rick says, “and she doted on me, especially in the early years.” When Rick got to high school, he says, “I felt like I was unfaithful to her if I thought of going out with a girl.” He had “no idea that you were supposed to grow up and develop and learn.” He saw his peers growing up and finding age-appropriate dates, and wondered what they had that he didn’t.",mean,0.0
+control,163,"“I adored my mother,” Rick says, “and she doted on me, especially in the early years.” When Rick got to high school, he says, “I felt like I was unfaithful to her if I thought of going out with a girl.” He had “no idea that you were supposed to grow up and develop and learn.” He saw his peers growing up and finding age-appropriate dates, and wondered what they had that he didn’t.",max,0.0
+control,163,"“I adored my mother,” Rick says, “and she doted on me, especially in the early years.” When Rick got to high school, he says, “I felt like I was unfaithful to her if I thought of going out with a girl.” He had “no idea that you were supposed to grow up and develop and learn.” He saw his peers growing up and finding age-appropriate dates, and wondered what they had that he didn’t.",last,0.0
+control,164,"For example, we can extract a lot of data from the VHM service to help us understand how our vehicles are performing in the field and give us better insights to the types of improvements we need to make.",mean,0.0
+control,164,"For example, we can extract a lot of data from the VHM service to help us understand how our vehicles are performing in the field and give us better insights to the types of improvements we need to make.",max,0.0
+control,164,"For example, we can extract a lot of data from the VHM service to help us understand how our vehicles are performing in the field and give us better insights to the types of improvements we need to make.",last,0.0
+control,165,The present tense is appropriate because the condition will persist indefinitely.,mean,0.0
+control,165,The present tense is appropriate because the condition will persist indefinitely.,max,0.0
+control,165,The present tense is appropriate because the condition will persist indefinitely.,last,0.0
+control,166,"You start out with 50 Platinum which, inevitably, isn't enough to buy anything useful.",mean,0.0
+control,166,"You start out with 50 Platinum which, inevitably, isn't enough to buy anything useful.",max,0.0
+control,166,"You start out with 50 Platinum which, inevitably, isn't enough to buy anything useful.",last,0.0
+control,167,"Others among these trees include fish eagles, storks and vervet monkeys.",mean,0.0
+control,167,"Others among these trees include fish eagles, storks and vervet monkeys.",max,0.0
+control,167,"Others among these trees include fish eagles, storks and vervet monkeys.",last,0.0
+control,168,Palm Springs has three operating dispensaries and has approved a fourth that has not yet opened.,mean,0.0
+control,168,Palm Springs has three operating dispensaries and has approved a fourth that has not yet opened.,max,0.0
+control,168,Palm Springs has three operating dispensaries and has approved a fourth that has not yet opened.,last,0.0
+control,169,This is just so much drivel.,mean,0.0
+control,169,This is just so much drivel.,max,0.0
+control,169,This is just so much drivel.,last,0.0
+control,170,Endocannabinoids are cannabinoids naturally occurring in the body.,mean,0.0
+control,170,Endocannabinoids are cannabinoids naturally occurring in the body.,max,0.0
+control,170,Endocannabinoids are cannabinoids naturally occurring in the body.,last,0.0
+control,171,Without Crescent Rose she felt vulnerable.,mean,0.0
+control,171,Without Crescent Rose she felt vulnerable.,max,0.0
+control,171,Without Crescent Rose she felt vulnerable.,last,0.0
+control,172,"It also will “modernize the cultural test,” which will be expanded to allow for European as well as British culture.",mean,0.0
+control,172,"It also will “modernize the cultural test,” which will be expanded to allow for European as well as British culture.",max,0.0
+control,172,"It also will “modernize the cultural test,” which will be expanded to allow for European as well as British culture.",last,0.0
+control,173,"The first tranche of our investment capital was raised on Kiva.org, an innovative platform that allows anyone around the world lend to entrepreneurs from developing countries.",mean,0.0
+control,173,"The first tranche of our investment capital was raised on Kiva.org, an innovative platform that allows anyone around the world lend to entrepreneurs from developing countries.",max,0.0
+control,173,"The first tranche of our investment capital was raised on Kiva.org, an innovative platform that allows anyone around the world lend to entrepreneurs from developing countries.",last,0.0
+control,174,17.,mean,0.0
+control,174,17.,max,0.0
+control,174,17.,last,0.0
+control,175,In the end four teams climbed the route that day – an instant classic!,mean,0.0
+control,175,In the end four teams climbed the route that day – an instant classic!,max,0.0
+control,175,In the end four teams climbed the route that day – an instant classic!,last,0.0
+control,176,"Jax tells him that he’s going to have to decide which side he’s going to fight on, and Nero says, “I’m tired of fighting.” He’s not tired enough, though; he chooses the Sons.",mean,0.0
+control,176,"Jax tells him that he’s going to have to decide which side he’s going to fight on, and Nero says, “I’m tired of fighting.” He’s not tired enough, though; he chooses the Sons.",max,0.0
+control,176,"Jax tells him that he’s going to have to decide which side he’s going to fight on, and Nero says, “I’m tired of fighting.” He’s not tired enough, though; he chooses the Sons.",last,0.0
+control,177,The above original FairMormon response can be found here.,mean,0.0
+control,177,The above original FairMormon response can be found here.,max,0.0
+control,177,The above original FairMormon response can be found here.,last,0.0
+control,178,"“And I haven’t been.”
+
+The helmet-to-helmet collision with New England Patriots running back John Stephens on Oct. 22, 1989, left Fuller with two fractured vertebrae and torn nerves near his shoulder and neck.",mean,0.0
+control,178,"“And I haven’t been.”
+
+The helmet-to-helmet collision with New England Patriots running back John Stephens on Oct. 22, 1989, left Fuller with two fractured vertebrae and torn nerves near his shoulder and neck.",max,0.0
+control,178,"“And I haven’t been.”
+
+The helmet-to-helmet collision with New England Patriots running back John Stephens on Oct. 22, 1989, left Fuller with two fractured vertebrae and torn nerves near his shoulder and neck.",last,0.0
+control,179,"Saying that “hatred” among many Muslims for Americans is “beyond comprehension,” Mr. Trump said in a statement that the United States needed to confront “where this hatred comes from and why.”
+
+“Until we are able to determine and understand this problem and the dangerous threat it poses, our country cannot be the victims of horrendous attacks by people that believe only in jihad, and have no sense of reason or respect for human life,” Mr. Trump said.",mean,0.0
+control,179,"Saying that “hatred” among many Muslims for Americans is “beyond comprehension,” Mr. Trump said in a statement that the United States needed to confront “where this hatred comes from and why.”
+
+“Until we are able to determine and understand this problem and the dangerous threat it poses, our country cannot be the victims of horrendous attacks by people that believe only in jihad, and have no sense of reason or respect for human life,” Mr. Trump said.",max,0.0
+control,179,"Saying that “hatred” among many Muslims for Americans is “beyond comprehension,” Mr. Trump said in a statement that the United States needed to confront “where this hatred comes from and why.”
+
+“Until we are able to determine and understand this problem and the dangerous threat it poses, our country cannot be the victims of horrendous attacks by people that believe only in jihad, and have no sense of reason or respect for human life,” Mr. Trump said.",last,0.0
+control,180,"The bill could have been paid for all through savings or only minor, indirect taxes.",mean,0.0
+control,180,"The bill could have been paid for all through savings or only minor, indirect taxes.",max,0.0
+control,180,"The bill could have been paid for all through savings or only minor, indirect taxes.",last,0.0
+control,181,"The ...more
+
+A powerful sorceress, Feicia Rand Philistin, once tried to conquer the nation of Shurian.",mean,0.0
+control,181,"The ...more
+
+A powerful sorceress, Feicia Rand Philistin, once tried to conquer the nation of Shurian.",max,0.0
+control,181,"The ...more
+
+A powerful sorceress, Feicia Rand Philistin, once tried to conquer the nation of Shurian.",last,0.0
+control,182,"More than 200,000 were manufactured from 1860 through 1873.",mean,0.0
+control,182,"More than 200,000 were manufactured from 1860 through 1873.",max,0.0
+control,182,"More than 200,000 were manufactured from 1860 through 1873.",last,0.0
+control,183,"Step 1: Conservation
+
+First, we need to do whatever it takes to make sure our current stocks of antibiotics remain effective for as long as possible.",mean,0.0
+control,183,"Step 1: Conservation
+
+First, we need to do whatever it takes to make sure our current stocks of antibiotics remain effective for as long as possible.",max,0.0
+control,183,"Step 1: Conservation
+
+First, we need to do whatever it takes to make sure our current stocks of antibiotics remain effective for as long as possible.",last,0.0
+control,184,"New Century Books, 2011.",mean,0.0
+control,184,"New Century Books, 2011.",max,0.0
+control,184,"New Century Books, 2011.",last,0.0
+control,185,His continues to be one of the six commentaries on the Vedas that modern day Vedic scholars read.,mean,0.0
+control,185,His continues to be one of the six commentaries on the Vedas that modern day Vedic scholars read.,max,0.0
+control,185,His continues to be one of the six commentaries on the Vedas that modern day Vedic scholars read.,last,0.0
+control,186,.... but it was really that time they got cordoned in the lost property depot.,mean,0.0
+control,186,.... but it was really that time they got cordoned in the lost property depot.,max,0.0
+control,186,.... but it was really that time they got cordoned in the lost property depot.,last,0.0
+control,187,"Snoop Dogg replied, asking for more information and saying that he wants to “make it happen”.",mean,0.0
+control,187,"Snoop Dogg replied, asking for more information and saying that he wants to “make it happen”.",max,0.0
+control,187,"Snoop Dogg replied, asking for more information and saying that he wants to “make it happen”.",last,0.0
+control,188,"Two weeks later, three members of the Panama Unit, including Jonathan Treviño and Alexis Espinoza, the son of Hidalgo Police Chief Rudy Espinoza, were indicted by a federal grand jury after an investigation by Immigration and Customs Enforcement and the FBI.",mean,0.0
+control,188,"Two weeks later, three members of the Panama Unit, including Jonathan Treviño and Alexis Espinoza, the son of Hidalgo Police Chief Rudy Espinoza, were indicted by a federal grand jury after an investigation by Immigration and Customs Enforcement and the FBI.",max,0.0
+control,188,"Two weeks later, three members of the Panama Unit, including Jonathan Treviño and Alexis Espinoza, the son of Hidalgo Police Chief Rudy Espinoza, were indicted by a federal grand jury after an investigation by Immigration and Customs Enforcement and the FBI.",last,0.0
+control,189,The prize for an honorable mention winner is a $25 Lensrentals gift certificate.,mean,0.0
+control,189,The prize for an honorable mention winner is a $25 Lensrentals gift certificate.,max,0.0
+control,189,The prize for an honorable mention winner is a $25 Lensrentals gift certificate.,last,0.0
+control,190,"Yet the zebus provide a livelihood for hundreds of millions of third world farmers, are well adapted to producing milk, offspring, dung and traction from sparse and erratic dryland pastures and poor quality crop residues, and in terms of energy and protein are more efficient at doing so.",mean,0.0
+control,190,"Yet the zebus provide a livelihood for hundreds of millions of third world farmers, are well adapted to producing milk, offspring, dung and traction from sparse and erratic dryland pastures and poor quality crop residues, and in terms of energy and protein are more efficient at doing so.",max,0.0
+control,190,"Yet the zebus provide a livelihood for hundreds of millions of third world farmers, are well adapted to producing milk, offspring, dung and traction from sparse and erratic dryland pastures and poor quality crop residues, and in terms of energy and protein are more efficient at doing so.",last,0.0
+control,191,They’re still the same person.,mean,0.0
+control,191,They’re still the same person.,max,0.0
+control,191,They’re still the same person.,last,0.0
+control,192,"When the previously banished Queen Margaret, widow of the murdered Henry VI from the previous episode, slinks into the court to give her own warnings, she brings with her a small mirror that fits in the palm of her hand.",mean,0.0
+control,192,"When the previously banished Queen Margaret, widow of the murdered Henry VI from the previous episode, slinks into the court to give her own warnings, she brings with her a small mirror that fits in the palm of her hand.",max,0.0
+control,192,"When the previously banished Queen Margaret, widow of the murdered Henry VI from the previous episode, slinks into the court to give her own warnings, she brings with her a small mirror that fits in the palm of her hand.",last,0.0
+control,193,"Steps for freezing the berries: Rinse berries in cold water
+
+Place the berries on a towel to dry
+
+Hull berries and remove any damaged parts
+
+Tops are edible, if you are using them in smoothies it’s okay to leave the tops on (they have vitamins and minerals as well as ellegic acid)
+
+Place strawberries on a sheet pan and cover in parchment paper, freeze them and then vacuum seal the next day.",mean,0.0
+control,193,"Steps for freezing the berries: Rinse berries in cold water
+
+Place the berries on a towel to dry
+
+Hull berries and remove any damaged parts
+
+Tops are edible, if you are using them in smoothies it’s okay to leave the tops on (they have vitamins and minerals as well as ellegic acid)
+
+Place strawberries on a sheet pan and cover in parchment paper, freeze them and then vacuum seal the next day.",max,0.0
+control,193,"Steps for freezing the berries: Rinse berries in cold water
+
+Place the berries on a towel to dry
+
+Hull berries and remove any damaged parts
+
+Tops are edible, if you are using them in smoothies it’s okay to leave the tops on (they have vitamins and minerals as well as ellegic acid)
+
+Place strawberries on a sheet pan and cover in parchment paper, freeze them and then vacuum seal the next day.",last,0.0
+control,194,"Meanwhile, Brian Campbell retired; Dennis Rasmussen went to the Anaheim Ducks; Michael Latta went to Arizona; and Johnny Oduya signed with the Ottawa Senators.",mean,1.8621952533721924
+control,194,"Meanwhile, Brian Campbell retired; Dennis Rasmussen went to the Anaheim Ducks; Michael Latta went to Arizona; and Johnny Oduya signed with the Ottawa Senators.",max,38.048248291015625
+control,194,"Meanwhile, Brian Campbell retired; Dennis Rasmussen went to the Anaheim Ducks; Michael Latta went to Arizona; and Johnny Oduya signed with the Ottawa Senators.",last,9.87632942199707
+control,195,International marketing consultant Allyson Stewart-Allen blames everything from bad store lighting to self-service check-out for the store's failure.,mean,0.0
+control,195,International marketing consultant Allyson Stewart-Allen blames everything from bad store lighting to self-service check-out for the store's failure.,max,0.0
+control,195,International marketing consultant Allyson Stewart-Allen blames everything from bad store lighting to self-service check-out for the store's failure.,last,0.0
+control,196,"For websites that do not submit to federal court jurisdiction, the ITC may issue a cease-and-desist order that can be served on the website.",mean,0.0
+control,196,"For websites that do not submit to federal court jurisdiction, the ITC may issue a cease-and-desist order that can be served on the website.",max,0.0
+control,196,"For websites that do not submit to federal court jurisdiction, the ITC may issue a cease-and-desist order that can be served on the website.",last,0.0
+control,197,"Passers-by rushed to the spot and took them to the nearby traffic police kiosk, they said.",mean,0.0
+control,197,"Passers-by rushed to the spot and took them to the nearby traffic police kiosk, they said.",max,0.0
+control,197,"Passers-by rushed to the spot and took them to the nearby traffic police kiosk, they said.",last,0.0
+control,198,"Some Citgo stations in Western Michigan, where taxes are 57.43 cents of the per-gallon price, popped below $2 Tuesday.",mean,0.0
+control,198,"Some Citgo stations in Western Michigan, where taxes are 57.43 cents of the per-gallon price, popped below $2 Tuesday.",max,0.0
+control,198,"Some Citgo stations in Western Michigan, where taxes are 57.43 cents of the per-gallon price, popped below $2 Tuesday.",last,0.0
+control,199,"... That's profound, that's unexpected, that's the surprise, I think, as we enter into the end of 2014 and we think about the year ahead.",mean,0.0
+control,199,"... That's profound, that's unexpected, that's the surprise, I think, as we enter into the end of 2014 and we think about the year ahead.",max,0.0
+control,199,"... That's profound, that's unexpected, that's the surprise, I think, as we enter into the end of 2014 and we think about the year ahead.",last,0.0

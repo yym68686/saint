@@ -110,7 +110,7 @@ def plot_average_auc(architectures=None):
     bars = ax.bar(valid_archs, avg_aucs, color=bar_colors, width=0.6)
 
     ax.set_ylabel("Average AUC-ROC", fontsize=14)
-    ax.set_title(f"Average Feature Recognition Performance (Across available features)", fontsize=16, pad=20)
+    ax.set_title(f"Refusal: Average Feature Recognition Performance (Across available features)", fontsize=16, pad=20)
 
     # Zoom in on the top values to highlight differences if they are close
     if avg_aucs:
@@ -148,7 +148,7 @@ if __name__ == "__main__":
     # Default list excluding 'topk' initially to match current environment status
     # but keeping the full structure logic available
     # python3 presentation/251208/plot_avg_auc.py
-    default_archs = ['dense', 'sigreg', 'leech', 'batchtopk', 'relu', 'jumprelu', 'gatedsae']
+    default_archs = ['dense', 'sigreg', 'repreg', 'sigregrepreg', 'batchtopk', 'relu', 'jumprelu', 'gatedsae']
 
     parser = argparse.ArgumentParser(description="Plot average AUC for multiple architectures.")
     parser.add_argument('--archs', nargs='+', default=default_archs,
