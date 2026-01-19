@@ -148,6 +148,13 @@ class TopKSparseAutoencoder(nn.Module):
         """"""
         self.h_bias = None
 
+    def get_decoder_dictionary_sample(self, m: int) -> torch.Tensor:
+        """Randomly sample m decoder dictionary vectors (one per latent)."""
+        dictionary_vectors = self.decoder.weight.t()
+        num_latents = dictionary_vectors.shape[0]
+        indices = torch.randint(0, num_latents, (m,), device=dictionary_vectors.device)
+        return dictionary_vectors[indices]
+
 
 def load_sae_model(
     model_path: Path,
