@@ -24,6 +24,9 @@ elif SAE_ARCHITECTURE == "repreg":
 elif SAE_ARCHITECTURE == "sigregrepreg":
     logging.info("Using 'sigregrepreg' SAE architecture from 'sae'.")
     from sae import load_sae_model, TopKSparseAutoencoder
+elif SAE_ARCHITECTURE == "imq":
+    logging.info("Using 'imq' SAE architecture from 'sae'.")
+    from sae import load_sae_model, TopKSparseAutoencoder
 elif SAE_ARCHITECTURE == "relu":
     logging.info("Using 'relu' SAE architecture from 'sae_relu'.")
     from sae_relu import load_sae_model, ReluSAE as TopKSparseAutoencoder
@@ -40,7 +43,7 @@ else:
     # If an unknown value is provided, raise an error to prevent unexpected behavior.
     raise ImportError(
         f"Unknown SAE_ARCHITECTURE: '{SAE_ARCHITECTURE}'. "
-        "Please set the environment variable to one of 'topk', 'dense', 'sigreg', 'repreg', 'sigregrepreg', 'batchtopk', 'relu', 'jumprelu' or 'gatedsae'."
+        "Please set the environment variable to one of 'topk', 'dense', 'sigreg', 'repreg', 'sigregrepreg', 'imq', 'batchtopk', 'relu', 'jumprelu' or 'gatedsae'."
     )
 
 # Expose the loaded symbols for other modules to import.

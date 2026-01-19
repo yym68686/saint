@@ -148,7 +148,7 @@ if __name__ == "__main__":
     # Default list excluding 'topk' initially to match current environment status
     # but keeping the full structure logic available
     # python3 presentation/251208/plot_avg_auc.py
-    default_archs = ['dense', 'sigreg', 'repreg', 'sigregrepreg', 'batchtopk', 'relu', 'jumprelu', 'gatedsae']
+    default_archs = ['dense', 'sigreg', 'repreg', 'sigregrepreg', 'imq', 'batchtopk', 'relu', 'jumprelu', 'gatedsae']
 
     parser = argparse.ArgumentParser(description="Plot average AUC for multiple architectures.")
     parser.add_argument('--archs', nargs='+', default=default_archs,
