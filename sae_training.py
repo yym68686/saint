@@ -46,6 +46,37 @@ class TopKSparseAutoencoderDataset(Dataset):
         return data
 
 
+def imq_kernel_from_sqdist(sqdist: torch.Tensor, alpha: float, beta: float) -> torch.Tensor:
+    return (1.0 + alpha * sqdist).pow(-beta)
+
+
+def imq_mmd2(x: torch.Tensor, y: torch.Tensor, alpha: float, beta: float) -> torch.Tensor:
+    """Biased MMD^2 estimate with IMQ kernel between samples x and y."""
+    m, d_model = x.shape
+    assert y.shape == (m, d_model)
+    if m < 2:
+        return torch.tensor(0.0, device=x.device, dtype=x.dtype)
+
+    x2 = torch.sum(x * x, dim=1, keepdim=True)
+    y2 = torch.sum(y * y, dim=1, keepdim=True)
+
+    sqdist_xx = (x2 + x2.t() - 2.0 * (x @ x.t())).clamp_min_(0.0)
+    sqdist_yy = (y2 + y2.t() - 2.0 * (y @ y.t())).clamp_min_(0.0)
+    sqdist_xy = (x2 + y2.t() - 2.0 * (x @ y.t())).clamp_min_(0.0)
+
+    k_xx = imq_kernel_from_sqdist(sqdist_xx, alpha=alpha, beta=beta)
+    k_yy = imq_kernel_from_sqdist(sqdist_yy, alpha=alpha, beta=beta)
+    k_xy = imq_kernel_from_sqdist(sqdist_xy, alpha=alpha, beta=beta)
+
+    sum_k_xx = k_xx.sum() - k_xx.diagonal().sum()
+    sum_k_yy = k_yy.sum() - k_yy.diagonal().sum()
+    mean_k_xx = sum_k_xx / (m * (m - 1))
+    mean_k_yy = sum_k_yy / (m * (m - 1))
+    mean_k_xy = k_xy.mean()
+
+    return mean_k_xx + mean_k_yy - 2.0 * mean_k_xy
+
+
 def train_epoch(
     epoch: int,
     num_epochs: int,
@@ -55,6 +86,18 @@ def train_epoch(
     optimizer: optim.AdamW,
     k_aux: int,
     aux_loss_coeff: float,
+    dict_reg_coeff: float,
+    dict_reg_m_sample_size: int,
+    dict_reg_every: int,
+    dict_reg_prior_std: float,
+    dict_reg_scale_sqrt_d_model: bool,
+    imq_alpha: float,
+    imq_beta: float,
+    repulsion_coeff: float,
+    repulsion_tau: float,
+    repulsion_sample_size: int,
+    repulsion_every_n_steps: int,
+    repulsion_warmup_epochs: int,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     logs_per_epoch: int,
@@ -70,6 +113,11 @@ def train_epoch(
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+
+    dict_reg_loss_acc = torch.tensor(0.0, device=device)
+    dict_reg_loss_count = torch.tensor(0.0, device=device)
+    rep_loss_acc = torch.tensor(0.0, device=device)
+    rep_loss_count = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
     accumulated_loss_count = dist.get_world_size() * log_interval
 
@@ -93,6 +141,23 @@ def train_epoch(
         # Compute main loss in normalized space
         loss = criterion(reconstructed, batch_normalized)
 
+        # ---- IMQ-MMD dictionary regularizer ----
+        dict_reg_loss = torch.tensor(0.0, device=device)
+        if (
+            dict_reg_coeff != 0.0
+            and dict_reg_m_sample_size >= 2
+            and dict_reg_every > 0
+            and (batch_idx % dict_reg_every == 0)
+        ):
+            m = dict_reg_m_sample_size
+            d_model = model.module.d_model
+            dict_sample = model.module.get_decoder_dictionary_sample(m).to(dtype)
+            if dict_reg_scale_sqrt_d_model:
+                dict_sample = dict_sample * (d_model**0.5)
+            prior_sample = torch.randn(m, d_model, device=device, dtype=dtype) * dict_reg_prior_std
+            dict_reg_loss = imq_mmd2(dict_sample, prior_sample, alpha=imq_alpha, beta=imq_beta)
+            dict_reg_loss_count += 1.0
+
         # If enough latents haven't been activated in more than dead_steps_threshold training steps then calculate an
         # auxiliary loss to help reactivate the latents.
         dead_mask = latent_last_nonzero > dead_steps_threshold
@@ -111,8 +176,39 @@ def train_epoch(
             # If there are not enough dead latents to activate, set auxiliary loss to 0.
             aux_loss = torch.tensor(0.0, device=device)
 
+        # ---- dictionary repulsion regularizer (RepReg / spherical packing) ----
+        current_repulsion_coeff = repulsion_coeff
+        if repulsion_warmup_epochs > 0 and epoch < repulsion_warmup_epochs:
+            current_repulsion_coeff *= (epoch + 1) / repulsion_warmup_epochs  # epoch starts from 0, so +1
+
+        dict_rep_loss = torch.tensor(0.0, device=device)
+        coh_max = 0.0
+        coh_mean = 0.0
+        if (
+            current_repulsion_coeff > 0
+            and repulsion_sample_size >= 2
+            and repulsion_every_n_steps > 0
+            and (batch_idx + 1) % repulsion_every_n_steps == 0
+        ):
+            dict_sample = model.module.sample_decoder_dictionary(repulsion_sample_size).to(dtype)
+            dict_sample = dict_sample / (dict_sample.norm(dim=-1, keepdim=True) + 1e-8)
+
+            sim = torch.abs(dict_sample @ dict_sample.t())
+            sim.fill_diagonal_(0.0)
+            dict_rep_loss = torch.relu(sim - repulsion_tau).pow(2).mean()
+            rep_loss_count += 1.0
+
+            with torch.no_grad():
+                coh_max = sim.max().item()
+                coh_mean = sim.sum().item() / (sim.numel() - sim.shape[0])
+
         # Compute total loss with auxiliary loss coefficient
-        total_loss = loss + aux_loss_coeff * aux_loss
+        total_loss = (
+            loss
+            + aux_loss_coeff * aux_loss
+            + dict_reg_coeff * dict_reg_loss
+            + current_repulsion_coeff * dict_rep_loss
+        )
 
         # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
         # and normalize the decoder weights again.
@@ -125,6 +221,8 @@ def train_epoch(
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
         total_loss_acc += total_loss.detach()
+        dict_reg_loss_acc += dict_reg_loss.detach()
+        rep_loss_acc += dict_rep_loss.detach()
 
         # Update the progress bar on main process
         if rank == 0:
@@ -142,14 +240,32 @@ def train_epoch(
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(dict_reg_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(dict_reg_loss_count, op=dist.ReduceOp.SUM)
+            dist.all_reduce(rep_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(rep_loss_count, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
+            avg_dict_reg_loss = (
+                dict_reg_loss_acc.item() / dict_reg_loss_count.item()
+                if dict_reg_loss_count.item() > 0
+                else 0.0
+            )
+            avg_rep_loss = (
+                rep_loss_acc.item() / rep_loss_count.item()
+                if rep_loss_count.item() > 0
+                else 0.0
+            )
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
+            dict_reg_loss_acc = torch.tensor(0.0, device=device)
+            dict_reg_loss_count = torch.tensor(0.0, device=device)
+            rep_loss_acc = torch.tensor(0.0, device=device)
+            rep_loss_count = torch.tensor(0.0, device=device)
 
             # Determine dead latent debug statistics
             dead_latents_ratio = dead_latents / dead_mask.numel()
@@ -163,6 +279,11 @@ def train_epoch(
                         "train/loss": avg_loss,
                         "train/aux_loss": avg_aux_loss,
                         "train/total_loss": avg_total_loss,
+                        "train/dict_reg_loss": avg_dict_reg_loss,
+                        "train/dict_rep_loss": avg_rep_loss,
+                        "train/repulsion_coeff": current_repulsion_coeff,
+                        "debug/dict_coherence_max": coh_max,
+                        "debug/dict_coherence_mean": coh_mean,
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
@@ -289,6 +410,18 @@ def train_autoencoder(
     optimizer_eps: float,
     k_aux: int,
     aux_loss_coeff: float,
+    dict_reg_coeff: float,
+    dict_reg_m_sample_size: int,
+    dict_reg_every: int,
+    dict_reg_prior_std: float,
+    dict_reg_scale_sqrt_d_model: bool,
+    imq_alpha: float,
+    imq_beta: float,
+    repulsion_coeff: float,
+    repulsion_tau: float,
+    repulsion_sample_size: int,
+    repulsion_every_n_steps: int,
+    repulsion_warmup_epochs: int,
     dead_steps_threshold: int,
     logs_per_epoch: int,
     checkpoint_dir: Path,
@@ -358,6 +491,18 @@ def train_autoencoder(
             optimizer=optimizer,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
+            dict_reg_coeff=dict_reg_coeff,
+            dict_reg_m_sample_size=dict_reg_m_sample_size,
+            dict_reg_every=dict_reg_every,
+            dict_reg_prior_std=dict_reg_prior_std,
+            dict_reg_scale_sqrt_d_model=dict_reg_scale_sqrt_d_model,
+            imq_alpha=imq_alpha,
+            imq_beta=imq_beta,
+            repulsion_coeff=repulsion_coeff,
+            repulsion_tau=repulsion_tau,
+            repulsion_sample_size=repulsion_sample_size,
+            repulsion_every_n_steps=repulsion_every_n_steps,
+            repulsion_warmup_epochs=repulsion_warmup_epochs,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             logs_per_epoch=logs_per_epoch,
@@ -434,6 +579,18 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("--model_load_path", type=Path, default=None)
     parser.add_argument("--batch_size", type=int, default=1024)
     parser.add_argument("--checkpoint_dir", type=Path, default=Path("sae_checkpoints"))
+    parser.add_argument("--dict_reg_coeff", type=float, default=1e-3)
+    parser.add_argument("--dict_reg_m_sample_size", type=int, default=256)
+    parser.add_argument("--dict_reg_every", type=int, default=1)
+    parser.add_argument("--dict_reg_prior_std", type=float, default=1.0)
+    parser.add_argument("--dict_reg_scale_sqrt_d_model", type=int, default=1)
+    parser.add_argument("--imq_alpha", type=float, default=None)
+    parser.add_argument("--imq_beta", type=float, default=0.5)
+    parser.add_argument("--repulsion_coeff", type=float, default=3e-4)
+    parser.add_argument("--repulsion_tau", type=float, default=0.1)
+    parser.add_argument("--repulsion_sample_size", type=int, default=1024)
+    parser.add_argument("--repulsion_every_n_steps", type=int, default=4)
+    parser.add_argument("--repulsion_warmup_epochs", type=int, default=40)
     return parser.parse_args()
 
 
@@ -469,6 +626,18 @@ def main() -> None:
     k = 64
     k_aux = 2048
     aux_loss_coeff = 1 / 32
+    dict_reg_coeff = args.dict_reg_coeff
+    dict_reg_m_sample_size = args.dict_reg_m_sample_size
+    dict_reg_every = args.dict_reg_every
+    dict_reg_prior_std = args.dict_reg_prior_std
+    dict_reg_scale_sqrt_d_model = bool(args.dict_reg_scale_sqrt_d_model)
+    imq_alpha = args.imq_alpha if args.imq_alpha is not None else 1.0 / d_model
+    imq_beta = args.imq_beta
+    repulsion_coeff = args.repulsion_coeff
+    repulsion_tau = args.repulsion_tau
+    repulsion_sample_size = args.repulsion_sample_size
+    repulsion_every_n_steps = args.repulsion_every_n_steps
+    repulsion_warmup_epochs = args.repulsion_warmup_epochs
     dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
     sae_normalization_eps = 1e-6
     batch_size = args.batch_size
@@ -494,6 +663,18 @@ def main() -> None:
                 "k": k,
                 "k_aux": k_aux,
                 "aux_loss_coeff": aux_loss_coeff,
+                "dict_reg_coeff": dict_reg_coeff,
+                "dict_reg_m_sample_size": dict_reg_m_sample_size,
+                "dict_reg_every": dict_reg_every,
+                "dict_reg_prior_std": dict_reg_prior_std,
+                "dict_reg_scale_sqrt_d_model": dict_reg_scale_sqrt_d_model,
+                "imq_alpha": imq_alpha,
+                "imq_beta": imq_beta,
+                "repulsion_coeff": repulsion_coeff,
+                "repulsion_tau": repulsion_tau,
+                "repulsion_sample_size": repulsion_sample_size,
+                "repulsion_every_n_steps": repulsion_every_n_steps,
+                "repulsion_warmup_epochs": repulsion_warmup_epochs,
                 "dead_steps_threshold": dead_steps_threshold,
                 "sae_normalization_eps": sae_normalization_eps,
                 "batch_size": batch_size,
@@ -528,6 +709,18 @@ def main() -> None:
         logging.info(f"# k={k}")
         logging.info(f"# k_aux={k_aux}")
         logging.info(f"# aux_loss_coeff={aux_loss_coeff}")
+        logging.info(f"# dict_reg_coeff={dict_reg_coeff}")
+        logging.info(f"# dict_reg_m_sample_size={dict_reg_m_sample_size}")
+        logging.info(f"# dict_reg_every={dict_reg_every}")
+        logging.info(f"# dict_reg_prior_std={dict_reg_prior_std}")
+        logging.info(f"# dict_reg_scale_sqrt_d_model={dict_reg_scale_sqrt_d_model}")
+        logging.info(f"# imq_alpha={imq_alpha}")
+        logging.info(f"# imq_beta={imq_beta}")
+        logging.info(f"# repulsion_coeff={repulsion_coeff}")
+        logging.info(f"# repulsion_tau={repulsion_tau}")
+        logging.info(f"# repulsion_sample_size={repulsion_sample_size}")
+        logging.info(f"# repulsion_every_n_steps={repulsion_every_n_steps}")
+        logging.info(f"# repulsion_warmup_epochs={repulsion_warmup_epochs}")
         logging.info(f"# dead_steps_threshold={dead_steps_threshold}")
         logging.info(f"# sae_normalization_eps={sae_normalization_eps}")
         logging.info(f"# batch_size={batch_size}")
@@ -643,6 +836,18 @@ def main() -> None:
         optimizer_eps=optimizer_eps,
         k_aux=k_aux,
         aux_loss_coeff=aux_loss_coeff,
+        dict_reg_coeff=dict_reg_coeff,
+        dict_reg_m_sample_size=dict_reg_m_sample_size,
+        dict_reg_every=dict_reg_every,
+        dict_reg_prior_std=dict_reg_prior_std,
+        dict_reg_scale_sqrt_d_model=dict_reg_scale_sqrt_d_model,
+        imq_alpha=imq_alpha,
+        imq_beta=imq_beta,
+        repulsion_coeff=repulsion_coeff,
+        repulsion_tau=repulsion_tau,
+        repulsion_sample_size=repulsion_sample_size,
+        repulsion_every_n_steps=repulsion_every_n_steps,
+        repulsion_warmup_epochs=repulsion_warmup_epochs,
         dead_steps_threshold=dead_steps_threshold,
         logs_per_epoch=logs_per_epoch,
         checkpoint_dir=args.checkpoint_dir,
