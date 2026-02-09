@@ -27,6 +27,9 @@ elif SAE_ARCHITECTURE == "sigregrepreg":
 elif SAE_ARCHITECTURE == "denseimq":
     logging.info("Using 'denseimq' SAE architecture from 'sae_exp11_dense'.")
     from sae_exp11_dense import load_sae_model, TopKSparseAutoencoder
+elif SAE_ARCHITECTURE == "denserepreg":
+    logging.info("Using 'denserepreg' SAE architecture from 'sae_dense_repreg'.")
+    from sae_dense_repreg import load_sae_model, TopKSparseAutoencoder
 elif SAE_ARCHITECTURE == "imq":
     logging.info("Using 'imq' SAE architecture from 'sae'.")
     from sae import load_sae_model, TopKSparseAutoencoder
