@@ -55,6 +55,11 @@ def train_epoch(
     optimizer: optim.AdamW,
     k_aux: int,
     aux_loss_coeff: float,
+    repulsion_coeff: float,
+    repulsion_tau: float,
+    repulsion_sample_size: int,
+    repulsion_every_n_steps: int,
+    repulsion_warmup_epochs: int,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     logs_per_epoch: int,
@@ -69,7 +74,10 @@ def train_epoch(
     # Initialize epoch log variables and helpers
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
+    rep_loss_acc = torch.tensor(0.0, device=device)
+    rep_loss_count = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+    dense_recon_norm_acc = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
     accumulated_loss_count = dist.get_world_size() * log_interval
 
@@ -88,7 +96,9 @@ def train_epoch(
 
         # Zero the gradients and perform forward pass
         optimizer.zero_grad()
-        reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+        reconstructed, h, h_sparse, reconstructed_dense = model.module.forward_1d_normalized(
+            batch_normalized,
+        )
 
         # Compute main loss in normalized space
         loss = criterion(reconstructed, batch_normalized)
@@ -111,8 +121,33 @@ def train_epoch(
             # If there are not enough dead latents to activate, set auxiliary loss to 0.
             aux_loss = torch.tensor(0.0, device=device)
 
+        # Calculate current repulsion coefficient based on epoch for scheduled warmup
+        current_repulsion_coeff = repulsion_coeff
+        if epoch < repulsion_warmup_epochs:
+            current_repulsion_coeff *= (epoch + 1) / repulsion_warmup_epochs  # epoch starts from 0, so +1
+
+        # ---- dictionary repulsion regularizer ----
+        dict_rep_loss = torch.tensor(0.0, device=device)
+        coh_max = 0.0
+        coh_mean = 0.0
+        if current_repulsion_coeff > 0 and repulsion_every_n_steps > 0:
+            if (batch_idx + 1) % repulsion_every_n_steps == 0:
+                dict_sample = model.module.sample_decoder_dictionary(repulsion_sample_size)  # [m, d_model]
+                dict_sample = dict_sample / (dict_sample.norm(dim=-1, keepdim=True) + 1e-8)
+
+                sim = torch.abs(dict_sample @ dict_sample.t())  # [m, m]
+                sim.fill_diagonal_(0.0)
+
+                # hinge version
+                dict_rep_loss = torch.relu(sim - repulsion_tau).pow(2).mean()
+                rep_loss_count += 1.0
+
+                with torch.no_grad():
+                    coh_max = sim.max().item()
+                    coh_mean = sim.sum().item() / (sim.numel() - sim.shape[0])
+
         # Compute total loss with auxiliary loss coefficient
-        total_loss = loss + aux_loss_coeff * aux_loss
+        total_loss = loss + aux_loss_coeff * aux_loss + current_repulsion_coeff * dict_rep_loss
 
         # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
         # and normalize the decoder weights again.
@@ -124,7 +159,9 @@ def train_epoch(
         # Accumulate losses
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
+        rep_loss_acc += dict_rep_loss.detach()
         total_loss_acc += total_loss.detach()
+        dense_recon_norm_acc += reconstructed_dense.detach().norm()
 
         # Update the progress bar on main process
         if rank == 0:
@@ -141,15 +178,25 @@ def train_epoch(
         if (batch_idx + 1) % log_interval == 0:
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(rep_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(rep_loss_count, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(dense_recon_norm_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
+            avg_rep_loss = (
+                rep_loss_acc.item() / rep_loss_count.item() if rep_loss_count.item() > 0 else 0.0
+            )
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
+            avg_dense_recon_norm = dense_recon_norm_acc.item() / accumulated_loss_count
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
+            rep_loss_acc = torch.tensor(0.0, device=device)
+            rep_loss_count = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
+            dense_recon_norm_acc = torch.tensor(0.0, device=device)
 
             # Determine dead latent debug statistics
             dead_latents_ratio = dead_latents / dead_mask.numel()
@@ -163,6 +210,11 @@ def train_epoch(
                         "train/loss": avg_loss,
                         "train/aux_loss": avg_aux_loss,
                         "train/total_loss": avg_total_loss,
+                        "train/dict_rep_loss": avg_rep_loss,
+                        "train/repulsion_coeff": current_repulsion_coeff,
+                        "debug/dense_recon_norm": avg_dense_recon_norm,
+                        "debug/dict_coherence_max": coh_max,
+                        "debug/dict_coherence_mean": coh_mean,
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
@@ -218,7 +270,7 @@ def validate_epoch(
             batch_normalized, mean, norm = model.module.preprocess_input(batch)
 
             # Perform forward pass
-            reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+            reconstructed, h, h_sparse, _ = model.module.forward_1d_normalized(batch_normalized)
 
             # Compute main loss in normalized space
             loss = criterion(reconstructed, batch_normalized)
@@ -289,6 +341,11 @@ def train_autoencoder(
     optimizer_eps: float,
     k_aux: int,
     aux_loss_coeff: float,
+    repulsion_coeff: float,
+    repulsion_tau: float,
+    repulsion_sample_size: int,
+    repulsion_every_n_steps: int,
+    repulsion_warmup_epochs: int,
     dead_steps_threshold: int,
     logs_per_epoch: int,
     checkpoint_dir: Path,
@@ -358,6 +415,11 @@ def train_autoencoder(
             optimizer=optimizer,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
+            repulsion_coeff=repulsion_coeff,
+            repulsion_tau=repulsion_tau,
+            repulsion_sample_size=repulsion_sample_size,
+            repulsion_every_n_steps=repulsion_every_n_steps,
+            repulsion_warmup_epochs=repulsion_warmup_epochs,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             logs_per_epoch=logs_per_epoch,
@@ -434,6 +496,11 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("--model_load_path", type=Path, default=None)
     parser.add_argument("--batch_size", type=int, default=1024)
     parser.add_argument("--checkpoint_dir", type=Path, default=Path("sae_checkpoints"))
+    parser.add_argument("--repreg_coeff", type=float, default=3e-4)
+    parser.add_argument("--repreg_tau", type=float, default=0.1)
+    parser.add_argument("--repreg_sample_size", type=int, default=1024)
+    parser.add_argument("--repreg_every", type=int, default=4)
+    parser.add_argument("--repreg_warmup_epochs", type=int, default=40)
     return parser.parse_args()
 
 
@@ -469,6 +536,11 @@ def main() -> None:
     k = 64
     k_aux = 2048
     aux_loss_coeff = 1 / 32
+    repulsion_coeff = args.repreg_coeff
+    repulsion_tau = args.repreg_tau
+    repulsion_sample_size = args.repreg_sample_size
+    repulsion_every_n_steps = args.repreg_every
+    repulsion_warmup_epochs = args.repreg_warmup_epochs
     dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
     sae_normalization_eps = 1e-6
     batch_size = args.batch_size
@@ -494,6 +566,11 @@ def main() -> None:
                 "k": k,
                 "k_aux": k_aux,
                 "aux_loss_coeff": aux_loss_coeff,
+                "repulsion_coeff": repulsion_coeff,
+                "repulsion_tau": repulsion_tau,
+                "repulsion_sample_size": repulsion_sample_size,
+                "repulsion_every_n_steps": repulsion_every_n_steps,
+                "repulsion_warmup_epochs": repulsion_warmup_epochs,
                 "dead_steps_threshold": dead_steps_threshold,
                 "sae_normalization_eps": sae_normalization_eps,
                 "batch_size": batch_size,
@@ -528,6 +605,11 @@ def main() -> None:
         logging.info(f"# k={k}")
         logging.info(f"# k_aux={k_aux}")
         logging.info(f"# aux_loss_coeff={aux_loss_coeff}")
+        logging.info(f"# repulsion_coeff={repulsion_coeff}")
+        logging.info(f"# repulsion_tau={repulsion_tau}")
+        logging.info(f"# repulsion_sample_size={repulsion_sample_size}")
+        logging.info(f"# repulsion_every_n_steps={repulsion_every_n_steps}")
+        logging.info(f"# repulsion_warmup_epochs={repulsion_warmup_epochs}")
         logging.info(f"# dead_steps_threshold={dead_steps_threshold}")
         logging.info(f"# sae_normalization_eps={sae_normalization_eps}")
         logging.info(f"# batch_size={batch_size}")
@@ -643,6 +725,11 @@ def main() -> None:
         optimizer_eps=optimizer_eps,
         k_aux=k_aux,
         aux_loss_coeff=aux_loss_coeff,
+        repulsion_coeff=repulsion_coeff,
+        repulsion_tau=repulsion_tau,
+        repulsion_sample_size=repulsion_sample_size,
+        repulsion_every_n_steps=repulsion_every_n_steps,
+        repulsion_warmup_epochs=repulsion_warmup_epochs,
         dead_steps_threshold=dead_steps_threshold,
         logs_per_epoch=logs_per_epoch,
         checkpoint_dir=args.checkpoint_dir,
