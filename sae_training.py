@@ -55,6 +55,10 @@ def train_epoch(
     optimizer: optim.AdamW,
     k_aux: int,
     aux_loss_coeff: float,
+    dict_reg_coeff: float,
+    dict_reg_m_sample_size: int,
+    dict_reg_every: int,
+    vmf_kappa: float,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     logs_per_epoch: int,
@@ -69,7 +73,10 @@ def train_epoch(
     # Initialize epoch log variables and helpers
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
+    dict_reg_loss_acc = torch.tensor(0.0, device=device)
+    dict_reg_loss_count = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+    dense_recon_norm_acc = torch.tensor(0.0, device=device)
     log_interval = len(dataloader) // logs_per_epoch
     accumulated_loss_count = dist.get_world_size() * log_interval
 
@@ -88,10 +95,30 @@ def train_epoch(
 
         # Zero the gradients and perform forward pass
         optimizer.zero_grad()
-        reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+        reconstructed, h, h_sparse, reconstructed_dense = model.module.forward_1d_normalized(batch_normalized)
 
         # Compute main loss in normalized space
         loss = criterion(reconstructed, batch_normalized)
+
+        dict_reg_loss = torch.tensor(0.0, device=device)
+        if (
+            dict_reg_coeff != 0.0
+            and dict_reg_m_sample_size >= 2
+            and dict_reg_every > 0
+            and (batch_idx % dict_reg_every == 0)
+        ):
+            dict_sample = model.module.get_decoder_dictionary_sample(dict_reg_m_sample_size).to(dtype)
+            dict_sample_norm = dict_sample / (torch.norm(dict_sample, dim=1, keepdim=True) + 1e-8)
+            cos_sim = torch.matmul(dict_sample_norm, dict_sample_norm.t())
+            triu = torch.triu_indices(
+                dict_reg_m_sample_size,
+                dict_reg_m_sample_size,
+                offset=1,
+                device=device,
+            )
+            pair_cos = cos_sim[triu[0], triu[1]]
+            dict_reg_loss = torch.mean(torch.exp(vmf_kappa * pair_cos))
+            dict_reg_loss_count += 1.0
 
         # If enough latents haven't been activated in more than dead_steps_threshold training steps then calculate an
         # auxiliary loss to help reactivate the latents.
@@ -112,7 +139,7 @@ def train_epoch(
             aux_loss = torch.tensor(0.0, device=device)
 
         # Compute total loss with auxiliary loss coefficient
-        total_loss = loss + aux_loss_coeff * aux_loss
+        total_loss = loss + aux_loss_coeff * aux_loss + dict_reg_coeff * dict_reg_loss
 
         # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
         # and normalize the decoder weights again.
@@ -124,7 +151,9 @@ def train_epoch(
         # Accumulate losses
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
+        dict_reg_loss_acc += dict_reg_loss.detach()
         total_loss_acc += total_loss.detach()
+        dense_recon_norm_acc += reconstructed_dense.detach().norm()
 
         # Update the progress bar on main process
         if rank == 0:
@@ -141,15 +170,43 @@ def train_epoch(
         if (batch_idx + 1) % log_interval == 0:
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(dict_reg_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(dict_reg_loss_count, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(dense_recon_norm_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
+            avg_dict_reg_loss = (
+                dict_reg_loss_acc.item() / dict_reg_loss_count.item()
+                if dict_reg_loss_count.item() > 0
+                else 0.0
+            )
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
+            avg_dense_recon_norm = dense_recon_norm_acc.item() / accumulated_loss_count
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
+            dict_reg_loss_acc = torch.tensor(0.0, device=device)
+            dict_reg_loss_count = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
+            dense_recon_norm_acc = torch.tensor(0.0, device=device)
+
+            with torch.no_grad():
+                coh_m = min(512, model.module.n_latents)
+                if coh_m >= 2:
+                    dict_sample_coh = model.module.get_decoder_dictionary_sample(coh_m).to(dtype)
+                    dict_sample_coh = dict_sample_coh / (
+                        torch.norm(dict_sample_coh, dim=1, keepdim=True) + 1e-8
+                    )
+                    cos_sim_abs = torch.abs(torch.matmul(dict_sample_coh, dict_sample_coh.t()))
+                    cos_sim_abs.fill_diagonal_(0)
+                    max_coherence = torch.max(cos_sim_abs).item()
+                    triu = torch.triu_indices(coh_m, coh_m, offset=1, device=device)
+                    mean_coherence = torch.mean(cos_sim_abs[triu[0], triu[1]]).item()
+                else:
+                    max_coherence = 0.0
+                    mean_coherence = 0.0
 
             # Determine dead latent debug statistics
             dead_latents_ratio = dead_latents / dead_mask.numel()
@@ -162,7 +219,11 @@ def train_epoch(
                     data={
                         "train/loss": avg_loss,
                         "train/aux_loss": avg_aux_loss,
+                        "train/dict_reg_loss": avg_dict_reg_loss,
                         "train/total_loss": avg_total_loss,
+                        "debug/dense_recon_norm": avg_dense_recon_norm,
+                        "debug/dict_coherence_max": max_coherence,
+                        "debug/dict_coherence_mean": mean_coherence,
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
@@ -172,6 +233,7 @@ def train_epoch(
                 progress_bar.set_postfix(
                     loss=f"{avg_loss:.6f}",
                     aux_loss=f"{avg_aux_loss:.6f}",
+                    dict_reg_loss=f"{avg_dict_reg_loss:.6f}",
                     total_loss=f"{avg_total_loss:.6f}",
                 )
 
@@ -218,7 +280,7 @@ def validate_epoch(
             batch_normalized, mean, norm = model.module.preprocess_input(batch)
 
             # Perform forward pass
-            reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+            reconstructed, h, h_sparse, _ = model.module.forward_1d_normalized(batch_normalized)
 
             # Compute main loss in normalized space
             loss = criterion(reconstructed, batch_normalized)
@@ -289,6 +351,10 @@ def train_autoencoder(
     optimizer_eps: float,
     k_aux: int,
     aux_loss_coeff: float,
+    dict_reg_coeff: float,
+    dict_reg_m_sample_size: int,
+    dict_reg_every: int,
+    vmf_kappa: float,
     dead_steps_threshold: int,
     logs_per_epoch: int,
     checkpoint_dir: Path,
@@ -358,6 +424,10 @@ def train_autoencoder(
             optimizer=optimizer,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
+            dict_reg_coeff=dict_reg_coeff,
+            dict_reg_m_sample_size=dict_reg_m_sample_size,
+            dict_reg_every=dict_reg_every,
+            vmf_kappa=vmf_kappa,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             logs_per_epoch=logs_per_epoch,
@@ -434,6 +504,10 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("--model_load_path", type=Path, default=None)
     parser.add_argument("--batch_size", type=int, default=1024)
     parser.add_argument("--checkpoint_dir", type=Path, default=Path("sae_checkpoints"))
+    parser.add_argument("--dict_reg_coeff", type=float, default=1e-3)
+    parser.add_argument("--dict_reg_m_sample_size", type=int, default=256)
+    parser.add_argument("--dict_reg_every", type=int, default=1)
+    parser.add_argument("--vmf_kappa", type=float, default=10.0)
     return parser.parse_args()
 
 
@@ -469,6 +543,10 @@ def main() -> None:
     k = 64
     k_aux = 2048
     aux_loss_coeff = 1 / 32
+    dict_reg_coeff = args.dict_reg_coeff
+    dict_reg_m_sample_size = args.dict_reg_m_sample_size
+    dict_reg_every = args.dict_reg_every
+    vmf_kappa = args.vmf_kappa
     dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
     sae_normalization_eps = 1e-6
     batch_size = args.batch_size
@@ -494,6 +572,10 @@ def main() -> None:
                 "k": k,
                 "k_aux": k_aux,
                 "aux_loss_coeff": aux_loss_coeff,
+                "dict_reg_coeff": dict_reg_coeff,
+                "dict_reg_m_sample_size": dict_reg_m_sample_size,
+                "dict_reg_every": dict_reg_every,
+                "vmf_kappa": vmf_kappa,
                 "dead_steps_threshold": dead_steps_threshold,
                 "sae_normalization_eps": sae_normalization_eps,
                 "batch_size": batch_size,
@@ -528,6 +610,10 @@ def main() -> None:
         logging.info(f"# k={k}")
         logging.info(f"# k_aux={k_aux}")
         logging.info(f"# aux_loss_coeff={aux_loss_coeff}")
+        logging.info(f"# dict_reg_coeff={dict_reg_coeff}")
+        logging.info(f"# dict_reg_m_sample_size={dict_reg_m_sample_size}")
+        logging.info(f"# dict_reg_every={dict_reg_every}")
+        logging.info(f"# vmf_kappa={vmf_kappa}")
         logging.info(f"# dead_steps_threshold={dead_steps_threshold}")
         logging.info(f"# sae_normalization_eps={sae_normalization_eps}")
         logging.info(f"# batch_size={batch_size}")
@@ -643,6 +729,10 @@ def main() -> None:
         optimizer_eps=optimizer_eps,
         k_aux=k_aux,
         aux_loss_coeff=aux_loss_coeff,
+        dict_reg_coeff=dict_reg_coeff,
+        dict_reg_m_sample_size=dict_reg_m_sample_size,
+        dict_reg_every=dict_reg_every,
+        vmf_kappa=vmf_kappa,
         dead_steps_threshold=dead_steps_threshold,
         logs_per_epoch=logs_per_epoch,
         checkpoint_dir=args.checkpoint_dir,

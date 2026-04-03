@@ -32,6 +32,10 @@ class TopKSparseAutoencoder(nn.Module):
         self.encoder = nn.Linear(d_model, n_latents, bias=True, dtype=dtype)
         self.decoder = nn.Linear(n_latents, d_model, bias=False, dtype=dtype)
 
+        # Low-rank dense channel used to absorb structured reconstruction residuals.
+        self.dense_down = nn.Linear(d_model, 1024, bias=False, dtype=dtype)
+        self.dense_up = nn.Linear(1024, d_model, bias=False, dtype=dtype)
+
         # Use orthogonal initialization for encoder to ensure well-distributed, independent directions and copy
         # the transposed encoder weights to decoder weights to ensure parallel initialization as per paper.
         nn.init.orthogonal_(self.encoder.weight)
@@ -85,7 +89,7 @@ class TopKSparseAutoencoder(nn.Module):
         x = x.reshape(-1, d_model)
 
         # Forward pass through model in normalized space
-        normalized_recon, h, _ = self.forward_1d_normalized(x)
+        normalized_recon, h, _, _ = self.forward_1d_normalized(x)
 
         # Reshape back to (batch_size, seq_len, d_model)
         normalized_recon = normalized_recon.reshape(batch_size, seq_len, -1)
@@ -97,13 +101,13 @@ class TopKSparseAutoencoder(nn.Module):
     def forward_1d_normalized(
         self,
         x: torch.Tensor,
-    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+    ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
         """
         :param x: input tensor of shape (batch_size, d_model)
         """
         # Subtract pre-bias and encode input
-        x = x - self.b_pre
-        h = self.encoder(x)
+        x_centered = x - self.b_pre
+        h = self.encoder(x_centered)
 
         if self.h_bias is not None:
             # 获取最大的4个值及其索引
@@ -122,10 +126,16 @@ class TopKSparseAutoencoder(nn.Module):
             non_zero_idx = torch.nonzero(self.h_bias).squeeze()
             logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
 
-        # Reconstruct input and latent representation with default k sparsity
-        reconstructed, h_sparse = self.decode_latent(h=h, k=self.k)
+        # Reconstruct from sparse path (in centered space).
+        reconstructed_sparse, h_sparse = self.decode_latent(h=h, k=self.k)
 
-        return reconstructed, h, h_sparse
+        # Reconstruct from dense path (in centered space).
+        reconstructed_dense = self.dense_up(self.dense_down(x_centered))
+
+        # Combine centered reconstructions and restore the shared pre-bias.
+        reconstructed = reconstructed_sparse + reconstructed_dense + self.b_pre
+
+        return reconstructed, h, h_sparse, reconstructed_dense
 
     def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
         """"""
@@ -134,8 +144,8 @@ class TopKSparseAutoencoder(nn.Module):
         topk_values, topk_indices = torch.topk(h, k=k, dim=-1)
         h_sparse = torch.zeros_like(h).scatter_(1, topk_indices, topk_values)
 
-        # Decode h_sparse and add pre-bias
-        reconstructed = self.decoder(h_sparse) + self.b_pre
+        # Decode h_sparse in centered space.
+        reconstructed = self.decoder(h_sparse)
 
         return reconstructed, h_sparse
 
@@ -147,6 +157,13 @@ class TopKSparseAutoencoder(nn.Module):
     def unset_latent_bias(self) -> None:
         """"""
         self.h_bias = None
+
+    def get_decoder_dictionary_sample(self, m: int) -> torch.Tensor:
+        """Randomly sample m decoder dictionary vectors (one per latent)."""
+        dictionary_vectors = self.decoder.weight.t()
+        num_latents = dictionary_vectors.shape[0]
+        indices = torch.randint(0, num_latents, (m,), device=dictionary_vectors.device)
+        return dictionary_vectors[indices]
 
 
 def load_sae_model(
