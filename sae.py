@@ -32,7 +32,7 @@ class TopKSparseAutoencoder(nn.Module):
         self.encoder = nn.Linear(d_model, n_latents, bias=True, dtype=dtype)
         self.decoder = nn.Linear(n_latents, d_model, bias=False, dtype=dtype)
 
-        # Low-rank dense channel used to absorb structured reconstruction residuals.
+        # Keep the Dense+Kernel architecture unchanged so this variant isolates dict-reg warmup timing.
         self.dense_down = nn.Linear(d_model, 1024, bias=False, dtype=dtype)
         self.dense_up = nn.Linear(1024, d_model, bias=False, dtype=dtype)
 
