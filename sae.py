@@ -24,20 +24,17 @@ class TopKSparseAutoencoder(nn.Module):
         self.normalize_eps = normalize_eps
         self.h_bias = None
 
-        # Initialize training data mean (or median) as shared trainable pre-bias Parameter for encoder and decoder
+        # Initialize training data mean (or median) as shared trainable pre-bias Parameter for encoder and decoder.
         self.b_pre = nn.Parameter(b_pre.to(dtype), requires_grad=True)
 
-        # Initialize encoder and decoder. The encoder has an additional bias term b_enc in addition to b_pre in the
-        # forward pass, whereas the decoder does not have a bias term.
+        # Sparse path.
         self.encoder = nn.Linear(d_model, n_latents, bias=True, dtype=dtype)
         self.decoder = nn.Linear(n_latents, d_model, bias=False, dtype=dtype)
 
-        # Low-rank dense channel used to absorb structured reconstruction residuals.
+        # Dense residual path reused from the Dense+Kernel line.
         self.dense_down = nn.Linear(d_model, 1024, bias=False, dtype=dtype)
         self.dense_up = nn.Linear(1024, d_model, bias=False, dtype=dtype)
 
-        # Use orthogonal initialization for encoder to ensure well-distributed, independent directions and copy
-        # the transposed encoder weights to decoder weights to ensure parallel initialization as per paper.
         nn.init.orthogonal_(self.encoder.weight)
         with torch.no_grad():
             self.decoder.weight.copy_(self.encoder.weight.t())
@@ -45,15 +42,13 @@ class TopKSparseAutoencoder(nn.Module):
         self.normalize_decoder_weights()
 
     def normalize_decoder_weights(self) -> None:
-        """Normalize the decoder weights to unit norm for each latent (corresponding to decoder columns)."""
+        """Normalize the decoder weights to unit norm for each latent."""
         with torch.no_grad():
             self.decoder.weight.div_(self.decoder.weight.norm(dim=1, keepdim=True))
 
     def project_decoder_grads(self):
-        """Project out gradient information parallel to dict vectors."""
+        """Project out gradient information parallel to dictionary vectors."""
         with torch.no_grad():
-            # Compute dot product of decoder weights and their grads, then subtract the projection from the grads
-            # in place to save memory
             proj = torch.sum(self.decoder.weight * self.decoder.weight.grad, dim=1, keepdim=True)
             self.decoder.weight.grad.sub_(proj * self.decoder.weight)
 
@@ -63,7 +58,6 @@ class TopKSparseAutoencoder(nn.Module):
         mean = x.mean(dim=-1, keepdim=True)
         norm = x.std(dim=-1, keepdim=True) + self.normalize_eps
         x = (x - mean) / norm
-
         return x, mean, norm
 
     @staticmethod
@@ -80,21 +74,15 @@ class TopKSparseAutoencoder(nn.Module):
         :param x: input tensor of shape (batch_size, seq_len, d_model)
         :return: reconstructed tensor of shape (batch_size, seq_len, d_model)
         """
-        # Store original dtype and preprocess input
         orig_dtype = x.dtype
         x, mean, norm = self.preprocess_input(x)
 
-        # Reshape to flatten batch and sequence dimensions
         batch_size, seq_len, d_model = x.shape
         x = x.reshape(-1, d_model)
 
-        # Forward pass through model in normalized space
         normalized_recon, h, _, _ = self.forward_1d_normalized(x)
-
-        # Reshape back to (batch_size, seq_len, d_model)
         normalized_recon = normalized_recon.reshape(batch_size, seq_len, -1)
 
-        # Postprocess output and return
         reconstructed = self.postprocess_output(normalized_recon, mean, norm).to(orig_dtype)
         return reconstructed
 
@@ -105,48 +93,36 @@ class TopKSparseAutoencoder(nn.Module):
         """
         :param x: input tensor of shape (batch_size, d_model)
         """
-        # Subtract pre-bias and encode input
         x_centered = x - self.b_pre
         h = self.encoder(x_centered)
 
         if self.h_bias is not None:
-            # 获取最大的4个值及其索引
             top_values, top_indices = torch.topk(h, k=4, dim=-1)
 
-            # 遍历每个样本的前4大值
             for batch_idx in range(top_indices.shape[0]):
                 for i in range(4):
                     latent_idx = top_indices[batch_idx, i].item()
                     value = top_values[batch_idx, i].item()
                     logging.info(
-                        f"Top {i+1} value: h[{batch_idx}, {latent_idx}] = {value:.2f}"
+                        f"Top {i + 1} value: h[{batch_idx}, {latent_idx}] = {value:.2f}"
                     )
 
             h = h + self.h_bias
             non_zero_idx = torch.nonzero(self.h_bias).squeeze()
             logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
 
-        # Reconstruct from sparse path (in centered space).
         reconstructed_sparse, h_sparse = self.decode_latent(h=h, k=self.k)
-
-        # Reconstruct from dense path (in centered space).
         reconstructed_dense = self.dense_up(self.dense_down(x_centered))
-
-        # Combine centered reconstructions and restore the shared pre-bias.
         reconstructed = reconstructed_sparse + reconstructed_dense + self.b_pre
 
         return reconstructed, h, h_sparse, reconstructed_dense
 
     def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
         """"""
-        # Apply TopK activation, Relu to guarantee positive topk vals and then build sparse representation
         h = torch.relu(h)
         topk_values, topk_indices = torch.topk(h, k=k, dim=-1)
         h_sparse = torch.zeros_like(h).scatter_(1, topk_indices, topk_values)
-
-        # Decode h_sparse in centered space.
         reconstructed = self.decoder(h_sparse)
-
         return reconstructed, h_sparse
 
     def set_latent_bias(self, h_bias: torch.Tensor) -> None:
@@ -158,12 +134,29 @@ class TopKSparseAutoencoder(nn.Module):
         """"""
         self.h_bias = None
 
-    def get_decoder_dictionary_sample(self, m: int) -> torch.Tensor:
-        """Randomly sample m decoder dictionary vectors (one per latent)."""
+    def get_decoder_dictionary_sample(
+        self,
+        m: int,
+        candidate_indices: torch.Tensor | None = None,
+    ) -> torch.Tensor:
+        """Randomly sample decoder dictionary vectors, optionally from a candidate latent subset."""
         dictionary_vectors = self.decoder.weight.t()
-        num_latents = dictionary_vectors.shape[0]
-        indices = torch.randint(0, num_latents, (m,), device=dictionary_vectors.device)
-        return dictionary_vectors[indices]
+        if candidate_indices is None:
+            num_latents = dictionary_vectors.shape[0]
+            indices = torch.randint(0, num_latents, (m,), device=dictionary_vectors.device)
+            return dictionary_vectors[indices]
+
+        if candidate_indices.numel() == 0:
+            raise ValueError("candidate_indices must not be empty when provided.")
+
+        sampled_positions = torch.randint(
+            0,
+            candidate_indices.numel(),
+            (m,),
+            device=dictionary_vectors.device,
+        )
+        sampled_indices = candidate_indices[sampled_positions]
+        return dictionary_vectors[sampled_indices]
 
 
 def load_sae_model(
