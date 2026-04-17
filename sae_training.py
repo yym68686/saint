@@ -1,7 +1,7 @@
+import argparse
+import logging
 import os
 import random
-import logging
-import argparse
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -32,7 +32,6 @@ def set_seed(seed: int):
 class TopKSparseAutoencoderDataset(Dataset):
     def __init__(self, data_dir: Path):
         """"""
-        # List and sort data files to ensure consistent order across processes
         self.data_files = list(data_dir.glob("*.pt"))
         self.data_files.sort()
 
@@ -44,6 +43,45 @@ class TopKSparseAutoencoderDataset(Dataset):
         """"""
         data = torch.load(self.data_files[idx], weights_only=True)
         return data
+
+
+def get_active_pool_size(
+    n_latents: int,
+    dict_reg_active_frac: float,
+    dict_reg_m_sample_size: int,
+) -> int:
+    """Compute how many latents are eligible for dictionary regularization."""
+    if dict_reg_active_frac <= 0.0 or dict_reg_active_frac >= 1.0:
+        return n_latents
+    pool_size = int(round(n_latents * dict_reg_active_frac))
+    pool_size = max(pool_size, dict_reg_m_sample_size)
+    pool_size = min(pool_size, n_latents)
+    return pool_size
+
+
+def update_latent_activity_ema(
+    latent_activity_ema: torch.Tensor,
+    h_sparse: torch.Tensor,
+    dict_reg_activity_decay: float,
+) -> None:
+    """Track recent latent activity using a cross-process EMA of TopK non-zero frequency."""
+    with torch.no_grad():
+        batch_activity = (h_sparse.detach() > 0).float().mean(dim=0)
+        dist.all_reduce(batch_activity, op=dist.ReduceOp.SUM)
+        batch_activity /= dist.get_world_size()
+        latent_activity_ema.mul_(dict_reg_activity_decay)
+        latent_activity_ema.add_(batch_activity, alpha=1.0 - dict_reg_activity_decay)
+
+
+def select_active_latent_indices(
+    latent_activity_ema: torch.Tensor,
+    active_pool_size: int,
+) -> torch.Tensor:
+    """Select the currently most active latent indices."""
+    if active_pool_size >= latent_activity_ema.numel():
+        return torch.arange(latent_activity_ema.numel(), device=latent_activity_ema.device)
+    _, active_indices = torch.topk(latent_activity_ema, k=active_pool_size, dim=0, largest=True)
+    return active_indices
 
 
 def train_epoch(
@@ -59,6 +97,9 @@ def train_epoch(
     dict_reg_m_sample_size: int,
     dict_reg_every: int,
     vmf_kappa: float,
+    latent_activity_ema: torch.Tensor,
+    dict_reg_active_pool_size: int,
+    dict_reg_activity_decay: float,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     logs_per_epoch: int,
@@ -67,20 +108,17 @@ def train_epoch(
     rank: int,
 ) -> None:
     """"""
-    # Set the model to train mode
     model.train()
 
-    # Initialize epoch log variables and helpers
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     dict_reg_loss_acc = torch.tensor(0.0, device=device)
     dict_reg_loss_count = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
     dense_recon_norm_acc = torch.tensor(0.0, device=device)
-    log_interval = len(dataloader) // logs_per_epoch
+    log_interval = max(1, len(dataloader) // logs_per_epoch)
     accumulated_loss_count = dist.get_world_size() * log_interval
 
-    # Create epoch progress bar on main process
     if rank == 0:
         progress_bar = tqdm(
             total=len(dataloader),
@@ -88,16 +126,19 @@ def train_epoch(
         )
 
     for batch_idx, batch in enumerate(dataloader):
-        # batch shape is [1, preprocessed_batch_size, d_model]. Squeeze to [preprocessed_batch_size, d_model] and
-        # cast to model dtype and device, then preprocess to normalize.
         batch = batch.squeeze(0).to(dtype).to(device)
         batch_normalized, mean, norm = model.module.preprocess_input(batch)
 
-        # Zero the gradients and perform forward pass
         optimizer.zero_grad()
         reconstructed, h, h_sparse, reconstructed_dense = model.module.forward_1d_normalized(batch_normalized)
 
-        # Compute main loss in normalized space
+        # Update activity tracking before selecting the dictionary vectors to regularize.
+        update_latent_activity_ema(
+            latent_activity_ema=latent_activity_ema,
+            h_sparse=h_sparse,
+            dict_reg_activity_decay=dict_reg_activity_decay,
+        )
+
         loss = criterion(reconstructed, batch_normalized)
 
         dict_reg_loss = torch.tensor(0.0, device=device)
@@ -107,7 +148,14 @@ def train_epoch(
             and dict_reg_every > 0
             and (batch_idx % dict_reg_every == 0)
         ):
-            dict_sample = model.module.get_decoder_dictionary_sample(dict_reg_m_sample_size).to(dtype)
+            active_latent_indices = select_active_latent_indices(
+                latent_activity_ema=latent_activity_ema,
+                active_pool_size=dict_reg_active_pool_size,
+            )
+            dict_sample = model.module.get_decoder_dictionary_sample(
+                dict_reg_m_sample_size,
+                candidate_indices=active_latent_indices,
+            ).to(dtype)
             dict_sample_norm = dict_sample / (torch.norm(dict_sample, dim=1, keepdim=True) + 1e-8)
             cos_sim = torch.matmul(dict_sample_norm, dict_sample_norm.t())
             triu = torch.triu_indices(
@@ -120,53 +168,37 @@ def train_epoch(
             dict_reg_loss = torch.mean(torch.exp(vmf_kappa * pair_cos))
             dict_reg_loss_count += 1.0
 
-        # If enough latents haven't been activated in more than dead_steps_threshold training steps then calculate an
-        # auxiliary loss to help reactivate the latents.
         dead_mask = latent_last_nonzero > dead_steps_threshold
         dead_latents = dead_mask.sum().item()
         if dead_latents >= k_aux:
-            # Calculate an auxiliary reconstruction with only dead latents and an additionaly amount (k_aux) of TopK
-            # filtered latents.
             h_masked = h * dead_mask
             reconstructed_aux, _ = model.module.decode_latent(h=h_masked, k=k_aux)
 
-            # Compute auxiliary loss as MSE between residual and the aux reconstruction to make dead latents explain
-            # what the main latents could not and thereby activate them again and make them useful again.
             residual = batch_normalized - reconstructed.detach()
             aux_loss = criterion(reconstructed_aux, residual)
         else:
-            # If there are not enough dead latents to activate, set auxiliary loss to 0.
             aux_loss = torch.tensor(0.0, device=device)
 
-        # Compute total loss with auxiliary loss coefficient
         total_loss = loss + aux_loss_coeff * aux_loss + dict_reg_coeff * dict_reg_loss
 
-        # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
-        # and normalize the decoder weights again.
         total_loss.backward()
         model.module.project_decoder_grads()
         optimizer.step()
         model.module.normalize_decoder_weights()
 
-        # Accumulate losses
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
         dict_reg_loss_acc += dict_reg_loss.detach()
         total_loss_acc += total_loss.detach()
         dense_recon_norm_acc += reconstructed_dense.detach().norm()
 
-        # Update the progress bar on main process
         if rank == 0:
             progress_bar.update(1)
 
-        # Update and blocking sync latent_last_zero at end of batch to not create a barrier mid batch processing.
-        # Take minimum in case a latent was activated in another process.
         latent_last_nonzero *= (h_sparse == 0).all(dim=0).long()
         latent_last_nonzero += 1
         dist.all_reduce(latent_last_nonzero, op=dist.ReduceOp.MIN)
 
-        # Gather and average losses across processes, reset them for next interval, determine dead latents and then
-        # log to wandb and tqdm
         if (batch_idx + 1) % log_interval == 0:
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
@@ -184,7 +216,6 @@ def train_epoch(
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
             avg_dense_recon_norm = dense_recon_norm_acc.item() / accumulated_loss_count
 
-            # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
             dict_reg_loss_acc = torch.tensor(0.0, device=device)
@@ -208,12 +239,13 @@ def train_epoch(
                     max_coherence = 0.0
                     mean_coherence = 0.0
 
-            # Determine dead latent debug statistics
             dead_latents_ratio = dead_latents / dead_mask.numel()
             max_dead_latent = latent_last_nonzero.max().item()
             max_dead_latent_count = (latent_last_nonzero == max_dead_latent).sum().item()
+            latent_activity_ema_mean = latent_activity_ema.mean().item()
+            latent_activity_ema_max = latent_activity_ema.max().item()
+            latent_activity_nonzero_ratio = (latent_activity_ema > 0).float().mean().item()
 
-            # Log to wandb and tqdm
             if rank == 0:
                 wandb.log(
                     data={
@@ -227,6 +259,11 @@ def train_epoch(
                         "debug/dead_latents_ratio": dead_latents_ratio,
                         "debug/max_dead_latent": max_dead_latent,
                         "debug/max_dead_latent_count": max_dead_latent_count,
+                        "debug/latent_activity_ema_mean": latent_activity_ema_mean,
+                        "debug/latent_activity_ema_max": latent_activity_ema_max,
+                        "debug/latent_activity_nonzero_ratio": latent_activity_nonzero_ratio,
+                        "debug/active_dict_pool_size": dict_reg_active_pool_size,
+                        "debug/active_dict_pool_ratio": dict_reg_active_pool_size / model.module.n_latents,
                     },
                     step=epoch * len(dataloader) + batch_idx + 1,
                 )
@@ -237,7 +274,6 @@ def train_epoch(
                     total_loss=f"{avg_total_loss:.6f}",
                 )
 
-    # Close the progress bar on main process
     if rank == 0:
         progress_bar.close()
 
@@ -257,15 +293,12 @@ def validate_epoch(
     rank: int,
 ) -> tuple[float, float, float]:
     """"""
-    # Set the model to eval mode
     model.eval()
 
-    # Initialize epoch log variables
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
 
-    # Create epoch progress bar on main process
     if rank == 0:
         progress_bar = tqdm(
             total=len(dataloader),
@@ -274,18 +307,12 @@ def validate_epoch(
 
     with torch.no_grad():
         for batch in dataloader:
-            # batch shape is [1, preprocessed_batch_size, d_model]. Squeeze to [preprocessed_batch_size, d_model] and
-            # cast to model dtype and device, then preprocess to normalize.
             batch = batch.squeeze(0).to(dtype).to(device)
             batch_normalized, mean, norm = model.module.preprocess_input(batch)
 
-            # Perform forward pass
             reconstructed, h, h_sparse, _ = model.module.forward_1d_normalized(batch_normalized)
-
-            # Compute main loss in normalized space
             loss = criterion(reconstructed, batch_normalized)
 
-            # Compute auxiliary loss if necessary
             dead_mask = latent_last_nonzero > dead_steps_threshold
             dead_latents = dead_mask.sum().item()
             if dead_latents >= k_aux:
@@ -296,23 +323,18 @@ def validate_epoch(
             else:
                 aux_loss = torch.tensor(0.0, device=device)
 
-            # Compute total loss with auxiliary loss coefficient
             total_loss = loss + aux_loss_coeff * aux_loss
 
-            # Accumulate losses
             loss_acc += loss.detach()
             aux_loss_acc += aux_loss.detach()
             total_loss_acc += total_loss.detach()
 
-            # Update the progress bar on main process
             if rank == 0:
                 progress_bar.update(1)
 
-    # Close the progress bar on main process
     if rank == 0:
         progress_bar.close()
 
-    # Gather and average losses across processes
     dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
@@ -322,11 +344,11 @@ def validate_epoch(
 
     return avg_loss, avg_aux_loss, avg_total_loss
 
+
 def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
     """清理旧的检查点，只保留最新的 N 个"""
     checkpoints = sorted(checkpoint_dir.glob("model_checkpoint_epoch-*.pth"))
 
-    # 处理 keep_last_n=0 的特殊情况（删除所有检查点）
     if keep_last_n == 0:
         to_delete = checkpoints
     else:
@@ -338,6 +360,39 @@ def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
             logging.info(f"Removed old checkpoint: {checkpoint}")
         except Exception as e:
             logging.error(f"Failed to remove checkpoint {checkpoint}: {e}")
+
+
+def format_float_for_name(value: float) -> str:
+    """Format float values into filename-friendly tokens."""
+    if value == 0:
+        token = "0"
+    elif abs(value) < 1e-2 or abs(value) >= 1e3:
+        token = f"{value:.0e}"
+    else:
+        token = f"{value:g}"
+    return token.replace("+", "").replace("-", "m").replace(".", "p")
+
+
+def build_run_name(
+    run_name: str | None,
+    dict_reg_coeff: float,
+    vmf_kappa: float,
+    dict_reg_active_frac: float,
+    dict_reg_activity_decay: float,
+) -> str:
+    if run_name is not None:
+        return run_name
+
+    timestamp = datetime.now(tz=UTC).strftime("%Y-%m-%d_%H-%M-%S")
+    coeff_token = format_float_for_name(dict_reg_coeff)
+    kappa_token = format_float_for_name(vmf_kappa)
+    active_token = format_float_for_name(dict_reg_active_frac)
+    decay_token = format_float_for_name(dict_reg_activity_decay)
+    return (
+        f"dense-kernel-active-2e-4_coeff-{coeff_token}"
+        f"_active-{active_token}_decay-{decay_token}_kappa-{kappa_token}_{timestamp}"
+    )
+
 
 def train_autoencoder(
     model: TopKSparseAutoencoder,
@@ -355,6 +410,8 @@ def train_autoencoder(
     dict_reg_m_sample_size: int,
     dict_reg_every: int,
     vmf_kappa: float,
+    dict_reg_active_pool_size: int,
+    dict_reg_activity_decay: float,
     dead_steps_threshold: int,
     logs_per_epoch: int,
     checkpoint_dir: Path,
@@ -367,16 +424,13 @@ def train_autoencoder(
     model = model.to(device)
     model = DistributedDataParallel(model)
 
-    # 新增参数量统计
     if rank == 0:
-        # 按层统计参数量
         layer_stats = {}
         for name, param in model.module.named_parameters():
-            layer_name = name.split('.')[0]  # 获取层名称（如encoder）
+            layer_name = name.split(".")[0]
             num_params = param.numel()
             layer_stats[layer_name] = layer_stats.get(layer_name, 0) + num_params
 
-        # 打印各层详细信息
         logging.info("各层参数量明细:")
         for layer, count in layer_stats.items():
             logging.info(f"{layer.ljust(15)}: {count:,}")
@@ -398,23 +452,19 @@ def train_autoencoder(
     if rank == 0:
         wandb.log(data={"learning_rate": learning_rate}, step=0)
 
-    # Initialize latent_last_nonzero tensor to keep track of the last non-zero step for each latent
     latent_last_nonzero = torch.zeros(model.module.n_latents, dtype=torch.long, device=device)
+    latent_activity_ema = torch.zeros(model.module.n_latents, dtype=torch.float32, device=device)
 
-    # Early stopping variables
     best_val_avg_total_loss = float("inf")
     patience_counter = 0
 
     logging.info("Starting training loop...")
     for epoch in range(num_epochs):
-        # Wait for all processes to synchronize
         dist.barrier()
 
-        # Set the epoch for the samplers
         train_dataloader.sampler.set_epoch(epoch)
         val_dataloader.sampler.set_epoch(epoch)
 
-        # Train an epoch
         train_epoch(
             epoch=epoch,
             num_epochs=num_epochs,
@@ -428,6 +478,9 @@ def train_autoencoder(
             dict_reg_m_sample_size=dict_reg_m_sample_size,
             dict_reg_every=dict_reg_every,
             vmf_kappa=vmf_kappa,
+            latent_activity_ema=latent_activity_ema,
+            dict_reg_active_pool_size=dict_reg_active_pool_size,
+            dict_reg_activity_decay=dict_reg_activity_decay,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             logs_per_epoch=logs_per_epoch,
@@ -436,7 +489,6 @@ def train_autoencoder(
             rank=rank,
         )
 
-        # Validate an epoch
         val_avg_loss, val_avg_aux_loss, val_avg_total_loss = validate_epoch(
             epoch=epoch,
             num_epochs=num_epochs,
@@ -452,11 +504,9 @@ def train_autoencoder(
             rank=rank,
         )
 
-        # Step the scheduler
         scheduler.step()
         updated_lr = scheduler.get_last_lr()[0]
 
-        # Log metrics in wandb and console and save checkpoint
         if rank == 0:
             wandb.log(
                 data={
@@ -477,17 +527,14 @@ def train_autoencoder(
             checkpoint_path = checkpoint_dir / f"model_checkpoint_epoch-{epoch + 1}.pth"
             torch.save(model.module.state_dict(), checkpoint_path)
             logging.info(f"Checkpoint saved to: {checkpoint_path}")
-            # 原来的代码里面没有这个函数
             cleanup_old_checkpoints(checkpoint_dir, keep_last_n=0)
 
-        # Early stopping check
         if val_avg_total_loss < best_val_avg_total_loss:
             best_val_avg_total_loss = val_avg_total_loss
             patience_counter = 0
         else:
             patience_counter += 1
 
-        # Check if early stopping criteria is met
         if patience_counter >= early_stopping_patience:
             logging.info(f"Early stopping triggered after {epoch + 1} epochs")
             break
@@ -504,17 +551,19 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("--model_load_path", type=Path, default=None)
     parser.add_argument("--batch_size", type=int, default=1024)
     parser.add_argument("--checkpoint_dir", type=Path, default=Path("sae_checkpoints"))
-    parser.add_argument("--dict_reg_coeff", type=float, default=1e-3)
+    parser.add_argument("--run_name", type=str, default=None)
+    parser.add_argument("--dict_reg_coeff", type=float, default=2e-4)
     parser.add_argument("--dict_reg_m_sample_size", type=int, default=256)
     parser.add_argument("--dict_reg_every", type=int, default=1)
     parser.add_argument("--vmf_kappa", type=float, default=10.0)
+    parser.add_argument("--dict_reg_active_frac", type=float, default=0.1)
+    parser.add_argument("--dict_reg_activity_decay", type=float, default=0.99)
     return parser.parse_args()
 
 
 def main() -> None:
     """"""
     set_seed(42)
-    # Initialize distributed process group
     dist.init_process_group(backend="nccl")
     world_size = dist.get_world_size()
     rank = dist.get_rank()
@@ -528,7 +577,6 @@ def main() -> None:
         datefmt="%Y-%m-%d %H:%M:%S",
     )
 
-    # Parse arguments and set up paths
     args = parse_arguments()
     args.data_dir = args.data_dir.resolve()
     args.b_pre_path = args.b_pre_path.resolve()
@@ -537,9 +585,8 @@ def main() -> None:
     if args.model_load_path:
         args.model_load_path = args.model_load_path.resolve()
 
-    # Set up configuration
     d_model = 3072
-    n_latents = 2**16  # 65536
+    n_latents = 2**16
     k = 64
     k_aux = 2048
     aux_loss_coeff = 1 / 32
@@ -547,11 +594,25 @@ def main() -> None:
     dict_reg_m_sample_size = args.dict_reg_m_sample_size
     dict_reg_every = args.dict_reg_every
     vmf_kappa = args.vmf_kappa
-    dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
+    dict_reg_active_frac = args.dict_reg_active_frac
+    dict_reg_activity_decay = args.dict_reg_activity_decay
+    dict_reg_active_pool_size = get_active_pool_size(
+        n_latents=n_latents,
+        dict_reg_active_frac=dict_reg_active_frac,
+        dict_reg_m_sample_size=dict_reg_m_sample_size,
+    )
+    run_name = build_run_name(
+        args.run_name,
+        dict_reg_coeff,
+        vmf_kappa,
+        dict_reg_active_frac,
+        dict_reg_activity_decay,
+    )
+    dead_steps_threshold = 626
     sae_normalization_eps = 1e-6
     batch_size = args.batch_size
     num_epochs = 200
-    early_stopping_patience = 10  # disabled
+    early_stopping_patience = 10
     learning_rate = 5e-5
     learning_rate_min = learning_rate / 5
     optimizer_betas = (0.85, 0.9999)
@@ -566,7 +627,9 @@ def main() -> None:
         wandb.login()
         wandb.init(
             project="llama3_interpretability_sae",
+            name=run_name,
             config={
+                "experiment_variant": "dense-kernel-active-2e-4",
                 "d_model": d_model,
                 "n_latents": n_latents,
                 "k": k,
@@ -576,6 +639,9 @@ def main() -> None:
                 "dict_reg_m_sample_size": dict_reg_m_sample_size,
                 "dict_reg_every": dict_reg_every,
                 "vmf_kappa": vmf_kappa,
+                "dict_reg_active_frac": dict_reg_active_frac,
+                "dict_reg_activity_decay": dict_reg_activity_decay,
+                "dict_reg_active_pool_size": dict_reg_active_pool_size,
                 "dead_steps_threshold": dead_steps_threshold,
                 "sae_normalization_eps": sae_normalization_eps,
                 "batch_size": batch_size,
@@ -600,6 +666,7 @@ def main() -> None:
         logging.info(f"# model_save_path={args.model_save_path}")
         logging.info(f"# model_load_path={args.model_load_path}")
         logging.info(f"# checkpoint_dir={args.checkpoint_dir}")
+        logging.info(f"# run_name={run_name}")
         logging.info("#### Distributed Configuration:")
         logging.info(f"# world_size={world_size}")
         logging.info(f"# rank={rank}")
@@ -614,6 +681,9 @@ def main() -> None:
         logging.info(f"# dict_reg_m_sample_size={dict_reg_m_sample_size}")
         logging.info(f"# dict_reg_every={dict_reg_every}")
         logging.info(f"# vmf_kappa={vmf_kappa}")
+        logging.info(f"# dict_reg_active_frac={dict_reg_active_frac}")
+        logging.info(f"# dict_reg_activity_decay={dict_reg_activity_decay}")
+        logging.info(f"# dict_reg_active_pool_size={dict_reg_active_pool_size}")
         logging.info(f"# dead_steps_threshold={dead_steps_threshold}")
         logging.info(f"# sae_normalization_eps={sae_normalization_eps}")
         logging.info(f"# batch_size={batch_size}")
@@ -628,8 +698,6 @@ def main() -> None:
         logging.info(f"# logs_per_epoch={logs_per_epoch}")
         logging.info(f"# train_val_split={train_val_split}")
 
-        # Create a new directory for the checkpoints
-        run_name = datetime.now(tz=UTC).strftime("run_%Y-%m-%d_%H-%M-%S")
         args.checkpoint_dir = args.checkpoint_dir / run_name
         args.checkpoint_dir.mkdir(parents=True, exist_ok=True)
         logging.info(f"Checkpoints will be saved to: {args.checkpoint_dir}")
@@ -642,7 +710,6 @@ def main() -> None:
     assert b_pre.shape == (d_model,), \
         f"b_pre shape mismatch. Expected {(d_model,)}, got {b_pre.shape}"
 
-    # Initialize the model
     logging.info("Initializing Sparse Autoencoder model...")
     model = TopKSparseAutoencoder(
         d_model=d_model,
@@ -693,7 +760,6 @@ def main() -> None:
         shuffle=False,
         seed=42,
     )
-    # Set batch_size to 1 in dataloader since data is already batched in preprocessing
     train_dataloader = DataLoader(
         train_dataset,
         batch_size=1,
@@ -733,6 +799,8 @@ def main() -> None:
         dict_reg_m_sample_size=dict_reg_m_sample_size,
         dict_reg_every=dict_reg_every,
         vmf_kappa=vmf_kappa,
+        dict_reg_active_pool_size=dict_reg_active_pool_size,
+        dict_reg_activity_decay=dict_reg_activity_decay,
         dead_steps_threshold=dead_steps_threshold,
         logs_per_epoch=logs_per_epoch,
         checkpoint_dir=args.checkpoint_dir,
@@ -741,7 +809,6 @@ def main() -> None:
         rank=rank,
     )
 
-    # Save the model only on the main process
     if rank == 0:
         torch.save(trained_model.state_dict(), args.model_save_path)
         logging.info(f"Trained model saved to {args.model_save_path}")
@@ -750,7 +817,6 @@ def main() -> None:
         logging.info("Finishing wandb run and saving trained model...")
         wandb.finish()
 
-    # Clean up the process group
     dist.destroy_process_group()
     logging.info("FIN.")
 
