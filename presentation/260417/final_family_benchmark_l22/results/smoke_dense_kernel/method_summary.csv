@@ -1,0 +1,3 @@
+method,method_label,candidate_feature_count,coverage_count,coverage_rate,covered_quality_all_budgets,covered_quality_strict,fcos_all_budgets,fcos_strict,mean_evaluation_auc
+dense,PLRDC SAE,3,2,1.0,0.7889791803087294,0.7663690476190477,0.7889791803087294,0.7663690476190477,0.9487666666666666
+kernel,SUR SAE,2,2,1.0,0.7795506319811876,0.736532738095238,0.7795506319811876,0.736532738095238,0.9367916666666667

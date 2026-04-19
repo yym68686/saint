@@ -1,0 +1,16 @@
+family_id,method,method_label,budget,target_threshold,valid_controller_count
+aviation_aerospace,kernel,SUR SAE,0.02,0.1,0
+china,kernel,SUR SAE,0.02,0.1,1
+combat_sports,kernel,SUR SAE,0.02,0.1,0
+crypto_blockchain,kernel,SUR SAE,0.02,0.1,0
+gaming_general,kernel,SUR SAE,0.02,0.1,2
+japan,kernel,SUR SAE,0.02,0.1,0
+middle_east_geopolitics,kernel,SUR SAE,0.02,0.1,1
+mlb_baseball,kernel,SUR SAE,0.02,0.1,0
+nba_basketball,kernel,SUR SAE,0.02,0.1,0
+nfl_football,kernel,SUR SAE,0.02,0.1,1
+nhl_hockey,kernel,SUR SAE,0.02,0.1,0
+russia_post_soviet,kernel,SUR SAE,0.02,0.1,0
+soccer,kernel,SUR SAE,0.02,0.1,1
+us_electoral_politics,kernel,SUR SAE,0.02,0.1,1
+us_legislative_governance,kernel,SUR SAE,0.02,0.1,1

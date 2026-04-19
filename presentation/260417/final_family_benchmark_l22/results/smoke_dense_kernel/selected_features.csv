@@ -1,0 +1,5 @@
+family_id,method,method_label,selected_feature_index,selection_auc,selection_target_reject_mean,selection_target_reject_strict,certainty,candidate_feature_count,display_name,category,experiment_id
+china,kernel,SUR SAE,7984,0.9928125,0.9083333333333333,0.8625,0.98,1,China,geography_and_politics,idea5-kernel
+china,dense,PLRDC SAE,11780,0.99078125,0.8916666666666666,0.8375,0.98,1,China,geography_and_politics,idea1-dense-success
+soccer,kernel,SUR SAE,40102,0.88234375,0.6583333333333333,0.65,1.0,1,Soccer / Association Football,sports_and_games,idea5-kernel
+soccer,dense,PLRDC SAE,27807,0.950703125,0.8416666666666668,0.8,1.0,2,Soccer / Association Football,sports_and_games,idea1-dense-success

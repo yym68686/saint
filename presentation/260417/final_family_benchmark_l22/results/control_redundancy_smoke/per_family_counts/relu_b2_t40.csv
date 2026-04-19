@@ -1,0 +1,16 @@
+family_id,method,method_label,budget,target_threshold,valid_controller_count
+aviation_aerospace,relu,ReLU SAE,0.02,0.4,0
+china,relu,ReLU SAE,0.02,0.4,1
+combat_sports,relu,ReLU SAE,0.02,0.4,0
+crypto_blockchain,relu,ReLU SAE,0.02,0.4,1
+gaming_general,relu,ReLU SAE,0.02,0.4,1
+japan,relu,ReLU SAE,0.02,0.4,0
+middle_east_geopolitics,relu,ReLU SAE,0.02,0.4,0
+mlb_baseball,relu,ReLU SAE,0.02,0.4,0
+nba_basketball,relu,ReLU SAE,0.02,0.4,0
+nfl_football,relu,ReLU SAE,0.02,0.4,1
+nhl_hockey,relu,ReLU SAE,0.02,0.4,0
+russia_post_soviet,relu,ReLU SAE,0.02,0.4,0
+soccer,relu,ReLU SAE,0.02,0.4,1
+us_electoral_politics,relu,ReLU SAE,0.02,0.4,0
+us_legislative_governance,relu,ReLU SAE,0.02,0.4,0

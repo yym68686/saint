@@ -1,0 +1,45 @@
+{
+  "budgets": [
+    0.02,
+    0.05,
+    0.1
+  ],
+  "strict_budgets": [
+    0.02,
+    0.05
+  ],
+  "seed": 42,
+  "layer_idx": 22,
+  "method_order": [
+    "kernel",
+    "dense"
+  ],
+  "families": [
+    "china",
+    "soccer"
+  ],
+  "unique_text_count": 2567,
+  "split_counts": {
+    "china": {
+      "selection_target": 40,
+      "selection_control": 160,
+      "calibration_control": 500,
+      "evaluation_target": 120,
+      "evaluation_control": 500
+    },
+    "soccer": {
+      "selection_target": 40,
+      "selection_control": 160,
+      "calibration_control": 500,
+      "evaluation_target": 120,
+      "evaluation_control": 500
+    }
+  },
+  "batch_count": 644,
+  "max_batch_size": 4,
+  "max_batch_tokens": 384,
+  "max_token_length": 192,
+  "weights_dir": "/root/saint",
+  "llama_model_dir": "/root/saint/llama_3.2-3B_model/original",
+  "text_pool_sha1": "4ede4424a750df03b4bec87cdd1a4ea302e90b61"
+}

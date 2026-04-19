@@ -1,0 +1,5 @@
+family_id,method,method_label,covered,selected_feature_index,selection_auc,selection_target_reject_mean,selection_target_reject_strict,evaluation_auc,family_quality_all,family_quality_strict,candidate_feature_count
+china,kernel,SUR SAE,yes,7984,0.9928125,0.9083333333333333,0.8625,0.9801333333333333,0.9222222222222222,0.8958333333333333,1
+china,dense,PLRDC SAE,yes,11780,0.99078125,0.8916666666666666,0.8375,0.9737333333333333,0.889937106918239,0.875,1
+soccer,kernel,SUR SAE,yes,40102,0.88234375,0.6583333333333333,0.65,0.89345,0.6368790417401529,0.5772321428571429,1
+soccer,dense,PLRDC SAE,yes,27807,0.950703125,0.8416666666666668,0.8,0.9238,0.6880212536992198,0.6577380952380952,2
