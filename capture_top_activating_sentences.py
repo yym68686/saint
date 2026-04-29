@@ -1,5 +1,6 @@
 import argparse
 import logging
+import os
 from collections import defaultdict
 from pathlib import Path
 
@@ -8,16 +9,17 @@ import yaml
 from torch.utils.data import DataLoader, Dataset
 from tqdm import tqdm
 
-from sae import TopKSparseAutoencoder, load_sae_model
+from sae import TokenizedSparseAutoencoder, load_sae_model
 from utils.cuda_utils import set_up_cuda
 
 
 class SequenceActivationDataset(Dataset):
-    def __init__(self, data_dir: Path, filename_prefix: str):
+    def __init__(self, data_dir: Path, filename_prefix: str, token_ids_dir: Path | None = None):
         self.data_files = list(data_dir.rglob("*.pt"))
         # self.data_files.sort()
         self.data_files.sort(key=lambda x: int(x.stem[len(filename_prefix):]))
         self.filename_prefix = filename_prefix
+        self.token_ids_dir = token_ids_dir
 
         # assert that data indices are continuous and starting at 0
         assert self.data_files[0].stem[len(self.filename_prefix) :] == "0"
@@ -28,20 +30,29 @@ class SequenceActivationDataset(Dataset):
     def __len__(self) -> int:
         return len(self.data_files)
 
-    def __getitem__(self, idx: int) -> tuple[torch.Tensor, int]:
+    def __getitem__(self, idx: int) -> tuple[torch.Tensor, torch.Tensor | None, int]:
         file_path = self.data_files[idx]
         filename_idx = int(file_path.stem[len(self.filename_prefix) :])
         assert filename_idx == idx
 
         data = torch.load(file_path, weights_only=True)
-        return data, idx
+        token_ids = None
+        if self.token_ids_dir is not None:
+            token_ids_path = self.token_ids_dir / f"token_ids_idx{filename_idx}.pt"
+            token_ids = torch.load(token_ids_path, weights_only=True).long()
+            if token_ids.shape[0] != data.shape[0]:
+                raise ValueError(
+                    f"Token length mismatch for idx={filename_idx}: "
+                    f"activations={data.shape[0]}, token_ids={token_ids.shape[0]}"
+                )
+        return data, token_ids, idx
 
     @staticmethod
     def collate_fn(
-        batch: list[tuple[torch.Tensor, int]],
-    ) -> tuple[torch.Tensor, list[int], list[int]]:
+        batch: list[tuple[torch.Tensor, torch.Tensor | None, int]],
+    ) -> tuple[torch.Tensor, torch.Tensor | None, list[int], list[int]]:
         """"""
-        sequences, indices = zip(*batch, strict=False)
+        sequences, token_sequences, indices = zip(*batch, strict=False)
 
         # Calculate cumulative sequence lengths for boundaries
         seq_lengths = [seq.size(0) for seq in sequences]
@@ -53,8 +64,23 @@ class SequenceActivationDataset(Dataset):
 
         # Stack all sequences along seq_len dimension
         stacked_sequences = torch.cat(sequences, dim=0)
+        stacked_token_ids = None
+        if token_sequences[0] is not None:
+            stacked_token_ids = torch.cat(token_sequences, dim=0)
 
-        return stacked_sequences, boundaries, list(indices)
+        return stacked_sequences, stacked_token_ids, boundaries, list(indices)
+
+
+def resolve_default_token_ids_dir(layer: int) -> Path | None:
+    env_path = os.environ.get("TOKENIZED_SAE_TOKEN_IDS_DIR")
+    candidates = []
+    if env_path:
+        candidates.append(Path(env_path))
+    candidates.append(Path(f"/root/lanyun-fs/tokenizedsae_l22_sidecar/raw_token_ids/layer_{layer}"))
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+    return None
 
 
 def update_top_sentences_dict(
@@ -79,7 +105,7 @@ def update_top_sentences_dict(
 
 
 def capture_top_activating_sentences(
-    model: TopKSparseAutoencoder,
+    model: TokenizedSparseAutoencoder,
     dataloader: DataLoader,
     top_n_sentences: int,
     dtype: torch.dtype,
@@ -92,13 +118,25 @@ def capture_top_activating_sentences(
     top_sentences_last = defaultdict(list)
 
     # Start inference loop for top activating sentence capture
-    for batch, boundaries, indices in tqdm(dataloader):
+    needs_token_ids = hasattr(model, "token_lookup")
+
+    for batch, token_ids, boundaries, indices in tqdm(dataloader):
         batch = batch.to(dtype).to(device)
+        if token_ids is not None:
+            token_ids = token_ids.to(device)
+        elif needs_token_ids:
+            raise ValueError(
+                "Tokenized SAE requires token_ids. Provide --token_ids_dir or set "
+                "TOKENIZED_SAE_TOKEN_IDS_DIR."
+            )
 
         # Forward pass through the model
         batch_normalized, mean, norm = model.preprocess_input(batch)
         with torch.no_grad():
-            _, _, h_sparse = model.forward_1d_normalized(batch_normalized)
+            if needs_token_ids:
+                _, _, h_sparse = model.forward_1d_normalized(batch_normalized, token_ids)
+            else:
+                _, _, h_sparse = model.forward_1d_normalized(batch_normalized)
 
         # Unbatch the h_sparse tensor into sequences using the predetermined boundaries
         sequence_h_sparse = []
@@ -155,6 +193,7 @@ def parse_arguments():
     parser.add_argument("--data_dir", type=Path, required=True)
     parser.add_argument("--model_path", type=Path, required=True)
     parser.add_argument("--captured_data_output_dir", type=Path, required=True)
+    parser.add_argument("--token_ids_dir", type=Path, default=None)
     parser.add_argument(
         "--layer", type=int, default=22, help="The layer to process activations from."
     )
@@ -174,6 +213,8 @@ def main():
     args.data_dir = args.data_dir.resolve()
     args.model_path = args.model_path.resolve()
     args.captured_data_output_dir = args.captured_data_output_dir.resolve()
+    if args.token_ids_dir is not None:
+        args.token_ids_dir = args.token_ids_dir.resolve()
     set_up_cuda()
 
     # Set up configuration
@@ -192,6 +233,7 @@ def main():
     logging.info(f"# data_dir={args.data_dir}")
     logging.info(f"# model_path={args.model_path}")
     logging.info(f"# captured_data_output_dir={args.captured_data_output_dir}")
+    logging.info(f"# token_ids_dir={args.token_ids_dir}")
     logging.info(f"# layer={args.layer}")
     logging.info("#### Configuration:")
     logging.info(f"# top_n_sentences: {top_n_sentences}")
@@ -213,10 +255,15 @@ def main():
         dtype=dtype,
     )
 
+    if args.token_ids_dir is None and hasattr(model, "token_lookup"):
+        args.token_ids_dir = resolve_default_token_ids_dir(layer)
+        logging.info("# resolved_token_ids_dir=%s", args.token_ids_dir)
+
     logging.info("Creating SequenceActivation Dataset and Dataloader...")
     dataset = SequenceActivationDataset(
         data_dir=args.data_dir,
         filename_prefix=filename_prefix,
+        token_ids_dir=args.token_ids_dir,
     )
     dataloader = DataLoader(
         dataset,
