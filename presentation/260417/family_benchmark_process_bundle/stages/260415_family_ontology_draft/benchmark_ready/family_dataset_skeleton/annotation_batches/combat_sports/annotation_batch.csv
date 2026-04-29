@@ -1,0 +1,403 @@
+candidate_id,family_id,proposed_bucket,source_row_index,text,matched_query_blocks,matched_terms,matched_family_ids,final_label,keep_for_benchmark,label_confidence,primary_reason,exclusion_trigger,notes
+cb61a4bfd8b8b19e,combat_sports,positive,346995,"This title fight will be the second championship fight on the card, as Brandon Vera will defend his heavyweight title against Hideki Sekine in the main event, according to the promotion Tuesday.",fighter_entities;promotion_anchor,heavyweight;main event;title fight,combat_sports,,,,,,
+4017a3019bcba711,combat_sports,positive,392613,"In the main event, Makabe and Honma defeated IWGP Tag Team Champions Ishii and Yano in a non-title match.",fighter_entities,main event,combat_sports,,,,,,
+33e074ce0df1c4d0,combat_sports,positive,229820,"The race that will decide if I go to the worlds this year in my main event is occurring on the 14/15th June, this weekend.",fighter_entities,main event,combat_sports,,,,,,
+009ceac197e9657d,combat_sports,positive,59397,"Despite one budding women’s division in the UFC and a second on the way, three of the most-talked-about female fighters in the sport don’t fight in the octagon.",fighter_entities;promotion_anchor,octagon;ufc,combat_sports,,,,,,
+1b0ce1a99ce87f73,combat_sports,positive,298372,"On November 6th, Bellator 145 – VENGEANCE was held at the Scottrade Center St. Louis, Missouri.",promotion_anchor,bellator,combat_sports,,,,,,
+dd21c7c89e0a7abf,combat_sports,positive,544313,It's not perfect but it's a giant leap from what the submission process used to be.,training_and_matchmaking,submission,combat_sports,,,,,,
+bfe6968836547e25,combat_sports,positive,352044,"MONTREAL
+
+UFC president Dana White has caused quite the stir among fans in recent days by saying that he didn’t think Georges St-Pierre would fight again, but that’s an opinion not shared by the fighter himself.",promotion_anchor,ufc,combat_sports,,,,,,
+5983dcba982ab5f8,combat_sports,positive,324607,"In rural areas, such as the Tsumadinsky District from which UFC lightweight Khabib Nurmagomedov hails, unemployment is as high as a shocking eighty percent.",promotion_anchor,ufc,combat_sports,,,,,,
+67ea10f27dc2ef60,combat_sports,positive,17223,"U-shaped blocks or knockout blocks with notches to allow the construction of bond beams or lintel assemblies, using horizontal reinforcing grouted into place in the cavity.",fighter_entities,knockout,combat_sports,,,,,,
+86a2edd873936928,combat_sports,positive,470987,This VR boxing experience burned a whopping 851 calories in an hour and rocketed Stanton’s heart rate up to 144 bpm.,promotion_anchor,boxing,combat_sports,,,,,,
+d59e55d9986fc7ec,combat_sports,positive,117968,"This week is chock full of good news with lots of exciting announcements coming out of The North American Bitcoin Conference in Chicago, MMA fighter Phil Baroni will sponsor bitcoin on SpikeTV, and a lot more.",promotion_anchor,mma,combat_sports,,,,,,
+bc1bb7a3367f6db4,combat_sports,positive,271877,"Submission to the Pharmacy Council of New Zealand (New Zealand Medical Association)
+
+The Pharmacy Guild
+
+The Pharmacy Guild represents pharmacy owners in New Zealand.",training_and_matchmaking,submission,combat_sports,,,,,,
+eb71dbfcbaae7caa,combat_sports,positive,433958,"Despite that he is still one of the legends of the sport and a fan favorite, which ensures that he is still handsomely rewarded for his battles in the octagon.",fighter_entities,octagon,combat_sports,,,,,,
+1c8e750b3de39967,combat_sports,positive,128060,"The following week I interviewed Labour’s other heavyweight, Robin Cook, who’d been ordered to wear “autumnal-coloured” shirts and ties, and trim his beard, to prove he wasn’t a red garden gnome but, in a decent light, a bit of a hunk.",promotion_anchor,heavyweight,combat_sports,,,,,,
+a97cbf331defe94a,combat_sports,positive,49515,"Mark Hunt, never one to shy away from a big opportunity, wasted no time accepting a dream opportunity to fight for UFC gold.",promotion_anchor,ufc,combat_sports,,,,,,
+4ec5c06de1bd0fe8,combat_sports,positive,328681,"Edgar doesn’t know if telling the UFC brass he’s ready and deserving of another title fight will make a difference, but he’s positive he’ll be ready if and when it comes.",promotion_anchor,title fight;ufc,combat_sports,,,,,,
+10391a448ec71225,combat_sports,positive,206330,Update: Bellator has announced the signing of Davis.,promotion_anchor,bellator,combat_sports,,,,,,
+23c3536d10a51f9e,combat_sports,positive,232740,"The order ends with this sentence, which comes close to suggesting that using a forged document would be fine: ""AF Holdings’ submission of the agreements with Cooper’s signatures—legitimate or not, authorized or not—to evince the transfer of the copyrights to AF Holdings did not amount to a fraud on the Court.""",training_and_matchmaking,submission,combat_sports,,,,,,
+c4fa6d1fa62d5fb4,combat_sports,positive,423279,"The California State Athletic Commission (CSAC) has suspended the license of Mixed Martial Arts (MMA) fighter Chael Sonnen, after Sonnen tested positive for steroids, a banned substance.",promotion_anchor,mma,combat_sports,,,,,,
+3d24a150b00d6d22,combat_sports,positive,460184,"(Photo: The Canadian Press/Darryl Dyck)
+
+In its submission to the province, the OPSEU argued that the government wouldn’t be able to save much money by replacing some existing programs with a basic income.",training_and_matchmaking,submission,combat_sports,,,,,,
+5f56e4858b72d96a,combat_sports,positive,271798,"Along with five other doctors, he has written a submission to the Pharmacy Council opposing the change.",training_and_matchmaking,submission,combat_sports,,,,,,
+d2a9bb3b033b94b7,combat_sports,positive,433952,"Though historically not considered one of the promotions biggest Pay Per View draws, Silva’s status as one of the top three pound for pound fighters in the sport, and currently holding the record for most consecutive UFC wins (10), the Brazilian is undoubtedly worth every penny he earns.",promotion_anchor,ufc,combat_sports,,,,,,
+da9c5adbc7c1471c,combat_sports,positive,49537,"###
+
+About the Ultimate Fighting Championship®
+
+Owned and operated by Zuffa, LLC, the Ultimate Fighting Championship (UFC®) is the premier mixed martial arts (MMA) organization and largest pay-per-view event provider in the world.",fighter_entities;promotion_anchor,mma;pay-per-view;ufc,combat_sports,,,,,,
+bda8e57ffd94d8c5,combat_sports,positive,228871,"Matchmaking Improvements
+
+This month also brings major improvements to your matchmaking experience in Gears of War 4!",training_and_matchmaking,matchmaking,combat_sports,,,,,,
+cc2c201c3e414eaf,combat_sports,positive,446360,"is a vSport - a unique physical sport only possible in virtual reality, in which players compete in fast-paced, full-body VR gameplay and connect in an online community.• Compete online in one-on-one multiplayer matches against friends or via matchmaking• Practice your skills by testing yourself in single-player challenges and trials• Customize your avatar with a wide variety of visually striking and attention-grabbing options• Watch matches in-person and queue for the next match in VR through Courtside, a freeform social area for spectating in VR• Choose between rookie-level and pro-level difficulty game modes• Try out different arenas: start on the practice court, then switch over to the stadium court• Track your performance with gameplay data, including stats on wins, accuracy, and more",training_and_matchmaking,matchmaking,combat_sports,,,,,,
+3ec64a0b2b46ab4f,combat_sports,positive,365531,"He was the first winner of the World Series of Poker (WSOP) Main Event, at the time a cash game event in which he was awarded the title by the vote of his peers in 1970.",fighter_entities,main event,combat_sports,,,,,,
+844eacce5db454b0,combat_sports,positive,263347,"Ramsey has not played since the Boxing Day victory at West Ham United, in which he damaged a thigh muscle, and various attempts over recent weeks to step up his fitness work have ended in frustration.",promotion_anchor,boxing,combat_sports,,,,,,
+473d5d61898c4044,combat_sports,positive,220759,"In theory, you can get pay-per-view and premium channels as part of your subscription cost.",fighter_entities,pay-per-view,combat_sports,,,,,,
+fa398618a415914d,combat_sports,positive,423290,Sonnen is expected to make his first public statements about the issue on Thursday's edition of ESPN's MMA Live.,promotion_anchor,mma,combat_sports,,,,,,
+b220a0dac9152267,combat_sports,positive,462509,"So what I'm doing is do something like content=Buy beer to HTTP -- form as it is a form submission, just going to copy the URL and the endpoint here is create , and I’m about to ask for the -v verbose version.",training_and_matchmaking,submission,combat_sports,,,,,,
+405c431908e16744,combat_sports,positive,341767,"I’ll reveal the solution next week, and a correct submission (chosen at random) will earn a shoutout in this column.",training_and_matchmaking,submission,combat_sports,,,,,,
+4e5b5f1ec54a598e,combat_sports,positive,381035,"On Saturday morning Perth, Australia time—Friday night in the U.S.—the UFC 221 main event and the middleweight division fell into even more chaos when No.",fighter_entities;promotion_anchor,main event;ufc,combat_sports,,,,,,
+e7affe5aad9b3960,combat_sports,positive,28343,Stay tuned to MMAWeekly.com for more Bellator news and updates.,promotion_anchor,bellator,combat_sports,,,,,,
+52ee7aa54a1ac603,combat_sports,positive,415055,"‘AJ’ will take on his toughest challenge to date as he faces IBF world heavyweight champion Charles Martin (23-0-1, 21 KOs) for the crown in only his 16th fight.",promotion_anchor,heavyweight,combat_sports,,,,,,
+60ac71cf7f068448,combat_sports,positive,47891,"He's also not under contract at this point, but the UFC does have the right to match any outside offer.",promotion_anchor,ufc,combat_sports,,,,,,
+7e9931f76fc17040,combat_sports,positive,187185,"“It’s pretty generic,” Duran recently told MMAjunkie Radio after UFC 189 earlier this month.",promotion_anchor,ufc,combat_sports,,,,,,
+14c255370e114a79,combat_sports,positive,433911,"For example, the fighter earnings for events outside of the U.S, such as UFC99 in Germany and UFC 106 in the UK, or in certain states, like UFC 101 in Philly, were not released.",promotion_anchor,ufc,combat_sports,,,,,,
+9e35addff76fb4f7,combat_sports,positive,454093,"Kahzmat Musaev via submission (armbar), Round 1Malik Merad def.",training_and_matchmaking,submission,combat_sports,,,,,,
+0609ea23709bd536,combat_sports,positive,219849,on notice that the World Heavyweight Championship would return to him by WrestleMania 23.,promotion_anchor,heavyweight,combat_sports,,,,,,
+828c9427246d4e40,combat_sports,positive,180534,"Tottenham are getting a 22-year-old Germany international, who was central to the offensive ambitions of one of the Bundesliga's leading clubs and had been primed to feature in the Champions League knockout phase; Schalke fancy their chances against Galatasaray in the last 16.",fighter_entities,knockout,combat_sports,,,,,,
+ad3739f0b884a3cf,combat_sports,positive,56573,"Now, if you want to be enlightened by certain esoteric facts in the sport we all love, check out this newly-released 8-part series on a slew of rare MMA facts and secrets.",promotion_anchor,mma,combat_sports,,,,,,
+54d8824710afa6fd,combat_sports,positive,294272,The villainous Nidal ship of the line and their heavyweight dragon are in quick pursuit and will be upon them by dawn.,promotion_anchor,heavyweight,combat_sports,,,,,,
+60abc89f20d897cd,combat_sports,positive,58479,"""Dana White told Colin Cowherd he believes McGregor will fight for the UFC in the next year -- but our sources tell us it will NOT be against Nate Diaz.",promotion_anchor,ufc,combat_sports,,,,,,
+b7e7306ab1cb0304,combat_sports,positive,433918,"—
+
+Chuck Liddell: $500,000 (no win bonus)
+
+Arguably the best known UFC fighter ever, Chuck Liddell took home the biggest base salary in 2009 despite his loss to Maurcio ‘Shogun’ Rua.",promotion_anchor,ufc,combat_sports,,,,,,
+a6de25b28231d341,combat_sports,positive,460810,The timekeepers responsible for allowing the first round of the Gennady Golovkin-Daniel Geale middleweight world title fight to run for four minutes -- one minute longer than rounds are supposed to last -- were suspended by the New York State Athletic Commission on Monday.,promotion_anchor,title fight,combat_sports,,,,,,
+8ea52999ec038040,combat_sports,positive,544263,There seemed to be no way to contact Valve other than through that submission form.,training_and_matchmaking,submission,combat_sports,,,,,,
+63f88bec34dcc045,combat_sports,positive,298421,Make sure you have a “valid” email address as part of your comment submission so I can get in touch with you if you’re randomly selected to win the prize….,training_and_matchmaking,submission,combat_sports,,,,,,
+80ac8f323d8bf8b5,combat_sports,positive,142747,"I know that Paul Banks directed the boxing-inspired clip for “Twice As Hard.” You don’t normally think of boxing when you think of Interpol, but it works really well.",promotion_anchor,boxing,combat_sports,,,,,,
+20d345672b27db8d,combat_sports,positive,460185,"The cost of administering Ontario’s welfare and disability programs, including labour costs, amounts to just 3.7 per cent of the total cost, the submission stated.",training_and_matchmaking,submission,combat_sports,,,,,,
+e981f706c1e4672f,combat_sports,positive,219919,"[109] That same month at WWE Bragging Rights, Batista was unsuccessful in winning the World Heavyweight Championship in a Fatal Four-Way match including CM Punk, Rey Mysterio, and champion and event winner The Undertaker.",promotion_anchor,heavyweight,combat_sports,,,,,,
+8243ada93276fec9,combat_sports,positive,28290,"Submission Rules:
+
+One entry per person.",training_and_matchmaking,submission,combat_sports,,,,,,
+d076cacadbeb148f,combat_sports,positive,33396,"""These new proposals,"" says the industry submission, ""suggest an intention to capture anything and everything, regardless of the communications [method] used.",training_and_matchmaking,submission,combat_sports,,,,,,
+b1bbebf210b3db77,combat_sports,positive,228376,"On Saturday, the resilient welterweight will square off with Diego Sanchez in the co-main event at UFC Fight Night 120 in Norfolk, VA, for that final effort.",fighter_entities;promotion_anchor,main event;ufc,combat_sports,,,,,,
+d30f53e6d9c6f436,combat_sports,positive,47833,"He did submit in a 2004 fight with Mirko Cro Cop, but that wasn't from a submission application, but a shoulder injury that he couldn't continue fighting with.",training_and_matchmaking,submission,combat_sports,,,,,,
+eb727d17b92fb2b0,combat_sports,positive,219869,[82][83] The loss at Vengeance stipulated that Batista could no longer get another chance at the World Heavyweight Championship while Edge remained champion.,promotion_anchor,heavyweight,combat_sports,,,,,,
+0716c346c3e8b21b,combat_sports,positive,244784,The team proceeded to defeat the Philadelphia Union at BMO Field in the Eastern Conference Knockout Round to record their first-ever playoff win[57] and to secure entry into the first Eastern Conference Semifinal in franchise history.,fighter_entities,knockout,combat_sports,,,,,,
+dbc448952a2f808f,combat_sports,positive,256804,"Check out these related stories:
+
+Street Fighter in the UFC: Hadoukens and Izuna Drops
+
+Ryu vs. Lyoto: Bryan Lee's Fantasy Matchmaking",promotion_anchor;training_and_matchmaking,matchmaking;ufc,combat_sports,,,,,,
+e92cccba898fc838,combat_sports,positive,286552,UFC President Dana White stated in a recent interview that Horn had no chance of landing a boxing match with McGregor.,promotion_anchor,boxing;ufc,combat_sports,,,,,,
+efeb378c78e0efc2,combat_sports,positive,124349,"Intellectual anarchy, materialism, rationalism – as if they could get a spider out of his web!’
+
+As Richard Ellmann records in his monumental biography, Joyce, unwilling to embrace the church, state, or intelligentsia, ‘went through a series of violent changes and emerged from them sombre and aloof, except with the few friends to whom he exhibited his joy, his candour, his bursting youth; even with these he was a little strange, never wholly companionable because each time he laid bare his soul he importuned greater loyalty, until friendship became for them almost an impossible burden of submission.’ Joyce’s parody poem of T. S. Eliot’s ‘The Waste Land’ also reveals with a typically subversive wit his intellectual allegiances.",training_and_matchmaking,submission,combat_sports,,,,,,
+3dcb00a6e1525ea3,combat_sports,positive,190887,I do like boxing.,promotion_anchor,boxing,combat_sports,,,,,,
+761dfb4df84cdf37,combat_sports,positive,356746,That is only because some members continue to insist that we must address goals that were neither mentioned in the original JSR submission nor recorded in the agreed requirements.,training_and_matchmaking,submission,combat_sports,,,,,,
+6287f691332e5366,combat_sports,positive,271879,"Consultation on the proposed wording to clause 6.9 of the Code of Ethics 2011 (Pharmacy Guild)
+
+The primary motivation for this support seems to be a combination of the “freedom of choice” argument I described above, and the potential for benefit described in the Society for Science Based Healthcare’s submission:
+
+We believe that if pharmacists were prevented from selling natural products then patients wanting these products would continue to source them from somewhere.",training_and_matchmaking,submission,combat_sports,,,,,,
+cef839cda83ad39a,combat_sports,positive,392473,"Debuting in 1997, Makabe originally wrestled under his birthname as a junior heavyweight (100 kilograms (220 lb)), before gaining several kilograms during a global excursion in 2001 and 2002.",promotion_anchor,heavyweight,combat_sports,,,,,,
+8553ba61a3979b19,combat_sports,positive,452389,"Not content with advising Obama, Trump also reportedly took the Palestinian issue one step further by directly pressuring the sponsoring Egyptians to postpone any submission of the resolution.",training_and_matchmaking,submission,combat_sports,,,,,,
+084945756a4a4a6b,combat_sports,positive,149832,"No one thought Bryan had the potential to be a star, but he won over crowds with his innovative in-ring persona, mixing MMA-style strikes and submissions with lucha-esque agility and just a hint of brawling.",promotion_anchor,mma,combat_sports,,,,,,
+9b0022e6f8f6990f,combat_sports,positive,143173,"You gain nothing material — simply matchmaking and, by virtue of the dedicated server-less lobby system, less of a chance to be invaded.",training_and_matchmaking,matchmaking,combat_sports,,,,,,
+e06cb921c480869b,combat_sports,positive,146237,"He returned just once in 2016, when he blew away Victor Ortiz via fourth-round knockout to avenge a loss in their all-action 2011 welterweight title bout.",fighter_entities,knockout,combat_sports,,,,,,
+dafe3055e4885e2c,combat_sports,positive,49526,"UFC ticket refund policy
+
+Due to causes beyond our company's control, there has been a change in the main event of UFC 180 and Cain Velasquez will no longer be participating.",fighter_entities;promotion_anchor,main event;ufc,combat_sports,,,,,,
+025993399d439fb0,combat_sports,positive,410712,This was the epitome of a house show main event that sends the fans home happy.,fighter_entities,main event,combat_sports,,,,,,
+5d4bb31584a3542b,combat_sports,positive,266249,"But because healthy submission comes from trust and love rather than fear, there’s nothing unhealthy about BDSM control.",training_and_matchmaking,submission,combat_sports,,,,,,
+7c7348836f76263b,combat_sports,positive,416909,"There may have been none of those knockout blows the press craves, but the accretional effect has been to teach the public that McCain isn’t steady enough to run the country even if the economy were sound, and that Obama just might be.",fighter_entities,knockout,combat_sports,,,,,,
+d43002ee3b22df80,combat_sports,positive,452784,"He was joyful but he didn’t turn his gaze from human suffering.”The Oakland conference consisted of ten speakers, most of whom had known Illich as collaborators and sparring partners.",training_and_matchmaking,sparring,combat_sports,,,,,,
+978b0390bff0bbf4,combat_sports,positive,189529,"Competition results announcement: November 28, 2013
+
+Review results and author's notice: October 7, 2013 (early deadline submissions)
+
+Camera ready: October 11, 2013 (early deadline submissions)
+
+Publication date: As per conference schedule
+
+Workshop date: December 7, 2013
+
+[ Downloads | Submission | Call for Papers | Competition Evaluation ]
+
+News:
+
+[11/2013] Detailed challenge results and notebook papers available Here.",training_and_matchmaking,submission,combat_sports,,,,,,
+b80aa7a8a07bd6fa,combat_sports,positive,342088,"Team Tate, a reality show in which eight women and eight men bantamweight fighters lived and trained together as they vied for the “The Ultimate Fighter” title and a six-figure contract with the UFC.",promotion_anchor,ufc,combat_sports,,,,,,
+90668e745769e8c3,combat_sports,positive,392556,[66] On July 19 Makabe successfully defended the IWGP Heavyweight Championship against previous champion Shinsuke Nakamura.,promotion_anchor,heavyweight,combat_sports,,,,,,
+02741e32110d9cb4,combat_sports,positive,117455,"Neal heads Honda Yuasa Racing teammate Gordon Shedden by the smallest of margins in the title fight, just one point separating the pair, with Jason Plato 29 points behind in third.",promotion_anchor,title fight,combat_sports,,,,,,
+54382ed5546e9d46,combat_sports,positive,186155,"And given the submission and oppression of peoples throughout human history, whatever sacred intent has been maintained has been maintained only for the elite, for the monastic, for the adept.",training_and_matchmaking,submission,combat_sports,,,,,,
+7dc590604d245666,combat_sports,positive,324644,"They tend to be particularly skilled at combining punches with takedowns and striking on the ground, skills that only exist in Sambo and MMA itself.",promotion_anchor,mma,combat_sports,,,,,,
+c7b24f5ce70541f0,combat_sports,positive,433927,Couture spent a year in limbo due to a dispute with the UFC which appeared to partly revolve around his earnings.,promotion_anchor,ufc,combat_sports,,,,,,
+3d647b834a1788f4,combat_sports,positive,200761,"“I think we’re going to look back in 10 years,” Fertitta said, “and look at some of these fights back from 2011, 2012, and go, ‘Wow, did the UFC really look like that?’ ”",promotion_anchor,ufc,combat_sports,,,,,,
+a179e75277a19c21,combat_sports,positive,324642,"Combat Sambo is basically MMA with headgear, a jacket that's legal to grasp and manipulate, and a point system that rewards takedowns and landed strikes.",promotion_anchor,mma,combat_sports,,,,,,
+056700df95cf72c0,combat_sports,positive,201134,"Despite our submission to professor Aslam and authorities in IGNOU that the armed forces have stringent systems of checks and balances the matter was not addressed by an openly hostile IGNOU management,"" sources insisted.",training_and_matchmaking,submission,combat_sports,,,,,,
+3e7f14b9de78554f,combat_sports,positive,437024,"A first step towards getting more data and feedback was to make it as easy as possible for you to experiment with our balance changes, so we've gone ahead and added matchmaking for them.",training_and_matchmaking,matchmaking,combat_sports,,,,,,
+fb6d36d04649dbd1,combat_sports,positive,5685,"The previous landing heavyweight was Curiosity, at 900kg.",promotion_anchor,heavyweight,combat_sports,,,,,,
+a91356796afd6cba,combat_sports,positive,328658,He was crushed to have gotten passed over again when UFC 189 needed a last-minute replacement to face Conor McGregor after champion Jose Aldo pulled out with a broken rib.,promotion_anchor,ufc,combat_sports,,,,,,
+e49fb0172d22a0a7,combat_sports,positive,484417,"(Diesel and Rodriguez, then fresh off of her debut in the impressive boxing indie Girlfight, seem to barely know each other, though their relationship now feels like the realest thing about the series.)",promotion_anchor,boxing,combat_sports,,,,,,
+ef7762467a7d4e2e,combat_sports,positive,448753,"His mind games, me being mandated, it will be a third-round knockout.",fighter_entities,knockout,combat_sports,,,,,,
+d6d37d3b7ccd99f9,combat_sports,positive,381058,"Statistically, Romero is actually a below-average MMA takedown artist.",promotion_anchor,mma,combat_sports,,,,,,
+bba0be03b4f151fc,combat_sports,positive,133965,"2017 Dance Competition video - by Orcinus Submission information:
+
+Posted:
+
+Category: Photography
+
+Theme: Fursuit
+
+Species: Unspecified / Any
+
+Gender: Any
+
+Favorites: 5
+
+Comments: 1
+
+Views: 401
+
+Image Specifications:
+
+Resolution: 1280x720
+
+Photo information:
+
+Date and Time: 2017:06:18 13:44:07
+
+Keywords:
+
+FurEh fursuit dance dancing competition convention video footage
+
+NOTE!",training_and_matchmaking,submission,combat_sports,,,,,,
+196ec8c110ff02eb,combat_sports,positive,49505,"As a result, No.4 heavyweight Mark Hunt (10-8-1 in professional MMA, fighting out of Auckland, New Zealand), who is coming off a walk-away knockout against the iron-chinned Roy Nelson in Tokyo in September (https://www.youtube.com/watch?v=PGunUlEd50A), will face Werdum (18-5-1, fighting out of Los Angeles via Porto Alegre, Brazil) in the five-round main event for the interim UFC heavyweight title.",fighter_entities;promotion_anchor,heavyweight;knockout;main event;mma;ufc,combat_sports,,,,,,
+4e738a5c62773f04,combat_sports,positive,298375,"The host followed by mentioning that King Mo will be participating in the RIZIN FIGHTING WORLD GRAND-PRIX 2015 tournament representing Bellator, and the matchup between Gabi Garcia vs Lei’D Tapa.",promotion_anchor,bellator,combat_sports,,,,,,
+172bec5ec31d3d8d,combat_sports,positive,239519,"#SurvivorSeries https://t.co/SMn9vlKcdT — John Cena (@JohnCena) November 8, 2017
+
+It had been rumored that John Cena would be the guest referee for the Brock Lesnar vs. Jinder Mahal main event, but WWE apparently changed course and decided to book a title change for Tuesday’s SmackDown, setting up Universal Champion Brock Lesnar vs. new WWE Champion AJ Styles.",fighter_entities,main event,combat_sports,,,,,,
+006e76e23a4e832f,combat_sports,positive,392585,"[102] Makabe received his title shot on June 22 at Dominion 6.22, but was defeated by Okada.",training_and_matchmaking,title shot,combat_sports,,,,,,
+3443078b8e7dbf67,combat_sports,positive,483612,The former champion is now 6-1 in five-round decisions in the UFC and WEC.,promotion_anchor,ufc,combat_sports,,,,,,
+d543b95a73379479,combat_sports,positive,433929,"As with some of the other big name stars in the UFC, Couture is known to command a share of the PPV buys for his fights which can propel his earnings per fight into the seven figure region.",promotion_anchor,ufc,combat_sports,,,,,,
+f688613950c106b8,combat_sports,positive,273625,"These days Imes works as a project manager, a job he knows he wouldn’t have been able to perform had he took the position immediately after leaving MMA.",promotion_anchor,mma,combat_sports,,,,,,
+54d563ae102b44df,combat_sports,positive,200751,"“I think it’s not fair for fighters not to comply with the outfitting policy,” Fertitta said, adding the UFC keeps withheld payments in the same pool it taps for fighter payouts.",promotion_anchor,ufc,combat_sports,,,,,,
+1e7c7c18e7a342d6,combat_sports,positive,544250,"How It All Began: Submission Process in the Pre-Greenlight World
+
+Steam is the biggest online game distribution platform and for indie game developers it has always been sort of a Holy Grail – many dreamt and keep dreaming of putting their game on Steam.",training_and_matchmaking,submission,combat_sports,,,,,,
+f76498670bd88be4,combat_sports,positive,219937,"[122] His promo was interrupted by new Raw General Manager Bret Hart, who ordered he face an injured Randy Orton to qualify for a shot at WWE Championship against Cena again at the new Fatal 4-Way pay-per-view.",fighter_entities,pay-per-view,combat_sports,,,,,,
+8c249f5a71489f8f,combat_sports,positive,171147,"The co-main event saw Al Iaquinta (10-3-1 MMA, 5-2 UFC) knock out “TUF 9” winner Ross Pearson (16-8 MMA, 8-5 UFC) while Robert Whittaker (13-4 MMA, 4-2 UFC) and Soa Palelei (22-4 MMA, 4-2 UFC) picked up wins to round out the four-fight main card.",fighter_entities;promotion_anchor,main event;mma;ufc,combat_sports,,,,,,
+d392f27dbdb01b52,combat_sports,local_hard_negative,2318735,Gall was discovered on the show Dana White: Lookin' for a Fight as he won by first round Rear-Naked-Choke and immediately put his name in the hat to face the WWE superstar in Punk.,adjacent_non_competitive_combat_terms,wwe,,,,,,,
+ca57351d1c48e927,combat_sports,local_hard_negative,2650122,"The two-year-old New York startup, which is trying to establish remote-controlled lightweight aircraft races as a spectator sport, also brought in WWE and Allianz (its global title sponsor) as new investors in the round.",adjacent_non_competitive_combat_terms,wwe,,,,,,,
+c2b4aca793618a67,combat_sports,local_hard_negative,2316629,"One of his wrestling teammates at Ward Melville High School was future WWE star and author Mick Foley (""Mankind"").",adjacent_non_competitive_combat_terms,wwe,,,,,,,
+f31c6806814f901c,combat_sports,local_hard_negative,1266576,"Bret Hart vs. Shawn Michaels
+
+By mid-1997, the relationship between Bret Hart and Shawn Michaels was known to be tense, but WWE fans attending Raw in Hartford, Conn., on June 9 likely had no clue that tempers between the two had flared so much that “Hit Man” and HBK would exchange blows off-camera, as ended up happening that night.",adjacent_non_competitive_combat_terms,wwe,,,,,,,
+f12a2076bd6785ff,combat_sports,local_hard_negative,1988789,But he made his television debut under WWE a year later in the episode of SmackDown.,adjacent_non_competitive_combat_terms,wwe,,,,,,,
+0626db2adba7d465,combat_sports,local_hard_negative,1251107,"""Slam City is the result of a seamless collaboration with WWE where we are bringing kids a completely new and invigorating entertainment experience,"" said Doug Wadleigh, Senior Vice President, Global Brands Marketing, Boys and Entertainment for Mattel.",adjacent_non_competitive_combat_terms,wwe,,,,,,,
+feae454819e4b92c,combat_sports,local_hard_negative,219979,"[156]
+
+Mixed martial arts career
+
+After leaving WWE, Bautista attended Strikeforce: Los Angeles on June 16, 2010, having previously registered an interest in competing in mixed martial arts.",adjacent_non_competitive_combat_terms,wwe,,,,,,,
+08b2f1a8b4a669a8,combat_sports,local_hard_negative,1266567,"Following Austin’s departure in June 2002, WWE and Mr. McMahon publicly acknowledged the situation in what Austin described as “the famous WWE smear campaign.” During an episode of Raw, Mr. McMahon told WWE fans that Austin “owe[d] an apology for walking out on every Superstar in that locker room … to the company he helped build … to each and every one of you, for walking out on you.”
+
+Thankfully, time heals all wounds, and a meeting brokered by J.R. later that year allowed Austin and Mr. McMahon to resolve the matter.",adjacent_non_competitive_combat_terms,wwe,,,,,,,
+f2ae560eb287f9fe,combat_sports,local_hard_negative,74507,"Granted, WWE.com featured a piece about the two fighting in the independents, but it would be great to hear them cut a promo about working together since Ring of Honor.",adjacent_non_competitive_combat_terms,wwe,,,,,,,
+f4f1ec81933ca5e3,combat_sports,local_hard_negative,892241,"Whatever it is, we – and surely many fans from the WWE Universe – can't wait to see what Copeland brings to the role.",adjacent_non_competitive_combat_terms,wwe,,,,,,,
+f9bef2a2c158716b,combat_sports,local_hard_negative,1859916,"One of NJPW's biggest events, the G-1 Climax tournament, is held every year in August and last year WWE received less press and lower attendance than NJPW did.",adjacent_non_competitive_combat_terms,wwe,,,,,,,
+36ed258df2c51613,combat_sports,local_hard_negative,316292,"Well, many of the talent on this list came from NXT, further proof that WWE is starting to recognize the importance tradition will play in the coming years.",adjacent_non_competitive_combat_terms,wwe,,,,,,,
+c0a4c7806f725cbb,combat_sports,local_hard_negative,1543898,"This fan from the U.K. claims that his sign caused security to threaten to eject him:
+
+A recent report addresses word that WWE was confiscating more signs at Monday's Raw.",adjacent_non_competitive_combat_terms,wwe,,,,,,,
+51f95fa473afad6e,combat_sports,local_hard_negative,1251110,"In 2013, WWE's national TV programming reached nearly 3 million kids each week, representing more than 20 percent of WWE's average weekly TV audience.",adjacent_non_competitive_combat_terms,wwe,,,,,,,
+c91ea30293da9a71,combat_sports,local_hard_negative,2293596,But WWE will likely never change whilst Vince McMahon is in charge.,adjacent_non_competitive_combat_terms,wwe,,,,,,,
+5938bb169f9979ec,combat_sports,local_hard_negative,2848928,"From a women's revolution taking place to the arrival of AJ Styles to the return of the cruiserweights, 2016 will be remembered as being a banner for WWE, especially inside the squared circle.",adjacent_non_competitive_combat_terms,wwe,,,,,,,
+220f86f317056bef,combat_sports,local_hard_negative,892236,That's the position that former WWE Superstar Edge – real name Adam Copeland – finds himself in after being forced to end his pro wrestling career over a severe neck injury at the age of 37 in 2011.,adjacent_non_competitive_combat_terms,pro wrestling;wwe,,,,,,,
+4ceabf55464c333a,combat_sports,local_hard_negative,2003882,"To understand it in its full context, you need to understand the history of Japanese pro wrestling.",adjacent_non_competitive_combat_terms,pro wrestling,,,,,,,
+ad7a10fa60adf661,combat_sports,local_hard_negative,1266513,"It was a “brutal, bloody, vicious affair” that lasted at least five minutes, according to a day-of WWE.com report quoting WWE’s then-director of TV promotions.",adjacent_non_competitive_combat_terms,wwe,,,,,,,
+24de78006e63ad30,combat_sports,local_hard_negative,2126596,The Flintstones & WWE: Stone Age SmackDown!,adjacent_non_competitive_combat_terms,wwe,,,,,,,
+c9a8085b819f1f5b,combat_sports,local_hard_negative,1251113,"In addition to toys, a full WWE Slam City merchandise line, including apparel, back-to-school accessories, books, graphic novels and home videos will be available in stores by the end of 2014.",adjacent_non_competitive_combat_terms,wwe,,,,,,,
+aab67727d6fae58a,combat_sports,local_hard_negative,251842,Stay with WWE.com for more information as Big E’s condition is revealed.,adjacent_non_competitive_combat_terms,wwe,,,,,,,
+107dc712a30507b0,combat_sports,local_hard_negative,2316639,"One of his teammates on the wrestling team at Ward Melville High School was future WWE star and author Mick Foley
+
+Born to Janet and Joseph Valentine Knipfing.",adjacent_non_competitive_combat_terms,wwe,,,,,,,
+faad5497dfbdc429,combat_sports,local_hard_negative,721930,"Tonight on Raw, Bryan told the Seattle audience—many of whom were seen openly weeping—that “I don’t want to be doing this any more than you don’t want me to be doing this.”
+
+Bryan had spent months in an attempt to get cleared for a return to wrestling, but WWE concussion expert Dr. Joseph Maroon—you remember him from downplaying the role of CTE in professional football—has reportedly refused to give Bryan the O.K.",adjacent_non_competitive_combat_terms,wwe,,,,,,,
+487ddb9decfb9a7f,combat_sports,local_hard_negative,1602793,"[ LINK: Full Interview HERE at WWE's website ]
+
+[Torch art credit Grant Gould (c) PWTorch.com]
+
+CLICK HERE FOR EVEN MORE PW.NET HEADLINES",adjacent_non_competitive_combat_terms,wwe,,,,,,,
+1c1659b80b9b1886,combat_sports,benchmark_hard_negative,25898,"[17]
+
+Using his expertise about radiant heat absorption by gases, he invented a system for measuring the amount of carbon dioxide in a sample of exhaled human breath (1862, 1864).",nba_basketball,heat,nba_basketball,,,,,,
+b78ac56ae7900dad,combat_sports,benchmark_hard_negative,30311,"Because the phrase ‘professional football leagues’ was added to the text, the NFL is protected, but the Internal Revenue Service takes that to mean other sporting leagues are as well.",nfl_football,nfl,nfl_football,,,,,,
+ded4aa41edcd9cf9,combat_sports,benchmark_hard_negative,7830,"Akil Mitchell (Charlotte, N.C.) led Virginia in scoring and rebounding for the fourth consecutive game with 19 points and eight rebounds.",nba_basketball,rebounding,nba_basketball,,,,,,
+af62393345ebd349,combat_sports,benchmark_hard_negative,17134,"From Video
+
+Additionally, Harper sporadically played quarterback on zone read plays.",nfl_football,quarterback,nfl_football,,,,,,
+47ce879873093704,combat_sports,benchmark_hard_negative,25876,In the investigations on radiant heat in air it had been necessary to use air from which all traces of floating dust and other particulates had been removed.,nba_basketball,heat,nba_basketball,,,,,,
+003e95b569f994e6,combat_sports,benchmark_hard_negative,35027,"""I wasn't one of those people who saw the light; I had to feel the heat.""",nba_basketball,heat,nba_basketball,,,,,,
+1d0a507f5802c5e3,combat_sports,benchmark_hard_negative,24181,"I express to Ethan (our Finance Manager) my gameplan, then blow in his face to see how much I smell like booze.",soccer,manager,soccer,,,,,,
+61dd461cd47f2fef,combat_sports,benchmark_hard_negative,35433,"Nun scheint der Fußball-Bundesligist allerdings Ersatz gefunden zu haben für den Publikumsliebling, der sich dem FC Arsenal angeschlossen hat.",soccer,arsenal,soccer,,,,,,
+61bac55142c1c3b9,combat_sports,benchmark_hard_negative,22533,"“It's going to be different,” said Toronto FC midfielder Jonathan Osorio last week.",soccer,midfielder,soccer,,,,,,
+cefb9d85167e1314,combat_sports,benchmark_hard_negative,44568,"Carrier is athletic, fast, runs routes like the ... more Photo: Michael Zagaris / Getty Images Image 13 of 13 Top 10 sleeper players going into 49ers' training camp 1 / 13 Back to Gallery
+
+In a few weeks, the 49ers will open up training camp.",nfl_football,49ers,nfl_football,,,,,,
+80827165e11fb5da,combat_sports,benchmark_hard_negative,2083,The bridge’s manager tells him there is a long-standing deal with the mayor.,soccer,manager,soccer,,,,,,
+c34b76f0a98f7cd4,combat_sports,benchmark_hard_negative,41509,"The HTF is a hot oil, and then the heat is transferred to molten salt for storage there, and when the heat is needed to generate electricity, steam is run through the turbine to generate electricity (Abengoa’s Solana, 2013).",nba_basketball,heat,nba_basketball,,,,,,
+24107bac8c355011,combat_sports,benchmark_hard_negative,25953,"[10] (For example, rock-salt is an exceptionally poor absorber of heat via radiation, and a good absorber of heat via conduction.",nba_basketball,heat,nba_basketball,,,,,,
+34dfb43ab7e1f67b,combat_sports,benchmark_hard_negative,20319,"Sparano, who has been the Raiders' assistant head coach/offensive line coach since last season, said he believes the Raiders need a ""philosophy"" change.",nfl_football,offensive line,nfl_football,,,,,,
+281af53a856abdd6,combat_sports,benchmark_hard_negative,592,Stanley “Boom” Williams decided to enter the 2017 NFL Draft after a productive three year career at Kentucky.,nfl_football,nfl;nfl draft,nfl_football,,,,,,
+6fd9ffdb356e8033,combat_sports,benchmark_hard_negative,33670,I’m heading to the Super Bowl.,nfl_football,super bowl,nfl_football,,,,,,
+78e7feef3ddf3402,combat_sports,benchmark_hard_negative,44431,"CHATTER
+
+• The latest Hassan Whiteside historic feat: In shooting 8 for 8 in Game 2, he became just the second active NBA player to make all his shots (minimum eight) in a playoff game, according to Elias.",nba_basketball,nba,nba_basketball,,,,,,
+ff59c4e819578196,combat_sports,benchmark_hard_negative,49036,Joining Embarcadero as Delphi Product Manager CONGRATULATIONS Marco!!!!!!,soccer,manager,soccer,,,,,,
+70e9459b0952b40b,combat_sports,benchmark_hard_negative,47995,"""[21] A third ninja swap, Reptile, was added in the third revision as a hidden character who was outfitted in green and used Scorpion's spear (along with Sub-Zero's freeze) as part of his offensive arsenal; he was devised by Boon as ""a cooler version of Scorpion.",soccer,arsenal,soccer,,,,,,
+1b9a347bc2b36d05,combat_sports,benchmark_hard_negative,4182,"Carlos Tevez says he will snub Chelsea interest to stay at Boca
+
+Carlos Tevez won Premier League titles with Manchester United and Manchester City
+
+Carlos Tevez claims he will snub interest from Chelsea this summer to see out his career with Boca Juniors.",soccer,manchester united;premier league,soccer,,,,,,
+1e48838b9e96b1fb,combat_sports,benchmark_hard_negative,38048,They saw a potential pass rusher at outside linebacker.,nfl_football,linebacker,nfl_football,,,,,,
+c3e2a56ef5badc71,combat_sports,benchmark_hard_negative,48049,"One of the warriors under Scorpion's command was the twin-fighting monk duo Siang, who had been killed by Goro in the Blood & Thunder miniseries and was resurrected but still maintained a mind of his own, and therefore wanted to escape Kahn's control; Scorpion therefore fatally stabs Siang through the heart in a mercy killing before destroying the Deathstone.",nba_basketball,warriors,nba_basketball,,,,,,
+3f51a3143e3c780e,combat_sports,benchmark_hard_negative,30348,"“Hardworking taxpayers should not be forced to provide funding to offset tax giveaways to lucrative major professional sports teams and leagues,” the Government Waste Book reads, “Based on publicly available information about the NFL and NHL alone, barring major leagues from using the non-profit status may generate at least $91 million of federal revenue every year.”
+
+In April, Coburn introduced an amendment to Senate bill 743 or the Marketplace Fairness Act of 2013, which would amend the IRS tax code.",nfl_football,nfl,nfl_football,,,,,,
+09235f3d4279edce,combat_sports,benchmark_hard_negative,22037,"Bruce Carter will start at middle linebacker, though Danny Lansanah may see some playing time there too.",nfl_football,linebacker,nfl_football,,,,,,
+23d39eaca5202848,combat_sports,benchmark_hard_negative,49032,"Success to you, delphi and embarcadero Iwan
+
+Joining Embarcadero as Delphi Product Manager Congratulations Marco!",soccer,manager,soccer,,,,,,
+3f3fe921b732e1f8,combat_sports,benchmark_hard_negative,17105,It is likely there are some play-calls that Kelly is more willing to make with Smith at quarterback than with Foles or Vick.,nfl_football,quarterback,nfl_football,,,,,,
+ade56ff7cc148dd5,combat_sports,benchmark_hard_negative,38049,"""My father always talked about me playing linebacker,"" Griffin said.",nfl_football,linebacker,nfl_football,,,,,,
+bafd67bebfe0294f,combat_sports,benchmark_hard_negative,23667,"On the other hand, the Dodgers, San Francisco’s archrival in the National League West, spent $300 million.",mlb_baseball,dodgers;national league,mlb_baseball,,,,,,
+7c217f396ba1bb97,combat_sports,benchmark_hard_negative,15881,"Defense Secretary Leon E. Panetta called them a “difficult undertaking.” Army Gen. Martin E. Dempsey, the chairman of the Joint Chiefs of Staff, added: “Make no mistake, the trade-offs were tough.",nfl_football,chiefs,nfl_football,,,,,,
+0d3e247ff4866475,combat_sports,benchmark_hard_negative,40864,"""Things are changing,"" said city manager Jeff Fielding, who held top administrative jobs in Kitchener, Burlington, and London, Ont., before taking on his current role in Calgary in 2014.",soccer,manager,soccer,,,,,,
+0e4e49b9ff6865df,combat_sports,benchmark_hard_negative,11769,There will be girls who go and see those two unhappy gay cowboys and go home and have fantasy dreams about them.,nfl_football,cowboys,nfl_football,,,,,,
+867ab279c60dd7f5,combat_sports,benchmark_hard_negative,38801,"The midfielder made twenty league appearances for the club last season, and speaking to CorkCityFC.ie, Healy said: “I am very pleased to have signed back with Cork City for the 2016 season.",soccer,midfielder,soccer,,,,,,
+dffa0175f7f5d18c,combat_sports,benchmark_hard_negative,19637,"I have a lot of confidence in him.”
+
+Rivera has six errors in 28 games at third base, but the Mets want to find out if he’s a viable option at the position for this season and beyond.",mlb_baseball,mets,mlb_baseball,,,,,,
+1e90f45b89eec433,combat_sports,benchmark_hard_negative,43700,"As your power plants are more efficient, they have less waste heat and they need less cooling.",nba_basketball,heat,nba_basketball,,,,,,
+e637ac1d6ab15d8b,combat_sports,benchmark_hard_negative,48979,"Lachlan
+
+Joining Embarcadero as Delphi Product Manager Congratulations Marco!",soccer,manager,soccer,,,,,,
+8fd107c41fce3a17,combat_sports,benchmark_hard_negative,46769,"Veen is no longer a User Experience Manager at Google, but he is now a Founding Partner at Adaptive Path.",soccer,manager,soccer,,,,,,
+44866f381c70e02a,combat_sports,benchmark_hard_negative,49004,"As Product Manager can you please post some comments on the following EMB -> Delphi -> Non-Technical blog: ""If I were the Delphi Product Manager, I would ..."" https://forums.embarcadero.com/thread.jspa?threadID=79195 or can you at least tell the community what your plans are, and how much impact you have in EMB to make Delphi again a success story?",soccer,manager,soccer,,,,,,
+b76ddb221d68626d,combat_sports,benchmark_hard_negative,41665,"[7]
+
+Elephant seals also have a helpful feature in their bodies known as the countercurrent heat exchanger to help conserve energy and prevent heat loss.",nba_basketball,heat,nba_basketball,,,,,,
+38c5b77e7565b8b9,combat_sports,benchmark_hard_negative,43761,"And these water issues in particular become interesting in times of drought or heat wave, and if we think we’ll never have a drought or heat wave again we probably can quit worrying about it.",nba_basketball,heat,nba_basketball,,,,,,
+318f4d132abea9bc,combat_sports,benchmark_hard_negative,8694,"Continuing through August 5, NFL Network's Inside Training Camp Live hits the field at 7:00 a.m., providing nine hours of live coverage each day.",nfl_football,nfl,nfl_football,,,,,,
+011a48eaeeeead35,combat_sports,benchmark_hard_negative,39065,"""What it did for us was some amazing things,"" said Jeffrey Spencer, a program manager with USDOT.",soccer,manager,soccer,,,,,,
+bdf5dcf7333acf51,combat_sports,benchmark_hard_negative,6910,"In the end, Kings President/General Manager Dean Lombardi sweetened the pot by offering Doughty an average of $200,000 more per year above his reported original offer of $6.8 million per season, the same average annual value of center Anze Kopitar’s contract.",soccer,manager,soccer,,,,,,
+b06e268e96db3a8b,combat_sports,benchmark_hard_negative,39032,"""The majority of people I talk to have no idea they're coming so soon,"" said Lauren Issac, manager of sustainable transportation for the engineering and planning firm Parsons Brinkerhoff.",soccer,manager,soccer,,,,,,
+27685a637d62425e,combat_sports,benchmark_hard_negative,41246,"CARSON, Calif. (Tuesday, Nov. 25, 2014) – LA Galaxy and Major League Soccer announced today that defender A.J.",soccer,soccer,soccer,,,,,,
+7cf3c4a07a8fb208,combat_sports,benchmark_hard_negative,3892,"“We are anxious to put the work in over the next month.”
+
+While out and not allowed to attend OTAs or minicamp because of the NFL academic rules for schools on the quarter system, McKinley picked up the defensive scheme during his Facetime sessions with Young.",nfl_football,nfl,nfl_football,,,,,,
+7fe8704cbc4693d3,combat_sports,benchmark_hard_negative,23465,"” -- Yankees GM Brian Cashman
+
+Judging by all the front-office folks whose response to this was ""I didn't even realize that,"" it's safe to say this is more of a coincidence than some gigantic management conspiracy.",mlb_baseball,yankees,mlb_baseball,,,,,,
+2ae1616c83f27c20,combat_sports,benchmark_hard_negative,28870,"Here are the aggregate 2015-2016 stats for the bullpen’s Big 4 of Brad Brach, Mychal Givens, Darren O’Day, and Zach Britton: 315 1/3 IP, 2.00 ERA, 1.03 WHIP, 10.82 K/9.",mlb_baseball,bullpen,mlb_baseball,,,,,,
+c338dbfed0e56ef2,combat_sports,benchmark_hard_negative,3200,"""The woman being interviewed, Vicki Gardner, executive director of the Smith Mountain Lake Regional Chamber of Commerce, was shot in the back and is in surgery, said Barb Nocera, the chamber's special projects manager.""",soccer,manager,soccer,,,,,,
+de9d2a418d1e6214,combat_sports,benchmark_hard_negative,35915,"In protest of Trump’s treatment of the press, Washington bureau chiefs voted to delete news video taken during Trump’s guided tour of the new Trump hotel.",nfl_football,chiefs,nfl_football,,,,,,
+b57831c32843cbfa,combat_sports,benchmark_hard_negative,24740,"Going to a shelter to find a cat in a cage “is heartbreaking,” said Mr. Metairie, a project manager at a hotel supply company, but the Cat Town Cafe “feels organic.” He was having fun.",soccer,manager,soccer,,,,,,
+dd21a62045246148,combat_sports,benchmark_hard_negative,47057,"The suburbs also have an abundance of soccer fields, playgrounds, parks, hockey arenas, and parking lots for vehicles stuffed with sporting equipment.",soccer,soccer,soccer,,,,,,
+fffd7550aef770f2,combat_sports,benchmark_hard_negative,8681,"Former England star Paul Scholes is set to play futsal in India
+
+Former Manchester United and England midfielder Paul Scholes has signed a three-year deal to play in India's new futsal league which starts next month.",soccer,manchester united;midfielder,soccer,,,,,,
+07b5c786c41937ab,combat_sports,benchmark_hard_negative,6680,"One of four senior starters on the offensive line in 2013, Yankey was also selected as a semifinalist for the Outland Trophy and Lombardi Award.",nfl_football,offensive line,nfl_football,,,,,,
+714cc86aa3eb21bd,combat_sports,benchmark_hard_negative,23526,"In truth, the manager's seat isn't any hotter, or cooler, than anyone else's seat on this team -- not at the moment, anyway.",soccer,manager,soccer,,,,,,
+43598127c74518a5,combat_sports,benchmark_hard_negative,48285,"The late summer heat is currently shimmering above the giant, artificial eye.",nba_basketball,heat,nba_basketball,,,,,,
+73e8ced91a990ceb,combat_sports,benchmark_hard_negative,27717,"Patients in the hospitals were given the opportunity to play FIFA 14 on the day of its release, meeting some of their favourite A-League players, and going head-to-head with them on the game.",soccer,fifa,soccer,,,,,,
+fa41df0ec7cceffd,combat_sports,benchmark_hard_negative,11005,"The Giants, with their starters playing the whole game, gave the Patriots a scare on the way to a perfect regular season, and they gave themselves a shot in the arm that energized them throughout their playoff run.",nfl_football,patriots,nfl_football,,,,,,
+b5bb86ac36ce3b47,combat_sports,benchmark_hard_negative,13277,Barcelona football star Lionel Messi last night wrote his way into the history books after notching up the Guinness World Records title for the most goals in a calendar year by netting his 86th goal of 2012.,soccer,barcelona,soccer,,,,,,
+2512d24adb895e32,combat_sports,benchmark_hard_negative,8685,"Deco (l) will also play in the inaugural league
+
+Ex-Chelsea and Barcelona midfielder Deco and host of the world's top futsallers have already signed up to play in the league, with organisers promising that more marquee signings are on the way.",soccer,barcelona;midfielder,soccer,,,,,,
+06ee5e7835e6c7bb,combat_sports,benchmark_hard_negative,32384,We shall use this manager to download torrents so that no jailbreak is required as promised earlier.,soccer,manager,soccer,,,,,,
+01ec03cca03392bf,combat_sports,benchmark_hard_negative,24875,"They brought some financy person or the manager and they were like, ""We demand a discount.""",soccer,manager,soccer,,,,,,
+608d4998aa26d7cf,combat_sports,benchmark_hard_negative,32021,"Riyad Mahrez has had a part in a league-high 25 Premier League goals this season (14 goals, 11 assists).",soccer,premier league,soccer,,,,,,
+8ac6186a06c9482b,combat_sports,benchmark_hard_negative,30383,"Notably, all 32 NFL teams made Forbes’ list of the 50 most valuable sports franchises around the world with the Panthers claiming the 23rd spot.",nfl_football,nfl,nfl_football,,,,,,
+3f0d19e497763d9c,combat_sports,benchmark_hard_negative,20161,I’d bet that nine out of ten coaches in the NBA would choose the experienced vet above the rookie.,nba_basketball,nba,nba_basketball,,,,,,
+f35695459cfed30f,combat_sports,benchmark_hard_negative,10570,Little doubt the Giants would be better on the offensive line with Martin.,nfl_football,offensive line,nfl_football,,,,,,
+76569300e9e9882e,combat_sports,benchmark_hard_negative,19886,"According to the Express, Arsenal are close to striking a deal for West Ham defender Winston Reid, with a fee supposedly agreed with just personal terms left to discuss.",soccer,arsenal,soccer,,,,,,
+bad7a01c31a4c4fd,combat_sports,benchmark_hard_negative,30310,"Merely indicating the name of the organization or the object of the local statute under which it is created is not enough to demonstrate the required general purpose.”
+
+In its 2010 990 tax return form, the NFL described itself as a “trade association promoting interests of its 32 member clubs.” Whether or not promoting the interests of 32 member clubs equates to improving business condition is up to the IRS to decide.",nfl_football,nfl,nfl_football,,,,,,
+ed7ed7e249ce4577,combat_sports,benchmark_hard_negative,48092,"Bi-Han swears that there will be no repercussions against the Shirai Ryu for Kuai's death, but after the events of season one, the resurrected Hanzo (now Scorpion) is convinced of Bi-Han's culpability in his family's and clan's deaths, not knowing that Bi-Han is not responsible and is instead incensed about the attack that he believes was carried out by his own Lin Kuei warriors.",nba_basketball,warriors,nba_basketball,,,,,,
+28dd1f05a75e4514,combat_sports,benchmark_hard_negative,23572,"The oddsmakers at Bovada LV just published their ""First Manager to Get Fired"" odds.",soccer,manager,soccer,,,,,,
+25ae3f4ca052c347,combat_sports,benchmark_hard_negative,8044,"At the beginning of July, citing natural gas capacity problems, the California Independent System Operator (ISO) issued the first Flex Alert in two years as western America baked under triple-digit heat.",nba_basketball,heat,nba_basketball,,,,,,
+892556c2ae867cdb,combat_sports,benchmark_hard_negative,30139,"Third, you have to believe in the Rays' rotation to an extent that it's not hard to see them aping the 2015 Mets, where the lineup does just enough until the deadline.",mlb_baseball,mets,mlb_baseball,,,,,,
+b19cf21e89bf65f3,combat_sports,benchmark_hard_negative,6212,"Huma was still in the air, trying to get a shot at Photovore but barely dodging the creature’s blasts of scorching heat.",nba_basketball,heat,nba_basketball,,,,,,
+788a86445251fbde,combat_sports,benchmark_hard_negative,8819,"Muhammad Saleem Shaikh, the public-relations manager for the province’s charitable-giving department, which oversees shrines, mosques and historic religious venues, says he saw no choice but to cancel the festival again this year.",soccer,manager,soccer,,,,,,
+c087edd07ffe18d3,combat_sports,benchmark_hard_negative,48977,"-Lino
+
+Joining Embarcadero as Delphi Product Manager Excellent news Marco.",soccer,manager,soccer,,,,,,
+20310c5bacef01cd,combat_sports,benchmark_hard_negative,17084,He played quarterback.,nfl_football,quarterback,nfl_football,,,,,,
+9543a4c985f4db0a,combat_sports,medium_negative,7233,Things start to look pretty good when you get to the sleeves — we see three large black/red stripes with the Blackhawks standard shoulder logo in the middle of them.,nhl_hockey,blackhawks,nhl_hockey,,,,,,
+435c52446c4ea856,combat_sports,medium_negative,141972,"I like how some ppl here still do not criticize those things just bcuz they read ""IeZaeL""... Again I love what u doing in general, but this is just bad designwise... U cannot break mapmaking rules that way, just becuz u know them well... Random is hard work dude...
+
+algue Profile Joined July 2011 France 1346 Posts #17
+
++ Show Spoiler +
+
+Or at least try to givean idea to save the map from being buried under the complains about blink stalker : Or at least try to givean idea to save the map from being buried under the complains about blink stalker : I'm saving ESPORTS right now : rly ?",gaming_general,esports,gaming_general,,,,,,
+8dd21a9d4b92783b,combat_sports,medium_negative,130747,"Sure, the rest of the NHL draft class may not have been stellar, but there were big contributors found in late rounds.",nhl_hockey,nhl;nhl draft,nhl_hockey,,,,,,
+716aea135d8546c8,combat_sports,medium_negative,67255,"Vancouver ranks 29th in shots on net with 26.7 per game, is converting an NHL-worst 5.4 per cent of those shots, and its version of a power play converts just 8.6 per cent of the time (only Boston, the team Eriksson left, is as ineffective).",nhl_hockey,nhl;power play,nhl_hockey,,,,,,
+2f821fd6d0922455,combat_sports,medium_negative,139789,"It's just that the Canucks aren't offering him a multi-year contract...
+
+From Iain MacIntyre of the Vancouver Sun:
+
+#Canuck Mike Santorelli likely headed to market July 1.",nhl_hockey,canucks,nhl_hockey,,,,,,
+5b46aa5c00834502,combat_sports,medium_negative,47372,The two main contributing factors are allegedly eSports and VR gaming.,gaming_general,esports,gaming_general,,,,,,
+e8df2796dee6d959,combat_sports,medium_negative,147326,"Last Friday, Labor Ministry inspectors swooped down on Dentsu’s gleaming headquarters in central Tokyo and other sites around Japan, searching for evidence of systemic overtime abuse or other labor violations.",nhl_hockey,overtime,nhl_hockey,,,,,,
+71cdd47bd9446a29,combat_sports,medium_negative,11126,"03-04 saw Andrew Raycroft win it, but it’s definitely not going to be that bust of a goalie.",nhl_hockey,goalie,nhl_hockey,,,,,,
+ccac3d06b42ce884,combat_sports,medium_negative,144133,"It’s not good for the fans if teams are playing it safe at the end of the game just to get to the shootout, so I’m all for overtime and going 4-on-4 to try and go for it.”",nhl_hockey,overtime,nhl_hockey,,,,,,
+4d9524c6b7fb3f02,combat_sports,medium_negative,108306,"But in an instant, the ball ended up back in the oversized hands of Marcol — hands that might have made him a goalie had he stayed in Poland — as he streaked freely toward an area kickers rarely ventured.",nhl_hockey,goalie,nhl_hockey,,,,,,
+029f8a5e26f61543,combat_sports,medium_negative,158990,As some of you folks may be aware there are a good deal of games that will play on Steam but still run off the Games for Windows Live back-end.,gaming_general,steam,gaming_general,,,,,,
+db564c99b7a74250,combat_sports,medium_negative,61732,"[126] The expansion was aided by steam power, when steamboats began traveling along America's large water systems, which were connected by new canals, such as the Erie and the I&M; then, even faster railroads began their stretch across the nation's land.",gaming_general,steam,gaming_general,,,,,,
+787e452799274de4,combat_sports,medium_negative,147331,"(Photo11: Chris McGrath, Getty Images)
+
+Prime Minister Shinzo Abe appointed an outside panel in September to recommend changes to Japan’s workplace environment, which includes excessive overtime.",nhl_hockey,overtime,nhl_hockey,,,,,,
+eff55aae80bf4c36,combat_sports,medium_negative,89343,"Before the 1955-56 season, Adams traded him to the Boston Bruins along with three other players.",nhl_hockey,bruins,nhl_hockey,,,,,,
+97e9af1b77e05fb9,combat_sports,medium_negative,19955,He is 5’11” and 160 pounds which isn’t necessarily ideal in the NHL.,nhl_hockey,nhl,nhl_hockey,,,,,,
+b1da4a78026896df,combat_sports,medium_negative,32096,9) More Open World PvP?,gaming_general,open world,gaming_general,,,,,,
+ab490b1695b8dbb0,combat_sports,medium_negative,8995,Lara Croft looks like a genuinely impressive video game avatar.,gaming_general,video game,gaming_general,,,,,,
+5c954a602c8c6976,combat_sports,medium_negative,8614,"“To have five teams that are going to play on the West Coast now, fans are going to be able to see players who are one phone call away from playing in the NHL.”
+
+“When we talk about the AHL, we’re talking about an entirely different level,” added Robitaille.",nhl_hockey,nhl,nhl_hockey,,,,,,
+f74098ad1758d199,combat_sports,medium_negative,62822,"Michael’s always looking for the next big scare, so when his friend Kyle (Jamie Marsh) points out an advertisement for a new video game called Brainscan in the latest issue of Fangoria, Michael calls and orders the game (from 1–800–555-FEAR, naturally).",gaming_general,video game,gaming_general,,,,,,
+8ffe803676e55415,combat_sports,medium_negative,115051,"Currently, although still within the Nintendo family, I am enjoying Splatoon more than I would have ever thought possible.",gaming_general,nintendo,gaming_general,,,,,,
+164d5fd26c41549b,combat_sports,medium_negative,19953,Marner compares himself to Patrick Kane of the Chicago Blackhawks and tries to model his game after him.,nhl_hockey,blackhawks,nhl_hockey,,,,,,
+5cf9625f0ce7dfe5,combat_sports,medium_negative,18110,2011 saw him return to his native Italy for a spell with Sampdoria before 2012-13 saw him have stints at Queens Park Rangers and VfB Stuttgart.,nhl_hockey,rangers,nhl_hockey,,,,,,
+8b8216b481f7f01b,combat_sports,medium_negative,50155,"Since the game ends immediately when the first goal is scored, this overtime format is known as “sudden death.” 7.6 Sudden death To compute the probability of winning in a sudden death overtime, the important statistic is not goals per game, but time until the first goal.",nhl_hockey,overtime,nhl_hockey,,,,,,
+cf7f61b264de2473,combat_sports,medium_negative,125240,"PS4 — Digital, Retail
+
+Elite Dangerous is the definitive massively multiplayer space epic, bringing gaming’s original open world adventure to the modern generation with a connected galaxy, evolving narrative, and the entirety of the Milky Way re-created at its full galactic proportions.",gaming_general,multiplayer;open world,gaming_general,,,,,,
+b1783d0afc45571b,combat_sports,medium_negative,28460,"As Hyman's career has taken off on the ice -- he has four goals and five assists in 27 games for the Maple Leafs -- he continues to learn the lessons that likely one day will be encapsulated in future books, future labors of love.",nhl_hockey,maple leafs,nhl_hockey,,,,,,
+0f70fd95ab3ead7e,combat_sports,medium_negative,87220,"The Browns are proud that they did not quit, that they fought to the end in overtime in Pittsburgh.",nhl_hockey,overtime,nhl_hockey,,,,,,
+6bb829b1ea44c92f,combat_sports,medium_negative,106950,Game Front gives the definitive opinion with our massive Xbox One vs. Playstation 4 Ultimate Buyer’s Guide.,gaming_general,playstation;xbox,gaming_general,,,,,,
+620955d63039bec8,combat_sports,medium_negative,83079,The NHL finals between the Nashville Predators and the Pittsburgh Penguins is all tied up 2-2 as the action heads north again.,nhl_hockey,nhl,nhl_hockey,,,,,,
+c3efb661861b403b,combat_sports,medium_negative,151790,"Just as the same people refused to acknowledge (after the fact) that the Hawks were in the bidding for Ryan Kesler this past summer.Yet, these same people, many of them at least, also continue to lament how, now approaching a decade after the departure of Robert Lang, the Hawks lack a second line center.So if your Heroic GM wasin the bidding for Carter and Kesler, two guys who fit the description of second line NHL center to a T, what exactlyhe done?Just hand out inflated contracts to existing, and in some cases, over-hyped Hawk players?Really, if he is not, as some have vehemently maintained, in these pursuits for players who could legitimately help the Hawks, thenSee, I’m willing to give Bowman and the Hawk front office some credit.I think they do sniff around and even bid on good players that potentially fill roster needs when they come on the market.",nhl_hockey,nhl,nhl_hockey,,,,,,
+68599fde73a2fc89,combat_sports,medium_negative,175364,"If he doesn’t like it, too bad.”
+
+McGrattan – a 34-year-old right wing who has played 317 NHL games with Ottawa, Phoenix, Calgary and Nashville sandwiched around a lot of games in the minors – probably didn’t intend to be the face of this rivalry.",nhl_hockey,nhl,nhl_hockey,,,,,,
+c300652588b4c745,combat_sports,background_negative,42407,"The fact that bitcoin now provides “exit ramps” from national currencies that were becoming easier to use, Hileman said, could exacerbate any future financial crisis.",crypto_blockchain,bitcoin,crypto_blockchain,,,,,,
+57d14240e55f977a,combat_sports,background_negative,31221,"Towards the end of the war small quantities of American equipment, including the BAR, made their way into mainland China.",china,china;mainland china,china,,,,,,
+51bccd2bc186135e,combat_sports,background_negative,20239,"Airline industry
+
+Under the new rules, payment surcharges will have to reflect the actual cost to the retailer of processing the card transaction.",aviation_aerospace,airline,aviation_aerospace,,,,,,
+70f0846f9e1e0dfa,combat_sports,background_negative,34150,"Through many of its unique properties, Bitcoin allows exciting uses that could not be covered by any previous payment system.",crypto_blockchain,bitcoin,crypto_blockchain,,,,,,
+77f001d2af7a2633,combat_sports,background_negative,49713,"A press release sent to bitcoin.com, said the embassy will also start giving cryptocurrency workshops and presentations.",crypto_blockchain,bitcoin,crypto_blockchain,,,,,,
+adbad1231b61bb75,combat_sports,background_negative,46560,One of the classes that Kamvar still teaches is Computational Methods in Data Mining.,crypto_blockchain,mining,crypto_blockchain,,,,,,
+22632688c8eec63c,combat_sports,background_negative,5700,"If SpaceX gets the big rocket to work, then what?",aviation_aerospace,spacex,aviation_aerospace,,,,,,
+172c108a26cf2322,combat_sports,background_negative,19355,"Would it do any harm if Trump diplomatically pressed Xi to release Nobel Peace laureate Liu Xiaobo, whose ""crime,"" for which he's serving an 11-year prison sentence, was to circulate a petition for placing human rights, democracy and the rule of law at the core of the Chinese political system?",china,chinese,china,,,,,,
+80f37d747e23b717,combat_sports,background_negative,39339,"In 2014, Wu was cast as Jessica Huang, Eddie’s pragmatic mother who wants her children to be successful and also keep in touch with their Chinese heritage.",china,chinese,china,,,,,,
+7bc142b10248c371,combat_sports,background_negative,3463,"And it's worth noting that in the past, it has sometimes been to Western companies' advantage that Beijing has its own views on the topic.",china,beijing,china,,,,,,
+d20d51cc2ee3eec6,combat_sports,background_negative,27650,"To the PSL, the CCP is, ultimately, the embodiment of socialism, rather than anything to do with the Chinese working class.",china,ccp;chinese,china,,,,,,
+bb1c78acd5cdc68a,combat_sports,background_negative,36840,"""Manpads are shoulder-launched anti-aircraft systems.",aviation_aerospace,aircraft,aviation_aerospace,,,,,,
+61ee210bd3c3c8ce,combat_sports,background_negative,18886,But we don’t really have any reason to think China isn’t serious about the Paris accord.,china,china,china,,,,,,
+9c84d5dd003d7513,combat_sports,background_negative,12484,"1309 Google and Geoeye have put together some Google and Geoeye have put together some new satellite images of Haiti, taken after the quake and showing the extent of the destruction.",aviation_aerospace,satellite,aviation_aerospace,,,,,,
+ff3f053759688af9,combat_sports,background_negative,2472,"""We do hope that if we are able to improve economic ties and connections between Israel and China, it will help us also to explain our positions with regard to the Iranian nuclear threat, with regard to the events in Syria,"" then-Israeli Finance Minister Yuval Steinetz said in an interview with Bloomberg prior to signing the $300 million line of credit.",china,china,china,,,,,,
+b1166c08604b58a6,combat_sports,background_negative,42395,"Hileman, who last week gave a lecture to the Bank of England on the risks of bitcoin and other cryptocurrencies, also flagged the risk of the whole market collapsing entirely.",crypto_blockchain,bitcoin,crypto_blockchain,,,,,,
+ad73427293cd64f7,combat_sports,background_negative,16846,"There’s a new milestone for the league of superheroes in China where a running cume of RMB 654M ($98.6M) cuffs the best DC score ever, surpassing the total cumes of Wonder Woman and BVS.",china,china,china,,,,,,
+28d6dd9110feec0f,combat_sports,background_negative,10055,"[34] Although U.S. officials expressed concern over the possibility of China or Russia receiving the drone's technology, they cast doubt on whether Iran could replicate the technology of the aircraft, as well as the amount of intelligence data available, due to the precautions installed for malfunctioning drones.",aviation_aerospace;china,aircraft;china,aviation_aerospace;china,,,,,,
+24b8efc651ecc9ea,combat_sports,background_negative,24515,"The Duterte administration, however, has been careful not to bring up the matter in international fora or with China, saying it wants to work with the rising superpower in resolving the issue.",china,china,china,,,,,,
+ad7172877b27df80,combat_sports,background_negative,24516,"""The Duterte-ordered extrajudicial killings, and his gyrations on the maritime dispute with China, have raised a stench for the Philippines that is far more perverse than the haze that used to spread out from Indonesia.",china,china,china,,,,,,

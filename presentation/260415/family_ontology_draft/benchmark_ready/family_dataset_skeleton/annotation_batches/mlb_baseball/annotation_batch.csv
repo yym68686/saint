@@ -1,0 +1,397 @@
+candidate_id,family_id,proposed_bucket,source_row_index,text,matched_query_blocks,matched_terms,matched_family_ids,final_label,keep_for_benchmark,label_confidence,primary_reason,exclusion_trigger,notes
+45db29bbfc99d1da,mlb_baseball,positive,323633,"Target him for his 20-25 Home Run and 10 SB ability, but with additional value in OBP leagues as he can maintain a 10-12% Walk rate.",baseball_jargon,home run,mlb_baseball,,,,,,
+378c1a2d993929de,mlb_baseball,positive,55401,"Here’s to their health
+
+Unlike the National League, which has about five or six truly awful teams, the American League is much more balanced and far less top-heavy and therefore has a much slimmer margin for error.",league_anchor,american league;national league,mlb_baseball,,,,,,
+3772f84cec496895,mlb_baseball,positive,23469,"But nowadays, says Yankees general manager Brian Cashman, ""I think it's something from out of the past that doesn't exist in the present anymore.",team_entities,yankees,mlb_baseball,,,,,,
+87d71748607ebd43,mlb_baseball,positive,403732,"In Chicago after the White Sox, the Fire, Blackhawks, Bulls, Cubs and lastly Bears followed.",team_entities,cubs,mlb_baseball,,,,,,
+138e53e1f85a08d6,mlb_baseball,positive,148711,"Originally given to the single best pitcher in the major leagues, the award changed its format over time.",baseball_jargon,pitcher,mlb_baseball,,,,,,
+e37534c1094e44b0,mlb_baseball,positive,134528,"That came at a very stiff price, as the Jays sent their top two prospects (Travis d'Arnaud, Noah Syndergaard) back to the Mets in return.",team_entities,mets,mlb_baseball,,,,,,
+40cfd6c665534115,mlb_baseball,positive,119562,—I love that Lane’s New York Mets pennant—that misguided symbol of Americana he put up in his office as a way to assimilate—is how he lives on.,team_entities,mets,mlb_baseball,,,,,,
+932057626b189945,mlb_baseball,positive,68319,Reds manager Bryan Price (left) looks at relief pitcher Ross Ohlendorf after Ohlendorf was ejected in the ninth inning of Wednesday's game against the Pirates.,baseball_jargon,inning;pitcher,mlb_baseball,,,,,,
+446f50477b052f45,mlb_baseball,positive,373614,But why are we talking about batting average with RISP when we have this fancy new situational hitting tool!,baseball_jargon,batting average,mlb_baseball,,,,,,
+0721b7a5ebd93a9e,mlb_baseball,positive,47983,"Scorpion has also featured as a guest/cameo character in four non-fighting Midway Games titles: NBA Jam Tournament Edition (1995),[15] The Grid (2000),[16] MLB Slugfest: Loaded (2004),[17] and Psi-Ops: The Mindgate Conspiracy (2004).",league_anchor,mlb,mlb_baseball,,,,,,
+42a1d64cac0b7199,mlb_baseball,positive,340430,"[2] In the climactic moment, Gonzalez came to the plate in the bottom of the 9th inning of game 7, with the score even at 2-2, the bases loaded and 1 out.",baseball_jargon,inning,mlb_baseball,,,,,,
+98133b093969df43,mlb_baseball,positive,402893,"Not bad, in a country where the first professional national league was founded only twenty years ago.",league_anchor,national league,mlb_baseball,,,,,,
+4aab6908e2149fa6,mlb_baseball,positive,272327,"So what I’m about to do is over-simplify, but what this is really about, from the Braves’ perspective, is swapping Wood and Peraza for Olivera.",team_entities,braves,mlb_baseball,,,,,,
+974fca52f3d00ea6,mlb_baseball,positive,36267,The cubs are no longer considered safe for petting after eight weeks.,team_entities,cubs,mlb_baseball,,,,,,
+9c1655724782ae0a,mlb_baseball,positive,289529,I'm very high on him as well but the fact that he has gotten more attention than the pitcher he could be in a year or two doesn't make much sense to me.,baseball_jargon,pitcher,mlb_baseball,,,,,,
+4aa816a71bcf5705,mlb_baseball,positive,246849,"The Cubs’ hitter-centric approach to building a roster led to shrewd deals like trading Andrew Cashner for Anthony Rizzo, and perpetually injured reliever Arodys Vizcaíno for Tommy La Stella, while spending millions of dollars on Jorge Soler as a near-major-league-ready Cuban defector.",team_entities,cubs,mlb_baseball,,,,,,
+27f7d5f527f1f0ab,mlb_baseball,positive,23527,"TRIVIALITY
+
+Don Mattingly, Los Angeles Dodgers: Another fascinating situation.",team_entities,dodgers,mlb_baseball,,,,,,
+f356447cc378fa6e,mlb_baseball,positive,23502,"Terry Collins, New York Mets: Collins is in the final year of his original two-year contract, which included an option for 2013.",team_entities,mets,mlb_baseball,,,,,,
+87d820fe8c9fab7f,mlb_baseball,positive,36632,"Offensively, the Tribe can overwhelm teams with a .296 batting average entering the weekend.",baseball_jargon,batting average,mlb_baseball,,,,,,
+60757e16be1a2be1,mlb_baseball,positive,118923,"In his junior year, he posted a 0.49 ERA while piling up 65 strikeouts in 37 innings and holding opponents to a .135 batting average.",baseball_jargon,batting average,mlb_baseball,,,,,,
+72bc1342ddbf3f7f,mlb_baseball,positive,125454,"Both the Rangers and Dodgers view Hamels as an attractive alternative to this winter's deep class of free-agent aces, because he is under contract for three more years after this season and has a team or vesting option for a fourth season.",team_entities,dodgers,mlb_baseball,,,,,,
+0894cf00d92e81fc,mlb_baseball,positive,253572,"“Just Buster’s presence,” explained Evans, “the fact Ohtani saw him play on TV and in the World Series, and there he is getting a chance to meet him.",league_anchor,world series,mlb_baseball,,,,,,
+22efb0f33a938337,mlb_baseball,positive,295953,Cozens added a RBI single in the inning.,baseball_jargon,inning,mlb_baseball,,,,,,
+377feb69f85385fa,mlb_baseball,positive,23482,"In fact, Cashman's manager, Girardi, doesn't appear to be in any significant jeopardy of losing his job -- even though the manager of the New York Yankees clearly would not top the list of America's most secure gigs.",team_entities,yankees,mlb_baseball,,,,,,
+9d05b114a1d76b44,mlb_baseball,positive,272400,But the Braves’ reasons are legitimate and justifiable.,team_entities,braves,mlb_baseball,,,,,,
+72120d4ca94e6366,mlb_baseball,positive,114224,"For baseball fans, the only distractions lately have been winter trades as teams swap their moribund bullpen arms and flatlining batters in hopes of livelier teams next year.",baseball_jargon,bullpen,mlb_baseball,,,,,,
+4a1c6436f3fb7bf1,mlb_baseball,positive,356656,A new MLB stadium in Mexico City would have to have much deeper fences.,league_anchor,mlb,mlb_baseball,,,,,,
+d442269fb746f520,mlb_baseball,positive,326683,"With two outs in the bottom of the ninth, the Dodgers’ star rookie shortstop Corey Seager belted a home run to right field to tie the game.",baseball_jargon;team_entities,dodgers;home run;shortstop,mlb_baseball,,,,,,
+028b2aeae191daad,mlb_baseball,positive,354748,"A person familiar with the Yankees’ offseason strategy said Tanaka is a priority in the wake of Andy Pettitte retiring, the uncertain future of Hiroki Kuroda and the physical question marks smothering Michael Pineda and Manuel Banuelos.",team_entities,yankees,mlb_baseball,,,,,,
+8ddb23dceacaab77,mlb_baseball,positive,415220,"Mitch Williams (1993)
+
+Getty Images
+
+Called in to preserve a 6-5 lead in Game 5, the Philadelphia Phillies' unpredictably erratic closer instead gave up a three-run, Series-clinching home run to Joe Carter.",baseball_jargon,home run,mlb_baseball,,,,,,
+ef975959ccf1e798,mlb_baseball,positive,246838,"They sensibly decided the team had to get worse before it got better, and in 2012 the Cubs lost 101 games, their worst season since 1966, which, given the Cubs’ reputation as lovable losers, was saying something.",team_entities,cubs,mlb_baseball,,,,,,
+ce164063add0c847,mlb_baseball,positive,118929,"The latter has yet to become an issue for Burdi, and since he's being groomed strictly as a late-inning reliever, he may be able to avoid injuries stemming from overuse.",baseball_jargon,inning,mlb_baseball,,,,,,
+a42c782ff2558aac,mlb_baseball,positive,246905,The Cubs are the only post–World War II team in the top 15 in terms of run ratio.,team_entities,cubs,mlb_baseball,,,,,,
+7e1cebdb241db1df,mlb_baseball,positive,285987,"The 1991 World Series is still called ""The best ever"" by some baseball reporters.",league_anchor,world series,mlb_baseball,,,,,,
+947b1bf2de61136c,mlb_baseball,positive,148715,"[1] From 1956 to 1958, a pitcher was not allowed to win the award on more than one occasion; this rule was eliminated in 1959.",baseball_jargon,pitcher,mlb_baseball,,,,,,
+edf97be7370c1a44,mlb_baseball,positive,8628,We won’t have the luxury of driving down the coast to see our American league team.,league_anchor,american league,mlb_baseball,,,,,,
+fe8e6a562af42140,mlb_baseball,positive,80691,"Newcomer Juan Nicasio has worked as a starter, but he was successful last season in the Los Angeles Dodgers’ bullpen.",baseball_jargon;team_entities,bullpen;dodgers,mlb_baseball,,,,,,
+e2d7a81fdd708656,mlb_baseball,positive,347127,Paul Lukas is rooting hard for lots of uni oddities in next week's MLB All-Star Game.,league_anchor,mlb,mlb_baseball,,,,,,
+bbff26ea908fbb8a,mlb_baseball,positive,415214,"Mariano Rivera (2001)
+
+Harry How/Getty Images
+
+Three outs from the New York Yankees' fourth consecutive Series title, the game's greatest-ever closer couldn't finish the job.",team_entities,yankees,mlb_baseball,,,,,,
+5f944ca99f76a944,mlb_baseball,positive,185603,"""Everyone at the Red Sox was shocked to hear of Daniel's tragic passing,"" Dave Dombrowski, Boston's president of baseball operations, said in a statement.",team_entities,red sox,mlb_baseball,,,,,,
+90ffce14d8fc1dd8,mlb_baseball,positive,405226,"Game-winner: RBI base hit by Justin Turner in the ninth, Kintzler’s second inning.",baseball_jargon,inning,mlb_baseball,,,,,,
+30b2dbd4748f860d,mlb_baseball,positive,79203,"Blackberry-faced New Yorkers peered up from their smart-phones and asked strangers simply, “Did you hear?” Mets and Phillies fans cast aside their divisional rivalry and chanted “U-S-A!",team_entities,mets,mlb_baseball,,,,,,
+e4749a6bda4f29af,mlb_baseball,positive,118917,"The club's draft strategy in recent years has reflected an increased emphasis on power arms -- even those that are clearly slated for future roles in the bullpen -- and no one personifies this altered approach better than Nick Burdi.The Twins selected the hard-throwing righty in the second round of last year's draft, and already he has become one of the most noteworthy relief prospects in all of the minor leagues.",baseball_jargon,bullpen,mlb_baseball,,,,,,
+50e64df945f8f3bf,mlb_baseball,positive,184444,"In justifying her ascent to the top of the clandestine service, a former CIA official told the Post that having a female lead the male-dominated department ""would be a home run from a diversity standpoint.""",baseball_jargon,home run,mlb_baseball,,,,,,
+07ab206d32e666d6,mlb_baseball,positive,415226,"Jamie Squire/Getty Images
+
+The young closer had the Texas Rangers within one strike (twice) of their first World Series title, yet the St. Louis Cardinals rallied for two runs in the ninth to tie Game 6 and send it into extra innings, where they won on David Freese's walk-off homer.",league_anchor,world series,mlb_baseball,,,,,,
+0be703dea14b1330,mlb_baseball,positive,36626,"Meanwhile, right-handed pitcher Sam Smith has been solid at times this season and gets up to 90 with his fastball, while in the bullpen, Brett Huber, Matt Denny, Tanner Bailey and Aaron Greenwood give the Rebels a reliable quartet.",baseball_jargon,bullpen;pitcher,mlb_baseball,,,,,,
+1d8900ba46c3144f,mlb_baseball,positive,225478,"Besides the fact that Cobb County gagged anyone who dared try to debate it, much of the ire is focused on Braves ownership: media conglomerate Liberty Media US:LMCA It’s a faceless opponent built to absorb whatever criticism is thrown its way.",team_entities,braves,mlb_baseball,,,,,,
+86604a149e8dd2c2,mlb_baseball,positive,37032,"pic.twitter.com/0OWPE5aMEe — Jeff Passan (@JeffPassan) June 20, 2017
+
+The Chicago Cubs first baseman went out of his way to plow into Hedges in an attempt to knock the ball loose.",team_entities,cubs,mlb_baseball,,,,,,
+79c6ec9cd1e83f2e,mlb_baseball,positive,197029,"This year, he’s doing something you’ll almost never see in a starting pitcher: Throw one pitch almost every time.",baseball_jargon,pitcher,mlb_baseball,,,,,,
+0889211e6ef005bc,mlb_baseball,positive,185617,"Flores signed for $3.1 million, according to Baseball America, which made him the third-highest-paid Venezuela prospect ever, according to MLB.com.",league_anchor,mlb,mlb_baseball,,,,,,
+33b2a9bcf1500dd5,mlb_baseball,positive,298837,"The Angels entered Thursday 7.5 games back of the Rangers in the American League West and just 2.5 back of the second wild card spot, and they'll need their ace healthy if they hope to make a run in September.",league_anchor,american league,mlb_baseball,,,,,,
+b771d0948df1b3d3,mlb_baseball,positive,142954,"He was drafted by the Chicago Cubs out of high school in 1954 but wound up playing basketball at the University of South Carolina, leaving the team after his freshman season.",team_entities,cubs,mlb_baseball,,,,,,
+a6fc0dc8f799f06a,mlb_baseball,positive,23653,"Tweets of the Week
+
+• If we're reading this right, our favorite legendary 19th-century fireballer wasn't real impressed that the Rockies and Braves teed it up Tuesday in 23-degree temperatures:
+
+I once pitched in 23 degree weather.",team_entities,braves,mlb_baseball,,,,,,
+36d7a6b8fe24bdb2,mlb_baseball,positive,246922,"The Cubs have used only five starting pitchers all season, and all five starters have an ERA under 3.",team_entities,cubs,mlb_baseball,,,,,,
+2434dff7c56e2309,mlb_baseball,positive,266811,"CAC has received consulting fees from or served as a paid member of scientific advisory boards for Bose Corporation, Boston Celtics, Boston Red Sox, Columbia River Bar Pilots, Institute of Digital Media and Child Development, Klarman Family Foundation, Koninklijke Philips Electronics, N.V., Samsung Electronics, Sleep Multimedia Inc., Vanda Pharmaceuticals, and V-Watch/PPRS.",team_entities,red sox,mlb_baseball,,,,,,
+b36efaeebe1499c2,mlb_baseball,positive,60215,"After showing flashes of power in his early 20s, Markakis settled in as an on-base threat, something the Braves desperately need after posting a .305 OBP and dealing Heyward.",team_entities,braves,mlb_baseball,,,,,,
+e803d5b639a8b5b7,mlb_baseball,positive,225473,"Cobb County will be borrowing $397 million via bonds, including nearly $300 million that will be paid from property taxes, to finance the new SunTrust Park after Braves ownership decided to leave its current digs at Turner Field for the suburbs.",team_entities,braves,mlb_baseball,,,,,,
+0f76e8a0bc333398,mlb_baseball,positive,30152,"Last year was kind of a dud when it came to September races, especially once the Cubs and Pirates had the Wild Card safety net.",team_entities,cubs,mlb_baseball,,,,,,
+410d2037bb9fe454,mlb_baseball,positive,272352,"Peraza makes a lot of contact, and he’s made a smooth transition from shortstop to second base.",baseball_jargon,shortstop,mlb_baseball,,,,,,
+ace133d9fe43ccac,mlb_baseball,positive,148738,"In the American League, 6 players have unanimously won the Cy Young Award, for a total of 9 wins.",league_anchor,american league,mlb_baseball,,,,,,
+4c75418275cc6739,mlb_baseball,positive,316094,"A prime one comes straight out of the Southern League-Braves Prospect Mallex Smith hit .340/.418/.413/.831 for the Mississippi Braves, while Brewers prospect Orlando Arcia hit .307/.347/.453/.800.",team_entities,braves,mlb_baseball,,,,,,
+ef4bdd58f6f1bba8,mlb_baseball,positive,311822,"From 1967 to 1983, Johnny Bench of the Cincinnati Reds earned the Rookie of the Year award, two National League MVP awards, 14 trips to the All-Star Game, and 10 Golden Glove awards.",league_anchor,national league,mlb_baseball,,,,,,
+23bc16eb93103a44,mlb_baseball,positive,209913,Last season Major League Baseball and the Major League Baseball Players association agreed to institute a new rule restricting how much a base runner can do to break up a double play.,league_anchor,major league baseball,mlb_baseball,,,,,,
+d265214736d5e380,mlb_baseball,positive,277697,"The Braves start off the week with a three-game series against the Nationals where they’ll see Gio Gonzalez and Max Scherzer, and then they head home to face off against the New York Mets, getting to see Jacob DeGrom while they’re there.",team_entities,braves;mets,mlb_baseball,,,,,,
+e417885f7e69a207,mlb_baseball,positive,102673,"And if the Giants released Adrianza today, they would have a lousy backup shortstop, just like 25 other teams.",baseball_jargon,shortstop,mlb_baseball,,,,,,
+29398319c82faab9,mlb_baseball,positive,354752,"This guy is very good.’’
+
+The Yankees sent assistant general manager Billy Eppler and respected pro scout and former Mariners manager Don Wakamatsu to watch Tanaka pitch extensively this season.",team_entities,yankees,mlb_baseball,,,,,,
+2e437c21e1bba21a,mlb_baseball,positive,30119,"The Cubs will finish the season with a three-game set against the Reds, who will be busy seeing if 26-year-old Darnson Skinwell is the left fielder of the future, and starting a homemade Brad Penny that they made from assorted body parts that they found in Mr. Redlegs' office.",team_entities,cubs,mlb_baseball,,,,,,
+1001b946626c82e2,mlb_baseball,positive,23656,Novel approach to Dog Day today.Five of 9 Mets starters will be accompanied to their positions by their pet dogs.,team_entities,mets,mlb_baseball,,,,,,
+f60cf2a77a41cbd9,mlb_baseball,positive,339441,"The Oakland Athletics have reached out to free-agent slugger Mark Trumbo, sources told MLB Network insider Jon Heyman on Wednesday.",league_anchor,mlb,mlb_baseball,,,,,,
+5e0869004c5e1724,mlb_baseball,positive,125447,"The Texas Rangers and Los Angeles Dodgers have emerged over the weekend as the likely favorites to trade for Philadelphia Phillies ace Cole Hamels, multiple sources said.",team_entities,dodgers,mlb_baseball,,,,,,
+1a5879f2498f8b28,mlb_baseball,positive,148732,Clayton Kershaw is the youngest pitcher to win a third Cy Young Award.,baseball_jargon,pitcher,mlb_baseball,,,,,,
+4c0b8d381f132036,mlb_baseball,positive,32974,"With two games in the books, the 2014 World Series is tied and heading back to San Francisco.",league_anchor,world series,mlb_baseball,,,,,,
+d182f29198d3d86c,mlb_baseball,positive,414911,The agreement was first reported by MLB.com.,league_anchor,mlb,mlb_baseball,,,,,,
+32f5acbe06b33f8d,mlb_baseball,positive,46413,"In 2010, Cincinnati went back to the Bulldogs front seven and hit a home run with Geno Atkins in the fourth round.",baseball_jargon,home run,mlb_baseball,,,,,,
+427b092d318262f4,mlb_baseball,positive,373613,"Their batting average with RISP is .329, better than the next best Tigers by an incredible 47 points.",baseball_jargon,batting average,mlb_baseball,,,,,,
+69bf6d6862ffcddd,mlb_baseball,positive,415252,"Jack Bentley (1924)
+
+Hank Olen/Getty Images
+
+The Giants' pitcher gave up two walk-off hits, including Earl McNeely's bad-hop double that won the Series for the Senators in Game 7.",baseball_jargon,pitcher,mlb_baseball,,,,,,
+6c032603ca4adc41,mlb_baseball,positive,246914,But it leads the NL in runs per game because it’s the epitome of what Epstein and Hoyer want their offense to be: The Cubs grind out at-bats and make pitchers throw strikes.,team_entities,cubs,mlb_baseball,,,,,,
+2a9b51db53dbc551,mlb_baseball,positive,318826,You might remember Game One of the Reds-Giants series when Johnny Cueto left the game in the first inning.,baseball_jargon,inning,mlb_baseball,,,,,,
+abe3c786522789db,mlb_baseball,positive,212591,"The New York Mets selected the 21-year-old Thompson, a third baseman, in the fourth round of last month’s draft.",team_entities,mets,mlb_baseball,,,,,,
+1f8452deaea81783,mlb_baseball,positive,83411,"Danny Tartabull, the Yankees' power-hitting right fielder, was getting dressed on the other side of the clubhouse.",team_entities,yankees,mlb_baseball,,,,,,
+e27d28a272855805,mlb_baseball,positive,216624,"Hernandez also breaks down (via Twitter) the innings-based performance bonuses and other details (all links go to Twitter) from the Scott Boras negotiated deal including: there isn't a no-trade clause, Ryu's salary can increase depending on how he fares in the Cy Young voting, Ryu can't be sent to the minors without his written consent, the Dodgers will pay for an interpreter, and Ryu's jersey will sport the number 99.",team_entities,dodgers,mlb_baseball,,,,,,
+5568c80c150f7544,mlb_baseball,positive,190632,"""The mere fact that we were willing to take a high school pitcher one-one for the third time in history, even though the first two didn't pan out, showed us how strongly we agreed.",baseball_jargon,pitcher,mlb_baseball,,,,,,
+b94a1e6468669a7a,mlb_baseball,positive,118866,"Gibbons also confirmed out-of-options reliever Bo Schultz is slated to visit with a specialist in New York on Tuesday to examine an elbow injury and will start the season on the disabled list, a turn of events that seemingly leaves swingman Mike Bolsinger, power arms Ryan Tepera and Dominic Leone and lefty Aaron Loup up for the final two spots in the bullpen.",baseball_jargon,bullpen,mlb_baseball,,,,,,
+1136e0fbb19f777a,mlb_baseball,positive,340413,"Overall in 1995, Gonzalez had a .276 average, 13 homers and 69 RBI combined while he played with the Astros and Cubs.",team_entities,cubs,mlb_baseball,,,,,,
+b68e9f3979f40689,mlb_baseball,positive,145055,"It was found that the bats were also much more likely to roost in the pitchers of N. hemsleyana than they were in the other endemic pitcher plants in the area, N. bicalcarata.",baseball_jargon,pitcher,mlb_baseball,,,,,,
+3b0b2b2fd3c6ed2f,mlb_baseball,positive,340449,"In his only season with the Dodgers, he was productive offensively, but struggled defensively.",team_entities,dodgers,mlb_baseball,,,,,,
+2615957500561a06,mlb_baseball,positive,326679,"“Everything happens on God’s time, not our time,” he said, noting the original goal was to have the recording ready for the All Star break in July but it wasn’t ready to go until September, so they announced its release just after Scully’s last home game at Dodgers Stadium.",team_entities,dodgers,mlb_baseball,,,,,,
+30e580862706a596,mlb_baseball,positive,30128,"AL East
+
+To get here, where you're excited about the American League East and the five teams within, you have to make some assumptions.",league_anchor,american league,mlb_baseball,,,,,,
+83717ca0a030a7ec,mlb_baseball,positive,306273,"Acquiring bullpen help by July 31 seems to be a priority for Tampa Bay, whose relievers rank 19th in the majors in fWAR (1.5) and 20th in ERA (4.37).",baseball_jargon,bullpen,mlb_baseball,,,,,,
+ccfee58356412357,mlb_baseball,positive,354753,General manager Brian Cashman refused comment Thursday when asked about the Yankees’ interest in Tanaka.,team_entities,yankees,mlb_baseball,,,,,,
+3f2ac0da916950a0,mlb_baseball,positive,87991,"The ultimate example of a rags-to-riches team are the 2006 Tigers, who made the World Series three years after losing 119 games -- that's 26 games worse than the 2011 Orioles.",league_anchor,world series,mlb_baseball,,,,,,
+7386f79c9c3eca55,mlb_baseball,positive,259909,They have had one of the most difficult schedules of any MLB team so far — ESPN’s data suggests the Tigers have had the fourth-toughest schedule in baseball.,league_anchor,mlb,mlb_baseball,,,,,,
+6dff674b2ce4bc55,mlb_baseball,positive,415243,"Calvin Schiraldi (1986)
+
+Getty Images
+
+Sure, Buckner made the mother of all errors, but the Red Sox reliever lost both Game 6 AND Game 7, giving up six earned runs in three innings.",team_entities,red sox,mlb_baseball,,,,,,
+66d5317f43a2ec51,mlb_baseball,positive,83418,"First pitch wasn't more than an hour or two away, and 60,000 fans were coming to see Don Mattingly lead the Yankees against the Red Sox.",team_entities,red sox;yankees,mlb_baseball,,,,,,
+3d1fc1f2e3e24c0c,mlb_baseball,positive,246927,"The Cubs have allowed the second-fewest home runs in the NL, but they are just fourth in the NL in strikeouts and sixth in walks allowed.",team_entities,cubs,mlb_baseball,,,,,,
+d31f943a81bd78c8,mlb_baseball,positive,225474,"Opponents were barred from speaking against the lending scheme, the Braves’ president shrouded the deal in secrecy and the Georgia Supreme Court struck down an appeal against issuing the bonds just last month.",team_entities,braves,mlb_baseball,,,,,,
+a28178efccdde075,mlb_baseball,positive,148699,"The award was first introduced in 1956 by Baseball Commissioner Ford Frick in honor of Hall of Fame pitcher Cy Young, who died in 1955.",baseball_jargon,pitcher,mlb_baseball,,,,,,
+628a73ad588c88c3,mlb_baseball,positive,323642,"Mitch Moreland (1B, Red Sox) – Moreland should be landing on more fantasy squads.",team_entities,red sox,mlb_baseball,,,,,,
+da3b9c2b053c604f,mlb_baseball,positive,272391,"The Braves are trading a 24-year-old and a 21-year-old for a 30-year-old, but there’s reason to believe the younger guys are already declining, while the 30-year-old is about ready to help.",team_entities,braves,mlb_baseball,,,,,,
+691ca19e70a93740,mlb_baseball,positive,118928,"That's 46 percent.With any tall, lanky pitcher who routinely works in the upper-90s, there are going to be two pre-eminent concerns: control and health.",baseball_jargon,pitcher,mlb_baseball,,,,,,
+2fa29f7a5b52c266,mlb_baseball,local_hard_negative,1789076,"As a spectator sport, badminton falls behind cricket, football and tennis, but could that soon change?",non_mlb_ball_sports,cricket,,,,,,,
+ad264ca62b51f837,mlb_baseball,local_hard_negative,527585,"There wasn't a cricket skill, once taught, that he couldn't perform at the highest level.",non_mlb_ball_sports,cricket,,,,,,,
+7ec5bd1d13045a4b,mlb_baseball,local_hard_negative,1269555,"Cricket, Something to Smile About.",non_mlb_ball_sports,cricket,,,,,,,
+55030b6720d38f13,mlb_baseball,local_hard_negative,365216,"And this year, they’ve made live coverage of the Cricket World Cup available to anyone through purchase of a package containing all the matches.",non_mlb_ball_sports,cricket,,,,,,,
+6b9c08ec0551d832,mlb_baseball,local_hard_negative,1518857,"• This is an extract from the Spin, the Guardian's free weekly cricket email.",non_mlb_ball_sports,cricket,,,,,,,
+3404fdfabbac253e,mlb_baseball,local_hard_negative,816230,"Cricket flour has similar baking properties as actual flour, but gives baked goods a nuttier flavor and grainier texture.",non_mlb_ball_sports,cricket,,,,,,,
+3469c6259f12eec8,mlb_baseball,local_hard_negative,1569742,It is the result of cricket finally losing itself in its own marketing.,non_mlb_ball_sports,cricket,,,,,,,
+88e36bfa6c6d7e89,mlb_baseball,local_hard_negative,1516267,"[9]
+
+King played for Tioga until 1896, when he joined Belmont Cricket Club.",non_mlb_ball_sports,cricket,,,,,,,
+6e504242e7a96ebb,mlb_baseball,local_hard_negative,527895,"Under Faulkner's tutelage, Peebles went further than county cricket and played 13 Tests.",non_mlb_ball_sports,cricket,,,,,,,
+1c473966e373d48c,mlb_baseball,local_hard_negative,496623,"His father Johannes Sr, brother Johannes Jr and grandfather Antonio were baseball pitchers and his mother, Sheritsa Stoop, who is in New Zealand with him, played on the Dutch national softball team.",non_mlb_ball_sports,softball,,,,,,,
+26b0479c2d373cfb,mlb_baseball,local_hard_negative,982062,"The sad part is, he was obviously a promising bowler, on the peripheries of the state team, but he doesn't know of any attempts made by his state selectors to look for him when he disappeared from a camp of the Bhopal division team, one step below first-class cricket.",non_mlb_ball_sports,cricket,,,,,,,
+f7e260f1c32627c8,mlb_baseball,local_hard_negative,519780,"Test Match Struggles in Asia
+
+While Pakistan play out a day-night Test in an empty stadium in the desert, India play England in a heavyweight bout, in front of a pitiable crowd in cricket’s most unpopular region in India.",non_mlb_ball_sports,cricket,,,,,,,
+1cdc0b36b87e30cf,mlb_baseball,local_hard_negative,1357089,"If I had been captain for so long, maybe I would’ve been too distracted by other duties to score as many runs as I did.”
+
+He also added that he has no specific plans to stay in touch with cricket, but hinted pursuing a new chapter in life.",non_mlb_ball_sports,cricket,,,,,,,
+8aa344209c7e4eaa,mlb_baseball,local_hard_negative,1809146,"Ethnography / cinema-verite / essay film / documentary
+
+Blind Child (Johan van der Keuken, 1964)
+
+N!owa T’ama: The Melon Tossing Game (John Marshall, 1970)
+
+Children Throw Toy Assegais (John Marshall, 1972)
+
+An Argument About a Marriage (John Marshall, 1969)
+
+Debe’s Tantrum (John Marshall, 1972)
+
+Lion Game (John Marshall, 1970)
+
+The Meat Fight (John Marshall, 1974)
+
+Playing with Scorpions (John Marshall, 1972)
+
+A Rite of Passage (John Marshall, 1972)
+
+Tug-of-War – Bushmen (John Marshall, 1974)
+
+Trobriand Cricket: An Ingenious Response to Colonialism (Jerry Leach and Gary Kildea, 1973)
+
+Children’s Magical Death (Timothy Asch and Napoleon Chagnon, 1974)
+
+Fußball wie noch nie (Football as Never Before, Hellmuth Costard, 1970)
+
+Promised Lands (Susan Sontag, 1974)
+
+Poto and Cabengo (Jean-Pierre Gorin, 1979)
+
+Demon Lover Diary (Joel DeMott, 1980)
+
+Seventeen (Jeff Kreines and Joel DeMott, 1983)
+
+Close-Up (Abbas Kiarostami, 1990)
+
+Fei Cheng (Ghost Town, Dayong Zhao, 2008)
+
+Helsinki, Ikuisesti (Helsinki, Forever, Peter von Bagh, 2008)
+
+Wait, did I just unwittingly put together an amazing documentary class screening list?",non_mlb_ball_sports,cricket,,,,,,,
+191f977213f5533a,mlb_baseball,local_hard_negative,1308142,"Cricket Canada president Ravin Moorthy said they hadn't yet ""heard definitively from ICC what the plan will be for the top 10 Associates/Affiliates other than the four that have gone on to the World Cup.",non_mlb_ball_sports,cricket,,,,,,,
+1fcb106c6e9431af,mlb_baseball,local_hard_negative,18532,"Basketball, football, softball, baseball, foosball, pinball, ping-pong ball, rugby ball, cricket ball.",non_mlb_ball_sports,cricket;softball,,,,,,,
+9e969267df93a4ab,mlb_baseball,local_hard_negative,1506987,"They want to kill ants and shout, wee in clean laundry, break things, hurl cricket balls through windows and upset next door’s cat.",non_mlb_ball_sports,cricket,,,,,,,
+ff4ef840d9e67c17,mlb_baseball,local_hard_negative,863200,"on Saturday night in the Mid-Atlantic Regional Tournament championship game on the Leon J. Breen Field at the A. Bartlett Giamatti Little League Complex in Bristol, Conn.",non_mlb_ball_sports,little league,,,,,,,
+c98b3390e754244b,mlb_baseball,local_hard_negative,1235449,"I step in with the cricket coaching, and building a team there with the kids.",non_mlb_ball_sports,cricket,,,,,,,
+d69427b01ba4f4d2,mlb_baseball,local_hard_negative,151736,"As groups of children play cricket and football in a nearby concrete lawn, a couple of admirers come and pay obeisance with flowers on the grave.",non_mlb_ball_sports,cricket,,,,,,,
+3db5a5975250f563,mlb_baseball,local_hard_negative,371506,"The evacuees are living with friends and family on Antigua, or in large shelters run by the government in technical colleges, churches and a cricket stadium.",non_mlb_ball_sports,cricket,,,,,,,
+5a4e814857ba577f,mlb_baseball,local_hard_negative,977826,Women’s cricket has come a long way and I have no doubt this World Cup will be the biggest one so far.”,non_mlb_ball_sports,cricket,,,,,,,
+e02724698963fb72,mlb_baseball,local_hard_negative,835964,"The ball consisted of more than two pounds of food, midway in size between a softball and bowling ball, meant for sharing.",non_mlb_ball_sports,softball,,,,,,,
+6169d039bf18e406,mlb_baseball,local_hard_negative,669143,"""If you can get yourself onto a bit of a roll, because there is so much cricket, you can find yourself feeling really good out in the middle and hopefully converting that into runs.",non_mlb_ball_sports,cricket,,,,,,,
+9b265982d1b35297,mlb_baseball,local_hard_negative,356495,Then there was my little league baseball coach who tried seducing me with his mustache when explaining what steroids does to a clit when I was 12.,non_mlb_ball_sports,little league,,,,,,,
+eeb70f28c738c56a,mlb_baseball,benchmark_hard_negative,44455,• Don’t underestimate the impact that Panthers general manager Dale Tallon’s trades are making.,soccer,manager,soccer,,,,,,
+a72e07cee74aa410,mlb_baseball,benchmark_hard_negative,20108,"There were about seven or eight guards that were very highly touted of in the NBA draft, and all were all projected to go in the top ten.",nba_basketball,nba,nba_basketball,,,,,,
+bbe23af1ebefe046,mlb_baseball,benchmark_hard_negative,49027,Joining Embarcadero as Delphi Product Manager Felicitaciones desde Colombia.,soccer,manager,soccer,,,,,,
+2b235f39a0e2b1c7,mlb_baseball,benchmark_hard_negative,49042,";-) Regards Niels
+
+Joining Embarcadero as Delphi Product Manager Congratulations and wish you the best.",soccer,manager,soccer,,,,,,
+db829ef12a5e4fae,mlb_baseball,benchmark_hard_negative,3997,These metrics are far less sensitive to random fluctuations as they don’t suffer from the complications of heat redistribution.,nba_basketball,heat,nba_basketball,,,,,,
+c195ebb05f842a5c,mlb_baseball,benchmark_hard_negative,12129,"They are:
+
+Derby Cathedral School, a Church of England secondary
+
+A Level Sixth Form School, Bury St Edmunds, a Church of England school for pupils aged 16 to 19
+
+The Trinity College, an all-through Christian school in Colchester
+
+Bishop Arden Church of England Free School, a secondary in Hillingdon
+
+Emmanuel Community School, a Christian primary school in Waltham Forest
+
+Cathedral Free School, a Church of England primary in Liverpool
+
+Cathedral Enterprise School, a Church of England secondary in Bristol
+
+East Village C of E Academy, a primary school in Swindon
+
+Middle Wichel CE (Primary) Academy also in Swindon
+
+In addition, two new Hindu schools have been approved, the Avanti Leicester School and the Avanti Brent School.",soccer,liverpool,soccer,,,,,,
+2e606cdd8dcf42f4,mlb_baseball,benchmark_hard_negative,3115,"If the Canucks were to be truly that bad, they would have the lowest team points since Edmonton and Buffalo in 2014-15.",nhl_hockey,canucks,nhl_hockey,,,,,,
+eb8a6fb959eb1ce6,mlb_baseball,benchmark_hard_negative,19951,He enjoys having the puck on his stick when entering the offensive zone in order to snipe one past the goaltender.,nhl_hockey,puck,nhl_hockey,,,,,,
+399719159969ba0e,mlb_baseball,benchmark_hard_negative,25868,He devised demonstrations that advanced the question of how radiant heat is absorbed and emitted at the molecular level.,nba_basketball,heat,nba_basketball,,,,,,
+a513dd848d07d9ef,mlb_baseball,benchmark_hard_negative,17105,It is likely there are some play-calls that Kelly is more willing to make with Smith at quarterback than with Foles or Vick.,nfl_football,quarterback,nfl_football,,,,,,
+ba4895305bda4ca7,mlb_baseball,benchmark_hard_negative,5449,"My friends, my loyal readers, my fellow students of NFL sickness; it is here you will learn that whatever road Cleveland takes from their present situation into the wild blue yonder will come through Central Texas.",nfl_football,nfl,nfl_football,,,,,,
+cd9aae0f4de13e96,mlb_baseball,benchmark_hard_negative,11120,"They were Game Savers.”
+
+Well time for speculation folks as I dig through some old records and awards to see if we can’t identify who the six Canadian legend NHL goalies are.",nhl_hockey,nhl,nhl_hockey,,,,,,
+40a1686bff891500,mlb_baseball,benchmark_hard_negative,33681,"There will be a time for reflection and all of that stuff next week.”
+
+—
+
+Follow Arnie Melendrez Stapleton on Twitter: http://twitter.com/arniestapleton
+
+—
+
+For more NFL coverage: http://www.pro32.ap.org and http://www.twitter.com/AP-NFL",nfl_football,nfl,nfl_football,,,,,,
+95dfeff6d6ba4295,mlb_baseball,benchmark_hard_negative,46785,"Jennifer Mazzon, former VP of Marketing at Upstartle is now a Senior Product Marketing Manager at Google.",soccer,manager,soccer,,,,,,
+d0b099f82bd51fa0,mlb_baseball,benchmark_hard_negative,19950,Mitch Marner makes scoring look easy with his speed and ability to control the puck.,nhl_hockey,puck,nhl_hockey,,,,,,
+fe2902aa7524f8a9,mlb_baseball,benchmark_hard_negative,11126,"03-04 saw Andrew Raycroft win it, but it’s definitely not going to be that bust of a goalie.",nhl_hockey,goalie,nhl_hockey,,,,,,
+d60571adabfa8c68,mlb_baseball,benchmark_hard_negative,42226,Whether general manager Bob Quinn and the L:ions’ front office select a running back in this year’s draft – which I’m assuming they will – Green should still be an important asset to Detroit’s offense.,soccer,manager,soccer,,,,,,
+a5c911e3fd6ea364,mlb_baseball,benchmark_hard_negative,30365,"In fact there are only three NFL franchises, the New England Patriots, New York Giants, and New York Jets, which have paid three-quarters or more of their stadium capital costs, meaning 29 other stadiums were funded, in part by taxpayers.",nfl_football,nfl;patriots,nfl_football,,,,,,
+dc3fcc819747c3b8,mlb_baseball,benchmark_hard_negative,25296,Sterling did not suffer any injuries in the alleged attack and he went on to start and score twice – his 14th and 15th goals of an extraordinary season – in City’s 4-1 victory over Tottenham as Pep Guardiola’s side moved 14 points clear at the top of the Premier League.,soccer,premier league,soccer,,,,,,
+34eff7a4e20dff97,mlb_baseball,benchmark_hard_negative,41489,"Once the heat has been extracted, the now cooled molten salt is stored in a “cold” tank ready to be sent up the tower to be heated again by the sunlight reflected onto the receiver.",nba_basketball,heat,nba_basketball,,,,,,
+2bbff3372497e1a8,mlb_baseball,benchmark_hard_negative,28477,"“The low frequency tends to lull all of us into a sense of complacency,” said Michele Steinberg, manager of wildland fire operations at the nonprofit National Fire Protection Association.",soccer,manager,soccer,,,,,,
+d78fc59dc540968a,mlb_baseball,benchmark_hard_negative,8608,"Edmonton Oilers will move their affiliate, Oklahoma City Barons, from Oklahoma City, Oklahoma to Bakersfield, where the ECHL’s Bakersfield Condors will move up to the AHL
+
+Los Angeles Kings will swap their ECHL and AHL affiliates, with the AHL’s Manchester Monarchs moving to Ontario where they will take on the name of the existing Ontario Reign.",nhl_hockey,oilers,nhl_hockey,,,,,,
+0a48545563a17024,mlb_baseball,benchmark_hard_negative,17093,The offensive line was zone blocking the defense.,nfl_football,offensive line,nfl_football,,,,,,
+c3ac60f0276cf9b2,mlb_baseball,benchmark_hard_negative,8054,"The largest solar plant in the United States, California’s Ivanpah, recovering from a solar fire in May and struggling with bad performance overall, isn’t helping much in this heat.",nba_basketball,heat,nba_basketball,,,,,,
+831662c08870b321,mlb_baseball,benchmark_hard_negative,13781,And his reputation among fans was further enhanced when he gave Manchester United manager Alex Ferguson a verbal volley in front of the Main Stand at Anfield in September 2012.,soccer,manager;manchester united,soccer,,,,,,
+e78aeb16b2513911,mlb_baseball,benchmark_hard_negative,48953,"Joining Embarcadero as Delphi Product Manager If you follow my twitter account or have attended the product address of CodeRage, you now that I've just made a big career change, joining Embarcadero Technologies.",soccer,manager,soccer,,,,,,
+a0dacd4b2ea1162e,mlb_baseball,benchmark_hard_negative,33651,"Denver’s inept offense and poor run defense limited his chances down the stretch to have game-turning plays like he piled up earlier, including sack-strips of Andrew Luck and Blake Bortles that sealed victories and a sack of Cam Newton in the opener that was reminiscent of his spectacular Super Bowl.",nfl_football,super bowl,nfl_football,,,,,,
+f0224363b5286e5a,mlb_baseball,benchmark_hard_negative,32182,"English midfielder Ritchie Jones has two goals in three games, and appears to have settled into the game on this side of the pond.",soccer,midfielder,soccer,,,,,,
+3b5ec8343ad1f24f,mlb_baseball,benchmark_hard_negative,17080,“It’s just Brad Smith plays quarterback.,nfl_football,quarterback,nfl_football,,,,,,
+67f8700e73153acc,mlb_baseball,benchmark_hard_negative,48972,"40 Comments
+
+Joining Embarcadero as Delphi Product Manager As I've already tweeted on Twitter, I would like to congratulate you on your new job!",soccer,manager,soccer,,,,,,
+66e9dfa0ad6c3d46,mlb_baseball,benchmark_hard_negative,36371,"Richard's fourth touchdown of the day followed, but after ASU failed the two-point conversion the Sun Devils held a fragile 36-31 lead and 4;45 on the clock for Duke.",nfl_football,touchdown,nfl_football,,,,,,
+c7b56d7678004b3a,mlb_baseball,benchmark_hard_negative,26199,"Veteran quarterback Phillip Rivers was pressured 238 times last season and out of the 1, 510 total rushing yards the team totaled last season, 960 of them came after contact.",nfl_football,quarterback,nfl_football,,,,,,
+f52fe625ce4765e3,mlb_baseball,benchmark_hard_negative,36360,"His punt was fine, but ASU's coverage wasn't and Jamison Crowder brought it back 68 yards for a touchdown that pulled Duke within three points at halftime.",nfl_football,touchdown,nfl_football,,,,,,
+00cf93b08d24840f,mlb_baseball,benchmark_hard_negative,25852,"Tyndall explained the heat in the Earth's atmosphere in terms of the capacities of the various gases in the air to absorb radiant heat, also known as infrared radiation.",nba_basketball,heat,nba_basketball,,,,,,
+520dbc7735263bd0,mlb_baseball,benchmark_hard_negative,23352,"had secret leaders known as “The Secret Chiefs,” an important aspect of the Golden Dawn.",nfl_football,chiefs,nfl_football,,,,,,
+ce2c9943a838322a,mlb_baseball,benchmark_hard_negative,11252,"Williams, who will turn 33 in December, will have a new role in this comeback, one that will hopefully protect the team from the disaster that very likely cost the Cavaliers their first NBA title.",nba_basketball,nba,nba_basketball,,,,,,
+313f7074dde44e91,mlb_baseball,benchmark_hard_negative,8052,"According to the U.S. Energy Information Administration, utilities across the western United States withdrew 1 billion cubic feet of gas from storage to satisfy power demand during this heat wave, during a period when they typically inject 11 billion cubic feet into storage.",nba_basketball,heat,nba_basketball,,,,,,
+ea3cbd967a1ce36e,mlb_baseball,benchmark_hard_negative,30607,"""I am not going to stand up to show pride in a flag for a country that oppresses black people and people of color,"" Kaepernick told NFL Media about his protest.",nfl_football,nfl,nfl_football,,,,,,
+59e83e2fa7e8a224,mlb_baseball,benchmark_hard_negative,30335,"RT America reached out to the NFL, NHL as well as the PGA on multiple occasions.",nfl_football;nhl_hockey,nfl;nhl,nfl_football;nhl_hockey,,,,,,
+999e0e18ccecb2ac,mlb_baseball,benchmark_hard_negative,6529,"""They would just turn the heat in one room or they would just bundle up , wear extra layers of clothing inside the home just to keep themselves warm,"" worker Cynthia Louis said.",nba_basketball,heat,nba_basketball,,,,,,
+d92c8621c6a9ba46,mlb_baseball,benchmark_hard_negative,48989,"Joining Embarcadero as Delphi Product Manager Muchas Felicidades!, Enhorabuena, Congratulations!.",soccer,manager,soccer,,,,,,
+4f9808d3fcae75c7,mlb_baseball,benchmark_hard_negative,3875,"On a third-down in 11-on-11 scrimmage, he zoomed past starting left tackle Jake Matthews and sacked quarterback Matt Ryan.",nfl_football,quarterback,nfl_football,,,,,,
+fa33f8cea34d42ac,mlb_baseball,benchmark_hard_negative,6997,I want to win many Stanley Cup Championships.,nhl_hockey,stanley cup,nhl_hockey,,,,,,
+793af18956855157,mlb_baseball,benchmark_hard_negative,8631,"But our closest opponent was a six-hour bus ride away, and the rest of the teams were, pretty much, a flight away, so this is really going to enhance development for our players.”
+
+Flames general manager Brad Treliving echoed Lowe’s sentiments.",soccer,manager,soccer,,,,,,
+4ea83d15e4f8433a,mlb_baseball,benchmark_hard_negative,40889,"Mac Logan, the city's general manager of transportation, said last week's meeting on the southwest transitway, in particular, was unlike any he had seen.",soccer,manager,soccer,,,,,,
+56ae2d01ceeaed5e,mlb_baseball,benchmark_hard_negative,8680,"We wish him all the best at Arsenal.“We have got some exceptional players in our academy of which Jay is one.“Arsenal have met the valuation which is linked to the EPPP guidelines and unfortunately we lose him.“The club have received a sum of money which is quite substantial should he go on and become successful there.“We are doing a good job, and as part of that sometimes you are going to lose your better players, but we still think we have got a lot of good players in our system who have got the potential to come through and play in the first team.”",soccer,arsenal,soccer,,,,,,
+d2bde6b1d72b6ce1,mlb_baseball,benchmark_hard_negative,44435,"For perspective, do you know how many times the Heat did this in non-overtime situations in four regular seasons with LeBron James?",nba_basketball;nhl_hockey,heat;overtime,nba_basketball;nhl_hockey,,,,,,
+e34c9916cd293c3c,mlb_baseball,benchmark_hard_negative,26006,"His most widely praised tutorial, and probably his biggest seller, was the 550-page ""Heat: a Mode of Motion"" (1863; updated editions until 1880).",nba_basketball,heat,nba_basketball,,,,,,
+15aaa094e1118731,mlb_baseball,benchmark_hard_negative,38052,Griffin brought some experience to the position having played linebacker in sports during his time at Lakewood High School.,nfl_football,linebacker,nfl_football,,,,,,
+2dd7b6963cd7df5e,mlb_baseball,benchmark_hard_negative,4682,"(And lord, can you imagine if the Maloofs sold the Kings to the Sacramento group and then successfully bought the Coyotes and moved them to Vegas, blocking Seattle's bid for an NHL team!)",nhl_hockey,nhl,nhl_hockey,,,,,,
+329b49250b65fbcf,mlb_baseball,benchmark_hard_negative,24278,Cover and turn off heat.,nba_basketball,heat,nba_basketball,,,,,,
+c5c5ca7d38faaf7e,mlb_baseball,benchmark_hard_negative,23561,"I don't think it's even a factor, not with our guys I don't know if a contract for the manager should be a motivating factor for any player.",soccer,manager,soccer,,,,,,
+82a4785ec9f96230,mlb_baseball,benchmark_hard_negative,29681,"What's more, it's a UNESCO special environmental protection area and a spectacular sight that turns red every July as a Dunaliella algae bloom explodes under the heat of the summer sun.",nba_basketball,heat,nba_basketball,,,,,,
+c5c468c255da9896,mlb_baseball,benchmark_hard_negative,32010,"Media playback is not supported on this device Pulis happy with Baggies' form
+
+West Brom manager Tony Pulis: ""Leicester are a good side.",soccer,manager,soccer,,,,,,
+bae7054349752dbc,mlb_baseball,benchmark_hard_negative,14635,"Prince Abdullah has secured a 50% interest in Blades Leisure Ltd, the holding company for Sheffield United FC, in return for which he will invest substantial new capital into the club with the aim of working with current owner Kevin McCabe and his family to achieve the Blades' return to the Premier League as quickly as possible.",soccer,premier league,soccer,,,,,,
+41c21c0acb719afc,mlb_baseball,benchmark_hard_negative,32892,"The players association, the NFL league office and independent experts.""",nfl_football,nfl,nfl_football,,,,,,
+e7343e01c728e431,mlb_baseball,benchmark_hard_negative,1017,"Adams has represented the United States at a number of youth international levels, including time with the U.S. U-17 residency program, and as part of the 2015 FIFA Under-17 World Cup roster.",soccer,fifa,soccer,,,,,,
+8ff31939fcdc6af9,mlb_baseball,benchmark_hard_negative,46841,"Scott Johnston, former VP of Products at JotSpot and current Google Senior Product Manager wrote about the migration of JotSpot into Google here.",soccer,manager,soccer,,,,,,
+b038c358fc57b5e7,mlb_baseball,benchmark_hard_negative,7232,"The Blackhawks jersey is white with the Blackhawks modern primary logo on the chest, a black shoulder yoke with those giant player numbers now moved up to the shoulders.",nhl_hockey,blackhawks,nhl_hockey,,,,,,
+bdec57bd3369d990,mlb_baseball,benchmark_hard_negative,44439,"He’s 8 for 9 on shots within five feet in this series, best among NBA guards, including one of them created Wednesday by an amazing stutter-step move on Jeremy Lin.",nba_basketball,nba,nba_basketball,,,,,,
+a4fd5aa41f68b9c5,mlb_baseball,benchmark_hard_negative,32027,"Leicester travel to Watford on Saturday, while West Brom welcome Manchester United on Sunday.",soccer,manchester united,soccer,,,,,,
+5347a8e16142a42a,mlb_baseball,benchmark_hard_negative,48980,"All the best
+
+Joining Embarcadero as Delphi Product Manager Congrats Marco!",soccer,manager,soccer,,,,,,
+f224feb9f45e463e,mlb_baseball,benchmark_hard_negative,17103,"Yet, it is reasonable to ask the following: Why even bother making Smith the quarterback for a play when Foles was playing well on this drive?",nfl_football,quarterback,nfl_football,,,,,,
+55d0eb243d9b64bd,mlb_baseball,benchmark_hard_negative,49028,"Joining Embarcadero as Delphi Product Manager Congratulation to you marco, hope you can make some changes that all of delphi fans wishes since ages ago.",soccer,manager,soccer,,,,,,
+611ec40cefd5f37c,mlb_baseball,benchmark_hard_negative,41451,"“It was unique and amazing,” Katic said about the shoot that had to deal with traveling through the desert in 50° C heat (112° F), holding the camera for camel crossing or redoing a take interrupted by a call to prayer.",nba_basketball,heat,nba_basketball,,,,,,
+aa2277a182320b8a,mlb_baseball,benchmark_hard_negative,21753,"Pratima Kumari, who joined Patanjali as a marketing manager from DDB Mudra four months ago, echoed this view.“I get an opportunity to grow along with the brand,” she said.",soccer,manager,soccer,,,,,,
+da3e25802f54f562,mlb_baseball,benchmark_hard_negative,7158,Leadership would likely get heat from members who want sufficient time to review a lengthy appropriations bill.,nba_basketball,heat,nba_basketball,,,,,,
+0586b5753d014266,mlb_baseball,benchmark_hard_negative,19887,"West Ham manager Sam Allardyce seems desperate to keep the talented defender who's solid performances have seen West Ham soar to 4th in the Premier League, their best start to a season in over 30 years.",soccer,manager;premier league,soccer,,,,,,
+7b541cea7ad2657b,mlb_baseball,benchmark_hard_negative,26732,"That post is now laminated and taped to Quinn's locker for motivation, as are the career statistics for some of the other great defensive ends and outside linebackers throughout NFL history.",nfl_football,nfl,nfl_football,,,,,,
+e27449a6f6a37a67,mlb_baseball,benchmark_hard_negative,8668,"“When I was in Calgary and Brian Burke was [the general manager] in Vancouver, we were trying to get more teams to be involved, but at that time, we couldn’t get any of these teams in California to be involved.",soccer,manager,soccer,,,,,,
+5995eff6870cc950,mlb_baseball,benchmark_hard_negative,28055,"Already, La Liga only generates around 50% of the Premier League’s broadcast income and around 75% of what Serie A generates.",soccer,la liga;premier league;serie a,soccer,,,,,,
+b2acaf30ec0972fa,mlb_baseball,benchmark_hard_negative,329,"(preliminary organization) (project general manager)
+
+(effective December 1, 2016)",soccer,manager,soccer,,,,,,
+607b9558a88e846a,mlb_baseball,benchmark_hard_negative,46940,Costolo is now an investor in Twitter and a Group Product Manager at Google.,soccer,manager,soccer,,,,,,
+9f40b119771896f8,mlb_baseball,benchmark_hard_negative,46812,"Jonathan Rochelle, co-founder of 2Web is now a Product Manager of Google Docs & Spreadsheets at the New York office of Google.",soccer,manager,soccer,,,,,,
+d35485ed66861006,mlb_baseball,benchmark_hard_negative,30368,Another example: the Dallas Cowboys’ stadium.,nfl_football,cowboys,nfl_football,,,,,,
+4db844313dc16fb4,mlb_baseball,medium_negative,58523,"The ad ran in the Netherlands in 2006 to advertise a white model of the PlayStation Portable, and it quickly drew controversy.",gaming_general,playstation,gaming_general,,,,,,
+07cee7f6b6e767da,mlb_baseball,medium_negative,171153,"That said, Palelei is always capable of pulling off a knockout.",combat_sports,knockout,combat_sports,,,,,,
+95075bd6f6c6cd66,mlb_baseball,medium_negative,24477,The result marks the second straight quarter that the world's third largest economy has lost steam and undershoots an annualised 2.3 per cent fall forecast in a Kyodo News agency survey.,gaming_general,steam,gaming_general,,,,,,
+e2a6ae621c96c9f8,mlb_baseball,medium_negative,28334,"Call Goes Out for Bellator Reality Series Tryouts
+
+Along with Bellator Fighting Championships’ move from MTV2 over to Spike TV in January, the promotion has also announced that it intends to air a new reality series on its new network.",combat_sports,bellator,combat_sports,,,,,,
+828dc8cf624d9ca7,mlb_baseball,medium_negative,218241,"The author wrote this “Letter to the Editor” submission on January 1, 2014 in response to the article by John Dearing and Courtney Geduldig in the Wall Street Journal.",combat_sports,submission,combat_sports,,,,,,
+1dda3153c39e1b66,mlb_baseball,medium_negative,149781,"For those of you unfamiliar with the world of professional wrestling—that includes the entire AP staff except managing editor, Scott Heisel—a little background: Survivor Series is an annual pay-per-view event from WWE, now in its 25th year.",combat_sports,pay-per-view,combat_sports,,,,,,
+9078cbd1fe54c652,mlb_baseball,medium_negative,18537,I have the smallest hands in the UFC.,combat_sports,ufc,combat_sports,,,,,,
+ef7e865e17ae0aca,mlb_baseball,medium_negative,219926,"[114] On December 13 at TLC: Tables, Ladders & Chairs, Batista faced Undertaker for the World Heavyweight Championship in a Chairs match.",combat_sports,heavyweight,combat_sports,,,,,,
+b7777e60d3006721,mlb_baseball,medium_negative,161378,"Even though this is common practice on recent consoles like the PS4, this is the only title with this behavior on the Nintendo Wii.",gaming_general,nintendo,gaming_general,,,,,,
+9ac2e5067ddc3d21,mlb_baseball,medium_negative,219978,[155] WWE has also ranked him as the second best World Heavyweight Champion of all time.,combat_sports,heavyweight,combat_sports,,,,,,
+e49edf3b120e0a0e,mlb_baseball,medium_negative,36557,"Xbox One S offers a far more attractive enclosure, options for a bigger hard drive, a slightly redesigned controller and some video perks for owners of 4K TVs.",gaming_general,xbox,gaming_general,,,,,,
+08c8b04f6085de15,mlb_baseball,medium_negative,36566,"When it's all said and done, the Xbox One S should be primarily viewed as a slimmed-down version of the Xbox One that introduces a mildly updated controller and provisions for 4K display.",gaming_general,xbox,gaming_general,,,,,,
+0a3e790dade17381,mlb_baseball,medium_negative,190052,"Release:-It is expected that Need For Speed:The Run will hit gaming Market in November 15 not confirmed,You can also set your :-It is expected that Need For Speed:The Run will hit gaming Market in November 15 not confirmed,You can also set your Preorders for ""The Run""
+
+Platform: -Xbox 360, PlayStation 3, PC, Wii, Nintendo 3DS
+
+You might love to see the first teaser of game shown below:
+
+Source:Official Website",gaming_general,nintendo;playstation;xbox,gaming_general,,,,,,
+ffd7953d1d72b96a,mlb_baseball,medium_negative,143395,"As a filmmaker and an inventor whose innovative device falls at the intersection of biomedical sciences and art, Rob was approached by video game producer Square Enix to help promote their upcoming game, Deus Ex: Human Revolution.",gaming_general,video game,gaming_general,,,,,,
+a230f4207719055c,mlb_baseball,medium_negative,166591,"This year, there will be little to none focus on ESPORTS at all at TG.",gaming_general,esports,gaming_general,,,,,,
+169a759525a9c902,mlb_baseball,medium_negative,46304,"I’d like to include Steam achievements, cards and leaderboards, but I’ve not looked into the capabilities of the Construct 2 Greenworks plugin.",gaming_general,steam,gaming_general,,,,,,
+1ff7429ca1b6e44b,mlb_baseball,medium_negative,65589,"In Mayweather's absence, Broner appears to have developed into boxing's most controversial figure and often finds ways to stay in the headlines.",combat_sports,boxing,combat_sports,,,,,,
+b1a1a1559c2b56ea,mlb_baseball,medium_negative,159014,Delisted from Steam.),gaming_general,steam,gaming_general,,,,,,
+bfaba2984a98dbf4,mlb_baseball,medium_negative,178129,"So multiplayer became our focus, as we encouraged our readers to take advantage of the parties and family reunions that naturally happen around Thanksgiving, Christmas and New Year’s each year and enjoy some Nintendo game time with friends and family – playing games like Wii Party U, Mario Party: Island Tour and our cover game, Super Mario 3D World.",gaming_general,multiplayer;nintendo,gaming_general,,,,,,
+6fe47c1363ed2ce2,mlb_baseball,medium_negative,128463,"That is, until she entered the multiplayer-verse and encountered a real-life player going by the name BigBro442.",gaming_general,multiplayer,gaming_general,,,,,,
+147b3be6a0d41d51,mlb_baseball,medium_negative,49539,UFC programming is broadcast in 129 countries and territories to nearly 800 million TV households worldwide in 28 different languages.,combat_sports,ufc,combat_sports,,,,,,
+8f65019b68703c5a,mlb_baseball,medium_negative,161525,"With Playstation 4 and Nintendo Switch releases coming out soon, the game should be around for many more years and be allowed to change without having to cater to the Wii's limitations.",gaming_general,nintendo;playstation,gaming_general,,,,,,
+d5692e87edebab31,mlb_baseball,medium_negative,219881,He then pulled an unconscious Batista on top of The Undertaker for the pinfall to retain the World Heavyweight Championship.,combat_sports,heavyweight,combat_sports,,,,,,
+18d6d333370ae610,mlb_baseball,medium_negative,215620,"This kind of thing doesn't happen too often in eSports, as you seldom see glitches and exploits pulled out of a hat to be used to orchestrate an otherwise impossible comeback.",gaming_general,esports,gaming_general,,,,,,
+3b11f7fff3322d9e,mlb_baseball,medium_negative,203171,"Like the suicidal animals on which the classic video game drew inspiration, the Lemmings brand has in recent years gone off a cliff — the cliff of public awareness!",gaming_general,video game,gaming_general,,,,,,
+509ff5cd80ebc0d7,mlb_baseball,medium_negative,48142,"[107] According to PlayStation Universe in 2011, Scorpion ""has spawned one of the most iconic catchphrases in gaming history"" and ""remains a firm fan favorite nineteen years since his debut.",gaming_general,playstation,gaming_general,,,,,,
+e5c5a1e2bcd810cc,mlb_baseball,medium_negative,209980,"Medals by Summer Games
+
+Medals by sport
+
+Leading in that Sport
+
+Sport Gold Gold Silver Silver Bronze Bronze Total Rank Field hockey 8 1 2 11 1 Shooting 1 2 1 4 34 Athletics 0 2 0 2 71 Wrestling 0 1 4 5 43 Badminton 0 1 1 2 9 Boxing 0 0 2 2 64 Tennis 0 0 1 1 30 Weightlifting 0 0 1 1 56 Total 9 7 12 28 12
+
+List of medalists
+
+See also",combat_sports,boxing,combat_sports,,,,,,
+de808735bff36523,mlb_baseball,medium_negative,89807,"He designed and wrote games and game supplements for Dungeons & Dragons 3.5, Dungeons & Dragons 4th Edition, the Pathfinder Roleplaying Game, and A Song of Ice and Fire Roleplaying Game and was nominated for two Origins Awards and won six ENnie Awards for fantasy RPG writing and design.",gaming_general,rpg,gaming_general,,,,,,
+c2801a328e136489,mlb_baseball,medium_negative,124160,"The three defendants in the case started teasing Duke Nukem: Mass Destruction as ""an isometric action role-playing game for PC and PlayStation 4"" earlier this month, promising more information to come.",gaming_general,playstation,gaming_general,,,,,,
+6de53be7b87d60c0,mlb_baseball,medium_negative,199167,"The game paled in comparison to Nintendo’s Pro Wrestling, and if it’s possible for something to be frustratingly easy, this was it.",gaming_general,nintendo,gaming_general,,,,,,
+fb219ab1dcc36fe9,mlb_baseball,background_negative,37926,OUR HYPOTHESIS: The Moon is an artificial Earth satellite put into orbit around the Earth by some intelligent beings unknown to ourselves.,aviation_aerospace,satellite,aviation_aerospace,,,,,,
+99f2f8cfd12d6ae2,mlb_baseball,background_negative,16941,"Don't start thinking that landing a rocket's first stage is routine just yet, as SpaceX has just posted video of its latest attempt.",aviation_aerospace,spacex,aviation_aerospace,,,,,,
+c250ab4f2539a788,mlb_baseball,background_negative,24237,"You know, things like toasting each other with champagne every night for a week, lounging on the beach and giggling as we call each other Mr. and Mrs. Baseel, or beating the hell out of a convenience store clerk, like the Chinese newlyweds who are not only just married, but were also just arrested in Japan.",china,chinese,china,,,,,,
+ab8c522d37bfaedb,mlb_baseball,background_negative,27691,"He sides with CCP leader Li Peng, who said there were ""sufficient human rights"" in China--just prior to ordering troops to crush the Tiananmen resistance.",china,ccp;china,china,,,,,,
+92e60bab1b4104e9,mlb_baseball,background_negative,26004,"In the preface to the 3rd edition of this book, he reports that earlier editions were translated into Chinese at the expense of the Chinese government and translated into German under the supervision of Hermann von Helmholtz (a big name in the science of acoustics).",china,chinese;chinese government,china,,,,,,
+bd477884e1cfad20,mlb_baseball,background_negative,3566,"Despite the expansion, Deluce said taking the privately held airline public and raising money through an initial public offering is not a priority right now.",aviation_aerospace,airline,aviation_aerospace,,,,,,
+d7ed672c5bcda1e0,mlb_baseball,background_negative,10963,What was far worse was that NASA had decided that any such tests weren’t even necessary.,aviation_aerospace,nasa,aviation_aerospace,,,,,,
+9cf45a56af9f840d,mlb_baseball,background_negative,10768,The New York Times is reporting the arrest of three RC hobbyists that were flying an RC aircraft at a lake nearby a nuclear power plant.,aviation_aerospace,aircraft,aviation_aerospace,,,,,,
+3e42d037bd749f27,mlb_baseball,background_negative,3077,"And so, we stagger into an even more uncertain future
+
+Emotions ran high as Hong Kong legislators opened debate on a controversial electoral reform package on Wednesday.",china,hong kong,china,,,,,,
+3c550571b29afbc5,mlb_baseball,background_negative,13444,"European coal futures have tumbled more than 20 percent, while Australian coal prices have plummeted from the record $130 per tonne hit in 2011 to around $80 per tonne as China's demand grew slower than expected.",china,china,china,,,,,,
+a2d15a7370c73a72,mlb_baseball,background_negative,2455,"Prior to filing the case, according to Haaretz, Israeli officials told the parents, Yekutiel and Sheryl Wultz, that they would support their case and provide evidence implicating the Bank of China.",china,china,china,,,,,,
+090ec105389f911e,mlb_baseball,background_negative,34152,"If you're interested in speaking or sponsoring one of our blockchain events, please email [masked].",crypto_blockchain,blockchain,crypto_blockchain,,,,,,
+a405d83eeedb4257,mlb_baseball,background_negative,34003,"A spot with a lot of asteroids means you can do a lot of mining, but also means frequent meteor strikes.",crypto_blockchain,mining,crypto_blockchain,,,,,,
+e9b1b5b4c04aed90,mlb_baseball,background_negative,10802,In the mid-80s I accumulated about 900 hours as a single engine flight instructor and about 500 hours flying twin turbine commuter aircraft.,aviation_aerospace,aircraft,aviation_aerospace,,,,,,
+8344c95821ab8058,mlb_baseball,background_negative,10081,"You have already heard a lot about jobs being lost to China and Mexico (a strong concern of Donald Trump), jobs being outsourced to low-wage countries or moved to tax havens (so-called “tax inversions” are a Hillary Clinton bugaboo), or jobs eliminated because of Obamacare or high minimum wages (a favorite Ted Cruz line).",china,china,china,,,,,,
+ada2a3b10a383a1f,mlb_baseball,background_negative,717,"“We see an orbital platform as playing a vital and synergistic role with anything you do on the surface,” said John Guidi, NASA advanced exploration systems deputy director.",aviation_aerospace,nasa;orbital,aviation_aerospace,,,,,,
+0ee9ae841be0976c,mlb_baseball,background_negative,3088,"Their concerns, dismissed as unrealistic and doomed, remain unanswered by Beijing and their own government.",china,beijing,china,,,,,,
+d53b06262c2e8c82,mlb_baseball,background_negative,43801,"The use of coal, the main fuel source in China, may rise by 3% due to stronger growth in industrial production and lower hydro-power generation due to less rainfall.",china,china,china,,,,,,
+dfb1e8535f572d53,mlb_baseball,background_negative,37067,"You will also have a Team Token for the team to use so the query consumption of the models within the team is attributed to the team owner:
+
+Hope you like these new features!",crypto_blockchain,token,crypto_blockchain,,,,,,
+6cb49d9e01614a88,mlb_baseball,background_negative,2709,It will also likely build a long blacklist of Taiwanese activists to keep out of Hong Kong.,china,hong kong,china,,,,,,

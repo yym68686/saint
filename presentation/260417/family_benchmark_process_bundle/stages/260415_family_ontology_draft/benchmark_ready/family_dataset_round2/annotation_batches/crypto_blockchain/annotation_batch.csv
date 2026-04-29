@@ -1,0 +1,511 @@
+candidate_id,family_id,proposed_bucket,source_row_index,text,matched_query_blocks,matched_terms,matched_family_ids,final_label,keep_for_benchmark,label_confidence,primary_reason,exclusion_trigger,notes
+754c660aed7755d7,crypto_blockchain,positive,79881,"This is not an idea Bitcoin brought into the world, it has existed for some time.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+80f6f230a2353595,crypto_blockchain,positive,12839,"By doing some very advanced tricks across multiple transactions, it might even be just possible already (exercise for the reader).”
+
+When it comes to the “very advanced tricks,” Back also added, “If someone can solve that exercise for the reader via advanced Bitcoin script hacking, we’d be very happy to hear from them.”
+
+A BIP and Community Consensus
+
+According to Back, either an upgrade to Bitcoin script or specific changes that enable two-way peg support should be enough to bring sidechains to Bitcoin.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+02aac8e7ff826222,crypto_blockchain,positive,61101,"Related Stories:
+
+Ked.ai offers e-commerce easy enough for mom
+
+Investing in Bitcoin: What does it take?",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+a0314e1cbee58dfc,crypto_blockchain,positive,117987,"Gliph iOS Messaging App Reinstates Bitcoin Functionality
+
+Privacy-focused messaging app Gliph once again supports bitcoin functionality in its newest iOS release.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+e6abdc1234294125,crypto_blockchain,positive,164236,"“Bitcoin just shows you how much demand for money laundering there is in the world,” Fink said at the Institute of International Finance on Friday.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+266d1915f6ac80be,crypto_blockchain,positive,12859,"“Because regulators have not announced that bitcoin and digital assets are illegal, Okcoin will actively explore, strive for, expect to continue to provide Chinese users with compliant digital asset services,” the company wrote.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+61e633c56aeee8c2,crypto_blockchain,positive,5925,"In Rust, we can declare this as follows:
+
+# [ deriving ( Show , PartialEq )] enum Token < 'a > { Word ( & 'a str ), Other ( & 'a str ) }
+
+The type &str represents a slice of a pre-existing String .",protocol_anchor,token,crypto_blockchain,,,,,,
+16c6e6d6b79a8e26,crypto_blockchain,positive,60606,"University of Canterbury senior lecturer of finance Bill Rea said bitcoin was a ""highly secure"" form of transferring money.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+e7862ec26d0c189c,crypto_blockchain,positive,79854,And then came Bitcoin.,protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+ea6d6da9c03868e8,crypto_blockchain,positive,61081,Merchants just need to key in their wallet address and shoppers will be able to pay for their purchases with Bitcoin.,market_and_wallet;protocol_anchor,bitcoin;wallet,crypto_blockchain,,,,,,
+00cbe51758323e84,crypto_blockchain,positive,209040,"Due to the understood finite supply of bitcoin—there will only ever be 21 million coins released—as usage increases and the supply stays relatively constant, the only place for the price to go is up.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+31e73a747b93001b,crypto_blockchain,positive,42390,Bitcoin’s rapid ascent has led to countless warnings that it has reached bubble territory.,protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+b8ac1851c56bdfab,crypto_blockchain,positive,209035,"Draper explained that the bitcoin ecosystem isn’t in a place, yet, for this to happen.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+f7c141280b0dfaae,crypto_blockchain,positive,77428,"Initial ZRX Allocation
+
+Total Supply (fixed): 1,000,000,000 ZRX
+
+Token Launch (50%)
+
+ZRX is inherently a governance token that plays a critical role in the process of upgrading 0x protocol.",protocol_anchor,token,crypto_blockchain,,,,,,
+91015b20f6614489,crypto_blockchain,positive,79691,"This prevents blocks from being created or modified dated prior to this checkpoint, thus protecting the chain from malicious attempts to introduce an alternate blockchain.The minting rate increases the longer a node secures the blockchain, incentivizing nodes to actively stake.",protocol_anchor,blockchain,crypto_blockchain,,,,,,
+d3db809d7fb3862a,crypto_blockchain,positive,79944,"A freedom of information request by the ABC has confirmed officials in the Attorney General's Department prepared a secret briefing for the minister on Prism in March 2013, more than two months before the first story was published revealing the electronic surveillance and data mining program undertaken covertly by US agencies.",market_and_wallet,mining,crypto_blockchain,,,,,,
+561c3a4917c2a66b,crypto_blockchain,positive,34152,"If you're interested in speaking or sponsoring one of our blockchain events, please email [masked].",protocol_anchor,blockchain,crypto_blockchain,,,,,,
+6135c439f3c662c7,crypto_blockchain,positive,216653,"Kraken group made $6,220 in 3 days of hijacking MongoDB servers
+
+At the time of writing, the group's Bitcoin wallets received 70 ransom payments from their nearly 16,000 infected victims.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+5699defb92aec9ac,crypto_blockchain,positive,143925,"but because of the increase in “hash power” “Computing hash power” this drives difficulty out of reach for the majority of the market just like our example :
+
+“Catch 22” The “Paradox”
+
+So if only a very few people are producing all of the new Bitcoins and a very few produced it before the market knew about it, who decides the Bitcoin price?",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+11a2fcd00a54b00e,crypto_blockchain,positive,205929,"SegWit’s ability to simplify the process of updating Bitcoin’s scripting language has been touted as a key benefit of the improvement in the past, and the fact that this is Lau’s first C++ project is a testament to that simplification.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+cc9c7742cb182ae4,crypto_blockchain,positive,127084,All of them felt that this “blockchain thing” was picking up steam.,protocol_anchor,blockchain,crypto_blockchain,,,,,,
+d89c478671b06b5f,crypto_blockchain,positive,54288,"In an interview with Bitcoin.com, CEX.IO CEO Oleksandr Lutskevych said the key advantages of this new feature are,
+
+[…] speed of payment processing and low commissions compared to withdrawals via bank transfer, which was the only withdrawal option available on our exchange so far.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+a80902416a46eb82,crypto_blockchain,positive,39857,"gsrcrxsi
+
+Offline
+
+Activity: 294
+
+Merit: 250
+
+Sr. MemberActivity: 294Merit: 250 Re: [ANN][Pool][Profit-Switch][Optional Auto-Exchange per Coin][Vardiff] ~ Hashcows December 24, 2013, 07:08:33 PM #1807 I'm sure the amount that HC has been taking in from fees and their own mining is plenty to cover this 40BTC loss.",market_and_wallet,mining,crypto_blockchain,,,,,,
+a9618af92eaf921f,crypto_blockchain,positive,117968,"This week is chock full of good news with lots of exciting announcements coming out of The North American Bitcoin Conference in Chicago, MMA fighter Phil Baroni will sponsor bitcoin on SpikeTV, and a lot more.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+bd7b7ba1397e1017,crypto_blockchain,positive,159331,"Bitcoin’s Adoption Will Explode In 2018
+
+Bitcoin is growing in adoption across the world.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+b9d96aa80db5d044,crypto_blockchain,positive,199274,One of the more complex questions that resulted from the publication centers around just what it means exactly – and if it will really impact bitcoin’s technical direction.,protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+84dd7e5b221830c6,crypto_blockchain,positive,68118,"While one figure of $40,000 was claimed as the total value of donations, Bitcoin transaction records show that he received only 0.25 bitcoin (around $120).",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+8b30528b47734a03,crypto_blockchain,positive,143928,"As a functional “money” Bitcoin’s parameters are actually pretty bad, but we can cover that at a later date perhaps.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+47fa624c5e3be2be,crypto_blockchain,positive,160412,"While I personally believe Bitcoin can survive its internal turmoil, I could be wrong.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+b1b2faf81426a531,crypto_blockchain,positive,191231,"At 6 pm GMT on March 1, the first block was quietly made available for mining.",market_and_wallet,mining,crypto_blockchain,,,,,,
+a9d5d05f22f9b50c,crypto_blockchain,positive,97602,"“We didn’t even have minimum guidelines” back in 2014, when the bitcoin exchange Mt.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+3940a578e4bd16d8,crypto_blockchain,positive,16985,"A few weeks ago at TechCrunch Disrupt, Braintree CEO Bill Ready said that it was adding Bitcoin as a payment to its SDK.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+9a420359e121b81f,crypto_blockchain,positive,117989,"BitPay uses Bitcoin to Sponsor Georgia Tech Athletics, Unveils Facebook App
+
+BitPay, a Bitcoin startup company founded in 2011 and a pioneer in business solutions for the digital currency, recently announced its affiliation to the Georgia Institute of Technology’s Athletic Association.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+b14fbba5834b3206,crypto_blockchain,positive,205919,CoinJournal recently chatted with Lombrozo to get a better understanding of current and future improvements to the Bitcoin Core development process.,protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+7e2ce05aa6dacec4,crypto_blockchain,positive,12835,"Cryptographer Adam Back is, perhaps, best known as the inventor of hashcash, which is the underlying proof-of-work system utilized by the Bitcoin blockchain.",protocol_anchor,bitcoin;blockchain,crypto_blockchain,,,,,,
+28ca3ec613301665,crypto_blockchain,positive,128422,"It helps close the gaps between data transmitted between POS devices and the data centerand support supports all modern forms of credit and debit payment including EMV (Europay, Mastercard and Visa), magnetic stripe and near field communication (NFC) transaction readers, including Google Wallet, Softcard and Apple Pay.",market_and_wallet,wallet,crypto_blockchain,,,,,,
+808513b650f66f76,crypto_blockchain,positive,11394,"Yu said she considers Bitcoin an investment, despite the currency seeing high volatility over the last few months.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+b28083c5c34a775c,crypto_blockchain,positive,137613,"One of the questions that has perhaps been central to my own research in blockchain technology is: ultimately, what is it even useful for?",protocol_anchor,blockchain,crypto_blockchain,,,,,,
+c901c432065e7a26,crypto_blockchain,positive,26066,"While Russia has been unfriendly towards bitcoins, it is showing enthusiasm towards its underlying technology, the blockchain.",protocol_anchor,blockchain,crypto_blockchain,,,,,,
+194219769e9db2dc,crypto_blockchain,positive,79892,"On the other side, what is also interesting with Bitcoin, is that it continues a long history of thinking money as a natural commodity like gold.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+5136fd37d27d5b71,crypto_blockchain,positive,160517,"Altcoins, Ethereum fairy tale
+
+Thus far, 2017 has been a successful year for both Bitcoin investors and alternative cryptocurrency (altcoin) traders, with leading altcoins or crypto assets such as Ethereum achieving a $5 bln market cap in early April.",protocol_anchor,bitcoin;ethereum,crypto_blockchain,,,,,,
+8dd49b3278283a79,crypto_blockchain,positive,127072,These guys (18-25 ish and 98 percent male) were too late for Bitcoin but got in on the Ethereum ground floor.,protocol_anchor,bitcoin;ethereum,crypto_blockchain,,,,,,
+c07f2deb7d33b7c8,crypto_blockchain,positive,160515,"By outperforming the US dollar by almost 50 percent, Bitcoin surpassed the growth of the Mexican Peso, Silver, Gold and Russian Ruble to become the best performing currency so far in 2017.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+396fe7cb7d3f2678,crypto_blockchain,positive,120722,"According to the report, advanced economies are likely to lead the deployment of IoT technologies, while Europe is expected to get the biggest benefit in terms of improved logistics, Australia and Canada are expected to benefit most from improvements in the mining and the oil and gas industry, and China is expected to get the most value from factory optimisation.",market_and_wallet,mining,crypto_blockchain,,,,,,
+d0cc3f7818a0e224,crypto_blockchain,positive,199298,Perhaps the most contentious part of the agreement is the commitment to a bitcoin hard fork within a certain timeframe.,protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+0952b083bdecbe5e,crypto_blockchain,positive,180804,A hardware wallet makes managing your assets very simple and eliminates the possibility for many user mistakes that new crypto owners might make.,market_and_wallet,wallet,crypto_blockchain,,,,,,
+99efed9122a47a86,crypto_blockchain,positive,127058,The other Token Summit.,protocol_anchor,token,crypto_blockchain,,,,,,
+6ea4a21d1e182fef,crypto_blockchain,positive,209879,"Desperate to keep both valuables, I tried putting the pump motor and my wallet in the locker but to no avail.",market_and_wallet,wallet,crypto_blockchain,,,,,,
+fe7df69006174470,crypto_blockchain,positive,34144,"Tone maintains a personal website LibertyLifeTrail where you can find his latest research on Bitcoin, Blockchain, sound economics and privacy.",protocol_anchor,bitcoin;blockchain,crypto_blockchain,,,,,,
+1d8e468443521399,crypto_blockchain,positive,205916,"The project has made strides towards improving their communications over the past six months, but there are many in the Bitcoin community who believe there is still room for improvement.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+7441e286341838f8,crypto_blockchain,positive,11396,"One month later it skyrocketed to $1,200, then plummeted back down to $500 in December before rising back up to $932 per Bitcoin.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+5083a92400fcfd37,crypto_blockchain,positive,79937,I guess libertarians are really the dominant strain of participants in the Bitcoin world.,protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+2c58809b3e220561,crypto_blockchain,positive,54278,"It’s now possible to withdraw funds directly to your credit card on CEX.IO
+
+Announced today on the CEX.IO blog, users of the bitcoin exchange can now make withdrawals of fiat currencies directly to their payment cards; Visa and Mastercard are currently accepted on their site.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+6f02859c82ee6e8d,crypto_blockchain,positive,180051,"""What you're really doing with blockchain technology is enabling two parties to complete a transaction almost as efficiently as you possibly can because it's automated, processed by someone who doesn't really factor in overheads at the transaction cost, and it's almost infinitely scaled,"" he said.",protocol_anchor,blockchain,crypto_blockchain,,,,,,
+74220ecb2108c2d5,crypto_blockchain,positive,137614,"Why do we need blockchains for anything, what kinds of services should be run on blockchain-like architectures, and why specifically should services be run on blockchains instead of just living on plain old servers?",protocol_anchor,blockchain,crypto_blockchain,,,,,,
+bb60af284487128d,crypto_blockchain,positive,198759,"Here’s a sample of one of its letters:
+
+I am writing to voice my strong opposition to the EPA’s draft watershed assessment for the vast Bristol Bay region of Alaska because it sets a dangerous precedent, is wholly unnecessary, and relies on dubious source material from biased anti-mining organizations and scientists that recently admitted to falsifying reports submitted in legal proceedings.",market_and_wallet,mining,crypto_blockchain,,,,,,
+69415a4130302126,crypto_blockchain,positive,97852,"The new Amazon Wallet app is currently listed as being in “beta,” and is also one of the apps that ships pre-installed on Amazon’s new Fire Phone devices.",market_and_wallet,wallet,crypto_blockchain,,,,,,
+5564b25904616a3f,crypto_blockchain,positive,26082,"Flux, “a revolutionary political party and politico-economic structure” is looking to revamp the way the orthodox system of politics by bringing in the blockchain technology.",protocol_anchor,blockchain,crypto_blockchain,,,,,,
+c2097511ecceb267,crypto_blockchain,positive,133301,"Afterwards, some attended a Liberty Meetup in Nashua, but I had to run — I had a date at Street — a Portsmouth restaurant that now accepts bitcoin!",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+4216ea6c3a98c9ce,crypto_blockchain,positive,34003,"A spot with a lot of asteroids means you can do a lot of mining, but also means frequent meteor strikes.",market_and_wallet,mining,crypto_blockchain,,,,,,
+5986d8754bb175aa,crypto_blockchain,positive,74976,"Run by mining tycoon Anil Agarwal (number 113 among the FORBES billionaires, with an estimated fortune of $6.4 billion), Vedanta is trying to mine bauxite from the Niyamgiri Hills to produce aluminum.",market_and_wallet,mining,crypto_blockchain,,,,,,
+edc9a30478e37482,crypto_blockchain,positive,209031,"I expect that to change.”
+
+Draper suggests that currently, bitcoin is far too speculative an investment for it to be a store of value.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+6057be55ce753451,crypto_blockchain,positive,160531,"Read more: How to Buy Bitcoin: Best Practices, Where to Buy, Tips",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+da729da1d000175b,crypto_blockchain,positive,119573,Users say $12 million in Bitcoin has also vanished.,protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+9b67e4bc7e2c62fc,crypto_blockchain,positive,155356,This is actually a big part of what led me to the Ethereum space.” Gupta knows a thing or two about political will and has been generating it in regard to the blockchain and cryptocurrency for years.,protocol_anchor,blockchain;ethereum,crypto_blockchain,,,,,,
+c32a21d22ff419c9,crypto_blockchain,positive,26068,"As Russia’s Central Bank moved to embrace the blockchain technology, comments by Andrei Lugovoi, Deputy Chairman of the Russian State Duma Committee for Security and Anti-Corruption generated hope for the future of cryptocurrencies as well.",protocol_anchor,blockchain,crypto_blockchain,,,,,,
+ee27e4388490a66a,crypto_blockchain,positive,117988,"The announcement follows Apple’s recent reversal of its ban on bitcoin apps, which meant Gliph was forced to disable bitcoin sending late last year.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+fbe7cbe36528c6b4,crypto_blockchain,positive,79889,"Bitcoin is similar in that it depends on accounts-keeping, but it eliminates the need for a central authority keeping track of transactions.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+de81a387beb12f30,crypto_blockchain,positive,95632,It seems easier to think of a market cap Bitcoin could reach as oppose to following the price.,protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+e56e3c72aca27426,crypto_blockchain,positive,61102,"Bitcoin-mining malware on the rise in APAC: Trend Micro
+
+The Silk Road arrests, and why users should be worried
+
+Developing online payment systems that protect consumers
+
+For more technology news and the latest updates, follow us on Twitter, LinkedIn or Like us on Facebook.",market_and_wallet;protocol_anchor,bitcoin;mining,crypto_blockchain,,,,,,
+218256363ed96c54,crypto_blockchain,positive,91607,Donald Trump speaks during a coal mining roundtable in Virginia.,market_and_wallet,mining,crypto_blockchain,,,,,,
+45cf2c88024b0dab,crypto_blockchain,positive,50966,"The idea was to lay explosive charges beneath German trenches - but as the Germans were doing likewise, the mining teams often tried to blow each other up halfway across.",market_and_wallet,mining,crypto_blockchain,,,,,,
+8bea2fff7efa6296,crypto_blockchain,positive,26065,"Russia’s Love-Hate Relationship
+
+Russia’s stance towards bitcoin and blockchain is a study of a great contrast.",protocol_anchor,bitcoin;blockchain,crypto_blockchain,,,,,,
+338ad244cb599b1d,crypto_blockchain,positive,148591,"“They knew more about it in Russia than we did here—it was an interesting paradox.”
+
+Renova Group, a sprawling private company, has operations in mining, energy, technology and finance.",market_and_wallet,mining,crypto_blockchain,,,,,,
+4ca1771c2c849865,crypto_blockchain,positive,180749,"So, you’ve officially joined the blockchain revolution?",protocol_anchor,blockchain,crypto_blockchain,,,,,,
+524d57d25876830f,crypto_blockchain,positive,34140,"7:30pm (30 minutes):
+
+Bitcoin’s price fluctuations: Bubbles & Facts
+
+TONE VAYS (https://twitter.com/Tone_LLT?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor), Consultant/Researcher/Trader http://LibertyLifeTrail.com
+
+Tone has been working on Wall Street for almost 10 years starting as a Risk Analyst at Bear Stearns and later becoming a VP at JP Morgan Chase in the aftermath of the 2008 financial crisis.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+1dd4d342b62d0785,crypto_blockchain,positive,159327,"Bitcoin had a record-breaking year in 2017, taking a volatile growth course from $900 at the start of the year to $6,300 by October.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+cea88a43dadc92fa,crypto_blockchain,positive,205915,"The group of contributors behind Bitcoin Core, the reference implementation of the Bitcoin protocol, have taken a lot of heat in the past year or so due to the misunderstandings related to the project’s development process.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+5f58057a1401f7a2,crypto_blockchain,positive,60043,"Hong Kong-based digital currency exchange ANX has upgraded its iOS app with added functionality, after Apple recently relaxed its strict stance towards bitcoin-transmitting apps.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+64a8ea60954dc144,crypto_blockchain,positive,97582,"The monthly timeframe is shown below, with April’s candlestick displaying bullish dominance with a Marubozu, suggesting that it may be an optimal time to enter into a long position on bitcoin.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+b9dd2659d97713f6,crypto_blockchain,positive,97597,"If the decision is reversed and a bitcoin ETF is given the go ahead, this would bring fresh capital into the cryptocurrency and consequently push its value much higher, so the market may be pricing in a U-turn on the Winklevoss Bitcoin ETF.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+0f08e17201d7ce60,crypto_blockchain,positive,180813,"Oh, and, welcome to the point of – the blockchain revolution.",protocol_anchor,blockchain,crypto_blockchain,,,,,,
+cff65d0f8270ffb7,crypto_blockchain,positive,42407,"The fact that bitcoin now provides “exit ramps” from national currencies that were becoming easier to use, Hileman said, could exacerbate any future financial crisis.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+901ea8d2c0f2edc4,crypto_blockchain,positive,74175,"This new protocol layer built on top of the Bitcoin blockchain has received a lot of attention and hype over the past couple of years, and a fix for transaction malleability via Segregated Witness has resolved some of the code and design complexities involved with the network.",protocol_anchor,bitcoin;blockchain,crypto_blockchain,,,,,,
+4a20b841a6d165d4,crypto_blockchain,positive,29532,"And ocean waters are becoming contaminated from agricultural, industrial, mining, and forestry activities.",market_and_wallet,mining,crypto_blockchain,,,,,,
+1a6f2f9f2086b38c,crypto_blockchain,positive,42405,"In South Korean exchanges, too, bitcoin was already close to $11,000 or higher early this week.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+51b299005acef5ed,crypto_blockchain,positive,77430,"Retained by 0x Org (15%)
+
+Retained ZRX tokens will be used to incentivize future team members via token compensation packages as well as to sustain the operations of the 0x core development organization beyond the first five years.",protocol_anchor,token,crypto_blockchain,,,,,,
+a49528486a61f826,crypto_blockchain,positive,60060,"The company recently launched a bitcoin debit card service, giving users another way to withdraw and spend their cryptocurrency wealth in a still fiat-dominated world.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+66472c66f4687eb3,crypto_blockchain,positive,54281,"Purchasing bitcoin with a payment card has been available already on their exchange for some time, but now being able to withdraw back to your payment card is a big step toward user adoption with the best and easiest user experience possible.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+6964f1caa3920719,crypto_blockchain,positive,166952,"By the same token, the threat of similar, realistic U.S. operations will serve to assist moderate forces in Libya, Lebanon, and even Jordan, where insurgents are increasingly fascinated by the ISIL success in Iraq.",protocol_anchor,token,crypto_blockchain,,,,,,
+0cd77950ea5a236f,crypto_blockchain,positive,45840,"As The Globe and Mail's Omar El Akkad writes, Bitcoin has become an Internet sensation, suddenly surging in value four years after its birth.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+12199132577b781f,crypto_blockchain,positive,186434,"In an interview with Bitcoin Magazine, managing partner Bart Stephens explained that BCAP tokens follow the SEC exemptions for unregulated securities — the same structure as bonds and high-yield debt — under Regulation D, allowing them to be sold in the U.S., as well as Regulation S, allowing them to be sold internationally.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+2d57ef4cae3b91d6,crypto_blockchain,positive,26064,Here are some recent developments on bitcoin and the blockchain from around the world.,protocol_anchor,bitcoin;blockchain,crypto_blockchain,,,,,,
+1425465069260e3b,crypto_blockchain,positive,54292,"Recently other exchanges have been adding new features as well, such as Coinmotion adding SOFORT payments and announcing a new vault wallet feature, Bitso raising $1.8m to tackle remittances to Mexico, and even Coinbase adding instant card buying features.",ecosystem_entities;market_and_wallet,coinbase;wallet,crypto_blockchain,,,,,,
+83366f0c53df6ff0,crypto_blockchain,positive,180083,"Last year, the bitcoin community published an open letter to its community to share an action plan on reaching a consensus on improving bitcoin security and scalability.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+87d9eb2d302dc06b,crypto_blockchain,positive,143916,"(explaining difficulty)
+
+On this planet lets say there is a particular element lets call it “liquid Gold” and it is only available in a fixed amount on the entire planet;
+
+But there is an important difference – if one tries to mine this element it affects all the other parts of the element, so in effect all mining location have a relationship.",market_and_wallet,mining,crypto_blockchain,,,,,,
+8bca3bbf44bb28b4,crypto_blockchain,positive,137625,"Silk Road, the online anonymous drug marketplace that was shut down by law enforcement in late 2013, processed over $1 billion in sales during its 2.5 years of operations, and while the payment-system-orchestrated blockade against Wikileaks was in progress, Bitcoin and Litecoin donations were responsible for the bulk of its revenue.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+e1cac3ad594a4319,crypto_blockchain,positive,160420,"Its fees are much lower than Bitcoin's and DASH has an interesting governance structure that really sets it apart from many of the ""me-too"" cryptocurrencies out there vying for Bitcoin's #1 position.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+fef7587e97c716c9,crypto_blockchain,positive,160521,"Bitcoin moves
+
+The Bitcoin market, however, experienced some major changes in its ecosystem earlier this year.",protocol_anchor,bitcoin,crypto_blockchain,,,,,,
+2bc70581793c37cb,crypto_blockchain,positive,135551,"Litecoin is third, representing 7.5% of total payments, followed by Bitcoin Cash (4.0%), Dash (3.3%), Monero (0.8%), Zcash (0.7%), Ethereum CLassic (0.6%), Dogecoin (0.4%), and Steem (0.1%).",protocol_anchor,bitcoin;ethereum,crypto_blockchain,,,,,,
+d5d52009584a19f1,crypto_blockchain,local_hard_negative,3466322,"Note: When you use this Website to process a credit/debit card payment, you will be transferred to a portion of the Website hosted by our contracted payment processing vendor (""Payment Processor"").",adjacent_finance_and_security,payment processor,,,,,,,
+b5a8572a8fb62cdd,crypto_blockchain,local_hard_negative,3549369,"The fears run the gamut: Tech companies worry about their brand, potential prosecution, even exploitation by the intelligence community; consumer firms wonder how the stock market will react; oil companies fear aiding their competitors; and energy companies are nervous that information will end up being exploited by those they fear far more than hackers: environmental lawyers.",adjacent_finance_and_security,stock market,,,,,,,
+caca61246e1ee53d,crypto_blockchain,local_hard_negative,1826298,"On a more specific note, Estulin warns that Bilderberg are fostering a false picture of economic recovery, suckering investors into ploughing their money back into the stock market again only to later unleash another massive downturn which will create “massive losses and searing financial pain in the months ahead,” according to a Canada Free Press report.",adjacent_finance_and_security,stock market,,,,,,,
+f57139589ed74e04,crypto_blockchain,local_hard_negative,399023,"Not to be outdone, Blackrock’s global head of active equities, Mark Wiseman, has wormed his way onto Morneau’s economic growth advisory council.",adjacent_finance_and_security,equities,,,,,,,
+6b3b50bf0004cc9a,crypto_blockchain,local_hard_negative,1812052,"(although preferred stocks involve much less) Even if the average of the stock market rises, the individual stocks that you buy could plummet very unexpectedly because of dishonesty in accounting that has just been discovered.",adjacent_finance_and_security,stock market,,,,,,,
+69a2a442a0697dda,crypto_blockchain,local_hard_negative,594212,"China’s stock market has been in the doldrums since a massive bubble burst in 2007, returns on bank deposits are negligible or negative and the country’s capital controls mean citizens cannot easily diversify their portfolios abroad.",adjacent_finance_and_security,stock market,,,,,,,
+0ef539aaad978d14,crypto_blockchain,local_hard_negative,3019848,"That kind of Wild Wild West stuff may have been okay in China in 2014, before the stock market collapsed twice in a matter of months in 2015.",adjacent_finance_and_security,stock market,,,,,,,
+33ae17c9ee5051ea,crypto_blockchain,local_hard_negative,3672578,"These pension plans have largely been replaced by completely inadequate defined-contribution 401(k) plans, with worker retirement savings funneled into the stock market.",adjacent_finance_and_security,stock market,,,,,,,
+53bde98e51757c42,crypto_blockchain,local_hard_negative,2086767,"“This is dangerous, combustible stuff, and I don’t know when the explosion occurs – when the collapse suddenly is upon us – but when it happens, people will be happy that they got out of the way if they did.”
+
+The behavior that we are observing in the stock market simply does not reflect what is happening in the economy overall whatsoever.",adjacent_finance_and_security,stock market,,,,,,,
+c2113dda8d801d09,crypto_blockchain,local_hard_negative,1604484,"We needed the wealth effect and if we weren’t getting it from the stock market, we needed to get it from the real estate market.",adjacent_finance_and_security,stock market,,,,,,,
+e782892b16ca61b2,crypto_blockchain,local_hard_negative,1439889,"He famously predicted soon-to-burst bubbles in the stock market during the tech boom, and later in the housing market (he gets particular credit for sounding these warnings in print, in a book meant for mass consumption).",adjacent_finance_and_security,stock market,,,,,,,
+05894f428aa39fa3,crypto_blockchain,local_hard_negative,3602439,"• If Ever The Stock Market Flashed A ‘Sell’ Signal, It’s Now (MarketWatch)
+
+I know what you’re thinking.",adjacent_finance_and_security,stock market,,,,,,,
+6e907cebd5f14e4a,crypto_blockchain,local_hard_negative,3280248,"Apply Discount
+
+You saved
+
+with code
+
+Submit Form
+
+Submitting
+
+Validating
+
+There was an error initializing the payment processor on this form.",adjacent_finance_and_security,payment processor,,,,,,,
+e665660f62170bd8,crypto_blockchain,local_hard_negative,835024,"Today's sell-off in the stock market isn't about fundamentals — such as corporate earnings and dividends; instead, it is all about emotion.",adjacent_finance_and_security,stock market,,,,,,,
+dbd1dc00b566c885,crypto_blockchain,local_hard_negative,1824278,"New York City bankers were able to maintain a strong influence in the call loan market and hence in the stock market, and with a central bank the call loan market was now relieved of its previous, tenuous role as a source of emergency liquidity.",adjacent_finance_and_security,stock market,,,,,,,
+512b9e2fbcd3947b,crypto_blockchain,local_hard_negative,525761,"In fact, steer clear of single stocks altogether, and simply buy “the market,” meaning an exchange-traded or mutual fund that passively tracks the performance of the entire stock market.",adjacent_finance_and_security,stock market,,,,,,,
+cdc1697c97920017,crypto_blockchain,local_hard_negative,3114368,"Together, the Shanghai, Shenzhen and Hong Kong exchanges are the world’s second largest (behind the United States stock market), with a total market capitalization of over $9.5 trillion.",adjacent_finance_and_security,stock market,,,,,,,
+cff8192ea91c11a0,crypto_blockchain,local_hard_negative,3608478,"Signs of stabilisation in the world's second-biggest economy and bets on a subdued pace of US monetary tightening have helped spur rallies in oil, metals and global equities in recent weeks.",adjacent_finance_and_security,equities,,,,,,,
+dfec219300e244d9,crypto_blockchain,local_hard_negative,803578,"Irving then revealed further details of Churchill’s financing by the Czechs, as well as the facts of Churchill’s financial rescue by a wealthy banker of Austro-Jewish origins, Sir Henry Strakosch, who, in Irving’s words, emerged “out of the woodwork of the City of London, that great pure international financial institution.” When Churchill was bankrupted overnight in the American stock market crash of 1937-1938, it was Strakosch who was instrumental in setting up the central banks of South Africa and India, who bought up all Churchill’s debts.",adjacent_finance_and_security,stock market,,,,,,,
+583477361f821898,crypto_blockchain,local_hard_negative,1920424,General Motors was unchanged at 35.69 on the stock market today.,adjacent_finance_and_security,stock market,,,,,,,
+a3ec2777f1d9afe7,crypto_blockchain,local_hard_negative,1736006,"The banks wanted in on the stock market growth, and the stock market wanted the cash from the bank.",adjacent_finance_and_security,stock market,,,,,,,
+8cb04b024ab65808,crypto_blockchain,local_hard_negative,3596927,"Meanwhile, poverty grows, the stock market zooms to new heights, the wealth of the 1% increases, and corporate executives continue to get tax exemptions for business entertainment expenses, which allow corporations to deduct 50% of these costs from their annual taxes.",adjacent_finance_and_security,stock market,,,,,,,
+6c80d2e78c2b0154,crypto_blockchain,local_hard_negative,3602577,"• China Debt Seen Jumping Tenfold as Stocks Overtake Japan by 2030 (Bloomberg)
+
+China’s corporate bond issuance will surge 10-fold by 2030 and the nation’s stock market will overtake the U.K. and Japan to become the world’s second largest, according to Credit Suisse.",adjacent_finance_and_security,stock market,,,,,,,
+518a72dad1674b6c,crypto_blockchain,local_hard_negative,2127909,"Or if he doesn't own a business, his savings can be invested, for example through the stock market, in other companies which in his sovereign judgment as owner of the funds, seem best poised to prosper with them.",adjacent_finance_and_security,stock market,,,,,,,
+acc4c2596dafffab,crypto_blockchain,local_hard_negative,792712,"To attract inflow of foreign currency, the RBI also simplified rules governing investments by non-resident Indians (NRIs) portfolio investments like equities and debt.",adjacent_finance_and_security,equities,,,,,,,
+ad2cf43a9856826d,crypto_blockchain,benchmark_hard_negative,41987,"Plays games to obtain game footage and/or screen captures
+
+Edits video/audio for TV commercials, game trailers, Nintendo Direct, web content, demo kiosks, internal and external presentations, and general marketing purposes as needed
+
+Facilitates file transfers with other groups, agencies, and subsidiaries
+
+Maintains audio/video equipment and editing Macs
+
+Recommends and installs new editing/computer equipment and software
+
+Ability to work overtime required
+
+Be able to receive feedback from various groups, analyze it, and implement it in a timely manner
+
+Certainly seems to indicate that we'll have more Nintendo Directs in the future.",gaming_general,nintendo,gaming_general,,,,,,
+8d236dee4cb5e46b,crypto_blockchain,benchmark_hard_negative,36473,"China's law did not have a clear stipulation of what activities could result in such criminal charges, said Hu Yunteng, a senior research fellow with the SPC, which experts said was one of the reasons for China's long-standing environmental issues.",china,china,china,,,,,,
+ed78ff95d21e6981,crypto_blockchain,benchmark_hard_negative,39348,"“Hollywood has made the French accent a sexual thing and the Chinese accent a clowny thing,” Wu said.",china,chinese,china,,,,,,
+b95089c008e94fc8,crypto_blockchain,benchmark_hard_negative,38848,"For the first time since the attack began, the House of Representatives is going to methodically, coherently and very seriously investigate why four Americans were surprised and killed that night, what our Ambassador was trying to accomplish in Benghazi, why even the few troops that were sent were delayed and why more potent forces were never sent --always recall that the White House, State Department and Pentagon had no idea when the attacks would end-- and finally when did the Administration systematically set out to lie about what happened there, conflate it with what happened in Cairo and blame it all on a You Tube video.",us_legislative_governance,house of representatives,us_legislative_governance,,,,,,
+93087ccf74727eb9,crypto_blockchain,benchmark_hard_negative,37666,"As well as building Panda-shaped solar plants, the UNDP agreement also supports three initiatives aimed at promoting green energy among young Chinese.",china,chinese,china,,,,,,
+5394c406aff669fd,crypto_blockchain,benchmark_hard_negative,17920,"These survey findings should compel Democrats running for Congress and governor next year, and for president in 2020, to promote a bolder progressive policy agenda.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+1646b06fa1adc6c1,crypto_blockchain,benchmark_hard_negative,37669,"Image: REN21
+
+According to data published by REN21, at the end of 2016 China had 77.4GW of solar PV installed, representing more than a quarter of the global total.",china,china,china,,,,,,
+7b35267d8071482e,crypto_blockchain,benchmark_hard_negative,17668,This means China almost certainly would try to secure the capital of Pyongyang and weapons sites before South Korean and American forces did so.,china,china,china,,,,,,
+7d38e9569f40d916,crypto_blockchain,benchmark_hard_negative,6413,"While it may receive a Senate vote, the White House has threatened to veto similar previous bills.",us_legislative_governance,senate,us_legislative_governance,,,,,,
+3933d52e812e5dc7,crypto_blockchain,benchmark_hard_negative,27664,"Leaving aside the fact that my article is about a rebellion in China 40 years later, the truth is that the ISO does view the 1949 revolution as a step forward in having driven out the colonial powers and ended the imperialist occupation of China.",china,china,china,,,,,,
+bc6a4667a12742a7,crypto_blockchain,benchmark_hard_negative,2701,"But whether or not it grants Hong Kong democracy will directly affect whether the Taiwanese trust China, much less want to reunify.",china,china;hong kong,china,,,,,,
+92a8586d4a56f39e,crypto_blockchain,benchmark_hard_negative,28589,"A great example of this is the work that our design technologist Bart Szyszka did for our recent series on China and the environment, ""Choking on Growth.""",china,china,china,,,,,,
+1ef5bd4f5712cf6d,crypto_blockchain,benchmark_hard_negative,27666,"It's possible to support the Chinese Revolution, but also believe it wasn't a revolution that put the working class in power--which is the ISO's definition of a socialist revolution, and more to the point, Karl Marx's.",china,chinese,china,,,,,,
+c44d101d47ca8bb3,crypto_blockchain,benchmark_hard_negative,38418,"“According to our analysis of these data, illegal entrants breached legacy pedestrian fencing at an average rate of 82 breaches per fence mile, compared to an average of 14 breaches per fence mile of modern pedestrian fencing.”
+
+The report refers to any fencing constructed from surplus Vietnam War-era landing mats or fencing designs used before Congress enacted the Secure Fence Act in 2006 as “legacy” fencing.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+d908c7b29d535026,crypto_blockchain,benchmark_hard_negative,16840,"Fun fact: The second weekend $44.2M China gross, if ranked against animated opening weekends, would stand at No.",china,china,china,,,,,,
+b0a504c1d77836d1,crypto_blockchain,benchmark_hard_negative,15882,"The choices were complex.”
+
+The changes are part of a broader effort by the Pentagon to decrease its projected spending by $487 billion over the next decade in accordance with a deficit-reduction deal President Obama reached with Congress in August.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+7e32c1df787400fa,crypto_blockchain,benchmark_hard_negative,36598,"4K and HDR scorecard
+
+I want to personally thank the Xbox One S for introducing me to the hot mess that is the world of 4K and HDR formats.",gaming_general,xbox,gaming_general,,,,,,
+cd77ae2a923d1319,crypto_blockchain,benchmark_hard_negative,2688,"Image copyright AFP Image caption Students present John Leung, director of Hong Kong Trade Office in Taipei, with a protest letter on 29 Sep
+
+Now the two sides feel they share similar goals and they are working together more closely, something that will surely worry Beijing.",china,beijing;hong kong,china,,,,,,
+d305a3283e008b3a,crypto_blockchain,benchmark_hard_negative,20053,"The Congress leader arrived more or less on time, but had to wait while other leaders gave their speeches
+
+Also Read: Rahul Gandhi's Mumbai padyatra over power tariff hike evokes good response
+
+Makar Sankrant was unusually busy for Malad this year as the Congress had organised a karyakarta melava (workers’ meet), to be addressed by Gandhi at the St Joseph’s School ground.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+6b011159ca6b4581,crypto_blockchain,benchmark_hard_negative,33034,"In 2016, five of the seven southwestern counties voted for Republican Trump for president and Democrat Russ Feingold for U.S. Senate.",us_legislative_governance,senate,us_legislative_governance,,,,,,
+5f83e6aa6ea5e74c,crypto_blockchain,benchmark_hard_negative,2708,"""They will have to figure out how to reassure Taiwan to not to support Hong Kong,"" said Mr Ding.",china,hong kong,china,,,,,,
+a40d41ab00e9a53a,crypto_blockchain,benchmark_hard_negative,17652,"It does not appear, however, that Chinese officials are especially concerned about the ability of the People’s Liberation Army, backed up by the People’s Armed Police, to close the border with the North.",china,chinese,china,,,,,,
+49e89a6f2fb42ab4,crypto_blockchain,benchmark_hard_negative,27698,"What we can say for sure is that the protesters and ordinary people in Beijing suffered the brunt of the violence--not the Chinese military, as Becker absurdly claims.",china,beijing;chinese,china,,,,,,
+5095298f6a3be73d,crypto_blockchain,benchmark_hard_negative,27681,"Nor that Mao himself closed ranks with the rest of the CCP leadership to put an end to the Cultural Revolution, out of fear that society would get out of control.",china,ccp,china,,,,,,
+8bf8dc9ed9475c03,crypto_blockchain,benchmark_hard_negative,2467,"And in January of last year, the two countries inked a $300 million line of credit designed to bring Israeli investments to China.",china,china,china,,,,,,
+2330a1cc9137e47f,crypto_blockchain,benchmark_hard_negative,2689,"Hong Kong supported us and now we're supporting them Karen Cheng, Taiwanese activist
+
+After all, Taiwan could be seen as a bad influence - it's had decades, and some would say more than a century, of experience fighting for democracy.",china,hong kong,china,,,,,,
+c92d2f81d0db8edd,crypto_blockchain,benchmark_hard_negative,22222,"“These wrong and self-serving priorities are guaranteed to turn off voters of every political persuasion, and every GOP Senate candidate will be held accountable for their toxic and unpopular tax scam,” said the DSCC chairman, Sen. Chris Van Hollen.",us_legislative_governance,senate,us_legislative_governance,,,,,,
+479506017ca1e0c1,crypto_blockchain,benchmark_hard_negative,15967,Then came Trump's January 24 executive order.,us_legislative_governance,executive order,us_legislative_governance,,,,,,
+593c2de0c7333ba3,crypto_blockchain,benchmark_hard_negative,2816,"November 15, 2012 12:58 IST
+
+J ust one week after United States President Barack Obama's convincing re-election, his faithful Vice President Joseph Biden led the White House celebration of Diwali, reflecting on the significance of festival of lights, and also acknowledging the presence of Tulsi Gabbard, the first Hindu American elected to the US Congress, and also Ambassador Nirupama Rao, who like Gabbard, seemed to have that gravitational pull in terms of the guests wanting to pose for pictures with them.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+e13d99176824aa32,crypto_blockchain,benchmark_hard_negative,39598,"Grievances against Obama include gun-control proposals, immigration reform agitation, a departure from ""Biblical morality,"" alleged help for al-Qaida associates in the Middle East, an allegedly fabricated birth certificate and executive actions that loop around Congress.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+a4d070eaa1311fdd,crypto_blockchain,benchmark_hard_negative,3097,And continued bickering over constitutional reform has overshadowed the historic significance of Hong Kong’s return to Chinese sovereignty.,china,chinese;hong kong,china,,,,,,
+4170acafe183f656,crypto_blockchain,benchmark_hard_negative,37332,"A Chinese developer is seeking to make Auburn the site of a medical tourism complex, the Sun Journal reported.",china,chinese,china,,,,,,
+7b8423891bb47986,crypto_blockchain,benchmark_hard_negative,36775,Ximmerse from China is also showcasing its cutting edge VR technology.,china,china,china,,,,,,
+0fdcb2ff55b43625,crypto_blockchain,benchmark_hard_negative,24477,The result marks the second straight quarter that the world's third largest economy has lost steam and undershoots an annualised 2.3 per cent fall forecast in a Kyodo News agency survey.,gaming_general,steam,gaming_general,,,,,,
+ed8742eef58421f9,crypto_blockchain,benchmark_hard_negative,27700,"The actions of the student and worker protesters of Tiananmen deserve our support, not the Chinese government.",china,chinese;chinese government,china,,,,,,
+55d301e5a65233c8,crypto_blockchain,benchmark_hard_negative,36570,"What's new in the Xbox One S
+
+There's a short but significant list of improvements and changes to the Xbox One S.
+
+Smaller, cleaner design: To start, it's 40 percent smaller, which considering its power supply is now internal, is impressive.",gaming_general,xbox,gaming_general,,,,,,
+fecd9b3171c46d82,crypto_blockchain,benchmark_hard_negative,35803,"Member of Mensa, China Post #1, and lifetime member of the NRA and UDT/SEAL Association.",china,china,china,,,,,,
+0ee8aa73076c6ac0,crypto_blockchain,benchmark_hard_negative,46353,"Despite a landmark Supreme Court decision in 2011, which protected commercial video games as free speech, the Newtown massacre has renewed debate in the Congress and White House over what, if anything, should – or can – be done to regulate the $60 billion video game industry, the largest media business in the world.",gaming_general;us_legislative_governance,congress;video game,gaming_general;us_legislative_governance,,,,,,
+c8b6e39b00cdcd72,crypto_blockchain,benchmark_hard_negative,2472,"""We do hope that if we are able to improve economic ties and connections between Israel and China, it will help us also to explain our positions with regard to the Iranian nuclear threat, with regard to the events in Syria,"" then-Israeli Finance Minister Yuval Steinetz said in an interview with Bloomberg prior to signing the $300 million line of credit.",china,china,china,,,,,,
+d5b85d23abf7f6a8,crypto_blockchain,benchmark_hard_negative,27678,"An issue of PSL's Socialism and Liberation magazine that focuses on China characterizes the Cultural Revolution as an ""advance and retreat""--with the ""old capitalist roaders"" ultimately successful at defeating Mao and his allies, some of whom supported a ""commune-style state.""",china,china,china,,,,,,
+2d3f3460f4551711,crypto_blockchain,benchmark_hard_negative,36551,"Update 8/4/16: Several spec teardown reports have uncovered slight difference in the graphical hardware performance of Xbox One S. Specifically, Xbox One S has a small GPU clock increase of 914 MHz from 853 MHz and an ESRAM bandwidth increase of 219 GB/s from 204 GB/s.",gaming_general,xbox,gaming_general,,,,,,
+68b3fd75ca8d5a6c,crypto_blockchain,benchmark_hard_negative,40011,"It is a personal fact that my father was a Lieutenant (E) serving in the disastrous K class submarines, by which the Royal Navy tried to create a Submarine which could steam on the surface at 20 knots to keep up with the Fleet, and he died of a lung infection created by the appalling conditions in such submarines, even before I was born.",gaming_general,steam,gaming_general,,,,,,
+f5ad3e43e3436c63,crypto_blockchain,benchmark_hard_negative,9641,"There are countless times I’ve been grouped with non-native speakers, not just Japanese but Chinese, Korean, even German.",china,chinese,china,,,,,,
+a780f1d1446b8aef,crypto_blockchain,benchmark_hard_negative,17675,"But should the Chinese decide not to do the right thing, the total destruction of North Korea could lead to two large armies with incompatible objectives coming into contact with each other in a wartime setting.",china,chinese,china,,,,,,
+944392a1a8ac69f3,crypto_blockchain,benchmark_hard_negative,36999,"— Donald J. Trump (@realDonaldTrump) September 3, 2017
+
+Finally, in North Korea’s view, China is not to be trusted, but Chinese leaders will not abandon Pyongyang because it is in Beijing’s interest to keep propping up Kim’s regime.",china,beijing;china;chinese,china,,,,,,
+f702c78b3bad8bec,crypto_blockchain,benchmark_hard_negative,30305,"Nitty Gritty Tax Law
+
+After a lobbying blitz by both the NFL and the AFL, Congress eventually agreed to allow the two leagues to merge.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+d495a21293cb8009,crypto_blockchain,benchmark_hard_negative,32709,"Likewise, Obama's do-nothing policies vis-a-vis North Korea are being contrasted with Trump's warnings to leader Kim Jung Un about further testing of intercontinental ballistic missiles and pressure on China's leaders to rein in the North Korean regime.",china,china,china,,,,,,
+34ec472ca2a9f616,crypto_blockchain,benchmark_hard_negative,2694,"Many Hong Kong students came here then to learn, including how to disseminate information online in timely manner and co-ordinate supplies and donations.",china,hong kong,china,,,,,,
+c7f8af869cdc7279,crypto_blockchain,benchmark_hard_negative,27679,"So for the PSL, the Cultural Revolution was a mixed bag of positives and negatives--while the right-wingers won, it was at least an example of the freedom to dissent in socialist China.",china,china,china,,,,,,
+c45c006fa7865ef5,crypto_blockchain,benchmark_hard_negative,3445,"In the end, the Chinese were not quite as open to everything the German business leaders had on their wish list as the Germans would have liked.",china,chinese,china,,,,,,
+0d49c8f2f204d463,crypto_blockchain,benchmark_hard_negative,19353,"For all this, Xi avoids accountability to the Chinese people.",china,chinese,china,,,,,,
+e54c22bd1bebd125,crypto_blockchain,benchmark_hard_negative,45003,"Alexander Zakharchenko, prime minister of the separatists' Donetsk People's Republic, has acknowledged that retirees are dying of hunger.",china,people's republic,china,,,,,,
+8037a4da48f16e4c,crypto_blockchain,benchmark_hard_negative,3085,China’s rapid rise as a global power and its growing ambitions have had a negative effect on local politicians and the business elite.,china,china,china,,,,,,
+7bd99fa7fc46ec2c,crypto_blockchain,benchmark_hard_negative,32997,"She laments a do-little Congress, two parties that can’t work together, ceaseless division, the media circus over Trump and a swamp that hasn't been drained.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+08997e8c85f4af99,crypto_blockchain,benchmark_hard_negative,39711,"The 34-year-old's time in Ostrava was well down on the 27:01 he managed to win the world title with in Beijing in 2015, but Kimeli was his only challenger with 10 laps remaining before Farah broke clear for a comfortable victory.",china,beijing,china,,,,,,
+6e9316ee3a145b3f,crypto_blockchain,benchmark_hard_negative,8474,Conservative groups outspent liberal groups by a more than 2-to-1 ratio heading into an Election Day that brought the biggest Republican sweep in the House of Representatives in decades and sliced into the Democratic majority in the Senate.,us_legislative_governance,house of representatives;senate,us_legislative_governance,,,,,,
+b5e5d5003186275b,crypto_blockchain,benchmark_hard_negative,2470,China habitually obstructs efforts to crack down on Iran’s nuclear program and is all too happy to undermine Western and Israeli interests in the region at times.,china,china,china,,,,,,
+2b946c083fb8d9b3,crypto_blockchain,benchmark_hard_negative,13428,Rising demand in China and India will push coal past oil as the two Asian powerhouses will need to rely on the comparatively cheaper fuel to power their economies.,china,china,china,,,,,,
+b422f0059e64534d,crypto_blockchain,benchmark_hard_negative,44944,That top politicians in the Congress party made a decision to keep mention of the LeT out of the fake encounter affidavit shows this could not have happened without the Gandhis wanting it.,us_legislative_governance,congress,us_legislative_governance,,,,,,
+4abadd2c28177260,crypto_blockchain,benchmark_hard_negative,27660,"Tian Han was on the wrong side of those debates--he was denounced as a ""poisonous weed"" and charged with opposing the CCP in 1964.",china,ccp,china,,,,,,
+0829c61212938ff6,crypto_blockchain,benchmark_hard_negative,27663,"Becker's gripes about me and China's national anthem serve as a jumping-off point for the complaint that I'm hostile to ""the Chinese Revolution in its entirety""--back to the 1949 revolution and the victory of Mao's Red Army after the ""Long March.""",china,china;chinese,china,,,,,,
+c094a59bdd6d01c5,crypto_blockchain,benchmark_hard_negative,34074,"A: According to the Bank of China, about 16,000 to 18,000 officials with ties to the public sector were involved in moving proceeds of corruption illegally from China to other countries.",china,china,china,,,,,,
+a929396d92ffcf6a,crypto_blockchain,benchmark_hard_negative,34073,Q: How many Chinese foreign nationals are involved in moving proceeds of corruption out of China?,china,china;chinese,china,,,,,,
+0169760f0bca1805,crypto_blockchain,benchmark_hard_negative,37226,"And for a good reason – not too long ago, even the Director of the National Security Agency, Admiral Michael S. Rogers, warned the Congress that China and “probably one or two other” countries have the capability of shutting down the U.S. power grid – an event that would dwarf the 2003 Northeastern blackout.",china;us_legislative_governance,china;congress,china;us_legislative_governance,,,,,,
+95383c40bd3b0ffb,crypto_blockchain,benchmark_hard_negative,7148,"Just three days before the House’s August recess is set to begin, Appropriations Committee Chairman Hal Rogers (R-Ky.) is in the process of drafting limited legislation that would provide less than $1 billion in funds and through only Sept. 30, aides said.",us_legislative_governance,appropriations,us_legislative_governance,,,,,,
+b98c706e28cccfa5,crypto_blockchain,benchmark_hard_negative,21799,What will I do with my Solar System RPG game?,gaming_general,rpg,gaming_general,,,,,,
+bd98f67825a52738,crypto_blockchain,benchmark_hard_negative,22959,"Lieutenant Governor Dan Patrick, a Republican and conservative Christian who guides the legislative agenda in the Republican-controlled Senate, told a news conference at the Capitol the Texas Privacy Act is a common sense measure to keep sexual predators out of bathrooms.",us_legislative_governance,senate,us_legislative_governance,,,,,,
+f65e0490ea56edae,crypto_blockchain,benchmark_hard_negative,15929,His January 24 executive order didn't actually target the Dakota Access Pipeline specifically.,us_legislative_governance,executive order,us_legislative_governance,,,,,,
+7afb65ba460ee410,crypto_blockchain,benchmark_hard_negative,24515,"The Duterte administration, however, has been careful not to bring up the matter in international fora or with China, saying it wants to work with the rising superpower in resolving the issue.",china,china,china,,,,,,
+b628e28b8bc6b753,crypto_blockchain,benchmark_hard_negative,27324,"Related Regenerative Medicine Conferences | Stem Cell Conferences | Stem Cell Congress | Tissue Science Conferences | Europe Conferences
+
+9th Advanced Cell and Gene Therapy conference, March 21-22, 2019 Rome, Italy; 12th Genomics and Molecular Biology conference, April 15-17, 2019 Berlin, Germany; 7th Integrative Biology conference, April 15-16, 2019 Berlin, Germany; Pacific Regenerative Medicine Conference, May 16-19, 2019 Hawaii, USA; Annual conference & Exhibition on Transversal, Translational & Transformative, December 2-5, 2019 Florida, USA; 21st International Conference on Tissue Engineering and Regenerative Medicine, June 27 - 28, 2019 London, United Kingdom; World Advanced Therapies & Regenerative Medicine Congress 2019, May 15 – 17, London, UK; 6th Annual European Congress on Clinical & Translational Sciences, October 18-20, 2019 Vienna, Austria;
+
+Related Associations and Societies:
+
+Europe:
+
+EuroStemCell (European Consortium for Stem Cell Research); German Stem Cell Network (GSCN); German Society for Stem Cell Research (GSZ); Stem Cell Network North Rhine-Westphalia (NRW); Norwegian Center for Stem Cell Research (NCSCR);
+
+USA:
+
+California Institute for Regenerative Medicine (CIRM); New York Stem Cell Foundation (NYSCF); Tissue Engineering International & Regenerative Medicine Society (TERMIS); International Society for Stem Cell Research (ISSCR);
+
+Asia:
+
+The New South Wales Stem Cell Network; Korean Society for Stem Cell Research; Japanese Society for Regenerative Medicine; Taiwan Society for Stem Cell Research; Stem Cell Society Singapore (SCSS);
+
+Novel Approaches guided in Tissue Engineering
+
+GTR are dental surgical procedures that use barrier membranes to direct the growth of new bone and gingival tissue at sites with insufficient volumes or dimensions of bone or gingiva for proper function, esthetics or prosthetic restoration
+
+Related Regenerative Medicine Conferences | Stem Cell Conferences | Stem Cell Congress | Tissue Science Conferences | Europe Conferences
+
+9th Advanced Cell and Gene Therapy conference, March 21-22, 2019 Rome, Italy; 12th Genomics and Molecular Biology conference, April 15-17, 2019 Berlin, Germany; 7th Integrative Biology conference, April 15-16, 2019 Berlin, Germany; Pacific Regenerative Medicine Conference, May 16-19, 2019 Hawaii, USA; Annual conference & Exhibition on Transversal, Translational & Transformative, December 2-5, 2019 Florida, USA; 21st International Conference on Tissue Engineering and Regenerative Medicine, June 27 - 28, 2019 London, United Kingdom; World Advanced Therapies & Regenerative Medicine Congress 2019, May 15 – 17, London, UK; 6th Annual European Congress on Clinical & Translational Sciences, October 18-20, 2019 Vienna, Austria;
+
+Related Associations and Societies:
+
+Europe:
+
+EuroStemCell (European Consortium for Stem Cell Research); German Stem Cell Network (GSCN); German Society for Stem Cell Research (GSZ); Stem Cell Network North Rhine-Westphalia (NRW); Norwegian Center for Stem Cell Research (NCSCR);
+
+USA:
+
+California Institute for Regenerative Medicine (CIRM); New York Stem Cell Foundation (NYSCF); Tissue Engineering International & Regenerative Medicine Society (TERMIS); International Society for Stem Cell Research (ISSCR);
+
+Asia:
+
+The New South Wales Stem Cell Network; Korean Society for Stem Cell Research; Japanese Society for Regenerative Medicine; Taiwan Society for Stem Cell Research; Stem Cell Society Singapore (SCSS);
+
+Clinical Medicine
+
+Clinical medicine relates to medicine field that deals mainly with the study and practice of medicine based on the direct examination of the patient.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+c48681f4485d7ba7,crypto_blockchain,benchmark_hard_negative,51931,"Rusted Portal Games
+
+Donaven Brines - Game Design
+
+Chad Matson - Lead Developer, Pathfinder
+
+Jason Stolberg - Lead Developer, Fifth Edition
+
+Reid Finucan - Game Developer
+
+Jeff Carter - Logistics
+
+Alison Hinch - Art Director
+
+Apocalypse the Risen Contributing Artists
+
+Raven Mimura - Iconics
+
+Rodrigo Vega - Races
+
+Preston Stone - Ghosts, Demons, and Devil
+
+Vincent Coviello - Risen
+
+Christopher Onciu - Demons
+
+Apocalypse the Risen Contributing Writers
+
+Amy DuBoff - North/South America Region
+
+Ant Tessitore - US Mid-Atlantic/Southest Region
+
+Jacob Huebsch - US Mid-West Region
+
+Robert Hazelton - US Northeast Region
+
+James Pianka - US West Region
+
+Craig Guarisco - US Northwest Region
+
+Jenna Pitman - US Southwest Region
+
+RISEN
+
+You didn't make it but we greatly appreciate your sacrifice!",gaming_general,game developer,gaming_general,,,,,,
+1c73c88babb8bc28,crypto_blockchain,benchmark_hard_negative,18971,This is a Congress that is beyond dysfunctional.,us_legislative_governance,congress,us_legislative_governance,,,,,,
+77a186f19a8b1257,crypto_blockchain,benchmark_hard_negative,41984,"Nintendo hasn't commented on the matter, but a recent job listing seems to indicate that the presentations will continue.",gaming_general,nintendo,gaming_general,,,,,,
+dffa4c7c088a90b6,crypto_blockchain,benchmark_hard_negative,36782,"We're hopeful this will happen next year,"" said Dan Page, Director of the VR World Congress.Entrepreneurs in India in the VR/AR space believe the industry is in the nascent stages in India.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+80ecc2b6233c7513,crypto_blockchain,benchmark_hard_negative,2682,"The meeting attracted little attention, but it marked the first time democracy advocates, including representatives from Hong Kong's political parties and students from both sides, had met in an organised fashion.",china,hong kong,china,,,,,,
+3f45732b728451b8,crypto_blockchain,medium_negative,81165,"One way or another, then, the winning candidate must demonstrate both a sufficient popular support to govern as well as a sufficient distribution of that support to govern.",us_electoral_politics,candidate,us_electoral_politics,,,,,,
+21e907baae44ee19,crypto_blockchain,medium_negative,100659,Stuart Appelbaum pushed back on the AFT at the meeting regarding their early endorsement process.,us_electoral_politics,endorsement,us_electoral_politics,,,,,,
+02995676658ba059,crypto_blockchain,medium_negative,5709,"It's likely that NASA, with its assets in orbit around Mars, will help facilitate communication between the Red Dragon and Earth.",aviation_aerospace,nasa,aviation_aerospace,,,,,,
+c85ac978a62138d4,crypto_blockchain,medium_negative,36885,Yesterday I'd heard from a friend that the aircraft carrier USS George H.W.,aviation_aerospace,aircraft,aviation_aerospace,,,,,,
+b1ad7114c8bf9463,crypto_blockchain,medium_negative,78799,"Here’s a rough draft petition [which does not mention drugging, because that abuse should be more aggressively attacked] for the lawyers and
+
+politicians among you to refine:
+
+To the [name of local “School Board”]:
+
+Whereas, the structure of today’s conventional classrooms and the behavioural demands made by today’s conventional schoolteachers therein, are inconsistent with and inimical to the natural psychology of healthy boys; and
+
+Whereas, the natural psychology of girls is more adapted to such classrooms and demands than that of boys; and
+
+Whereas, the present school bus practices constitute “babying” of most school children, which children need to know how to deal with the traffic on the roads next their homes anyway:
+
+Therefore,
+
+we the [undersigned, presenting] petitioners, hereby demand with all due respect (which may not be very much respect if our efforts should be scorned) that the [name of local “School Board”] forthwith:
+
+Cause all School Buses operated by the Board to be painted a bright pink colour, which colour be as easily visible as the presently used shade of yellow, and which colour additionally designates the school buses and schools to be more suitable for girls than for boys Cause the entry doors of all schools operated by the Board to be painted pink, further designating the schools to be more suitable for girls than for boys; Form a committee including at least 50% skilled trades men (which category can include cooks, farmers, airline pilots, physicians, engineers, etc.",aviation_aerospace,airline,aviation_aerospace,,,,,,
+994c6167fad6bef6,crypto_blockchain,medium_negative,52950,"The SCO drafted the Satellite Utilisation Policy, Australia’s most recent space-focused government policy.",aviation_aerospace,satellite,aviation_aerospace,,,,,,
+4c5944f3c3cd21a8,crypto_blockchain,medium_negative,88648,"The last time a smooth-talking, charismatic, debate-winning candidate became president, he promised he would cut the deficit in half.",us_electoral_politics,candidate,us_electoral_politics,,,,,,
+34ac210694be351e,crypto_blockchain,medium_negative,39593,"Other speakers included WND editor Joseph Farah, 2004 Constitution Party presidential candidate Michael Peroutka and retired U.S. Navy Adm. James Lyons.",us_electoral_politics,candidate,us_electoral_politics,,,,,,
+09a0ec4dc9380d67,crypto_blockchain,medium_negative,8699,"But during its first flight, the aircraft's teleportation matrix malfunctioned, and it disappeared.",aviation_aerospace,aircraft,aviation_aerospace,,,,,,
+d12d821e0aba5745,crypto_blockchain,medium_negative,92802,"Like the Earth, Mars undergoes orbital variations that alter the distribution of sunlight across the planet.",aviation_aerospace,orbital,aviation_aerospace,,,,,,
+46addca5d3c23a93,crypto_blockchain,medium_negative,98868,"“We’re going to take care of those wounded warriors and we’re going to take care of our vets better than anybody,” proclaimed the Republican candidate when announcing his proposal in Norfolk, VA, home to a sizable military population.",us_electoral_politics,candidate,us_electoral_politics,,,,,,
+48bf6b9e6e4ff70c,crypto_blockchain,medium_negative,104648,"The US increasingly has touted military strikes as an option against the Kim regime, even going as far as positioning an aircraft carrier off Korea's coast.",aviation_aerospace,aircraft,aviation_aerospace,,,,,,
+28679aaed4a967dd,crypto_blockchain,medium_negative,96030,Not according to polling for the OECD.,us_electoral_politics,polling,us_electoral_politics,,,,,,
+1178c963ae8c7a5c,crypto_blockchain,medium_negative,74406,"Australian pilot Ross Kerker and Malta's Mac Poschwald also emerged as early favourites, and there were many others looking like strong contenders.",aviation_aerospace,pilot,aviation_aerospace,,,,,,
+8716b96920faa0d8,crypto_blockchain,medium_negative,5724,"A spacecraft must attain a great velocity (and therefore invest a lot of energy) to reach Mars in six to nine months, and once it's there, it must then somehow shed that energy and slow down.",aviation_aerospace,spacecraft,aviation_aerospace,,,,,,
+f637aba2489e40a6,crypto_blockchain,medium_negative,90510,But neither made any mention of Trump or backed off their endorsement of the nominee.,us_electoral_politics,endorsement,us_electoral_politics,,,,,,
+f00a83b74a424a97,crypto_blockchain,medium_negative,60338,"A comparison with the glow produced by SpaceX's Falcon 9 rocket, which launches the company's Dragon capsule on cargo missions to the International Space Station (ISS), might be instructive.",aviation_aerospace,spacex,aviation_aerospace,,,,,,
+5af73f96efaf3c7e,crypto_blockchain,medium_negative,69310,"For Bayesian statistics, the candidate MUST have experience with:
+
+• MCMC methods, including Gibbs sampling, Metropolis-Hastings sampling, and slice sampling
+
+• Econometrics and/or mathematical statistics, with strong knowledge of regression and choice models (e.g.",us_electoral_politics,candidate,us_electoral_politics,,,,,,
+1695ca5ad786be2e,crypto_blockchain,medium_negative,48863,Acting Prime Minister Wayne Swan says it is another resounding endorsement of Australia's sturdy public finances and strong economic fundamentals.,us_electoral_politics,endorsement,us_electoral_politics,,,,,,
+1f8663e0cffb73ae,crypto_blockchain,medium_negative,732,"Under current budget projections, NASA could launch one crewed SLS/Orion flight per year, with each Orion spending approximately 40 days at the Deep Space Gateway, Guidi said.",aviation_aerospace,nasa,aviation_aerospace,,,,,,
+148db75bd9258a9a,crypto_blockchain,medium_negative,49085,"A 100 MW pilot wind farm is scheduled to come online by 2013, to be followed by a 900 MW one by 2016, and then an additional 1,500 MW of further capacity by 2019, for a total of 2,500 MW and 500 turbines (huge 5 MW ones!).",aviation_aerospace,pilot,aviation_aerospace,,,,,,
+56d7e9187a80c15c,crypto_blockchain,medium_negative,36865,"“We believe in the humane alternative of local self-government, as called for in our Constitution.”
+
+Olivier Ballou, a spokesman for the Manning Centre, said centre president Preston Manning himself will engage in an on-stage discussion with Paul following the former presidential candidate’s speech.",us_electoral_politics,candidate,us_electoral_politics,,,,,,
+1c4c372f97d3a7b1,crypto_blockchain,medium_negative,10950,"That potential failure mode was not known “from very early on in the mission”, but only at the very end: “Following the September loss of the first spacecraft due to management errors, NASA had initiated a crash review of the Mars Polar Lander to identify any similar oversights.",aviation_aerospace,nasa;spacecraft,aviation_aerospace,,,,,,
+aac796a71d48fe7e,crypto_blockchain,medium_negative,15898,"The Navy got to keep all 11 of its aircraft carriers, although it will have to retire seven aging cruisers earlier than expected.",aviation_aerospace,aircraft,aviation_aerospace,,,,,,
+c20462f1b7e93870,crypto_blockchain,medium_negative,42380,"""As usual, Murphy's people are full of garbage,"" West's campaign manager Tim Edson told the Post.",us_electoral_politics,campaign manager,us_electoral_politics,,,,,,
+151785161fcf18f0,crypto_blockchain,medium_negative,108242,"Target Locator Production information Manufacturer Misriah Armory Model H-165 FOM Type Laser designator Cost N/A Technical specifications Size Single-handed Damage Per Hit Extremely High Magazine Size 1 (7 missiles per magazine) Maximum Ammunition 3 (Campaign and Firefight)
+
+3 (Unearthed) Ammunition Type Orbital missiles Operation 7 missile salvo Rate of Fire Very low Usage Era(s) Human-Covenant war Affiliation United Nations Space Command [Source] • [Talk]
+
+The H-165 Forward Observer Module, also known as the Target Locator[1] or Target Designator,[2] is a United Nations Space Command artillery fire designator.",aviation_aerospace,orbital,aviation_aerospace,,,,,,
+3f4e7292d886f9fd,crypto_blockchain,medium_negative,65649,Stella is undoubtedly the candidate who can help build a better Labour Party that we all want to be part of.,us_electoral_politics,candidate,us_electoral_politics,,,,,,
+1f431d1ce5b7c19a,crypto_blockchain,medium_negative,12805,"Until earlier this month, at least in airline speak, it could mean not only extraordinary events – like the foiled terrorist attack which forced Glasgow airport to close – but technical defects.",aviation_aerospace,airline,aviation_aerospace,,,,,,
+27adc6ae493b1b2e,crypto_blockchain,medium_negative,18723,"This apparatus housed four different tests in a space the size of a soccer ball, according to Glenn Bugos, historian for the NASA Ames Research Center.",aviation_aerospace,nasa,aviation_aerospace,,,,,,
+f23d43cb5b25e0bc,crypto_blockchain,medium_negative,9924,"Golden Age: Architect Eero Saarinen said he 'wanted passengers passing through the building to experience a fully-designed environment
+
+End of an era: The terminal was built for TWA but the airline went bankrupt and was purchased by American Airlines in 2001
+
+After a $20 million renovation project, the building maintained its ambiance of the sixties, including this retro bar
+
+Times gone by: Construction on the airport hub lasted six years, beginning in 1956, and upon completion it was celebrated as an architectural masterpiece
+
+The flight centre was the last project of architect Eero Saarinen, the Finnish-American designer known for his love of curves, and was completed posthumously in 1962, for the now defunct Trans World Airlines (TWA)
+
+In recent years the building underwent a $20 million renovation and opened its doors to design buffs, eager for a peek at the architectural jewel, for just a weekend in 2012",aviation_aerospace,airline,aviation_aerospace,,,,,,
+4a55637f0af1c13e,crypto_blockchain,background_negative,10633,"Barnett's anecdotes span Tokyo, Las Vegas, and Rio de Janeiro, evoking a gritty, glamorous, big-city after-dark showbiz milieu of private suites and international flights.",japan,tokyo,japan,,,,,,
+8ea64e7e1e268553,crypto_blockchain,background_negative,8718,"At the same time, Russian procurement hit a new high, with about 2 trillion rubles (US $33.2 billion) spent on new equipment in 2014, Prime Minister Dmitry Medvedev said in April.",japan,prime minister,japan,,,,,,
+ed83d5b5a48abcce,crypto_blockchain,background_negative,23551,Charlie Manuel has never had a losing season as Phillies manager.,soccer,manager,soccer,,,,,,
+a2026cf71434679e,crypto_blockchain,background_negative,9605,"As a teacher, this comes up a lot, but Keiko in particular noted that English’s role in Japan is often restricted to unique wording/phrasing that only makes sense to Japanese.",japan,japan;japanese,japan,,,,,,
+615a9deca9f29a96,crypto_blockchain,background_negative,36616,"Third baseman Grant Clyde, who's hitting .291 with four homers and 24 RBIs has been solid lately, while shortstop Trea Turner leads the way with a .376 batting average, six homers, 40 RBIs, and of course, 24 stolen bases in 30 attempts.",mlb_baseball,batting average;shortstop,mlb_baseball,,,,,,
+87c7b66dcc17b450,crypto_blockchain,background_negative,55414,"Keuchel (20-8, 2.48) won his first Cy Young Award last season, went an astounding 15-0 with a 1.46 ERA in Minute Maid Park and was the winning pitcher in Yankee Stadium in the wild card game.",mlb_baseball,pitcher,mlb_baseball,,,,,,
+71ac5336e8f78c0c,crypto_blockchain,background_negative,38859,"AP
+
+Topics: soccer, sport, honduras
+
+First posted",soccer,soccer,soccer,,,,,,
+74b30b46953466c6,crypto_blockchain,background_negative,53574,"Economic crisis, stagnant wages and declining working and living standards are the economic realities for Western Europe, the United States and Japan.",japan,japan,japan,,,,,,
+913f31bd57096fff,crypto_blockchain,background_negative,37777,"Lynn joins fellow British racer Sam Bird in testing for the Japanese squad on 22 November, the day after Lynn takes part in the GP2 race that is on the same bill as the FIA WEC finale.",japan,japanese,japan,,,,,,
+a1c433b5af81dd6a,crypto_blockchain,background_negative,4225,"The effects of some of the more popular drugs at these venues such as MDMA (ecstasy) can cause overheating and dehydration with sometimes fatal consequences,"" Penrith Local Area Command Crime Manager Detective Inspector Grant Healey warned.",soccer,manager,soccer,,,,,,
+c4f32df9f088245c,crypto_blockchain,background_negative,49041,";-) Regards Niels
+
+Joining Embarcadero as Delphi Product Manager Congratulation Marco, this a big gain for the whole Delphi community and gives me more confidence in the future of Delphi!",soccer,manager,soccer,,,,,,
+3d0d3b802e397023,crypto_blockchain,background_negative,24181,"I express to Ethan (our Finance Manager) my gameplan, then blow in his face to see how much I smell like booze.",soccer,manager,soccer,,,,,,
+a7411c2abac1d951,crypto_blockchain,background_negative,55390,"The team is still waiting for John Singleton (and his $10 million in guaranteed money) to seize the position, but a sub-.200 spring batting average doesn’t bode well for him.",mlb_baseball,batting average,mlb_baseball,,,,,,
+b662462e8070b2a6,crypto_blockchain,background_negative,47442,"The 352-page Persona 5 Maniax user handbook was released in Japan today, revealing the poll results for a Persona 5 related survey conducted from May 16 to May 26, 2017.",japan,japan,japan,,,,,,
+5252981dff0a069f,crypto_blockchain,background_negative,9663,"LoL players in particular seem to look forward to seeing what Japanese players are capable of, though many still don’t realize the Japanese players still don’t have their own servers (and Riot games has yet to return my inquiries about the situation).",japan,japanese,japan,,,,,,
+abc35474eb29631a,crypto_blockchain,background_negative,46413,"In 2010, Cincinnati went back to the Bulldogs front seven and hit a home run with Geno Atkins in the fourth round.",mlb_baseball,home run,mlb_baseball,,,,,,
+cf881ca57e1e16a3,crypto_blockchain,background_negative,27478,"The defence minister joined Prime Minister Justin Trudeau at Pearson airport on Thursday night to greet the incoming Syrian refugees, but Sajjan says the government is trying to avoid using military bases to house more refugees.",japan,prime minister,japan,,,,,,
+233ae0732f3e3449,crypto_blockchain,background_negative,10624,"This is ""strong style,"" the notorious Japanese approach to pro-wrestling, now available with English commentary on AXS, a channel I had no idea existed.",japan,japanese,japan,,,,,,
+abecaa50af4577cc,crypto_blockchain,background_negative,11368,"During this time Samsung Electronics expanded to Portugal, New York, Tokyo, England, and Austin, Texas.",japan,tokyo,japan,,,,,,
+582dc6e61b49c981,crypto_blockchain,background_negative,13284,Messi's attempt to break the record looked uncertain after he was stretchered off during Barcelona's Champions League draw with Benfica on Wednesday with a knee injury.,soccer,barcelona;champions league,soccer,,,,,,

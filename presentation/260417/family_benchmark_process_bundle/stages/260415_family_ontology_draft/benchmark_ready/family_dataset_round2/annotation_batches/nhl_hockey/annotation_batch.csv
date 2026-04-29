@@ -1,0 +1,593 @@
+candidate_id,family_id,proposed_bucket,source_row_index,text,matched_query_blocks,matched_terms,matched_family_ids,final_label,keep_for_benchmark,label_confidence,primary_reason,exclusion_trigger,notes
+611fc793fc793a43,nhl_hockey,positive,414768,"Playing its games at UNLV’s Thomas & Mack Center, the Thunder drew an average of more than 8,000 fans in a debut 1993-94 campaign, and flourished in its six seasons, with several future NHL stars dotting its roster, including Alexei Yashin, Radek Bonk and Curtis Joseph.",league_anchor,nhl,nhl_hockey,,,,,,
+4407f05d44f60028,nhl_hockey,positive,226086,"Hop on the CTA Blue Line train, though, and it’s just $2.25—and the scheduled trip is only 10 minutes longer.",hockey_jargon,blue line,nhl_hockey,,,,,,
+7d188adde793e026,nhl_hockey,positive,54157,"[16] Three days later, he scored his first NHL goal against Ty Conklin of the Detroit Red Wings.",league_anchor,nhl,nhl_hockey,,,,,,
+6d4298b7a5845f64,nhl_hockey,positive,144218,"6 spot in the East.“Having your goalie play the way Jaro is right now is big for all of us but especially for a defenseman,” explained Ryan O’Byrne, who notched the game-winner in the first period.",hockey_jargon,goalie,nhl_hockey,,,,,,
+077905188d022949,nhl_hockey,positive,65857,"Every Thursday, NHL.com will look ahead to the 2016 NHL Draft with an in-depth profile on one of its top prospects.",league_anchor,nhl;nhl draft,nhl_hockey,,,,,,
+619666b15acb7789,nhl_hockey,positive,414752,"No fewer than eight professional and semi-pro teams called Vegas home in the 50 years preceding the incoming NHL iteration, and some proved just as freewheeling and glitzy as the city they represented.",league_anchor,nhl,nhl_hockey,,,,,,
+1cf8c8403955c58f,nhl_hockey,positive,594283,"With Los Angeles set to sweep the New Jersey Devils and claim the Stanley Cup,
+
+hockey’s silly season has begun.",league_anchor,stanley cup,nhl_hockey,,,,,,
+10d188b7076ab7d5,nhl_hockey,positive,298170,Who made an impact: Third-round pick Tim Brent played 207 games in the NHL.,league_anchor,nhl,nhl_hockey,,,,,,
+eab7130af431df3f,nhl_hockey,positive,448470,Goaltenders are different breed altogether requiring a certain type of mind set to play in front of a puck traveling upwards of 100 miles per hour.,hockey_jargon,puck,nhl_hockey,,,,,,
+8e540c59bb1ea789,nhl_hockey,positive,432391,"Cecil was hit by a puck while attending a Columbus Blue Jackets home game, and died two days later.",hockey_jargon,puck,nhl_hockey,,,,,,
+6de033a90320dbe3,nhl_hockey,positive,453698,Under former Winnipeg coach Claude Noel the power play was Vincent’s responsibility.,hockey_jargon,power play,nhl_hockey,,,,,,
+ea4512550c6f1457,nhl_hockey,positive,131074,"“The ref said I was going away from goal, but I was going to whip it round and put it to the goalie’s left-hand side.",hockey_jargon,goalie,nhl_hockey,,,,,,
+01bde59801c92656,nhl_hockey,positive,377864,"There aren’t many players who can take over a game from the blue line, but P.K.",hockey_jargon,blue line,nhl_hockey,,,,,,
+4a9dbb6a12851d55,nhl_hockey,positive,260865,The prognostication of the Stanley Cup champion was far more varied.,league_anchor,stanley cup,nhl_hockey,,,,,,
+159ac23b29efde46,nhl_hockey,positive,333526,"“Throughout his career, Adam was without question one of the top playmaking centers, particularly on the power play, and was considered one of the top face-off players in the game,” Lamoriello said in a statement released by the team.",hockey_jargon,power play,nhl_hockey,,,,,,
+4ebcfd905f13e10a,nhl_hockey,positive,320128,The Toronto Maple Leafs have not had a number one centre since the departure of Mats Sundin.,team_entities,toronto maple leafs,nhl_hockey,,,,,,
+d10656fedaa8d849,nhl_hockey,positive,213287,Talk last night had the Leafs inquiring about the Boston Bruins All-Star Center Patrice Bergeron.,team_entities,boston bruins,nhl_hockey,,,,,,
+5c7868c8d25f1c70,nhl_hockey,positive,426590,Only two San Jose players had appeared in an NHL outdoor game before.,league_anchor,nhl,nhl_hockey,,,,,,
+21065748b2a0c697,nhl_hockey,positive,300760,"Chiarot recorded his first NHL point on Dec. 5, 2014 against Colorado and his first NHL goal on Jan. 3, 2015 against Toronto.",league_anchor,nhl,nhl_hockey,,,,,,
+d4acd8574f9f4aef,nhl_hockey,positive,228666,Should the NHL adopt the 3-2-1 point system?,league_anchor,nhl,nhl_hockey,,,,,,
+6d5bc21fe661fd1d,nhl_hockey,positive,416192,"He was ranked 81st among NHL forwards in points, which already makes him a low-end first-line forward.",league_anchor,nhl,nhl_hockey,,,,,,
+3a6f7456819509c3,nhl_hockey,positive,455786,"NEW YORK – Columbus Blue Jackets goaltender Sergei Bobrovsky, Toronto Maple Leafs right wing Phil Kessel and Dallas Stars goaltender Richard Bachman have been named the NHL's ""Three Stars"" for the week ending April 14.",league_anchor;team_entities,nhl;toronto maple leafs,nhl_hockey,,,,,,
+b49c4024d72d8695,nhl_hockey,positive,19973,Who would you like the Arizona Coyotes to draft with the third overall pick in the 2015 NHL Draft?,league_anchor,nhl;nhl draft,nhl_hockey,,,,,,
+9792d642d477862a,nhl_hockey,positive,451435,"Since joining the Wild in 2012-13, Parise's 0.42 goals-per-game is 11th-best, his 0.83 points-per-game ranks 25th and his 3.63 shots-per-game is sixth in the NHL.",league_anchor,nhl,nhl_hockey,,,,,,
+9d4aec0974d766b9,nhl_hockey,positive,574217,"“He would just take the puck and go from one end to the other, and everybody else would still be at the one end, ” said his brother Richard, 19.",hockey_jargon,puck,nhl_hockey,,,,,,
+80c3870c7ebd61f8,nhl_hockey,positive,55283,"His 22 points on the power play was second-most on the team, only trailing defensive partner Keith Yandle.",hockey_jargon,power play,nhl_hockey,,,,,,
+7638823b6bcc0863,nhl_hockey,positive,127477,"Sidney Crosby Joins the Triple Gold Club
+
+The “club” is comprised of players who have won gold at both the Olympics and World Championships, as well as the Stanley Cup.",league_anchor,stanley cup,nhl_hockey,,,,,,
+8db558601f364979,nhl_hockey,positive,463198,"Below are some news & notes on Weise & Gordon:
+
+DALE WEISE (RW)
+
+PREVIOUS TEAM: Chicago Blackhawks; Montreal Canadiens
+
+DRAFTED: 2008 (4th Round, 111th Overall) - NY Rangers
+
+AGE: 27 (8-5-88)
+
+BORN: Winnipeg, Manitoba
+
+VITALS: 6’2”, 206 pounds
+
+SHOOTS: Right
+
+Split last year between the Montreal Canadiens and Chicago Blackhawks where he posted 27 points (14g-13a) in 71 total games.",team_entities,chicago blackhawks,nhl_hockey,,,,,,
+31a7727ce0db5951,nhl_hockey,positive,130729,"Barring a miracle, this April the Buffalo Sabres will again miss out on the NHL playoffs making it seven years since the underwhelming 2010-2011 first round exit.",league_anchor,nhl;nhl playoffs,nhl_hockey,,,,,,
+a6bca9c175cfb409,nhl_hockey,positive,173518,Things began to unravel late in the first half of a scoreless match between the third-place Golden Bears and fourth-place Cougars when Service goalie Caleb VanBlankenstein was whistled for fouling Bartlett's Ryan Reid inside the penalty box.,hockey_jargon,goalie,nhl_hockey,,,,,,
+c1a1d66897fcbb47,nhl_hockey,positive,489884,"Those things helped me step in and stay calm.”
+
+Defenseman Vojtech Mozik also made his NHL debut during the game.",league_anchor,nhl,nhl_hockey,,,,,,
+e1418f0b20c8e91a,nhl_hockey,positive,54148,"[1] With the fourth overall pick in the 2010 NHL Draft, Johansen was chosen by the Columbus Blue Jackets.",league_anchor,nhl;nhl draft,nhl_hockey,,,,,,
+c6dc0cf8e2b215c4,nhl_hockey,positive,87715,"Since beginning his NHL career in Detroit during the 2006-07 season, he has logged 164 goals and 264 assists in 708 career games with the Red Wings, Flames, Panthers and Stars.",league_anchor,nhl,nhl_hockey,,,,,,
+11d89e7f46a027c9,nhl_hockey,positive,141911,"Article Continued Below
+
+Fredrik Sjostrom, the add-on winger when the Leafs cleaned house on Sunday, indeed looks very fast, helped on the penalty kill - a unit that desperately needed help - and picked up as assist.",hockey_jargon,penalty kill,nhl_hockey,,,,,,
+414bd46005a18f63,nhl_hockey,positive,91509,"Apart from the name change and lack of Livingstone, little distinguished the NHL from the NHA.",league_anchor,nhl,nhl_hockey,,,,,,
+c7c0a310feb3365d,nhl_hockey,positive,404801,"But Bezina grew up in Switzerland, and Rendulic said he is the first player born and raised in Croatia to play in the NHL.",league_anchor,nhl,nhl_hockey,,,,,,
+d1e8ee15c1870782,nhl_hockey,positive,50114,"To choose a prior distribution, I got some statistics from http://www.nhl.com, specifically the average goals per game for each team in the 2010-11 season.",league_anchor,nhl,nhl_hockey,,,,,,
+983922de0a80f9a0,nhl_hockey,positive,588205,"So perhaps it should only stand to reason that his tenure with the Toronto Maple Leafs, now very much in question, would come to be viewed that way as well.",team_entities,toronto maple leafs,nhl_hockey,,,,,,
+0147af984e072dda,nhl_hockey,positive,3845,"Remember, when the format was first devised, Chiarelli and Bowman petitioned organizers for some relief in goal, because they were afraid they wouldn’t have a U-24 goalie that could allow their team to compete.",hockey_jargon,goalie,nhl_hockey,,,,,,
+3261b4a5ffc3b597,nhl_hockey,positive,295763,"Thanks to their shootout loss to the lowly Edmonton Oilers last night, the Phoenix Coyotes hurdled the Dallas Stars for said eighth spot.",team_entities,edmonton oilers,nhl_hockey,,,,,,
+dffb72289f67b807,nhl_hockey,positive,594576,"Stamkos left mind-boggling money on the table from the likes of the Toronto Maple Leafs, Montreal Canadiens, Buffalo Sabres and Detroit Red Wings to return to Tampa Bay.",team_entities,toronto maple leafs,nhl_hockey,,,,,,
+e379c487c6047622,nhl_hockey,positive,509099,Hopefully he is with an NHL team and let’s hope he’s wearing the copper and blue of the Oilers.,league_anchor,nhl,nhl_hockey,,,,,,
+070e09d8f9ed9dcd,nhl_hockey,positive,430389,Note that the sum of the heights of the red and green lines equals the height of the blue line for every s by definition.,hockey_jargon,blue line,nhl_hockey,,,,,,
+67538dd37d117593,nhl_hockey,positive,337468,"He’s well-known for his ability to play the puck, and is arguably the best goalie in the NHL at doing so.",hockey_jargon;league_anchor,goalie;nhl;puck,nhl_hockey,,,,,,
+142609d49f9cbb90,nhl_hockey,positive,193462,"Exceptional hands and stickhandling ability, he can dangle past a defender and does an excellent job of protecting the puck and maintaining possession.",hockey_jargon,puck,nhl_hockey,,,,,,
+7d3ec53b04f1aa2b,nhl_hockey,positive,11133,Another Canadian hall-of-famer who is another NHL goalie legend won his Calder Trophy is 69-70.,hockey_jargon;league_anchor,goalie;nhl,nhl_hockey,,,,,,
+7778b18820ee3abe,nhl_hockey,positive,138272,Goalie Matt Murray admitted he was nervous.,hockey_jargon,goalie,nhl_hockey,,,,,,
+0699c62d67eac613,nhl_hockey,positive,184517,"Take from it what you will*
+
+The Rumor: Jay Gruden Has Talked to Michigan About HC Job Opening
+
+Now another power play is in place, and it appears Griffin might actually win once again.",hockey_jargon,power play,nhl_hockey,,,,,,
+a26fcd0fc0fe624f,nhl_hockey,positive,538854,"With Krug signed, Chiarelli was talking about having nine legitimate NHL defensemen.",league_anchor,nhl,nhl_hockey,,,,,,
+1d1c12856be89c8d,nhl_hockey,positive,182078,"Daniel crosses the Flames' blue line and sent a behind-the-back pass to Henrik, who slid it over to Kesler for a one-timer that beat Karlsson over his glove.",hockey_jargon,blue line,nhl_hockey,,,,,,
+10d65450999fccbd,nhl_hockey,positive,538814,"In just about every way, the Bruins dominated the NHL.",league_anchor,nhl,nhl_hockey,,,,,,
+dde03bbd7549f07d,nhl_hockey,positive,333531,"Oates retired from playing on April 3, 2004, and took his first NHL assistant job last season with the Lightning.",league_anchor,nhl,nhl_hockey,,,,,,
+cdc0f60ee981b88d,nhl_hockey,positive,45656,"Also read: Los Angeles Kings Stanley Cup Victory Has Hollywood All A-Twitter
+
+One of the perks of being the Stanley Cup Champions is that each player gets to spend a day with the Cup itself.",league_anchor,stanley cup,nhl_hockey,,,,,,
+9881ac700d2cbf4c,nhl_hockey,positive,509094,"The London Knights have had many players go on to having great NHL careers with players like Patrick Kane, John Tavares, Corey Perry, and Rick Nash to name a few.",league_anchor,nhl,nhl_hockey,,,,,,
+fb59efc98d4f6064,nhl_hockey,positive,139893,METRO VANCOUVER — Vancouver Canucks centre Manny Malhotra continued his training regimen for the possibility of a National Hockey League season Friday — this time with a major change to the playing surface.,team_entities,vancouver canucks,nhl_hockey,,,,,,
+05c427287410a1ab,nhl_hockey,positive,588215,"Kessel is 27 now, an age where offensive players have historically already had their most productive NHL season.",league_anchor,nhl,nhl_hockey,,,,,,
+fa204e7d252068f7,nhl_hockey,positive,588229,To find a proper appreciation for his talents all you have to do is walk into a NHL dressing room — any one of them — and speak to his peers.,league_anchor,nhl,nhl_hockey,,,,,,
+fc09144a5cf6b4d9,nhl_hockey,positive,426604,The NHL has held 15 stadium games.,league_anchor,nhl,nhl_hockey,,,,,,
+13b849775c355371,nhl_hockey,positive,491922,ONE ENTRANCE: CTA's proposed 'compact station' concept for the Blue Line reduces passenger entrance points to one.,hockey_jargon,blue line,nhl_hockey,,,,,,
+76a47c8afd1bd7ab,nhl_hockey,positive,121561,"People in Winnipeg have long enjoyed blaming the incompetent operations of the Thrashers on the team's struggles, and a lot of that has been in the form of inheriting a team bereft of depth and carrying an awful goalie.",hockey_jargon,goalie,nhl_hockey,,,,,,
+6a0b6dab591a0446,nhl_hockey,positive,298205,"Goaltender and third-round selection Chris Driedger has played three games for the Senators, but it’s likely none of the other picks will reach the NHL.",league_anchor,nhl,nhl_hockey,,,,,,
+5b48239e8264767f,nhl_hockey,positive,60401,"The Gavle, Sweden native was originally selected by Florida 31st overall in the 2008 NHL Entry Draft.",league_anchor,nhl,nhl_hockey,,,,,,
+34e14a1c801d22bd,nhl_hockey,positive,392677,"Smyth and Horcoff must remind the team that although chipping the puck in at the blueline isn’t always the most exciting play, it does contribute to big road wins.",hockey_jargon,puck,nhl_hockey,,,,,,
+49edc21ff2f94309,nhl_hockey,positive,130867,"He could follow in the line of dominant, big Finnish NHL goaltenders (Tuukka Rask and Pekka Rinna come to mind).",league_anchor,nhl,nhl_hockey,,,,,,
+46ae644c9a2f3d58,nhl_hockey,positive,469570,No need for spin-o-ramas on the power play.,hockey_jargon,power play,nhl_hockey,,,,,,
+9f04e5e6ec6ff541,nhl_hockey,positive,83099,"It’s a game of confidence, being a goalie.” He had one of the most epic moments of the finals with his huge double save on two Sidney Crosby back to back shots, then threw his body across the crease to block an open-net shot by Jake Guentzel.",hockey_jargon,goalie,nhl_hockey,,,,,,
+98b10040dd83f6cc,nhl_hockey,positive,173812,"The green line shows measurements made with an ionosonde [Afraimovich et al., 2002], while the blue line shows the expected (non-eclipsed) values generated by the IRI.",hockey_jargon,blue line,nhl_hockey,,,,,,
+a8d1823ec28cc2de,nhl_hockey,positive,80201,"Sparse #Isles and NHL bits: The kids go home from camp, Lipbaum doesn't make it.",league_anchor,nhl,nhl_hockey,,,,,,
+57ce122af47d790b,nhl_hockey,positive,45662,"Kimmel provided his own bottle of tequila, which he emptied into the Stanley Cup as Guillermo and the guys prepared the other ingredients.",league_anchor,stanley cup,nhl_hockey,,,,,,
+2c787cf93f12b0f7,nhl_hockey,positive,588808,Troy Brouwer is without a point in 38 minutes of ice time despite being on the ice for 5:23 of the Capitals’ 9:24 of power play time.,hockey_jargon,power play,nhl_hockey,,,,,,
+a29229eb37427003,nhl_hockey,positive,89322,He was also the first goalie to leave the crease to play the puck.,hockey_jargon,goalie;puck,nhl_hockey,,,,,,
+195127e8604cd698,nhl_hockey,positive,228677,The NHL's current system is severely flawed.,league_anchor,nhl,nhl_hockey,,,,,,
+a164505d672009ae,nhl_hockey,positive,432390,"In 2002, the NHL responded to the death of one of its fans — Brittanie Cecil, 13 — by mandating protective netting behind each goal.",league_anchor,nhl,nhl_hockey,,,,,,
+fcff6d79aaae3290,nhl_hockey,positive,588810,"The Capitals have scored 5 goals in 9 power play opportunities, a blistering 55.6% conversion rate.",hockey_jargon,power play,nhl_hockey,,,,,,
+4922f66ffca34eb2,nhl_hockey,positive,568482,"Best Deals for US Black Friday
+
+Assassin’s Creed Syndicate – $8 (Walmart/Target)**
+
+Batman: Arkham Knight – $15 (Gamestop)**
+
+Batman: Return to Arkham – $25 (Walmart)**
+
+Batman: Telltale Series – $15 (Gamestop)
+
+Battlefield 1 – $27 (Walmart)
+
+Bioshock: The Collection – $30 (Best Buy)**
+
+Borderlands: The Handsome Collection – $15 (Best Buy/Gamestop)**
+
+Civilization VI (PC) – $40 (Gamestop)
+
+Call of Duty: Infinite Warfare – $35 (Target)
+
+Call of Duty: Infinite Warfare Legacy Edition – $57 (Walmart)
+
+Dark Souls III – $15 (Walmart)
+
+Destiny: The Collection – $30 (Best Buy/Target/Amazon)
+
+Deus Ex: Mankind Divided – $25 (Target/Amazon)
+
+DOOM (2016) – $15 (Walmart)**
+
+Fallout 4 – $15 (Target/Amazon) [$10 on PC via Amazon]
+
+Far Cry Primal – $15 (Best Buy/Target/Walmart/Amazon)
+
+FIFA 17 – $30 (Target)
+
+Gears of War 4 – $30 (Target)
+
+Grand Theft Auto V – $25 (Walmart)
+
+The Last of Us Remastered – $10 (Gamestop)**
+
+Mad Max – $10 (Gamestop)**
+
+Madden 17 – $27 (Walmart)
+
+Mafia III – $30 (Best Buy/Target)
+
+Metal Gear Solid V: Definitive Edition – $25 (Best Buy)**
+
+NBA 2K17 – $27 (Walmart)
+
+NHL 17 – $35 (Target/Walmart)
+
+Overwatch (PS4/X1/PC) – $35 (Best Buy/Target/Gamestop/Walmart)
+
+Rainbow Six Siege – $15 (Walmart/Target/Amazon)
+
+Ratchet & Clank – $10 (Gamestop)**
+
+Rise of the Tomb Raider – $35 (Walmart)**
+
+Middle-earth: Shadow of Mordor – $8 (Walmart)**
+
+The Elder Scrolls V: Skyrim SE – $25 (Walmart/Best Buy)
+
+Star Wars Battlefront – $10 (Gamestop)
+
+Titanfall 2 – $27 (Walmart)
+
+Tom Clancy’s: The Division – $10 (Amazon)
+
+Uncharted: The Nathan Drake Collection – $15 (Walmart/Best Buy)**
+
+Until Dawn – $15 (Target/Best Buy)
+
+The Witcher 3: Wild Hunt Complete Edition – $25 (Best Buy)**
+
+WWE 2K17 – $27 (Walmart)
+
+XCOM 2 – $30 (Best Buy/Gamestop) [$20 on PC via Amazon]
+
+The Legend of Zelda: Twilight Princess HD – $25 (Walmart)**
+
+Best Deals for Canadian Black Friday
+
+Assassin’s Creed Syndicate – $20 (Best Buy)**
+
+Battlefield 1 – $50 (Best Buy/Walmart/EB Games/Amazon)
+
+Bioshock: The Collection – $40 (Best Buy/EB Games)**
+
+Borderlands: The Handsome Collection – $15 (EB Games)**
+
+Call of Duty: Infinite Warfare Legacy Edition – $80 (Best Buy/EB Games)
+
+Civilization VI – $60 (EB Games)
+
+Dark Souls III – $25 (Best Buy/EB Games)
+
+Destiny: The Collection – $45 (EB Games)
+
+Deus Ex: Mankind Divided – $40 (Best Buy/Walmart/EB Games/Amazon)
+
+Dishonored 2 (PS4/X1/PC) – $50 (Amazon)
+
+DOOM – $30 (Best Buy)**
+
+Dragon Ball Xenoverse 2 – $40 (Best Buy/EB Games)
+
+The Elder Scrolls V: Skyrim SE – $35 (EB Games)
+
+Fallout 4 – $20 (EB Games)**
+
+FIFA 17 – $50 (Best Buy/Walmart/EB Games)
+
+Forza Horizon 3 – $50 (Best Buy/EB Games)
+
+Gears of War 4 – $40 (Walmart)**
+
+Grand Theft Auto 5 (PS4/X1/PC) – $30 (Best Buy/EB Games)
+
+Halo 5: Guardians – $20 (Amazon)
+
+Madden 17 – $50 (Best Buy/Walmart/EB Games)
+
+Mafia III – $40 (EB Games)
+
+Metal Gear Solid V: Phantom Pain Definitive Edition – $40 (EB Games)**
+
+NBA 2K17 – $40 (EB Games)
+
+NHL 17 – $50 (Best Buy/EB Games/Amazon)
+
+Overwatch (PS4/X1) – $40 (Walmart/EB Games)
+
+Quantum Break – $30 (EB Games/Amazon)**
+
+Rare Replay – $10 (EB Games/Amazon)**
+
+ReCore – $30 (Best Buy/EB Games/Amazon)
+
+Rise of the Tomb Raider (X1) – $30 (Best Buy/Amazon)**
+
+Rise of the Tom Raider 20 Year Collection (PS4) – $50 (Best Buy/EB Games)**
+
+The Witcher 3: Wild Hunt Complete Edition – $50 (EB Games)
+
+Titanfall 2 – $50 (Best Buy/Walmart/EB Games/Amazon)
+
+Tom Clancy’s: The Division – $30 (EB Games)
+
+WWE 2K17 – $40 (Best Buy/EB Games)
+
+XCOM 2 (PS4/X1) – $40 (EB Games)
+
+Advertisements",league_anchor,nhl,nhl_hockey,,,,,,
+cf7b0e81a58a4a28,nhl_hockey,positive,319035,"— George Malik (@georgemalik) July 30, 2014 Hiller had a very good record with Tri-City... http://t.co/vzYLsQihTa was traded to Detroit in Coffey deal: http://t.co/JydoMQOBC6 — George Malik (@georgemalik) July 30, 2014
+
+Hiller was indeed Paul Coffey's roomate back in 1993, and he didn't last very long in the NHL, but the 45-year-old native of Nelson, BC spent three years at Northern Michigan University, and as soon as his playing career ended, he became an assistant coach for Tri-City.",league_anchor,nhl,nhl_hockey,,,,,,
+4e529abc85fcd821,nhl_hockey,positive,65872,"""The two biggest aspects to becoming an NHL player are leadership and competitiveness,"" he said.",league_anchor,nhl,nhl_hockey,,,,,,
+6f2cc604dfe8e61f,nhl_hockey,positive,337452,"In 16 games, he boasted a 1.99 GAA to go along with a .944 save percentage, knocking out the Chicago Blackhawks and Nashville Predators in the process.",team_entities,chicago blackhawks,nhl_hockey,,,,,,
+47ee9208d02c7cfc,nhl_hockey,positive,574222,"When I think of Patrick, I think of hockey.”
+
+Stanley Cup on the mind
+
+He talks very little, but has big dreams.",league_anchor,stanley cup,nhl_hockey,,,,,,
+31756c738d362198,nhl_hockey,positive,620385,"Ready for anything, even at 12 As a 12-year-old soccer goalie, Vasiliy fell on a branch making a save.",hockey_jargon,goalie,nhl_hockey,,,,,,
+b81efb890236dc74,nhl_hockey,positive,538802,The question came from a perturbed fan in the stands at TD Garden for the Boston Bruins' annual State of the Bruins town hall meeting just before the start of training camp.,team_entities,boston bruins,nhl_hockey,,,,,,
+5b25095d4389750c,nhl_hockey,positive,277260,He starred in the AHL last season with the Penguins organization.Goaltender Curtis Sanford has received several two-way offers as well but remains hopeful a one way deal comes his way.Goaltender Manny Legace remains hopeful he will land an NHL job although his chances don’t look too great as we sit today.,league_anchor,nhl,nhl_hockey,,,,,,
+e5c85d3d532a108f,nhl_hockey,positive,180505,"That year, the NHL was in a lockout but when they resumed play Yakupov impressed.",league_anchor,nhl,nhl_hockey,,,,,,
+e36a3d7b4eeb9655,nhl_hockey,positive,352429,"""Hey goalie, can you pass the test, add your name to the Vezina fest?""",hockey_jargon,goalie,nhl_hockey,,,,,,
+d0638f1a632701da,nhl_hockey,positive,385305,"Arizona Coyotes Attorney Nicholas Wood, left and President Anthony LeBlanc speak of legal action against the city of Glendale after the council voted to back out of their agreement with the NHL team during a special council meeting Wednesday, June 10, 2015 in Glendale, Ariz. (Photo: David Kadlubowski/The Republic) Story Highlights Four Glendale City Council members have been targeted for recall
+
+The four voted to terminate a 15-year, $225 million agreement with the Arizona Coyotes
+
+The council will meet today in a closed-door session to discuss legal options on the Coyotes deal
+
+Four Glendale City Council members who voted last week to rescind the city's $225 million agreement with the Arizona Coyotes are being targeted for recall.",league_anchor,nhl,nhl_hockey,,,,,,
+2d1021d5ac871271,nhl_hockey,positive,352381,"All told, Roberts played 1,097 NHL games, becoming the first American to hit the 1,000-game milestone and earning a spot in the United States Hockey Hall of Fame.",league_anchor,nhl,nhl_hockey,,,,,,
+357a3d8d3e612514,nhl_hockey,positive,313576,"https://t.co/eakJFDJiwm — Art Vandelay (@StacheESQ) April 22, 2015
+
+https://t.co/VM1KGqpESd if this is the blackhawks victory song does the rest of the NHL have a chance?",league_anchor,nhl,nhl_hockey,,,,,,
+02fce269d18407d0,nhl_hockey,positive,54145,"[8] NHL scouts praised his speed, playmaking ability and vision on the ice but believed he needed to show more consistency and physicality.",league_anchor,nhl,nhl_hockey,,,,,,
+33188f7bc8d1ea3c,nhl_hockey,positive,437609,"The Florida Panthers finished this season with the 2nd lowest points total in the NHL and drew the 2nd lowest average attendance of 14,200 fans per home game.",league_anchor,nhl,nhl_hockey,,,,,,
+f40411a20932437d,nhl_hockey,positive,19897,"Unfortunately the Edmonton Oilers came out on top, pushing Buffalo to second and Arizona to third.",team_entities,edmonton oilers,nhl_hockey,,,,,,
+4951d325bfe0360c,nhl_hockey,positive,309800,"In his three NHL games, Hayden went scoreless in Ottawa on Thursday, scored a goal in the Hawks’ 2-1 win in Toronto on Saturday, and picked up the two primary assists on the two goals that helped the Hawks tie the Avalanche at 3-3 in a spectacular third period that would see the Hawks score five times Sunday.",league_anchor,nhl,nhl_hockey,,,,,,
+6d0d6ae9ebd6fd3c,nhl_hockey,positive,245807,I had that same feeling going into a seventh game of a series or a Stanley Cup final.,league_anchor,stanley cup,nhl_hockey,,,,,,
+c3ab0e505e6ac2ef,nhl_hockey,positive,448465,"Derek Ryan: Center, Carolina Hurricanes
+
+Derek Ryan went on a wild ride before he was able to reach the NHL.",league_anchor,nhl,nhl_hockey,,,,,,
+ed36f94b6d558532,nhl_hockey,positive,144223,"”Clearly determined to earn their goalie his second-straight shutout, the Canadiens appeared to pull out all the stops in the dying moments of the game.",hockey_jargon,goalie,nhl_hockey,,,,,,
+776b46294a252f2f,nhl_hockey,positive,11113,"Equipment or not, that’s no easy feat and isn’t cut out for everyone.” “Not only did each elite goalie make an impression, each left a legacy.",hockey_jargon,goalie,nhl_hockey,,,,,,
+18f8c8f1c02a1fd2,nhl_hockey,positive,55270,NHL.com released a poll on Friday ranking their top 14 defensemen in the league and coming in at number 12 on this list was Arizona Coyotes defenseman Oliver Ekman-Larsson.,league_anchor,nhl,nhl_hockey,,,,,,
+f03577d6ba39ca4b,nhl_hockey,positive,138228,"ET; NBC, CBC, TVA Sports) because of Sharks goalie Martin Jones and his 44 saves in Game 5.",hockey_jargon,goalie,nhl_hockey,,,,,,
+08dc4c3e2be1036b,nhl_hockey,positive,499065,"Following a timeout, the Blackhawks then took control.An instant after killing Stalberg's roughing penalty, they tied it when Stalberg joined a rush and benefited from Pisani's helper to notch his eighth.Kane crashed the net just as Toews stole the puck from Columbus' Chris Clark on the back boards, Toews sliding a centering pass that Kane converted for the go-ahead goal.The backbreaker came with 40 seconds left in the period when Toews won a battle for the puck near the offensive zone blue line with Columbus defenseman Fedor Tyutin and then skated past another defenseman, Grant Clitsome , who had overcommitted, before beating goaltender Steve Mason to make it 5-3.",hockey_jargon,blue line;puck,nhl_hockey,,,,,,
+5e7b4453d35a1aa8,nhl_hockey,positive,416236,MacKinnon had 17 power play points in his rookie season when he put up 63 points.,hockey_jargon,power play,nhl_hockey,,,,,,
+bf93a54a320f68e0,nhl_hockey,positive,426589,"Asked for his highlight of the weekend, Sharks coach Todd McLellan said: “Probably the family participation.” Hey, it was the Sharks’ first NHL outdoor game.",league_anchor,nhl,nhl_hockey,,,,,,
+e4561d54465aae97,nhl_hockey,local_hard_negative,3033528,"He recently sat down with B/R to talk about his home, the Russian Basketball Federation and Russia's banishment from the 2018 Winter Olympics in South Korea.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+ba48ebac275c63f7,nhl_hockey,local_hard_negative,95305,"She would go on to win a gold and silver medal at the 2006 Winter Olympics in Turin, Italy and was chosen as the flag bearer for Canada at the 2010 Vancouver Olympics opening ceremonies.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+8467a5371aedbc07,nhl_hockey,local_hard_negative,3745654,"18 Stanford women’s field hockey (10-7, 4-2 America East) produced a dominant performance against UC Davis (1-16, 0-6) on Saturday’s senior night.",non_nhl_hockey_confounders,field hockey,,,,,,,
+4f19550a1df68a83,nhl_hockey,local_hard_negative,2240789,"RELATED STORIES
+
+Olympics: PH’s Martinez qualifies for medal round in men’s figure skating
+
+Winter Olympics: PH’s Martinez garners 64.81 in short figure skating program
+
+Read Next
+
+LATEST STORIES
+
+MOST READ",non_nhl_hockey_confounders,winter olympics,,,,,,,
+14d4a7364ff32caa,nhl_hockey,local_hard_negative,684936,Environmentalists in South Korea are protesting a Winter Olympics construction project to build a ski slope through a 500-year-old protected forest.,non_nhl_hockey_confounders,winter olympics,,,,,,,
+840d9bfc23ea07e5,nhl_hockey,local_hard_negative,1383496,Gay activists have told Gay Star News they hope this is a ‘taste’ of what will be the case during the Sochi Winter Olympics in Russia next year.,non_nhl_hockey_confounders,winter olympics,,,,,,,
+32998b1156a580a4,nhl_hockey,local_hard_negative,798393,"The world celebrated in 1984 in Sarajevo, Yugoslavia, at the Winter Olympics, and again in Los Angeles at the Summer Olympics.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+bc3f18ec429f5334,nhl_hockey,local_hard_negative,2549726,"Recently, she penned an opinion article in the Washington Post titled, “For gay athletes, the US isn’t much more tolerant than Russia.”
+
+The piece was critical of Russian President Vladimir Putin, who in advance of the Winter Olympics signed into law last year a bill prohibiting “gay propaganda,” but it also condemned homophobia in the United States, including at her own school.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+e004da71952d20ee,nhl_hockey,local_hard_negative,799118,"While South Korea's hockey program has evolved in recent years, qualifying for the 2018 Winter Olympics as the host country, North Korea's has remained stagnant.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+cb2acd5f668a3855,nhl_hockey,local_hard_negative,3439730,"The 2022 Winter Olympics has just two candidates, China and Kazakhstan.Here's what to know about the United States' chances in the bid process:THE DEADLINES:The four cities will turn in the final pieces of their technical plans to the USOC in the next week.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+a1ad5e3ecc61cf82,nhl_hockey,local_hard_negative,938250,"Looney is currently the head coach of the Buffalo Bison Under 17 team
+
+Playing career [ edit ]
+
+In the gold medal game at the 1998 Winter Olympics, Looney scored the game-winning goal.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+d76fb82be8c88516,nhl_hockey,local_hard_negative,2698947,"STANFORD — As a freshman at St. Francis High in Mountain View, Kristina Bassi trimmed down her options for a fall sport: cross country or field hockey.",non_nhl_hockey_confounders,field hockey,,,,,,,
+839b43400db1689c,nhl_hockey,local_hard_negative,1645694,"Stoughton will oversee numerous aspects of Curling Canada’s mixed doubles program leading up to the sport’s debut as a medal discipline at the 2018 Winter Olympics in PyeongChang, South Korea.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+3b4f3c8cf44129ca,nhl_hockey,local_hard_negative,2702747,It’s fascinating how many under a certain age don’t know anything about the incident that occurred between Tonya Harding and Nancy Kerrigan before the 1994 Winter Olympics.,non_nhl_hockey_confounders,winter olympics,,,,,,,
+df948f6e397c61d7,nhl_hockey,local_hard_negative,1550676,"Free Field Hockey Games Duke community members can watch the #11 Blue Devils for free at East Campus' Williams Field at these upcoming games: Oct. 10 at 6 p.m. - Boston College
+
+Oct. 12 at 1 p.m. - Liberty University
+
+Oct. 17 at 6 p.m. - UNC-Chapel Hill
+
+Oct. 19 at 1 p.m. - James Madison University For a full schedule, visit the field hockey website.",non_nhl_hockey_confounders,field hockey,,,,,,,
+670aba5e5d5fd05c,nhl_hockey,local_hard_negative,2330817,"Mr. Bettman was asked if there was any possibility that the winter Olympics could result in the All-Star game being postponed or cancelled:
+
+None.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+d3ac31a38adad158,nhl_hockey,local_hard_negative,2569432,"Schools in Beijing are also developing winter sports classes.Beijing is committed to limiting its expenses for the 2022 Winter Olympics, with an estimated budget of $3.07 billion, far less than the recent Winter Games, Sochi 2014 cost $50 billion and Pyeongchang 2018 has set a $12 billion budget.Half of the budget will go to infrastructure, with the 2022 host city only constructing two new venues: the National Speed Skating Oval and the venue for bobsledding and luge competitions in Xiaohaituo, in the Beijing suburb of Yanqing.As part of austerity measures, Beijing has transformed the old steel mill of the Shougang Group into the 2022 Organizing Committee's headquarters.The national winter sports body has begun warming up for the 2022 Games, with the Capital Indoor Stadium, one of the 2022 Games venues, set to host the women's curling world championships in March.The Genting Resort in Chongli is set to host the FIS freestyle and snowboard world championships in 2021, one year ahead of the Winter Olympics.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+843944abab7dd8f4,nhl_hockey,local_hard_negative,2552346,"Gaetan Boucher wins 1,500m gold at 1984 Olympics 4:28
+
+Those three medals in one winter Olympics were the most ever to that time by a Canadian — not that the competition was that wide as this country, surrounded by a world of steroids and without much national funding, simply didn't win.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+7cb7a9b0fcd469a9,nhl_hockey,local_hard_negative,1482520,"Winter Olympics, Mr. President, not summer.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+52de2ca056fd34e8,nhl_hockey,local_hard_negative,2532309,"SCHEDULE: Full Winter Olympics schedule
+
+Obama's decision to skip the Sochi Games and instead appoint three openly gay athletes – Billie Jean King, Brian Boitano and Caitlin Cahow – to lead the U.S. delegation was considered an insult to Putin and the Olympic hosts.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+efae32930ff39ae4,nhl_hockey,local_hard_negative,3721583,"[121]
+
+Before the start of the 1992 Winter Olympics in Albertville and the Summer Olympics in Barcelona, The Olympic Committee of the USSR formally existed until March 12, 1992, when it disbanded but it was succeeded by the Russian Olympic Committee.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+e838838dd6d6c167,nhl_hockey,local_hard_negative,918758,Britain now is guaranteed to capture three medals overall at a Winter Olympics for the first time since 1936.,non_nhl_hockey_confounders,winter olympics,,,,,,,
+41d29d9323071099,nhl_hockey,local_hard_negative,2112862,"Two other groups, the Human Rights Campaign and Human Rights Watch, have called on the International Olympic Committee to speak out against the bill as Russia makes final preparations to host the Winter Olympics in Sochi next year.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+33e6fb668d6249fb,nhl_hockey,local_hard_negative,1109704,It was Oil Field Hockey's initial discovery of the Barons crest and logo (I found the shoulder patch by piggy-backing off of his searches).,non_nhl_hockey_confounders,field hockey,,,,,,,
+c38aecfd81909463,nhl_hockey,local_hard_negative,3397270,"Some are enthusiastic without knowing ice hockey from field hockey and clearly have a lot to learn about the game, but some are already hardcore fans.",non_nhl_hockey_confounders,field hockey,,,,,,,
+e7dd7ea3ffdf6f1a,nhl_hockey,benchmark_hard_negative,22395,"""We're in the bottom of the seventh inning.",mlb_baseball,inning,mlb_baseball,,,,,,
+30db0876b8cf5698,nhl_hockey,benchmark_hard_negative,415254,"Livan Hernandez (2002)
+
+AP Photo/Mark J. Terrill
+
+Starting two games for the Giants, including Game 7, Hernandez lost both and never made it past the fourth inning in either one.",mlb_baseball,inning,mlb_baseball,,,,,,
+26f19c56d94b9740,nhl_hockey,benchmark_hard_negative,365572,"Moss had at least a share of the lifetime WSOP bracelet lead up until the 2005 World Series of Poker, which is where Johnny Chan won his tenth career bracelet.",mlb_baseball,world series,mlb_baseball,,,,,,
+8fd33dad6e2d28f4,nhl_hockey,benchmark_hard_negative,170764,"He made a decision that really was the right one that had to be made,"" Rivers said Tuesday before the Clippers played the Golden State Warriors in Game 5 of their first-round series.",nba_basketball,golden state warriors,nba_basketball,,,,,,
+8223e42d5c87a3bc,nhl_hockey,benchmark_hard_negative,311004,"He has since played for the Toronto Raptors, Phoenix Suns and Philadelphia 76ers in the NBA, and has had stints in Lithuania and Russia.",nba_basketball,nba,nba_basketball,,,,,,
+36101d6ce083072d,nhl_hockey,benchmark_hard_negative,23661,"But
+
+This is a 100 percent true fact: The Indians really did take a 14-0 lead in the second inning Saturday.",mlb_baseball,inning,mlb_baseball,,,,,,
+34c2d091d08bb591,nhl_hockey,benchmark_hard_negative,415237,"Lonnie Smith (1991)
+
+Ronald C. Modra/Getty Images
+
+Smith's Game 7 baserunning blunder on Terry Pendleton's double -- he got deked by Chuck Knoblauch and held up at third -- prevented the Atlanta Braves from scoring the run that could have won them the Series.",mlb_baseball,atlanta braves,mlb_baseball,,,,,,
+084d594599911667,nhl_hockey,benchmark_hard_negative,415203,"(Murphy's 12th-inning error in the deciding Game 5 the next night doesn't help his cause, either.)",mlb_baseball,inning,mlb_baseball,,,,,,
+11db02546ba852ab,nhl_hockey,benchmark_hard_negative,115885,Jordan Ebert slipped a single through the right side of the infield to put two runners on before Kent fanned Dylan Smith for the second out of the inning.,mlb_baseball,inning,mlb_baseball,,,,,,
+db1e07ffc53af230,nhl_hockey,benchmark_hard_negative,256539,"You'll learn to love Clark (well, assuming you win three World Series titles in the next 16 years).",mlb_baseball,world series,mlb_baseball,,,,,,
+4ede7e468ab7653c,nhl_hockey,benchmark_hard_negative,277690,"Washington Nationals hitters against the Dodgers – The Nats’ offense has been pretty rough without Bryce Harper, and while they start the week with a decent matchup against the Atlanta Braves, they’ll have an extremely difficult series against the Los Angeles Dodgers.",mlb_baseball,atlanta braves;los angeles dodgers,mlb_baseball,,,,,,
+00dc8c972e3d3f19,nhl_hockey,benchmark_hard_negative,347122,"MLB began allowing the DH for All-Star Games played in American League parks in 1989, then imposed the DH for all All-Star Games beginning in 2010.",mlb_baseball,american league,mlb_baseball,,,,,,
+b606bb703bbb9c7f,nhl_hockey,benchmark_hard_negative,248290,"Joining James and Williams in the ad that aired during Sunday’s Grammy’s are Golden State Warriors forward Kevin Durant, pro women’s soccer player Megan Rapinoe, New York Giants wide receiver Victor Cruz, Olympian hurdler Dalilah Muhammad, Olympic gymnast Gabby Douglas, actor Michael B. Jordan and singer Alicia Keys.",nba_basketball,golden state warriors,nba_basketball,,,,,,
+93cc388724eb4187,nhl_hockey,benchmark_hard_negative,175268,The New York Yankees have been the talk of the baseball world since landing Giancarlo Stanton in a blockbuster trade with the Miami Marlins.,mlb_baseball,new york yankees,mlb_baseball,,,,,,
+8b7f004b4f97f063,nhl_hockey,benchmark_hard_negative,118589,"Sports
+
+Michael Jordan began wearing his Air Jordan brand of shoes during games at a time when the NBA forbade players from doing such a thing, and fined Jordan every time he wore them on the court.",nba_basketball,nba,nba_basketball,,,,,,
+f55d1682bacd203c,nhl_hockey,benchmark_hard_negative,311057,"[42]
+
+On June 16, 2015, he parted ways with CSKA Moscow in order to return to the NBA.",nba_basketball,nba,nba_basketball,,,,,,
+bf5ed8003d947591,nhl_hockey,benchmark_hard_negative,247739,"The All-NBA Second Team consists of guards Tony Parker of the Spurs and Russell Westbrook of the Thunder, forwards Carmelo Anthony of the New York Knicks and Blake Griffin of the Clippers, and center Marc Gasol of the Memphis Grizzlies.",nba_basketball,nba;new york knicks,nba_basketball,,,,,,
+fe28ede5c65cb591,nhl_hockey,benchmark_hard_negative,340432,Gonzalez swung at Rivera's 0-1 pitch and hit the game-winning bloop single into left field that sealed the first franchise World Series title for Arizona.,mlb_baseball,world series,mlb_baseball,,,,,,
+b177150fc7c5e43b,nhl_hockey,benchmark_hard_negative,268861,"Maryland men's basketball guard Melo Trimble passed on the NBA draft after his fabulous freshman season because he would become a sophomore, and who didn't see his second season in College Park improving on his first?",nba_basketball,nba;nba draft,nba_basketball,,,,,,
+87923e813ae20717,nhl_hockey,benchmark_hard_negative,52678,"Four days after future point guard Winston dazzled in leading U-D Jesuit to a state championship, Bridges and Langford — and perhaps Jackson — offered another glimpse of MSU’s future.",nba_basketball,point guard,nba_basketball,,,,,,
+aa564df064c0f6c4,nhl_hockey,benchmark_hard_negative,213423,Abdul-Jabbar is a six-time NBA champion and league Most Valuable Player.,nba_basketball,nba,nba_basketball,,,,,,
+74a39a12c3999470,nhl_hockey,benchmark_hard_negative,246951,We can do a little back-of-the-envelope math to determine the probability that the Cubs will win their best-of-five NLDS and best-of-seven NLCS to advance to the World Series.,mlb_baseball,world series,mlb_baseball,,,,,,
+ad63415aaa243b32,nhl_hockey,benchmark_hard_negative,206706,"Standing at 6'9 with a 7'7 wingspan and supreme athleticism, Caboclo has the kind of body that NBA teams can only dream about.",nba_basketball,nba,nba_basketball,,,,,,
+e5e04a829215ec74,nhl_hockey,benchmark_hard_negative,204476,"Since Kobe Bryant exited the NBA, Toronto Raptors shooting guard DeMar DeRozan has been the league's biggest star to wear Nike Kobes on a regular basis.",nba_basketball,nba,nba_basketball,,,,,,
+9eae329b901b4532,nhl_hockey,benchmark_hard_negative,365531,"He was the first winner of the World Series of Poker (WSOP) Main Event, at the time a cash game event in which he was awarded the title by the vote of his peers in 1970.",mlb_baseball,world series,mlb_baseball,,,,,,
+c68bf421bb76041b,nhl_hockey,benchmark_hard_negative,65111,"Photo via GoFundMe Photo via GoFundMe
+
+FOX 32 NEWS - The last time the Cubs were in the World Series, the Internet did not exist and there were no such things as GoFundMe campaigns to raise money.",mlb_baseball,world series,mlb_baseball,,,,,,
+20f379471ea7bb3c,nhl_hockey,benchmark_hard_negative,113364,"Bad bowl season, bad NCAA tournament, and no teams in the College World Series.",mlb_baseball,world series,mlb_baseball,,,,,,
+0836ce2eb2c08022,nhl_hockey,benchmark_hard_negative,206260,"In that series, we watched one of the most incredible upsets the NBA has ever seen, and it came with a performance that changed one superstar’s legacy forever.",nba_basketball,nba,nba_basketball,,,,,,
+3d76a8e469845e93,nhl_hockey,benchmark_hard_negative,246959,"The Cubs still have room to grow their payroll, and they still have talent left in the farm system, including 19-year-old shortstop Gleyber Torres and 24-year-old catcher Willson Contreras, who’s hitting .335/.428/.585 in Triple-A and could be the starter next season.",mlb_baseball,shortstop,mlb_baseball,,,,,,
+fe05b85112b2b24a,nhl_hockey,benchmark_hard_negative,397109,"During his time with Fiji, Ryan led their sevens teams to back-to-back World Series triumphs and gold at Rio, their country's first Olympic medal.",mlb_baseball,world series,mlb_baseball,,,,,,
+3a1ecb5a3f6d119e,nhl_hockey,benchmark_hard_negative,270102,"She introduced herself as the owner’s assistant, then invited me into the home of her employer: Jim Goldstein, a flamboyant Los Angeles social fixture and generous multimillionaire known for his devotion to modern architecture, to Lautner specifically, and to being an NBA superfan.",nba_basketball,nba,nba_basketball,,,,,,
+84d7038fa0d78400,nhl_hockey,benchmark_hard_negative,180302,"When you can shoot, create for others, and rebound there is a place for you in the NBA especially when you have length.",nba_basketball,nba,nba_basketball,,,,,,
+bd5b03c821d514c6,nhl_hockey,benchmark_hard_negative,361937,So you can imagine how delighted Vlade Divac and the Sacramento front office were to see Kentucky point guard De'Aaron Fox's name still on the board as they were put on the clock with the No.,nba_basketball,point guard,nba_basketball,,,,,,
+5fe23e682be40302,nhl_hockey,benchmark_hard_negative,246871,The 2016 Chicago Cubs are on pace to challenge the all-time record for victories in a season.,mlb_baseball,chicago cubs,mlb_baseball,,,,,,
+d8393aab46664c15,nhl_hockey,benchmark_hard_negative,415218,"Yet he committed a World Series-record eight errors, with two coming in Game 7, leading to four unearned runs and a championship for the Pittsburgh Pirates.",mlb_baseball,world series,mlb_baseball,,,,,,
+144a6f8953012b2f,nhl_hockey,benchmark_hard_negative,289546,"He even improved his K rate as the year went on, striking out over a batter per inning at High-A where he had a K:BB ratio of better than 5:1.",mlb_baseball,inning,mlb_baseball,,,,,,
+89e49edc0f5f8258,nhl_hockey,benchmark_hard_negative,23583,"Ready to Rumble
+
+Greinke
+
+Shields
+
+• Got into an interesting debate recently with an American League executive who was extolling the impact James Shields has made on the Royals.",mlb_baseball,american league,mlb_baseball,,,,,,
+96d847dab80c8934,nhl_hockey,benchmark_hard_negative,253418,He swatted the flying mammal out of the air with his left hand before casually scooping it up off the floor and giving it to an NBA court-side official.,nba_basketball,nba,nba_basketball,,,,,,
+5829a38b19a27c96,nhl_hockey,benchmark_hard_negative,51784,The 21-year-old certainly has plenty of promise going forward and could very well find himself on the Top 100 list with a solid third NBA season.,nba_basketball,nba,nba_basketball,,,,,,
+1148c8d27db212dd,nhl_hockey,benchmark_hard_negative,200675,The Miami Heat could not overcome the 98.2 percent odds in Tuesday’s Draft Lottery and will be picking 14th in the June 22 draft.,nba_basketball,miami heat,nba_basketball,,,,,,
+f33ed7a88a265321,nhl_hockey,benchmark_hard_negative,158569,"After all, I rarely play point guard – mostly at shooting guard.",nba_basketball,point guard,nba_basketball,,,,,,
+79a8b4041ddae7d9,nhl_hockey,benchmark_hard_negative,205854,"The NBA has taken part in this celebration for the past two seasons with the Houston Rockets, Golden State Warriors, and Washington Wizards have all worn special alternate uniforms.",nba_basketball,golden state warriors;nba,nba_basketball,,,,,,
+23cf8a4bdfc987f9,nhl_hockey,benchmark_hard_negative,68260,"Keil reports the comedian shelled out $2.49 million for the 4,957-square foot ""Primrose Cottage"" formerly visited by the New York Yankees legend.",mlb_baseball,new york yankees,mlb_baseball,,,,,,
+a8d59bf741d57458,nhl_hockey,benchmark_hard_negative,418849,"The Toronto Blue Jays have not made the postseason since winning the World Series in 1993, the longest dry spell in Major League Baseball.",mlb_baseball,major league baseball;world series,mlb_baseball,,,,,,
+efc22852a3d50583,nhl_hockey,benchmark_hard_negative,246928,"But their ERA is half a run better than every other team in baseball because of their .248 batting average on balls in play, another one of those stats that looks like a misprint.",mlb_baseball,batting average,mlb_baseball,,,,,,
+a807854f82d13c82,nhl_hockey,benchmark_hard_negative,276416,"***
+
+The list of NBA players in Drexel paper:",nba_basketball,nba,nba_basketball,,,,,,
+05ca6c7498e0dc24,nhl_hockey,benchmark_hard_negative,5563,“And am I saying that the people of Ohio wasn’t educated?” the NBA star pondered.,nba_basketball,nba,nba_basketball,,,,,,
+0810a151522c36c7,nhl_hockey,benchmark_hard_negative,358826,"How LaVar Ball usurped Donald Trump as the world's undisputed troll-in-chief Read more
+
+It was the first time James had been thrown out in 1,082 career NBA games, and he said it was a first since he started playing basketball as a boy in Akron.",nba_basketball,nba,nba_basketball,,,,,,
+ae6ddcc9265371e4,nhl_hockey,benchmark_hard_negative,286454,"The NBA should publish a list of terms that the league finds offensive so the fans will know what is and isn’t out-of-bounds speech, gestures and attire.",nba_basketball,nba,nba_basketball,,,,,,
+64f731317afeab80,nhl_hockey,benchmark_hard_negative,255152,Strasburg’s electric performance came in front of a capacity crowd and a national television audience on MLB Network.,mlb_baseball,mlb network,mlb_baseball,,,,,,
+0377c303e92e1fcd,nhl_hockey,benchmark_hard_negative,247459,"Down 2-0, down 6-3, down 7-6, and being able to find our way back into the game — and in that eighth inning, so much of it was putting the ball in play.”
+
+Brandon Phillips hit a two-run single in the eighth to break the tie after the Brewers elected to intentionally walk Joey Votto to load the bases.",mlb_baseball,inning,mlb_baseball,,,,,,
+0850497175f5547a,nhl_hockey,benchmark_hard_negative,32982,Why aren't you watching the World Series?,mlb_baseball,world series,mlb_baseball,,,,,,
+d778ee57a4ad6932,nhl_hockey,benchmark_hard_negative,118633,"“I've been wearing Kobe’s for years now,” said Ellington, who said he stopped wearing high tops his second season in the NBA.",nba_basketball,nba,nba_basketball,,,,,,
+110a433463e3dc7b,nhl_hockey,benchmark_hard_negative,277165,"For a player like Harden, the free throw is the most efficient shot there is.",nba_basketball,free throw,nba_basketball,,,,,,
+00ff869cf4ec33de,nhl_hockey,benchmark_hard_negative,223369,Is he more of a combo or true point guard?,nba_basketball,point guard,nba_basketball,,,,,,
+a261a7047d6213e2,nhl_hockey,benchmark_hard_negative,339706,"The Wolves have failed to incorporate the three-point shot into their offense, especially the three-pointer from the corner, the cornerstone of the modern NBA offense.",nba_basketball,nba;three-pointer,nba_basketball,,,,,,
+2136bf6d72833a0f,nhl_hockey,benchmark_hard_negative,271960,"[40]
+
+Until the 2013–14 season, the NBL Canada held All-Star Weekend every year.",nba_basketball,all-star weekend,nba_basketball,,,,,,
+4e8a77958d0a0ba8,nhl_hockey,benchmark_hard_negative,340391,"For other people named Luis Gonzalez, see Luis Gonzalez (disambiguation)
+
+Luis Emilio Gonzalez (born September 3, 1967), nicknamed ""Gonzo"",[1] is an American former baseball outfielder who played 19 seasons in Major League Baseball (MLB) for seven teams.",mlb_baseball,major league baseball,mlb_baseball,,,,,,
+7b9136e43adddd76,nhl_hockey,benchmark_hard_negative,32974,"With two games in the books, the 2014 World Series is tied and heading back to San Francisco.",mlb_baseball,world series,mlb_baseball,,,,,,
+60568f68db7b8cdc,nhl_hockey,benchmark_hard_negative,128574,"However, digging a little deeper into this player revealed why the Pacers wanted him and why you should be skeptically optimistic about what he might do in his second year and beyond in the NBA.",nba_basketball,nba,nba_basketball,,,,,,
+28c0afd45767ae16,nhl_hockey,benchmark_hard_negative,170029,"It’s like we’re in a basketball game, and I’m gonna fumble the ball, and someone’s gonna steal the ball, and I’m gonna miss a free throw, but we’re gonna win the game.",nba_basketball,free throw,nba_basketball,,,,,,
+964fd4e89d5f051f,nhl_hockey,benchmark_hard_negative,286465,I got 20 bucks that says the NBA would toss homosexuals under the bus and fold like a cheap suit to keep Mr. Bryant in the NBA.,nba_basketball,nba,nba_basketball,,,,,,
+b0841435c671ece7,nhl_hockey,benchmark_hard_negative,88455,"It was a relatively trivial ruling for most of the league, but a coup for the New York Knicks, whose top two free agents, Jeremy Lin and Steve Novak, had both been claimed off waivers to start the season (and both had played their way into significant salary raises).",nba_basketball,new york knicks,nba_basketball,,,,,,
+ba2fe3bf46f36a51,nhl_hockey,benchmark_hard_negative,180298,Caris is good enough of a playmaker to play point guard and he has the size to play shooting guard and small forward.,nba_basketball,point guard,nba_basketball,,,,,,
+9518545d4905495d,nhl_hockey,benchmark_hard_negative,247741,The All-NBA Teams were chosen by a panel of 119 sportswriters and broadcasters throughout the United States and Canada.,nba_basketball,nba,nba_basketball,,,,,,
+52aa8866692c92f0,nhl_hockey,benchmark_hard_negative,399627,"The views on this page do not necessarily reflect the views of the NBA, its clubs or Turner Broadcasting.",nba_basketball,nba,nba_basketball,,,,,,
+ace5b00f468935b3,nhl_hockey,benchmark_hard_negative,263228,"Routinely over the past several seasons and highlighted in yesterday’s loss to Kobe and the Los Angeles Lakers is the complaint from players, media, and those in the arena that the support for the players currently playing for the Wizards isn’t there.",nba_basketball,los angeles lakers,nba_basketball,,,,,,
+acfe24b5935e47bc,nhl_hockey,benchmark_hard_negative,75594,"He mysteriously showed up in around the fifth or sixth inning, but I can't say for certain because nobody noticed his presence at first until suddenly he was there, almost mythologically.",mlb_baseball,inning,mlb_baseball,,,,,,
+e675af4349b12bcc,nhl_hockey,benchmark_hard_negative,23497,"Jim Leyland, Detroit Tigers: The Tigers let Leyland manage out his previous contract last season, squirming right to the finish line before giving him a new deal the day after the World Series.",mlb_baseball,world series,mlb_baseball,,,,,,
+dfad7fdea929ff8c,nhl_hockey,benchmark_hard_negative,340426,"The total is the third most in National League history for a left-handed batter (behind Barry Bonds's record 73, which also came in 2001, and Ryan Howard, who hit 58 in 2006).",mlb_baseball,national league,mlb_baseball,,,,,,
+8159c71397d009a3,nhl_hockey,benchmark_hard_negative,326674,"Scully – whose most famous calls include the Brooklyn Dodgers’ long dreamed of World Series victory over the rival New York Yankees in 1955, Sandy Koufax’s strikeout to complete the lefty’s perfect game in 1965, and Kirk Gibson’s 1988 World Series game-winning home run when the slugger limped around the bases on two injured legs – turned to a different kind of play-by-play for an unexpected encore.",mlb_baseball,new york yankees;world series,mlb_baseball,,,,,,
+cfdbf538320e7c05,nhl_hockey,benchmark_hard_negative,152420,"National League for Democracy (NLD) party leader Aung San Suu Kyi arrives at Union Parliament in Naypyitaw, Myanmar March 15, 2016.",mlb_baseball,national league,mlb_baseball,,,,,,
+fe02b918c1a891a5,nhl_hockey,benchmark_hard_negative,400910,Tim Hardaway – The “creator of the crossover” was also one of the best shooters in the NBA from 1994-98.,nba_basketball,nba,nba_basketball,,,,,,
+d04cb72737ebdf4f,nhl_hockey,benchmark_hard_negative,110282,Does this mean the NBA is in a golden era of great coaching?,nba_basketball,nba,nba_basketball,,,,,,
+ea0a9f27c99cf3dd,nhl_hockey,benchmark_hard_negative,190614,"Minutes later commissioner Bud Selig announced the pick from the MLB Network studios in Secaucus, N.J. On the fuzzy big-screen TV mounted at the front of the room the Astros' scouts watched as the player, whose reaction the network's cameras were covering live from his home, buried his face in his hands.",mlb_baseball,mlb network,mlb_baseball,,,,,,
+eec41921e9b038c3,nhl_hockey,medium_negative,219852,"[67] At Saturday Night's Main Event, Batista won a six-man tag match with teammates Rey Mysterio and Bobby Lashley, defeating World Heavyweight Champion King Booker, Finlay, and Mark Henry.",combat_sports,heavyweight;main event,combat_sports,,,,,,
+e87b1ac8017cec37,nhl_hockey,medium_negative,36589,"IR blaster and receiver: Still present is the IR port for controlling the console with a remote, but the Xbox One S also features an integrated IR blaster to control or power on other devices in the room.",gaming_general,xbox,gaming_general,,,,,,
+758c930d1e8ac962,nhl_hockey,medium_negative,20821,"On platforms where it is 64 or 128 bits, it can be inefficient to work with these types, as it is on the PlayStation 2 platform.",gaming_general,playstation,gaming_general,,,,,,
+1d38846ec256cc81,nhl_hockey,medium_negative,69176,You may notice that you enjoy this boss fight.,gaming_general,boss fight,gaming_general,,,,,,
+39771c1310203b1e,nhl_hockey,medium_negative,220052,"[199]
+
+Filmography
+
+Web series Year Title Role Notes 2016 The #Hashtagged Show Dr. Jason Rush 2 episodes
+
+Short films Year Title Role Notes 2017 2048: Nowhere to Run Sapper Morton Short film
+
+Championships and accomplishments
+
+Batista during his second World Heavyweight Championship reign
+
+See also",combat_sports,heavyweight,combat_sports,,,,,,
+3291f7494cafa435,nhl_hockey,medium_negative,125759,"Battlefield 4 is set to be launched on PS3, PS4, PC, Xbox 360 and Xbox One later this year with the first DLC for the game being a timed exclusive for Xbox One.",gaming_general,xbox,gaming_general,,,,,,
+9e7aebd1f0c6418a,nhl_hockey,medium_negative,100990,Almost a year ago dumped DirecTv and went with Playstation Vue.,gaming_general,playstation,gaming_general,,,,,,
+e258dc5e34875a02,nhl_hockey,medium_negative,154599,The game is a survival RPG that almost hides all information from the player.,gaming_general,rpg,gaming_general,,,,,,
+a0d19f7d2a49b3d7,nhl_hockey,medium_negative,66255,"The event, which airs on pay-per-view from Las Vegas’ MGM Grand Garden Arena, features the heavily anticipated grudge match between light-heavyweight champion Jon Jones (20-1 MMA, 14-1 UFC) and Daniel Cormier (15-0 MMA, 4-0 UFC).",combat_sports,heavyweight;mma;pay-per-view;ufc,combat_sports,,,,,,
+bc859cd9dac26e78,nhl_hockey,medium_negative,629,Steam Notes: Hi fellow Steamers!!,gaming_general,steam,gaming_general,,,,,,
+c7a20a667e2a7df4,nhl_hockey,medium_negative,69684,Restarting Steam should see the Beta version of the 1.4 update download and install.,gaming_general,steam,gaming_general,,,,,,
+b8565e3626b909a5,nhl_hockey,medium_negative,214726,"We apologize to any customers affected by the change in our retail plans, and thank everyone for the continued support as we look forward to the release of Halo Wars 2 for Xbox One and Windows 10 PC on Feb. 21, 2017.",gaming_general,xbox,gaming_general,,,,,,
+8ce8d69038347693,nhl_hockey,medium_negative,83655,The latest issue of Weekly Famitsu reveals Shining Resonance Re:frain for PlayStation 4.,gaming_general,playstation,gaming_general,,,,,,
+3655731d5772da70,nhl_hockey,medium_negative,176590,"- by BoxsonaOfficial Submission information:
+
+Posted:
+
+Category: All
+
+Theme: All
+
+Species: Unspecified / Any
+
+Gender: Any
+
+Favorites: 7
+
+Comments: 19
+
+Views: 534
+
+Image Specifications:
+
+Resolution: 469x1000
+
+Keywords:
+
+boxsona furry subscription_box subscription box fandom prize giveaway contest free box
+
+Free Boxsona Box Contest!",combat_sports,submission,combat_sports,,,,,,
+43d98a9969071ca8,nhl_hockey,medium_negative,171180,1 contender to the UFC 184 title bout between Chris Weidman and Belfort.,combat_sports,ufc,combat_sports,,,,,,
+dd4f6f3e441dc347,nhl_hockey,medium_negative,190052,"Release:-It is expected that Need For Speed:The Run will hit gaming Market in November 15 not confirmed,You can also set your :-It is expected that Need For Speed:The Run will hit gaming Market in November 15 not confirmed,You can also set your Preorders for ""The Run""
+
+Platform: -Xbox 360, PlayStation 3, PC, Wii, Nintendo 3DS
+
+You might love to see the first teaser of game shown below:
+
+Source:Official Website",gaming_general,nintendo;playstation;xbox,gaming_general,,,,,,
+16a44bc421f2ae1f,nhl_hockey,medium_negative,150857,"Multiplayer allows you to visit other players' farms either locally or over WiFi and exchange gifts, while StreetPass ""collects"" players who you have passed by so you can check out their farms' stats.",gaming_general,multiplayer,gaming_general,,,,,,
+e6b24604db5d661f,nhl_hockey,medium_negative,41497,BrightSource Energy’s Ivanpah (2014) used the reflected sunlight to simply boil water in the tower and operate directly off the steam produced.,gaming_general,steam,gaming_general,,,,,,
+fa70461984f7907c,nhl_hockey,medium_negative,135360,"About This Game Hit the dirt in Colin McRae Rally - the classic off-road racing experience
+
+Colin McRae Rally features the car and track list from last year’s top selling mobile title and features THIRTY amazing rally stages in three environments taken from the PlayStation classic Colin McRae 2.0. for this PC and Mac edition.",gaming_general,playstation,gaming_general,,,,,,
+2111d7585057d1bc,nhl_hockey,medium_negative,161509,"For example, Dolphin does not care in the slightest about how the filesystem on USB looks like as implemented by Nintendo.",gaming_general,nintendo,gaming_general,,,,,,
+882f8fff15523dfb,nhl_hockey,medium_negative,148410,"Of those World Cup knockout games, the Boks hold a two-one advantage over the All Blacks, who claimed the quarterfinal in Melbourne 29-9.",combat_sports,knockout,combat_sports,,,,,,
+94045a9e2adc556d,nhl_hockey,medium_negative,106949,"Posted on September 4, 2013, Ross Lincoln Xbox Live Gold Not Needed for Xbox One TV Features (UPDATED)
+
+Which next-gen console will be better?",gaming_general,xbox,gaming_general,,,,,,
+690b09e6a27ef555,nhl_hockey,medium_negative,97954,"Nano-one and Calcflow launched in the STEAM store (VR equivalent of an app story) Nov. 10, and are finalists for CONNECT’s Most Innovative New Product Awards in December.",gaming_general,steam,gaming_general,,,,,,
+1e01e8ebc63de29d,nhl_hockey,medium_negative,167221,Zalman uses a fourth design—composite heatpipes—which mix copper powder inside of the pipe to help aid in thermal transfer (the steam travels faster).,gaming_general,steam,gaming_general,,,,,,
+12bc55348af6cc1f,nhl_hockey,medium_negative,219956,Batista ultimately lost the triple threat match at WrestleMania after Bryan forced him to submit to win the WWE World Heavyweight Championship.,combat_sports,heavyweight,combat_sports,,,,,,
+bffd194d0703fc03,nhl_hockey,medium_negative,162514,"You agree that you will not, under any circumstances:
+
+A. in whole or in part, copy, photocopy, reproduce, translate, reverse engineer, derive source code from, modify, disassemble, decompile, or create derivative works based on TERA; provided, however, that you may make one (1) copy of the Game Client and the manuals for backup or archival purposes only;
+
+B. use cheats, automation software (bots), hacks, mods or any other unauthorized third-party software designed to modify any part of TERA;
+
+C. exploit TERA or any of its parts, including without limitation the Game Client, for any commercial purpose, including without limitation (a) use at a cyber cafe, computer gaming center or any other location-based site without the express written consent of En Masse; (b) for gathering in-game currency, items or resources for sale outside the game of TERA; (c) performing in-game services in exchange for payment outside the game of TERA, e.g., power-leveling; or (d) performing advertising or solicitations for a third party;
+
+D. use any unauthorized third-party software that intercepts, ""mines"", or otherwise collects information from or through TERA or the service, including without limitation any software that reads areas of RAM used by En Masse for TERA to store information about a character or the game environment; provided, however, that En Masse may, at its sole and absolute discretion, allow the use of certain third party user interfaces;
+
+E. access TERA from any Internet protocol addresses, computers or proxies that En Masse may prohibit in its sole and absolute discretion;
+
+F. modify or cause to be modified any files that are a part of the Game Clientof TERA in any way not expressly authorized by En Masse;
+
+G. host, provide or develop matchmaking services for TERA, or intercept, emulate or redirect the communication protocols used by En Masse in any way, for any purpose, including without limitation unauthorized play over the Internet, network play, or as part of content aggregation networks;
+
+H. facilitate, create or maintain any unauthorized connection to TERA or relatedservices, including without limitation (a) any connection to any unauthorized server that emulates, or attempts to emulate, the Service; and (b) any connection using programs or tools not expressly approved by En Masse;
+
+I. sell, grant a security interest in or transfer reproductions of any part of TERA to other parties in any way not expressly authorized herein, or rent, lease or license any party of TERA to others;
+
+J. sell, transfer or assign any Account, or any items incorporated into or part of TERA, including but not limited to any characters; or
+
+K. infringe a third party’s intellectual property or other rights, or violate any law or regulation applicable to you.",combat_sports,matchmaking,combat_sports,,,,,,
+192974054f98355f,nhl_hockey,medium_negative,116963,"The message was from the head of Valve Software, the influential video game design firm behind such industry-defining titles as the sci-fi shooter Half-Life and the first-person puzzle adventure Portal.",gaming_general,video game,gaming_general,,,,,,
+22e67090c78d4f2b,nhl_hockey,medium_negative,137785,This next very important step to Steam Early Access launch will rely very heavily on this community to ensure all the newcomers experiences are as great as the ones we have already had over the Alpha period.,gaming_general,steam,gaming_general,,,,,,
+21f75f9cc8a3b994,nhl_hockey,medium_negative,90474,He obviously would appreciate a crack at the UFC.,combat_sports,ufc,combat_sports,,,,,,
+a6dcc1f606ec3bbd,nhl_hockey,medium_negative,47869,"In a bout to determine the next light heavyweight title contender on the January FOX main event, Johnson flattened Alexander Gustafsson in 2:15.",combat_sports,heavyweight;main event,combat_sports,,,,,,
+ede99b147a1a0af8,nhl_hockey,background_negative,42409,"Despite its mushrooming value, however, Bank of England Deputy Governor Jon Cunliffe said on Wednesday bitcoin was not big enough to pose a risk to the global economy.",crypto_blockchain,bitcoin,crypto_blockchain,,,,,,
+def393b6bc127da8,nhl_hockey,background_negative,10910,"87–88: “NASA, in another unprecedented move, had inexplicably ordered Mars Observer to shut off its primary data stream prior to executing a key pre-orbital burn… Because NASA had violated the first rule of space travel—you never turn off the radio—no cause for the probe’s loss was ever satisfactorily determined.” Actually, whether a radio is turned on or off, practically all orbital insertion burns on lunar and planetary missions occur out of radio contact.",aviation_aerospace,nasa;orbital,aviation_aerospace,,,,,,
+785c23782d41bd1c,nhl_hockey,background_negative,34080,"A: Vancouver is the preferred destination, by far, because of perceived more relaxed anti-money laundering on-boarding compliance and more importantly, easier access to better schools and lifestyle for children of Chinese foreign nationals.",china,chinese,china,,,,,,
+d15b2c1d3ca7b405,nhl_hockey,background_negative,17655,"In any event, it is unlikely that North Koreans want to leave their fate to the hated Chinese when they can more easily walk across the Demilitarized Zone, the strip of land separating the two Koreas.",china,chinese,china,,,,,,
+2241b7153f86a385,nhl_hockey,background_negative,10836,Your editorial criticized the FAA for not licensing news corporations to use drones.,aviation_aerospace,faa,aviation_aerospace,,,,,,
+d591ee08674ef752,nhl_hockey,background_negative,54319,Scientists from Oxford University investigated the compositions of Martian meteorites found on Earth and data from NASA’s ‘Spirit’ rover that examined surface rocks in the Gusev crater on Mars.,aviation_aerospace,nasa,aviation_aerospace,,,,,,
+f578934e07048a5a,nhl_hockey,background_negative,18890,"Last year China invested more than any other country — and twice as much as the United States — in clean energy, at $ 110.5 billion, according to Bloomberg New Energy Finance.",china,china,china,,,,,,
+04de58ed71321437,nhl_hockey,background_negative,2691,Many believe the success of Taiwan's movement greatly encouraged Hong Kong activists.,china,hong kong,china,,,,,,
+a08cae5efebca1ee,nhl_hockey,background_negative,13136,Tingting brings Chinese buyers for a tour of the Tiptree fruit farm.,china,chinese,china,,,,,,
+c96eebbc1b58eb1f,nhl_hockey,background_negative,49718,"Motivations to Build the Blockchain Embassy in Panama
+
+Bitcoin.com reached out to one of the founders of the Blockchain Embassy (and Cryptobuyer), Jorge Farias, to get some insight on the motivations behind setting up the embassy.",crypto_blockchain,bitcoin;blockchain,crypto_blockchain,,,,,,
+78ae2c51ded4d516,nhl_hockey,background_negative,26095,"Meanwhile the European Central Bank (ECB) showed “openness to new technologies” and said that it intends to assess the relevance of blockchain and distributed ledger technology for various banking services like payments, securities settlement as well as collateral.",crypto_blockchain,blockchain,crypto_blockchain,,,,,,
+220a2fe3571396cf,nhl_hockey,background_negative,43794,"-end-
+
+Related Climate Change Reading:
+
+Global carbon emissions are on the rise again in 2017 after three years of little-to-no growth, according to researchers at the University of East Anglia and the Global Carbon Project.It was previously hoped that emissions might soon reach their peak after three stable years, so the new projection for 2017 is an unwelcome message for policy makers and delegates at the UN Climate Change Conference (COP 23) in Bonn this week.The research, published today simultaneously in the journals, Earth System Science Data Discussions and Environmental Research Letters, reveals that global emissions from all human activities will reach 41 billion tonnes in 2017, following a projected 2% rise in burning fossil fuels.The figures point to China as the main cause of the renewed growth in fossil emissions - with a projected growth of 3.5%.COemissions are expected to decline by 0.4% in the US and 0.2% in the EU, smaller declines than during the previous decade.Increases in coal use in China and the US are expected this year, reversing their decreases since 2013.Lead researcher Prof Corinne Le Quéré, director of the Tyndall Centre for Climate Change Research at UEA, said: ""Global COemissions appear to be going up strongly once again after a three year stable period.",china,china,china,,,,,,
+1289d15cc43fe336,nhl_hockey,background_negative,17651,Many tell us they would try to move north in the event of the destruction of the Kim regime so Beijing is worried about the influx of refugees in its northeastern provinces.,china,beijing,china,,,,,,
+688cb14e501377d4,nhl_hockey,background_negative,17666,"Beijing, however, covets something even more important to China: paper.",china,beijing;china,china,,,,,,
+562ca2675dbadab4,nhl_hockey,background_negative,39784,"The package of drugs the author designed
+
+Over the next few days I scan the courier’s site nervously watching the package’s progress from Shanghai and out of the country.",china,shanghai,china,,,,,,
+4d3f09874c4e0421,nhl_hockey,background_negative,38294,"Of course, ICOs are only a subset of the broader crypto/blockchain movement, but the noise it produces hardly allows outside observers to hear anything else today.",crypto_blockchain,blockchain,crypto_blockchain,,,,,,
+6c6a27edb503b41a,nhl_hockey,background_negative,5695,"That launch vehicle, capable of hefting 53 tons to low-Earth orbit (almost twice the ground-to-LEO payload capacity of the Space Shuttle), has already slipped in its development several times.",aviation_aerospace,payload,aviation_aerospace,,,,,,
+eef2ac16d36db17f,nhl_hockey,background_negative,27659,"This was during China's Cultural Revolution, which Becker refers to as a period of ""debate [and] fierce polemics.""",china,china,china,,,,,,
+d1676cc74eb06edb,nhl_hockey,background_negative,2682,"The meeting attracted little attention, but it marked the first time democracy advocates, including representatives from Hong Kong's political parties and students from both sides, had met in an organised fashion.",china,hong kong,china,,,,,,
+c9b8d692f9b6bbb8,nhl_hockey,background_negative,4071,"DigitalGlobe is enlisting the crowd to scan and tag images of more than 1,200 square miles of ocean for any visible evidence that could help locate the Malaysia Airlines 777 aircraft that went missing this weekend.",aviation_aerospace,aircraft,aviation_aerospace,,,,,,

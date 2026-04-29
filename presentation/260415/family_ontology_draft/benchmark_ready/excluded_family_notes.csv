@@ -1,0 +1,15 @@
+family_id,display_name,category,core_method_count,experiment_count,matched_feature_count,overlap_review_hits,exclusion_reason
+higher_education_campus,Higher Education / Campus,society_and_culture,4,16,19,12,"Only four core methods cover it, and the overlap queue is dominated by college-sports ambiguity."
+judaism_jewish,Judaism / Jewish Life,geography_and_politics,4,16,16,2,"Support is moderate, but the boundary with Middle East geopolitics is too entangled for the first benchmark-ready pass."
+spirituality_new_age,Spirituality / Metaphysics,society_and_culture,4,13,13,10,"Only four core methods cover it, and overlap with Christianity is the largest unresolved collision in the draft."
+entertainment_screen_media,Film / Television Media,society_and_culture,3,13,18,1,"Support is limited to three core methods, and the scope is broad enough to invite topical drift."
+law_enforcement_crime,Law Enforcement / Crime,society_and_culture,3,12,16,1,Coverage is too narrow and the semantics are mixed with institutional and court-reporting language.
+interrogative_questions,Interrogative Questions,discourse_and_form,3,17,18,0,"This is a discourse/form family, not a stable topical family for a control working-point benchmark."
+reference_fragments,Referential Fragments,discourse_and_form,4,15,25,0,"This family captures textual form rather than a semantic topic, so it is not suitable for the first family-level benchmark."
+quoted_dialogue,Quoted Dialogue / Speech,discourse_and_form,3,11,14,0,"This is a style family, not a topical family, and would not support meaningful hard-negative design."
+women_feminine_subjects,Women / Feminine Subjects,society_and_culture,2,16,16,0,"The scope is broad and heterogeneous, and only two core methods cover it."
+christianity,Christianity / Church Life,society_and_culture,2,13,18,10,Coverage is low and ten overlap cases with spirituality indicate that the family needs more ontology cleanup first.
+lgbtq,LGBTQ Topics,society_and_culture,2,11,11,0,Coverage is too narrow for the first benchmark-ready set.
+animals_pets,Animals / Pets,society_and_culture,2,7,7,0,The family is under-supported and does not yet justify a dedicated benchmark slot.
+tabletop_gaming,Tabletop / Card Gaming,sports_and_games,2,6,7,4,This family is nested under gaming_general and is too under-covered to keep as a standalone benchmark family.
+function_word_patterns,Function-Word / Grammatical Patterns,discourse_and_form,1,9,28,0,"This is a grammatical-pattern family with one-method support, not a semantic benchmark topic."

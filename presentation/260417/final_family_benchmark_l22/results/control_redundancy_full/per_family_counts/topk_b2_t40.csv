@@ -1,0 +1,12 @@
+family_id,method,method_label,budget,target_threshold,valid_controller_count
+aviation_aerospace,topk,TopK SAE,0.02,0.4,0
+china,topk,TopK SAE,0.02,0.4,1
+combat_sports,topk,TopK SAE,0.02,0.4,0
+crypto_blockchain,topk,TopK SAE,0.02,0.4,0
+middle_east_geopolitics,topk,TopK SAE,0.02,0.4,0
+mlb_baseball,topk,TopK SAE,0.02,0.4,0
+nba_basketball,topk,TopK SAE,0.02,0.4,0
+nhl_hockey,topk,TopK SAE,0.02,0.4,0
+russia_post_soviet,topk,TopK SAE,0.02,0.4,0
+soccer,topk,TopK SAE,0.02,0.4,1
+us_legislative_governance,topk,TopK SAE,0.02,0.4,0

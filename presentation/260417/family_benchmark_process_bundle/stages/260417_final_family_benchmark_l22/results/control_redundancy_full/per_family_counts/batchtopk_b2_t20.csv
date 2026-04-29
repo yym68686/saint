@@ -1,0 +1,15 @@
+family_id,method,method_label,budget,target_threshold,valid_controller_count
+aviation_aerospace,batchtopk,BatchTopK SAE,0.02,0.2,0
+china,batchtopk,BatchTopK SAE,0.02,0.2,0
+combat_sports,batchtopk,BatchTopK SAE,0.02,0.2,0
+crypto_blockchain,batchtopk,BatchTopK SAE,0.02,0.2,0
+gaming_general,batchtopk,BatchTopK SAE,0.02,0.2,0
+japan,batchtopk,BatchTopK SAE,0.02,0.2,1
+middle_east_geopolitics,batchtopk,BatchTopK SAE,0.02,0.2,1
+mlb_baseball,batchtopk,BatchTopK SAE,0.02,0.2,0
+nba_basketball,batchtopk,BatchTopK SAE,0.02,0.2,0
+nfl_football,batchtopk,BatchTopK SAE,0.02,0.2,1
+nhl_hockey,batchtopk,BatchTopK SAE,0.02,0.2,0
+russia_post_soviet,batchtopk,BatchTopK SAE,0.02,0.2,1
+soccer,batchtopk,BatchTopK SAE,0.02,0.2,1
+us_electoral_politics,batchtopk,BatchTopK SAE,0.02,0.2,0

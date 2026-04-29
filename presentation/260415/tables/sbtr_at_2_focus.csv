@@ -1,0 +1,5 @@
+group,display_name,method,alpha_percent,sbtr_2,sbtr_2_ci_low,sbtr_2_ci_high,mean_realized_control_2,n_concepts
+key_mainstream,PLRDC SAE,dense,2,1.0,1.0,1.0,0.0166666666666666,3
+key_mainstream,ReLU SAE,relu,2,0.79,0.3699999999999999,1.0,0.0366666666666666,3
+key_mainstream,Gated SAE,gatedsae,2,0.7833333333333333,0.3499999999999999,1.0,0.0333333333333333,3
+key_mainstream,BatchTopK SAE,batchtopk,2,0.6666666666666666,0.0,1.0,0.01,3

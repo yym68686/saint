@@ -1,0 +1,26 @@
+{
+  "dataset_path": "/Users/yanyuming/Downloads/GitHub/llama3_interpretability_sae/dataset/train-00000-of-00082.parquet",
+  "dataset_format": "parquet",
+  "text_field": "text",
+  "keep_fields": [],
+  "max_records": null,
+  "max_candidates_per_bucket": 800,
+  "processed_records": 3749177,
+  "family_ids": [
+    "mlb_baseball",
+    "nfl_football",
+    "soccer",
+    "nba_basketball",
+    "nhl_hockey",
+    "combat_sports",
+    "gaming_general",
+    "crypto_blockchain",
+    "aviation_aerospace",
+    "china",
+    "japan",
+    "russia_post_soviet",
+    "middle_east_geopolitics",
+    "us_electoral_politics",
+    "us_legislative_governance"
+  ]
+}

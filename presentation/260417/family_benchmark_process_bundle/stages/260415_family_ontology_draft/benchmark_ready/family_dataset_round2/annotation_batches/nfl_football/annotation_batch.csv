@@ -1,0 +1,429 @@
+candidate_id,family_id,proposed_bucket,source_row_index,text,matched_query_blocks,matched_terms,matched_family_ids,final_label,keep_for_benchmark,label_confidence,primary_reason,exclusion_trigger,notes
+0c8c43b48df4bcf3,nfl_football,positive,60086,"‘AFC Bournemouth recognise that stewards and police were carrying out their duties in preventing encroachment on to the pitch, with the safety of players and supporters in mind.",league_anchor,afc,nfl_football,,,,,,
+b9ce783752ab0bf9,nfl_football,positive,17084,He played quarterback.,football_jargon,quarterback,nfl_football,,,,,,
+9cdbb05d8587a61e,nfl_football,positive,6692,"The Bloomgren File
+
+Hometown: Tallahassee, Florida
+
+College: Florida State, 1999
+
+Family: Wife - Lara; Sons -- Tyler and Parker
+
+Coaching Career
+
+1999-2001, Graduate Assistant, Alabama
+
+2002-04, Catawba College, Co-Offensive Coordinator
+
+2005-06, Delta State, Offensive Coordinator
+
+2007-10, New York Jets
+
+ Offensive Quality Control 2007-08
+
+ Offensive Assistant 2009
+
+ Assistant Offensive Line 2010
+
+2011-17, Stanford
+
+ Offensive Line, 2011-12
+
+ Andrew Luck Director of Offense, 2013
+
+ Andrew Luck Director of Offense/Associate Head Coach, 2014-17
+
+2018, Rice University, Head Football Coach
+
+WHAT THEY ARE SAYING
+
+DAVID SHAW -- Head Coach, Stanford
+
+""It's always important to go to the right place with right fit, particularly with your first (head coach) job.",football_jargon,offensive line,nfl_football,,,,,,
+ae48f9da4692583a,nfl_football,positive,73999,"They hit on third-round linebacker Chris Borland, but he suddenly retired after his rookie season.",football_jargon,linebacker,nfl_football,,,,,,
+f06f765ada701706,nfl_football,positive,17103,"Yet, it is reasonable to ask the following: Why even bother making Smith the quarterback for a play when Foles was playing well on this drive?",football_jargon,quarterback,nfl_football,,,,,,
+72dbee2ca055fdce,nfl_football,positive,117107,The Minnesota Vikings’ five-time Pro Bowl defensive end said one of his best NFL memories was his first Pro Bowl in 2007 and last year he waited out surgery on his left shoulder and right knee to appear in the game.,league_anchor,nfl,nfl_football,,,,,,
+ccbfe42975ce43ff,nfl_football,positive,62458,"If anything, he's probably found more incentive to make good on his desire to help the Broncos win their first title since general manager John Elway was playing quarterback.",football_jargon,quarterback,nfl_football,,,,,,
+f96ff334614263dd,nfl_football,positive,63923,"If Weeden puts up a similarly outstanding performance against the Detroit Lions and Cleveland's other preseason opponents, the Browns will be in a great position to make the biggest leap of any NFL team.",league_anchor,nfl,nfl_football,,,,,,
+9c5ebe91109dfe0e,nfl_football,positive,167957,He thought Lewis would be a change-of-pace back in the NFL.,league_anchor,nfl,nfl_football,,,,,,
+3fb839633ef6ec41,nfl_football,positive,108291,"Story continues
+
+Packers head coach Dan Devine thought enough of Marcol to spend a second-round pick (34th overall) on him, and Marcol rewarded him by making Pro Bowls in two of his first three seasons and being named 1972 NFC Rookie of the Year after making 33 field goals in 14 games and leading the NFL in scoring that season.",league_anchor,nfc;nfl,nfl_football,,,,,,
+73a23f3459df4f27,nfl_football,positive,58272,"Jim Caldwell is the second minority candidate to land an NFL head-coaching job this month, joining Tampa Bay's Lovie Smith.",league_anchor,nfl,nfl_football,,,,,,
+27fe036cb56623f0,nfl_football,positive,129678,"“We’re trying to run a play fast!”
+
+Thelen complied, the Rough Riders snapped the ball and Lancaster threw it to Simpson, who after hiding from Argos defenders, ran 80 yards to help set up Joe Kelly’s go-ahead touchdown.",football_jargon,touchdown,nfl_football,,,,,,
+965ed2e76bc89eff,nfl_football,positive,30392,"Interestingly, as part of the 1966 antitrust exemption Congress granted the NFL in its pursuit to merge with the AFL, the league agreed to a rule forcing all existing franchises to be retained, meaning there must be 32 at all times, and none of those teams were allowed to move outside of their metropolitan areas.",league_anchor,nfl,nfl_football,,,,,,
+d8d53839fe7518fc,nfl_football,positive,184600,"In the meantime, linebacker Danny Trevathan, who was credited with 19 tackles (seven solo), was called for defensive holding on a fourth-down field goal attempt, and the Colts got a first down and the victory.",football_jargon,linebacker,nfl_football,,,,,,
+3b908c2bb6c4e903,nfl_football,positive,139792,"NFC Controller in blue
+
+After tearing down the iPad Air 2 earlier this week, iFixit has now moved on to the iPad mini 3, which also received a minor update during Apple's October 16 iPad event.",league_anchor,nfc,nfl_football,,,,,,
+48f9511426939ab8,nfl_football,positive,141177,Rutgers went in search of leadership and consistency at quarterback after spring camp ended with unsatisfying results.,football_jargon,quarterback,nfl_football,,,,,,
+39d06da9a157e15e,nfl_football,positive,106326,"So after a touchdown earlier this season, he jumped into the mix, borrowed a pair of poms and joined in the dance.",football_jargon,touchdown,nfl_football,,,,,,
+3c4f3f8ca3a643fc,nfl_football,positive,62798,"His name is Terry Wilson, and he was the ninth-rated dual-threat quarterback in the 2016 class.",football_jargon,quarterback,nfl_football,,,,,,
+71a5f9b81d517f45,nfl_football,positive,206597,"“We started with nothing; no ground, no team, no manager, no kit, no training ground,” said Samuelson, AFC’s chief executive.",league_anchor,afc,nfl_football,,,,,,
+5888459ced61379f,nfl_football,positive,91455,"The evolution of the NFL:
+
+Take a look at how the NFL has evolved from its humble roots, and the efforts being made to ensure it continues to grow.",league_anchor,nfl,nfl_football,,,,,,
+2b9c4d587e1ba500,nfl_football,positive,54257,"Veteran Bobby Rainey as well as rookies Marshaun Coprich and Paul Perkins were added to the roster via free agency and the 2016 NFL Draft, respectively.",league_anchor,nfl;nfl draft,nfl_football,,,,,,
+73e9b90fbf7f1233,nfl_football,positive,26201,"Aside from center Matt Slauson, the offensive line was a train wreck in 2016.",football_jargon,offensive line,nfl_football,,,,,,
+f0eedd9dcd7723f6,nfl_football,positive,26730,"Phillips' 3-4 base set required Quinn to transition from defensive end to outside linebacker, where he will take on a role similar to the one DeMarcus Ware played in Dallas and in Denver, occasionally dropping back in coverage but predominantly going after the quarterback.",football_jargon,linebacker;quarterback,nfl_football,,,,,,
+d426d782166eaa24,nfl_football,positive,167739,"Five years, three head coaches and five offensive coordinators later, Smith is on the doorstep of the Super Bowl and Aikman, a Fox analyst, will be in the broadcast booth Sunday when the Niners host the Giants in the NFC Championship Game at Candlestick Park.",league_anchor,nfc;super bowl,nfl_football,,,,,,
+7db1d2b083dfe8ec,nfl_football,positive,96237,"NXP Semiconductor is also a prominent supplier of the NFC chips, mainly used to allow mobile payment systems such as Android Pay and Apple Pay, as well as the company, strives in a variety of other areas, providing it a diverse customer base.",league_anchor,nfc,nfl_football,,,,,,
+60493a4c3f6b66c2,nfl_football,positive,77273,"Posted by Darren Urban on November 20, 2015 – 9:05 am
+
+The NFL commissioner was talking Cardinals this morning, during an appearance on “Doug and Wolf” on Arizona Sports 98.7 FM.",league_anchor,nfl,nfl_football,,,,,,
+fc1dc77093d53ee8,nfl_football,positive,94350,"At Hutto (Texas) High, he was a four-year starter at quarterback and defensive back.",football_jargon,quarterback,nfl_football,,,,,,
+939cb52fd723bc6b,nfl_football,positive,92118,"Previously, the umpire moved from behind the offensive line to a position behind the defensive line except during the final two minutes of the second and fourth quarters, and when the offensive had moved inside the five.",football_jargon,offensive line,nfl_football,,,,,,
+acc105fa25ae830b,nfl_football,positive,106288,"The NFL reached Peak No Fun League this season, the result of another attempt to crack down on the kind of insidious, soul-draining behavior that threatens to undermine the fabric of the game.",league_anchor,nfl,nfl_football,,,,,,
+e64e8b049f4eb00d,nfl_football,positive,196673,"He had just 1,334 rushing yards across three NFL seasons to that point.",league_anchor,nfl,nfl_football,,,,,,
+02a614d33746d88f,nfl_football,positive,11418,"He was selected in the third round of the 2002 NFL draft by the Detroit Lions, and also played with the Miami Dolphins and Denver Broncos during his decade in the NFL.",league_anchor,nfl;nfl draft,nfl_football,,,,,,
+7c76511b7bb81efa,nfl_football,positive,167981,Banner acquired Lewis a second time in a deal for linebacker Emmanuel Acho.,football_jargon,linebacker,nfl_football,,,,,,
+9f7865041bd4fd2d,nfl_football,positive,163485,"Most New Jerseyans are either Eagles or Giants fans, and Christie drew particular derision for flying on a private plane owned by Dallas Cowboys owner Jerry Jones to several games and taking luxury box seats.",team_entities,dallas cowboys,nfl_football,,,,,,
+1fad81fc806edc83,nfl_football,positive,159410,And now a major change is coming to the NFL’s public relations department.,league_anchor,nfl,nfl_football,,,,,,
+f5e0b3a146af34f9,nfl_football,positive,26732,"That post is now laminated and taped to Quinn's locker for motivation, as are the career statistics for some of the other great defensive ends and outside linebackers throughout NFL history.",league_anchor,nfl,nfl_football,,,,,,
+788520b5b8b0c06f,nfl_football,positive,14632,"Rank Team W - L 1st Votes Last Votes Points 1 1 Houston Texans 3-0 13 - 416 2 1 Atlanta Falcons 3-0 - - 396 3 2 San Francisco 49ers 2-1 - - 379 4 2 Baltimore Ravens 2-1 - - 374 5 4 New York Giants 2-1 - - 362 6 8 Arizona Cardinals 3-0 - - 361 7 New England Patriots 1-2 - - 329 8 4 Green Bay Packers 1-2 - - 309 9 7 Seattle Seahawks 2-1 - - 294 10 5 Philadelphia Eagles 2-1 - - 285 11 1 Chicago Bears 2-1 - - 283 12 3 Dallas Cowboys 2-1 - - 277 13 5 Denver Broncos 1-2 - - 262 14 5 Pittsburgh Steelers 1-2 - - 261 15 5 Cincinnati Bengals 2-1 - - 244 16 5 San Diego Chargers 2-1 - - 234 17 2 New York Jets 2-1 - - 194 18 5 Detroit Lions 1-2 - - 182 19 4 Buffalo Bills 2-1 - - 181 20 7 Minnesota Vikings 2-1 - - 175 21 4 Washington Redskins 1-2 - - 153 22 1 Tampa Bay Buccaneers 1-2 - - 150 23 5 Carolina Panthers 1-2 - - 128 24 5 Kansas City Chiefs 1-2 - - 104 25 3 Tennessee Titans 1-2 - - 94 26 4 New Orleans Saints 0-3 - - 90 27 4 Oakland Raiders 0-3 - - 88 28 4 St. Louis Rams 1-2 - - 74 29 3 Miami Dolphins 1-2 - - 62 30 2 Jacksonville Jaguars 1-2 - 1 58 31 6 Indianapolis Colts 1-2 - - 55 32 1 Cleveland Browns 0-3 - 12 14
+
+Voters in the NFL.com Power Poll: Gil Brandt, Bucky Brooks, Charley Casserly, Heath Evans, Daniel Jeremiah, Michael Lombardi, Willie McGinest, Shaun O'Hara, Gregg Rosenthal, Darren Sharper, Kurt Warner, Brian Webber, Steve Wyche.",league_anchor;team_entities,dallas cowboys;green bay packers;kansas city chiefs;new england patriots;nfl;pittsburgh steelers;san francisco 49ers,nfl_football,,,,,,
+5317e3d0accaabca,nfl_football,positive,90535,"_____
+
+3:25 p.m.
+
+Hillary Clinton's campaign is disputing Donald Trump's claim that she and other Democrats have rigged the presidential debate schedule so that two of the three match-ups would occur at the same time as NFL games.",league_anchor,nfl,nfl_football,,,,,,
+3c2e1f46239b851f,nfl_football,positive,194774,"If Shanahan is truly considering benching his starting quarterback because of pass protection concerns, he will be setting NFL history.",football_jargon;league_anchor,nfl;quarterback,nfl_football,,,,,,
+f5b4fab52834e522,nfl_football,positive,74089,"Having parted ways from the 49ers, he was not offered a role by any other NFL franchise – with many believing his ‘Take a knee’ protest made him an undesirable recruit for teams.",league_anchor,nfl,nfl_football,,,,,,
+bc82d3e5b2855dcb,nfl_football,positive,30301,"At the time, there were not one but two professional football leagues: the NFL and the American Football League or the AFL.",league_anchor,nfl,nfl_football,,,,,,
+1359a165abdd6366,nfl_football,positive,63801,"They scored an average of 18.9 points per game, which ranked 24th in the NFL, per Pro Football Reference.",league_anchor,nfl,nfl_football,,,,,,
+806eacb93b099f11,nfl_football,positive,55293,"INTRODUCING THE TWO-QUARTERBACK SYSTEM
+
+In what was likely to be the original plan last week against LSU, Muschamp confirmed Monday that Florida will employ a two-quarterback system this week against Missouri with redshirt junior Jeff Driskel likely to take the first snaps in the contest.",football_jargon,quarterback,nfl_football,,,,,,
+7ed735de997bb9b5,nfl_football,positive,206496,"Get the biggest celebs stories by email Subscribe Thank you for subscribing We have more newsletters Show me See our privacy notice Could not subscribe, try again later Invalid Email
+
+Lady Gaga absolute killed the Super Bowl half-time show - but despite her incredible performance, some viewers were left a little disappointed.",league_anchor,super bowl,nfl_football,,,,,,
+d66864ef84eeb83b,nfl_football,positive,129518,Airbnb skirted around directly political messages in its ad promoting acceptance that aired at the Super Bowl on Sunday night as well.,league_anchor,super bowl,nfl_football,,,,,,
+166da4318071d2fb,nfl_football,positive,101609,"They're currently fifth in the country with 26 sacks, and as is traditional a linebacker is plundering his way into the backfield—Ed Davis leads the team with six.",football_jargon,linebacker,nfl_football,,,,,,
+42789acf54b2a645,nfl_football,positive,31545,"Outside Linebacker
+
+I’m curious if Joe Schobert can have a Clay Matthews-like rise during the next couple months.",football_jargon,linebacker,nfl_football,,,,,,
+5d148313b25c43ea,nfl_football,positive,94331,"Kerley, who also returned two punts for 11 yards, played 54 of 81 snaps and provided one of the 49ers’ biggest offensive plays: His diving 18-yard catch on 4th-and-6 in the second quarter sustained a touchdown drive that gave the 49ers a 14-0 lead.",football_jargon,touchdown,nfl_football,,,,,,
+bc43f0103298051f,nfl_football,positive,46399,"In that study, I included every draft pick since 1936, as the goal was to get a flavor of NFL history.",league_anchor,nfl,nfl_football,,,,,,
+29e4e28fbe80ed54,nfl_football,positive,206889,"Titans running back Derrick Henry’s 17-yard touchdown run came two plays later, and the Titans scored touchdowns on three consecutive possessions after that.",football_jargon,touchdown,nfl_football,,,,,,
+35e437ff6ac66e18,nfl_football,positive,103786,"Although the signs are pointing toward Griffin being the team's starting quarterback, last year, I praised McCown for being one of the most competent-looking quarterbacks I'd seen in the years I've been going to training camp in Berea, and that carried over to the regular season.",football_jargon,quarterback,nfl_football,,,,,,
+b02ca9b7d7ca19c5,nfl_football,positive,63802,"They allowed 23 points per game, 19th best in the NFL.",league_anchor,nfl,nfl_football,,,,,,
+2fca073ea9c5c998,nfl_football,positive,17126,"While Kelly was the offensive coordinator in 2008, Harper played quarterback, running back and receiver.",football_jargon,quarterback,nfl_football,,,,,,
+95dad4989c1a6861,nfl_football,positive,101243,"He kept a blanket on the sideline in case he needed to chase down a streaker, and if the NFL or a television network thought the field didn’t look green enough, Toma painted it to their satisfaction.",league_anchor,nfl,nfl_football,,,,,,
+0d7356b96c4338c9,nfl_football,positive,130329,"The Bills are stuck in NFL purgatory, with the quarterback position holding a top-five defense hostage.",football_jargon;league_anchor,nfl;quarterback,nfl_football,,,,,,
+889c31d53514297c,nfl_football,positive,202590,"Then again, if you've got an Xbox 360 or Windows 8 device, you can just download the NFL app yourself and start poking around.",league_anchor,nfl,nfl_football,,,,,,
+d19798d7688ea741,nfl_football,positive,10955,"As a result, the computer receives what it believes are indications of a successful touchdown, and it shuts off the engines.",football_jargon,touchdown,nfl_football,,,,,,
+ae0a842fa837ca95,nfl_football,positive,163326,"‘NO ONE CAN EVER TAKE THAT AWAY FROM ME’ Clockwise, from upper left: In Nov. 2012, Christie comforts Alice Cimillo, whose home was damaged by superstorm Sandy; One year later, on Nov. 5, 2013, Christie celebrates his reelection at Asbury Park Convention Hall; New Jersey Governor Chris Christie is given a Green Bay Packers hat by state Senate President Stephen Sweeney after the annual State of the State address on January 13, 2015; Christie speaks during the 110th Town Hall Meeting with families affected by Superstorm Sandy at a VFW hall on February 19, 2014.",team_entities,green bay packers,nfl_football,,,,,,
+35374db9872e2957,nfl_football,positive,129686,Linebacker Wayne Giardino scored three touchdowns as an injury replacement at running back and Ronnie Stewart scored one as the Rough Riders triumphed in the final home game of Hall of Fame quarterback Russ Jackson.,football_jargon,linebacker;quarterback,nfl_football,,,,,,
+335e8ebc555ad89f,nfl_football,positive,5480,"“We haven’t seen an athlete like RG3 in many drafts,” Mike Mayock, lead draft analyst for the NFL Network told me.",league_anchor,nfl,nfl_football,,,,,,
+a0194c225673da74,nfl_football,positive,26200,"While there are other areas the Bolts need to address, shoring up their offensive line should be a top priority for the team if they hope to have Rivers behind center for a couple more seasons.",football_jargon,offensive line,nfl_football,,,,,,
+8bc46a44c4442df9,nfl_football,positive,62456,"Though some laughed when he predicted on Twitter that Denver would win this year's Super Bowl, such confidence was noteworthy, particularly for a player who had watched his team implode against the Ravens in last year's AFC divisional playoff loss.",league_anchor,afc;super bowl,nfl_football,,,,,,
+78d7c64c3f2f25ca,nfl_football,positive,38048,They saw a potential pass rusher at outside linebacker.,football_jargon,linebacker,nfl_football,,,,,,
+229a286c7d940874,nfl_football,positive,206593,"Since then there has been an FA Cup victory, the demise of Plough Lane, temporary lodgings at Selhurst Park and the move to Milton Keynes before the rise of AFC Wimbledon.",league_anchor,afc,nfl_football,,,,,,
+1624e1f6f37591d3,nfl_football,positive,206853,"The Titans’ offensive line is good … *We knew this already, but it was evident how Sunday how much better the Titans’ offensive line was than that of the Texans in Week 1.",football_jargon,offensive line,nfl_football,,,,,,
+123170a40f6c489b,nfl_football,positive,108280,"This offseason, Shutdown Corner will travel down memory lane with a series of stories presenting some interesting and sometimes forgotten stories from the NFL’s past.",league_anchor,nfl,nfl_football,,,,,,
+c960d6a4d48947a8,nfl_football,positive,58185,"According to the football outsiders, the Lions are the fifth best defense in the NFL in relative performance of opposing offenses.",league_anchor,nfl,nfl_football,,,,,,
+d6877f7f05dcf689,nfl_football,positive,90149,"“In the NFL, you have people getting shitfaced all the time,” he said.",league_anchor,nfl,nfl_football,,,,,,
+c743affc66ac135d,nfl_football,positive,13262,"Luke Matthews, the son of NFL Hall of Famer Bruce Matthews, makes it a fourth son to play for the Aggies.",league_anchor,nfl,nfl_football,,,,,,
+bb788d8a13fa8377,nfl_football,positive,36360,"His punt was fine, but ASU's coverage wasn't and Jamison Crowder brought it back 68 yards for a touchdown that pulled Duke within three points at halftime.",football_jargon,touchdown,nfl_football,,,,,,
+ea33d24518f26871,nfl_football,positive,79806,"However, the good news for fans thinking of buying tickets is that in five of the past six years we have seen prices drop between the conference championship games and the Super Bowl.",league_anchor,super bowl,nfl_football,,,,,,
+e09eb4289e711fce,nfl_football,positive,3876,"Well, he tagged him down, since they don’t tackle to the ground anymore in NFL practices.",league_anchor,nfl,nfl_football,,,,,,
+1cbcb477946afcd5,nfl_football,positive,87247,"They admit they need to add more talent, and decide if their quarterback is on the roster or elsewhere, but they believe in the intangibles they've forged.",football_jargon,quarterback,nfl_football,,,,,,
+897b414c7686fa6f,nfl_football,positive,63852,"In 2008, Anderson's injuries and poor performance caused a quarterback implosion of rarely-before-seen magnitude.",football_jargon,quarterback,nfl_football,,,,,,
+89cc6df964002c1a,nfl_football,positive,103745,Hue Jackson is no stranger to working with reclamation projects at the quarterback position.,football_jargon,quarterback,nfl_football,,,,,,
+e2d5f3ebec3f3735,nfl_football,positive,66429,ESPN's Adam Schefter has solved one of the NFC North's biggest mysteries: The duration of Detroit Lions coach Jim Schwartz's contract.,league_anchor,nfc,nfl_football,,,,,,
+bf28a67286ff2ebc,nfl_football,positive,204719,At the time I was tough on you because I needed my quarterback to lead.,football_jargon,quarterback,nfl_football,,,,,,
+4fc1dc8789da25cf,nfl_football,positive,176576,"We’re trying to make sure guys know the scheme and know what we’re doing so we can play fast.”
+
+Lineman Ceresna back for another shot
+
+A year ago, fresh off from receiving a look from the National Football League’s Kansas City Chiefs, was hoping to earn a spot on the Redblacks roster.",team_entities,kansas city chiefs,nfl_football,,,,,,
+a68190d497f97524,nfl_football,positive,133145,"A source told ESPN NFL Insider Adam Schefter that the extension is for five years and is worth $50 million, including $22 million guaranteed.",league_anchor,nfl,nfl_football,,,,,,
+a0fc967d67a92a58,nfl_football,positive,167753,"“He played (quarterback) in college, but without having played in the pros, he understood what that guy under center was dealing with.",football_jargon,quarterback,nfl_football,,,,,,
+32c9bf097efb7e15,nfl_football,positive,108292,"Green Bay Packers kicker Chester Marcol was the NFL’s leading scorer as a rookie in 1972 (Photo by Nate Fine/Getty Images)
+
+His efforts that season against the Chicago Bears endeared him to the locals.",league_anchor;team_entities,green bay packers;nfl,nfl_football,,,,,,
+7b7640d88facd28c,nfl_football,positive,33657,"At this time last year, Miller was preparing for a stellar playoff run that would bring him fame and fortune, from a Super Bowl 50 MVP trophy to a record-breaking contract.",league_anchor,super bowl,nfl_football,,,,,,
+53e9c9b81ed4d335,nfl_football,positive,199415,The Broncos also had 11 penalties in a Week 2 win over the Kansas City Chiefs.,team_entities,kansas city chiefs,nfl_football,,,,,,
+b6e104fa820337db,nfl_football,positive,73135,"He plans on bringing Future Jr. to the next playoff game and wants his son to support the Falcons and be part of the winning squad with a phenomenal quarterback as they make a run for the Super Bowl,"" the source told Hollywood Life.",football_jargon;league_anchor,quarterback;super bowl,nfl_football,,,,,,
+e3f1a46cccc47a60,nfl_football,positive,58279,"After being fired by Wake Forest, Caldwell became a quarterbacks coach in the NFL, first for Tampa Bay, where he worked with Brad Johnson in 2001, and then with Indianapolis, where he was Peyton Manning's position coach from 2002 until 2008.",league_anchor,nfl,nfl_football,,,,,,
+217ddde7c166c2b5,nfl_football,positive,13242,"Trevor Lawrence, QB, Georgia – A quarterback with a shot to go wire-to-wire as the nation's top ranked prospect.",football_jargon,quarterback,nfl_football,,,,,,
+32d99d6db919e471,nfl_football,positive,141862,"But Hayne has regularly affirmed his commitment to continuing to pursue his NFL career, including when he arrived at Sydney airport after returning from San Francisco last week.",league_anchor,nfl,nfl_football,,,,,,
+aa8121ea8e97a0d5,nfl_football,positive,129705,The Ticats also led 13-10 and had the Rough Riders pinned deep in their own territory well into the fourth quarter when rookie quarterback J.C. Watts avoided onrushing defenders and threw a short pass to Pat Stoqua.,football_jargon,quarterback,nfl_football,,,,,,
+2fc06f5383856039,nfl_football,positive,202588,"Unfortunately, due to copyright restrictions, we weren't permitted to film demos of the NFL or ESPN apps, and we could barely take photos either.",league_anchor,nfl,nfl_football,,,,,,
+3bc4509809ff4ffe,nfl_football,positive,73863,Fifth-round linebacker Telvin Smith is one of the play-makers on their defense.,football_jargon,linebacker,nfl_football,,,,,,
+b3189efaa42cfc38,nfl_football,positive,13101,"Hudson can help us fix a vast, gaping hole at linebacker that last saw Niko Koutouvides and Landon Johnson as dominant players a decade ago.",football_jargon,linebacker,nfl_football,,,,,,
+69fff0879e556900,nfl_football,positive,194770,The inference is that the coaching staff isn't sure the offensive line can keep Griffin upright.,football_jargon,offensive line,nfl_football,,,,,,
+a9ce52f4f57fb0a1,nfl_football,positive,142967,"After the Oilers became the Tennessee Titans, McNair says his civic duty prompted him to pursue an NFL team.",league_anchor,nfl,nfl_football,,,,,,
+c5a0e61147846eff,nfl_football,positive,106402,What happened next -- visible on this NFL.com video -- was not.,league_anchor,nfl,nfl_football,,,,,,
+c0e6272247a1c06c,nfl_football,positive,114478,"The Trumps’ Super Bowl party in Florida:
+
+Speech to Congress
+
+Melania wore a sparkling gown to her husband’s speech to Congress, which some critics called inappropriate for the occasion.",league_anchor,super bowl,nfl_football,,,,,,
+9a691b9b755dfd27,nfl_football,positive,120283,"Leonhard’s NFL career will be remembered as a successful one, especially by Badgers fans who remember the walk-on rising to stardom on the turf at Camp Randall.",league_anchor,nfl,nfl_football,,,,,,
+02ed9a58eda0032e,nfl_football,positive,33681,"There will be a time for reflection and all of that stuff next week.”
+
+—
+
+Follow Arnie Melendrez Stapleton on Twitter: http://twitter.com/arniestapleton
+
+—
+
+For more NFL coverage: http://www.pro32.ap.org and http://www.twitter.com/AP-NFL",league_anchor,nfl,nfl_football,,,,,,
+7f0d86f186b5e42c,nfl_football,positive,176215,"His future in the NFL is uncertain at best, and might be nonexistent without a second stint in treatment that two agents have demanded.",league_anchor,nfl,nfl_football,,,,,,
+eb8d1237edee98de,nfl_football,positive,115995,"Kansas City (6-3) dropped another game this week, and now will have to claw their way back into an AFC top seed.",league_anchor,afc,nfl_football,,,,,,
+68a94906361bbf70,nfl_football,positive,17136,"Foles’s performance last season proved Kelly did not need a mobile quarterback to make his offense flourish, but it is possible he viewed Smith as a means of compensating for Foles’s lack of mobility.",football_jargon,quarterback,nfl_football,,,,,,
+c13828e556206e47,nfl_football,positive,47180,Of course outstanding Quarterback Sean White didn’t start last week due to being banged up.,football_jargon,quarterback,nfl_football,,,,,,
+7577b50980289bec,nfl_football,local_hard_negative,369483,The Quarter-Finalists in the 2017 RLIF Rugby League World Cup will qualify as of right.,college_and_non_nfl_football,rugby,,,,,,,
+911b5873d4af9ffe,nfl_football,local_hard_negative,221459,"Every other player that was hurt, and was on disability for more than a week, went into disability.”
+
+Regardless, USA Rugby has been in strong support of the players and staffers when it comes to their finance-related disputes with PRO.",college_and_non_nfl_football,rugby,,,,,,,
+8d1edf4db7784d9d,nfl_football,local_hard_negative,723877,"Regardless of why, the reality is that the FCPA has transformed into one of the most fearsome elements in the SEC and Justice Department's arsenals.",college_and_non_nfl_football,sec,,,,,,,
+bde3a5122eecd279,nfl_football,local_hard_negative,671777,"""But it is also a broad study of how people who played rugby are getting on later in life. """,college_and_non_nfl_football,rugby,,,,,,,
+7aaf98d13a49d2b0,nfl_football,local_hard_negative,323032,"To put that in perspective, the combined undergraduate enrollment of all 12 schools in the Big Ten is roughly 370,000.",college_and_non_nfl_football,big ten,,,,,,,
+f30e36de45fbd980,nfl_football,local_hard_negative,496672,"He wants him to create excitement and buzz.”
+
+The soccer stud could also use the talents of LeBron’s marketing partner Maverick Carter, whose LRMR firm has signed the biggest star in college football, Johnny Manziel.",college_and_non_nfl_football,college football,,,,,,,
+38a2e9f24814f52b,nfl_football,local_hard_negative,479830,"And as the city grew into the sprawling, gleaming behemoth it is now, when the demographics changed, rugby league didn’t change to meet them.",college_and_non_nfl_football,rugby,,,,,,,
+0975158b6f7d1ae1,nfl_football,local_hard_negative,290770,"Patterson scored 10 touchdowns (five receiving, three rushing, one kick return and one punt return), while also setting an SEC single-season record with a combined kickoff and punt return average of 27.6 yards.",college_and_non_nfl_football,sec,,,,,,,
+e021abcc5918bdce,nfl_football,local_hard_negative,40662,"“They’re young.”
+
+Greenshields played for the Saints for a few seasons until moving out to Victoria – that’s where Rugby Canada centralizes the national teams – and has remained based out of the west coast since January 2012.",college_and_non_nfl_football,rugby,,,,,,,
+c941fee3c224023c,nfl_football,local_hard_negative,95577,The assumption is that the SEC members’ in-conference schedule is so difficult that it makes up for the fact that the entire league plays one fewer Power team than the rest of the country (minus the ACC).,college_and_non_nfl_football,sec,,,,,,,
+e2cdb61f7c22a2df,nfl_football,local_hard_negative,430057,"22ms for the blur kinda sucks as it's 47 Mpixels/sec, but the upload and readback numbers are more interesting.",college_and_non_nfl_football,sec,,,,,,,
+cd428529939d5369,nfl_football,local_hard_negative,344127,"""[The SEC] should claim themselves as the best league in the country because they've earned it,"" Arizona coach Rich Rodriguez said.",college_and_non_nfl_football,sec,,,,,,,
+c37f78be9fbba0e3,nfl_football,local_hard_negative,36625,"Mayers was impressive in the SEC tournament, perhaps serving a springboard to the postseason.",college_and_non_nfl_football,sec,,,,,,,
+f62c7a73ace2316d,nfl_football,local_hard_negative,2309,"Title games
+
+There is, of course, a missing piece in the tables above: for teams in the SEC, Pac-12, Big Ten, and ACC, there might also be a conference title game involved.",college_and_non_nfl_football,big ten;sec,,,,,,,
+7a3bfd76fa0b2fb1,nfl_football,local_hard_negative,369385,"Sat., Feb. 25 Alabama at Texas A&M ESPN/2 TBD Tues., Feb. 28 Texas A&M at Missouri SEC Network 7:00 p.m. Tues., Feb. 28 Mississippi State at South Carolina ESPNU 7:00 p.m. Tues., Feb. 28 Vanderbilt at Kentucky ESPN 9:00 p.m. Wed., March 1 Auburn at Georgia SEC Network 6:30 p.m. Wed., March 1 Tennessee at LSU SEC Network 7:00 p.m. Wed., March 1 Arkansas at Florida ESPN2 7:00 p.m. Wed., March 1 Ole Miss at Alabama SEC Network 8:30 p.m.",college_and_non_nfl_football,sec,,,,,,,
+85ac2fa880cf045f,nfl_football,local_hard_negative,797056,"Articles regarding the stadiums and venues, mascots, fight songs, and other pageantry that support college football teams or events are also included in the project.",college_and_non_nfl_football,college football,,,,,,,
+1e47637b9f78dd8d,nfl_football,local_hard_negative,146280,"He said it will be entirely funded by the athletic department's resources, including donations, ticket revenue, sponsorship revenue and Big Ten membership financial distribution.",college_and_non_nfl_football,big ten,,,,,,,
+8b2a2fcf1028c0ca,nfl_football,local_hard_negative,675141,"“As a result of changing conditions in the space insurance market, we do not believe we will be able to complete the full placement of insurance prior to the first launch, and we may not be able to place the supplemental insurance for launch premiums on relaunches at all,” Iridium said in its SEC filing.",college_and_non_nfl_football,sec,,,,,,,
+b70e2e07d9fe9c69,nfl_football,local_hard_negative,317060,"Dick Durbin Richard (Dick) Joseph DurbinKids confront Feinstein over Green New Deal Senate plots to avoid fall shutdown brawl Overnight Energy: Trump ends talks with California on car emissions | Dems face tough vote on Green New Deal | Climate PAC backing Inslee in possible 2020 run MORE (Ill.), Charles Schumer Charles (Chuck) Ellis SchumerBrennan fires back at 'selfish' Trump over Harry Reid criticism Trump rips Harry Reid for 'failed career' after ex-Dem leader slams him in interview Harry Reid: 'I don't see anything' Trump is doing right MORE (N.Y.), Patty Murray Patricia (Patty) Lynn MurrayThis week: Congress, Trump set for showdown on emergency declaration Senate reignites blue slip war over Trump court picks Johnson & Johnson subpoenaed by DOJ and SEC, company says MORE (Wash.) and Barbara Boxer (Calif.) said in a letter to Speaker John Boehner (R-Ohio).",college_and_non_nfl_football,sec,,,,,,,
+15897aaf35cf7c5b,nfl_football,local_hard_negative,175387,The amendment says that “[f]unds available to the Department of Defense may not be used to provide medical treatment (other than mental health treatment) related to gender transition to a person entitled to medical care” under the military health system … [Defense] Sec.,college_and_non_nfl_football,sec,,,,,,,
+1ee86a77657310a4,nfl_football,local_hard_negative,769436,"The SEC is investigating the massive loss, but that will take a lot of time and the eventual report will probably be very difficult for novices to understand and probably they won't put anyone in jail.",college_and_non_nfl_football,sec,,,,,,,
+fd75ce074b37706d,nfl_football,local_hard_negative,434720,"Nick Morgan, a Los Angeles-based lawyer with the Paul Hastings law firm who represents clients being investigated by the SEC, said the ruling will especially affect complicated cases that require more time for the SEC to investigate.",college_and_non_nfl_football,sec,,,,,,,
+33b6c45ca198fe44,nfl_football,local_hard_negative,563907,"Ironically, if a man shaves his legs (which may be required for a sport such as rugby or swimming), he will often be ridiculed.",college_and_non_nfl_football,rugby,,,,,,,
+fe4c27925e30ee12,nfl_football,local_hard_negative,738940,"Justice Appointed by Sworn in Law school Religion Job before appointment Earl Warren Eisenhower 1953 University of California Protestant Governor (R-CA) Hugo Black F. Roosevelt 1938 University of Alabama Protestant Senator (D-AL) Harold Burton Truman 1945 Harvard Unitarian Senator (R-OH) Tom Clark Truman 1949 University of Texas Protestant Attorney General William Douglas F. Roosevelt 1939 Columbia Protestant SEC chairman Felix Frankfurter F. Roosevelt 1939 Harvard Jewish Professor at Harvard Robert Jackson F. Roosevelt 1941 Albany Law but no degree Protestant Attorney General Sherman Minton Truman 1949 Indiana University Catholic Court of Appeals judge Stanley Reed F. Roosevelt 1938 U. Virginia but no degree Protestant Solicitor General
+
+In comparison with the current Court, we see that Protestants dominated, Ivy League schools did not (in fact, two justices did not even have a law degree), and only one of the nine had been on the Court of Appeals.",college_and_non_nfl_football,sec,,,,,,,
+fd02774446cc430c,nfl_football,local_hard_negative,432814,"A former schoolboy rugby gun, Vete only started playing league three years ago in what has been a meteoric rise.",college_and_non_nfl_football,rugby,,,,,,,
+0e6e3891864f2807,nfl_football,benchmark_hard_negative,10848,"The project is based on Matusow’s 2009 autobiography “Check-Raising the Devil.”
+
+Matusow’s story details his bouts with drugs, depression, promiscuous sex, jail, and suicidal depression along with his success as a four-time World Series of Poker bracelet winner and winning the 2005 World Series of Poker Tournament of Champions.",mlb_baseball,world series,mlb_baseball,,,,,,
+735d5cc66e0f799f,nfl_football,benchmark_hard_negative,87078,This charming little market only happens on the first weekend of every month and we were so lucky to have been in Barcelona at the time to experience it!,soccer,barcelona,soccer,,,,,,
+ffb0d877575149ac,nfl_football,benchmark_hard_negative,10588,Kiper/McShay/Giants Comparison Year Giants Mel Kiper Todd McShay Year Giants Mel Kiper Todd McShay 2010 DE Jason Pierre-Paul OLB Sean Weatherspoon MLB Rolando McClain 2011 CB Prince Amukamara OT Anthony Castonzo RB Mark Ingram 2012 RB David Wilson TE Coby Fleener OT Jonathan Martin 2013 OL Justin Pugh CB D.J.,mlb_baseball,mlb,mlb_baseball,,,,,,
+550a6b03f03f7364,nfl_football,benchmark_hard_negative,97281,"Redknapp, whose side lie five points from Premier League safety, added: ""It'll be hard but I still believe we can do it.""",soccer,premier league,soccer,,,,,,
+e63f8a1534640411,nfl_football,benchmark_hard_negative,35716,Jürgen Klopp can't wait for his latest taste of the rivalry between Liverpool and Manchester United having whetted his appetite with last season's Europa League meetings between the sides.,soccer,liverpool;manchester united,soccer,,,,,,
+fe77f8b80e005b45,nfl_football,benchmark_hard_negative,62946,"• Arsène Wenger confident over transfer after productive talks • Alexis Sánchez says he has decided where he will play next season
+
+Arsène Wenger is increasingly confident of completing what stands to be an Arsenal record transfer for the striker Alexandre Lacazette after productive talks with Lyon.",soccer,arsenal;striker,soccer,,,,,,
+cff8b8e49b60649d,nfl_football,benchmark_hard_negative,19897,"Unfortunately the Edmonton Oilers came out on top, pushing Buffalo to second and Arizona to third.",nhl_hockey,edmonton oilers,nhl_hockey,,,,,,
+fc48dcba956f13fc,nfl_football,benchmark_hard_negative,85287,The current Premier League Champions are Manchester City.,soccer,premier league,soccer,,,,,,
+0f15c73bdf2985d8,nfl_football,benchmark_hard_negative,37035,"It was a clear violation of Rule 6.01 (i), the so-called “Buster Posey Rule” that reads as follows:
+
+” A runner attempting to score may not deviate from his direct pathway to the plate in order to initiate contact with the catcher (or other player covering home plate), or otherwise initiate an avoidable collision.”
+
+Video of the play in question follows, watch how Rizzo crosses the baseline to his left and initiates contact, deviating from his path to the plate rather than taking the outside line that is clearly available to him:
+
+Your browser does not support iframes.",mlb_baseball,home plate,mlb_baseball,,,,,,
+99aaedd5f4d400f2,nfl_football,benchmark_hard_negative,85299,Share your predictions with thousands of tipsters and Premier League punters around the world.,soccer,premier league,soccer,,,,,,
+19be724652871d92,nfl_football,benchmark_hard_negative,87070,"Time for another travel post 🙂 Out of all the things we saw and did in Spain, the Palo Alto market in Barcelona was on of our favorites.",soccer,barcelona,soccer,,,,,,
+eed3fcca7911493c,nfl_football,benchmark_hard_negative,8609,"Meanwhile, the ECHL’s Ontario Reign will move to Manchester, New Hampshire and become the ECHL’s Manchester Monarchs
+
+San Jose Sharks will move their affiliate, the Worcester Sharks, from Worcester, Massachusetts to San Jose, where they will play at the SAP Center, sharing the same arena as the NHL’s Sharks.",nhl_hockey,nhl,nhl_hockey,,,,,,
+2e03ae52e282f2a4,nfl_football,benchmark_hard_negative,89313,"In 552 NHL games played, he won 250 games, including 37 shutouts.",nhl_hockey,nhl,nhl_hockey,,,,,,
+20c6268723f8ea76,nfl_football,benchmark_hard_negative,11251,"The return of point guard Mo Williams to the Cleveland Cavaliers was news that made sense on a number of levels, especially in regards to financial and depth issues related to the team.",nba_basketball,point guard,nba_basketball,,,,,,
+d0e65182d649c79d,nfl_football,benchmark_hard_negative,63695,Because plenty of numbers suggest the 20-year-old outfit is already among the upper crust of soccer leagues.,soccer,soccer,soccer,,,,,,
+2d1f906545d3c902,nfl_football,benchmark_hard_negative,93754,"While Bo Horvat has already made the jump to the big club, young centers Jared McCann and Cole Cassels remain a few years away from making an impact at the NHL level.",nhl_hockey,nhl,nhl_hockey,,,,,,
+b83ecf14b86a341d,nfl_football,benchmark_hard_negative,85321,We believe it will enhance your Premier League betting performance.,soccer,premier league,soccer,,,,,,
+6cd94cc8752e8a7d,nfl_football,benchmark_hard_negative,85274,"Manchester United have won it on 13 occasions, all under the guidance of Sir Alex Ferguson.",soccer,manchester united,soccer,,,,,,
+660fd070708e7ee6,nfl_football,benchmark_hard_negative,78143,"""Yes, the Champions League is our target but of course sometimes in football results are 50-50.",soccer,champions league,soccer,,,,,,
+ce85bbfc8c5b831c,nfl_football,benchmark_hard_negative,50064,"However, last weekend they returned to the city unannounced and nobody even noticed until they posted a blog entry a week later, claiming they'd 'smashed' Liverpool.",soccer,liverpool,soccer,,,,,,
+dafdf3a59c0e02fa,nfl_football,benchmark_hard_negative,41026,"Instead, he's stopping at the free-throw line -- NBA people call this a ""short roll"" -- and taking the pass from the point guard or a wing sliding up to the ball.",nba_basketball,nba;point guard,nba_basketball,,,,,,
+39681d8a108f6d99,nfl_football,benchmark_hard_negative,29790,"REUTERS/Brian Snyder
+
+Relations between the two countries have been tense since a Tuesday incident in which a drone bearing a flag representing “Greater Albania,” an area covering all parts of the Balkans where ethnic Albanians live, flew over a major soccer match between the Albanian and Serbian teams, prompting a brawl on the field and the cancellation of the game.",soccer,soccer,soccer,,,,,,
+7e824ce10252c91f,nfl_football,benchmark_hard_negative,95970,"Real Madrid sit second in Group F, two points behind Borussia Dortmund, and will have to wait until Matchday 5 when they face Sporting Lisbon to qualify for the knock-out stages.",soccer,real madrid,soccer,,,,,,
+9d5281564daf2840,nfl_football,benchmark_hard_negative,108287,"He arrived at high school in Imlay City, Michigan (30 miles east of Flint) not knowing a lick of English, but a gym teacher discovered that Marcol could kick the heck out of a soccer ball.",soccer,soccer,soccer,,,,,,
+a3c67d646961ce1e,nfl_football,benchmark_hard_negative,50038,"Defending champions Borussia Dortmund play Nuremberg on Saturday, while Bayern Munich are defending their Bundesliga lead at home against VfB Stuttgart on Sunday.",soccer,bundesliga,soccer,,,,,,
+3c1dee26064bcb92,nfl_football,benchmark_hard_negative,36611,"N.C. State's starting rotation has been kind of a revolving door this season, but keep an eye on imposing left-handed pitcher Carlos Rodon, who was up to 93 in the ninth inning last weekend against North Carolina, and had his usual devastating 83-85 slider working extremely well, particularly in on right-handed hitters.",mlb_baseball,inning,mlb_baseball,,,,,,
+7338bf2de3a82201,nfl_football,benchmark_hard_negative,41242,'It’s no big secret that I am still hoping we can tie up Sam Johnstone from Manchester United.,soccer,manchester united,soccer,,,,,,
+b9cf606b252ec80f,nfl_football,benchmark_hard_negative,60084,"Police have taken a statement from a Bournemouth steward who says Manchester City striker Sergio Aguero hit them
+
+Aguero was celebrating Raheem Sterling's winner in the 2-1 victory at the Vitality Stadium when the incident occurred
+
+The players celebrated with the fans, with stewards intervening as they spilled onto the pitch, which Aguero took exception to
+
+The former Atletico Madrid forward took to Twitter to deny the claim - while also praising the narrow victory over the Cherries
+
+With reports that a steward had then informed police Aguero had hit him, the striker tweeted: ‘I did not hit anyone, this allegation is false and the TV pictures prove it.’ City are fuming and last night Bournemouth put out a statement withdrawing the allegations.",soccer,striker,soccer,,,,,,
+76f411f92adf12fa,nfl_football,benchmark_hard_negative,19943,The probability of Strome playing in the NHL next season is low as it seems like he may need to sharpen his skills a little bit more with Erie.,nhl_hockey,nhl,nhl_hockey,,,,,,
+0a741dda4e11dcfb,nfl_football,benchmark_hard_negative,97100,"After winning it all in ‘95, the Atlanta Braves were out to build a dynasty rather than becoming more reminiscent of the Buffalo Bills, whose success paralleled that of the Braves: close but no cigar.",mlb_baseball,atlanta braves,mlb_baseball,,,,,,
+e3c813466185b811,nfl_football,benchmark_hard_negative,91529,"The NHL’s first Battle of Ontario occurred three nights later, when the Senators travelled to Toronto.",nhl_hockey,nhl,nhl_hockey,,,,,,
+b75e48177f13a6b0,nfl_football,benchmark_hard_negative,49178,"Nike Zoom Lebron V – New York Yankees – White/Navy
+
+4.50 / 5 1 VOTES This post contains references to products from one or more of our advertisers.",mlb_baseball,new york yankees,mlb_baseball,,,,,,
+bc66db93ffa5cd6a,nfl_football,benchmark_hard_negative,67457,The midfielder/defenseman is one of the best all-around players in the division.,soccer,midfielder,soccer,,,,,,
+3394b35caf9c425b,nfl_football,benchmark_hard_negative,114413,Crowder says it'll probably mean even more to Jada as she gets older to realize how many NBA players went out of their way to enhance her birthday.,nba_basketball,nba,nba_basketball,,,,,,
+155eec7286bfb698,nfl_football,benchmark_hard_negative,11115,Each has raised the standard and helped change the perception about not only how critical but also how dominant goalies can be in the NHL.” “Each of these goalies left his stamp on the game.,nhl_hockey,nhl,nhl_hockey,,,,,,
+5484c77fa62fc1e9,nfl_football,benchmark_hard_negative,2799,"Photograph: Ronald Grant
+
+Born in Liverpool, Chegwin began his acting career at the age of 10 and had roles in Roman Polanski’s 1971 film version of Macbeth, the 1973 movie The Optimists of Nine Elms, alongside Peter Sellers, and the pilot of the TV sitcom Open All Hours.",soccer,liverpool,soccer,,,,,,
+a289d363f1c0b9b8,nfl_football,benchmark_hard_negative,68138,"Chelsea are weighing up a move for Paris Saint-Germain striker Edinson Cavani, sources have told ESPN FC.",soccer,striker,soccer,,,,,,
+3445ae134e96bc32,nfl_football,benchmark_hard_negative,89321,He was the first goalie in NHL history to wear a mask regularly.,nhl_hockey,goalie;nhl,nhl_hockey,,,,,,
+c48bed915f88bf1f,nfl_football,benchmark_hard_negative,85268,"Premier League Tips & Odds
+
+Formed in 1992, the Premier League has become the most popular football league in world football.",soccer,premier league,soccer,,,,,,
+cce99942a59f3064,nfl_football,benchmark_hard_negative,17108,"From Video
+
+This was a classic power play.",nhl_hockey,power play,nhl_hockey,,,,,,
+da07d81d00e4a1fe,nfl_football,benchmark_hard_negative,11116,"Now six Canadian goalies will be honored in a collection of Great Canadian Goalie stamps, which debuts Oct. 1.” “While I can’t tell you who the six will be, I’ll say this: Five of the six are in the Hall of Fame, four have won the Calder Trophy, and each has won the Stanley Cup (a combined 20 times).",nhl_hockey,goalie;stanley cup,nhl_hockey,,,,,,
+1b8ad2d797001c77,nfl_football,benchmark_hard_negative,80691,"Newcomer Juan Nicasio has worked as a starter, but he was successful last season in the Los Angeles Dodgers’ bullpen.",mlb_baseball,los angeles dodgers,mlb_baseball,,,,,,
+e0a3ad72a447298c,nfl_football,benchmark_hard_negative,31855,"Without a doubt the extra time for the returning players to learn Sarri’s system has helped, yet one cannot help but wonder if they are also playing a bit more free mentally without having to worry about feeding a striker who would at times throw a fit if he wasn’t serviced well.",soccer,striker,soccer,,,,,,
+a9892bdd942a5c30,nfl_football,benchmark_hard_negative,74110,Liverpool officials moved the Brazilian and his family - wife La­rissa and two small children - into a hotel over Christmas and have now provided the 25-year-old with a security team tasked with protecting them at the home.,soccer,liverpool,soccer,,,,,,
+f24e6d932b938b08,nfl_football,benchmark_hard_negative,19950,Mitch Marner makes scoring look easy with his speed and ability to control the puck.,nhl_hockey,puck,nhl_hockey,,,,,,
+34a2aafca5c0de8a,nfl_football,benchmark_hard_negative,54156,"[14][15] He registered his first NHL point, an assist on a Kris Russell goal, in a 4–3 loss to the Ottawa Senators on October 22.",nhl_hockey,nhl,nhl_hockey,,,,,,
+85544471d549bb8a,nfl_football,benchmark_hard_negative,37026,Source: MLB told all clubs today that Anthony Rizzo had indeed violated the collision rule.,mlb_baseball,mlb,mlb_baseball,,,,,,
+6e04461492c838e7,nfl_football,benchmark_hard_negative,55286,He can also make use of his stick-handing skills to work his way in close as he demonstrated when he scored a highlight-reel goal against the Boston Bruins on March 22.,nhl_hockey,boston bruins,nhl_hockey,,,,,,
+062be9c8d88fc70d,nfl_football,benchmark_hard_negative,45654,"On “Jimmy Kimmel Live,” the current keeper of the Stanley Cup — Hockey Hall of Fame curator Phil Pritchard — showed up with the Cup and L.A. Kings players Alec Martinez and Justin Williams.",nhl_hockey,stanley cup,nhl_hockey,,,,,,
+e0adb4f4ba33aea2,nfl_football,benchmark_hard_negative,23124,"Damion Lee led the Red Claws with 22 points, and Marcus Georges-Hunt finished near another triple-double with 19 points, 10 rebounds and 4 assists.",nba_basketball,triple-double,nba_basketball,,,,,,
+e4ddb190c2184480,nfl_football,benchmark_hard_negative,65866,(Photo: London Knights) Matthew Tkachuk is projected to be a first-round pick in the 2016 NHL Draft.,nhl_hockey,nhl;nhl draft,nhl_hockey,,,,,,
+e0529f064dedf670,nfl_football,benchmark_hard_negative,83099,"It’s a game of confidence, being a goalie.” He had one of the most epic moments of the finals with his huge double save on two Sidney Crosby back to back shots, then threw his body across the crease to block an open-net shot by Jake Guentzel.",nhl_hockey,goalie,nhl_hockey,,,,,,
+5cb699900e5852ee,nfl_football,benchmark_hard_negative,104328,"That process reached its natural conclusion with the vote in December 2010 to award the 2022 World Cup to Qatar, a decision that remains mired in controversy as Fifa and organisers grapple with the desperate plight of the 1.4m migrant workers and questions still swirling around the bidding process.",soccer,fifa,soccer,,,,,,
+48989baee06a71b6,nfl_football,benchmark_hard_negative,49412,"Speaking to the Wall Street Journal at the Mobile World Congress in Barcelona, Spain, Pai said that AT&T's purchase of Time Warner has been structured in a way that would allow it to avoid FCC scrutiny by not transferring any airwave licenses between the two companies.",soccer,barcelona,soccer,,,,,,
+32d21648986b7721,nfl_football,benchmark_hard_negative,88456,"Lin, of course, was coming off his meteoric rise to international fame, and the New York fan-base exhaled in a collective sigh that they weren’t going to lose their newest folk-hero to the draconian salary cap (since Lin was a restricted free-agent, the team could now match any offer without salary cap restraints).",nba_basketball,salary cap,nba_basketball,,,,,,
+4febfae0f3a58c19,nfl_football,benchmark_hard_negative,93536,It’s the last home match for the U.S. MNT in the Final Round of 2018 FIFA World Cup qualifying.,soccer,fifa,soccer,,,,,,
+37a94e91e2e603b1,nfl_football,benchmark_hard_negative,79290,"Those claims conveniently ignore the multitude of Canadian online success stories, including Têtes à claques, Glacticast, thousands of bloggers, hundreds of podcasters, and video streams from everyone from political parties to the Toronto Maple Leafs.",nhl_hockey,toronto maple leafs,nhl_hockey,,,,,,
+d6e521f157e58121,nfl_football,benchmark_hard_negative,2462,"Awash in seized Soviet weapons following the Six Day War in 1967, Israel quietly worked to upgrade China’s military arsenal.",soccer,arsenal,soccer,,,,,,
+732276898787f15b,nfl_football,benchmark_hard_negative,95968,Real Madrid continued to apply the pressure but the hosts took a dramatic late lead in the 83rd minute through Thibault Moulin’s neat finish from the edge of the box.,soccer,real madrid,soccer,,,,,,
+ea516cb40358af76,nfl_football,benchmark_hard_negative,85120,The 24-year-old is still relatively inexperienced when it comes to the NHL.,nhl_hockey,nhl,nhl_hockey,,,,,,
+2af300e82bd9be83,nfl_football,benchmark_hard_negative,48902,"Finally, he aired clips of himself berating his beloved New York Mets over the years before a recent news clip declared the Mets in first place, causing Stewart to cheer raucously.",mlb_baseball,new york mets,mlb_baseball,,,,,,
+7035ad44eb3bdc07,nfl_football,benchmark_hard_negative,94351,"In baseball, he was a pitcher who also played shortstop and center field.",mlb_baseball,shortstop,mlb_baseball,,,,,,
+b1712a4130ecf958,nfl_football,benchmark_hard_negative,18102,"A pictorial look at the career of City's latest recruit
+
+An Italian Under-21 International, Federico joined the Manchester United youth set-up from Lazio in 2007, going on to top the Under-18 scoring charts in his first season at Old Trafford, netting 12 goals in 21 appearances.",soccer,manchester united,soccer,,,,,,
+142ef08fc249cd49,nfl_football,benchmark_hard_negative,19953,Marner compares himself to Patrick Kane of the Chicago Blackhawks and tries to model his game after him.,nhl_hockey,chicago blackhawks,nhl_hockey,,,,,,
+8e8f2f1f1fded897,nfl_football,benchmark_hard_negative,41238,"Manchester United goalkeeper Sam Johnstone is poised to rejoin Aston Villa on Monday
+
+He has been back in training at United's Carrington complex and will not be part of the tour party that travels to the USA on Sunday.",soccer,goalkeeper;manchester united,soccer,,,,,,
+9cbedef157a2de16,nfl_football,benchmark_hard_negative,19892,"Much-Needed Bolstering
+
+With vice-captain Mertesacker in poor form it would be a breath of fresh air to see a new defender at the club to replace the gaping hole left by ex-skipper Thomas Vermaelen, who left the club in the summer to join Spanish giants Barcelona.",soccer,barcelona,soccer,,,,,,
+82c4e7485df3ae41,nfl_football,benchmark_hard_negative,18581,"Tavares explained the severity of his illness Thursday, saying it rendered him unable to eat until Monday, when he was then forced to try to put on the weight he lost, according to NHL.com's Arpon Basu.",nhl_hockey,nhl,nhl_hockey,,,,,,
+eca20a807a5115b4,nfl_football,benchmark_hard_negative,113521,Fred VanVleet and Ron Baker make for a fearsome backcourt and they're even more potent when Evan Wessel and Tekele Contton are draining outside jumpers.,nba_basketball,backcourt,nba_basketball,,,,,,
+b32af9f7e2d67b3e,nfl_football,benchmark_hard_negative,85118,"While both Danny DeKeyser and Brendan Smith might not be considered kids anymore, they've still got a lot of experience to gain at the NHL level.",nhl_hockey,nhl,nhl_hockey,,,,,,
+f60fbc2e43dd76ab,nfl_football,benchmark_hard_negative,22543,"With the second game at BMO Field, will TFC look to play shutdown soccer away, or aim to secure an advantage to take home?",soccer,soccer,soccer,,,,,,
+49f64c2b01443f22,nfl_football,benchmark_hard_negative,42852,"(1:11)
+
+The NBA, citing concerns about provoking exchanges between players that could damage the league's reputation, issued a memo to all 30 franchises this week emphasizing rules prohibiting ""mocking and/or ridiculing"" opponents or officials by official team social media accounts.",nba_basketball,nba,nba_basketball,,,,,,
+b630cf7143e74962,nfl_football,benchmark_hard_negative,45025,"IT WAS a tough round to be an inside midfielder with many deserving engine-room players missing out on selection in this week's Team of the Week, brought to you by Accor Hotels.",soccer,midfielder,soccer,,,,,,
+91098871fda27803,nfl_football,benchmark_hard_negative,88219,"Midfielder Rasmus Schuller (thigh), defender Marc Burch (groin), defender Thomas de Villardi (Achilles) and Ramirez (hamstring) all trained separately.",soccer,midfielder,soccer,,,,,,
+f38b5dc62c75a39e,nfl_football,benchmark_hard_negative,31835,The loss of our star striker would have hurt enough but to lose him to our most hated rival; that was heartbreaking.,soccer,striker,soccer,,,,,,
+70dad06bd0c2d675,nfl_football,benchmark_hard_negative,108306,"But in an instant, the ball ended up back in the oversized hands of Marcol — hands that might have made him a goalie had he stayed in Poland — as he streaked freely toward an area kickers rarely ventured.",nhl_hockey,goalie,nhl_hockey,,,,,,
+507ccd964240a2a9,nfl_football,medium_negative,171146,"In the main event, middleweight contender Luke Rockhold (13-2 MMA, 3-1 UFC) continued to make his case for a title shot when he submitted “The Ultimate Fighter 3” winner Michael Bisping (25-7 MMA, 15-7 UFC) in the second round.",combat_sports,main event;mma;title shot;ufc,combat_sports,,,,,,
+8f57b2072c32a1e7,nfl_football,medium_negative,2803,"“He was one of the nicest people I have ever known and over the years we did shows together and became great friends.”
+
+The former heavyweight boxing champion Frank Bruno tweeted: “Saddened to hear this, what a great guy.",combat_sports,boxing;heavyweight,combat_sports,,,,,,
+2134ce013fc04eda,nfl_football,medium_negative,33827,But the invention (1872) and proliferation of the steam tug posed a severe threat.,gaming_general,steam,gaming_general,,,,,,
+f0373cfbbb94fa0e,nfl_football,medium_negative,23911,"DriveClub may have suffered some serious server issues at launch, but the studio both rectified those and delivered arguably the best Season Pass on the PlayStation 4 to date.",gaming_general,playstation,gaming_general,,,,,,
+33d71a646c81075c,nfl_football,medium_negative,203347,If you want a critical opinion of the Multiplayer you won't find one here.,gaming_general,multiplayer,gaming_general,,,,,,
+a95fda099c6983f8,nfl_football,medium_negative,41497,BrightSource Energy’s Ivanpah (2014) used the reflected sunlight to simply boil water in the tower and operate directly off the steam produced.,gaming_general,steam,gaming_general,,,,,,
+5a9d996e55533566,nfl_football,medium_negative,164498,The RPG powerhouse of Obsidian is partnering with Paradox Interactive to help market and publish its Kickstarted Pillars of Eternity.,gaming_general,rpg,gaming_general,,,,,,
+2f8857ebecb7553f,nfl_football,medium_negative,12901,Nintendo obliged and sent a new DS to Helen's school along with a letter of reply to the young girl.,gaming_general,nintendo,gaming_general,,,,,,
+34527cdbbf4230ba,nfl_football,medium_negative,115051,"Currently, although still within the Nintendo family, I am enjoying Splatoon more than I would have ever thought possible.",gaming_general,nintendo,gaming_general,,,,,,
+08ef086879872047,nfl_football,medium_negative,173601,"For the two months prior, earthquakes and steam explosions had rattled the mountain, and the north slope of the volcano had noticeably swelled outward.",gaming_general,steam,gaming_general,,,,,,
+365065c4b6b3aca0,nfl_football,medium_negative,167563,We’ll do our best to coordinate with the entire Xbox Game Studios family to ensure we have broad representation of opportunity within all of our studios.,gaming_general,xbox,gaming_general,,,,,,
+83c7a9f80654684c,nfl_football,medium_negative,41496,"How Tower CSP Works (without Storage)
+
+One of the earliest tower CSP plants was direct steam.",gaming_general,steam,gaming_general,,,,,,
+da2609e3eff3f9af,nfl_football,medium_negative,131054,"are now replaced by Faction Emblems in the rank-up reward packages from Faction Vendors
+
+Technical
+
+Networking fixes, which should reduce the instance of the Bee family of KTOs
+
+Fixed an issue in which using Xbox One party chat induced a slower frame rate
+
+The Dark Below goes live on December 9.",gaming_general,xbox,gaming_general,,,,,,
+abb6b1f4a85ffc4e,nfl_football,medium_negative,36565,"But more importantly, Microsoft has already promised that the next Xbox -- dubbed Project Scorpio -- will be arriving in late 2017 with with the seriously amped-up graphics and VR-ready hardware that audiences are clamoring for.",gaming_general,xbox,gaming_general,,,,,,
+ea50f6054b9d89e0,nfl_football,medium_negative,12914,"After talking to the principal to make sure the gaming console would be well used, Nintendo sent a DS and a ""game suitable for children to play"" to the school.",gaming_general,nintendo,gaming_general,,,,,,
+e59a20195b0b6367,nfl_football,medium_negative,89220,"The 1985 article in the Harvard Law Review, penned as the Reagan administration's deregulation initiative was gathering steam, emphasized the duties of courts to take a ""hard look"" at attempts to revoke federal rules.",gaming_general,steam,gaming_general,,,,,,
+3de2d2edd597d883,nfl_football,medium_negative,113294,"We have a very different definition of ""accomplished,"" video game.",gaming_general,video game,gaming_general,,,,,,
+5fc3d9fb49581481,nfl_football,medium_negative,12912,"""Nintendo always calls the school, hospital, retirement home, or whatever it may be to ensure the letter is legitimate,"" said Nintendo Australia's Heather Murphy.",gaming_general,nintendo,gaming_general,,,,,,
+77212ca4b39cc79e,nfl_football,medium_negative,109896,"Gameplay wise, this game is action rpg with many dungeons and there are various ways to fight enemies with different skills and abilities and special moves you can use.",gaming_general,rpg,gaming_general,,,,,,
+75d3a1c40d0cdee8,nfl_football,medium_negative,49538,"Headquartered in Las Vegas with offices in London, Toronto, Singapore and Sao Paulo, UFC produces more than 40 live events annually that consistently sell out some of the most prestigious arenas around the globe.",combat_sports,ufc,combat_sports,,,,,,
+656aed06391a960b,nfl_football,medium_negative,201604,"We offer professional repairs for all kinds of problems, so whatever issue you have with your Sony product, we can help repair it:
+
+Sony Playstation repairs
+
+Sony Playstations Drive replacments
+
+Sony Playstation HDMI repalacments
+
+Sony Playstation Optical Drive
+
+Sony Playstation USB
+
+Sony Playstation Software fault
+
+Sony Playstation Graphics repairs
+
+Sony Playstation Blue light of Death
+
+Sony Vaio Repairs
+
+Sony Laptop Screen replacments",gaming_general,playstation,gaming_general,,,,,,
+3e1bcecdec1be714,nfl_football,medium_negative,59406,Relations were so contentious between the parties that White briefly said the UFC was no longer interested in her services.,combat_sports,ufc,combat_sports,,,,,,
+baaa462311109b98,nfl_football,medium_negative,197452,"Originally written by legendary designer Toichiro Kawashima and gorgeously illustrated by Shie Nanahara, Shinobigami is a fast one-session RPG focusing on character drama, stories of conflict and cooperation, and light tactical strategy in a dark modern ""World of Shadows"" setting where mysterious ninja exist and engage in inter-clan conflict in an ongoing hidden cold war.",gaming_general,rpg,gaming_general,,,,,,
+51681dab4f587cdc,nfl_football,medium_negative,31643,"Also Read : Now Nintendo 3DS XL can Run Windows 95
+
+All it takes is a Raspberry Pi Zero and a couple of cables.",gaming_general,nintendo,gaming_general,,,,,,
+9ba3e7c8ce295957,nfl_football,medium_negative,106961,"He added that Xbox One owners can also “do the TV guide stuff without Gold.”
+
+That’s good news for those purchasers looking forward to using a feature Microsoft made the cornerstone of its reveal event in May without hassle.",gaming_general,xbox,gaming_general,,,,,,
+f2cbd9b6941f67fd,nfl_football,medium_negative,222099,"When you want to gather data, you’ll first need to request an access token from the OAuth service before you can perform any REST calls to the Xbox Music service.",gaming_general,xbox,gaming_general,,,,,,
+6a34732575d3c6ba,nfl_football,medium_negative,171145,"The event, which streamed on UFC Fight Pass, saw a record number of finishes as every fight on the card ended in a stoppage.",combat_sports,ufc,combat_sports,,,,,,
+afe7c6e0da223025,nfl_football,medium_negative,124439,He’s currently scheduled to take on Lyoto Machida in the main event of UFC Sao Paulo in Brazil on Oct. 28.,combat_sports,main event;ufc,combat_sports,,,,,,
+a8bcaea02e3bbaaa,nfl_football,medium_negative,179449,"There are plenty of analysts who argue that the Xbox is a money-sink, but without a viable Xbox console we have nothing to pair off against Sony.",gaming_general,xbox,gaming_general,,,,,,
+cdd82c14e9361c33,nfl_football,medium_negative,219865,"[78]
+
+Batista holding the World Heavyweight Championship in 2006
+
+At WrestleMania 23, Batista lost the championship to the winner of the Royal Rumble match, The Undertaker.",combat_sports,heavyweight,combat_sports,,,,,,
+aed9b2351bb000d7,nfl_football,background_negative,5700,"If SpaceX gets the big rocket to work, then what?",aviation_aerospace,spacex,aviation_aerospace,,,,,,
+67d6eda615e1e722,nfl_football,background_negative,10903,"As an egregious “bad example” of wrong causes, a recent book (Dark Mission, by Richard Hoagland and Michael Bara) spent a lot of time muddying the waters over a series of NASA Mars mission failures in the 1990s.",aviation_aerospace,nasa,aviation_aerospace,,,,,,
+f1f517a8d290983e,nfl_football,background_negative,5710,But NASA is not providing any funds to support the effort to land a Dragon on Mars.,aviation_aerospace,nasa,aviation_aerospace,,,,,,
+b9ef14e623e72576,nfl_football,background_negative,5735,"Ars put that question to Rick Tumlinson, an aerospace entrepreneur and de facto evangelist for the ""New Space"" movement—that cadre of young companies like SpaceX that are trying to break the mold of traditional aerospace.",aviation_aerospace,spacex,aviation_aerospace,,,,,,
+b82c8ac1aef95d27,nfl_football,background_negative,19350,Which brings us to the meetings between Trump and Chinese President Xi Jinping planned for Thursday and Friday at Mar-a-Lago in Florida.,china,chinese;xi jinping,china,,,,,,
+58713231f8423b9a,nfl_football,background_negative,2461,"Israel was one of the first countries to recognize China following its Communist revolution, and while it took over 40 years for to China establish diplomatic relations with Israel, the two countries have something off an oddball history of military cooperation.",china,china,china,,,,,,
+891997ed05884f1b,nfl_football,background_negative,5741,"Like Musk, Tumlinson is one of the true believers in settlement on other worlds, and he thinks the true purpose of NASA and the nation’s space program should be to enable humans to move into the solar system.",aviation_aerospace,nasa,aviation_aerospace,,,,,,
+5aa46f7474b5428b,nfl_football,background_negative,49085,"A 100 MW pilot wind farm is scheduled to come online by 2013, to be followed by a 900 MW one by 2016, and then an additional 1,500 MW of further capacity by 2019, for a total of 2,500 MW and 500 turbines (huge 5 MW ones!).",aviation_aerospace,pilot,aviation_aerospace,,,,,,
+8922acc41c3019fb,nfl_football,background_negative,13427,"(AP Photo/Andy Wong)
+
+* China, India to propel coal past oil by end of decade
+
+* Muted impact from carbon policies aimed at curbing coal use
+
+* China to drive two-thirds of coal growth this decade (Adds comments from Alstom on Asia power market, coal supply and prices; provides graphic link)
+
+By Florence Tan
+
+DAEGU, South Korea, Oct 14 (Reuters) - Coal will surpass oil as the key fuel for the global economy by 2020 despite government efforts to reduce carbon emissions, energy consultancy firm Wood Mackenzie said on Monday.",china,china,china,,,,,,
+6a63770ad858e4fb,nfl_football,background_negative,18891,And more plug-in electric vehicles were sold in China last year than in any other country.,china,china,china,,,,,,
+9d2dd9a54883f988,nfl_football,background_negative,40009,"His patent for laser induced fusion[4] includes these autobiographical notes:
+
+It is my personal experience based on a severe bout of Dive bombing by Stuka dive bombers in a light cruiser HMS ""Dido"", in 1941, evacuating mainly New Zealanders from Crete, who had been sent in by the late Sir Winston Churchill, but who, after the battle with the Nazi paratroops had made the island untenable, Admiral Cunningham, the Naval C in C in Alexandria, realised must be got out if possible, that the surface warships just cannot survive attacks by large numbers of aircraft, on their own, and it is only the chance of fate that I happened to be in After Engine Room of the ship, when a bomb came down on B turret and created a carnage of twisted steel and bodies forward, that I am writing this now, but the memory of the experience still gives me a ""nightmare"" at times.",aviation_aerospace,aircraft,aviation_aerospace,,,,,,
+6873955381b398a9,nfl_football,background_negative,48701,"He briefly spent some time hanging out with Hells Angels, biked across Canada, and tried to sign up as a pilot with the Royal Canadian Air Force.",aviation_aerospace,pilot,aviation_aerospace,,,,,,
+a8ea43f988a6cb83,nfl_football,background_negative,10965,"But NASA press officials, despite repeated inquiries from me and promises of cooperation from them, never disclosed the space mission(s) that these special engines had been originally flown on.",aviation_aerospace,nasa,aviation_aerospace,,,,,,
+3d320447e1ce3552,nfl_football,background_negative,11407,"“I think that overcoming that stigma is going to be one of the main challenges for Bitcoin,” Williams said.",crypto_blockchain,bitcoin,crypto_blockchain,,,,,,
+583e72e583dccdfe,nfl_football,background_negative,5707,NASA is providing advice and guidance to SpaceX through a Space Act Agreement.,aviation_aerospace,nasa;spacex,aviation_aerospace,,,,,,
+84afa3f0e9419cb5,nfl_football,background_negative,43264,"The hardware itself has been on sale in China for a while, and some of the components come from 3D Robotics' Open Hardware Program.",china,china,china,,,,,,
+db87fa7f4523dd34,nfl_football,background_negative,3473,There's no way to prevent the Chinese from slowly turning into competitors for German manufacturers.,china,chinese,china,,,,,,
+160dbaa87422756f,nfl_football,background_negative,17652,"It does not appear, however, that Chinese officials are especially concerned about the ability of the People’s Liberation Army, backed up by the People’s Armed Police, to close the border with the North.",china,chinese,china,,,,,,
+f812801294419d73,nfl_football,background_negative,2686,"Growing worries about Beijing have drawn the two sides closer, however, culminating in mutual support for the Occupy Central movement in Hong Kong and an Occupy Parliament movement in Taipei earlier this year.",china,beijing;hong kong,china,,,,,,
+5dac673f321de260,nfl_football,background_negative,26091,"According to him, the global investments in blockchain could reach $300 billion over the next four years.",crypto_blockchain,blockchain,crypto_blockchain,,,,,,

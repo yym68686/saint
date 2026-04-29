@@ -1,0 +1,16 @@
+family_id,target_positive_count,hard_negative_count,medium_negative_count,background_negative_count,target_positive_no_canonical_label_count
+mlb_baseball,160,580,348,232,139
+nfl_football,160,580,348,232,73
+soccer,160,580,348,232,63
+nba_basketball,160,580,348,232,45
+nhl_hockey,160,580,348,232,68
+combat_sports,160,580,348,232,39
+gaming_general,160,580,348,232,31
+crypto_blockchain,160,580,348,232,10
+aviation_aerospace,160,580,348,232,37
+china,160,580,348,232,12
+japan,160,580,348,232,2
+russia_post_soviet,160,580,348,232,33
+middle_east_geopolitics,160,580,348,232,32
+us_electoral_politics,160,580,348,232,40
+us_legislative_governance,160,580,348,232,31

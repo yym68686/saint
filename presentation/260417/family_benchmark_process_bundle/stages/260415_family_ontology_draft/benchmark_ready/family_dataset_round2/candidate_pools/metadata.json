@@ -1,0 +1,16 @@
+{
+  "dataset_path": "/Users/yanyuming/Downloads/GitHub/llama3_interpretability_sae/dataset/train-00000-of-00082.parquet",
+  "dataset_format": "parquet",
+  "text_field": "text",
+  "max_candidates_per_bucket": 800,
+  "processed_records": 3749177,
+  "round": "round2",
+  "updated_family_ids": [
+    "mlb_baseball",
+    "nfl_football",
+    "soccer",
+    "nba_basketball",
+    "nhl_hockey"
+  ],
+  "candidate_root": "/Users/yanyuming/Downloads/GitHub/llama3_interpretability_sae/presentation/260415/family_ontology_draft/benchmark_ready/family_dataset_round2/candidate_pools"
+}

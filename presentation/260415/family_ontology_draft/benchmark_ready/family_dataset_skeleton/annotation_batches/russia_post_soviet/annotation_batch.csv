@@ -1,0 +1,447 @@
+candidate_id,family_id,proposed_bucket,source_row_index,text,matched_query_blocks,matched_terms,matched_family_ids,final_label,keep_for_benchmark,label_confidence,primary_reason,exclusion_trigger,notes
+d0ab942c4772ea22,russia_post_soviet,positive,46998,"Begun (Price: $140 Million, Date July 18, 2008)
+
+Begun is a six-year-old Russian contextual ad company.",region_anchor,russian,russia_post_soviet,,,,,,
+fe6e660756f255e6,russia_post_soviet,positive,1184,"She's outside the Hawkins home in New York City, looking in as Virgil talks to his Dad (page 15, top panel)...
+
+Stormwatch : ...and she's spying on Apollo in a Moscow alley (page 15, panel 1).",region_anchor,moscow,russia_post_soviet,,,,,,
+2d4b270d645c760f,russia_post_soviet,positive,520,"Sessions and his aides were busy making excuses Wednesday night and Thursday morning, claiming that he spoke with the ambassador in his capacity as a senator rather than as a Trump surrogate—and that the Russian ambassador was one of many foreign officials with whom he met as “a senior member of the Armed Services Committee.”
+
+So what?",region_anchor,russian,russia_post_soviet,,,,,,
+35ee3fec0bab30fa,russia_post_soviet,positive,48926,"“These newest revelations, that Russia hacked the election.",region_anchor,russia,russia_post_soviet,,,,,,
+ff2ca32bc15da6c2,russia_post_soviet,positive,92992,"On January 20, the day after the lawyer's murder, meetings in his memory were held in three cities: Moscow, Saint Petersburg and Grozny, the capital of Chechnya.",region_anchor,moscow,russia_post_soviet,,,,,,
+1b7efb800a629b43,russia_post_soviet,positive,93459,"""Ukrainian Rabbi Moshe Reuven Azman, called on Kiev's Jews to leave the city and even the country if possible, fearing that the city's Jews will be victimized in the chaos, Israeli daily Maariv reported Friday.",regional_entities,kiev,russia_post_soviet,,,,,,
+0da179f48dd791dc,russia_post_soviet,positive,13028,"Harding recounts a meeting of Trump and Russian Foreign Minister Sergei Lavrov in the White House, a meeting which was photographed by someone from the Russian news agency TASS.",region_anchor,russian,russia_post_soviet,,,,,,
+d2c470a4f7feb82c,russia_post_soviet,positive,56314,"On 21 February 1816 at the Chapel of the Winter Palace in St. Petersburg, William married Grand Duchess Anna Pavlovna of Russia, youngest sister to Czar Alexander I of Russia, who arranged the marriage to seal the good relations between Imperial Russia and the Netherlands.",region_anchor,russia,russia_post_soviet,,,,,,
+e6bd0ea7cfbc1b9b,russia_post_soviet,positive,45010,Kiev says rebels and criminals have taken much of the money it sends to the eastern region.,regional_entities,kiev,russia_post_soviet,,,,,,
+137d98eba7ad7ce8,russia_post_soviet,positive,72289,"Specifically, the group is seeking documents that may have been unearthed by the Treasury's Financial Crimes Enforcement Network that could show any ties between Trump's finances and Russia.",region_anchor,russia,russia_post_soviet,,,,,,
+0e9e8c174acf6a8d,russia_post_soviet,positive,94682,"Hence, a proletarian revolution of workers and peasants could not occur in the developed capitalist countries while the imperialist global-finance system remained intact; thus an underdeveloped country would feature the first proletarian revolution; and in the early 20th century, Imperial Russia was the politically weakest country in the capitalist global-finance system.",region_anchor,russia,russia_post_soviet,,,,,,
+c7304c291036bd77,russia_post_soviet,positive,91546,"Moscow, however, denies any involvement in the unrest, saying Kiev continues to suppress the ethnic-Russian population living in east of Ukraine.",region_anchor;regional_entities,kiev;moscow;russian;ukraine,russia_post_soviet,,,,,,
+79456144dc1ae5b6,russia_post_soviet,positive,90102,"Previous sanctions only tangentially impacted the import of cheap and reliable firearms from Russia into the United States, but now the Obama administration is specifically targeting the makers of Saiga rifles and shotguns, as well as other companies.",geopolitics_and_war;region_anchor,russia;sanctions,russia_post_soviet,,,,,,
+94a1081b4b3f8d45,russia_post_soviet,positive,82263,"Mr Flynn said airlines can elect to avoid an area even if it’s not closed, but that he did not believe any had chosen to do so in eastern Ukraine.",region_anchor,ukraine,russia_post_soviet,,,,,,
+8bdb363075b157b9,russia_post_soviet,positive,16924,Russia releases this week.,region_anchor,russia,russia_post_soviet,,,,,,
+470205cf43db6294,russia_post_soviet,positive,87160,"Sept. 27, 2013: The U.N. Security Council orders Syria to account for and destroy its chemical weapons stockpile, following a surprise agreement between Washington and Moscow, averting U.S. strikes.",geopolitics_and_war;region_anchor,moscow;security council,russia_post_soviet,,,,,,
+c955e9a586c5c5e4,russia_post_soviet,positive,75581,"Advertisement:
+
+He added, ""I would also inform the committee within the last 24 hours, at 10:45 a.m. yesterday, a second attempt was made, again, against former members of my presidential campaign team who had access to our internal information — again targeted from an IP address from an unknown location in Russia.",region_anchor,russia,russia_post_soviet,,,,,,
+0024211100fb8ac6,russia_post_soviet,positive,43231,"Mr Navalny, who organised the biggest protests since Mr Putin rose to power 13 years ago, is accused of stealing 16 million roubles (£335,000) from a timber firm in Kirov that he was advising in 2009.",geopolitics_and_war,putin,russia_post_soviet,,,,,,
+0214e88577006e80,russia_post_soviet,positive,33488,Al-Nusra Front is not party to a Russian- and US-brokered ceasefire that went into force on February 27 between government forces and moderate rebels.,region_anchor,russian,russia_post_soviet,,,,,,
+3ec1c33efee77b13,russia_post_soviet,positive,13051,Deutsche Bank was bailed out at one point by the Russian bank VTB.,region_anchor,russian,russia_post_soviet,,,,,,
+8dfdb86130698b27,russia_post_soviet,positive,54177,"[28] He scored again in the semifinal against the United States to help Canada advance to the gold medal game,[29] where they were defeated 5–3 by Russia.",region_anchor,russia,russia_post_soviet,,,,,,
+3cfdb35ea2bcde2e,russia_post_soviet,positive,26073,"According to Andrei Lugovoi, “In the beginning of 2016 after a series of meetings with the fiscal authorities and businesses, it was stated that in the future the Central Bank could begin to legalize and regulate certain transactions with Bitcoin, particularly peer-to-peer transactions and settlements with individuals.” Russia currently ranks fifth in the world with 200,000 users of cryptocurrency users, and thus if the above proposal is enforced, it will provide a big boost to virtual currencies.",region_anchor,russia,russia_post_soviet,,,,,,
+c3a762560d85030e,russia_post_soviet,positive,102835,"Navalny was detained prior to arriving at his last two rallies in Moscow on March 26 and June 12, serving sentences of 15 days and 25 days for organising unauthorised protests.",region_anchor,moscow,russia_post_soviet,,,,,,
+42cc3374502c9cbc,russia_post_soviet,positive,74350,"Not only are military personnel going public with their concerns, Politico reported that leaks of attack plans are also, “emanating from a Pentagon bureaucracy less enthusiastic about the prospect of an attack than, say, the State Department, National Security Council or Obama himself,” unauthorized disclosures that have the White House “peeved”.",geopolitics_and_war,security council,russia_post_soviet,,,,,,
+c47550de1f926b51,russia_post_soviet,positive,94724,"[16][17][18]
+
+Economics [ edit ]
+
+The Soviet Union nationalised industry and established a foreign-trade monopoly to allow the productive co-ordination of the national economy and so prevent Russian national industries from competing against each other.",region_anchor,russian,russia_post_soviet,,,,,,
+58c6c0b8683d5d2d,russia_post_soviet,positive,41776,The Seattle Aquarium has a new sea otter pup named Mishka – that’s “little bear” in Russian.,region_anchor,russian,russia_post_soviet,,,,,,
+a5b1a666c6d4a3d6,russia_post_soviet,positive,102686,"An exit poll by the SKDS agency gave three parties in her coalition 63 seats in the 100-member parliament, while their Kremlin-allied leftist rival took 23.",region_anchor,kremlin,russia_post_soviet,,,,,,
+14bae4064f54bab5,russia_post_soviet,positive,32280,"Last year, Russian classicist A.K.",region_anchor,russian,russia_post_soviet,,,,,,
+5664b6fa96535080,russia_post_soviet,positive,558,Terminals were still blank in some parts of Moscow this week but it was not clear exactly how many branches had been affected.,region_anchor,moscow,russia_post_soviet,,,,,,
+3348bd3c38f38046,russia_post_soviet,positive,102848,"The human rights commissioner at the Council of Europe, Nils Muiznieks, urged Russia on Friday to revise its laws on public events, saying it violated the country's international obligations and its own Constitution.",region_anchor,russia,russia_post_soviet,,,,,,
+053f8f7af3719dc7,russia_post_soviet,positive,56484,Dave Crouch’s The Bolsheviks and Islam is an excellent primer for understanding Moscow’s “Muslim policy” before the rise of Stalin.,region_anchor,moscow,russia_post_soviet,,,,,,
+b4cfaf9e23dcc83b,russia_post_soviet,positive,48565,"When Dr. Luria was a young man, he presented his first book, The Nature of Human Conflicts (1932), which aimed to be both objective but also to report on cases in detail, to the pre-eminent Russian psychologist Ivan Pavlov, inventor of behaviourism.",region_anchor,russian,russia_post_soviet,,,,,,
+a6b088994bbe96dd,russia_post_soviet,positive,113851,We have to support the people of Ukraine.,region_anchor,ukraine,russia_post_soviet,,,,,,
+55282500f62bd822,russia_post_soviet,positive,96822,They both rely on the liberation of the other to have any real value to the Syrian government and its Russian and Iranian allies.,region_anchor,russian,russia_post_soviet,,,,,,
+34e56c1b1cfd10cd,russia_post_soviet,positive,106889,"Rabbi Vyshedsky himself recently moved his office to Kiev ""to help Jews from his city who found refuge in the capital and other parts of the country"", Jewish website Chabad.org said.",regional_entities,kiev,russia_post_soviet,,,,,,
+027ea53da86d8568,russia_post_soviet,positive,27262,Zarif is right; international sanctions crafted and carefully pushed through the Security Council by men like John Bolton (something Obama and partisans forget) have effectively been squandered upon the altar of Obama’s ego and Kerry’s ambition.,geopolitics_and_war,sanctions;security council,russia_post_soviet,,,,,,
+65702e80c0430eda,russia_post_soviet,positive,93472,"To wit:
+
+a) One Orange Revolution leader, Yulia Tymoshenko, wound up turning against her partner Viktor Yushchenko and allying with Yanukovych to strip Yushchenko of presidential powers; later, Tymoshenko allied with the Kremlin against Yushchenko; now she's free from jail and the presumptive leader of the anti-Yanukovych forces.",region_anchor,kremlin,russia_post_soviet,,,,,,
+0c38c07af6cc42af,russia_post_soviet,positive,94679,"Thus Lenin's practical application of Marxism and working-class urban revolution to the social, political and economic conditions of the agrarian peasant society that was Tsarist Russia sparked the ""revolutionary nationalism of the poor"" to depose the absolute monarchy of the three-hundred-year Romanov dynasty (1613–1917).",region_anchor,russia,russia_post_soviet,,,,,,
+e2a88b9f214d7d74,russia_post_soviet,positive,68476,"In 1995, Birshstein reportedly set up a week-long ""summit"" for big time Russian Mafia chiefs in Tel Aviv.",region_anchor,russian,russia_post_soviet,,,,,,
+07d25f6e187364d2,russia_post_soviet,positive,69451,Katy Tur of NBC News was interviewing Nebraska Senator Deb Fischer when the subject turned from Betsy Devos to President Trump’s comments about Putin.,geopolitics_and_war,putin,russia_post_soviet,,,,,,
+c4de8c093bffb1b7,russia_post_soviet,positive,87536,And there’s no indication that the Veselnitskaya meeting had anything to do with the emails pilfered by Russian-backed hackers from the Democratic National Committee or John Podesta.,region_anchor,russian,russia_post_soviet,,,,,,
+03ec6633e56a8529,russia_post_soviet,positive,51432,"In 2014, while the news cycle has focused almost exclusively on Ukraine and Russia, ISIS made major headway in Syria, and as of August they already controlled 35% of the country.",region_anchor,russia;ukraine,russia_post_soviet,,,,,,
+7e01b10ed8c448d4,russia_post_soviet,positive,11461,"REUTERS/Stringer/Files
+
+The latest annual report by the U.N. Analytical Support and Sanctions Monitoring Team on the Taliban was distributed to reporters on Friday, a day before Afghans vote in a run-off presidential election.",geopolitics_and_war,sanctions,russia_post_soviet,,,,,,
+bf3d91b64d440433,russia_post_soviet,positive,67898,"“In Russia, there are three enormous Buddhist republics and Buddhist districts in mixed oblasts, [and] there are registered extra-territorial national cultural autonomies” for them elsewhere as well.",region_anchor,russia,russia_post_soviet,,,,,,
+775e6007a58b09b6,russia_post_soviet,positive,96072,"As noted in the report, the right to peaceful assembly is restricted in the Crimea, and law enforcement authorities continue to examine and persecute people for expressing their opinions, which are wrongfully regarded as extremist.",regional_entities,crimea,russia_post_soviet,,,,,,
+2f22baad79ece7a1,russia_post_soviet,positive,12988,"At the start of the book, for instance, Harding introduces Christopher Steele, who prepared an infamous dossier purportedly based on secret sources within the Kremlin, which made all sort of extreme accusations against Trump.",region_anchor,kremlin,russia_post_soviet,,,,,,
+3a09dfe9530e66a5,russia_post_soviet,positive,31878,"During the campaign, the President of Argentina, Mauricio Macri, called Trump a “crackpot candidate.” The Prime Minister of Australia notoriously mocked him in leaked audio, poking at his relationship with Russia, and ideas about “fake news.” Canadian Prime Minister Justin Trudeau has been cautious to explicitly insult the States, but emphasized Canada’s belief that “diversity is a strength” in response to Trump’s travel ban.",region_anchor,russia,russia_post_soviet,,,,,,
+4ca96dd747d453fe,russia_post_soviet,positive,18107,A Champions League debut against CSKA Moscow followed the next season before injury started to hinder his progress in establishing himself as a United first-team regular.,region_anchor,moscow,russia_post_soviet,,,,,,
+5c45cb94d0e63c2f,russia_post_soviet,positive,77709,"It also somewhat eased the concerns of the oil-and-gas industry, which worried that American companies would face an impossible amount of red tape if they attempted to partner with Russian businesses.",region_anchor,russian,russia_post_soviet,,,,,,
+c289188336550ff6,russia_post_soviet,positive,50822,Democratic Reps. Brad Sherman of California and Al Green of Texas have pushed a bill to impeach Trump for obstruction of justice over the investigation into Russian meddling in last year’s election.,region_anchor,russian,russia_post_soviet,,,,,,
+3af85e8ac969bbb7,russia_post_soviet,positive,38878,"Norwaycurrently delivers 27 percent of all German gas imports, making the Scandinavian country the second most important supplier after Russia.",region_anchor,russia,russia_post_soviet,,,,,,
+e0c834d016c1bb43,russia_post_soviet,positive,512,"But when he appeared before the Senate Judiciary Committee as Trump’s nominee for attorney general in January, Senator Al Franken asked how Sessions might handle revelations that individuals associated with the Trump campaign had communicated with the Russian government.",region_anchor,russian,russia_post_soviet,,,,,,
+b1723ff39a77e3e7,russia_post_soviet,positive,42257,"The Russian Foreign Intelligence Service (SVR), a successor agency of the KGB, issued a brief statement commemorating Drozdov’s service.",region_anchor,russian,russia_post_soviet,,,,,,
+f52ac917b13fd2bc,russia_post_soviet,positive,65611,"The UN Security Council resolution 1973, which established a no-fly zone over Libya, allowed NATO countries “to take all necessary measures… to protect civilians and civilian-populated areas under threat of attack in the Libyan Arab Jamahiriya.”
+
+As the unrest has been continuing in Libya since mid-February, the fighting between the forces of Colonel Muammar Gaddafi and the rebels, backed by the NATO forces, seems to have reached a stalemate.",geopolitics_and_war,security council,russia_post_soviet,,,,,,
+aae1b18961c86a5f,russia_post_soviet,positive,37589,The St. Louis Blues aren't ready to cut ties with Russia-bound forward Vladimir Sobotka just yet.,region_anchor,russia,russia_post_soviet,,,,,,
+e4da47444fa25483,russia_post_soviet,positive,71592,That attack did not seize the Security Council or bring forth fulminations from the Western press.,geopolitics_and_war,security council,russia_post_soviet,,,,,,
+39e997e4fa3630eb,russia_post_soviet,positive,43217,"Amnesty's Moscow office was ""inspected"" by prosecutors and tax inspectors on 25 March.",region_anchor,moscow,russia_post_soviet,,,,,,
+f75bacb4557cef14,russia_post_soviet,positive,54175,"[25] Making his international debut against Russia, he scored his first goal for Canada in a 5–3 win.",region_anchor,russia,russia_post_soviet,,,,,,
+01d0ada82d6f6be7,russia_post_soviet,positive,49107,"The dolphins may have swum off to mate with wild dolphins, former soviet naval officer Yury Plyachenko told RIA Novosti.",regional_entities,former soviet,russia_post_soviet,,,,,,
+6ecdfeff24813e7f,russia_post_soviet,positive,93018,"Under these conditions, the Kremlin will encourage an atmosphere of nationalist hysteria in order to frighten and persecute people who oppose its policies.",region_anchor,kremlin,russia_post_soviet,,,,,,
+62f4b6d02b9f3c73,russia_post_soviet,positive,93006,"There was also the murder on July 10, 2004, in Moscow, of the American journalist Paul Khlebnikov, and the death in November 2006 of the former Russian special services officer Alexander Litvinenko.",region_anchor,moscow;russian,russia_post_soviet,,,,,,
+daabf4f2e4a5c34b,russia_post_soviet,positive,538,"We need a real, bipartisan, transparent Congressional investigation into Russia.",region_anchor,russia,russia_post_soviet,,,,,,
+eb26d6cc96cab1c2,russia_post_soviet,positive,102830,"Moscow police said Navalny was detained ""over multiple calls to participate in an unauthorised public event.""",region_anchor,moscow,russia_post_soviet,,,,,,
+e4f564b0b7c00e01,russia_post_soviet,positive,94750,"[18]
+
+Trotskyism vs. Stalinism
+
+After Lenin's death (21 January 1924), Trotsky ideologically battled the influence of Stalin, who formed ruling blocs within the Russian Communist Party (with Grigory Zinoviev and Lev Kamenev, then with Nikolai Bukharin and then by himself) and so determined soviet government policy from 1924 onwards.",region_anchor,russian,russia_post_soviet,,,,,,
+221f91caa4fb9aee,russia_post_soviet,positive,61605,"The United States emerged from World War II as a global superpower, the first country to develop nuclear weapons, the only country to use them in warfare, and a permanent member of the United Nations Security Council.",geopolitics_and_war,security council,russia_post_soviet,,,,,,
+e4de2ae07416273b,russia_post_soviet,positive,99174,"Peterhof Palace, Russian Folklore Show
+
+On the third day, we were on our own.",region_anchor,russian,russia_post_soviet,,,,,,
+2c4184d0e85d324f,russia_post_soviet,positive,102828,"The Kremlin critic was leaving to get a train to the provincial city of Nizhny Novgorod to hold a rally when he was arrested (AFP Photo/Evgeny FELDMAN)
+
+Moscow (AFP) - Russian opposition leader Alexei Navalny, who aims to unseat Vladimir Putin in presidential elections next year, was detained by police ahead of a rally on Friday and could face up to a month in jail.",geopolitics_and_war;region_anchor,kremlin;moscow;putin;russian,russia_post_soviet,,,,,,
+56616850bee9a126,russia_post_soviet,positive,8716,"Export and Procurement Surge
+
+Russian firms exported a record $13.2 billion worth of military hardware abroad in 2014, continuing a nearly 10-year ​year-on-year rise in export revenues for Russia's defense industry.",region_anchor,russia;russian,russia_post_soviet,,,,,,
+9327d9919caaa38d,russia_post_soviet,positive,95163,Some have specifically said they want to know more about whether Obama’s Department of Justice was investigating the purchase of American uranium mines by a Russian-backed company in 2010.,region_anchor,russian,russia_post_soviet,,,,,,
+4f5e5cebf3ce41bc,russia_post_soviet,positive,13066,"Except that Harding admits that, “there was nothing suspicious about Erovinkin’s sudden death” and “Steele was adamant that Erovinkin wasn’t his source.” Yet this doesn’t stop Harding from writing that, “in the wake of the dossier the Kremlin did appear to be wiping out some kind of American or Western espionage network.",region_anchor,kremlin,russia_post_soviet,,,,,,
+5851a16c0c4f39a8,russia_post_soviet,positive,75577,"On Thusday, the same day that former FBI agent Clint Watts testified to the Senate Intelligence Committee that Russian intelligence targeted the Republican primary campaigns of Sens.",region_anchor,russian,russia_post_soviet,,,,,,
+f040cfeffcd8e526,russia_post_soviet,positive,49632,"Russia’s ambassador to Denmark, Mikhail Vanin, wrote in an opinion piece published by Jyllands-Posten that Denmark has made itself a target of a potential nuclear attack by joining Nato’s missile defence system
+
+“I don’t think the Danes fully understand the consequences of what will happen if Denmark joins the American-controlled missile defence.",region_anchor,russia,russia_post_soviet,,,,,,
+69dd759f56d91289,russia_post_soviet,positive,26068,"As Russia’s Central Bank moved to embrace the blockchain technology, comments by Andrei Lugovoi, Deputy Chairman of the Russian State Duma Committee for Security and Anti-Corruption generated hope for the future of cryptocurrencies as well.",region_anchor,russia;russian,russia_post_soviet,,,,,,
+d809401b9f5e8722,russia_post_soviet,positive,103993,"Dan Sullivan (R-AK), Bob Corker (R-TN), Robert Menendez (D-NJ), Marco Rubio (R-FL), and Joe Manchin (D-WV), would expand sanctions for ballistic missile development, support for terrorism, sanction transfers of conventional weapons to or from Iran and codify the prohibition on “U-turn” transactions involving Iran, according to a press release from Sen. Sullivan's office.",geopolitics_and_war,sanctions,russia_post_soviet,,,,,,
+9ffe8dbdcc4ba993,russia_post_soviet,positive,99129,"Boarding the early morning flight from Delhi, we landed in Moscow.",region_anchor,moscow,russia_post_soviet,,,,,,
+1b2923c8eef45e4b,russia_post_soviet,positive,86957,And our ObamaCare fiasco and Russia’s Sochi fiasco are due to the same error: Both of us are using government to solve problems that could have been better solved by markets.,region_anchor,russia,russia_post_soviet,,,,,,
+4a1dd68d5ccb0937,russia_post_soviet,positive,99190,"We walked over to the legendary St Basil’s Cathedral, which is one of the most photographed sights in Moscow, after which we entered the GUM mall, the largest shopping mall in Moscow.",region_anchor,moscow,russia_post_soviet,,,,,,
+ee447ed90c54d666,russia_post_soviet,positive,49637,“Denmark will become a part of the threat against Russia.,region_anchor,russia,russia_post_soviet,,,,,,
+04f512de922f3e7f,russia_post_soviet,positive,99157,"The tour included a view from outside, but after seeing the beautiful medieval Russian architecture on the exterior of the cathedral we were tempted to purchase the tickets and have a look inside.",region_anchor,russian,russia_post_soviet,,,,,,
+3bc480751e1943b0,russia_post_soviet,positive,13062,"Sometimes they acted for the ‘state’, sometimes against it.” This rather undermines his claim that the Russian state was behind the hacking of the Democratic National Committee.",region_anchor,russian,russia_post_soviet,,,,,,
+0f1fbb5576293f81,russia_post_soviet,positive,104000,5631) will impose new sanctions on Iran in response to its continued illegal development of ballistic missiles.,geopolitics_and_war,sanctions,russia_post_soviet,,,,,,
+ec97aac0f0d61ec9,russia_post_soviet,positive,106865,"But some are uneasy about the far-right extremists fighting with Ukrainian volunteer battalions in the east, as well as incidents of ""everyday anti-Semitism"" in Ukraine.",region_anchor,ukraine,russia_post_soviet,,,,,,
+5c940c873133c516,russia_post_soviet,positive,63416,"On July 8, Russian military instructor pilots conducted a test flight of a Syrian Mi-25 helicopter (export version of the Mi-24 helicopter), when it received a request from the Syrian authorities to carry out airstrikes against a large group of Daesh terrorists advancing to the east of Palmyra, the ministry said.",region_anchor;regional_entities,russian;russian military,russia_post_soviet,,,,,,
+4ab5722fc003846a,russia_post_soviet,positive,93481,"Six months after Yanukovych was elected president, the headline read ""International Monetary Fund approves $15 billion loan to Ukraine"".",region_anchor,ukraine,russia_post_soviet,,,,,,
+751c2804204a3ecf,russia_post_soviet,positive,37007,Give the latest executive order that authorizes broad secondary sanctions a chance to work.,geopolitics_and_war,sanctions,russia_post_soviet,,,,,,
+e0b472f64835fcf8,russia_post_soviet,positive,36983,"China and Russia, meanwhile, have publicly stated that they would not allow instability on the Korean Peninsula, watering down some of the harshest aspects of U.N. sanctions and cautioning against U.S. military action against Pyongyang.",geopolitics_and_war;region_anchor,russia;sanctions,russia_post_soviet,,,,,,
+9fc33c92c9f9fdab,russia_post_soviet,positive,16918,"Venezuela ($5.7M), Russia ($5.1M), Germany ($5.1M) and France ($4M) follow.",region_anchor,russia,russia_post_soviet,,,,,,
+e39e8b38b7166aa5,russia_post_soviet,positive,77711,"Trump has never seemed to take Russia’s meddling in last year’s election very seriously — instead trying to downplay it — and the president has also never seemed overly concerned about appearing too friendly with the Kremlin, either.",region_anchor,kremlin;russia,russia_post_soviet,,,,,,
+42fd2c82249b19a0,russia_post_soviet,positive,25033,"When it comes to Putin, May's advice was ""to engage, but beware.""",geopolitics_and_war,putin,russia_post_soviet,,,,,,
+5fd8fa7fc964f8dc,russia_post_soviet,positive,110899,"As John Quigley explains in The Six-Day War and Israeli Self-Defense, failing to challenge Israel’s bogus claims of self-defense in the 1967 war – as the United States has done by providing a diplomatic shield, vetoing more than 40 U.N. Security Council resolutions condemning Israel – has had disastrous consequences for Israeli-Palestinian conflict and the system of international law in general.",geopolitics_and_war,security council,russia_post_soviet,,,,,,
+a9e36ba1b1e74bd9,russia_post_soviet,positive,93465,The point is this: What’s happening in Ukraine is not a battle between pro-fascists and anti-fascists.,region_anchor,ukraine,russia_post_soviet,,,,,,
+6af80c6ed8a38bb5,russia_post_soviet,positive,64527,"He’s a Dorito-tinted proto-fascist who admires Vladimir Putin and Saddam Hussein, a conspiracy theorist who accuses George W. Bush of deceiving the nation into war, and a cad who brags about bedding “top women.” He’s advocated relaxing libel laws so that, when he’s president, he can more easily sue his critics.",geopolitics_and_war,putin,russia_post_soviet,,,,,,
+76187c1137aab58b,russia_post_soviet,positive,69382,Some worry that failure to do this will invite Russia to relaunch the war.,region_anchor,russia,russia_post_soviet,,,,,,
+9b5ab795247a092b,russia_post_soviet,positive,92311,"In July 2016, she released a solo album called “On My Own.”
+
+While Leningrad’s founder and lead member, Sergey Shnurov, is generally viewed as a Putin critic, Vox’s “Baby Boy” insults the protesters who marched against corruption on March 26, implying that they are “puppets” being manipulated by Alexei Navalny with promises of “gold and euros.”
+
+Not one to avoid promises of her own, Vox concludes her song by offering Russia’s angry young men “freedom, money, women, and even power,” so long as they cut out the anti-government activism.",geopolitics_and_war;region_anchor,putin;russia,russia_post_soviet,,,,,,
+dcedcb329c2c4e16,russia_post_soviet,positive,76327,"William Graham Sumner, A History of Banking in All the Leading Nations; comprising the United States; Great Britain; Germany; Austro-Hungary; France; Italy; Belgium; Spain; Switzerland; Portugal; Roumania; Russia; Holland; The Scandinavian Nations; Canada; China; Japan; compiled by thirteen authors.",region_anchor,russia,russia_post_soviet,,,,,,
+ee7ce6898674704c,russia_post_soviet,positive,91404,"[40] Karl Kautsky, Quoted by Lenin in Imperialism, the Highest Stage of Capitalism: A Popular Outline (Moscow: Progress Publishers, 1975), 109.",region_anchor,moscow,russia_post_soviet,,,,,,
+93f9d7938caa478e,russia_post_soviet,positive,95015,"Also, effective controls and audits as well as publishing the names of cheaters (from both the private and public sectors) or posting complaints on social media can reinforce the fear of sanctions.",geopolitics_and_war,sanctions,russia_post_soviet,,,,,,
+e94394bc10bf56e3,russia_post_soviet,positive,36780,"World-renowned Brazilian VR designer Ana Ribeiro was a speaker at last year's event, and this year we are pleased to have exhibitors from both Russia and China.",region_anchor,russia,russia_post_soviet,,,,,,
+6bb703b4e875eaac,russia_post_soviet,positive,38738,"He was involved, as a primary player, in the Russian Screws scenario, some of the details of which are specious.",region_anchor,russian,russia_post_soviet,,,,,,
+c418f4a6f7d1340f,russia_post_soviet,positive,99121,"For us Indians, Russia generally does not come across as a top destination of choice for tourism as it is perceived as a cold and distant place, off the radar.",region_anchor,russia,russia_post_soviet,,,,,,
+f7812aa6e740ce4d,russia_post_soviet,local_hard_negative,490127,"That the European Union’s northern powers aren’t willing to bail Greece out entirely by themselves, but are relying on the International Monetary Fund to kick in up to $20 billion, shows that there are limits to how far they will go toward the dream of a unified supercontinent.",nearby_europe_confounders,european union,,,,,,,
+6b88d519499398ce,russia_post_soviet,local_hard_negative,123337,"Victoria Jones/PA 36/43 Philip Hammond and David Davis at a General Election campaign event in Central London Jeremy Selwyn 37/43 Pensioner Malcolm Baker confronts Liberal Democrat leader Tim Farron while he was the election campaign trail in Kidlington, near Oxford Sam Lister/PA 38/43 Prime Minister Theresa May eats chips as she meets with residents in Mevagissey, south-west England Dylan Martinez/AFP/Getty Images 39/43 Conservative party handout of Labour leader Jeremy Corbyn on a new poster, warning that families face a tax and debt bombshell under Jeremy Corbyn's leadership Conservative Party/PA 40/43 Nick Clegg delivers a campaign speech on the European Union at the National Liberal Club in London Stefan Rousseau/PA 41/43 Ukip leader Paul Nuttall (left) eats grapes during a walkabout in Dudley town centre in the West Midlands, with Ukip West Midlands MEP Bill Etheridge (right) and Phil Durnell, West Midlands Metro Mayor candidate Richard Vernalls/PA 42/43 Former Labour Party leader Ed Miliband retweeted a photo of him mowing a lawn whilst canvassing in his Doncaster North constituency Jane Nightingale 43/43 Prime Minister Theresa May makes a statement on 18 April calling for a general election Dan Kitwood/Getty Images 1/43 Jeremy Corbyn joins leaders for the BBC's Election Debate Stefan Rousseau/PA 2/43 Prime Minister Theresa May samples cheese at the Royal Bath and West Show in Shepton Mallet Leon Neal/Pool/Reuters 3/43 First Minister Nicola Sturgeon during the launch of the SNP General Election manifesto at Perth Concert Hall Jane Barlow/PA 4/43 Former Deputy Prime Minister Nick Clegg at the launch in central London of a Liberal Democrats campaign poster attacking the Conservatives' school meals policy Victoria Jones/PA 5/43 Jeremy Corbyn appears on The One Show BBC 6/43 Liberal Democrats leader Tim Farron and the party's local candidate Sir Simon Hughes are given a baking lesson at Comptoir Gourmand, an artisan bakery in Bermondsey, London Gareth Fuller/PA 7/43 Prime Minister Theresa May answers questions from the studio audience during a joint Channel 4 and Sky News general election programme recorded at Sky studios Stefan Rousseau/PA 8/43 Labour leader Jeremy Corbyn is interviewed by Jeremy Paxman during a joint Channel 4 and Sky News general election programme 'May v Corbyn Live: The Battle for Number 10' at Sky studios Stefan Rousseau/WPA Pool/Getty Images 9/43 Home Secretary Amber Rudd (left) and Shadow Home Secretary Diane Abbott appearing on the BBC One current affairs programme, The Andrew Marr Show.",nearby_europe_confounders,european union,,,,,,,
+4efbebc86b5bb682,russia_post_soviet,local_hard_negative,876809,"The Rotterdam–The Hague metropolitan area, with a population of approximately 2.7 million, is the 13th-largest in the European Union and the most populous in the country.",nearby_europe_confounders,european union,,,,,,,
+28a2104ea3c34550,russia_post_soviet,local_hard_negative,855190,"“The details of this new governance commission are extremely broad and have the earmarks of a nascent European Union, with many similarities,” he said.",nearby_europe_confounders,european union,,,,,,,
+b0906f1a2e1a9b50,russia_post_soviet,local_hard_negative,709885,"President Morsi, back then, and several Arab states and European Union were supporting the ceasefire.",nearby_europe_confounders,european union,,,,,,,
+923d2d185d648fea,russia_post_soviet,local_hard_negative,203862,The consequences of these failures pyramid the crisis because of European Union regulations.,nearby_europe_confounders,european union,,,,,,,
+83ea05bc65a54ef6,russia_post_soviet,local_hard_negative,852705,"Rome and Brussels had in fact already mapped out a ""precautionary recapitalization"" plan, sensing the chances of getting €5 billion in private capital together were slim after Sunday’s vote.",nearby_europe_confounders,brussels,,,,,,,
+f150b41b70180fdb,russia_post_soviet,local_hard_negative,472620,"He said: ""I went to Brussels [where the European Union is based] a few times with then UEFA president Michel Platini.",nearby_europe_confounders,brussels;european union,,,,,,,
+a97c744c02055ed7,russia_post_soviet,local_hard_negative,165942,He was told by Brussels there would be no referendum.,nearby_europe_confounders,brussels,,,,,,,
+cde8c4dfd6d26702,russia_post_soviet,local_hard_negative,258877,"LONDON (Reuters) - More than 50 lawmakers from David Cameron’s Conservative Party are to join a campaign backing Britain’s exit from the European Union unless the British prime minister achieves radical changes in the bloc, according to the Sunday Telegraph newspaper.",nearby_europe_confounders,european union,,,,,,,
+9b67bb1e87d82a4f,russia_post_soviet,local_hard_negative,701431,"Of the recent announcement by the finance ministers of Germany, Finland and Holland, he asked the following: How can we operate a European Union in which the word of the heads of government is meaningless?",nearby_europe_confounders,european union,,,,,,,
+2a4286a159ab25aa,russia_post_soviet,local_hard_negative,516133,"In September 2015, Force India and Sauber officially lodged a complaint with the European Union against Formula One questioning the governance and stating that the system of dividing revenues and determining the rules is unfair and unlawful.",nearby_europe_confounders,european union,,,,,,,
+6223305a5d8605ee,russia_post_soviet,local_hard_negative,691518,"Ceta also suffered from the Brexit vote, which made governments in Paris and Berlin worry about demands to “repatriate” powers from Brussels.",nearby_europe_confounders,brussels,,,,,,,
+f2562524df2294cc,russia_post_soviet,local_hard_negative,186893,"""Brussels and Washington are already working closely together to promote domestic reforms in the Eastern Partnership countries,"" says Deviatkov.",nearby_europe_confounders,brussels,,,,,,,
+74120eba349fd008,russia_post_soviet,local_hard_negative,947365,"But given that history has, for better or worse, delivered an internally borderless European Union, with common policies on the environment and a variety of other realms, progressives must defend our really existing absence of borders, the existing EU commons of climate-change policy, even the Erasmus exchange program that gives young Europeans the opportunity to mingle in a borderless educational system.",nearby_europe_confounders,european union,,,,,,,
+376a6501bba4ebd4,russia_post_soviet,local_hard_negative,318076,"The leaders discussed measures to support small and medium-sized enterprises (SMEs), many of which complain of excessive administrative costs imposed by Brussels.",nearby_europe_confounders,brussels,,,,,,,
+ca2da437ad519c3a,russia_post_soviet,local_hard_negative,4284,"However, resistance to the flow of asylum seekers is also manifest in the Czech Republic where, on Friday, hundreds showed up for a rally in which protesters objected to allowing Muslims to settle in Central Europe (even after this Monday's
+
+The centre-left Czech government has so far been reluctant to offer asylum to refugees from the Middle East because of concerns that potential terrorists might be among them.",nearby_europe_confounders,central europe,,,,,,,
+3115fcc1af434529,russia_post_soviet,local_hard_negative,986649,"Story Continued Below
+
+The former British prime minister, a perennial lightning rod for controversy on both sides of the Atlantic, has in recent months chosen to return to the political fray, warning of the “destiny-changing” dangers of the British exit from the European Union and insisting—how, he’s not exactly sure—that last year’s “Brexit” vote can and should still be undone before it’s too late.",nearby_europe_confounders,european union,,,,,,,
+49f262f2aa75f571,russia_post_soviet,local_hard_negative,29680,"Lake Tuz also provides life to the largest flamingo colony in the Middle East and North Africa combined—22,000 breeding pairs in 2013—and is a crucial resting stop and sanctuary for dozens of other species migrating between Africa and central Europe.",nearby_europe_confounders,central europe,,,,,,,
+34849089b16245de,russia_post_soviet,local_hard_negative,409246,The United States and the European Union also chimed in on the latest developments in Venezuela.,nearby_europe_confounders,european union,,,,,,,
+dc0990c78d79c682,russia_post_soviet,local_hard_negative,584295,If you tell people that the City should be protected from new regulations made in Brussels (as opposed to just new regulations) they are likely to agree.,nearby_europe_confounders,brussels,,,,,,,
+548f96f3b127e681,russia_post_soviet,local_hard_negative,865749,"Prime Minister Theresa May has already ruled out starting formal divorce proceedings with Brussels until at least next year, saying the Government needs time to formulate its negotiating strategy.",nearby_europe_confounders,brussels,,,,,,,
+b5fa9261600cf32c,russia_post_soviet,local_hard_negative,943096,"“We’re the ones who’ve got to live with it for a long time, but a group of pensioners have managed to make a decision for us,” Mr. Phillips, 27, said on Friday of Britain’s decision to withdraw from the European Union.",nearby_europe_confounders,european union,,,,,,,
+997e3183f5a8380e,russia_post_soviet,local_hard_negative,711262,"At least Brussels cannot be accused of attempting to bribe Greek voters to become better disposed towards the EU, ahead of elections in which anti-eurozone parties are expected to perform well.",nearby_europe_confounders,brussels,,,,,,,
+2736d4173760ee2a,russia_post_soviet,local_hard_negative,554005,"[129]
+
+Distribution
+
+Balkans
+
+Approximately 5 million Albanians are geographically distributed across the Balkan Peninsula with about half this number living in Albania, Kosovo, North Macedonia and Montenegro as well as to a much smaller extent in Croatia and Serbia.",nearby_europe_confounders,balkans,,,,,,,
+e0cc66aa4c7bc33a,russia_post_soviet,benchmark_hard_negative,39348,"“Hollywood has made the French accent a sexual thing and the Chinese accent a clowny thing,” Wu said.",china,chinese,china,,,,,,
+70456d1ea06c986e,russia_post_soviet,benchmark_hard_negative,30349,"The bill passed the Senate in May, though Coburn’s amendment never came up for a vote.",us_legislative_governance,bill passed;senate,us_legislative_governance,,,,,,
+45eda4222ef49cd2,russia_post_soviet,benchmark_hard_negative,2704,"Giving Hong Kong people the right to choose their own leader would be a ""win-win"" situation for Hong Kong and China, he added.",china,china;hong kong,china,,,,,,
+e8dea2f0f1292032,russia_post_soviet,benchmark_hard_negative,27650,"To the PSL, the CCP is, ultimately, the embodiment of socialism, rather than anything to do with the Chinese working class.",china,ccp;chinese,china,,,,,,
+6b58d21ba8b33ef0,russia_post_soviet,benchmark_hard_negative,25424,"Slideshow: Deadly attack at Istanbul’s Ataturk >>>
+
+In the interview, Brennan was blunt about the slow nature of progress both in the fight against ISIS and efforts to push Syrian President Bashar Assad out of power.",middle_east_geopolitics,assad,middle_east_geopolitics,,,,,,
+d88b597599971d76,russia_post_soviet,benchmark_hard_negative,27653,"THIS IS clear from the beginning of Becker's response to my article, when he takes offense at my distaste for the Chinese National Anthem--a sign, he says, of my ""cultural arrogance, jingoism and apparent ignorance.""",china,chinese,china,,,,,,
+689201d2bf62bc9b,russia_post_soviet,benchmark_hard_negative,36779,The VR World Congress has had a very high level of international participation as a result.,us_legislative_governance,congress,us_legislative_governance,,,,,,
+c53db88e05069faf,russia_post_soviet,benchmark_hard_negative,18879,Equally surprising is Trump’s assertion that China “doesn’t adhere” to the Paris agreement.,china,china,china,,,,,,
+625db44f01bc196c,russia_post_soviet,benchmark_hard_negative,2700,Beijing had hoped that allowing Hong Kong to prosper economically after the 1997 handover would convince Taiwan to reunify.,china,beijing;hong kong,china,,,,,,
+c07865866d69f0d5,russia_post_soviet,benchmark_hard_negative,28104,"As the administration of President George W. Bush was building a case for the Iraq war in 2002, with some 5,000 American troops already deployed in Afghanistan, the question of cost naturally came up.",middle_east_geopolitics,iraq,middle_east_geopolitics,,,,,,
+c1d5d59fb7f896af,russia_post_soviet,benchmark_hard_negative,3343,JERUSALEM (Reuters) - Israel sentenced an Arab citizen to 30 months’ imprisonment on Monday for endangering national security by briefly joining Syrian rebels fighting to topple President Bashar al-Assad.,middle_east_geopolitics,assad,middle_east_geopolitics,,,,,,
+ea35cbd4d6a8ff4a,russia_post_soviet,benchmark_hard_negative,2681,"Media playback is unsupported on your device Media caption Cindy Sui speaks to Taiwanese students holding a rally to demonstrate their support for the protests in Hong Kong
+
+In January, 13 groups from Hong Kong and Taiwan gathered in Taipei for a weekend conference.",china,hong kong,china,,,,,,
+7788daf5d111b7ff,russia_post_soviet,benchmark_hard_negative,27682,SOME SELF-described Maoist organizations view Mao's death and the end of the Cultural Revolution as the end of socialism in China.,china,china,china,,,,,,
+a7017e3605073c70,russia_post_soviet,benchmark_hard_negative,27335,"Related Regenerative Medicine Conferences | Stem Cell Conferences | Stem Cell Congress | Tissue Science Conferences | Europe Conferences
+
+9th Advanced Cell and Gene Therapy conference, March 21-22, 2019 Rome, Italy; 12th Genomics and Molecular Biology conference, April 15-17, 2019 Berlin, Germany; 7th Integrative Biology conference, April 15-16, 2019 Berlin, Germany; Pacific Regenerative Medicine Conference, May 16-19, 2019 Hawaii, USA; Annual conference & Exhibition on Transversal, Translational & Transformative, December 2-5, 2019 Florida, USA; 21st International Conference on Tissue Engineering and Regenerative Medicine, June 27 - 28, 2019 London, United Kingdom; World Advanced Therapies & Regenerative Medicine Congress 2019, May 15 – 17, London, UK; 6th Annual European Congress on Clinical & Translational Sciences, October 18-20, 2019 Vienna, Austria;
+
+Related Associations and Societies:
+
+Europe:
+
+EuroStemCell (European Consortium for Stem Cell Research); German Stem Cell Network (GSCN); German Society for Stem Cell Research (GSZ); Stem Cell Network North Rhine-Westphalia (NRW); Norwegian Center for Stem Cell Research (NCSCR);
+
+USA:
+
+California Institute for Regenerative Medicine (CIRM); New York Stem Cell Foundation (NYSCF); Tissue Engineering International & Regenerative Medicine Society (TERMIS); International Society for Stem Cell Research (ISSCR);
+
+Asia:
+
+The New South Wales Stem Cell Network; Korean Society for Stem Cell Research; Japanese Society for Regenerative Medicine; Taiwan Society for Stem Cell Research; Stem Cell Society Singapore (SCSS);
+
+Biomarkers
+
+Biomarkers, in the hands of clinical investigators, provide a dynamic and powerful approach to understanding the spectrum of diseases with obvious applications in analytic epidemiology, biomarkers and clinical research in disease prevention, diagnosis and disease management.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+8436577a57802fd2,russia_post_soviet,benchmark_hard_negative,8495,Chamber of Commerce spent $32 million on 67 House and Senate races.,us_legislative_governance,senate,us_legislative_governance,,,,,,
+f10e6ae2edfbdee6,russia_post_soviet,benchmark_hard_negative,28261,But Epstein said these rules could cause problems as Congress and the media dig deeper into the origin of the IRS practice of singling out conservative groups for additional scrutiny.,us_legislative_governance,congress,us_legislative_governance,,,,,,
+b80ded4f4e77751e,russia_post_soviet,benchmark_hard_negative,27666,"It's possible to support the Chinese Revolution, but also believe it wasn't a revolution that put the working class in power--which is the ISO's definition of a socialist revolution, and more to the point, Karl Marx's.",china,chinese,china,,,,,,
+966a4758d043e3ed,russia_post_soviet,benchmark_hard_negative,3484,"As Ryan Reilly reported, heroic members of Congress turned out to boldly grandstand at the memorial, pretending just as hard as they could that its temporary closure was the most dire effect of the shutdown ... for which ... they voted.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+c4d7763f6805b9c2,russia_post_soviet,benchmark_hard_negative,4383,"Lebanon’s army has taken over the positions that Hezbollah, a Lebanese Shi’ite group allied to the Syrian government, took from the Nusra fighters last month.",middle_east_geopolitics,hezbollah,middle_east_geopolitics,,,,,,
+e60a3af8bfd6d439,russia_post_soviet,benchmark_hard_negative,16799,"This past week, Coco saw increases throughout with a No.1 weekend that far outdistanced the market’s other players (including Justice League which is moving close to $100M at Chinese turnstiles).",china,chinese,china,,,,,,
+23ace2a91f5b0fd8,russia_post_soviet,benchmark_hard_negative,27430,"Related Regenerative Medicine Conferences | Stem Cell Conferences | Stem Cell Congress | Tissue Science Conferences | Europe Conferences
+
+9th Advanced Cell and Gene Therapy conference, March 21-22, 2019 Rome, Italy; 12th Genomics and Molecular Biology conference, April 15-17, 2019 Berlin, Germany; 7th Integrative Biology conference, April 15-16, 2019 Berlin, Germany; Pacific Regenerative Medicine Conference, May 16-19, 2019 Hawaii, USA; Annual conference & Exhibition on Transversal, Translational & Transformative, December 2-5, 2019 Florida, USA; 21st International Conference on Tissue Engineering and Regenerative Medicine, June 27 - 28, 2019 London, United Kingdom; World Advanced Therapies & Regenerative Medicine Congress 2019, May 15 – 17, London, UK; 6th Annual European Congress on Clinical & Translational Sciences, October 18-20, 2019 Vienna, Austria;
+
+Europe:
+
+Stem Cell Network North Rhine-Westphalia; German Stem Cell Network (GSCN); German Society for Stem Cell Research (GSZ); Stem Cell Network North Rhine-Westphalia (NRW); Norwegian Center for Stem Cell Research (NCSCR); European Tissue Repair Society; Spanish Association of Tissue Bank.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+6b7ec1e6a661d0f8,russia_post_soviet,benchmark_hard_negative,25184,"This marvelous ebook sampler contains excerpts from eleven recent and upcoming works:
+
+AGE OF MYTH by Michael J. Sullivan
+
+THE BEAR AND THE NIGHTINGALE by Katherine Arden
+
+COLD WELCOME by Elizabeth Moon
+
+CROSSTALK by Connie Willis
+
+THE DEVOURERS by Indra Das
+
+GILDED CAGE by Vic James
+
+THE LAST DAYS OF NEW PARIS by China Miéville
+
+THE LAST ONE by Alexandra Oliva
+
+THE POINT by John Dixon
+
+SLEEPING GIANTS by Sylvain Neuvel
+
+WORLD OF WARCRAFT: ILLIDAN by William King
+
+Keep Reading",china,china,china,,,,,,
+522a329125355cd8,russia_post_soviet,benchmark_hard_negative,3352,He also argued that the Western-backed anti-Assad rebels should not be regarded as a danger to Israel.,middle_east_geopolitics,assad,middle_east_geopolitics,,,,,,
+c870656a4818eb05,russia_post_soviet,benchmark_hard_negative,35493,"April 14, 1999: Independent counsel Ken Starr testified to the Senate Governmental Affairs Committee that the act should not be renewed as, in his view, it is a violation of the separation of powers.",us_legislative_governance,senate,us_legislative_governance,,,,,,
+068a30ad084b290f,russia_post_soviet,benchmark_hard_negative,8776,"Using the Crispr method, Chinese scientists were targeting three genes in the experiment – one that regulates metabolism, another that regulates immune cell development and a third that regulates stem cells and sex determination.",china,chinese,china,,,,,,
+ed91f26dc6991e81,russia_post_soviet,benchmark_hard_negative,37226,"And for a good reason – not too long ago, even the Director of the National Security Agency, Admiral Michael S. Rogers, warned the Congress that China and “probably one or two other” countries have the capability of shutting down the U.S. power grid – an event that would dwarf the 2003 Northeastern blackout.",china;us_legislative_governance,china;congress,china;us_legislative_governance,,,,,,
+9aecc63642baf840,russia_post_soviet,benchmark_hard_negative,30277,"“Assad likes anything that appears to bolster his legitimacy.” Yet he notes that previous Syrian ceasefires have tended to come in two contexts: either regime forces have besieged a rebel district and offered a choice between starvation and surrender, or a halt to fighting has proven tactically useful, allowing the government to redeploy forces elsewhere.",middle_east_geopolitics,assad,middle_east_geopolitics,,,,,,
+b8db8d36b6b1e1f5,russia_post_soviet,benchmark_hard_negative,27205,"4) Meanwhile, bombing Assad would help ISIS
+
+Another argument you hear is that, if Obama isn't going to bomb ISIS in Syria, he should at least bomb Syrian regime targets.",middle_east_geopolitics,assad;syria,middle_east_geopolitics,,,,,,
+ec175df2c972c30c,russia_post_soviet,benchmark_hard_negative,3077,"And so, we stagger into an even more uncertain future
+
+Emotions ran high as Hong Kong legislators opened debate on a controversial electoral reform package on Wednesday.",china,hong kong,china,,,,,,
+7795715f70e0d5a4,russia_post_soviet,benchmark_hard_negative,27363,"Related Regenerative Medicine Conferences | Stem Cell Conferences | Stem Cell Congress | Tissue Science Conferences | Europe Conferences
+
+9th Advanced Cell and Gene Therapy conference, March 21-22, 2019 Rome, Italy; 12th Genomics and Molecular Biology conference, April 15-17, 2019 Berlin, Germany; 7th Integrative Biology conference, April 15-16, 2019 Berlin, Germany; Pacific Regenerative Medicine Conference, May 16-19, 2019 Hawaii, USA; Annual conference & Exhibition on Transversal, Translational & Transformative, December 2-5, 2019 Florida, USA; 21st International Conference on Tissue Engineering and Regenerative Medicine, June 27 - 28, 2019 London, United Kingdom; World Advanced Therapies & Regenerative Medicine Congress 2019, May 15 – 17, London, UK; 6th Annual European Congress on Clinical & Translational Sciences, October 18-20, 2019 Vienna, Austria;
+
+Related Associations and Societies:
+
+Europe:
+
+EuroStemCell (European Consortium for Stem Cell Research); German Stem Cell Network (GSCN); German Society for Stem Cell Research (GSZ); Stem Cell Network North Rhine-Westphalia (NRW); Norwegian Center for Stem Cell Research (NCSCR);
+
+USA:
+
+California Institute for Regenerative Medicine (CIRM); New York Stem Cell Foundation (NYSCF); Tissue Engineering International & Regenerative Medicine Society (TERMIS); International Society for Stem Cell Research (ISSCR);
+
+Asia:
+
+The New South Wales Stem Cell Network; Korean Society for Stem Cell Research; Japanese Society for Regenerative Medicine; Taiwan Society for Stem Cell Research; Stem Cell Society Singapore (SCSS);
+
+Applications of Tissue engineering & Regenerative Medicine
+
+There are many applications of Tissue engineering but majorly they are used in Organ Transplantation and Therapeutic Cloning like Bio Artificial liver device, artificial pancreas, artificial bladders, and Cartilage.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+9a24c69b5f623864,russia_post_soviet,benchmark_hard_negative,25422,But he was quick to add that the wider offensive in the region and Europe and beyond is “not solely” a reaction to losses in Iraq and Syria.,middle_east_geopolitics,iraq;syria,middle_east_geopolitics,,,,,,
+791610df369acca5,russia_post_soviet,benchmark_hard_negative,2488,Yet the same House Appropriations Committee draft bill that targets health services research also provides a $1.1 billion increase in the budget of the National Institutes of Health.,us_legislative_governance,appropriations,us_legislative_governance,,,,,,
+cefc15b975f37740,russia_post_soviet,benchmark_hard_negative,25754,"0 Shares 0
+
+0
+
+0
+
+0
+
+In statements at a panel in the World Economic Forum in Davos, Switzerland, on Wednesday Iran Foreign Minister Mohammad Javad Zarif said US president-elect, Donald Trump, ""will be surprised"" if he tries to renegotiate the hard-won nuclear deal.",middle_east_geopolitics,iran,middle_east_geopolitics,,,,,,
+b1b35dc3b1f4b20b,russia_post_soviet,benchmark_hard_negative,3458,"China dictates the pace
+
+Understandably, the Chinese approach has been angering German managers.",china,china;chinese,china,,,,,,
+82970c2bc30f11b9,russia_post_soviet,benchmark_hard_negative,27375,"Related Regenerative Medicine Conferences | Stem Cell Conferences | Stem Cell Congress | Tissue Science Conferences | Europe Conferences
+
+9th Advanced Cell and Gene Therapy conference, March 21-22, 2019 Rome, Italy; 12th Genomics and Molecular Biology conference, April 15-17, 2019 Berlin, Germany; 7th Integrative Biology conference, April 15-16, 2019 Berlin, Germany; Pacific Regenerative Medicine Conference, May 16-19, 2019 Hawaii, USA; Annual conference & Exhibition on Transversal, Translational & Transformative, December 2-5, 2019 Florida, USA; 21st International Conference on Tissue Engineering and Regenerative Medicine, June 27 - 28, 2019 London, United Kingdom; World Advanced Therapies & Regenerative Medicine Congress 2019, May 15 – 17, London, UK; 6th Annual European Congress on Clinical & Translational Sciences, October 18-20, 2019 Vienna, Austria;
+
+Related Associations and Societies:
+
+Europe:
+
+EuroStemCell (European Consortium for Stem Cell Research); German Stem Cell Network (GSCN); German Society for Stem Cell Research (GSZ); Stem Cell Network North Rhine-Westphalia (NRW); Norwegian Center for Stem Cell Research (NCSCR);
+
+USA:
+
+California Institute for Regenerative Medicine (CIRM); New York Stem Cell Foundation (NYSCF); Tissue Engineering International & Regenerative Medicine Society (TERMIS); International Society for Stem Cell Research (ISSCR);
+
+Asia:
+
+The New South Wales Stem Cell Network; Korean Society for Stem Cell Research; Japanese Society for Regenerative Medicine; Taiwan Society for Stem Cell Research; Stem Cell Society Singapore (SCSS);
+
+Cancer Stem Cells
+
+Cancer stem cells (CSCs) are cancer cells (found within tumors or hematological cancers) that possess characteristics associated with normal stem cells, specifically the ability to give rise to all cell types found in a particular cancer sample.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+06bce8de51d56ab2,russia_post_soviet,benchmark_hard_negative,22683,"The explosives in the vehicle bombs killed more people than the chlorine did, and after several unsuccessful attempts, al Qaeda in Iraq gave up on its chlorine bombings because the results were not worth the effort.",middle_east_geopolitics,iraq,middle_east_geopolitics,,,,,,
+160375c3644b93d8,russia_post_soviet,benchmark_hard_negative,25761,"We can in fact work together to put an end to miserable conditions of the people in Syria and Yemen and Bahrain and elsewhere in the region,"" Zarif said.",middle_east_geopolitics,syria,middle_east_geopolitics,,,,,,
+8d176b2083a409b9,russia_post_soviet,benchmark_hard_negative,2522,"However, eight years after the shooting at Virginia Tech University that killed 32 and two years after the massacre at Sandy Hook Elementary that left 27 dead, Congress has not enacted substantial legislative changes.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+dfe5e7f79fd2c23e,russia_post_soviet,benchmark_hard_negative,27819,"Cochetel said he believed conditions in Calais were now worse than those at refugee camps in Turkey, where hundreds of thousands of people arrive each month to escape the bloodshed in Syria.",middle_east_geopolitics,syria,middle_east_geopolitics,,,,,,
+a46d89f7531c4690,russia_post_soviet,benchmark_hard_negative,26347,"Herzog has already proposed that Netanyahu’s coalition put the West Bank on lockdown, place all the Palestinian neighborhoods in East Jerusalem under closure, and consider calling up a large number of reserve soldiers.",middle_east_geopolitics,west bank,middle_east_geopolitics,,,,,,
+b0f29b310098ec81,russia_post_soviet,benchmark_hard_negative,35079,"And yet many people have names for their countries that are not used by the rest of the world, and some have names for them that are no more historically accurate than was Syria Palaestina.",middle_east_geopolitics,syria,middle_east_geopolitics,,,,,,
+62e757e0e1ccb28a,russia_post_soviet,benchmark_hard_negative,15886,"Many analysts say that the chances of that happening are small, and that Obama and Congress are likely to work out a compromise ahead of time.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+d6bfdcaa2add0899,russia_post_soviet,benchmark_hard_negative,37333,"The Shengton Group of Beijing is proposing to convert two former shoe factory buildings on Minot Avenue, now called The Barn, into an upscale residence for patients who would fly from China for medical treatment, the Lewiston newspaper said.",china,beijing;china,china,,,,,,
+1329088ff07b57f9,russia_post_soviet,benchmark_hard_negative,983,"Humayun, had served in Iraq and died during a suicide car bombing.",middle_east_geopolitics,iraq,middle_east_geopolitics,,,,,,
+db7e9ed31eb98510,russia_post_soviet,benchmark_hard_negative,20047,"national
+
+Congress Vice President Rahul Gandhi addressed a workers' meet at Malad on Friday; turns out, some who attended, came only for the goodies
+
+Congress Vice-President Rahul Gandhi began his speech with 'Til gul ghya, god, god bola,' (Have tilgul, talk sweetly) the traditional greeting on Makar Sankrant, at Malad on Friday.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+0eb31fbc99a479ff,russia_post_soviet,benchmark_hard_negative,12962,"The Chinese contributed philosophical precepts and early monetary systems, among other things.",china,chinese,china,,,,,,
+20417180e4b6cc32,russia_post_soviet,benchmark_hard_negative,502,"If he has lied under oath to the Senate, that act demands impeachment.",us_legislative_governance,senate,us_legislative_governance,,,,,,
+9d6abd713b088999,russia_post_soviet,benchmark_hard_negative,39095,"President Donald Trump and his administration put Iran “on notice” this week after it launched a missile, and conservative Fox News analyst Ed Rollins said it showed the president’s commitment to Old Testament-style toughness.",middle_east_geopolitics,iran,middle_east_geopolitics,,,,,,
+9731029c667d9922,russia_post_soviet,benchmark_hard_negative,10058,[36] In November 2014 Iran claimed to have carried out a successful test flight of an aircraft based on reverse engineering of the RQ-170.,middle_east_geopolitics,iran,middle_east_geopolitics,,,,,,
+b1414de1f8cc6ae3,russia_post_soviet,benchmark_hard_negative,29592,"The United States has not used land mines since 1991, despite fighting wars in Iraq and Afghanistan — two countries that have ratified the treaty.",middle_east_geopolitics,iraq,middle_east_geopolitics,,,,,,
+5b1ac301024bd697,russia_post_soviet,benchmark_hard_negative,2694,"Many Hong Kong students came here then to learn, including how to disseminate information online in timely manner and co-ordinate supplies and donations.",china,hong kong,china,,,,,,
+a61ec025ab4f5f0a,russia_post_soviet,benchmark_hard_negative,2463,That relationship continued into the 1990s when President Bill Clinton furiously vetoed the proposed sale from Israel to China of an advanced radar system.,china,china,china,,,,,,
+36bf771e81c74a70,russia_post_soviet,benchmark_hard_negative,22968,"A business group including some of the largest employers in Texas, such as American Airlines, sent a letter to Patrick this month opposing the bill, saying it is “discriminatory legislation that jeopardizes the positive environment for our Texas business operations.”
+
+Patrick may be able to push the bill through the state Senate, but analysts do not expect it to make it through the House.",us_legislative_governance,senate,us_legislative_governance,,,,,,
+d8d298e022b59b4a,russia_post_soviet,benchmark_hard_negative,17664,"As South Korean and American forces move north, the Chinese would probably move south.",china,chinese,china,,,,,,
+520779fe6b10728d,russia_post_soviet,benchmark_hard_negative,36771,"CHENNAI: The VR World Congress, scheduled for 12 April 2016 will see participation from over 600 buyers, sellers and developers from VR and its surrounding industries from across the globe.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+99736feef974f464,russia_post_soviet,benchmark_hard_negative,2684,"Taiwan has enjoyed full universal suffrage since 1996; but a year later, Hong Kong returned to Chinese rule.",china,chinese;hong kong,china,,,,,,
+299c4be4b87bcd85,russia_post_soviet,benchmark_hard_negative,27671,"He also states that ""millions of mainly young Chinese engaged in fierce struggle within the CCP, and against some of its top leaders, including Deng.""",china,ccp;chinese,china,,,,,,
+d21e2e63c382bed8,russia_post_soviet,benchmark_hard_negative,2628,"(Photo by Tasos Katopodis/Getty Images)
+
+Congress reauthorized legislation this week that will require states to report the number of people killed during an arrest or while in police custody.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+b7e0f2ac94652265,russia_post_soviet,benchmark_hard_negative,2690,"Some of its people are deeply anti-China and want independence, and its protesters have been bolder and more defiant than Hong Kong's.",china,china;hong kong,china,,,,,,
+bd16ee8bca5484ff,russia_post_soviet,benchmark_hard_negative,27178,"It turns out, though, that there are legitimate reasons for bombing Iraq and not Syria.",middle_east_geopolitics,iraq;syria,middle_east_geopolitics,,,,,,
+72022aa3e8dc8c77,russia_post_soviet,benchmark_hard_negative,1916,"Most of them are not even Muslims; they’re American kids that don’t have anything to do with Islam.”
+
+But, he added, “I am going to do whatever I can as a researcher to find out who is behind this group,” whose leader has openly called on people to rally behind Hamas, Islamic jihad and other groups against the Palestinian Authority, which he views as ‘collaborators’ with Israel.",middle_east_geopolitics,hamas,middle_east_geopolitics,,,,,,
+c1626b3a03e9672f,russia_post_soviet,benchmark_hard_negative,14581,"“Donald Trump can’t stop global warming just by emitting an unprecedented volume of hot air.”
+
+California Senate President Pro Tem Kevin de Leon brought up immigration during remarks at City Hall.",us_legislative_governance,senate,us_legislative_governance,,,,,,
+267bf7032cdade31,russia_post_soviet,benchmark_hard_negative,22196,“We can do better in the Senate.,us_legislative_governance,senate,us_legislative_governance,,,,,,
+e281890ccada5097,russia_post_soviet,benchmark_hard_negative,6426,You can do this by clicking on the yellow “Call Congress” button at the top of the bill page.,us_legislative_governance,congress,us_legislative_governance,,,,,,
+c0c6ed1d24422087,russia_post_soviet,benchmark_hard_negative,39379,"But they stressed the disposal occurred in conjunction with the Ministry of Public Works, which is run by Hamas’s rivals Fatah.",middle_east_geopolitics,hamas,middle_east_geopolitics,,,,,,
+6364581ab5a2354e,russia_post_soviet,benchmark_hard_negative,3463,"And it's worth noting that in the past, it has sometimes been to Western companies' advantage that Beijing has its own views on the topic.",china,beijing,china,,,,,,
+a1f4206b0929f221,russia_post_soviet,benchmark_hard_negative,39374,"The governments of Britain, Germany and Australia suspended their donations to the charity over Halabi’s alleged links to Hamas.",middle_east_geopolitics,hamas,middle_east_geopolitics,,,,,,
+f359f39732bf4938,russia_post_soviet,benchmark_hard_negative,34070,"Money Laundering
+
+So, over $2,000,000,000,000 is missing from China and because China says it’s proceeds of corruption, it’s a $2,000,000,000,000 money laundering problem.",china,china,china,,,,,,
+25a89b072cdd1894,russia_post_soviet,benchmark_hard_negative,37662,"Image: UNDP
+
+Green Pandas
+
+The above image is an artist’s impression of Hong Kong-based Panda Green Energy Group's first panda solar plant, which began generating electricity in June.",china,hong kong,china,,,,,,
+8be2ea23aafabd0d,russia_post_soviet,benchmark_hard_negative,34076,"A: According to the Bank of China, US, Canada, Australia and Netherlands.",china,china,china,,,,,,
+d862388efdaef8b7,russia_post_soviet,benchmark_hard_negative,22865,"One of the videos recently posted on the internet shows some of the statues being smashed to rubble by gangs from the ultra-fundamentalist Islamic State of Iraq and the Levant (ISIL), one of the armed groups competing for supremacy in Hasakeh.",middle_east_geopolitics,iraq,middle_east_geopolitics,,,,,,
+841316192264f775,russia_post_soviet,benchmark_hard_negative,18973,No wonder a new Washington Post-ABC news poll found an all time high of 84 percent of Americans disapprove of the job Congress is doing.,us_legislative_governance,congress,us_legislative_governance,,,,,,
+a5485ac13186e2ac,russia_post_soviet,benchmark_hard_negative,19353,"For all this, Xi avoids accountability to the Chinese people.",china,chinese,china,,,,,,
+19bbe659c3b370a5,russia_post_soviet,benchmark_hard_negative,25426,"“We’ve yet to really thwart Daesh’s ability to reach beyond the Syria-Iraqi borders and put in place some of the plans and preparations to carry out attacks,” Brennan said.",middle_east_geopolitics,syria,middle_east_geopolitics,,,,,,
+34d0a96f054a449a,russia_post_soviet,benchmark_hard_negative,19021,"Like Democrats in Congress who ignore the cost of entitlements, Christie will argue, Booker failed to do the “big things.”
+
+Christie’s been to war before as a federal prosecutor, challenger to Corzine, and chief surrogate for Romney.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+e1229978b4d99c29,russia_post_soviet,medium_negative,77968,"Still another type, used at mining sites, both identifies underground rock strata and monitors instabilities in the terrain that can forewarn of an impending cave-in.",crypto_blockchain,mining,crypto_blockchain,,,,,,
+54cf7329240cf2c0,russia_post_soviet,medium_negative,52978,"In the last four years there has been more support for industry, more technology development, and simplified and expanded access to satellite data.",aviation_aerospace,satellite,aviation_aerospace,,,,,,
+f177ee604db3585b,russia_post_soviet,medium_negative,23406,MASTERSON’S ROLE IN THE FACULTY WAS CUT SHORT SO HE COULD SHOOT THE PILOT.,aviation_aerospace,pilot,aviation_aerospace,,,,,,
+7dcc8b6e024812c4,russia_post_soviet,medium_negative,26087,"Blockchain Coming to Korea
+
+The Korea Stock Exchange (KRX) as reported by The Korea Times has begun “preliminary steps” to develop a trading platform for off-board dealers based on the blockchain technology.",crypto_blockchain,blockchain,crypto_blockchain,,,,,,
+3861dd2b4af8c46f,russia_post_soviet,medium_negative,62205,"The National Mining Association provides data pertaining to coal and minerals that include beryllium, copper, lead, magnesium, zinc, titanium and others.",crypto_blockchain,mining,crypto_blockchain,,,,,,
+51755c6c92aa9e46,russia_post_soviet,medium_negative,42407,"The fact that bitcoin now provides “exit ramps” from national currencies that were becoming easier to use, Hileman said, could exacerbate any future financial crisis.",crypto_blockchain,bitcoin,crypto_blockchain,,,,,,
+606c0f74267e0c27,russia_post_soviet,medium_negative,12397,"1540 Volunteer Emerson Tan, heading from the UK with non-governmental organisation Mapaction to provide emergency mapping for aid agencies, e-mails: ""Had to unload and check all the kit, then a long sleepless wait for the aircraft to show up.",aviation_aerospace,aircraft,aviation_aerospace,,,,,,
+66b826b222c38f1d,russia_post_soviet,medium_negative,32328,"By 1975, the company was flying airplanes as well when it bought an aircraft maintenance center outside Tucson, Arizona, that was run by the CIA, according to the Oregonian, Oregon's largest newspaper.",aviation_aerospace,aircraft,aviation_aerospace,,,,,,
+9b86772c6be2a054,russia_post_soviet,medium_negative,15666,"In his backpack, one he hadn’t used since college, he put two liters of water, a number of snacks like trail mix and protein bars, a first aid kit from the bathroom, his wallet, and his laptop, which was now full of charge and loaded down with every resource he’d thought to cram it with.",crypto_blockchain,wallet,crypto_blockchain,,,,,,
+ea7fef34b62a1c63,russia_post_soviet,medium_negative,111744,"But with the 787, it appears that Boeing tried a very different approach: rather than having the puzzle solved and asking the suppliers to provide a defined puzzle piece, they asked suppliers to create their own blueprints for parts.",aviation_aerospace,boeing,aviation_aerospace,,,,,,
+de2bd394fd7dad00,russia_post_soviet,medium_negative,117974,"Several stores in Tokyo now accept bitcoin for a beer and fries, smartphone repairs and even eyelash extensions, as the reach of the virtual currency extends well beyond the tech nerd’s basement or bedroom.",crypto_blockchain,bitcoin,crypto_blockchain,,,,,,
+b51f17bae3489991,russia_post_soviet,medium_negative,10803,"With manned aircraft, the rule is ""see and be seen.""",aviation_aerospace,aircraft,aviation_aerospace,,,,,,
+7a01f60cfdbc512c,russia_post_soviet,medium_negative,3786,The airline isn't the first to use Trump's rhetoric for an ad campaign.,aviation_aerospace,airline,aviation_aerospace,,,,,,
+821930dfb188ce10,russia_post_soviet,medium_negative,97843,"However, the current implementation of the new “Amazon Wallet” application is fairly barebones – it doesn’t yet support mobile payments or the ability to store credit cards or debit cards.",crypto_blockchain,wallet,crypto_blockchain,,,,,,
+e2ca09d69b6314c5,russia_post_soviet,medium_negative,60044,The ‘ANX Vault’ app now includes the all-important send and receive functions vital to any bitcoin wallet.,crypto_blockchain,bitcoin;wallet,crypto_blockchain,,,,,,
+2af96e1f4ac1df95,russia_post_soviet,medium_negative,82266,Attacks on aircraft in the area have been rife.,aviation_aerospace,aircraft,aviation_aerospace,,,,,,
+a345f53357e220da,russia_post_soviet,medium_negative,117975,"Bitcoin Brands Inc. Sponsors MMA Legend Phil Baroni
+
+Bitcoin Brands Inc. announced that it has entered into a sponsorship agreement with mixed martial arts legend Phil “The New York Bad Ass” Baroni for his upcoming main card fight for Bellator 122.",crypto_blockchain,bitcoin,crypto_blockchain,,,,,,
+e87d4f22439f8143,russia_post_soviet,medium_negative,2947,Thank god he’s doing this pilot so we can get reacquainted with the approach to this character.,aviation_aerospace,pilot,aviation_aerospace,,,,,,
+961c975074a71011,russia_post_soviet,medium_negative,26077,"Australia, Bitcoin & Blockchain
+
+In a recent speech Greg Medcraft, Chairman, Australian Securities and Investments Commission (ASIC) spoke about the blockchain.",crypto_blockchain,bitcoin;blockchain,crypto_blockchain,,,,,,
+442ff3db4bc0af7f,russia_post_soviet,medium_negative,18713,"Forty years ago, NASA landed a spacecraft on the surface of Mars, giving us our first close-up view of the so-called Red Planet.",aviation_aerospace,nasa;spacecraft,aviation_aerospace,,,,,,
+27d6ed8c77126b75,russia_post_soviet,medium_negative,5718,"The Falcon Heavy list price for a launch is $135 million, and then there’s the cost of the Dragon spacecraft, the mission planning, executing and monitoring the flight, and any number of other factors.",aviation_aerospace,spacecraft,aviation_aerospace,,,,,,
+2fdff7a788e8fa59,russia_post_soviet,medium_negative,10053,"[6] In April 2012, the Army of the Guardians of the Islamic Revolution claimed to have succeeded in extracting the entirety of the data collected by the drone and are currently in the process of building a replica of the aircraft.",aviation_aerospace,aircraft,aviation_aerospace,,,,,,
+c7da16c241a1494e,russia_post_soviet,medium_negative,79913,"What’s really interesting now is that Bitcoin, as a currency, is scarce and follows the same kind of logic than gold, but on the other side, we have the blockchain, that is like an ancient recording system.",crypto_blockchain,bitcoin;blockchain,crypto_blockchain,,,,,,
+4d096f55b4559ecd,russia_post_soviet,medium_negative,3980,"I’ve updated our comparison of 90 climate models versus observations for global average surface temperatures through 2013, and we still see that >95% of the models have over-forecast the warming trend since 1979, whether we use their own surface temperature dataset (HadCRUT4), or our satellite dataset of lower tropospheric temperatures (UAH).“
+
+It’s true that over the last two decades modelled surface temperatures have generally risen faster than temperatures recorded in real life.",aviation_aerospace,satellite,aviation_aerospace,,,,,,
+efde9386ba70268a,russia_post_soviet,medium_negative,61087,"In an email interview with the Wall Street Journal, Colbert Lau, a cofounder at cryptocurrency firm Bitcoin Malaysia, said that it was ""worth noting that BNM, in its statement, didn't outlaw the usage of Bitcoin or state that Bitcoin was illegal.""",crypto_blockchain,bitcoin,crypto_blockchain,,,,,,
+d8f2ca81b2d448a0,russia_post_soviet,medium_negative,79920,Bitcoin is money for digital goldbugs.,crypto_blockchain,bitcoin,crypto_blockchain,,,,,,
+edfb64a49b2c955b,russia_post_soviet,medium_negative,100815,"These are high priority and “really have to get worked out” before we go to Mars, said William Paloski, director of NASA’s Human Research Program, though he adds that space exploration is inherently risky and volunteers will have to be aware of all known risks, red or not.",aviation_aerospace,nasa,aviation_aerospace,,,,,,
+3dd349b039c29979,russia_post_soviet,medium_negative,109019,"Bitcoin was the first crytpocurrency to begin trading, back in 2009 and since then it has grown in popularity.",crypto_blockchain,bitcoin,crypto_blockchain,,,,,,
+65ee525c4202df85,russia_post_soviet,medium_negative,5690,"In just the last six months, SpaceX has successfully launched and then recovered the first stages of multiple Falcon 9 rockets, first landing them on the ground and then later landing on an autonomous drone ship.",aviation_aerospace,spacex,aviation_aerospace,,,,,,
+ca1edd6689c5daaa,russia_post_soviet,medium_negative,26081,"Other than finance, blockchain is being applied to politics.",crypto_blockchain,blockchain,crypto_blockchain,,,,,,
+8fada56494765553,russia_post_soviet,background_negative,142756,"And it’s kind of cool to break away from what’s expected of the band, like “All The Rage Back Home” having all the surfing clips in it, and then doing the boxing video.",combat_sports,boxing,combat_sports,,,,,,
+0d744d8c8140fc47,russia_post_soviet,background_negative,10848,"The project is based on Matusow’s 2009 autobiography “Check-Raising the Devil.”
+
+Matusow’s story details his bouts with drugs, depression, promiscuous sex, jail, and suicidal depression along with his success as a four-time World Series of Poker bracelet winner and winning the 2005 World Series of Poker Tournament of Champions.",mlb_baseball,world series,mlb_baseball,,,,,,
+f86376f2d3ce110b,russia_post_soviet,background_negative,65117,"He came home to Chicago a few days before the 1945 World Series began, and he hopped a streetcar to Wrigley Field on the morning of game six, looking for tickets.",mlb_baseball,world series,mlb_baseball,,,,,,
+722d55f1f7530320,russia_post_soviet,background_negative,72544,"14.8 9.6 1.8 Kevin Garnett PPG RPG APG
+
+NOT – Kevin Garnett
+
+Kevin Garnett is typically the most consistent player for the Celtics year-in and year-out.",gaming_general,rpg,gaming_general,,,,,,
+6a19c053c84ebf6a,russia_post_soviet,background_negative,36596,"Sarah Tew/CNET
+
+Suffice it to say, the One S plays all existing Xbox One games, and a growing list of Xbox 360 games.",gaming_general,xbox,gaming_general,,,,,,
+c6638e44bb3e15d9,russia_post_soviet,background_negative,102199,"That's 5 more days to raise funds to cover everything else, including our recent and final pickup day, the Kickstarter and Amazon fees (10%), official website design, festival submission fees, DVD / Blue-Ray printing, distribution, and costs to produce the Kickstarter video.",combat_sports,submission,combat_sports,,,,,,
+80689b3c2c4d2126,russia_post_soviet,background_negative,36556,"It's better in a number of ways, making it even more of a worthy alternative to Sony's PlayStation 4.",gaming_general,playstation,gaming_general,,,,,,
+197fe22858c0eb74,russia_post_soviet,background_negative,145055,"It was found that the bats were also much more likely to roost in the pitchers of N. hemsleyana than they were in the other endemic pitcher plants in the area, N. bicalcarata.",mlb_baseball,pitcher,mlb_baseball,,,,,,
+e1e07cd6bb5803ec,russia_post_soviet,background_negative,148720,"In 1978, Gaylord Perry (age 40) became the oldest pitcher to receive the award, a record that stood until broken in 2004 by Roger Clemens (age 42).",mlb_baseball,pitcher,mlb_baseball,,,,,,
+d0f189f145b780b8,russia_post_soviet,background_negative,12913,"""In this particular case, Nintendo called the school and spoke to the school principal.""",gaming_general,nintendo,gaming_general,,,,,,
+82c34d1c8f35ce9e,russia_post_soviet,background_negative,26110,"With a new skill tree in this case.”
+
+Advertisement
+
+Fahad and his co-workers come from an initial background in mobile game design, which quickly took off in India.",gaming_general,skill tree,gaming_general,,,,,,
+9225c62925225677,russia_post_soviet,background_negative,90461,"""[The UFC] is where you can test yourself against the best guys in the world,"" he said.",combat_sports,ufc,combat_sports,,,,,,
+27b22aac87c269da,russia_post_soviet,background_negative,47833,"He did submit in a 2004 fight with Mirko Cro Cop, but that wasn't from a submission application, but a shoulder injury that he couldn't continue fighting with.",combat_sports,submission,combat_sports,,,,,,
+6ff36e113d837c5b,russia_post_soviet,background_negative,139300,With Patreon I can still release videos for everyone to enjoy; without having to rely on YouTube's paid subscriptions or pay-per-view scheme.,combat_sports,pay-per-view,combat_sports,,,,,,
+93b916294943246a,russia_post_soviet,background_negative,114228,"The undertaker even hopes to purchase dirt from the defunct stadiums of the Mets and Yankees to burnish the occasion: “You know, toss infield dirt on the casket as a sendoff.”
+
+The first baseball coffin was reported sold, prepaid by a Mets fan.",mlb_baseball,mets;yankees,mlb_baseball,,,,,,
+da6a1e6258aeb7c1,russia_post_soviet,background_negative,49522,"UFC 180: WERDUM vs. HUNT scheduled for November 15 at the Arena Mexico City, sold-out in only eight hours, and will welcome more than 20,000 fans.",combat_sports,ufc,combat_sports,,,,,,
+1dcb4c281a6a8b3e,russia_post_soviet,background_negative,115026,"But plenty of us—the Atari kids, the Nintendo kids, heck, even the Playstation and Xbox kids—remember when gaming was given the same side-eye by the mainstream as big fat fantasy novels (hello, HBO’s 20-million-viewer-strong Game of Thrones) and sci-fi books covered in spaceships (*cough* Guardians of the Galaxy *cough*).",gaming_general,nintendo;playstation;xbox,gaming_general,,,,,,
+78de2fa87747b7b7,russia_post_soviet,background_negative,116974,"Yanis Varoufakis: The moment that video game companies shifted from single-player to multiplayer games, without realizing it, they created a social economy.",gaming_general,multiplayer;video game,gaming_general,,,,,,
+187d52b656db182d,russia_post_soviet,background_negative,148717,"[1]
+
+The first recipient of the Cy Young Award was Don Newcombe of the Dodgers.",mlb_baseball,dodgers,mlb_baseball,,,,,,
+7ba0eedb5c3c72f0,russia_post_soviet,background_negative,130982,"), but some just asked for the names of popular TV shows, toys, and video game (including a number of YouTube channels, like Sky Does Minecraft).",gaming_general,video game,gaming_general,,,,,,

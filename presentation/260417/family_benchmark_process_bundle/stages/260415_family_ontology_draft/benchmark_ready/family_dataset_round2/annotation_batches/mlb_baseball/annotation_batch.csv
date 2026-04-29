@@ -1,0 +1,1055 @@
+candidate_id,family_id,proposed_bucket,source_row_index,text,matched_query_blocks,matched_terms,matched_family_ids,final_label,keep_for_benchmark,label_confidence,primary_reason,exclusion_trigger,notes
+2ebc037ad964d011,mlb_baseball,positive,831702,"With a 2-0 series lead and down 2-0 in the first inning of Game 3 on Sunday, the Cougars rallied to win 10-3 for the sweep.",baseball_jargon,inning,mlb_baseball,,,,,,
+854abed1e4adf18f,mlb_baseball,positive,137458,"Bao to the Pork – Chicago Cubs
+
+Honestly, I just really liked the name of this item.",team_entities,chicago cubs,mlb_baseball,,,,,,
+eb14409a8be47b22,mlb_baseball,positive,28833,"Show of hands, please: Who thought, back in February, that we’d be approaching Memorial Day with the Baltimore Orioles in possession of the second-best record in the American League?",league_anchor,american league,mlb_baseball,,,,,,
+fdc7fa38903180e9,mlb_baseball,positive,1012665,"Felipe Alou was hired Wednesday, NOV. 13, 2002 to manage the National League champion San Francisco Giants, returning to the team he played for in the 1950s and '60s.",league_anchor,national league,mlb_baseball,,,,,,
+7a5d071d7c9881a9,mlb_baseball,positive,365568,"[10][11]
+
+World Series of Poker [ edit ]
+
+Moss won the 1970, 1971, and 1974 World Series of Poker Main Events.",league_anchor,world series,mlb_baseball,,,,,,
+b9958a5906d36130,mlb_baseball,positive,324593,"There's bear wrestling in America as well - four-time Ohio State All-American and World Series of Fighting featherweight Lance Palmer drew some flak for it back when he was in high school - but that's essentially spectacle for a paying crowd, in contrast to bear wrestling as a form of serious training and rite of passage for a young boy.",league_anchor,world series,mlb_baseball,,,,,,
+58b650686ad89539,mlb_baseball,positive,283735,"Keuchel, 28, won 20 games and the Cy Young last season for an Astros team that advanced to the division series, losing to the eventual World Series champion Royals.",league_anchor,world series,mlb_baseball,,,,,,
+39809f14e3c386d6,mlb_baseball,positive,175273,"He undoubtedly will have a number of suitors, with the Yankees, Nationals, Dodgers, Chicago Cubs and Boston Red Sox potentially being among them, but New York is seen as the club most likely to spend the money on the star outfielder.",team_entities,boston red sox;chicago cubs,mlb_baseball,,,,,,
+6b4635bae54535f2,mlb_baseball,positive,1005984,"Jon Morosi of MLB Network reported earlier in the week that the Giants have already spoken to representatives for Aroldis Chapman, Kenley Jansen and Melancon.",league_anchor,mlb network,mlb_baseball,,,,,,
+26a4804fe29a874b,mlb_baseball,positive,125248,"Micro Machines World Series combines the thrilling madness of racing micro vehicles with epic team battle strategies, set against the extraordinary interactive backdrops of the everyday home!",league_anchor,world series,mlb_baseball,,,,,,
+22b9ed5928c73006,mlb_baseball,positive,906302,"The fact is the Blue Jays have good reason to keep pushing, especially given the seismic shifts within the American League East.",league_anchor,american league,mlb_baseball,,,,,,
+0d01eac4480e2eab,mlb_baseball,positive,1012664,"But we all knew what happened.”
+
+** FILE ** Montreal Expos manager Felipe Alou argues with third base umpire Jim Reynolds during the fifth inning in Montreal Friday May 4, 2001.",baseball_jargon,inning,mlb_baseball,,,,,,
+d5c452f2c0493090,mlb_baseball,positive,744654,"[6]
+
+Acquisition by Harrah's [ edit ]
+
+In 2004, Harrah's Entertainment (now Caesars Entertainment) purchased Binion's Horseshoe, retained the rights to the Horseshoe and World Series of Poker brands, sold the hotel and casino to MTR Gaming Group, and announced that the 2005 Series events would be held at the Harrah's-owned Rio Hotel and Casino, located just off the Las Vegas Strip.",league_anchor,world series,mlb_baseball,,,,,,
+009e8474442e9d94,mlb_baseball,positive,113364,"Bad bowl season, bad NCAA tournament, and no teams in the College World Series.",league_anchor,world series,mlb_baseball,,,,,,
+c590f73c06d136f1,mlb_baseball,positive,770146,"We brought each other to games (he favored hockey and tennis; I preferred Major League Baseball, but could never convince him that baseball was in fact interesting, so we settled on the N.B.A.).",league_anchor,major league baseball,mlb_baseball,,,,,,
+869a882fb33a412a,mlb_baseball,positive,554940,"Miles played in 135 games with the World Champion Cardinals in 2006, and finished fourth in National League Rookie of the Year voting in 2004 with Colorado.",league_anchor,national league,mlb_baseball,,,,,,
+30e580862706a596,mlb_baseball,positive,30128,"AL East
+
+To get here, where you're excited about the American League East and the five teams within, you have to make some assumptions.",league_anchor,american league,mlb_baseball,,,,,,
+4b9d7f86fdd6f5a8,mlb_baseball,positive,28865,Wright is a 5-inning pitcher to the tip of his cleats.,baseball_jargon,inning,mlb_baseball,,,,,,
+ce3e40c4a14f0232,mlb_baseball,positive,115924,He twirled a three hitter into the ninth inning from that point on.,baseball_jargon,inning,mlb_baseball,,,,,,
+ab22b95f7dc8ff93,mlb_baseball,positive,277694,"They start off with a three-game series at home against the New York Yankees where they’ll get to see Sonny Gray and Masahiro Tanaka, and then they have another three-game home series, this time against the Boston Red Sox, where they’ll get to see Chris Sale, Rick Porcello, and Eduardo Rodriguez.",team_entities,boston red sox;new york yankees,mlb_baseball,,,,,,
+28061332a63d3f6f,mlb_baseball,positive,309987,Would Major League Baseball have allowed George Steinbrenner to buy the Mets in his Boss heyday and then limit them to a $50 million budget while he spent $200 million on his Yankees?,league_anchor,major league baseball,mlb_baseball,,,,,,
+fb3ddf05fd0f0f24,mlb_baseball,positive,724898,And specifically if the front office is looking for a starting pitcher.,baseball_jargon,starting pitcher,mlb_baseball,,,,,,
+9f27c3976ad77290,mlb_baseball,positive,787978,"Like when ex-Sydney FC striker Mark Janko scored six consecutive goals last season, Howe announced that he had equalled Besart Berisha’s A-League record from 2012, and was one game away from equalling the national league record, set by Damian Mori in 1994-95 for Adelaide City.",league_anchor,national league,mlb_baseball,,,,,,
+ce7a33ebb33ba933,mlb_baseball,positive,28853,"In fact, we’re sure it will be: Mike Wright, starting pitcher.",baseball_jargon,starting pitcher,mlb_baseball,,,,,,
+19ccae9e397ad25b,mlb_baseball,positive,744773,"From 2007 – World Series of Poker Europe [ edit ]
+
+The World Series of Poker Europe (WSOPE) is the first expansion of the World Series of Poker in series history.",league_anchor,world series,mlb_baseball,,,,,,
+bf63dfd273619c57,mlb_baseball,positive,256530,"Let's talk about the important news that hit baseball this week: The Chicago Cubs unveiled their first official mascot in franchise history -- Clark, a young bear cub who wears his hat backward (Tinker, Evers and Chance just rolled over in their graves).",team_entities,chicago cubs,mlb_baseball,,,,,,
+e7796a3af1bf8412,mlb_baseball,positive,992215,"And, by the way, this kid is really good, as we’ve all noticed and the Braves already knew (there was a reason they gave him a chance to make the team in spring training, but he was still a bit nervous then and dropped some balls at shortstop and got sent back down).",baseball_jargon,shortstop,mlb_baseball,,,,,,
+7f7a66d724d80406,mlb_baseball,positive,872004,"He and his major-league-leading .388 batting average were headed to the Final Vote, a five-man fan ballot for the last man on each roster.",baseball_jargon,batting average,mlb_baseball,,,,,,
+fb394fa6938ae86a,mlb_baseball,positive,956029,"World Series TV ratings increasing by the game
+
+Television viewership for Game 3 of the World Series once again was down from last year but continues to exceed audience levels going back to the Yankees' last series appearance in 2009.",league_anchor,world series,mlb_baseball,,,,,,
+4f73e1fcca11adff,mlb_baseball,positive,1067296,"""[5]
+
+During the 1997 World Series, Ohlmeyer caused a stir when he publicly wished that the World Series would end in a four-game sweep so that its low ratings wouldn't derail NBC's primetime leading Thursday ""Must See TV"" entertainment schedule.",league_anchor,world series,mlb_baseball,,,,,,
+39a47407d571d023,mlb_baseball,positive,547529,"In the unlikely scenario that all three teams would end up tied at the end of the regular season, there would have to be two playoff games to determine the participants in the National League wild card game.",league_anchor,national league,mlb_baseball,,,,,,
+d265214736d5e380,mlb_baseball,positive,277697,"The Braves start off the week with a three-game series against the Nationals where they’ll see Gio Gonzalez and Max Scherzer, and then they head home to face off against the New York Mets, getting to see Jacob DeGrom while they’re there.",team_entities,new york mets,mlb_baseball,,,,,,
+1d002ee5de939119,mlb_baseball,positive,608718,"There was just one problem:
+
+@SportsCenter Meanwhile, outside Citi Field pic.twitter.com/QRCcuReiwD
+
+Justin Klugh, a sports blogger with SB Nation, responded by tweeting the above image of the scene outside Citi Field in Willet's Point, Queens, where the New York Mets play baseball.",team_entities,new york mets,mlb_baseball,,,,,,
+d1a10d7058fe71d9,mlb_baseball,positive,769709,"List of pitchers who have retired 28 straight batters in a nine-inning MLB game [618] Initially a list article consisting of one item, a diatribe about Armando Galarraga's near-perfect game (prior to the article's existence), then turned into a redirect to Armando Galarraga before being deleted at RfD.",baseball_jargon,inning,mlb_baseball,,,,,,
+770eed08871aadfc,mlb_baseball,positive,365575,"[16]
+
+**Moss set the record for the oldest bracelet winner in WSOP history, which still stands as of the end of the 2017 World Series of Poker.",league_anchor,world series,mlb_baseball,,,,,,
+4f9791562d346777,mlb_baseball,positive,22395,"""We're in the bottom of the seventh inning.",baseball_jargon,inning,mlb_baseball,,,,,,
+f06d5beda15fcc51,mlb_baseball,positive,212612,"“Leading the nation in RBIs, that was a big accomplishment -- and almost leading the nation in home runs until [Arkansas’ Andrew] Benintendi (20) passed me in the College World Series,” Thompson said.",league_anchor,world series,mlb_baseball,,,,,,
+36fe8ce5c0bdf167,mlb_baseball,positive,946142,"“Babe” Ruth, home-run hitter extraordinary of the Red Sox, has been sold to the New York American League club for a cash price of probably $100,000 and possibly more.",league_anchor,american league,mlb_baseball,,,,,,
+f90394a87c33dff6,mlb_baseball,positive,1064959,"GameSpot's Peter Brown awarded it a score of 9 out of 10, saying ""Fallout 4 is an argument for substance over style, and an excellent addition to the revered open-world series.""",league_anchor,world series,mlb_baseball,,,,,,
+1e4967785bdfde98,mlb_baseball,positive,433298,"In New York, Drew would start off as a third baseman, but would also provide better insurance than Brendan Ryan as an everyday option at shortstop if 39-year-old Derek Jeter’s health does not hold up.",baseball_jargon,shortstop,mlb_baseball,,,,,,
+003e04b30a56eea7,mlb_baseball,positive,1025956,"Bresnahan, the Bills’ backup catcher, was behind home plate — where catchers usually are.",baseball_jargon,home plate,mlb_baseball,,,,,,
+7e2bbbb2a00d4bf5,mlb_baseball,positive,209916,"A “bona fide slide” for purposes of Rule 6.01 occurs when the runner:
+
+(1) begins his slide (i.e., makes contact with the ground) before reaching the base;
+
+(2) is able and attempts to reach the base with his hand or foot;
+
+(3) is able and attempts to remain on the base (except home plate) after completion of the slide; and
+
+(4) slides within reach of the base without changing his pathway for the purpose of initiating contact with a fielder.",baseball_jargon,home plate,mlb_baseball,,,,,,
+7865067eb7d1fd32,mlb_baseball,positive,275356,"The 1951 White Sox were in first in the American League, 49-29, a game ahead of Boston and two ahead of New York, but had the 10th-greatest tumble, 32-44, to finish fourth, 17 behind.",league_anchor,american league,mlb_baseball,,,,,,
+c19fb5d76ea2df39,mlb_baseball,positive,432364,"The woman at Fenway struck in the face by a broken bat — Tonya Carpenter, 44, of Paxton, Massachusetts — was sitting beyond the netting, in the second row between home plate and the third-base dugout.",baseball_jargon,home plate,mlb_baseball,,,,,,
+91604fe73223aadd,mlb_baseball,positive,1069209,"The Giants technically won the World Series two of the last three years, but since the Nationals, Braves and Dodgers seem to be getting all of the preseason NL love, it’s kind of a hollow reign.",league_anchor,world series,mlb_baseball,,,,,,
+71d20ac056385d76,mlb_baseball,positive,115920,We finally grabbed the lead in the fourth inning and we go back out and Auburn almost grabbed the momentum back by loading the bases with no outs.,baseball_jargon,inning,mlb_baseball,,,,,,
+900c6de68ac32a47,mlb_baseball,positive,522079,"Clemens, a seven-time Cy Young Award winner, was viewed as a savior wherever he went, winning two World Series with the New York Yankees and pennants with the Boston Red Sox and Houston Astros.",league_anchor;team_entities,boston red sox;new york yankees;world series,mlb_baseball,,,,,,
+c06eb7037f73cfdf,mlb_baseball,positive,118916,"By comparison, the American League Champion Kansas City Royals registered 2,287 such pitches.Major league baseball is trending toward pitchers -- especially relievers -- with big velocity, and while the Twins may appear far behind the curve based on the above finding, they're certainly not ignorant to this reality.",league_anchor,american league;major league baseball,mlb_baseball,,,,,,
+ef6a683fecd4a19e,mlb_baseball,positive,479637,"The next inning, he gave up a home run to Seth Smith, even with a strong crosswind sweeping Fenway Park.",baseball_jargon,inning,mlb_baseball,,,,,,
+9d1be92be8163ff0,mlb_baseball,positive,446625,"They went on to win the World Series all five times, including in 2011 when they came back to beat the Texas Rangers.",league_anchor,world series,mlb_baseball,,,,,,
+718836be70d3c6e0,mlb_baseball,positive,788100,"In the last season guide of the NSL in 2003-04, Mori is listed as having scored 209 national league goals.",league_anchor,national league,mlb_baseball,,,,,,
+42a1d64cac0b7199,mlb_baseball,positive,340430,"[2] In the climactic moment, Gonzalez came to the plate in the bottom of the 9th inning of game 7, with the score even at 2-2, the bases loaded and 1 out.",baseball_jargon,inning,mlb_baseball,,,,,,
+c158fa8c7ed0f04c,mlb_baseball,positive,37035,"It was a clear violation of Rule 6.01 (i), the so-called “Buster Posey Rule” that reads as follows:
+
+” A runner attempting to score may not deviate from his direct pathway to the plate in order to initiate contact with the catcher (or other player covering home plate), or otherwise initiate an avoidable collision.”
+
+Video of the play in question follows, watch how Rizzo crosses the baseline to his left and initiates contact, deviating from his path to the plate rather than taking the outside line that is clearly available to him:
+
+Your browser does not support iframes.",baseball_jargon,home plate,mlb_baseball,,,,,,
+236d3d7fdc80632f,mlb_baseball,positive,663446,National League?,league_anchor,national league,mlb_baseball,,,,,,
+c96c2faf06967a9c,mlb_baseball,positive,742098,"Because if I would've done something, if I would've went into the stands and tried to beat this dude up, I would've gotten in trouble by Major League Baseball.",league_anchor,major league baseball,mlb_baseball,,,,,,
+ace133d9fe43ccac,mlb_baseball,positive,148738,"In the American League, 6 players have unanimously won the Cy Young Award, for a total of 9 wins.",league_anchor,american league,mlb_baseball,,,,,,
+ac5d0068a542b5f6,mlb_baseball,positive,518137,The Brewers can easily make room at shortstop this winter as they hold a $6MM club option on Yuniesky Betancourt's deal with a $2MM buyout.,baseball_jargon,shortstop,mlb_baseball,,,,,,
+49a677088eed943a,mlb_baseball,positive,97099,"By Cruz Serrano
+
+Back when Barry Bonds’ hat size was still considered human, back when the only interleague series was in October, way back before baseball’s Summer of Love that saw Sosa and McGwire hammer their way past Roger Maris, the team of the 90s was hunting for their second straight World Series title.",league_anchor,world series,mlb_baseball,,,,,,
+b68c0f9418934011,mlb_baseball,positive,744727,"[22] Beginning with the 2006 World Series of Poker, the Main Event and the $50,000 H.O.R.S.E.",league_anchor,world series,mlb_baseball,,,,,,
+8fd916bd46512901,mlb_baseball,positive,415212,But all is not lost ... until Mookie Wilson's bouncer finds its way through Buckner's legs and into right field to cap the New York Mets' improbable Game 6 comeback and prolong Boston's agony.,team_entities,new york mets,mlb_baseball,,,,,,
+4f473a108e375ff3,mlb_baseball,positive,820593,"PORT ST. LUCIE, Fla. -- Hitting coach Kevin Long was among those worried that slugger Yoenis Cespedes might not re-sign with the New York Mets after a torrid two months with the ballcub last season.",team_entities,new york mets,mlb_baseball,,,,,,
+2d09259b903a2de7,mlb_baseball,positive,811180,"The headline in one of the newspapers the day following the arrests adequately describes them… “Seven ‘Fans’ Arrested on Cocaine Charges.”
+
+The subtitle of the book is, “How a Ragtag Group of Fans Took the Fall for Major League Baseball.” Do you think this is a fair characterization?",league_anchor,major league baseball,mlb_baseball,,,,,,
+da2e3b6b6d453af4,mlb_baseball,positive,496607,The 26-year-old shortstop – who had scores of budding baseballers enthralled at a coaching clinic in Christchurch on Tuesday – is living proof that players can reach the big leagues from outside the United States.,baseball_jargon,shortstop,mlb_baseball,,,,,,
+7783e03d9a6620f3,mlb_baseball,positive,752729,"Nearly 30 mayors, along with the National League of Cities and the U.S. Conference of Mayors, signed onto a separate amicus brief in January saying the actions are beneficial, both for the economy and for public safety.",league_anchor,national league,mlb_baseball,,,,,,
+a6acfe04aad6639f,mlb_baseball,positive,247493,Manny Parra entered in the seventh inning and retired the first two batters he faced before Adam Lind lined a ball off Parra’s back for a single.,baseball_jargon,inning,mlb_baseball,,,,,,
+e99978fae23b6579,mlb_baseball,positive,959189,"The Illini had six hits in the inning, including a two-run double from Ben Troike that gave Illinois the lead.",baseball_jargon,inning,mlb_baseball,,,,,,
+589bedaf41ef3547,mlb_baseball,positive,75594,"He mysteriously showed up in around the fifth or sixth inning, but I can't say for certain because nobody noticed his presence at first until suddenly he was there, almost mythologically.",baseball_jargon,inning,mlb_baseball,,,,,,
+9d32b925a60d6cdd,mlb_baseball,positive,39117,Josh McLain smacked the first of the inning on an 0-2 pitch over the left field wall.,baseball_jargon,inning,mlb_baseball,,,,,,
+a270e98cf4399688,mlb_baseball,positive,896277,"“And that experience should extend to when people attend a sporting event.”
+
+Enter MLB’s Ballpark app, a free download for digital devices designed by tech arm Major League Baseball Advanced Media that fully embraces the multi-tasking fan.",league_anchor,major league baseball,mlb_baseball,,,,,,
+33b2a9bcf1500dd5,mlb_baseball,positive,298837,"The Angels entered Thursday 7.5 games back of the Rangers in the American League West and just 2.5 back of the second wild card spot, and they'll need their ace healthy if they hope to make a run in September.",league_anchor,american league,mlb_baseball,,,,,,
+5e0e10c471c700ce,mlb_baseball,positive,405721,"Ted Pettingell (Limestone Comedy Festival)
+
+Rich Karski (Famous writer of ""Dick Picks"" and ""How to"")
+
+Christa Weiss (Chicago's funny women's festival)
+
+Ethan Diamond (Cartoonist - UnScene Comedy, diamondcomedy)
+
+and Shawn Carter (Founder of UnScene Comedy, Boston Comedy Festival, World Series of Comedy, Las Vegas)
+
+Zorba Room
+
+439 Market Street, Lowell MA.",league_anchor,world series,mlb_baseball,,,,,,
+e4354b619e0fbbf7,mlb_baseball,positive,97100,"After winning it all in ‘95, the Atlanta Braves were out to build a dynasty rather than becoming more reminiscent of the Buffalo Bills, whose success paralleled that of the Braves: close but no cigar.",team_entities,atlanta braves,mlb_baseball,,,,,,
+3a72d79dcc56c403,mlb_baseball,positive,1047376,"To get the number of wins that the team can be expected to win, simply multiply the winning percentage by the number of games in a single season (162 in Major League Baseball).",league_anchor,major league baseball,mlb_baseball,,,,,,
+40cfd6c665534115,mlb_baseball,positive,119562,—I love that Lane’s New York Mets pennant—that misguided symbol of Americana he put up in his office as a way to assimilate—is how he lives on.,team_entities,new york mets,mlb_baseball,,,,,,
+13328cca42d35257,mlb_baseball,positive,1005978,"Melancon on #SFGiants meeting: “It was an opportunity to meet & get to know people a little bit in 24 hours, organization speaks for itself” — MLB Network Radio (@MLBNetworkRadio) November 16, 2016
+
+Melancon on choosing a team: “Ultimately I will weigh out by options and figure out what’s best for my family.",league_anchor,mlb network,mlb_baseball,,,,,,
+8819eda54b1e4c6d,mlb_baseball,positive,1070831,"Even with the World Series in 2013, Boston has wasted one of the most incredible runs in recent memory.",league_anchor,world series,mlb_baseball,,,,,,
+d8fad4655d8fe63c,mlb_baseball,positive,645820,"NRG Esports — which has professional teams and players competing in Overwatch, Counter-Strike: Global Offensive, Hearthstone, Super Smash Bros., Rocket League and more — was founded by Sacramento Kings co-owners Andy Miller and Mark Mastrov, and has big name investors like four-time NBA champion Shaquille O'Neal and MLB stars/World Series champions Alex Rodriguez and Jimmy Rollins.",league_anchor,world series,mlb_baseball,,,,,,
+a29256f0db236afe,mlb_baseball,positive,828577,"The Blue Jays and Cubs both dropped the first two games of their series on the road, however, to the Kansas City Royals and the New York Mets, respectively.",team_entities,new york mets,mlb_baseball,,,,,,
+78b082e254433f61,mlb_baseball,positive,496616,"READ MORE: Yankees SS Gregorius to hold clinics in New Zealand
+
+ALDEN WILLIAMS/FAIRFAX NZ New York Yankees shortstop Didi Gregorius said his career is proof ""you can go a long way with baseball"".",baseball_jargon;team_entities,new york yankees;shortstop,mlb_baseball,,,,,,
+198b49153ffa240d,mlb_baseball,positive,225470,"Atlanta
+
+Atlanta Braves
+
+Only in Atlanta is a $1.4 billion replacement for a 23-year-old stadium considered a bargain.",team_entities,atlanta braves,mlb_baseball,,,,,,
+e8ba0c209fd1b96b,mlb_baseball,positive,503259,"We had the World Series, and you let the grounder go through your legs.",league_anchor,world series,mlb_baseball,,,,,,
+c5232f40b00cd492,mlb_baseball,positive,461282,"McCourt reportedly received $130 million from their settlement in 2011, the same year her former husband filed for bankruptcy protection as Major League Baseball threatened to seize the team over troubled finances.",league_anchor,major league baseball,mlb_baseball,,,,,,
+5eb6bf8bdd505e2e,mlb_baseball,positive,267812,"My wife says, “You know you’re wasting your time.” I say, “It’s my job.” But I think, “Maybe it’s just my job to jinx it.” Once, I got to Camden Yards as Mike Mussina took a no-hitter into the ninth inning.",baseball_jargon,inning,mlb_baseball,,,,,,
+d7e0c5df2fc89735,mlb_baseball,positive,898500,"American League Bullpen vs. National League Reserves
+
+If the American League holds a lead going into the final innings, keep an eye out for some fantastic chess matches down the stretch.",league_anchor,american league;national league,mlb_baseball,,,,,,
+68e009dc639f89d9,mlb_baseball,positive,340444,"[8]
+
+Los Angeles Dodgers (2007) [ edit ]
+
+Luis Gonzalez as a Dodger.",team_entities,los angeles dodgers,mlb_baseball,,,,,,
+d322f5ea48c33e31,mlb_baseball,positive,907649,Playoff teams get paid within 30 days after the World Series.,league_anchor,world series,mlb_baseball,,,,,,
+63b1f8d3eb7e13ee,mlb_baseball,positive,871445,"In power since 1988, the generals annulled the National League for Democracy's sweeping 1990 election victory and jailed its leader, the Nobel peace prize-winner Aung San Suu Kyi.",league_anchor,national league,mlb_baseball,,,,,,
+6cca478359d02c56,mlb_baseball,positive,75597,"He budged on neither request, until about an inning later another usher appeared and firmly demanded that he either remove the horse mask or leave the ball game.",baseball_jargon,inning,mlb_baseball,,,,,,
+1fb94fb42d755a67,mlb_baseball,positive,790451,"Finally, Sam Fuld whiffed to end the inning on a fastball above the PitchF/X zone.",baseball_jargon,inning,mlb_baseball,,,,,,
+2142a13fdcb6a04d,mlb_baseball,positive,959199,"Shimp (5-1) suffered the loss, allowing four runs (two earned) on two hits in 1/3 of an inning.",baseball_jargon,inning,mlb_baseball,,,,,,
+24da4c710cbea1b0,mlb_baseball,positive,246825,"They lost to the White Sox in the World Series in six games, in one of the greatest upsets in World Series history, but rebounded to win back-to-back titles in 1907 and 1908.",league_anchor,world series,mlb_baseball,,,,,,
+c8d68475cbbe10b7,mlb_baseball,positive,739940,"Sorted by Game Score — an imperfect measure, for certain, but one that does okay for this purpose — here are the 10 best nine inning performances of all time.",baseball_jargon,inning,mlb_baseball,,,,,,
+5c593f1200fd0017,mlb_baseball,positive,1069254,"The Thirteen of Qarth: New York Mets
+
+The Qartheen refer to their walled-in home as “the greatest city that ever was or will be,” which seems a bit crazy -- but no crazier than fans continuing to refer to their downtrodden franchise as the “Amazin’ Mets.” The Thirteen of Qarth wear gaudy outfits, hole up in The House of the Undying and boast of vaults filled with incomprehensible riches, but the outfits are literally laced with bugs, the holy tower got penetrated by a teenage girl and the vaults are empty.",team_entities,new york mets,mlb_baseball,,,,,,
+cb57f947ec0fdbd3,mlb_baseball,positive,228022,"He could lose a little batting average and on-base percentage in the process, but if he replaces it with loftier slugging, it'll more than even out.",baseball_jargon,batting average,mlb_baseball,,,,,,
+afd2c0dce3ccbfc3,mlb_baseball,positive,665811,"Behind a dominant six inning performance from New York pitcher Matt Harvey, the Mets took two of the first three games of the season.",baseball_jargon,inning,mlb_baseball,,,,,,
+6078f83b07d04786,mlb_baseball,positive,522058,"USA TODAY Sports
+
+In this 1997 file photo, San Francisco Giants outfielder Barry Bonds celebrates on top of the Giants dugout after they beat the San Diego Padres to win the National League West title.",league_anchor,national league,mlb_baseball,,,,,,
+fd25019b2a51a561,mlb_baseball,positive,347109,"Here's the deal: If you're a student of All-Star Game history, you probably know that the National League won the 1964 game when Johnny Callison of the Phillies hit a walk-off homer in the bottom of the ninth.",league_anchor,national league,mlb_baseball,,,,,,
+2bce01490c161cd2,mlb_baseball,positive,850500,"To put that figure in perspective, let’s say David Ortiz is batting fourth for the Boston Red Sox and he’s hitting .320 and the fans love him.",team_entities,boston red sox,mlb_baseball,,,,,,
+278c4208dccd0706,mlb_baseball,positive,744754,"[34]
+
+In 1995, Barbara Enright became the only woman to make the Final Table of the World Series of Poker, finishing in 5th place.",league_anchor,world series,mlb_baseball,,,,,,
+6d56055544f0d3ce,mlb_baseball,positive,277696,"Atlanta Braves hitters – The Braves have had some fantasy-useful players, but I’d be sitting just about everyone on that team this week.",team_entities,atlanta braves,mlb_baseball,,,,,,
+87763316d068bdf1,mlb_baseball,local_hard_negative,1789075,"With a new badminton league about to launch in India, the hope is that a sprinkle of razzmatazz can help the sport emerge from the shadows of cricket, and finally become cool.",non_mlb_ball_sports,cricket,,,,,,,
+ad264ca62b51f837,mlb_baseball,local_hard_negative,527585,"There wasn't a cricket skill, once taught, that he couldn't perform at the highest level.",non_mlb_ball_sports,cricket,,,,,,,
+7ec5bd1d13045a4b,mlb_baseball,local_hard_negative,1269555,"Cricket, Something to Smile About.",non_mlb_ball_sports,cricket,,,,,,,
+55030b6720d38f13,mlb_baseball,local_hard_negative,365216,"And this year, they’ve made live coverage of the Cricket World Cup available to anyone through purchase of a package containing all the matches.",non_mlb_ball_sports,cricket,,,,,,,
+b36f6b79b188cfd0,mlb_baseball,local_hard_negative,1518846,"One benefit, or perhaps complication, of the policies of splitting the captaincy and rotating their players is that there are five men in the squad – Cook, Swann, Broad, Pietersen, and Eoin Morgan – who have led England in international cricket.",non_mlb_ball_sports,cricket,,,,,,,
+3404fdfabbac253e,mlb_baseball,local_hard_negative,816230,"Cricket flour has similar baking properties as actual flour, but gives baked goods a nuttier flavor and grainier texture.",non_mlb_ball_sports,cricket,,,,,,,
+19d7ed6323dedb56,mlb_baseball,local_hard_negative,1569739,"Johnson destroyed the English batting line-up in Australia only two years ago, yet now he is playing his last day of Test and international cricket.",non_mlb_ball_sports,cricket,,,,,,,
+d77dfd69dd443e81,mlb_baseball,local_hard_negative,1516266,He took 37 wickets for 99 runs for the club in the 1889 cricket season.,non_mlb_ball_sports,cricket,,,,,,,
+6e504242e7a96ebb,mlb_baseball,local_hard_negative,527895,"Under Faulkner's tutelage, Peebles went further than county cricket and played 13 Tests.",non_mlb_ball_sports,cricket,,,,,,,
+1c473966e373d48c,mlb_baseball,local_hard_negative,496623,"His father Johannes Sr, brother Johannes Jr and grandfather Antonio were baseball pitchers and his mother, Sheritsa Stoop, who is in New Zealand with him, played on the Dutch national softball team.",non_mlb_ball_sports,softball,,,,,,,
+26b0479c2d373cfb,mlb_baseball,local_hard_negative,982062,"The sad part is, he was obviously a promising bowler, on the peripheries of the state team, but he doesn't know of any attempts made by his state selectors to look for him when he disappeared from a camp of the Bhopal division team, one step below first-class cricket.",non_mlb_ball_sports,cricket,,,,,,,
+f7e260f1c32627c8,mlb_baseball,local_hard_negative,519780,"Test Match Struggles in Asia
+
+While Pakistan play out a day-night Test in an empty stadium in the desert, India play England in a heavyweight bout, in front of a pitiable crowd in cricket’s most unpopular region in India.",non_mlb_ball_sports,cricket,,,,,,,
+1dc378246e5146eb,mlb_baseball,local_hard_negative,1357082,"We performed, I performed so there’s nothing left that I really wanted to do.”
+
+The 39-year-old proudly sits on top of the run-scoring chart for Pakistan in Test cricket as he leaves the game, with over 10,000 to his name at a sublime average of just a shade over 52.",non_mlb_ball_sports,cricket,,,,,,,
+7dccdf3f9622d214,mlb_baseball,local_hard_negative,1800673,"As for the Pakistan Cricket Board (PCB), they will begin preparations for Sri Lanka's arrival with chairman Najam Sethi hoping this tour will open the door for other nations.",non_mlb_ball_sports,cricket,,,,,,,
+ea977da30c715110,mlb_baseball,local_hard_negative,1308140,"""It is sad for Kenya cricket but there is nothing we can do about the situation,"" Cricket Kenya said.",non_mlb_ball_sports,cricket,,,,,,,
+1fcb106c6e9431af,mlb_baseball,local_hard_negative,18532,"Basketball, football, softball, baseball, foosball, pinball, ping-pong ball, rugby ball, cricket ball.",non_mlb_ball_sports,cricket;softball,,,,,,,
+85f6317466093b0b,mlb_baseball,local_hard_negative,1470763,I heard your Uncle Oarl was on his way to San Antonio with a cricket.,non_mlb_ball_sports,cricket,,,,,,,
+ff4ef840d9e67c17,mlb_baseball,local_hard_negative,863200,"on Saturday night in the Mid-Atlantic Regional Tournament championship game on the Leon J. Breen Field at the A. Bartlett Giamatti Little League Complex in Bristol, Conn.",non_mlb_ball_sports,little league,,,,,,,
+c98b3390e754244b,mlb_baseball,local_hard_negative,1235449,"I step in with the cricket coaching, and building a team there with the kids.",non_mlb_ball_sports,cricket,,,,,,,
+d69427b01ba4f4d2,mlb_baseball,local_hard_negative,151736,"As groups of children play cricket and football in a nearby concrete lawn, a couple of admirers come and pay obeisance with flowers on the grave.",non_mlb_ball_sports,cricket,,,,,,,
+3db5a5975250f563,mlb_baseball,local_hard_negative,371506,"The evacuees are living with friends and family on Antigua, or in large shelters run by the government in technical colleges, churches and a cricket stadium.",non_mlb_ball_sports,cricket,,,,,,,
+5a4e814857ba577f,mlb_baseball,local_hard_negative,977826,Women’s cricket has come a long way and I have no doubt this World Cup will be the biggest one so far.”,non_mlb_ball_sports,cricket,,,,,,,
+e02724698963fb72,mlb_baseball,local_hard_negative,835964,"The ball consisted of more than two pounds of food, midway in size between a softball and bowling ball, meant for sharing.",non_mlb_ball_sports,softball,,,,,,,
+6169d039bf18e406,mlb_baseball,local_hard_negative,669143,"""If you can get yourself onto a bit of a roll, because there is so much cricket, you can find yourself feeling really good out in the middle and hopefully converting that into runs.",non_mlb_ball_sports,cricket,,,,,,,
+9b265982d1b35297,mlb_baseball,local_hard_negative,356495,Then there was my little league baseball coach who tried seducing me with his mustache when explaining what steroids does to a clit when I was 12.,non_mlb_ball_sports,little league,,,,,,,
+c290f0afad840f7b,mlb_baseball,benchmark_hard_negative,276325,What Does It Mean For NBA Players?,nba_basketball,nba,nba_basketball,,,,,,
+bca4f951eb122f9a,mlb_baseball,benchmark_hard_negative,130820,He is potentially NHL ready and may be ready to join the Sabres after this year.,nhl_hockey,nhl,nhl_hockey,,,,,,
+0eff7868f45e3f3d,mlb_baseball,benchmark_hard_negative,309311,The big thing that I remembered about him was his position: point guard.,nba_basketball,point guard,nba_basketball,,,,,,
+c03de9afa7116ecd,mlb_baseball,benchmark_hard_negative,311004,"He has since played for the Toronto Raptors, Phoenix Suns and Philadelphia 76ers in the NBA, and has had stints in Lithuania and Russia.",nba_basketball,nba,nba_basketball,,,,,,
+e982130bdf146bbf,mlb_baseball,benchmark_hard_negative,19937,"Steve Kournianos of The Draft Analyst had this to say about Dylan:
+
+“Strome’s elite play with the puck and the way he protects it can make attempts at slowing him down both futile and nightmarish.",nhl_hockey,puck,nhl_hockey,,,,,,
+7ed4dfd0e17cb782,mlb_baseball,benchmark_hard_negative,90161,"In contrast to leagues like the NFL or NBA, where players are under multi-million dollar contracts, agree to act as representatives of the organization and the sport, and have hordes of analysts scrutinizing everything they do, the issue of a small drug incident might have a little more weight.",nba_basketball,nba,nba_basketball,,,,,,
+97962541a143cc6a,mlb_baseball,benchmark_hard_negative,11127,"The first guaranteed is the 93-94 Calder winner Martin Brodeur, future hall of famer and Stanley Cup winner.",nhl_hockey,stanley cup,nhl_hockey,,,,,,
+d5dd949e0c0fb387,mlb_baseball,benchmark_hard_negative,130744,"1 player from that draft is still in the NHL: Mark Psysk
+
+While some may like the player, his contributions to the Sabres were limited.",nhl_hockey,nhl,nhl_hockey,,,,,,
+bf2ca85933dc2296,mlb_baseball,benchmark_hard_negative,173817,"The middle panel shows a blue line indicating the totality path, as well as a large region (~3300 km diameter) of depleted airglow that roughly corresponds with the region of partial eclipse shadow.",nhl_hockey,blue line,nhl_hockey,,,,,,
+1fb12cae73e8b7f1,mlb_baseball,benchmark_hard_negative,113474,"If the tournament were a best-of-seven series like the NBA playoffs, Kentucky's net-cutting would be inevitable.",nba_basketball,nba;nba playoffs,nba_basketball,,,,,,
+a27c1d29cbd23600,mlb_baseball,benchmark_hard_negative,19969,Having three guys that all played in London together would definitely help their transition from the OHL to the NHL.,nhl_hockey,nhl,nhl_hockey,,,,,,
+229c5db61f6925de,mlb_baseball,benchmark_hard_negative,88454,The NBA Players’ Union had just won an arbitration case against the league that redefined whether players retained their “Bird” rights through the waiver process.,nba_basketball,nba,nba_basketball,,,,,,
+0f355b1b75dd097d,mlb_baseball,benchmark_hard_negative,246243,"Kevork Djansezian/Getty Images
+
+IN THE LOCKER ROOMS BEFORE OVERTIME
+
+The teams skated to their respective dressing rooms to prepare for sudden-death overtime, which was to be in the NHL format of 4-on-4.",nhl_hockey,nhl,nhl_hockey,,,,,,
+bbf8cfd3b029c9d9,mlb_baseball,benchmark_hard_negative,286443,"Show some gay pride, NBA.",nba_basketball,nba,nba_basketball,,,,,,
+778d27534c704abe,mlb_baseball,benchmark_hard_negative,130729,"Barring a miracle, this April the Buffalo Sabres will again miss out on the NHL playoffs making it seven years since the underwhelming 2010-2011 first round exit.",nhl_hockey,nhl;nhl playoffs,nhl_hockey,,,,,,
+44cd939a9af1b797,mlb_baseball,benchmark_hard_negative,88455,"It was a relatively trivial ruling for most of the league, but a coup for the New York Knicks, whose top two free agents, Jeremy Lin and Steve Novak, had both been claimed off waivers to start the season (and both had played their way into significant salary raises).",nba_basketball,new york knicks,nba_basketball,,,,,,
+53d714491025eb77,mlb_baseball,benchmark_hard_negative,263191,The Washington Wizards/Bullets have been a second tier franchise in the NBA landscape for over three decades.,nba_basketball,nba,nba_basketball,,,,,,
+0133a9ea816e4392,mlb_baseball,benchmark_hard_negative,223375,"Instead, pay attention to his pure point guard skills: his ability to be an orchestrator on offense, his passing, creativity, and playmaking ability.",nba_basketball,point guard,nba_basketball,,,,,,
+45f79fc420d8d1cb,mlb_baseball,benchmark_hard_negative,170895,The NBA offseason.,nba_basketball,nba,nba_basketball,,,,,,
+acfd69a02af60445,mlb_baseball,benchmark_hard_negative,256958,"The 28-year-old has scored an impressive 13 goals in the 22 playoff games on his NHL resume, and he will be called upon to step things up in the first round especially, to make up for the absence of the injured Evgeni Malkin.",nhl_hockey,nhl,nhl_hockey,,,,,,
+acbac0f6452bbf30,mlb_baseball,benchmark_hard_negative,202727,"The team’s fourth Drake night is Wednesday, when the Golden State Warriors visit the Air Canada Centre.",nba_basketball,golden state warriors,nba_basketball,,,,,,
+ce7d098fefd9e539,mlb_baseball,benchmark_hard_negative,55285,"In the offensive zone, Ekman-Larsson has made a habit of making opposing teams pay when he has the time and room to put the puck on net.",nhl_hockey,puck,nhl_hockey,,,,,,
+958e5cc55d39aae4,mlb_baseball,benchmark_hard_negative,112714,"“Someday,” he said wistfully, “I’m going to learn to knit with my feet.”) He won the Vezina Trophy, the NHL’s goaltending prize, seven times, and he won it every year from 1956 to 1960.",nhl_hockey,nhl,nhl_hockey,,,,,,
+33adb9f87bb3584f,mlb_baseball,benchmark_hard_negative,55279,Ekman-Larsson’s biggest offensive contribution came when he notched his first career NHL playoff goal in the second period of Game 6 of the Coyotes’ first-round series against the Chicago Blackhawks.,nhl_hockey,chicago blackhawks;nhl,nhl_hockey,,,,,,
+528cf24e0ff7c258,mlb_baseball,benchmark_hard_negative,98471,“There are no easy matchups in the NHL playoffs.,nhl_hockey,nhl;nhl playoffs,nhl_hockey,,,,,,
+95ce85f43bcc3b21,mlb_baseball,benchmark_hard_negative,298161,"The 2003 NHL Draft is regarded as one of the most talented pools ever, and Murray plucked the second- and third-leading scorers.",nhl_hockey,nhl;nhl draft,nhl_hockey,,,,,,
+adaff7e7c2f33c0c,mlb_baseball,benchmark_hard_negative,246138,I remember the sound of the puck hitting the back pad in the goal.,nhl_hockey,puck,nhl_hockey,,,,,,
+85cff9d0f9319c18,mlb_baseball,benchmark_hard_negative,243425,"Griffin played nine seasons in the NBA, with stints with the Boston Celtics, Dallas Mavericks, Houston Rockets, Chicago Bulls and Seattle SuperSonics.",nba_basketball,boston celtics;nba,nba_basketball,,,,,,
+876c80eec2f33fa5,mlb_baseball,benchmark_hard_negative,112696,"Montreal Maroon Clint Benedict had worn a leather half-mask for a brief time in 1930, after an errant puck smashed his nose and cheekbone—but it blocked his vision, he said, and he took it off after only a few games.",nhl_hockey,puck,nhl_hockey,,,,,,
+ce66648a5740a427,mlb_baseball,benchmark_hard_negative,298169,"Before the defenseman suited up in the NHL, Anaheim dealt the prospect to Edmonton as part of the package for Hockey Hall of Famer Chris Pronger.",nhl_hockey,nhl,nhl_hockey,,,,,,
+39447089dc14de36,mlb_baseball,benchmark_hard_negative,246420,"Sidney Crosby: ""The goalie goes down and basically, just the light coming on.",nhl_hockey,goalie,nhl_hockey,,,,,,
+9868c840474bb09c,mlb_baseball,benchmark_hard_negative,182076,The Canucks kept pressing and tied it on the power play at 11:05.,nhl_hockey,power play,nhl_hockey,,,,,,
+113d283e0344b770,mlb_baseball,benchmark_hard_negative,246417,"Ron Wilson: ""I don't know what Ryan was thinking, starting to go with a poke-check on the puck and he's still 20 feet away.",nhl_hockey,puck,nhl_hockey,,,,,,
+bd9671a0bb5cfb97,mlb_baseball,benchmark_hard_negative,173558,"""That's not how we wanted this,"" he told the opposing goalie.",nhl_hockey,goalie,nhl_hockey,,,,,,
+c21ea887ce97b47b,mlb_baseball,benchmark_hard_negative,144224,"Hal Gill however had other plans.“Umm, don’t tell Jaro this, but I wasn’t even thinking about that,” smiled Gill, who may have bigger aspirations for he and teammates after winning the Stanley Cup with the Penguins last spring.",nhl_hockey,stanley cup,nhl_hockey,,,,,,
+387e22e06c2667f6,mlb_baseball,benchmark_hard_negative,89313,"In 552 NHL games played, he won 250 games, including 37 shutouts.",nhl_hockey,nhl,nhl_hockey,,,,,,
+789e1945ffa510b7,mlb_baseball,benchmark_hard_negative,55278,"He racked up 32 points in the 2011-12 NHL season, which ranked second on the team in terms of scoring by defenseman and seventh on the team in overall scoring.",nhl_hockey,nhl,nhl_hockey,,,,,,
+fd652a47e8970bfb,mlb_baseball,benchmark_hard_negative,228666,Should the NHL adopt the 3-2-1 point system?,nhl_hockey,nhl,nhl_hockey,,,,,,
+88954ac43a41be8b,mlb_baseball,benchmark_hard_negative,223347,"Besides Rajon Rondo, the C's don't have a true point guard on the roster.",nba_basketball,point guard,nba_basketball,,,,,,
+65df5b9e203fc394,mlb_baseball,benchmark_hard_negative,42851,The Around the Horn panel weighs in on the NBA sending a memo to teams about appropriate social media behavior.,nba_basketball,nba,nba_basketball,,,,,,
+2e9d876f7035c539,mlb_baseball,benchmark_hard_negative,298204,"15 selection on defenseman Cody Ceci, who is a key piece of the Ottawa blue line.",nhl_hockey,blue line,nhl_hockey,,,,,,
+e8355f516005f0ed,mlb_baseball,benchmark_hard_negative,19906,Each of these players have a different skill set that could benefit the Arizona Coyotes in many different ways and will help in the overall goal of bringing the Stanley Cup to the desert.,nhl_hockey,stanley cup,nhl_hockey,,,,,,
+d99800cc0825b419,mlb_baseball,benchmark_hard_negative,51064,Scott Brooks guided the Thunder to the 2012 NBA Finals.,nba_basketball,nba;nba finals,nba_basketball,,,,,,
+d6beedd812263a2e,mlb_baseball,benchmark_hard_negative,58367,Bergeron is progressing as well from his slew of injuries suffered during the Stanley Cup Final.,nhl_hockey,stanley cup,nhl_hockey,,,,,,
+9ed0873bf49dcd7e,mlb_baseball,benchmark_hard_negative,250377,"Simon Gagne shot blocked by Brian Campbell
+
+Mike Richards credited with hit on Patrick Kane in offensive zone
+
+Mike Richards credited with hit on Kris Versteeg in offensive zone
+
+Shot on goal by Claude Giroux saved by Antti Niemi (Backhand 16 ft)
+
+Matt Carle shot blocked by Niklas Hjalmarsson
+
+James van Riemsdyk credited with hit on Niklas Hjalmarsson in offensive zone
+
+James van Riemsdyk shot blocked by Nick Boynton
+
+Blair Betts shot blocked by Nick Boynton
+
+Mike Richards credited with hit on Jonathan Toews in defensive zone
+
+Shot missed by Kimmo Timonen, Wide of Net (Wristshot 56 ft)
+
+Jeff Carter credited with hit on Brent Sopel in offensive zone
+
+Jeff Carter credited with hit on Nick Boynton in offensive zone
+
+Takeaway by Matt Carle in neutral zone
+
+Shot on goal by Simon Gagne saved by Antti Niemi (Snapshot 29 ft)
+
+Danny Briere credited with hit on Dustin Byfuglien in offensive zone
+
+Takeaway by Ville Leino in defensive zone
+
+Oskars Bartulis credited with hit on Ben Eager in defensive zone
+
+Giveaway by Lukas Krajicek in defensive zone
+
+Penalty to Chris Pronger 2 minutes for Holding Marian Hossa
+
+Kimmo Timonen credited with hit on Patrick Kane in defensive zone
+
+Giveaway by Matt Carle in defensive zone
+
+Jeff Carter won faceoff against John Madden in defensive zone
+
+Takeaway by Simon Gagne in defensive zone
+
+Scott Hartnell credited with hit on Duncan Keith in offensive zone
+
+Scott Hartnell credited with hit on Jonathan Toews in offensive zone
+
+Scott Hartnell shot blocked by Brent Seabrook
+
+Shot on goal by Claude Giroux saved by Antti Niemi (Wraparound 7 ft)
+
+Claude Giroux credited with hit on Nick Boynton in offensive zone
+
+Shot missed by Mike Richards, Wide of Net (Snapshot 43 ft)
+
+Shot missed by Kimmo Timonen, Wide of Net (Wristshot 42 ft)
+
+Mike Richards shot blocked by John Madden
+
+Penalty to Chris Pronger 2 minutes for High-sticking Kris Versteeg
+
+Claude Giroux won faceoff against Dave Bolland in offensive zone
+
+Giveaway by Claude Giroux in offensive zone
+
+Mike Richards shot blocked by Niklas Hjalmarsson
+
+Jeff Carter won faceoff against John Madden in offensive zone
+
+Giveaway by Mike Richards in offensive zone
+
+Shot missed by Ville Leino, Wide of Net (Wristshot 30 ft)
+
+Braydon Coburn shot blocked by Brent Sopel
+
+Jeff Carter shot blocked by Jonathan Toews
+
+Braydon Coburn shot blocked by Jonathan Toews
+
+Shot on goal by Chris Pronger saved by Antti Niemi (Slapshot 53 ft)
+
+Shot on goal by Danny Briere saved by Antti Niemi (Snapshot 56 ft)
+
+Power Play Goal Scored by Scott Hartnell (Backhand 7 ft) assisted by Danny Briere and Chris Pronger
+
+Blair Betts won faceoff against Patrick Sharp in neutral zone
+
+Takeaway by Chris Pronger in defensive zone
+
+Shot on goal by Chris Pronger saved by Antti Niemi (Slapshot 136 ft)
+
+Shot on goal by Simon Gagne saved by Antti Niemi (Wristshot 16 ft)
+
+Shot missed by Danny Briere, Wide of Net (Snapshot 36 ft)
+
+Shot missed by Braydon Coburn, Over Net (Slapshot 33 ft)
+
+Shot missed by Ville Leino, Wide of Net (Backhand 20 ft)
+
+Penalty to Scott Hartnell 2 minutes for High-sticking Niklas Hjalmarsson
+
+Giveaway by Chris Pronger in defensive zone
+
+Giveaway by Chris Pronger in defensive zone
+
+Takeaway by Claude Giroux in offensive zone
+
+Ville Leino credited with hit on Andrew Ladd in defensive zone
+
+Takeaway by Scott Hartnell in offensive zone
+
+Shot missed by Kimmo Timonen, Wide of Net (Slapshot 52 ft)
+
+Takeaway by Arron Asham in neutral zone
+
+Takeaway by Claude Giroux in offensive zone
+
+Arron Asham won faceoff against Jonathan Toews in neutral zone
+
+Mike Richards credited with hit on Tomas Kopecky in offensive zone
+
+Chris Pronger credited with hit on Jonathan Toews in defensive zone
+
+Simon Gagne shot blocked by Marian Hossa
+
+Goal scored by Danny Briere (Snapshot 15 ft) assisted by Ville Leino and Lukas Krajicek
+
+Penalty to Braydon Coburn 2 minutes for Cross checking Andrew Ladd
+
+Mike Richards won faceoff against Kris Versteeg in defensive zone
+
+Mike Richards won faceoff against Kris Versteeg in neutral zone
+
+Danny Briere shot blocked by Kris Versteeg
+
+Jeff Carter won faceoff against Dave Bolland in offensive zone
+
+Shot on goal by Simon Gagne saved by Antti Niemi (Snapshot 33 ft)
+
+Giveaway by Arron Asham in defensive zone
+
+Mike Richards won faceoff against Jonathan Toews in defensive zone
+
+Arron Asham credited with hit on Niklas Hjalmarsson in offensive zone
+
+Shot on goal by Mike Richards saved by Antti Niemi (Snapshot 45 ft)
+
+Scott Hartnell credited with hit on Dave Bolland in offensive zone
+
+James van Riemsdyk credited with hit on Nick Boynton in neutral zone
+
+Shot on goal by Claude Giroux saved by Antti Niemi (Snapshot 34 ft)
+
+Jeff Carter shot blocked by Jonathan Toews
+
+Shot on goal by Jeff Carter saved by Antti Niemi (Snapshot 20 ft)
+
+Shot missed by Ville Leino, Wide of Net (Snapshot 21 ft)
+
+Shot missed by Simon Gagne, Goalpost (Wristshot 5 ft)
+
+Braydon Coburn credited with hit on Patrick Kane in defensive zone
+
+Blair Betts won faceoff against John Madden in neutral zone
+
+Danny Briere won faceoff against Dave Bolland in offensive zone
+
+Giveaway by Matt Carle in offensive zone
+
+Giveaway by Matt Carle in defensive zone
+
+Jeff Carter won faceoff against Jonathan Toews in neutral zone
+
+Giveaway by Michael Leighton in defensive zone
+
+Penalty to Danny Briere 2 minutes for Cross checking Marian Hossa
+
+Blair Betts won faceoff against Jonathan Toews in defensive zone
+
+Giveaway by Kimmo Timonen in defensive zone
+
+Mike Richards credited with hit on Kris Versteeg in defensive zone
+
+Kimmo Timonen credited with hit on Jonathan Toews in defensive zone
+
+Mike Richards won faceoff against Patrick Sharp in defensive zone
+
+Giveaway by Simon Gagne in defensive zone
+
+Takeaway by Danny Briere in defensive zone
+
+Mike Richards won faceoff against Patrick Sharp in defensive zone
+
+Danny Briere won faceoff against John Madden in neutral zone
+
+Jeff Carter credited with hit on Jonathan Toews in defensive zone
+
+Mike Richards won faceoff against Patrick Sharp in neutral zone
+
+Danny Briere won faceoff against Dave Bolland in neutral zone
+
+Darroll Powe won faceoff against Jonathan Toews in neutral zone
+
+Shot on goal by Jeff Carter saved by Antti Niemi (Snapshot 48 ft)
+
+Chris Pronger shot blocked by Dustin Byfuglien
+
+Shot missed by Darroll Powe, Wide of Net (Backhand 35 ft)
+
+Ville Leino shot blocked by Niklas Hjalmarsson
+
+Mike Richards won faceoff against Dave Bolland in defensive zone
+
+Shot missed by Jeff Carter, Wide of Net (Snapshot 20 ft)
+
+Matt Carle shot blocked by Kris Versteeg
+
+Shot on goal by Jeff Carter saved by Antti Niemi (Wristshot 38 ft)
+
+Shot on goal by Danny Briere saved by Antti Niemi (Slapshot 51 ft)
+
+Scott Hartnell credited with hit on Duncan Keith in offensive zone
+
+Shot missed by Danny Briere, Wide of Net (Backhand 9 ft)
+
+Shot missed by Darroll Powe, Wide of Net (Snapshot 25 ft)
+
+Chris Pronger shot blocked by Andrew Ladd
+
+Jeff Carter won faceoff against Dave Bolland in neutral zone
+
+Jeff Carter won faceoff against Dave Bolland in neutral zone
+
+Jeff Carter shot blocked by Dave Bolland
+
+Shot on goal by Mike Richards saved by Antti Niemi (Wristshot 38 ft)
+
+Danny Briere won faceoff against Jonathan Toews in offensive zone
+
+Chris Pronger shot blocked by Brent Seabrook
+
+Giveaway by Matt Carle in offensive zone
+
+Chris Pronger shot blocked by Brent Seabrook
+
+Shot on goal by Mike Richards saved by Antti Niemi (Wristshot 12 ft)
+
+Jeff Carter won faceoff against John Madden in offensive zone
+
+Shot on goal by Claude Giroux saved by Antti Niemi (Wristshot 7 ft)
+
+Goal scored by Scott Hartnell (Tip-In 7 ft) assisted by Ville Leino and Danny Briere
+
+Jeff Carter shot blocked by Niklas Hjalmarsson
+
+Danny Briere won faceoff against John Madden in offensive zone
+
+Scott Hartnell credited with hit on Brent Seabrook in defensive zone
+
+Mike Richards won faceoff against Jonathan Toews in defensive zone
+
+Simon Gagne shot blocked by Brian Campbell
+
+Mike Richards credited with hit on Brian Campbell in offensive zone
+
+Mike Richards won faceoff against Dave Bolland in offensive zone
+
+Shot missed by Braydon Coburn, Wide of Net (Snapshot 62 ft)
+
+Shot on goal by Mike Richards saved by Antti Niemi (Wristshot 20 ft)
+
+Shot on goal by Jeff Carter saved by Antti Niemi (Wristshot 17 ft)
+
+Mike Richards won faceoff against Patrick Sharp in defensive zone
+
+Shot on goal by Claude Giroux saved by Antti Niemi (Wristshot 12 ft)
+
+Darroll Powe won faceoff against John Madden in offensive zone
+
+Shot missed by Simon Gagne, Wide of Net (Wristshot 40 ft)
+
+Giveaway by Kimmo Timonen in defensive zone
+
+Shot missed by Danny Briere, Wide of Net (Deflection 11 ft)
+
+Shot on goal by Kimmo Timonen saved by Antti Niemi (Slapshot 59 ft)
+
+Chris Pronger credited with hit on Marian Hossa in defensive zone
+
+Braydon Coburn credited with hit on Patrick Sharp in defensive zone
+
+Giveaway by Darroll Powe in defensive zone
+
+Jonathan Toews won faceoff against Danny Briere in neutral zone
+
+Shot on goal by Tomas Kopecky saved by Michael Leighton (Wristshot 31 ft)
+
+Jonathan Toews shot blocked by Matt Carle
+
+Stoppage - Puck in Netting
+
+Patrick Sharp won faceoff against Mike Richards in offensive zone
+
+Dustin Byfuglien credited with hit on Simon Gagne in defensive zone
+
+Giveaway by Niklas Hjalmarsson in neutral zone
+
+Stoppage - Icing
+
+Jonathan Toews won faceoff against Danny Briere in offensive zone
+
+Shot on goal by Duncan Keith saved by Michael Leighton (Snapshot 55 ft)
+
+Stoppage - Goalie Stopped
+
+Jonathan Toews won faceoff against Mike Richards in offensive zone
+
+Shot on goal by Brent Seabrook saved by Michael Leighton (Slapshot 63 ft)
+
+Shot on goal by Brent Seabrook saved by Michael Leighton (Snapshot 24 ft)
+
+Shot on goal by Duncan Keith saved by Michael Leighton (Snapshot 45 ft)
+
+Tomas Kopecky shot blocked by Danny Briere
+
+Brent Seabrook credited with hit on Claude Giroux in defensive zone
+
+Brent Seabrook credited with hit on James van Riemsdyk in defensive zone
+
+Takeaway by Brent Sopel in defensive zone
+
+Shot on goal by Niklas Hjalmarsson saved by Michael Leighton (Snapshot 55 ft)
+
+Ben Eager credited with hit on Claude Giroux in offensive zone
+
+Stoppage - Offside; TV timeout
+
+Dave Bolland won faceoff against Claude Giroux in neutral zone
+
+Shot on goal by Marian Hossa saved by Michael Leighton (Snapshot 48 ft)
+
+Marian Hossa credited with hit on Chris Pronger in offensive zone
+
+Jonathan Toews won faceoff against Blair Betts in offensive zone
+
+Shot missed by Duncan Keith, Goalpost (Slapshot 49 ft)
+
+Marian Hossa credited with hit on Matt Carle in offensive zone
+
+Brent Seabrook credited with hit on Claude Giroux in offensive zone
+
+Shot on goal by Jonathan Toews saved by Michael Leighton (Backhand 13 ft)
+
+Giveaway by Niklas Hjalmarsson in offensive zone
+
+Shot on goal by Duncan Keith saved by Michael Leighton (Slapshot 54 ft)
+
+Stoppage - Goalie Stopped; TV timeout
+
+Shot on goal by Ben Eager saved by Michael Leighton (Snapshot 26 ft)
+
+Shot on goal by Dave Bolland saved by Michael Leighton (Slapshot 44 ft)
+
+Takeaway by Dave Bolland in defensive zone
+
+Brent Seabrook credited with hit on Ville Leino in defensive zone
+
+Stoppage - Goalie Stopped
+
+Patrick Sharp won faceoff against Claude Giroux in defensive zone
+
+Giveaway by Nick Boynton in defensive zone
+
+Penalty to Brent Sopel 2 minutes for Interference Claude Giroux
+
+Dave Bolland won faceoff against Mike Richards in defensive zone
+
+Giveaway by Duncan Keith in defensive zone
+
+Shot on goal by Marian Hossa saved by Michael Leighton (Snapshot 43 ft)
+
+Shot on goal by Nick Boynton saved by Michael Leighton (Wristshot 56 ft)
+
+Takeaway by Marian Hossa in neutral zone
+
+Shot on goal by Patrick Kane saved by Michael Leighton (Snapshot 41 ft)
+
+Stoppage - ; TV timeout
+
+Jonathan Toews won faceoff against Blair Betts in offensive zone
+
+Shot on goal by Jonathan Toews saved by Michael Leighton (Wristshot 12 ft)
+
+Power Play Goal Scored by Dustin Byfuglien (Wristshot 10 ft) assisted by Jonathan Toews and Patrick Kane
+
+Dustin Byfuglien credited with hit on Chris Pronger in offensive zone
+
+Penalty to Brent Seabrook 2 minutes for Elbowing Scott Hartnell
+
+Giveaway by Dave Bolland in defensive zone
+
+Shot on goal by Niklas Hjalmarsson saved by Michael Leighton (Slapshot 170 ft)
+
+Stoppage - Puck Frozen
+
+Penalty to Brent Sopel 2 minutes for Interference Ville Leino
+
+Dave Bolland won faceoff against Claude Giroux in defensive zone
+
+Patrick Kane credited with hit on Matt Carle in neutral zone
+
+Giveaway by Marian Hossa in neutral zone
+
+Takeaway by Dave Bolland in defensive zone
+
+Dustin Byfuglien credited with hit on Kimmo Timonen in offensive zone
+
+Jonathan Toews won faceoff against Blair Betts in offensive zone
+
+Shot on goal by Patrick Sharp saved by Michael Leighton (Slapshot 59 ft)
+
+Shot on goal by Dustin Byfuglien saved by Michael Leighton (Wristshot 8 ft)
+
+Stoppage - Goalie Stopped
+
+Jonathan Toews won faceoff against Blair Betts in offensive zone
+
+Duncan Keith shot blocked by Blair Betts
+
+Shot missed by Andrew Ladd, Wide of Net (Backhand 8 ft)
+
+Shot missed by Dave Bolland, Over Net (Slapshot 71 ft)
+
+Shot on goal by Patrick Kane saved by Michael Leighton (Snapshot 32 ft)
+
+Nick Boynton shot blocked by Oskars Bartulis
+
+Duncan Keith shot blocked by Claude Giroux
+
+Shot on goal by Patrick Sharp saved by Michael Leighton (Wraparound 5 ft)
+
+Stoppage - Puck in Netting; TV timeout
+
+Jonathan Toews won faceoff against Jeff Carter in defensive zone
+
+Stoppage - Offside
+
+Jonathan Toews won faceoff against Blair Betts in offensive zone
+
+Shot on goal by Jonathan Toews saved by Michael Leighton (Wristshot 7 ft)
+
+Stoppage - Goalie Stopped
+
+Troy Brouwer credited with hit on Chris Pronger in offensive zone
+
+Stoppage - Offside
+
+Takeaway by Marian Hossa in offensive zone
+
+Penalty to Marian Hossa 2 minutes for Goalkeeper Interference Michael Leighton
+
+Goal scored by Patrick Sharp (Wristshot 21 ft) assisted by Dave Bolland and Duncan Keith
+
+John Madden shot blocked by Kimmo Timonen
+
+Shot on goal by Duncan Keith saved by Michael Leighton (Slapshot 55 ft)
+
+Shot missed by Duncan Keith, Wide of Net (Wristshot 41 ft)
+
+Shot missed by Brent Seabrook, Wide of Net (Snapshot 28 ft)
+
+Duncan Keith shot blocked by Kimmo Timonen
+
+Takeaway by Brent Sopel in defensive zone
+
+Shot on goal by Patrick Sharp saved by Michael Leighton (Snapshot 50 ft)
+
+Stoppage - Goalie Stopped; TV timeout
+
+Giveaway by Marian Hossa in neutral zone
+
+Brent Seabrook shot blocked by Scott Hartnell
+
+Brent Sopel shot blocked by Kimmo Timonen
+
+Andrew Ladd shot blocked by Kimmo Timonen
+
+Stoppage - Goalie Stopped; TV timeout
+
+Jonathan Toews won faceoff against Jeff Carter in defensive zone
+
+Giveaway by Duncan Keith in defensive zone
+
+Marian Hossa credited with hit on Claude Giroux in defensive zone
+
+Kris Versteeg credited with hit on Chris Pronger in neutral zone
+
+Stoppage - Puck in Crowd
+
+Stoppage - High Stick
+
+Stoppage - Puck in Crowd
+
+Patrick Sharp won faceoff against Mike Richards in neutral zone
+
+Stoppage - Offside
+
+Patrick Sharp won faceoff against James van Riemsdyk in neutral zone
+
+Goal scored by Andrew Ladd (Tip-In 6 ft) assisted by Niklas Hjalmarsson and Patrick Kane
+
+Duncan Keith shot blocked by Chris Pronger
+
+Marian Hossa shot blocked by Chris Pronger
+
+Duncan Keith shot blocked by Claude Giroux
+
+Stoppage - Puck in Netting
+
+Patrick Sharp won faceoff against Blair Betts in neutral zone
+
+Brent Seabrook shot blocked by Blair Betts
+
+Shot on goal by Marian Hossa saved by Michael Leighton (Snapshot 30 ft)
+
+Stoppage - Goalie Stopped
+
+Jonathan Toews won faceoff against Blair Betts in offensive zone
+
+Shot missed by Patrick Sharp, Wide of Net (Slapshot 55 ft)
+
+Marian Hossa credited with hit on Chris Pronger in offensive zone
+
+Shot on goal by Tomas Kopecky saved by Michael Leighton (Wristshot 41 ft)
+
+Stoppage - Goalie Stopped
+
+Shot on goal by Brent Seabrook saved by Michael Leighton (Snapshot 66 ft)
+
+Shot missed by Patrick Sharp, Wide of Net (Slapshot 27 ft)
+
+Shot missed by Dustin Byfuglien, Wide of Net (Slapshot 31 ft)
+
+Takeaway by Patrick Kane in defensive zone
+
+Stoppage - Puck in Benches
+
+John Madden won faceoff against Jeff Carter in defensive zone
+
+Takeaway by Dave Bolland in neutral zone
+
+Giveaway by Brent Seabrook in defensive zone
+
+Stoppage - Puck in Benches
+
+Stoppage - Offside
+
+Shot on goal by John Madden saved by Michael Leighton (Snapshot 44 ft)
+
+Jonathan Toews won faceoff against Jeff Carter in offensive zone
+
+Shot on goal by Jonathan Toews saved by Michael Leighton (Snapshot 33 ft)
+
+Dustin Byfuglien credited with hit on Braydon Coburn in offensive zone
+
+Stoppage - Offside
+
+Stoppage - Offside
+
+Kris Versteeg shot blocked by Kimmo Timonen
+
+Stoppage - Offside
+
+Marian Hossa shot blocked by Matt Carle
+
+Giveaway by Niklas Hjalmarsson in defensive zone
+
+Patrick Kane shot blocked by Kimmo Timonen
+
+Stoppage - Puck Frozen; TV timeout
+
+Dave Bolland won faceoff against Darroll Powe in defensive zone
+
+Takeaway by Brian Campbell in defensive zone
+
+Brent Seabrook shot blocked by Ville Leino
+
+Stoppage - Puck in Crowd
+
+Dustin Byfuglien credited with hit on Braydon Coburn in offensive zone
+
+Dustin Byfuglien credited with hit on Braydon Coburn in offensive zone
+
+Stoppage - Goalie Stopped
+
+Jonathan Toews won faceoff against Ville Leino in defensive zone
+
+Shot on goal by Marian Hossa saved by Michael Leighton (Wristshot 42 ft)
+
+Shot on goal by Andrew Ladd saved by Michael Leighton (Snapshot 36 ft)
+
+Shot on goal by Kris Versteeg saved by Michael Leighton (Snapshot 47 ft)
+
+Takeaway by Marian Hossa in neutral zone
+
+Nick Boynton shot blocked by Lukas Krajicek
+
+Giveaway by Patrick Sharp in defensive zone
+
+Stoppage - Offside; TV timeout
+
+Stoppage - Puck in Crowd
+
+Takeaway by Dustin Byfuglien in offensive zone
+
+Shot on goal by Dustin Byfuglien saved by Michael Leighton (Backhand 64 ft)
+
+Takeaway by Dave Bolland in defensive zone
+
+Stoppage - Goalie Stopped
+
+Shot on goal by Jonathan Toews saved by Michael Leighton (Backhand 11 ft)
+
+Stoppage - Icing
+
+Patrick Sharp won faceoff against Mike Richards in defensive zone
+
+Stoppage - ; TV timeout
+
+Stoppage - Goalie Stopped
+
+Jonathan Toews won faceoff against Danny Briere in defensive zone
+
+Shot on goal by Dave Bolland saved by Michael Leighton (Slapshot 51 ft)
+
+Stoppage - Goalie Stopped
+
+Patrick Sharp won faceoff against Jeff Carter in offensive zone
+
+Giveaway by Andrew Ladd in offensive zone
+
+Stoppage - Puck in Netting
+
+Shot on goal by Brent Seabrook saved by Michael Leighton (Wristshot 49 ft)
+
+Stoppage - Goalie Stopped
+
+Stoppage - Icing
+
+Dave Bolland won faceoff against Mike Richards in defensive zone
+
+Stoppage - Icing
+
+Stoppage - Icing; Visitor Timeout
+
+Dave Bolland won faceoff against Danny Briere in defensive zone
+
+Stoppage - Puck Frozen
+
+Shot on goal by Marian Hossa saved by Michael Leighton (Snapshot 38 ft)
+
+Stoppage - Goalie Stopped
+
+Patrick Sharp won faceoff against Mike Richards in offensive zone
+
+Shot missed by Patrick Kane, Wide of Net (Wristshot 29 ft)
+
+Jonathan Toews won faceoff against Jeff Carter in neutral zone
+
+Stoppage - Goalie Stopped
+
+Giveaway by Dustin Byfuglien in defensive zone
+
+Shot on goal by Brent Seabrook saved by Michael Leighton (Snapshot 31 ft)
+
+Stoppage - Puck Frozen
+
+Jonathan Toews won faceoff against Jeff Carter in defensive zone
+
+Tomas Kopecky credited with hit on Mike Richards in neutral zone
+
+Shot missed by Patrick Kane, Wide of Net (Wristshot 52 ft)",nhl_hockey,goalie;power play;puck,nhl_hockey,,,,,,
+f6e0edcd542320ae,mlb_baseball,benchmark_hard_negative,60403,"The 6’2”, 196 pound goaltender made his NHL debut on January 15, 2014 at Anaheim.",nhl_hockey,nhl,nhl_hockey,,,,,,
+9d969d8cac503498,mlb_baseball,benchmark_hard_negative,274454,"A native of San Diego, California, Ruhwedel made his Pittsburgh debut on Dec. 20 against the New York Rangers, and scored his first NHL goal three nights later versus Cory Schneider and the New Jersey Devils.",nhl_hockey,new york rangers;nhl,nhl_hockey,,,,,,
+7e653d506186922f,mlb_baseball,benchmark_hard_negative,180645,"Will Roush, the notorious New York Rangers fan-turned-viral fascination who spent ""hundreds only"" on tickets to Game 7 of the Eastern Conference Finals this past May is back.",nhl_hockey,new york rangers,nhl_hockey,,,,,,
+5a7d78815cbb359c,mlb_baseball,benchmark_hard_negative,247641,"Sanders was trending toward Defensive Player of the Year consideration, and if he can come anywhere close to that form in his second NBA stint, he'll be well worth the risk.",nba_basketball,nba,nba_basketball,,,,,,
+830b34bbb9a76394,mlb_baseball,benchmark_hard_negative,19961,"Curtis Joe of EliteProspects describes Mitch Marner as:
+
+“A dynamic offensive forward that backchecks hard and establishes his presence through playing smart, puck-possession hockey.",nhl_hockey,puck,nhl_hockey,,,,,,
+21e62732a62ee756,mlb_baseball,benchmark_hard_negative,158556,– Is it harder to play defense in the NBA than in Europe?,nba_basketball,nba,nba_basketball,,,,,,
+0d9607e3506e077f,mlb_baseball,benchmark_hard_negative,155041,"He will be joined by former NBA head coach and 1972 U.S. Olympian Doug Collins, and reporter Craig Sager, working his fifth consecutive Olympics for NBC.",nba_basketball,nba,nba_basketball,,,,,,
+70b78debe0b9a138,mlb_baseball,benchmark_hard_negative,206257,When did the NBA Finals turn into fan fiction?,nba_basketball,nba;nba finals,nba_basketball,,,,,,
+f5eac2fa5f5e995f,mlb_baseball,benchmark_hard_negative,240485,"The 6-2, 190-pound Price is a 10-year NBA veteran who owns career averages of 3.6 points, 1.7 assists and 1.2 rebounds in 468 games.",nba_basketball,nba,nba_basketball,,,,,,
+3bc9b617990fe4a0,mlb_baseball,benchmark_hard_negative,107363,"My Other Home (or known by its Chinese name, I Am Marbury) is a biographical film that stars Stephon Marbury as himself as he finds redemption in the wake of a failed exit from the NBA by leading the Beijing Ducks to the first of three championship seasons.",nba_basketball,nba,nba_basketball,,,,,,
+9a77c7cbfbab7615,mlb_baseball,benchmark_hard_negative,246089,"We beat them once, we had at that time the best goalie in history in that two weeks playing for us.",nhl_hockey,goalie,nhl_hockey,,,,,,
+fa33f8cea34d42ac,mlb_baseball,benchmark_hard_negative,6997,I want to win many Stanley Cup Championships.,nhl_hockey,stanley cup,nhl_hockey,,,,,,
+d49d374c81af0e16,mlb_baseball,benchmark_hard_negative,286453,"Maybe the NBA will start fining their fans who scream what the NBA considers to be offensive words at players, referees and opposing fans.",nba_basketball,nba,nba_basketball,,,,,,
+71fc60a823ced351,mlb_baseball,benchmark_hard_negative,51784,The 21-year-old certainly has plenty of promise going forward and could very well find himself on the Top 100 list with a solid third NBA season.,nba_basketball,nba,nba_basketball,,,,,,
+7e033970fe6c6cc3,mlb_baseball,benchmark_hard_negative,274457,Ruhwedel broke into the NHL with the Buffalo Sabres organization as an undrafted free agent following a three-year collegiate career at the University of Massachusetts-Lowell.,nhl_hockey,nhl,nhl_hockey,,,,,,
+0e63b69c4e292fe5,mlb_baseball,benchmark_hard_negative,243368,"While we're unlikely to see anything like the Big 3 era again, it still feels like a good time to be a Miami Heat fan.",nba_basketball,miami heat,nba_basketball,,,,,,
+5586fb60a5441d90,mlb_baseball,benchmark_hard_negative,298185,"2010
+
+Numbers: The Senators selected four players, with one reaching the NHL.",nhl_hockey,nhl,nhl_hockey,,,,,,
+c08e09d8e4b79ad4,mlb_baseball,benchmark_hard_negative,112718,And his insistence on protecting his face probably extended Plante’s career—he played in the NHL until 1975.,nhl_hockey,nhl,nhl_hockey,,,,,,
+76d3f40944e7198c,mlb_baseball,benchmark_hard_negative,309312,He was considered the best point guard in the nation.,nba_basketball,point guard,nba_basketball,,,,,,
+bd0912cdc78519e5,mlb_baseball,benchmark_hard_negative,256946,"He's shown he belongs at the NHL level, scoring 18 goals and chipping in 19 assists, while earning his minutes on the second line and the second power-play unit.",nhl_hockey,nhl,nhl_hockey,,,,,,
+bd851b9be63cd045,mlb_baseball,benchmark_hard_negative,141890,Dion Phaneuf scraps with New Jersey Devils defenceman Colin White during the first period of NHL action at the Air Canada Centre.,nhl_hockey,nhl,nhl_hockey,,,,,,
+a2268b8e20aafeef,mlb_baseball,benchmark_hard_negative,51075,Brooks was the NBA coach of the year in 2010 and led the Thunder to the NBA Finals in 2012.,nba_basketball,nba;nba finals,nba_basketball,,,,,,
+7f69efab76bb6e46,mlb_baseball,benchmark_hard_negative,121569,"Boston Bruins: Oh my god if Tuukka Rask can be, like, The Tuukka Rask down the stretch the Bruins are going to be a terrifying draw for a top seed in the postseason.",nhl_hockey,boston bruins,nhl_hockey,,,,,,
+5170a3be3b7c3815,mlb_baseball,benchmark_hard_negative,183536,"The Jets didn’t have much conversation with him about a contract until he shone at the NHL team’s recent development camp
+
+""They liked what they saw,"" Robinson said.",nhl_hockey,nhl,nhl_hockey,,,,,,
+5f32b75f7ad7edd7,mlb_baseball,benchmark_hard_negative,60400,"In 48 NHL games, the 6’6”, 199 pound goaltender has a record of 12-28-5 with a 3.25 goals against average.",nhl_hockey,nhl,nhl_hockey,,,,,,
+c21230dd319cdd1d,mlb_baseball,benchmark_hard_negative,200675,The Miami Heat could not overcome the 98.2 percent odds in Tuesday’s Draft Lottery and will be picking 14th in the June 22 draft.,nba_basketball,miami heat,nba_basketball,,,,,,
+e51eca18b4645633,mlb_baseball,benchmark_hard_negative,3866,"We’ll fill that spot with Ryan Nugent-Hopkins, who gets the nod here as the only player other than Couturier with 300 NHL games under his belt.",nhl_hockey,nhl,nhl_hockey,,,,,,
+d34318aa5c66eb84,mlb_baseball,benchmark_hard_negative,286454,"The NBA should publish a list of terms that the league finds offensive so the fans will know what is and isn’t out-of-bounds speech, gestures and attire.",nba_basketball,nba,nba_basketball,,,,,,
+e401e4ef31c10c94,mlb_baseball,benchmark_hard_negative,286449,A simple apology from Mr. Bryant to the referee obviously wasn’t good enough for the NBA.,nba_basketball,nba,nba_basketball,,,,,,
+71a3da98c81efccf,mlb_baseball,benchmark_hard_negative,223376,"The Wild Cards
+
+• Is Colton Iverson good enough for the NBA?",nba_basketball,nba,nba_basketball,,,,,,
+4db844313dc16fb4,mlb_baseball,medium_negative,58523,"The ad ran in the Netherlands in 2006 to advertise a white model of the PlayStation Portable, and it quickly drew controversy.",gaming_general,playstation,gaming_general,,,,,,
+07cee7f6b6e767da,mlb_baseball,medium_negative,171153,"That said, Palelei is always capable of pulling off a knockout.",combat_sports,knockout,combat_sports,,,,,,
+95075bd6f6c6cd66,mlb_baseball,medium_negative,24477,The result marks the second straight quarter that the world's third largest economy has lost steam and undershoots an annualised 2.3 per cent fall forecast in a Kyodo News agency survey.,gaming_general,steam,gaming_general,,,,,,
+e2a6ae621c96c9f8,mlb_baseball,medium_negative,28334,"Call Goes Out for Bellator Reality Series Tryouts
+
+Along with Bellator Fighting Championships’ move from MTV2 over to Spike TV in January, the promotion has also announced that it intends to air a new reality series on its new network.",combat_sports,bellator,combat_sports,,,,,,
+828dc8cf624d9ca7,mlb_baseball,medium_negative,218241,"The author wrote this “Letter to the Editor” submission on January 1, 2014 in response to the article by John Dearing and Courtney Geduldig in the Wall Street Journal.",combat_sports,submission,combat_sports,,,,,,
+1dda3153c39e1b66,mlb_baseball,medium_negative,149781,"For those of you unfamiliar with the world of professional wrestling—that includes the entire AP staff except managing editor, Scott Heisel—a little background: Survivor Series is an annual pay-per-view event from WWE, now in its 25th year.",combat_sports,pay-per-view,combat_sports,,,,,,
+9078cbd1fe54c652,mlb_baseball,medium_negative,18537,I have the smallest hands in the UFC.,combat_sports,ufc,combat_sports,,,,,,
+ef7e865e17ae0aca,mlb_baseball,medium_negative,219926,"[114] On December 13 at TLC: Tables, Ladders & Chairs, Batista faced Undertaker for the World Heavyweight Championship in a Chairs match.",combat_sports,heavyweight,combat_sports,,,,,,
+b7777e60d3006721,mlb_baseball,medium_negative,161378,"Even though this is common practice on recent consoles like the PS4, this is the only title with this behavior on the Nintendo Wii.",gaming_general,nintendo,gaming_general,,,,,,
+9ac2e5067ddc3d21,mlb_baseball,medium_negative,219978,[155] WWE has also ranked him as the second best World Heavyweight Champion of all time.,combat_sports,heavyweight,combat_sports,,,,,,
+e49edf3b120e0a0e,mlb_baseball,medium_negative,36557,"Xbox One S offers a far more attractive enclosure, options for a bigger hard drive, a slightly redesigned controller and some video perks for owners of 4K TVs.",gaming_general,xbox,gaming_general,,,,,,
+08c8b04f6085de15,mlb_baseball,medium_negative,36566,"When it's all said and done, the Xbox One S should be primarily viewed as a slimmed-down version of the Xbox One that introduces a mildly updated controller and provisions for 4K display.",gaming_general,xbox,gaming_general,,,,,,
+0a3e790dade17381,mlb_baseball,medium_negative,190052,"Release:-It is expected that Need For Speed:The Run will hit gaming Market in November 15 not confirmed,You can also set your :-It is expected that Need For Speed:The Run will hit gaming Market in November 15 not confirmed,You can also set your Preorders for ""The Run""
+
+Platform: -Xbox 360, PlayStation 3, PC, Wii, Nintendo 3DS
+
+You might love to see the first teaser of game shown below:
+
+Source:Official Website",gaming_general,nintendo;playstation;xbox,gaming_general,,,,,,
+ffd7953d1d72b96a,mlb_baseball,medium_negative,143395,"As a filmmaker and an inventor whose innovative device falls at the intersection of biomedical sciences and art, Rob was approached by video game producer Square Enix to help promote their upcoming game, Deus Ex: Human Revolution.",gaming_general,video game,gaming_general,,,,,,
+a230f4207719055c,mlb_baseball,medium_negative,166591,"This year, there will be little to none focus on ESPORTS at all at TG.",gaming_general,esports,gaming_general,,,,,,
+169a759525a9c902,mlb_baseball,medium_negative,46304,"I’d like to include Steam achievements, cards and leaderboards, but I’ve not looked into the capabilities of the Construct 2 Greenworks plugin.",gaming_general,steam,gaming_general,,,,,,
+1ff7429ca1b6e44b,mlb_baseball,medium_negative,65589,"In Mayweather's absence, Broner appears to have developed into boxing's most controversial figure and often finds ways to stay in the headlines.",combat_sports,boxing,combat_sports,,,,,,
+b1a1a1559c2b56ea,mlb_baseball,medium_negative,159014,Delisted from Steam.),gaming_general,steam,gaming_general,,,,,,
+bfaba2984a98dbf4,mlb_baseball,medium_negative,178129,"So multiplayer became our focus, as we encouraged our readers to take advantage of the parties and family reunions that naturally happen around Thanksgiving, Christmas and New Year’s each year and enjoy some Nintendo game time with friends and family – playing games like Wii Party U, Mario Party: Island Tour and our cover game, Super Mario 3D World.",gaming_general,multiplayer;nintendo,gaming_general,,,,,,
+6fe47c1363ed2ce2,mlb_baseball,medium_negative,128463,"That is, until she entered the multiplayer-verse and encountered a real-life player going by the name BigBro442.",gaming_general,multiplayer,gaming_general,,,,,,
+147b3be6a0d41d51,mlb_baseball,medium_negative,49539,UFC programming is broadcast in 129 countries and territories to nearly 800 million TV households worldwide in 28 different languages.,combat_sports,ufc,combat_sports,,,,,,
+8f65019b68703c5a,mlb_baseball,medium_negative,161525,"With Playstation 4 and Nintendo Switch releases coming out soon, the game should be around for many more years and be allowed to change without having to cater to the Wii's limitations.",gaming_general,nintendo;playstation,gaming_general,,,,,,
+d5692e87edebab31,mlb_baseball,medium_negative,219881,He then pulled an unconscious Batista on top of The Undertaker for the pinfall to retain the World Heavyweight Championship.,combat_sports,heavyweight,combat_sports,,,,,,
+18d6d333370ae610,mlb_baseball,medium_negative,215620,"This kind of thing doesn't happen too often in eSports, as you seldom see glitches and exploits pulled out of a hat to be used to orchestrate an otherwise impossible comeback.",gaming_general,esports,gaming_general,,,,,,
+3b11f7fff3322d9e,mlb_baseball,medium_negative,203171,"Like the suicidal animals on which the classic video game drew inspiration, the Lemmings brand has in recent years gone off a cliff — the cliff of public awareness!",gaming_general,video game,gaming_general,,,,,,
+509ff5cd80ebc0d7,mlb_baseball,medium_negative,48142,"[107] According to PlayStation Universe in 2011, Scorpion ""has spawned one of the most iconic catchphrases in gaming history"" and ""remains a firm fan favorite nineteen years since his debut.",gaming_general,playstation,gaming_general,,,,,,
+e5c5a1e2bcd810cc,mlb_baseball,medium_negative,209980,"Medals by Summer Games
+
+Medals by sport
+
+Leading in that Sport
+
+Sport Gold Gold Silver Silver Bronze Bronze Total Rank Field hockey 8 1 2 11 1 Shooting 1 2 1 4 34 Athletics 0 2 0 2 71 Wrestling 0 1 4 5 43 Badminton 0 1 1 2 9 Boxing 0 0 2 2 64 Tennis 0 0 1 1 30 Weightlifting 0 0 1 1 56 Total 9 7 12 28 12
+
+List of medalists
+
+See also",combat_sports,boxing,combat_sports,,,,,,
+de808735bff36523,mlb_baseball,medium_negative,89807,"He designed and wrote games and game supplements for Dungeons & Dragons 3.5, Dungeons & Dragons 4th Edition, the Pathfinder Roleplaying Game, and A Song of Ice and Fire Roleplaying Game and was nominated for two Origins Awards and won six ENnie Awards for fantasy RPG writing and design.",gaming_general,rpg,gaming_general,,,,,,
+c2801a328e136489,mlb_baseball,medium_negative,124160,"The three defendants in the case started teasing Duke Nukem: Mass Destruction as ""an isometric action role-playing game for PC and PlayStation 4"" earlier this month, promising more information to come.",gaming_general,playstation,gaming_general,,,,,,
+6de53be7b87d60c0,mlb_baseball,medium_negative,199167,"The game paled in comparison to Nintendo’s Pro Wrestling, and if it’s possible for something to be frustratingly easy, this was it.",gaming_general,nintendo,gaming_general,,,,,,
+fb219ab1dcc36fe9,mlb_baseball,background_negative,37926,OUR HYPOTHESIS: The Moon is an artificial Earth satellite put into orbit around the Earth by some intelligent beings unknown to ourselves.,aviation_aerospace,satellite,aviation_aerospace,,,,,,
+99f2f8cfd12d6ae2,mlb_baseball,background_negative,16941,"Don't start thinking that landing a rocket's first stage is routine just yet, as SpaceX has just posted video of its latest attempt.",aviation_aerospace,spacex,aviation_aerospace,,,,,,
+c250ab4f2539a788,mlb_baseball,background_negative,24237,"You know, things like toasting each other with champagne every night for a week, lounging on the beach and giggling as we call each other Mr. and Mrs. Baseel, or beating the hell out of a convenience store clerk, like the Chinese newlyweds who are not only just married, but were also just arrested in Japan.",china,chinese,china,,,,,,
+ab8c522d37bfaedb,mlb_baseball,background_negative,27691,"He sides with CCP leader Li Peng, who said there were ""sufficient human rights"" in China--just prior to ordering troops to crush the Tiananmen resistance.",china,ccp;china,china,,,,,,
+92e60bab1b4104e9,mlb_baseball,background_negative,26004,"In the preface to the 3rd edition of this book, he reports that earlier editions were translated into Chinese at the expense of the Chinese government and translated into German under the supervision of Hermann von Helmholtz (a big name in the science of acoustics).",china,chinese;chinese government,china,,,,,,
+bd477884e1cfad20,mlb_baseball,background_negative,3566,"Despite the expansion, Deluce said taking the privately held airline public and raising money through an initial public offering is not a priority right now.",aviation_aerospace,airline,aviation_aerospace,,,,,,
+d7ed672c5bcda1e0,mlb_baseball,background_negative,10963,What was far worse was that NASA had decided that any such tests weren’t even necessary.,aviation_aerospace,nasa,aviation_aerospace,,,,,,
+9cf45a56af9f840d,mlb_baseball,background_negative,10768,The New York Times is reporting the arrest of three RC hobbyists that were flying an RC aircraft at a lake nearby a nuclear power plant.,aviation_aerospace,aircraft,aviation_aerospace,,,,,,
+3e42d037bd749f27,mlb_baseball,background_negative,3077,"And so, we stagger into an even more uncertain future
+
+Emotions ran high as Hong Kong legislators opened debate on a controversial electoral reform package on Wednesday.",china,hong kong,china,,,,,,
+3c550571b29afbc5,mlb_baseball,background_negative,13444,"European coal futures have tumbled more than 20 percent, while Australian coal prices have plummeted from the record $130 per tonne hit in 2011 to around $80 per tonne as China's demand grew slower than expected.",china,china,china,,,,,,
+a2d15a7370c73a72,mlb_baseball,background_negative,2455,"Prior to filing the case, according to Haaretz, Israeli officials told the parents, Yekutiel and Sheryl Wultz, that they would support their case and provide evidence implicating the Bank of China.",china,china,china,,,,,,
+090ec105389f911e,mlb_baseball,background_negative,34152,"If you're interested in speaking or sponsoring one of our blockchain events, please email [masked].",crypto_blockchain,blockchain,crypto_blockchain,,,,,,
+a405d83eeedb4257,mlb_baseball,background_negative,34003,"A spot with a lot of asteroids means you can do a lot of mining, but also means frequent meteor strikes.",crypto_blockchain,mining,crypto_blockchain,,,,,,
+e9b1b5b4c04aed90,mlb_baseball,background_negative,10802,In the mid-80s I accumulated about 900 hours as a single engine flight instructor and about 500 hours flying twin turbine commuter aircraft.,aviation_aerospace,aircraft,aviation_aerospace,,,,,,
+8344c95821ab8058,mlb_baseball,background_negative,10081,"You have already heard a lot about jobs being lost to China and Mexico (a strong concern of Donald Trump), jobs being outsourced to low-wage countries or moved to tax havens (so-called “tax inversions” are a Hillary Clinton bugaboo), or jobs eliminated because of Obamacare or high minimum wages (a favorite Ted Cruz line).",china,china,china,,,,,,
+ada2a3b10a383a1f,mlb_baseball,background_negative,717,"“We see an orbital platform as playing a vital and synergistic role with anything you do on the surface,” said John Guidi, NASA advanced exploration systems deputy director.",aviation_aerospace,nasa;orbital,aviation_aerospace,,,,,,
+0ee9ae841be0976c,mlb_baseball,background_negative,3088,"Their concerns, dismissed as unrealistic and doomed, remain unanswered by Beijing and their own government.",china,beijing,china,,,,,,
+d53b06262c2e8c82,mlb_baseball,background_negative,43801,"The use of coal, the main fuel source in China, may rise by 3% due to stronger growth in industrial production and lower hydro-power generation due to less rainfall.",china,china,china,,,,,,
+dfb1e8535f572d53,mlb_baseball,background_negative,37067,"You will also have a Team Token for the team to use so the query consumption of the models within the team is attributed to the team owner:
+
+Hope you like these new features!",crypto_blockchain,token,crypto_blockchain,,,,,,
+6cb49d9e01614a88,mlb_baseball,background_negative,2709,It will also likely build a long blacklist of Taiwanese activists to keep out of Hong Kong.,china,hong kong,china,,,,,,

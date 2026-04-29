@@ -1,0 +1,14 @@
+family_id,method,method_label,budget,target_threshold,valid_controller_count
+aviation_aerospace,dense,PLRDC SAE,0.02,0.3,0
+china,dense,PLRDC SAE,0.02,0.3,1
+combat_sports,dense,PLRDC SAE,0.02,0.3,0
+crypto_blockchain,dense,PLRDC SAE,0.02,0.3,0
+gaming_general,dense,PLRDC SAE,0.02,0.3,0
+japan,dense,PLRDC SAE,0.02,0.3,1
+middle_east_geopolitics,dense,PLRDC SAE,0.02,0.3,1
+mlb_baseball,dense,PLRDC SAE,0.02,0.3,0
+nba_basketball,dense,PLRDC SAE,0.02,0.3,0
+nfl_football,dense,PLRDC SAE,0.02,0.3,1
+nhl_hockey,dense,PLRDC SAE,0.02,0.3,0
+russia_post_soviet,dense,PLRDC SAE,0.02,0.3,0
+soccer,dense,PLRDC SAE,0.02,0.3,1

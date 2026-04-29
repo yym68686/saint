@@ -1,0 +1,457 @@
+candidate_id,family_id,proposed_bucket,source_row_index,text,matched_query_blocks,matched_terms,matched_family_ids,final_label,keep_for_benchmark,label_confidence,primary_reason,exclusion_trigger,notes
+e8d04ce2598ca426,soccer,positive,122932,Connect with fans at Manchester United Forum on Facebook and manutdforum.org,club_entities,manchester united,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+452687ec732a9207,soccer,positive,151090,"We know of his views, which have nothing to do with any special relations between FIFA and Russia.",league_anchor,fifa,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+c58c1961e1b805b5,soccer,positive,173452,"On Match of the Day, former Chelsea striker Gianluca Vialli has signed up as a regular pundit, while Chris Waddle has joined 5 live.",soccer_jargon,striker,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+fb558c34aeae159a,soccer,positive,142809,"When asked about what FIFA is doing to be more gender equal, not just for its players but behind the scenes as well, Blatter, far too familiar with controversial public gaffes, made an outrageously sexist statement.",league_anchor,fifa,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+b003f8f291200e29,soccer,positive,18105,"Macheda continued to feature in the United squad that season, scoring his second goal for the club against Sunderland just 46 seconds after taking the field to replace Dimitar Berbatov before being rewarded with his first Barclays Premier League start for United against Middlesbrough that season.",league_anchor,premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+10d1610f8099db85,soccer,positive,31993,The Welsh midfielder is the only member of the Foxes squad remaining from their time in the third tier seven years ago and has winners' medals from both League One and the Championship.,soccer_jargon,midfielder,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+6f16efea1e2d21f3,soccer,positive,197152,Wednesday's title snapped a streak of three-straight U.S. Open Cup championships for the visiting Sounders FC and was Seattle's first falter in the competition since joining Major League Soccer in 2009.,league_anchor,soccer,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+4deb555bb788864b,soccer,positive,222345,"Baltacha, who was born in Kiev but moved to Britain where her father Sergei was a professional soccer player for Ipswich Town, turned professional in 1997 and reached a career-high ranking of 49 in 2010.",league_anchor,soccer,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+7e863aefb40fc367,soccer,positive,63698,"MLS also had twice as many players earning a gross salary of 100,000 euros a week as Serie A did in 2016 – Kaka, Giovinco, Bradley, Lampard, Gerrard and Pirlo.",league_anchor,serie a,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+5fc583c83823c5ed,soccer,positive,47057,"The suburbs also have an abundance of soccer fields, playgrounds, parks, hockey arenas, and parking lots for vehicles stuffed with sporting equipment.",league_anchor,soccer,soccer,medium_negative,yes,high,topical_but_not_primary,recreational_sports_context,batch_bucket=positive; override=recreational_soccer_facilities
+3b36353206b36818,soccer,positive,126825,"""Last season the average Premier League club received around £25m more in central broadcast distributions than they did in 2012-13, which helped fuel the record transfer window last summer.""",league_anchor;soccer_jargon,premier league;transfer window,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+2eff6ee264833ef2,soccer,positive,219430,"He was a striker, number 10 in the team, scoring a record 64 goals in 52 matches.",soccer_jargon,striker,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+757fe0a05f5b2944,soccer,positive,224841,"Aleksandr Kokorin”s stalled career springs to mind, although the Zenit striker is finally not only achieving his potential but impressively surpassing it both domestically and in Europe.",soccer_jargon,striker,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+610d84e1657b4b05,soccer,positive,67397,The goal is without question the most exciting aspect in soccer.,league_anchor,soccer,soccer,medium_negative,yes,high,topical_but_not_primary,generic_sport_discussion,batch_bucket=positive; override=generic_soccer_commentary
+7a30ef7d98ff26a3,soccer,positive,13287,"He could still add to his final tally, with the striker set to feature in two league matches and one King's Cup tie before the end of the year.",soccer_jargon,striker,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+47e5fdd41e0c4f30,soccer,positive,31840,Napoli president Aurelio De Laurentiis came forward and said he had offered more to the Argentine striker than he is currently receiving at Juventus.,soccer_jargon,striker,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+1a3d8bc852ab6581,soccer,positive,130212,"Earlier this year, NextVR operated trials live-streaming a soccer game between Manchester United and Barcelona FC in VR, with Recode's Vjeran Pavic describing the experience as mostly positive: ""The screen resolution was crisp, and the action was easy to follow...",club_entities;league_anchor,barcelona;manchester united;soccer,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+e284473fc581f47c,soccer,positive,88219,"Midfielder Rasmus Schuller (thigh), defender Marc Burch (groin), defender Thomas de Villardi (Achilles) and Ramirez (hamstring) all trained separately.",soccer_jargon,midfielder,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+d1ca9195d7080c9a,soccer,positive,78106,"If we get into the Champions League, we'll have more opportunities to invest.""",league_anchor,champions league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+a017774fc0c96ff8,soccer,positive,151258,"United face a Palace side who have not won a point or scored a goal in the Premier League this season, but Mourinho warned: ""The mentality is very important because we played Wednesday night and we arrived in Manchester at 4 a.m. so home 5 a.m. and we have to play on Saturday, so mentality is very important.""",league_anchor,premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+2f7594d6f1c6d5da,soccer,positive,172154,"Over 200,000 votes were cast since the final ten man shortlist was announced at the start of this month and Sanchez beat off competition from Chelsea midfielder Eden Hazard who finished second and Manchester City striker Sergio Aguero who finished third to take the award.",soccer_jargon,midfielder;striker,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+4d1fd9a1c67295be,soccer,positive,69548,They reckon FIFA has been buffing low rated teams and nerfing highly rated teams without telling players.,league_anchor,fifa,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+2ca9aa5d4ab2a3f8,soccer,positive,88221,"Midfielder Sam Cronin was also absent, away on ""league business,"" but will return Wednesday.",soccer_jargon,midfielder,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+a5ae164264b40291,soccer,positive,131062,The Celtic striker claimed Thomson favoured the home side when he only booked Aberdeen defender Andrew Considine for the foul which conceded a first-half penalty.,soccer_jargon,striker,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+819fd652754d485d,soccer,positive,104362,"Three days after the LFP auction, Uefa will sell the rights to the Champions League for 2015 to 2018 in France.",league_anchor,champions league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+53c11d2b7def3874,soccer,positive,227802,"Meanwhile, senior long pole Matt Rees needs just one caused turnover to tie and two to set the Navy career record currently held by former teammate Pat Kiernan (2011-14) who amassed 73.â€¢Midfielder Colin Flounlacker came into the season with 23 points on 16 goals and seven assists.",soccer_jargon,midfielder,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+18503f1fc06094be,soccer,positive,85289,"Last Ten Premier League Winners
+
+Last 10 Barclays Premier League Winners Season Club Goalscorer 2017/18 Manchester City Mohamed Salah (32) 2016/17 Chelsea FC Harry Kane (29) 2015/16 Leicester City Harry Kane (25) 2014/15 Chelsea FC Sergio Aguero (26) 2013/14 Manchester City Luis Suarez (31) 2012/13 Manchester United Robin Van Persie (26) 2011/12 Manchester City Robin van Persie (30) 2010/11 Manchester United Dimitar Berbatov (20) 2009/10 Chelsea FC Didier Drogba (29) 2008/09 Manchester United Nicolas Anelka (19)
+
+Premier League Tipster Competition
+
+bettingexpert is the world's fastest growing betting community.",club_entities;league_anchor,manchester united;premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+8c08571722dcfcb0,soccer,positive,200558,"After that game Rowett hailed hat-trick hero Matej Vydra as ‘the best No 10 in the league’, with the Czech striker just one of a number of players the Blues will be wary of.",soccer_jargon,striker,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+6b41a10ed62fb92b,soccer,positive,126823,"Premier League clubs have been bolstered by the record television deal with BT and BSkyB between 2013-14 and 2015-16, worth a total of £3.018bn.",league_anchor,premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+7ec804cc0c60c903,soccer,positive,49892,"This year, we are expanding our annual “Meet the USASA” series to include the USSSA and US Club Soccer.",league_anchor,soccer,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+53564517dfa65a06,soccer,positive,63673,The soccer is markedly better from even a half decade ago.,league_anchor,soccer,soccer,medium_negative,yes,high,topical_but_not_primary,generic_sport_discussion,batch_bucket=positive; override=generic_soccer_quality_comment
+14b691f186f49317,soccer,positive,13792,"“I was young and I was starting for Liverpool against Manchester United, games don’t come much bigger.",club_entities,liverpool;manchester united,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+e4200527a2554842,soccer,positive,151094,"To Putin, the FIFA prosecution is a new instance of the US aggression he fears
+
+In reality, of course, this is a pretty outlandish interpretation of events.",league_anchor,fifa,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+5a1b2dc1eb0dfcf9,soccer,positive,219451,"“I would like to get to Germany and play for Borussia Dortmund, or to Spain and play for Real Madrid.",club_entities,real madrid,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+3ff10b064b2591b3,soccer,positive,1011,New York Red Bulls Homegrown midfielder Tyler Adams earned a start for the United States Under-18 National Team yesterday in a 4-0 win over a youth side from Chivas Guadalajara.,soccer_jargon,midfielder,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+97ccbeb3303a385c,soccer,positive,104525,"As does Elmo, the line cook played by J.C. Quinn, who gives a memorable monologue about a soccer game in a faraway land that, for obvious reasons, resonated with me.",league_anchor,soccer,soccer,medium_negative,yes,medium,topical_but_not_primary,cultural_reference_only,batch_bucket=positive; override=soccer_mentioned_in_monologue
+9cb85530ccda2255,soccer,positive,208333,"James M. Dorsey is a senior fellow at the S. Rajaratnam School of International Studies as Nanyang Technological University in Singapore, co-director of the Institute of Fan Culture of the University of Würzburg and the author of the blog, The Turbulent World of Middle East Soccer, and a forthcoming book with the same title.",league_anchor,soccer,soccer,background_negative,yes,high,clean_background_control,author_bio_fragment,batch_bucket=positive; override=author_bio_not_soccer_example
+d63e34f4e70820fd,soccer,positive,173537,"He was later identified by Anchorage Soccer Referees Association president Terry Curran as Derek Newman, who Curran said is rated as a Level 6 referee by the United States Soccer Federation.",league_anchor,soccer,soccer,medium_negative,yes,high,topical_but_not_primary,amateur_officiating_context,batch_bucket=positive; override=local_referee_context
+be9b0d2628d6238d,soccer,positive,116111,"Also, and as a lover of attacking style it pains me grievously to say this, we were often too open to succeed in the Premier League.",league_anchor,premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+757c2dd49e4cf991,soccer,positive,148653,"Last weekend, against Stabaek, more than 30 clubs had representatives at the Marienlyst Stadion to watch him play – among them, reportedly, Real Madrid and Liverpool.",club_entities,liverpool;real madrid,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+678560699d8b7bc7,soccer,positive,151102,"His answers were based on his general concerns about the United States, not on the specifics of the FIFA case.",league_anchor,fifa,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+007863e8a29fad80,soccer,positive,154022,"Atletico supporter depression aside, Simeone’s continued domestic struggles against Barca may seem strange to the neutral given that Atleti have had much success in the Champions League against the Catalans, but surprisingly, the Simeone-era has had a hard time getting the better of Barca in the Spanish top-flight and on Saturday it was more of the same (or was it?).",league_anchor,champions league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+17448b2fb5945248,soccer,positive,153948,"Could you blame a 17 year old going down a Spotify corridor, and assuming that they had got the gist of Britpop because they listened to Suede's greatest hits, given the way they've been artificially promoted to the Champions League spots after the fact?",league_anchor,champions league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+c4d5cd37addd974c,soccer,positive,142826,"Unlike those inexcusable situations of sexism and his infamous ""gay fans should refrain from sexual activities in Qatar"" quote, this time he gave quite the explanation for why he's not the one to blame for the lack of female representation in the soccer body.",league_anchor,soccer,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+290ab583af1ff3f1,soccer,positive,49898,"Founded in 1997 as a rec-league team, Harpo’s has gradually grown into one of the regional powers in the Colorado Amateur Soccer League (CASL).",league_anchor,soccer,soccer,medium_negative,yes,high,topical_but_not_primary,amateur_league_context,batch_bucket=positive; override=amateur_soccer_league
+945245bf323cd360,soccer,positive,85250,Take a look at the next set of Premier League fixtures.,league_anchor,premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+15cb29363da2cf9a,soccer,positive,88125,"APOEL NICOSIA vs. REAL MADRID
+
+Stadium
+
+GSP Stadium, Nicosia, Cyprus
+
+Capacity
+
+22,859
+
+Song
+
+“Even If I Looked Everywhere”
+
+(sung in Greek)
+
+And even if I looked everywhere on earth /And even if I’ve been in trouble and done jail time /
+
+I never strayed / and remained here / a crazy orange fan / oooo I live for you
+
+Meaning
+
+Dedicated to the most passionate Apoel fans, including those who have been jailed because of their show of support for the club.",club_entities,real madrid,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+7f36ca730ba9d789,soccer,positive,22543,"With the second game at BMO Field, will TFC look to play shutdown soccer away, or aim to secure an advantage to take home?",league_anchor,soccer,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+06628aef25d2efb1,soccer,positive,142813,"When the most influential man in the sport says that it's hard to accept women in soccer governance, it doesn't do the reputation of FIFA as a sexist body any good.",league_anchor,fifa;soccer,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+d54d244f784609b7,soccer,positive,74105,"Premier League star Roberto Firmino suffered a burglary at his home in Liverpool by a hooded gang who stole £70,000 worth of possessions.",club_entities;league_anchor,liverpool;premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+e934eb3e19bc6d43,soccer,positive,135243,"We comfort ourselves with the knowledge that every major soccer tournament, just like every Olympics, is heralded by media warnings of impending disaster that are quickly forgotten once the action gets underway.",league_anchor,soccer,soccer,medium_negative,yes,high,topical_but_not_primary,generic_tournament_commentary,batch_bucket=positive; override=meta_tournament_commentary
+906e7703a5533f74,soccer,positive,220868,During this time he spent the season rubbing shoulders with former Glory midfielder Krisztian Vadocz and former Manchester United striker and Uruguayan international Diego Forlan.,club_entities;soccer_jargon,manchester united;midfielder;striker,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+37c897e4405fed54,soccer,positive,229137,"Kaleigh Gilchrist added a score and three assists, and goalkeeper Flora Bolonyai had 10 saves on the afternoon.",soccer_jargon,goalkeeper,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+896167ae8e12d762,soccer,positive,188719,UCF women's soccer nearly swept all of the American Athletic Conference weekly awards as three players were honored.,league_anchor,soccer,soccer,medium_negative,yes,high,topical_but_not_primary,college_soccer_context,batch_bucket=positive; override=college_soccer_awards
+8976d0d14dcde84c,soccer,positive,32021,"Riyad Mahrez has had a part in a league-high 25 Premier League goals this season (14 goals, 11 assists).",league_anchor,premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+0db25e2a8efeef23,soccer,positive,210436,"""He has international experience and has played in the Champions League.",league_anchor,champions league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+a172b06ed287165c,soccer,positive,69011,There are now already reports that Paris Saint-Germain and Real Madrid are offering €6m salaries.,club_entities,real madrid,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+ee9bd637eafd3780,soccer,positive,104337,"""In five years, we want to be one of the best clubs in Europe and to win the Champions League.",league_anchor,champions league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+4504f0e38845c77f,soccer,positive,69545,One FIFA player believes he's proved the chem glitch through the use of a skill move.,league_anchor,fifa,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+1674b459777b2624,soccer,positive,142820,"A decade ago, he had said that women soccer players should wear tighter shorts to help promote the game.",league_anchor,soccer,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+7d61e2744bf39eef,soccer,positive,85313,"Check out Coral's current enhanced odds offers
+
+Where to Bet on Premier League
+
+The Premier League is one of the most exciting leagues to bet on.",league_anchor,premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+5929f90000d2f85f,soccer,positive,73498,“Will I get the FIFA Coach of the Year award?,league_anchor,fifa,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+74c6d35ad4a1b0b4,soccer,positive,85301,Last season saw plenty of profit and knowledge shared amongst a fiercely competitive season of Premier League tips.,league_anchor,premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+b15219d4e9669c3c,soccer,positive,151081,Who knew Russian President Vladimir Putin cared so much about embattled FIFA president Sepp Blatter?,league_anchor,fifa,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+611e096b18c17e0e,soccer,positive,69008,"“We were taken by surprise, as we had confidently hoped Donnarumma would be the goalkeeper taking Milan into the future that we could build the team around.",soccer_jargon,goalkeeper,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+49cfe5492d6d8f62,soccer,positive,122926,"Read the full story
+
+Leicester chasing Musa
+
+CSKA Moscow striker Ahmed MusaPA Sport
+
+Paper Round's view - Leicester are on the right track in looking for a striker.",soccer_jargon,striker,soccer,target_positive,yes,medium,entity_plus_context,,batch_bucket=positive; override=header_fragment_but_clear_transfer_context
+01ffc49086490d59,soccer,positive,32023,"Andy King is the fourth Welshman to score on St David's Day in Premier League history (also Pembridge, Saunders and Collison).",league_anchor,premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+94d74014122aa4c9,soccer,positive,49894,"This year, it will be Boulder-based Harpo’s FC of the United States Specialty Sports Association (USSSA) hosting the Kansas City Athletics of the United States Adult Soccer Assocation (USASA) on April 25.",league_anchor,soccer,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+dd86df47537631bb,soccer,positive,85426,"Ronaldo was on the scoresheet but Madrid slumped to back-to-back defeats for the first time since January, beaten 3-1 by Tottenham in the Champions League on Wednesday.",league_anchor,champions league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+bc0cff4ccf312577,soccer,positive,204488,"Andros Townsend offered a few flickers of encouragement and Joe Hart, barring one moment of near-embarrassment, can reflect on a restorative performance, but it is difficult to be too positive when the opposition goalkeeper walks off the pitch at the final whistle without a mark on his kit.",soccer_jargon,goalkeeper,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+b73371f3bc2e253c,soccer,positive,85279,"So, how does the Premier League work?",league_anchor,premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+25f3c1c426aaf402,soccer,positive,142835,"""I want to give women more positions inside FIFA, although when it comes to the FIFA Executive Committee it is not easy because they are elected by national federations,"" he said.",league_anchor,fifa,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+f01dd6d12479a7fc,soccer,positive,158167,"But Bloomberg is reporting this morning that ""Berlusconi is considering accepting a third, non-refundable 100 million-euro ($105 million) deposit to give the Chinese investor group seeking to buy his AC Milan soccer team more time to complete the deal, according to people familiar with the situation.""",league_anchor,soccer,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+051f688a72278d9b,soccer,positive,45822,"In April, a day after Gilbert and Gores announced plans to bring a Major League Soccer team to Detroit, Gilbert and Arn Tellem, chairman of Gores-owned Palace Sports & Entertainment, held a news conference that showed plans for a professional soccer stadium at the 15-acre jail site on Gratiot Avenue and I-375.",league_anchor,soccer,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+b1908a3c2ddfe53a,soccer,positive,134727,The Premier League side is ranked 29th on the list compiled by Deloitte with revenue of £98.7m in 2013/14.,league_anchor,premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+6e20ffea842a3396,soccer,positive,126814,"Chelsea £80m Four Diego Costa (£32m) Liverpool £59m Four Adam Lallana (£25m) Manchester United £56m Three Ander Herrera (£29m) Arsenal £47m Two Alexis Sanchez (£35m) Newcastle United £30.5m Six Remy Cabella (£12m) Manchester City £18m Two Fernando (£12m)
+
+The transfer window, which officially begins at midnight on the final day of the season, has now been open for two months.",club_entities;soccer_jargon,arsenal;liverpool;manchester united;transfer window,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+ee87748f291cb41c,soccer,positive,69535,UPDATE 29th June 2016: EA has said it's looking into the FIFA Ultimate Team chemistry glitch that hit the headlines this week.,league_anchor,fifa,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+74313d2b7509762d,soccer,positive,85304,"If you want to become a tipster yourself, here is what you should do:
+
+Sign up and create an account on bettingexpert Post your Premier League tips Check our leaderboards in order to compare yourself with other tipsters Aim for the top and win cash prizes!",league_anchor,premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+63d5a9c29fbb3c03,soccer,positive,120303,Surely a first-ever Premier League title would have arrived instead of the Reds finishing second.,league_anchor,premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+beb31b23d8142f06,soccer,positive,180564,"He has played as a holding midfielder, and wide right and left, but the creative role behind the striker is where Villas-Boas sees him.",soccer_jargon,midfielder;striker,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+1db8db09a6e0ad26,soccer,positive,215476,"The early pressure had the Indy defence struggling and with 12 minutes gone, Ubiparipovic was brought down in the penalty area.",soccer_jargon,penalty area,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+bad5b2210d81b2ba,soccer,positive,69536,Community manager Rob Hodson took to the FIFA forum to say EA was on the case.,league_anchor,fifa,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+246c86f7fb0ac7d4,soccer,positive,68143,"ALL-TIME HIGHEST TRANSFER FEES 1) £85m Gareth Bale -- Tottenham to Real Madrid, Sept. 2013 2) £80m Cristiano Ronaldo -- Man Utd to R. Madrid, June 2009 3) £75m Luis Suarez -- Liverpool to Barcelona, July 2014 4) £71m James Rodriguez -- Monaco to Real Madrid, July 2014 5) £59.7m Angel Di Maria -- Real Madrid to Man Utd, Aug. 2014 6) £56m Kaka -- AC Milan to Real Madrid, June 2009
+
+Sources told ESPN FC that Chelsea have been quoted a price of 40 million pounds by PSG for Cavani, and that the player is eager to move to Stamford Bridge -- despite a public declaration that he would prefer to stay in France.",club_entities,barcelona;liverpool;real madrid,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+535881ba877a1de4,soccer,positive,50038,"Defending champions Borussia Dortmund play Nuremberg on Saturday, while Bayern Munich are defending their Bundesliga lead at home against VfB Stuttgart on Sunday.",club_entities,bundesliga,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+18f4f3ee0b645206,soccer,positive,204498,Mertesacker had an outstanding night and this was not the only occasion he evaded Smalling in England's penalty area.,soccer_jargon,penalty area,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+be9c558fb1b3664c,soccer,positive,220879,"Indeed, on June 4 the investigative reporting spotlight fell upon the involvement of North Koreans in construction projects connected with next year’s prestigious FIFA World Cup, notably the impressive Zenit Arena in St. Petersburg.",league_anchor,fifa,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+a5f4ebbb8494e32a,soccer,positive,126824,"""One of the main drivers of Premier League spending continues to be the increased resources clubs now have as a result of improved broadcast deals,"" said Thorpe.",league_anchor,premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+f6d78b48137d321d,soccer,positive,224843,"One key topic was the aggression in the stands during this season’s RFPL calendar, such as when some fans attempted to assault Roman Zobnin during Dinamo – Spartak, the Zenit fans’ behaviour at the Krasnodar Stadium last month, and the flare gun incident by Spartak fans at Maribor in the Champions League.",league_anchor,champions league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+b12da7c6b73ca1f9,soccer,positive,139910,"“I started getting into both soccer and hockey and playing at a competitive level, travelling quite a bit.",league_anchor,soccer,soccer,medium_negative,yes,high,topical_but_not_primary,personal_sports_biography,batch_bucket=positive; override=personal_competitive_sports_context
+6fae195b99a58ee5,soccer,positive,69741,"I hope one day I can play in the Premier League with this atmosphere.“To play for a team in the Premier League would be amazing and that’s what I am going for.“It’s flattering to be linked with clubs, the rumours give me confidence but I just try to do my best every game.”One player who is unlikely to sway Vertonghen’s thoughts is Belgium team-mate Eden Hazard, the £30m-rated Lille star who is also a target for Tottenham.Vertonghen admits it would be “nice” to play with Hazard but the two are not close friends as the Ajax man speaks Flemish and does not communicate with the winger in the same language.“I read that Tottenham might sign Eden Hazard,” Vertonghen said.",league_anchor,premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+5635a14d1bf0da36,soccer,positive,94249,Real Madrid are the game’s biggest cash generating force after they amassed revenue in excess of €500m in 2011-12.,club_entities,real madrid,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+a46befabece83add,soccer,positive,89659,"Four players have retained the Premier League Golden Boot award: Alan Shearer, Thierry Henry, and Robin van Persie are the first three.",league_anchor,premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+caabba8db4d84392,soccer,positive,180547,"He has never lived in England, until now, and he has played only one senior game on English soil –for Schalke in the 2-0 Champions League win at Arsenal last October.",club_entities;league_anchor,arsenal;champions league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+145706b658d87af9,soccer,positive,142832,"August 5, 2014
+
+Sepp Blatter says 'something reluctant' blocks women from FIFA leadership roles.",league_anchor,fifa,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+7df9c3f64fb25f8d,soccer,positive,52781,"1) The Manager
+
+Back in October 2008, Harry Redknapp took over from Juande Ramos at Tottenham Hotspur who were stuck in a relegation fight at the bottom of the Premier League.",league_anchor,premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+8708c4c41b6aff7e,soccer,positive,219095,"Konami expects both Pro Evolution Soccer 15 and Metal Gear Solid V: The Phantom Pain, which releases in September, to be major sources of revenue this year.",league_anchor,soccer,soccer,medium_negative,yes,high,topical_but_not_primary,video_game_context,batch_bucket=positive; override=soccer_video_game
+329eb08b73d1ca6b,soccer,positive,95963,"Legia Warsaw 3-3 Real Madrid
+
+Real Madrid had the lion’s share of the chances but were unable to capitalise on their dominance as they were held to a hard-fought 3-3 draw by Legia Warsaw.",club_entities,real madrid,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+1adfddbd863bd904,soccer,positive,173309,"(Image: hublot)
+
+A striker is expected to follow after the club missed out on Romelu Lukaku, who joined Manchester United in a £75million move.",club_entities;soccer_jargon,manchester united;striker,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+ecc2c650e86732d1,soccer,positive,173423,"Jackie was captain of the soccer team, tall, thin, peppy and blonde—everything I was not.",league_anchor,soccer,soccer,medium_negative,yes,high,topical_but_not_primary,amateur_or_personal_context,batch_bucket=positive; override=non_benchmark_soccer_context
+0961e3de1efbe0de,soccer,positive,153947,"But if the prevailing narrative is that there's a Big Four - an arbitrary number that seems to have been ordained because there was a perceived Big Four in the Premier League (also proven foolish), so let's have a Big Four for everything - people will be less inclined to seek out the breadth of music that was being scattershot across the airwaves at the time.",league_anchor,premier league,soccer,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+181fbc006bfe9116,soccer,local_hard_negative,944092,Ebner is scheduled to rejoin the Patriots after the Aug. 6-11 Olympic rugby competition.,football_confounders,rugby,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+f56c943351eda927,soccer,local_hard_negative,1209762,"Vunivalu’s double against the Cowboys last weekend not only drew him level with Alex Johnston atop the NRL try scorers list, but also shot him clear of the Bunnies winger and onto his very own page in rugby league’s history books.",football_confounders,rugby,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+066d9ca70d45e34f,soccer,local_hard_negative,501978,"Every Friday, the Friday Five will rank something in the world of college football -- anything and everything from the logical to the illogical.",football_confounders,college football,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+b66a0e52728b2a7d,soccer,local_hard_negative,575006,"As revealed by The Rugby Paper on November 13, Samoa’s hard-pressed stars have been demanding action over a range of issues including team selection, financial transparency, match fees, travel and grass roots development back home.",football_confounders,rugby,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+8f7f00249c847fa7,soccer,local_hard_negative,891434,"If the endgame of these global tournaments is to catapult the sport into the wider consciousness and inspire fresh fans, Rugby World Cup 2015 may have already reached a zenith.",football_confounders,rugby,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+1527c9a73a6852db,soccer,local_hard_negative,204930,I was playing with guys who had never even seen me play rugby because I’d been injured so long.,football_confounders,rugby,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+fa0eb2ff04203840,soccer,local_hard_negative,1385376,"""He is a man who has achieved everything there is to achieve in the game of rugby.""",football_confounders,rugby,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+0befa7bce7b3d6b6,soccer,local_hard_negative,595004,"International Rugby
+
+Healey: 'The ball should be luminous pink'
+
+ESPN Staff
+
+Changing the colour of the ball could help TMO decisions, according to Austin Healey © Getty Images Enlarge
+
+Former England back Austin Healey has come up with a controversial suggestion to help improve the game by claiming officials should change the colour of the ball.",football_confounders,rugby,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+44628f28d733bdc2,soccer,local_hard_negative,490760,"More from SB Nation college football:
+
+Follow @SBNationCFBFollow @SBNRecruiting
+
+• Full Week 13 TV schedule, including five ranked games
+
+• Start hot: this week’s best stats in The Numerical
+
+• TWIS: Georgia fans react to Auburn’s insane Hail Mary
+
+• Bowl projections: Bama-FSU, Clemson-Wisconsin and more
+
+• Long CFB reads | Has Baylor crafted the ultimate football offense?",football_confounders,college football,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+8b622a9913d2bca7,soccer,local_hard_negative,571256,"Arians worked his way up the NFL chain of command as an assistant coach for 20 years, and Kelly did the same in the innovative world of college football.",football_confounders,college football,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+07fe02e6e12eacee,soccer,local_hard_negative,736703,At a whopping 2.13m Dean Williams may just be the world's tallest rugby player.,football_confounders,rugby,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+b47fdfebcdcaca7d,soccer,local_hard_negative,707918,Gold Coast Rugby League president Peter Daley said the association was supporting its members and urged people to seek help.,football_confounders,rugby,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+b9103224aa3972fa,soccer,local_hard_negative,1048865,"The island's culture shares many features with that of Great Britain, including the English language, and sports such as association football, rugby, horse racing, and golf.",football_confounders,rugby,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+3072bbfa6a7ca131,soccer,local_hard_negative,214543,"He ranks 45th all-time in college football rushing yardage and finished among the Big-10 all-time leaders at 17th in rushing attempts, ninth in rushing yards, and second in kick return yardage.",football_confounders,college football,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+b17d31e5ea33dd80,soccer,local_hard_negative,369409,He played in the first rugby game at Yale against Harvard in 1876.,football_confounders,rugby,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+8746d29260e30eac,soccer,local_hard_negative,377389,"John Inverdale has been paying a visit to the stadium where Harold Abrahams won a 100m Olympic gold medal for Britain in 1924, on a running track surrounding a ragged pitch on which the Ireland rugby team only ever won twice.",football_confounders,rugby,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+c0407fdebcc02fc9,soccer,local_hard_negative,489897,"Going into the upcoming Rugby Championship it’ll certainly be difficult to predict how South Africa and Australia will compete against the sensational All Blacks, as they undoubtedly looked like the best side in the world.",football_confounders,rugby,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+6b3a71fc234d7dc1,soccer,local_hard_negative,797076,"Family of WikiProjects [ edit ]
+
+Guides and resources [ edit ]
+
+Style guide : overview of style of common types of articles in the project
+
+: overview of style of common types of articles in the project Naming conventions : addresses some article naming conventions, with discussion leading to it on talk page
+
+: addresses some article naming conventions, with discussion leading to it on talk page Templates : commonly used templates for college football articles
+
+: commonly used templates for college football articles Images : sets guidelines and offers suggestions for images (photos, maps, logos, etc.)",football_confounders,college football,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+7e4d3b8d0ba9e719,soccer,local_hard_negative,1333771,SUPPLIED STEPHEN DUDLEY: Died after being punched at rugby training.,football_confounders,rugby,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+074a4ecd43bad2b3,soccer,local_hard_negative,377499,"Steam rising off both packs as they ready themselves to engage - like cattle in a way, but cattle in rugby shirts.",football_confounders,rugby,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+881c053e30f304e5,soccer,local_hard_negative,1356052,"Rivalry games are known for getting heated and it would be surprising not to see a few verbal spats or skirmishes, but throwing a punch is where we have to draw the line as college football supporters and fans.",football_confounders,college football,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+f9190f757095b5cb,soccer,local_hard_negative,457466,We [the Championship] ask Premiership Rugby every year if they want to go to 14 teams and every year they tell us they don't.,football_confounders,rugby,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+2835c35c8ad56f62,soccer,local_hard_negative,176391,"Monday, Jan. 8
+
+College Football Playoff National Championship
+
+Winner of Semifinal No.",football_confounders,college football,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+b3c367d4f6ee0ee1,soccer,local_hard_negative,845259,The conference certainly hopes the answer is yes when it comes to the College Football Playoff.,football_confounders,college football,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+ae3bfa37386b0689,soccer,local_hard_negative,831183,That's the reality of rugby at this level: too often we have had most players having OK games.,football_confounders,rugby,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+f82e9ebb533913c4,nfl_football,positive,172725,"The defensive end, who broke his leg after playing in 10 games during the 2007 Super Bowl season, was optimistic this injury would subside with time and he could resume playing again this season.",league_anchor,super bowl,nfl_football,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+0106a781794fefd5,nhl_hockey,positive,246446,"""The puck never even got to Brian, and it was in our net.",hockey_jargon,puck,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+9bd117a693d7562f,nfl_football,positive,74090,"Players, coaches and owners came together to showcase unity across the NFL.",league_anchor,nfl,nfl_football,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+c85756ae89bd2d58,mlb_baseball,positive,496614,6 of 6 ALDEN WILLIAMS/FAIRFAX NZ New York Yankees shortstop Didi Gregorius.,baseball_jargon;team_entities,new york yankees;shortstop,mlb_baseball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+f8a6c242fe8f742b,nba_basketball,positive,498803,"[Sign up for Yahoo Fantasy Basketball | Mock Draft | The Vertical | Latest news]
+
+According to the 2011 collective bargaining agreement between the NBA and its players’ association, all players are subject to as many as six tests per year, randomly scheduled by a third-party entity — four during the season from October 1 to June 30 and two more in the offseason months between.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+f30d159e7f000b0b,nhl_hockey,positive,269487,"The defenseman has made two Stanley Cup Playoffs appearances, recording three assists (0-3=3) in seven games.",league_anchor,stanley cup;stanley cup playoffs,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+b4e7437582a274b6,nhl_hockey,positive,148869,"And he did.’”
+
+Condon, needless to say, has turned into one of the inspirational stories of this young NHL season, first beating out veteran Dustin Tokarski for the backup job behind league MVP Carey Price, and then holding the fort for the Habs when Price went down with an injury this fall.",league_anchor,nhl,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+065e6c81dc56c36c,nhl_hockey,positive,121544,"Hutchinson always put up good numbers in the AHL and thus his crack at the starting job made a lot of sense, but now that he's regressing back toward being what he is — a potentially better than average goaltender at the NHL level, albeit marginally — we're going to start asking some harder questions about just how good these Jets really are.",league_anchor,nhl,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+4b59dc9154648da4,mlb_baseball,positive,787931,Tap home plate with the bat to start the game again.,baseball_jargon,home plate,mlb_baseball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+6e3eaa0c195a47d7,nfl_football,positive,79796,"Three of them are legacy NFL franchises with rich histories along with recent successes, and the fourth has never won a Super Bowl in team history.",league_anchor,nfl;super bowl,nfl_football,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+f16866d9742998d7,nhl_hockey,positive,596242,"He was wearing camouflage pants, a Miami Hurricanes hat, and a Chicago Blackhawks T-shirt.",team_entities,chicago blackhawks,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+cb57f947ec0fdbd3,mlb_baseball,positive,228022,"He could lose a little batting average and on-base percentage in the process, but if he replaces it with loftier slugging, it'll more than even out.",baseball_jargon,batting average,mlb_baseball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+b3efd1b6b4273cd2,nhl_hockey,positive,298206,"2013
+
+Numbers: The Senators selected seven players, and three have reached the NHL.",league_anchor,nhl,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+301e6dfe65fa4239,mlb_baseball,positive,678490,"On Oct. 19, the night before the Lupine challenge, the Boston Red Sox clinched the American League title.",league_anchor;team_entities,american league;boston red sox,mlb_baseball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+ac701f7dd7c92d89,mlb_baseball,positive,148730,"Clemens, Johnson, Pedro Martínez, Gaylord Perry, Roy Halladay and Max Scherzer are the only pitchers to have won the award in both the American League and National League; Sandy Koufax is the only pitcher who won multiple awards during the period when only one award was presented for all of Major League Baseball.",league_anchor,american league;major league baseball;national league,mlb_baseball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+0d676d3c4cbe7c20,mlb_baseball,positive,23583,"Ready to Rumble
+
+Greinke
+
+Shields
+
+• Got into an interesting debate recently with an American League executive who was extolling the impact James Shields has made on the Royals.",league_anchor,american league,mlb_baseball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+e2a2ed30ee5c2f33,nfl_football,positive,143759,"And with all the preliminaries out of the way, let's get started with your 2014 Dallas Cowboys blue-chip players:
+
+Blue-chip Players
+
+Player POS Snaps Rank/Total Positional Ranking Dez Bryant* WR 917 2/110 98 Jason Witten TE 1071 2/67 97 Travis Frederick OC 1082 2/41 95 Dan Bailey K - - 4/57 92 Tyron Smith T 1082 6/84 92 DeMarco Murray* RB 800 5/57 91 Zack Martin OG 1076 7/78 91 Orlando Scandrick CB 885 10/108 91 Rolando McClain* ILB 654 8/60 87 Tony Romo QB 988 6/39 85 Tyrone Crawford DT 536 13/81 84 Henry Melton* DT 433 14/81 83 *Unrestricted Free Agent
+
+Blue-Chips: You shouldn't be surprised too much by the names at the top of this quintile.",team_entities,dallas cowboys,nfl_football,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+f5e0b3a146af34f9,nfl_football,positive,26732,"That post is now laminated and taped to Quinn's locker for motivation, as are the career statistics for some of the other great defensive ends and outside linebackers throughout NFL history.",league_anchor,nfl,nfl_football,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+2e1e74c1414b77e2,nfl_football,positive,46403,"NFL Drafts from 1970 to 2013
+
+Top Five Schools for each Team
+
+The Rams/UCLA connection is still at the top of the list, but the Pittsburgh/Pittsburgh combination falls off.",league_anchor,nfl,nfl_football,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+224dfca30ae1a1ff,mlb_baseball,positive,256549,"The original Pirate Parrot (Pirates)
+
+The Parrot came into existence in 1979, during the heyday of the San Diego Chicken, and the Pirates immediately won the World Series!",league_anchor,world series,mlb_baseball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+9161937eaa3e384f,nba_basketball,positive,358902,"MORE: Warriors NBA Finals Full Coverage
+
+Game 4 of the NBA finals in Cleveland is Thursday night with the Cavaliers leading the Warriors two games to one.",league_anchor,nba;nba finals,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+a368bdfb4697e7bb,nhl_hockey,positive,89318,"#2 – Jacques Plante
+
+Nickname: “Jake the Snake”
+
+Position – Goalie
+
+When he wore #1 – 1953-1963 (Montreal), 1964-65 (With New York Rangers), and 1971-73 (With Toronto)
+
+Note: He wore #30 in the 1969-70 campaign (With St. Louis) and #31 in 1973 (With Boston)
+
+Regular Season Stats – 971 GP – 437 W – 246 L – 145 T – 82 SO – 2.38 GAA
+
+Known primarily for – His Hall of Fame Induction, six Stanley Cups, seven Vezina trophies, and 83 shutouts.",hockey_jargon;team_entities,goalie;new york rangers,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+3e2a34a7e8602fa4,nfl_football,positive,70277,He's attempted one pass in his NFL career -- an incompletion.,league_anchor,nfl,nfl_football,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+9c136a9835726ab7,nba_basketball,positive,285498,"It starts off like this:
+
+The two-guard (Nicolas Batum) exits his starting position underneath the basket to set a back-screen on the four's (Marvin Williams) defender somewhere near the free throw line:
+
+It serves two purposes.",basketball_jargon,free throw,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+a028162fa720b372,nba_basketball,positive,177223,The Boston Celtics might need to give you a call to ask you to play soon.,team_entities,boston celtics,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+11d89e7f46a027c9,nhl_hockey,positive,141911,"Article Continued Below
+
+Fredrik Sjostrom, the add-on winger when the Leafs cleaned house on Sunday, indeed looks very fast, helped on the penalty kill - a unit that desperately needed help - and picked up as assist.",hockey_jargon,penalty kill,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+0ecf9cbe8a2206d0,nhl_hockey,positive,8613,"Now, hockey adds another layer to its California growth, five NHL teams identifying five California cities throughout the state for the home of their top development clubs.”
+
+“For the growth of hockey, it’s a tremendous thing, obviously, for California, but [also] for the United States,” said Luc Robitaille, President, Business Operations, Los Angeles Kings.",league_anchor,nhl,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+231ab832406a8d33,nfl_football,positive,208435,"A three-sport athlete in high school—baseball, football, and wrestling—Zimmer was a good enough quarterback to be recruited by several universities.",football_jargon,quarterback,nfl_football,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+0472f9a2a8296e2f,nhl_hockey,positive,461384,"“Due to the Sabres’ decision to extend the stay of many prospects and veterans further into training camp and participate in the NHL exhibition schedule, the Pirates’ training camp has been reduced in duration,” said Pirates Managing Owner/CEO Brian Petrovek.",league_anchor,nhl,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+af1bc8d073de0665,nhl_hockey,positive,377903,That won’t be easy against a Hawks team that looks to finally be shifting into Stanley Cup mode right on time.,league_anchor,stanley cup,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+3ad6d2a453b1726b,nba_basketball,positive,23142,The Red Claws went 25-31 from the free throw line.,basketball_jargon,free throw,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+409ae85d7dfd1c92,nba_basketball,positive,413949,"That's when you were MVP, All-NBA, All-Defensive (team).""",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+2f4bd0bd1b22a7a6,nba_basketball,positive,114389,"I think that’s big because you come into a locker room at the NBA level, there's so much emotion, so much pride in the locker room.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+cb99e30701d9784d,mlb_baseball,positive,256532,"AP Photo/Courtesy of the Chicago Cubs, Steve Green
+
+Hey, you can't blame Theo Epstein for trying.",team_entities,chicago cubs,mlb_baseball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+370958f490371374,nfl_football,positive,143822,"One of the reasons for the low grades for both Church and Wilcox is that PFF takes a pretty dim view of missed tackles, which is understandable when you're talking about safeties, because a missed tackle will almost inevitably result in a big play, if not a touchdown.",football_jargon,touchdown,nfl_football,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+14481cd7bfd032ec,nhl_hockey,positive,246396,"Ron Wilson: ""The puck went around the wall and I see Brian Rafalski going.",hockey_jargon,puck,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+dc5c1fb55373b0ba,nhl_hockey,positive,352365,"Obscure former player of the week
+
+Wednesday was a weird day in the NHL.",league_anchor,nhl,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+74b2d1f5d826e78f,nfl_football,positive,6652,"I want to create an environment at Rice where every player's dreams are realized on and off the field""
+
+Bloomgren comes to Rice after seven seasons with the Cardinal, first as the offensive line coach (2011-12) and then assuming the reigns of Stanford's pro style offensive attack in 2013, setting the stage for one of the most successful decades in the program's rich history.",football_jargon,offensive line,nfl_football,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+dffb72289f67b807,nhl_hockey,positive,594576,"Stamkos left mind-boggling money on the table from the likes of the Toronto Maple Leafs, Montreal Canadiens, Buffalo Sabres and Detroit Red Wings to return to Tampa Bay.",team_entities,toronto maple leafs,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+1d542b8ddfda1455,nfl_football,positive,95028,"Of his last six games at left guard, Norwell graded out analytically speaking as the fourth-best left guard in the NFL.",league_anchor,nfl,nfl_football,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+14701e240c88a453,nba_basketball,positive,209615,“Generation Steph” is what Beck called this age of young players trying to reach the NBA.,league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+c06eb7037f73cfdf,mlb_baseball,positive,118916,"By comparison, the American League Champion Kansas City Royals registered 2,287 such pitches.Major league baseball is trending toward pitchers -- especially relievers -- with big velocity, and while the Twins may appear far behind the curve based on the above finding, they're certainly not ignorant to this reality.",league_anchor,american league;major league baseball,mlb_baseball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+5d2915dd394b968c,nfl_football,positive,182884,"USA TODAY NETWORK-Wisconsin
+
+Green Bay Packers strong safety Morgan Burnett (42) is shown during training camp Friday, August 4, 2017.",team_entities,green bay packers,nfl_football,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+67381431ba9ea1c7,nhl_hockey,positive,377879,"Still, they’ve scored a power-play goal in both games of this series, their penalty kill is a solid 85.7 percent, and Chicago hasn’t been good when either up or down a man.",hockey_jargon,penalty kill,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+18ef48a08092780b,nba_basketball,positive,498823,"We can debate the merits of arguments for or against marijuana — its addictiveness, effect on the brain, reputation as a gateway drug and relatively mild influence in relation to NBA-legal alcohol and prescription drugs, among other sources of contention — but the point here is that this debate has become increasingly difficult for the league to ignore.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+183ec188592cab44,nba_basketball,positive,309315,The coach in him knew that Lonzo was the natural choice to start at point guard.,basketball_jargon,point guard,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+d88a9f01a86f3a58,nfl_football,positive,56989,The first matchup with the Seahawks was an abject disaster for the entire offensive line; Kalil will have to play better this time around for the offense to stand a chance.,football_jargon,offensive line,nfl_football,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+3b48be401cd7b796,nba_basketball,positive,690455,I once stated on Twitter that I'd like to see LeBron James and the Miami Heat score their third NBA Finals win in as many years.,league_anchor;team_entities,miami heat;nba;nba finals,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+d265214736d5e380,mlb_baseball,positive,277697,"The Braves start off the week with a three-game series against the Nationals where they’ll see Gio Gonzalez and Max Scherzer, and then they head home to face off against the New York Mets, getting to see Jacob DeGrom while they’re there.",team_entities,new york mets,mlb_baseball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+32c9bf097efb7e15,nfl_football,positive,108292,"Green Bay Packers kicker Chester Marcol was the NFL’s leading scorer as a rookie in 1972 (Photo by Nate Fine/Getty Images)
+
+His efforts that season against the Chicago Bears endeared him to the locals.",league_anchor;team_entities,green bay packers;nfl,nfl_football,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+9f278c1f9ff60bd2,nba_basketball,positive,286027,He lacks the gravitas that transformed his humble-beginnings father into an icon and has been unable to successfully navigate a modern NBA far more complicated than the one Dr. Jerry Buss made his playground.,league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+4c436a51ffb89e2f,nfl_football,positive,129514,The NFL typically requests ads not to be overtly political during the Super Bowl.,league_anchor,nfl;super bowl,nfl_football,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+0c46e57e3c64298f,nba_basketball,positive,311003,He was selected by the Chicago Bulls in the 2008 NBA draft and shortly thereafter traded to the Denver Nuggets.,league_anchor,nba;nba draft,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+a0d75240952e9b0d,nhl_hockey,positive,277263,His ability to find the quiet areas on the ice along with is ability to put the puck in quiet areas is extremely encouraging.Ian Cole is expected to make a decision on his future over the next few days.,hockey_jargon,puck,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+1be0eb7158e8983a,nba_basketball,positive,585400,"Crowder (6-6, 235) is a second-year man out of Marquette and was originally the 34th overall pick in the 2012 NBA Draft.",league_anchor,nba;nba draft,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+35e8308455951bc4,nba_basketball,positive,701122,"Bucks Blog The Journal Sentinel sports staff brings Milwaukee Bucks fans the latest news, notes and analysis SHARE
+
+By of the
+
+The Bucks are trading center Andrew Bogut and veteran guard Stephen Jackson to Golden State in exchange for Monta Ellis, Ekpe Udoh and the expiring contract of Kwame Brown, according to league sources.",team_entities,milwaukee bucks,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+df8fdebfe37fa132,nhl_hockey,positive,55285,"In the offensive zone, Ekman-Larsson has made a habit of making opposing teams pay when he has the time and room to put the puck on net.",hockey_jargon,puck,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+93c8bff09dc23361,mlb_baseball,positive,724443,"2nd Inning
+
+Justin Maxwell hit's a bomb to left-center field
+
+3rd Inning
+
+With runners on first and third Ankiel drives in another run with this double to right-center field.",baseball_jargon,inning,mlb_baseball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+005c5e7201b93469,nba_basketball,positive,248999,"In any case, it was perfunctorily covered on early ""SportsCenter"" editions and briefly examined by ESPN NBA reporter Chris Broussard.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+86916a7200ae8b20,nhl_hockey,positive,89343,"Before the 1955-56 season, Adams traded him to the Boston Bruins along with three other players.",team_entities,boston bruins,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+7930f336402ba368,nhl_hockey,positive,463206,"Chicago Blackhawks; Montreal Canadiens2008 (4th Round, 111th Overall) - NY Rangers27 (8-5-88)Winnipeg, Manitoba6’2”, 206 poundsRightArizona Coyotes2002 (1st Round, 17th Overall) - Washington32 (10-19-83)Unity, Saskatchewan6’0”, 200 poundsRight
+
+View Less",team_entities,chicago blackhawks,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+aa5072104c3aabd2,nba_basketball,positive,477925,"The NBA is an LLC, a parent company to 30 different franchises, each one independently owned and operated.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+0242966f7c896933,nba_basketball,positive,215416,"On Thursday night, with four minutes left in the first game of this year's NBA finals, Miami Heat star LeBron James scored to pull his team within two.",league_anchor;team_entities,miami heat;nba;nba finals,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+aec936e8216699ec,nba_basketball,positive,640348,"Rivers might not go on the talk-show circuit, but he has been pushing for Jordan to be considered for the NBA Defensive Player of the Year award since training camp, has mentioned Jamal Crawford as a sixth man of the year candidate at various times this season and is never shy to say Blake Griffin deserves MVP consideration.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+6072e3de422ae164,nba_basketball,positive,255201,"Powe, 30, saw his promising NBA career cut short after multiple ACL tears with the Celtics and Cleveland Cavaliers, having a short stint in Memphis before playing a season in the emerging Puerto Rican BSN.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+7a7965216f9314d6,nfl_football,positive,157753,"But despite the NFL's protests, the problem of game fixing doesn't appear to be one the NFL needs to think too hard about any time soon.",league_anchor,nfl,nfl_football,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+6ff2dcfdee81a1c6,nhl_hockey,positive,574215,"“Just about every day he’d have a hockey stick in his hand, and if he couldn’t use a puck he’d have a golf ball or some other kind of ball, ” said Denis, who grows wheat and raises cattle.",hockey_jargon,puck,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+15befa508f14df22,nba_basketball,positive,358824,"With the Cavs leading by 23, James, who had attempted just one free throw at that point, drove the length of the floor and drew contact from Miami’s James Johnson and Dion Waiters.",basketball_jargon,free throw,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+7bef569762ec3856,nba_basketball,positive,268862,"A year later, here we are, with Trimble having been deemed probably not good enough for the first or second round of the 2016 NBA draft ... but probably good enough for the 2017 draft.",league_anchor,nba;nba draft,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+a55bd2dcca653de5,mlb_baseball,positive,340421,"He helped the Diamondbacks into title contention immediately, hitting a career-best .336 in 1999, leading the NL in hits with 206 and helping them win the National League's western division that season before the team fell to the New York Mets in a divisional playoff series.",league_anchor;team_entities,national league;new york mets,mlb_baseball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+f2016e874a6881f0,nhl_hockey,positive,614416,Murray will only deal for Ladd so his team can still take a run at the Stanley Cup this spring.,league_anchor,stanley cup,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+56a85ad337224637,mlb_baseball,positive,272336,"Wood, meanwhile, is a big-league-proven starting pitcher, who’s had some excellent stretches, and who’s going to be cheap for a while.",baseball_jargon,starting pitcher,mlb_baseball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+a73afcec22f93d24,nhl_hockey,positive,182056,"CALGARY, Alberta -- The Vancouver Canucks wrapped up the best regular season in franchise history and star Daniel Sedin gave them back-to-back scoring champions.",team_entities,vancouver canucks,nhl_hockey,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+c945e41f685e3246,mlb_baseball,positive,433274,"Two days after last season ended, New York Yankees general manager Brian Cashman said of getting his team’s payroll under $189 million to avoid Major League Baseball’s luxury tax, “It’s a goal, not a mandate.”
+
+Cashman and owner Hal Steinbrenner repeated that sentiment throughout the early part of the offseason, as the Yankees signed Brian McCann, Jacoby Ellsbury and Carlos Beltran.",league_anchor;team_entities,major league baseball;new york yankees,mlb_baseball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+1046f7e56793eec0,nba_basketball,positive,532188,"(Denver Parler, Florida Gators; Kevin Brockway, Gainesville Sun)
+
+Chris Chiozza to be game-time decision for opener: Mike White announced that the starting senior point guard would be a game-time decision for Monday’s opener against Gardner-Webb.",basketball_jargon,point guard,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+d543b95a73379479,combat_sports,positive,433929,"As with some of the other big name stars in the UFC, Couture is known to command a share of the PPV buys for his fights which can propel his earnings per fight into the seven figure region.",promotion_anchor,ufc,combat_sports,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+0e0da51cfa0f727f,gaming_general,positive,83346,And those conventional mechanics serve the most substantive theme I’ve ever encountered in a video game.,platform_anchor,video game,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+f3b60e5f195c0eef,gaming_general,positive,32449,"The system reached a new sales low in November when it managed to sell only 4,021 units across Japan in a week, placing behind even the ancient PlayStation Portable and selling less than 1/46th as much as the 3DS in the same period.",platform_anchor,playstation,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+849d81ee6ddc3ecc,gaming_general,positive,8995,Lara Croft looks like a genuinely impressive video game avatar.,platform_anchor,video game,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+ba48cd4c422e1c59,combat_sports,positive,49542,"The UFC organization also licenses over 100 UFC GYM® locations, and owns UFC.TV® (offering live event broadcasts and video on-demand around the world), UFC FIT® (an in-home fitness and nutrition program), UFC Magazine, and has a videogame franchise with EA SPORTS, UFC Fight Club®, UFC Fan Expo®, UFC branded apparel, DVDs and Blu-rays and Topps Trading Cards.",promotion_anchor,ufc,combat_sports,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+36093df8b582ca68,combat_sports,positive,248360,"Somehow the entire scene didn't devolve into a brawl, because as you know sometimes these things happen in MMA.",promotion_anchor,mma,combat_sports,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+06c70f8bdcd4e760,gaming_general,positive,242519,"Kuchta testified the VIPs were ""basically playing a video game,"" using a simulator of rig controls on the bridge that was usually used for crew training.",platform_anchor,video game,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+c9541f59c7ed3a11,gaming_general,positive,9650,"As Matthieu and the eSports Square staff commented, this may partially originate with Japan’s local co-op traditions.",esports_and_live_service,esports,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+9d0731306b0f0392,combat_sports,positive,483651,"“When the UFC first came out, I was wrestling at the time; I was a junior wrestler.",promotion_anchor,ufc,combat_sports,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+509c86cab89661ec,gaming_general,positive,305581,"The apps that will be able to run on Xbox are made to run on multiple devices, said Steve Kleynhans, vice president and research analyst at Gartner.",platform_anchor,xbox,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+d0c99415b817112f,gaming_general,positive,222134,For this we need to add Deep Links to Xbox music on our phone.,platform_anchor,xbox,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+49b88d3e7226164a,gaming_general,positive,115026,"But plenty of us—the Atari kids, the Nintendo kids, heck, even the Playstation and Xbox kids—remember when gaming was given the same side-eye by the mainstream as big fat fantasy novels (hello, HBO’s 20-million-viewer-strong Game of Thrones) and sci-fi books covered in spaceships (*cough* Guardians of the Galaxy *cough*).",platform_anchor,nintendo;playstation;xbox,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+969e08c6ae812b67,gaming_general,positive,326145,"I’m not sure it’s fair to compare to an iconic Nintendo TV console launch title with a big budget, but we’re very happy with the result in how fun the game is to play.",platform_anchor,nintendo,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+7db3089867d8fc32,gaming_general,positive,178109,"The incredible reception proved that an audience still existed hungry for Nintendo games coverage in magazine form, and propelled us to pursue subscriptions and enter production on a full year of follow-up issues.",platform_anchor,nintendo,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+c905ca19e6232713,combat_sports,positive,28340,Applications can be downloaded at http://2.images.spike.com/downloads/bellator/Bellator-Long-App.pdf and video submission sent to CastingBellator@gmail.com.,promotion_anchor;training_and_matchmaking,bellator;submission,combat_sports,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+f5b307ee8993a1f1,gaming_general,positive,271247,But one of the biggest draws is a six-seater table featuring a video game that gamblers play for money.,platform_anchor,video game,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+8c3c1b6a46d711d8,gaming_general,positive,293122,"However, he was on a mission to catch all of the majikichi sushi in Kanto and become a majikichi sushi master, just like in that hit video game he used to play…Nobunaga’s Ambition.",platform_anchor,video game,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+61557d7799bb6e98,gaming_general,positive,222089,"After you filled in all the needed info and your account is in order, open the LinkShare website and navigate to PROGRAMS > Categories – select category Entertainment > Music and look for Xbox Music and press the Apply button on the right side.",platform_anchor,xbox,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+b9fe7f02572bf21c,gaming_general,positive,106958,"As it turns out, that isn’t the case, at least according to Microsoft’s Lead Planner for the Xbox group, Albert Penello.",platform_anchor,xbox,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+66fdb788ad516f9d,combat_sports,positive,465323,"– If you know someone is injured and know how to practice arte suave (the gentle art), help out the injured person by calling them out a few times in a sparring session, to prevent them from possibly furthering their injury by rolling with an overzealous beginner.",training_and_matchmaking,sparring,combat_sports,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+1464827034d62487,gaming_general,positive,36556,"It's better in a number of ways, making it even more of a worthy alternative to Sony's PlayStation 4.",platform_anchor,playstation,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+a8c7d8029e1a0d79,combat_sports,positive,18126,"'Maturity Is Greatly Overrated': The Conversation With Ronda Rousey
+
+UFC Champion Ronda Rousey explains why she doesn't like calling herself a ""role model.""",promotion_anchor,ufc,combat_sports,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+1030c8722fa69d94,gaming_general,positive,324805,"In an interview with Kotaku on Monday, Iranian/Canadian game developer Navid Khonsari revealed he has been branded a spy for his latest game, which depicts the chaos of the 1979 Iranian Revolution.",platform_anchor,game developer,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+a18391aab491d135,combat_sports,positive,433973,"One former champion who may have been expected to appear on the list is Frank Mir, yet remarkably he earned just $45,000 for his first round defeat against Brock Lesnar at UFC 100.",promotion_anchor,ufc,combat_sports,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+523d5815c8399698,combat_sports,positive,385914,"But it could be argued that prolonged abstinence from wanking could be detrimental to a man’s health, unless he was a star football player or a boxing champion, in which case it is believed that, um, preserving the fluids could lead to enhanced physical performance on the field or in the boxing ring.",promotion_anchor,boxing,combat_sports,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+d32a50deb6385a6d,gaming_general,positive,211194,"Version details
+
+Steam build ID numbers: Game 1213242, dedicated server tool 1213245, SDK tool 1213246.",platform_anchor,steam,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+9d7cc1b6ce0d8f81,combat_sports,positive,488710,UFC 213 took place this past Saturday night at the T-Mobile Arena in Las Vegas and the main card on pay-per-view was headlined by Robert Whittaker becoming the interim middleweight champion with a decision victory over Yoel Romero.,fighter_entities;promotion_anchor,pay-per-view;ufc,combat_sports,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+fcf4211d48831f1a,gaming_general,positive,265133,"The following games and services will be inaccessible during maintenance:
+
+Arc Games forums
+
+Arc Games main website, product pages and news pages
+
+Arc Games platform including billing and messaging
+
+Arc Games support websites
+
+Battle of the Immortals
+
+Blacklight Retribution (launched from Arc Games)
+
+Champions Online
+
+Forsaken World
+
+Fortuna
+
+Jade Dynasty
+
+Neverwinter (PC & Xbox One)
+
+PWI
+
+Star Trek Online
+
+Swordsman
+
+War of the Immortals
+
+Additional games launched from Arc Games
+
+We anticipate this maintenance to run from October 13 starting at 6:00 am PT and running to 6:00 pm PT.",platform_anchor,xbox,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+e61fcee912118800,gaming_general,positive,301300,"UPickVG IV, the 4th U-Pick Video Game Marathon for Charity, is coming June 12th!",platform_anchor,video game,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+6ba95e09626df6c2,gaming_general,positive,326898,"I doubt, however, anyone would believe that, in 2013, the Super Nintendo would be graced with one more new release, in the hands of a non-licensed Nintendo product.",platform_anchor,nintendo,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+0a7b55b9dc5c78ba,aviation_aerospace,positive,69327,"Coupling this level of aerial surveillance with cellphone data provided by StingRays (which are on-board these spy-planes) yields tremendously intrusive information on those targeted, and those who happened to have their data vacuumed up by these aircraft.",aviation_anchor,aircraft,aviation_aerospace,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+049ac0c6c6411e77,aviation_aerospace,positive,193186,"With the ongoing expansion of the Indian Navy, there has been increase in the number of ships, submarines and aircraft equipped with specialized armament and missiles.",aviation_anchor,aircraft,aviation_aerospace,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+d80d94688886e414,crypto_blockchain,positive,42404,"“Who is to say it doesn’t reach $100,000?”
+
+In some emerging markets, bitcoin had hit well over $10,000 previously.",protocol_anchor,bitcoin,crypto_blockchain,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+0c9b475760a7bb57,aviation_aerospace,positive,150812,"Verizon’s 5G rollout will be based on the company’s 5GTF specifications from last year and take place for pilot customers in Ann Arbor, Atlanta, Bernardsville, Brockton, Dallas, Denver, Houston, Miami, Sacramento, Seattle, and Washington, DC.",operations_and_safety,pilot,aviation_aerospace,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+ad451f6e062568f4,crypto_blockchain,positive,42394,"“What’s happening right now has nothing to do with bitcoin’s functionality as a currency – this is pure mania that’s taken hold,” said Garrick Hileman, a research fellow at the University of Cambridge’s Judge Business School.",protocol_anchor,bitcoin,crypto_blockchain,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+94b8dddd9dd28dda,crypto_blockchain,positive,123886,"Daylight Mugging On Mission Street
+
+Two men said to be between 25 and 35 approached a 23-year-old man from behind near the intersection of Mission and 8th streets at 3:00pm on May 16, struck him, and stole his wallet.",market_and_wallet,wallet,crypto_blockchain,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+644ea21bc25dc211,aviation_aerospace,positive,100842,"Among the other currently “red” risks, how to adequately stock a spacecraft with enough food and medications to keep astronauts healthy is a particularly thorny issue.",aerospace_anchor,spacecraft,aviation_aerospace,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+af3b87981096f749,aviation_aerospace,positive,148289,The H-2A rocket launched South Korea’s Kompsat-3 Earth observation satellite in 2012 as a secondary payload for a launch carrying the Japan space agency’s GCOM-W environment-monitoring satellite.,aerospace_anchor;operations_and_safety,payload;satellite,aviation_aerospace,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+e1f60a5196f36f67,china,positive,11513,"Oh, sure, quackademics like Oz wouldn't accept that characterization of what they do as valid, but I would counter that, other than featuring psychics like John Edward or Theresa Caputo on his show, what Oz does on his show is not really much different in terms of message than what he probably at Columbia: Promote acupuncture, naturopathy, homeopathy, and traditional Chinese medicine, among other things.",country_anchor,chinese,china,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+aaed2e9cb7cd2f30,aviation_aerospace,positive,18722,But scientists were really anticipating the results from the life sciences payload carried by the lander.,operations_and_safety,payload,aviation_aerospace,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+403e6d3a84425575,crypto_blockchain,positive,199293,"Bitcoin miner Chandler Guo noted his belief that, if anything, the compromise is perhaps more out of necessity given frustration over the stagnation of the technology’s development, and that in the end, there are perhaps no winners.",protocol_anchor,bitcoin,crypto_blockchain,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+5e8a99d9229d34aa,aviation_aerospace,positive,40016,"His crowning achievement in this respect was patent GB1426698 titled ""Photon Push-Pull Radiation Detector For Use in Chromatically Selective Cat Flap Control And 1000 Megaton Earth-Orbital Peace-Keeping Bomb"".",operations_and_safety,orbital,aviation_aerospace,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+e472f80aafac23e5,china,positive,92597,"The conference in Shenzhen, China, was attended by local officials
+
+It's the first time the jetpacks have been introduced to the Chinese market
+
+Ever dream of flying like a bird?",country_anchor;economy_and_society,china;chinese;chinese market;shenzhen,china,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+3ec3142029ee2148,aviation_aerospace,positive,129128,"A total of 235 cetaceans were captured for sale to marine parks, including 20 Pacific white-sided dolphins, 179 bottlenose dolphins, 35 pantropical spotted dolphins and one pilot whale.",operations_and_safety,pilot,aviation_aerospace,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+2558e0f6479d5f8a,china,positive,78077,We met with Karl-Heinz Rummenigge in China as well.,country_anchor,china,china,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+77a02eaa1a55c75a,aviation_aerospace,positive,187605,"Some of the world’s best fighters and bombers, and Osprey hybrid aircraft, now regularly fly into Darwin and nearby Shoal Bay Receiving Station and RAAF Tindal in Katherine, with huge ships coming down from a US base in Okinawa, Japan.",aviation_anchor,aircraft,aviation_aerospace,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+3e1e5e240afd1eb8,china,positive,8772,Researchers at Nanjing Medical University and Yunnan Key Laboratory of Primate Biomedical Research in Kunming in China have created two genetically modified macaques with targeted mutations using the CRISPR/Cas9 system.,country_anchor,china,china,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+a3e6aebd8dce56f2,aviation_aerospace,positive,23927,"From the 25-carat diamond ring President Trump bought Melania for their 10-year wedding anniversary “worth more than most Americans would make in 10 lifetimes” to the fact that she’s “not really smiling” like other first ladies or that her “cool, distant gaze seems to evoke her runway-model past more than her current role as the country’s first lady,” the Globe found all kinds of reasons why Melania’s White House portrait sucks.",aviation_anchor,runway,aviation_aerospace,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+f320f4d6ec8f0817,china,positive,8776,"Using the Crispr method, Chinese scientists were targeting three genes in the experiment – one that regulates metabolism, another that regulates immune cell development and a third that regulates stem cells and sex determination.",country_anchor,chinese,china,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+07e3e34168dfc511,china,positive,39744,"After weeks of constant searching for a decent lab, one of my contacts sent me the URL of a site in Shanghai that, on the surface of things, has nothing to do with legal highs, analog drugs, or any gray-market activity.",country_anchor,shanghai,china,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative

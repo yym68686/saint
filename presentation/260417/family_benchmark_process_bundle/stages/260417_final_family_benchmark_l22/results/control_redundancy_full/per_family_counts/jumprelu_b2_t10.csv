@@ -1,0 +1,9 @@
+family_id,method,method_label,budget,target_threshold,valid_controller_count
+gaming_general,jumprelu,JumpReLU SAE,0.02,0.1,0
+mlb_baseball,jumprelu,JumpReLU SAE,0.02,0.1,1
+nba_basketball,jumprelu,JumpReLU SAE,0.02,0.1,0
+nfl_football,jumprelu,JumpReLU SAE,0.02,0.1,1
+russia_post_soviet,jumprelu,JumpReLU SAE,0.02,0.1,0
+soccer,jumprelu,JumpReLU SAE,0.02,0.1,1
+us_electoral_politics,jumprelu,JumpReLU SAE,0.02,0.1,0
+us_legislative_governance,jumprelu,JumpReLU SAE,0.02,0.1,2

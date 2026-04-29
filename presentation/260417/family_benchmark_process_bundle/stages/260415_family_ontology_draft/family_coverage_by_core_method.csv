@@ -1,0 +1,30 @@
+family_id,display_name,category,benchmark_priority,topk,batchtopk,relu,gatedsae,jumprelu,dense,kernel
+animals_pets,Animals / Pets,society_and_culture,high,0,0,0,0,0,1,1
+aviation_aerospace,Aviation / Aerospace,technology_and_science,high,1,1,1,0,0,2,2
+china,China,geography_and_politics,high,1,1,1,1,0,1,1
+christianity,Christianity / Church Life,society_and_culture,high,0,0,0,0,0,2,2
+combat_sports,Combat Sports,sports_and_games,high,1,1,1,1,0,1,1
+crypto_blockchain,Crypto / Blockchain,technology_and_science,high,1,1,1,1,0,1,1
+entertainment_screen_media,Film / Television Media,society_and_culture,high,0,1,0,0,0,1,3
+function_word_patterns,Function-Word / Grammatical Patterns,discourse_and_form,medium,0,0,0,0,0,7,0
+gaming_general,Video Games / Gaming,sports_and_games,high,0,1,3,4,2,1,3
+higher_education_campus,Higher Education / Campus,society_and_culture,high,0,1,1,0,0,2,2
+interrogative_questions,Interrogative Questions,discourse_and_form,medium,0,0,1,0,0,1,2
+japan,Japan,geography_and_politics,high,0,1,1,1,0,1,1
+judaism_jewish,Judaism / Jewish Life,geography_and_politics,high,0,1,1,0,0,1,1
+law_enforcement_crime,Law Enforcement / Crime,society_and_culture,high,0,0,0,1,2,0,2
+lgbtq,LGBTQ Topics,society_and_culture,high,0,0,0,0,0,1,1
+middle_east_geopolitics,Middle East Geopolitics,geography_and_politics,high,2,2,2,1,0,2,2
+mlb_baseball,MLB / Professional Baseball,sports_and_games,high,1,1,1,1,1,1,1
+nba_basketball,NBA / Basketball,sports_and_games,high,1,1,1,1,1,1,1
+nfl_football,NFL / American Football,sports_and_games,high,0,2,1,1,1,2,1
+nhl_hockey,NHL / Hockey,sports_and_games,high,1,1,1,1,0,1,1
+quoted_dialogue,Quoted Dialogue / Speech,discourse_and_form,medium,1,2,0,0,0,0,1
+reference_fragments,Referential Fragments,discourse_and_form,medium,0,0,3,2,2,0,1
+russia_post_soviet,Russia / Post-Soviet Sphere,geography_and_politics,high,1,1,1,1,1,1,1
+soccer,Soccer / Association Football,sports_and_games,high,1,1,1,1,1,2,1
+spirituality_new_age,Spirituality / Metaphysics,society_and_culture,high,0,0,1,1,0,1,1
+tabletop_gaming,Tabletop / Card Gaming,sports_and_games,high,0,0,0,1,0,2,0
+us_electoral_politics,U.S. Electoral Politics,geography_and_politics,high,0,1,1,1,1,0,3
+us_legislative_governance,U.S. Legislative / Governance,geography_and_politics,high,1,0,1,2,3,0,2
+women_feminine_subjects,Women / Feminine Subjects,society_and_culture,high,1,1,0,0,0,0,0

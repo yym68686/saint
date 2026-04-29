@@ -1,0 +1,154 @@
+{
+  "budgets": [
+    0.02,
+    0.05,
+    0.1
+  ],
+  "strict_budgets": [
+    0.02,
+    0.05
+  ],
+  "seed": 42,
+  "layer_idx": 22,
+  "method_order": [
+    "kernel",
+    "dense",
+    "relu",
+    "gatedsae",
+    "batchtopk",
+    "topk",
+    "jumprelu"
+  ],
+  "families": [
+    "aviation_aerospace",
+    "china",
+    "combat_sports",
+    "crypto_blockchain",
+    "gaming_general",
+    "japan",
+    "middle_east_geopolitics",
+    "mlb_baseball",
+    "nba_basketball",
+    "nfl_football",
+    "nhl_hockey",
+    "russia_post_soviet",
+    "soccer",
+    "us_electoral_politics",
+    "us_legislative_governance"
+  ],
+  "unique_text_count": 13458,
+  "split_counts": {
+    "aviation_aerospace": {
+      "selection_target": 40,
+      "selection_control": 160,
+      "calibration_control": 500,
+      "evaluation_target": 120,
+      "evaluation_control": 500
+    },
+    "china": {
+      "selection_target": 40,
+      "selection_control": 160,
+      "calibration_control": 500,
+      "evaluation_target": 120,
+      "evaluation_control": 500
+    },
+    "combat_sports": {
+      "selection_target": 40,
+      "selection_control": 160,
+      "calibration_control": 500,
+      "evaluation_target": 120,
+      "evaluation_control": 500
+    },
+    "crypto_blockchain": {
+      "selection_target": 40,
+      "selection_control": 160,
+      "calibration_control": 500,
+      "evaluation_target": 120,
+      "evaluation_control": 500
+    },
+    "gaming_general": {
+      "selection_target": 40,
+      "selection_control": 160,
+      "calibration_control": 500,
+      "evaluation_target": 120,
+      "evaluation_control": 500
+    },
+    "japan": {
+      "selection_target": 40,
+      "selection_control": 160,
+      "calibration_control": 500,
+      "evaluation_target": 120,
+      "evaluation_control": 500
+    },
+    "middle_east_geopolitics": {
+      "selection_target": 40,
+      "selection_control": 160,
+      "calibration_control": 500,
+      "evaluation_target": 120,
+      "evaluation_control": 500
+    },
+    "mlb_baseball": {
+      "selection_target": 40,
+      "selection_control": 160,
+      "calibration_control": 500,
+      "evaluation_target": 120,
+      "evaluation_control": 500
+    },
+    "nba_basketball": {
+      "selection_target": 40,
+      "selection_control": 160,
+      "calibration_control": 500,
+      "evaluation_target": 120,
+      "evaluation_control": 500
+    },
+    "nfl_football": {
+      "selection_target": 40,
+      "selection_control": 160,
+      "calibration_control": 500,
+      "evaluation_target": 120,
+      "evaluation_control": 500
+    },
+    "nhl_hockey": {
+      "selection_target": 40,
+      "selection_control": 160,
+      "calibration_control": 500,
+      "evaluation_target": 120,
+      "evaluation_control": 500
+    },
+    "russia_post_soviet": {
+      "selection_target": 40,
+      "selection_control": 160,
+      "calibration_control": 500,
+      "evaluation_target": 120,
+      "evaluation_control": 500
+    },
+    "soccer": {
+      "selection_target": 40,
+      "selection_control": 160,
+      "calibration_control": 500,
+      "evaluation_target": 120,
+      "evaluation_control": 500
+    },
+    "us_electoral_politics": {
+      "selection_target": 40,
+      "selection_control": 160,
+      "calibration_control": 500,
+      "evaluation_target": 120,
+      "evaluation_control": 500
+    },
+    "us_legislative_governance": {
+      "selection_target": 40,
+      "selection_control": 160,
+      "calibration_control": 500,
+      "evaluation_target": 120,
+      "evaluation_control": 500
+    }
+  },
+  "batch_count": 3374,
+  "max_batch_size": 4,
+  "max_batch_tokens": 384,
+  "max_token_length": 192,
+  "weights_dir": "/root/saint",
+  "llama_model_dir": "/root/saint/llama_3.2-3B_model/original",
+  "text_pool_sha1": "069464d4e773cf725e377c1172b3d4b04d7ee0bb"
+}
