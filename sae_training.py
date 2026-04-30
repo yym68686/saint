@@ -1,7 +1,7 @@
+import argparse
+import logging
 import os
 import random
-import logging
-import argparse
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -15,7 +15,7 @@ from torch.utils.data import DataLoader, Dataset, Subset
 from torch.utils.data.distributed import DistributedSampler
 from tqdm import tqdm
 
-from sae import TopKSparseAutoencoder
+from sae import MatryoshkaSparseAutoencoder
 from utils.cuda_utils import set_up_cuda
 
 
@@ -29,10 +29,9 @@ def set_seed(seed: int):
     torch.backends.cudnn.benchmark = False
 
 
-class TopKSparseAutoencoderDataset(Dataset):
+class MatryoshkaSparseAutoencoderDataset(Dataset):
     def __init__(self, data_dir: Path):
         """"""
-        # List and sort data files to ensure consistent order across processes
         self.data_files = list(data_dir.glob("*.pt"))
         self.data_files.sort()
 
@@ -46,6 +45,54 @@ class TopKSparseAutoencoderDataset(Dataset):
         return data
 
 
+def build_matryoshka_loss_weights(
+    prefix_sizes: list[int],
+    strategy: str,
+    device: torch.device,
+) -> torch.Tensor:
+    """"""
+    if strategy == "equal":
+        weights = torch.ones(len(prefix_sizes), dtype=torch.float32, device=device)
+    elif strategy == "group_size":
+        group_sizes = []
+        previous_prefix_size = 0
+        for prefix_size in prefix_sizes:
+            group_sizes.append(prefix_size - previous_prefix_size)
+            previous_prefix_size = prefix_size
+        weights = torch.tensor(group_sizes, dtype=torch.float32, device=device)
+    else:
+        raise ValueError(f"Unknown Matryoshka loss weighting strategy: {strategy}")
+
+    return weights / weights.sum()
+
+
+def compute_matryoshka_losses(
+    prefix_reconstructions: list[torch.Tensor],
+    target: torch.Tensor,
+    criterion: nn.MSELoss,
+    loss_weights: torch.Tensor,
+) -> tuple[torch.Tensor, torch.Tensor]:
+    """"""
+    prefix_losses = torch.stack(
+        [criterion(prefix_reconstruction, target) for prefix_reconstruction in prefix_reconstructions]
+    )
+    loss = torch.sum(prefix_losses * loss_weights)
+
+    return loss, prefix_losses
+
+
+def build_prefix_loss_log(
+    split: str,
+    prefix_sizes: list[int],
+    prefix_losses: list[float],
+) -> dict[str, float]:
+    """"""
+    return {
+        f"{split}/loss_prefix_{prefix_size}": prefix_loss
+        for prefix_size, prefix_loss in zip(prefix_sizes, prefix_losses, strict=True)
+    }
+
+
 def train_epoch(
     epoch: int,
     num_epochs: int,
@@ -55,6 +102,8 @@ def train_epoch(
     optimizer: optim.AdamW,
     k_aux: int,
     aux_loss_coeff: float,
+    matryoshka_loss_weights: torch.Tensor,
+    prefix_sizes: list[int],
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     logs_per_epoch: int,
@@ -63,17 +112,15 @@ def train_epoch(
     rank: int,
 ) -> None:
     """"""
-    # Set the model to train mode
     model.train()
 
-    # Initialize epoch log variables and helpers
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
-    log_interval = len(dataloader) // logs_per_epoch
+    prefix_loss_acc = torch.zeros(len(prefix_sizes), dtype=torch.float32, device=device)
+    log_interval = max(1, len(dataloader) // logs_per_epoch)
     accumulated_loss_count = dist.get_world_size() * log_interval
 
-    # Create epoch progress bar on main process
     if rank == 0:
         progress_bar = tqdm(
             total=len(dataloader),
@@ -81,92 +128,82 @@ def train_epoch(
         )
 
     for batch_idx, batch in enumerate(dataloader):
-        # batch shape is [1, preprocessed_batch_size, d_model]. Squeeze to [preprocessed_batch_size, d_model] and
-        # cast to model dtype and device, then preprocess to normalize.
         batch = batch.squeeze(0).to(dtype).to(device)
-        batch_normalized, mean, norm = model.module.preprocess_input(batch)
+        batch_normalized, _, _ = model.module.preprocess_input(batch)
 
-        # Zero the gradients and perform forward pass
         optimizer.zero_grad()
-        reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+        reconstructed, h, h_sparse, prefix_reconstructions = model.module.forward_1d_normalized(
+            batch_normalized,
+            return_prefix_reconstructions=True,
+        )
 
-        # Compute main loss in normalized space
-        loss = criterion(reconstructed, batch_normalized)
+        loss, prefix_losses = compute_matryoshka_losses(
+            prefix_reconstructions=prefix_reconstructions,
+            target=batch_normalized,
+            criterion=criterion,
+            loss_weights=matryoshka_loss_weights,
+        )
 
-        # If enough latents haven't been activated in more than dead_steps_threshold training steps then calculate an
-        # auxiliary loss to help reactivate the latents.
         dead_mask = latent_last_nonzero > dead_steps_threshold
         dead_latents = dead_mask.sum().item()
         if dead_latents >= k_aux:
-            # Calculate an auxiliary reconstruction with only dead latents and an additionaly amount (k_aux) of TopK
-            # filtered latents.
             h_masked = h * dead_mask
             reconstructed_aux, _ = model.module.decode_latent(h=h_masked, k=k_aux)
-
-            # Compute auxiliary loss as MSE between residual and the aux reconstruction to make dead latents explain
-            # what the main latents could not and thereby activate them again and make them useful again.
             residual = batch_normalized - reconstructed.detach()
             aux_loss = criterion(reconstructed_aux, residual)
         else:
-            # If there are not enough dead latents to activate, set auxiliary loss to 0.
             aux_loss = torch.tensor(0.0, device=device)
 
-        # Compute total loss with auxiliary loss coefficient
         total_loss = loss + aux_loss_coeff * aux_loss
 
-        # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
-        # and normalize the decoder weights again.
         total_loss.backward()
         model.module.project_decoder_grads()
         optimizer.step()
         model.module.normalize_decoder_weights()
 
-        # Accumulate losses
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
         total_loss_acc += total_loss.detach()
+        prefix_loss_acc += prefix_losses.detach()
 
-        # Update the progress bar on main process
         if rank == 0:
             progress_bar.update(1)
 
-        # Update and blocking sync latent_last_zero at end of batch to not create a barrier mid batch processing.
-        # Take minimum in case a latent was activated in another process.
         latent_last_nonzero *= (h_sparse == 0).all(dim=0).long()
         latent_last_nonzero += 1
         dist.all_reduce(latent_last_nonzero, op=dist.ReduceOp.MIN)
 
-        # Gather and average losses across processes, reset them for next interval, determine dead latents and then
-        # log to wandb and tqdm
         if (batch_idx + 1) % log_interval == 0:
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(prefix_loss_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
+            avg_prefix_losses = (prefix_loss_acc / accumulated_loss_count).detach().cpu().tolist()
 
-            # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
+            prefix_loss_acc = torch.zeros(len(prefix_sizes), dtype=torch.float32, device=device)
 
-            # Determine dead latent debug statistics
             dead_latents_ratio = dead_latents / dead_mask.numel()
             max_dead_latent = latent_last_nonzero.max().item()
             max_dead_latent_count = (latent_last_nonzero == max_dead_latent).sum().item()
 
-            # Log to wandb and tqdm
             if rank == 0:
+                log_data = {
+                    "train/loss": avg_loss,
+                    "train/aux_loss": avg_aux_loss,
+                    "train/total_loss": avg_total_loss,
+                    "debug/dead_latents_ratio": dead_latents_ratio,
+                    "debug/max_dead_latent": max_dead_latent,
+                    "debug/max_dead_latent_count": max_dead_latent_count,
+                }
+                log_data.update(build_prefix_loss_log("train", prefix_sizes, avg_prefix_losses))
                 wandb.log(
-                    data={
-                        "train/loss": avg_loss,
-                        "train/aux_loss": avg_aux_loss,
-                        "train/total_loss": avg_total_loss,
-                        "debug/dead_latents_ratio": dead_latents_ratio,
-                        "debug/max_dead_latent": max_dead_latent,
-                        "debug/max_dead_latent_count": max_dead_latent_count,
-                    },
+                    data=log_data,
                     step=epoch * len(dataloader) + batch_idx + 1,
                 )
                 progress_bar.set_postfix(
@@ -175,7 +212,6 @@ def train_epoch(
                     total_loss=f"{avg_total_loss:.6f}",
                 )
 
-    # Close the progress bar on main process
     if rank == 0:
         progress_bar.close()
 
@@ -188,22 +224,22 @@ def validate_epoch(
     criterion: nn.MSELoss,
     k_aux: int,
     aux_loss_coeff: float,
+    matryoshka_loss_weights: torch.Tensor,
+    prefix_sizes: list[int],
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
-) -> tuple[float, float, float]:
+) -> tuple[float, float, float, list[float]]:
     """"""
-    # Set the model to eval mode
     model.eval()
 
-    # Initialize epoch log variables
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
+    prefix_loss_acc = torch.zeros(len(prefix_sizes), dtype=torch.float32, device=device)
 
-    # Create epoch progress bar on main process
     if rank == 0:
         progress_bar = tqdm(
             total=len(dataloader),
@@ -212,18 +248,21 @@ def validate_epoch(
 
     with torch.no_grad():
         for batch in dataloader:
-            # batch shape is [1, preprocessed_batch_size, d_model]. Squeeze to [preprocessed_batch_size, d_model] and
-            # cast to model dtype and device, then preprocess to normalize.
             batch = batch.squeeze(0).to(dtype).to(device)
-            batch_normalized, mean, norm = model.module.preprocess_input(batch)
+            batch_normalized, _, _ = model.module.preprocess_input(batch)
 
-            # Perform forward pass
-            reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
+            reconstructed, h, _, prefix_reconstructions = model.module.forward_1d_normalized(
+                batch_normalized,
+                return_prefix_reconstructions=True,
+            )
 
-            # Compute main loss in normalized space
-            loss = criterion(reconstructed, batch_normalized)
+            loss, prefix_losses = compute_matryoshka_losses(
+                prefix_reconstructions=prefix_reconstructions,
+                target=batch_normalized,
+                criterion=criterion,
+                loss_weights=matryoshka_loss_weights,
+            )
 
-            # Compute auxiliary loss if necessary
             dead_mask = latent_last_nonzero > dead_steps_threshold
             dead_latents = dead_mask.sum().item()
             if dead_latents >= k_aux:
@@ -234,37 +273,36 @@ def validate_epoch(
             else:
                 aux_loss = torch.tensor(0.0, device=device)
 
-            # Compute total loss with auxiliary loss coefficient
             total_loss = loss + aux_loss_coeff * aux_loss
 
-            # Accumulate losses
             loss_acc += loss.detach()
             aux_loss_acc += aux_loss.detach()
             total_loss_acc += total_loss.detach()
+            prefix_loss_acc += prefix_losses.detach()
 
-            # Update the progress bar on main process
             if rank == 0:
                 progress_bar.update(1)
 
-    # Close the progress bar on main process
     if rank == 0:
         progress_bar.close()
 
-    # Gather and average losses across processes
     dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
-    avg_loss = loss_acc.item() / (dist.get_world_size() * len(dataloader))
-    avg_aux_loss = aux_loss_acc.item() / (dist.get_world_size() * len(dataloader))
-    avg_total_loss = total_loss_acc.item() / (dist.get_world_size() * len(dataloader))
+    dist.all_reduce(prefix_loss_acc, op=dist.ReduceOp.SUM)
+    accumulated_loss_count = dist.get_world_size() * len(dataloader)
+    avg_loss = loss_acc.item() / accumulated_loss_count
+    avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
+    avg_total_loss = total_loss_acc.item() / accumulated_loss_count
+    avg_prefix_losses = (prefix_loss_acc / accumulated_loss_count).detach().cpu().tolist()
 
-    return avg_loss, avg_aux_loss, avg_total_loss
+    return avg_loss, avg_aux_loss, avg_total_loss, avg_prefix_losses
+
 
 def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
     """清理旧的检查点，只保留最新的 N 个"""
     checkpoints = sorted(checkpoint_dir.glob("model_checkpoint_epoch-*.pth"))
 
-    # 处理 keep_last_n=0 的特殊情况（删除所有检查点）
     if keep_last_n == 0:
         to_delete = checkpoints
     else:
@@ -277,8 +315,9 @@ def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
         except Exception as e:
             logging.error(f"Failed to remove checkpoint {checkpoint}: {e}")
 
+
 def train_autoencoder(
-    model: TopKSparseAutoencoder,
+    model: MatryoshkaSparseAutoencoder,
     train_dataloader: DataLoader,
     val_dataloader: DataLoader,
     num_epochs: int,
@@ -289,28 +328,27 @@ def train_autoencoder(
     optimizer_eps: float,
     k_aux: int,
     aux_loss_coeff: float,
+    matryoshka_loss_weights: torch.Tensor,
+    prefix_sizes: list[int],
     dead_steps_threshold: int,
     logs_per_epoch: int,
     checkpoint_dir: Path,
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
-) -> TopKSparseAutoencoder:
+) -> MatryoshkaSparseAutoencoder:
     """"""
     logging.info("Sending model to device and wrapping in DistributedDataParallel...")
     model = model.to(device)
     model = DistributedDataParallel(model)
 
-    # 新增参数量统计
     if rank == 0:
-        # 按层统计参数量
         layer_stats = {}
         for name, param in model.module.named_parameters():
-            layer_name = name.split('.')[0]  # 获取层名称（如encoder）
+            layer_name = name.split(".")[0]
             num_params = param.numel()
             layer_stats[layer_name] = layer_stats.get(layer_name, 0) + num_params
 
-        # 打印各层详细信息
         logging.info("各层参数量明细:")
         for layer, count in layer_stats.items():
             logging.info(f"{layer.ljust(15)}: {count:,}")
@@ -332,23 +370,18 @@ def train_autoencoder(
     if rank == 0:
         wandb.log(data={"learning_rate": learning_rate}, step=0)
 
-    # Initialize latent_last_nonzero tensor to keep track of the last non-zero step for each latent
     latent_last_nonzero = torch.zeros(model.module.n_latents, dtype=torch.long, device=device)
 
-    # Early stopping variables
     best_val_avg_total_loss = float("inf")
     patience_counter = 0
 
     logging.info("Starting training loop...")
     for epoch in range(num_epochs):
-        # Wait for all processes to synchronize
         dist.barrier()
 
-        # Set the epoch for the samplers
         train_dataloader.sampler.set_epoch(epoch)
         val_dataloader.sampler.set_epoch(epoch)
 
-        # Train an epoch
         train_epoch(
             epoch=epoch,
             num_epochs=num_epochs,
@@ -358,6 +391,8 @@ def train_autoencoder(
             optimizer=optimizer,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
+            matryoshka_loss_weights=matryoshka_loss_weights,
+            prefix_sizes=prefix_sizes,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             logs_per_epoch=logs_per_epoch,
@@ -366,8 +401,7 @@ def train_autoencoder(
             rank=rank,
         )
 
-        # Validate an epoch
-        val_avg_loss, val_avg_aux_loss, val_avg_total_loss = validate_epoch(
+        val_avg_loss, val_avg_aux_loss, val_avg_total_loss, val_avg_prefix_losses = validate_epoch(
             epoch=epoch,
             num_epochs=num_epochs,
             model=model,
@@ -375,6 +409,8 @@ def train_autoencoder(
             criterion=criterion,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
+            matryoshka_loss_weights=matryoshka_loss_weights,
+            prefix_sizes=prefix_sizes,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             dtype=dtype,
@@ -382,19 +418,19 @@ def train_autoencoder(
             rank=rank,
         )
 
-        # Step the scheduler
         scheduler.step()
         updated_lr = scheduler.get_last_lr()[0]
 
-        # Log metrics in wandb and console and save checkpoint
         if rank == 0:
+            log_data = {
+                "val/loss": val_avg_loss,
+                "val/aux_loss": val_avg_aux_loss,
+                "val/total_loss": val_avg_total_loss,
+                "learning_rate": updated_lr,
+            }
+            log_data.update(build_prefix_loss_log("val", prefix_sizes, val_avg_prefix_losses))
             wandb.log(
-                data={
-                    "val/loss": val_avg_loss,
-                    "val/aux_loss": val_avg_aux_loss,
-                    "val/total_loss": val_avg_total_loss,
-                    "learning_rate": updated_lr,
-                },
+                data=log_data,
                 step=(epoch + 1) * len(train_dataloader),
             )
             logging.info(f"Epoch {epoch + 1}/{num_epochs}, Updated LR: {updated_lr:.2e}")
@@ -403,21 +439,29 @@ def train_autoencoder(
                 f"| val/aux_loss: {val_avg_aux_loss:.6f} "
                 f"| val/total_loss: {val_avg_total_loss:.6f}",
             )
+            logging.info(
+                "val/prefix_losses: "
+                + ", ".join(
+                    f"{prefix_size}={prefix_loss:.6f}"
+                    for prefix_size, prefix_loss in zip(
+                        prefix_sizes,
+                        val_avg_prefix_losses,
+                        strict=True,
+                    )
+                )
+            )
 
             checkpoint_path = checkpoint_dir / f"model_checkpoint_epoch-{epoch + 1}.pth"
             torch.save(model.module.state_dict(), checkpoint_path)
             logging.info(f"Checkpoint saved to: {checkpoint_path}")
-            # 原来的代码里面没有这个函数
             cleanup_old_checkpoints(checkpoint_dir, keep_last_n=0)
 
-        # Early stopping check
         if val_avg_total_loss < best_val_avg_total_loss:
             best_val_avg_total_loss = val_avg_total_loss
             patience_counter = 0
         else:
             patience_counter += 1
 
-        # Check if early stopping criteria is met
         if patience_counter >= early_stopping_patience:
             logging.info(f"Early stopping triggered after {epoch + 1} epochs")
             break
@@ -434,13 +478,24 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("--model_load_path", type=Path, default=None)
     parser.add_argument("--batch_size", type=int, default=1024)
     parser.add_argument("--checkpoint_dir", type=Path, default=Path("sae_checkpoints"))
+    parser.add_argument(
+        "--prefix_sizes",
+        type=int,
+        nargs="+",
+        default=[2048, 6144, 14336, 30720, 65536],
+    )
+    parser.add_argument(
+        "--matryoshka_loss_weights",
+        choices=["equal", "group_size"],
+        default="equal",
+    )
     return parser.parse_args()
 
 
 def main() -> None:
     """"""
     set_seed(42)
-    # Initialize distributed process group
+
     dist.init_process_group(backend="nccl")
     world_size = dist.get_world_size()
     rank = dist.get_rank()
@@ -454,7 +509,6 @@ def main() -> None:
         datefmt="%Y-%m-%d %H:%M:%S",
     )
 
-    # Parse arguments and set up paths
     args = parse_arguments()
     args.data_dir = args.data_dir.resolve()
     args.b_pre_path = args.b_pre_path.resolve()
@@ -463,17 +517,16 @@ def main() -> None:
     if args.model_load_path:
         args.model_load_path = args.model_load_path.resolve()
 
-    # Set up configuration
     d_model = 3072
-    n_latents = 2**16  # 65536
+    n_latents = 2**16
     k = 64
     k_aux = 2048
     aux_loss_coeff = 1 / 32
-    dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
+    dead_steps_threshold = 626
     sae_normalization_eps = 1e-6
     batch_size = args.batch_size
     num_epochs = 200
-    early_stopping_patience = 10  # disabled
+    early_stopping_patience = 10
     learning_rate = 5e-5
     learning_rate_min = learning_rate / 5
     optimizer_betas = (0.85, 0.9999)
@@ -482,6 +535,16 @@ def main() -> None:
     dataloader_num_workers = 8
     logs_per_epoch = 100
     train_val_split = 0.95
+    prefix_sizes = args.prefix_sizes
+
+    if prefix_sizes[-1] != n_latents:
+        raise ValueError(f"The final prefix size must be {n_latents}; got {prefix_sizes[-1]}.")
+
+    matryoshka_loss_weights = build_matryoshka_loss_weights(
+        prefix_sizes=prefix_sizes,
+        strategy=args.matryoshka_loss_weights,
+        device=device,
+    )
 
     if rank == 0:
         logging.info("Logging into and initializing wandb...")
@@ -489,6 +552,7 @@ def main() -> None:
         wandb.init(
             project="llama3_interpretability_sae",
             config={
+                "architecture": "matryoshka_sae",
                 "d_model": d_model,
                 "n_latents": n_latents,
                 "k": k,
@@ -507,17 +571,22 @@ def main() -> None:
                 "dataloader_num_workers": dataloader_num_workers,
                 "logs_per_epoch": logs_per_epoch,
                 "train_val_split": train_val_split,
+                "prefix_sizes": prefix_sizes,
+                "matryoshka_loss_weights": args.matryoshka_loss_weights,
+                "matryoshka_loss_weight_values": matryoshka_loss_weights.detach().cpu().tolist(),
                 "world_size": world_size,
             },
         )
 
-        logging.info("#### Starting SAE training script.")
+        logging.info("#### Starting Matryoshka SAE training script.")
         logging.info("#### Arguments:")
         logging.info(f"# data_dir={args.data_dir}")
         logging.info(f"# b_pre_path={args.b_pre_path}")
         logging.info(f"# model_save_path={args.model_save_path}")
         logging.info(f"# model_load_path={args.model_load_path}")
         logging.info(f"# checkpoint_dir={args.checkpoint_dir}")
+        logging.info(f"# prefix_sizes={prefix_sizes}")
+        logging.info(f"# matryoshka_loss_weights={args.matryoshka_loss_weights}")
         logging.info("#### Distributed Configuration:")
         logging.info(f"# world_size={world_size}")
         logging.info(f"# rank={rank}")
@@ -542,7 +611,6 @@ def main() -> None:
         logging.info(f"# logs_per_epoch={logs_per_epoch}")
         logging.info(f"# train_val_split={train_val_split}")
 
-        # Create a new directory for the checkpoints
         run_name = datetime.now(tz=UTC).strftime("run_%Y-%m-%d_%H-%M-%S")
         args.checkpoint_dir = args.checkpoint_dir / run_name
         args.checkpoint_dir.mkdir(parents=True, exist_ok=True)
@@ -556,14 +624,14 @@ def main() -> None:
     assert b_pre.shape == (d_model,), \
         f"b_pre shape mismatch. Expected {(d_model,)}, got {b_pre.shape}"
 
-    # Initialize the model
-    logging.info("Initializing Sparse Autoencoder model...")
-    model = TopKSparseAutoencoder(
+    logging.info("Initializing Matryoshka Sparse Autoencoder model...")
+    model = MatryoshkaSparseAutoencoder(
         d_model=d_model,
         n_latents=n_latents,
         k=k,
         b_pre=b_pre,
         dtype=dtype,
+        prefix_sizes=prefix_sizes,
         normalize_eps=sae_normalization_eps,
     )
     if args.model_load_path:
@@ -584,7 +652,7 @@ def main() -> None:
     dist.barrier()
 
     logging.info("Creating dataset...")
-    dataset = TopKSparseAutoencoderDataset(args.data_dir)
+    dataset = MatryoshkaSparseAutoencoderDataset(args.data_dir)
     assert (batch_size, d_model) == dataset[0].shape, \
         f"Dataset shape mismatch. Expected {(batch_size, d_model)}, got {dataset[0].shape}"
     train_val_index = int(len(dataset) * train_val_split)
@@ -607,7 +675,6 @@ def main() -> None:
         shuffle=False,
         seed=42,
     )
-    # Set batch_size to 1 in dataloader since data is already batched in preprocessing
     train_dataloader = DataLoader(
         train_dataset,
         batch_size=1,
@@ -630,7 +697,7 @@ def main() -> None:
     logging.info(f"Validation dataloader created with {len(val_dataloader)} batches.")
     dist.barrier()
 
-    logging.info("Starting training of Sparse Autoencoder...")
+    logging.info("Starting training of Matryoshka Sparse Autoencoder...")
     trained_model = train_autoencoder(
         model=model,
         train_dataloader=train_dataloader,
@@ -643,6 +710,8 @@ def main() -> None:
         optimizer_eps=optimizer_eps,
         k_aux=k_aux,
         aux_loss_coeff=aux_loss_coeff,
+        matryoshka_loss_weights=matryoshka_loss_weights,
+        prefix_sizes=prefix_sizes,
         dead_steps_threshold=dead_steps_threshold,
         logs_per_epoch=logs_per_epoch,
         checkpoint_dir=args.checkpoint_dir,
@@ -651,7 +720,6 @@ def main() -> None:
         rank=rank,
     )
 
-    # Save the model only on the main process
     if rank == 0:
         torch.save(trained_model.state_dict(), args.model_save_path)
         logging.info(f"Trained model saved to {args.model_save_path}")
@@ -660,7 +728,6 @@ def main() -> None:
         logging.info("Finishing wandb run and saving trained model...")
         wandb.finish()
 
-    # Clean up the process group
     dist.destroy_process_group()
     logging.info("FIN.")
 
