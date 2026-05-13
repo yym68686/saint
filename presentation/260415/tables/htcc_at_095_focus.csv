@@ -1,0 +1,8 @@
+method,display_name,htcc_095,source_table
+kernel,SUR SAE,48.8,/Users/yanyuming/Downloads/GitHub/Thesis/exp/idea5-kernel/table.tex
+dense,PLRDC SAE,37.0,/Users/yanyuming/Downloads/GitHub/Thesis/exp/idea5-kernel/table.tex
+relu,ReLU SAE,21.8,/Users/yanyuming/Downloads/GitHub/Thesis/exp/idea5-kernel/table.tex
+gatedsae,Gated SAE,19.4,/Users/yanyuming/Downloads/GitHub/Thesis/exp/idea5-kernel/table.tex
+batchtopk,BatchTopK SAE,14.8,/Users/yanyuming/Downloads/GitHub/Thesis/exp/idea5-kernel/table.tex
+topk,TopK SAE,14.2,/Users/yanyuming/Downloads/GitHub/Thesis/exp/idea5-kernel/table.tex
+jumprelu,JumpReLU SAE,5.4,/Users/yanyuming/Downloads/GitHub/Thesis/exp/idea5-kernel/table.tex

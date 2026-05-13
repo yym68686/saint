@@ -1,0 +1,15 @@
+family_id,method,method_label,budget,target_threshold,valid_controller_count
+china,gatedsae,Gated SAE,0.02,0.3,1
+combat_sports,gatedsae,Gated SAE,0.02,0.3,0
+crypto_blockchain,gatedsae,Gated SAE,0.02,0.3,1
+gaming_general,gatedsae,Gated SAE,0.02,0.3,1
+japan,gatedsae,Gated SAE,0.02,0.3,1
+middle_east_geopolitics,gatedsae,Gated SAE,0.02,0.3,0
+mlb_baseball,gatedsae,Gated SAE,0.02,0.3,0
+nba_basketball,gatedsae,Gated SAE,0.02,0.3,0
+nfl_football,gatedsae,Gated SAE,0.02,0.3,1
+nhl_hockey,gatedsae,Gated SAE,0.02,0.3,0
+russia_post_soviet,gatedsae,Gated SAE,0.02,0.3,1
+soccer,gatedsae,Gated SAE,0.02,0.3,0
+us_electoral_politics,gatedsae,Gated SAE,0.02,0.3,0
+us_legislative_governance,gatedsae,Gated SAE,0.02,0.3,0

@@ -1,0 +1,463 @@
+candidate_id,family_id,proposed_bucket,source_row_index,text,matched_query_blocks,matched_terms,matched_family_ids,final_label,keep_for_benchmark,label_confidence,primary_reason,exclusion_trigger,notes
+fc357ecba20c874b,nhl_hockey,positive,246352,"I think that's the attitude you want in overtime.""",hockey_jargon,overtime,nhl_hockey,,,,,,
+720570745405a6b0,nhl_hockey,positive,125452,"The Rangers and Dodgers both had scouts in attendance at Hamels' no-hitter, as did the Yankees, Giants, Houston Astros, Toronto Blue Jays and several other clubs.",team_entities,rangers,nhl_hockey,,,,,,
+67841dc3a785aa98,nhl_hockey,positive,30335,"RT America reached out to the NFL, NHL as well as the PGA on multiple occasions.",league_anchor,nhl,nhl_hockey,,,,,,
+81515e472b870d1d,nhl_hockey,positive,91529,"The NHL’s first Battle of Ontario occurred three nights later, when the Senators travelled to Toronto.",league_anchor,nhl,nhl_hockey,,,,,,
+97f618b1c6ceef1b,nhl_hockey,positive,50168,"Finally, the total probability of winning is the chance of winning at the end of regulation play plus the probability of winning in overtime.",hockey_jargon,overtime,nhl_hockey,,,,,,
+595d4ae160b72a07,nhl_hockey,positive,246333,"I've had other times during our Stanley Cup run where I could have been nervous, but I definitely think when I was on the ice, the most nervous time was that overtime period, knowing it was in Canada and we were supposed to win the gold medal.""",hockey_jargon;league_anchor,overtime;stanley cup,nhl_hockey,,,,,,
+7031f2e02132f657,nhl_hockey,positive,337450,"In the 2011-12 season, he took the Arizona (Phoenix) Coyotes all the way to the conference finals, where they came up just short of the Stanley Cup Final, falling to the Los Angeles Kings.",league_anchor,stanley cup,nhl_hockey,,,,,,
+cefcb771ce097948,nhl_hockey,positive,176250,A Queensland Rail spokeswoman said train drivers were given the choice to increase their salary by doing overtime at times of their choosing.,hockey_jargon,overtime,nhl_hockey,,,,,,
+73ffd11a1ac2f411,nhl_hockey,positive,260862,"If you choose to believe the assorted experts from the NHL Network and NHL.com, Sidney Crosby will leave Las Vegas with the Hart Trophy (MVP) in 2013.",league_anchor,nhl,nhl_hockey,,,,,,
+0e665279262e5484,nhl_hockey,positive,256935,"On the Fly, theScore's NHL roundtable series, continues.",league_anchor,nhl,nhl_hockey,,,,,,
+73a1568b78ce6708,nhl_hockey,positive,262671,"I have written about this many times before, but some of the most prominent include:
+
+minimum wage laws, rising to $15 an hour in many parts of the country, and increasingly draconian overtime rules, both of which substantially raise the cost of hiring someone.",hockey_jargon,overtime,nhl_hockey,,,,,,
+428fad523b13b83a,nhl_hockey,positive,87220,"The Browns are proud that they did not quit, that they fought to the end in overtime in Pittsburgh.",hockey_jargon,overtime,nhl_hockey,,,,,,
+c70ed9799916c31a,nhl_hockey,positive,245918,... That warm-up was louder than any NHL arena in playoff time.,league_anchor,nhl,nhl_hockey,,,,,,
+0fd6605dbfbc82ce,nhl_hockey,positive,147338,"According to the Labor Ministry, Dentsu negotiated a maximum of 55 hours of overtime per month with its in-house labor union.",hockey_jargon,overtime,nhl_hockey,,,,,,
+33564a02c0900d4b,nhl_hockey,positive,190491,In 1973 the Rangers chose a lefthander from Houston named David Clyde.,team_entities,rangers,nhl_hockey,,,,,,
+3a35b96d49595515,nhl_hockey,positive,184019,The Postal Service does not receive a tax subsidy for its operations Potter welcomed recent reductions in the cost of fuel — a major expense for the post office — and said his agency is continuing to cut overtime and working hours as it seeks to increase efficiency.,hockey_jargon,overtime,nhl_hockey,,,,,,
+096c344ba0471b53,nhl_hockey,positive,121620,Toronto Maple Leafs: That's nine losses in a row for the Leafs.,team_entities,maple leafs,nhl_hockey,,,,,,
+1064dce38acb1e1f,nhl_hockey,positive,249411,Luke Glendening congratulates goalie Petr Mrazek following the Red Wings' 5-3 win over the Colorado Avalanche in a Stadium Series game at Coors Field in February.,hockey_jargon,goalie,nhl_hockey,,,,,,
+b17464b7b0c3ba27,nhl_hockey,positive,182063,Daniel Sedin had a pair of assists to clinch the NHL scoring race with 41 goals and 63 assists.,league_anchor,nhl,nhl_hockey,,,,,,
+be8c63e818a22305,nhl_hockey,positive,125454,"Both the Rangers and Dodgers view Hamels as an attractive alternative to this winter's deep class of free-agent aces, because he is under contract for three more years after this season and has a team or vesting option for a fourth season.",team_entities,rangers,nhl_hockey,,,,,,
+950055540ee6981c,nhl_hockey,positive,246369,"We had the puck for the rest of the time, I thought.""",hockey_jargon,puck,nhl_hockey,,,,,,
+24c89e28c47472ee,nhl_hockey,positive,263194,During the entirety of the 1980s the Bullets peaked at 43 wins and a loss in the Eastern Conference Semifinals in 1981-1982.,league_anchor,eastern conference,nhl_hockey,,,,,,
+f40411a20932437d,nhl_hockey,positive,19897,"Unfortunately the Edmonton Oilers came out on top, pushing Buffalo to second and Arizona to third.",team_entities,oilers,nhl_hockey,,,,,,
+2e7660b07423647e,nhl_hockey,positive,260866,"The New York Rangers were pegged to win their first Stanley Cup since 1994 and second since 1940 by three experts, while the Penguins also had three backers to win the Cup.",league_anchor;team_entities,rangers;stanley cup,nhl_hockey,,,,,,
+fa6feda0306829cb,nhl_hockey,positive,323653,"Joey Gallo (3B, Rangers) – Another returner to this list, he handsomely repaid people who read the tea leaves (or Statcast), with 7 Home Runs, tied for the league lead, and leads the league in ISO (he’s only hit 4 singles.)",team_entities,rangers,nhl_hockey,,,,,,
+18abced7166617fa,nhl_hockey,positive,44437,"During the LeBron years, the Heat also reached 115 in two games in a row on two other occasions, with one of them going to OT and another going to triple overtime.",hockey_jargon,overtime,nhl_hockey,,,,,,
+3bb4ae162bf17b76,nhl_hockey,positive,80182,"Cory Wright, Eric Hornick (The Skinny), and Brian Compton (NHL.com) contribute to the articles on the site, and there are a bunch of interactive features for fans as videos of post-game interviews, interviews with prospects, and updates on the Isles’ minor league affiliate – the Bridgeport Sound Tigers – are readily available.",league_anchor,nhl,nhl_hockey,,,,,,
+0c5c899f2c22834d,nhl_hockey,positive,264797,Nashville Predators head coach Peter Laviolette pleaded with fans Monday to refrain from throwing the bottom-feeding fish or anything else on the ice when the team hosts the Pittsburgh Penguins in Game 4 of the Stanley Cup Final.,league_anchor,stanley cup,nhl_hockey,,,,,,
+22b780e9e3e6607b,nhl_hockey,positive,80208,"LIB Magazine
+
+LIB Magazine also covers events in and around Long Island, and Matt Saidman definitely makes sure to keep Isles fans up to date by providing a stream of steady content during the NHL season.",league_anchor,nhl,nhl_hockey,,,,,,
+409c06d995fc3b14,nhl_hockey,positive,108306,"But in an instant, the ball ended up back in the oversized hands of Marcol — hands that might have made him a goalie had he stayed in Poland — as he streaked freely toward an area kickers rarely ventured.",hockey_jargon,goalie,nhl_hockey,,,,,,
+49b8583147805727,nhl_hockey,positive,295762,"Headed into Saturday’s game against the 49-20-9 San Jose Sharks, the Preds are seven points out of the final playoff spot in the Western Conference.",league_anchor,western conference,nhl_hockey,,,,,,
+ee34edf8f4a7a508,nhl_hockey,positive,22528,Toronto FC head into the first leg of the Eastern Conference Championship with the aim of extending their 2016 Audi MLS Cup Playoff run.,league_anchor,eastern conference,nhl_hockey,,,,,,
+fa4702f067d0ac41,nhl_hockey,positive,57297,He has slowly lessened the burden on Tomas Plekanec; a burden that often wore #14 down over the grueling length of the NHL season.,league_anchor,nhl,nhl_hockey,,,,,,
+601c1e711e10840b,nhl_hockey,positive,89336,"#1 – Terry Sawchuk
+
+Position – Goalie
+
+When he wore #1 – 1951-1967 (With Detroit, Boston and Toronto)
+
+Note: He wore #30 from 1966-68 and 1970.",hockey_jargon,goalie,nhl_hockey,,,,,,
+84e31ef86f55934e,nhl_hockey,positive,64450,The Rangers accept this story and move on.,team_entities,rangers,nhl_hockey,,,,,,
+9c03f6e6ca753f3b,nhl_hockey,positive,246293,"'Yeah, they switch ends,' which you don't do in the NHL.",league_anchor,nhl,nhl_hockey,,,,,,
+2e5bef4e53c163c8,nhl_hockey,positive,19953,Marner compares himself to Patrick Kane of the Chicago Blackhawks and tries to model his game after him.,team_entities,blackhawks,nhl_hockey,,,,,,
+a43315583d3c4378,nhl_hockey,positive,333529,"Oates played in five NHL All-Star games, and reached the 100 point mark on four occasions.",league_anchor,nhl,nhl_hockey,,,,,,
+b828c6f29de56b04,nhl_hockey,positive,3113,"With a game in hand over the eighth-place Calgary Flames and only one point back, all the critics who portrayed the Canucks as a directionless failure are being proved wrong: the Canucks are not a failure.",team_entities,canucks,nhl_hockey,,,,,,
+ed2d1e53179272fb,nhl_hockey,positive,175353,I certainly would expect better of a guy that was once considered the heavyweight champ of the NHL.,league_anchor,nhl,nhl_hockey,,,,,,
+67538dd37d117593,nhl_hockey,positive,337468,"He’s well-known for his ability to play the puck, and is arguably the best goalie in the NHL at doing so.",hockey_jargon;league_anchor,goalie;nhl;puck,nhl_hockey,,,,,,
+4951d325bfe0360c,nhl_hockey,positive,309800,"In his three NHL games, Hayden went scoreless in Ottawa on Thursday, scored a goal in the Hawks’ 2-1 win in Toronto on Saturday, and picked up the two primary assists on the two goals that helped the Hawks tie the Avalanche at 3-3 in a spectacular third period that would see the Hawks score five times Sunday.",league_anchor,nhl,nhl_hockey,,,,,,
+9934ccfa1643f251,nhl_hockey,positive,256832,"Graeme Souness managed eight clubs, including Galatasaray, Benfica and Torino
+
+Former Liverpool and Rangers manager Graeme Souness has been taken to hospital in Bournemouth.",team_entities,rangers,nhl_hockey,,,,,,
+99174600d5be668b,nhl_hockey,positive,213404,Colorado Avalanche goalie Semyon Varlamov was arrested on charges of kidnapping and assault of his girlfriend.,hockey_jargon,goalie,nhl_hockey,,,,,,
+76a47c8afd1bd7ab,nhl_hockey,positive,121561,"People in Winnipeg have long enjoyed blaming the incompetent operations of the Thrashers on the team's struggles, and a lot of that has been in the form of inheriting a team bereft of depth and carrying an awful goalie.",hockey_jargon,goalie,nhl_hockey,,,,,,
+0f5318039caabc4c,nhl_hockey,positive,8615,"“People who are fortunate enough to see those games, they’re going to see a very, very high skill level, and it’s going to be a lot of fun.”
+
+Ducks Executive Vice President/General Manager Bob Murray and Vice Chair, Oilers Entertainment Group Kevin Lowe agreed.",team_entities,oilers,nhl_hockey,,,,,,
+b2b8ee0fbea30b91,nhl_hockey,positive,89308,He came into the league at 33 and was able to lead his team to the Stanley Cup Finals six out of nine years.,league_anchor,stanley cup,nhl_hockey,,,,,,
+525f4a71caf8ba18,nhl_hockey,positive,121540,"In fact, through the end of December, Hutchinson had the third-highest save percentage at 5-on-5 of any goalie with more than 600 minutes played (.949).",hockey_jargon,goalie,nhl_hockey,,,,,,
+0b5737bdf1eed8f2,nhl_hockey,positive,313575,"Unless you are at work, lol (NSFW Lyrics) #Blackhawks Victory Song #OneGoal https://t.co/tQQbsPAmDm — Dan Vukobratovich (@TheChiTownKid) April 22, 2015
+
+Blasting the Blackhawks’ victory song on the drive to work today for sure.",team_entities,blackhawks,nhl_hockey,,,,,,
+7cc2c696a153c529,nhl_hockey,positive,113547,"The Bruins feature five players averaging double figures, and all have the ability to take over games.",team_entities,bruins,nhl_hockey,,,,,,
+95f063b37e8898ed,nhl_hockey,positive,313567,"The person who picked the song is unclear, but it is widely known that Kris Versteeg is the resident DJ for the Blackhawks.",team_entities,blackhawks,nhl_hockey,,,,,,
+94f01868f2b9ddd6,nhl_hockey,positive,193464,"His decision making and vision are excellent, he reads the play very well and always seems to keep the puck moving in a smart and efficient manner.",hockey_jargon,puck,nhl_hockey,,,,,,
+870d756a4e0a2bfa,nhl_hockey,positive,19938,He’s a hard match up who can carve up any game plan with precision puck movement.,hockey_jargon,puck,nhl_hockey,,,,,,
+0bf4d89b473fae59,nhl_hockey,positive,308772,"According to one of the forest rangers, toubabs (whites) and African people are different: “Our skin and our blood is stronger,” he says.",team_entities,rangers,nhl_hockey,,,,,,
+71eebeee9e695fad,nhl_hockey,positive,89313,"In 552 NHL games played, he won 250 games, including 37 shutouts.",league_anchor,nhl,nhl_hockey,,,,,,
+1996741b52efd63a,nhl_hockey,positive,336907,"So let’s get the lede out of the way: John Scott scored a hockey goal with his hockey stick by shooting the hockey puck past an unscreened goaltender - a good goaltender, no less - into the hockey net.",hockey_jargon,puck,nhl_hockey,,,,,,
+e92436308fb2a0c3,nhl_hockey,positive,336911,"****
+
+The NHL.com video at the bottom of this post has a few more angles if you can’t believe this really happened, and need more proof.",league_anchor,nhl,nhl_hockey,,,,,,
+6a50c918da5d51af,nhl_hockey,positive,249426,"200 | Glendening reached a milestone on Feb. 29, Leap Day, at Dallas, playing in his 200th career NHL game.",league_anchor,nhl,nhl_hockey,,,,,,
+3261b4a5ffc3b597,nhl_hockey,positive,295763,"Thanks to their shootout loss to the lowly Edmonton Oilers last night, the Phoenix Coyotes hurdled the Dallas Stars for said eighth spot.",team_entities,oilers,nhl_hockey,,,,,,
+fa25e3f27b2da628,nhl_hockey,positive,72559,He single-handedly won the March 8 game against the Hawks by scoring the decisive and final five points of overtime.,hockey_jargon,overtime,nhl_hockey,,,,,,
+220cd0adbaf732cf,nhl_hockey,positive,182057,The team hopes a Stanley Cup title in next.,league_anchor,stanley cup,nhl_hockey,,,,,,
+d818a98cfb0974a0,nhl_hockey,positive,50155,"Since the game ends immediately when the first goal is scored, this overtime format is known as “sudden death.” 7.6 Sudden death To compute the probability of winning in a sudden death overtime, the important statistic is not goals per game, but time until the first goal.",hockey_jargon,overtime,nhl_hockey,,,,,,
+a297c84d28751841,nhl_hockey,positive,246243,"Kevork Djansezian/Getty Images
+
+IN THE LOCKER ROOMS BEFORE OVERTIME
+
+The teams skated to their respective dressing rooms to prepare for sudden-death overtime, which was to be in the NHL format of 4-on-4.",hockey_jargon;league_anchor,nhl;overtime,nhl_hockey,,,,,,
+5c47659788549050,nhl_hockey,positive,85159,"I need to change my pants"" (and it makes us all that much more thankful there's still a goalie as the last line of defense).",hockey_jargon,goalie,nhl_hockey,,,,,,
+e32866dc9af4424e,nhl_hockey,positive,277256,"In order to accomplish this they need D-men who can effectively pass and make plays with the puck.The team is bringing back Carlo Colaiacovo and Erik Johnson will greatly improve this area, but is it enough?Speaking of Johnson....Fans last week were quickly reminded why he was selected first overall in 2006 ahead of guys like Johnathan Toews and Jordan Staal.Rink Rats!I’m told there is a very good chance Montreal hosts a game this season sometime in November at Olympic Stadium.",hockey_jargon,puck,nhl_hockey,,,,,,
+df8fdebfe37fa132,nhl_hockey,positive,55285,"In the offensive zone, Ekman-Larsson has made a habit of making opposing teams pay when he has the time and room to put the puck on net.",hockey_jargon,puck,nhl_hockey,,,,,,
+278b6aeadc0970ed,nhl_hockey,positive,108331,"In a strange twist of coincidence, Marcol was still in Green Bay the week he was cut when the Houston Oilers came to town and they realized late in the week that their kicker was too hurt to play.",team_entities,oilers,nhl_hockey,,,,,,
+b4c132e77016b28a,nhl_hockey,positive,55275,"Selected by the Coyotes with the sixth overall pick in the 2009 NHL Entry Draft, Ekman-Larsson made his debut on October 9, 2010 when the then-Phoenix Coyotes faced the Boston Bruins in Prague, Czech Republic.",league_anchor;team_entities,bruins;nhl,nhl_hockey,,,,,,
+81bd183739283c6e,nhl_hockey,positive,19943,The probability of Strome playing in the NHL next season is low as it seems like he may need to sharpen his skills a little bit more with Erie.,league_anchor,nhl,nhl_hockey,,,,,,
+12f6b36d152594b0,nhl_hockey,positive,336928,"(Courtesy: Comcast Sportsnet)
+
+Burish’s clever skate pass left Scott with the puck and “speed,” while Orpik is just stopping and just starting to back up.",hockey_jargon,puck,nhl_hockey,,,,,,
+8843079c26247583,nhl_hockey,positive,59770,The Vikings won that game 21-18 in overtime.,hockey_jargon,overtime,nhl_hockey,,,,,,
+4f7c1373798cbacf,nhl_hockey,positive,127480,"The Pittsburgh Penguins centre won the Stanley Cup in 2009 over the Detroit Red Wings, after losing it to the same team the year before.",league_anchor,stanley cup,nhl_hockey,,,,,,
+be09822f618d734e,nhl_hockey,positive,256837,"As a manager, he led Rangers to three Scottish titles and four League Cups.",team_entities,rangers,nhl_hockey,,,,,,
+371b851267b58c27,nhl_hockey,positive,336941,(Courtesy: NHL.com),league_anchor,nhl,nhl_hockey,,,,,,
+3d92c56fe334ccb0,nhl_hockey,positive,320159,"If Toronto wants to make serious on their promises of competing for a Stanley Cup in the near future reality, then improving their possession game and adding a shutdown defenceman are a must.",league_anchor,stanley cup,nhl_hockey,,,,,,
+21b174b7b93b7553,nhl_hockey,positive,183542,"They could be teammates at Christmas in Toronto and Montreal and, if their NHL teams decide, all together in London for another title shot.",league_anchor,nhl,nhl_hockey,,,,,,
+ae5249bdf19185ab,nhl_hockey,positive,54129,"Ryan Johansen (born July 31, 1992) is a Canadian professional ice hockey centre, an alternate captain for the Nashville Predators of the National Hockey League (NHL).",league_anchor,nhl,nhl_hockey,,,,,,
+d10656fedaa8d849,nhl_hockey,positive,213287,Talk last night had the Leafs inquiring about the Boston Bruins All-Star Center Patrice Bergeron.,team_entities,bruins,nhl_hockey,,,,,,
+42db0c8c9c9b1148,nhl_hockey,positive,323694,"Mike Napoli (DH, Rangers) – Move over, Napoli, there’s a new three-true-outcomes guy in Texas.",team_entities,rangers,nhl_hockey,,,,,,
+753b2a08677368e8,nhl_hockey,positive,340187,Doug said Ken Rosenthal tweeted that I'd been traded to the Rangers.,team_entities,rangers,nhl_hockey,,,,,,
+74b056d17ddb9e9e,nhl_hockey,positive,313560,I guess the Blackhawks use it to unwind after a tough victory.,team_entities,blackhawks,nhl_hockey,,,,,,
+74d8b5bb31dc4894,nhl_hockey,positive,171876,"If you are in a position where you have little choice but to work a lot of overtime or you don’t have the resources to free up a lot of your life, just take the opportunity to have some ‘you’ time.",hockey_jargon,overtime,nhl_hockey,,,,,,
+374eab85e325947d,nhl_hockey,positive,110422,"The first was the overtime loss to New Orleans, which would have taken them to 9-3 on the season had they won.",hockey_jargon,overtime,nhl_hockey,,,,,,
+2d46934778b7491c,nhl_hockey,positive,232488,"Rangers send nine to Minors: The Rangers sent nine players to the Minor Leagues on Monday, including three with significant Major League service time: pitcher Wesley Wright, third baseman Will Middlebrooks and outfielder Travis Snider.",team_entities,rangers,nhl_hockey,,,,,,
+64d2e25d16c931e9,nhl_hockey,positive,246193,"David Backes: ""He buries that puck and you're like, 'This was meant to be.'",hockey_jargon,puck,nhl_hockey,,,,,,
+eba79348aaa173db,nhl_hockey,positive,229135,"Last season's NCAA champion USC Trojans couldn't overcome the second-seeded UCLA Bruins on Saturday, but they recovered on Sunday to take third place in an 11-8 win against the California Golden Bears.",team_entities,bruins,nhl_hockey,,,,,,
+0860b87596677e70,nhl_hockey,positive,183541,"Later this month, he will attend USA Hockey’s summer camp along with current Knights Matthew Tkachuk, Max Jones and goalie Tyler Parsons.",hockey_jargon,goalie,nhl_hockey,,,,,,
+b49c4024d72d8695,nhl_hockey,positive,19973,Who would you like the Arizona Coyotes to draft with the third overall pick in the 2015 NHL Draft?,league_anchor,nhl;nhl draft,nhl_hockey,,,,,,
+093247e045f00b73,nhl_hockey,positive,256938,"Kuznetsov is having a breakout season with the Capitals, leading the team with 53 assists and 73 points, and was named a NHL All-Star.",league_anchor,nhl,nhl_hockey,,,,,,
+2a36242281461c52,nhl_hockey,positive,11107,"Mar 8, 2015; Newark, NJ, USA; New Jersey Devils goalie Martin Brodeur (30) is honored as part of the 20th Anniversary of the 1995 Stanley Cup championship team before the game between the New Jersey Devils and the Philadelphia Flyers at Prudential Center.",hockey_jargon;league_anchor,goalie;stanley cup,nhl_hockey,,,,,,
+05e201a8bca99271,nhl_hockey,positive,182073,"It was a battle of backups with Cory Schneider drawing the start for the Canucks against Karlsson, who finished with 36 saves in just his second start since Jan. 21.",team_entities,canucks,nhl_hockey,,,,,,
+32c7f4a4b31006c1,nhl_hockey,positive,130794,"Cloud State, perhaps he will turn into that steadying presence on the blue line the Sabres so desperately need.",hockey_jargon,blue line,nhl_hockey,,,,,,
+d1d6a32148c989b4,nhl_hockey,positive,256958,"The 28-year-old has scored an impressive 13 goals in the 22 playoff games on his NHL resume, and he will be called upon to step things up in the first round especially, to make up for the absence of the injured Evgeni Malkin.",league_anchor,nhl,nhl_hockey,,,,,,
+ec533494135b2784,nhl_hockey,positive,91537,"McAree reflected upon Livingstone’s death in 1945, “and that is what he essentially failed to get for himself.”
+
+Sources: A Great Game: The Forgotten Leafs & the Rise of Professional Hockey, by Stephen J. Harper (Toronto: Simon & Schuster, 2013); Deceptions and Doublecross: How the NHL Conquered Hockey, by Morey Holzman and Joseph Nieforth (Dundurn: Toronto, 2002); The NHL: A Centennial History, by D’Arcy Jenish (Toronto: Doubleday Canada, 2013); Joining the Clubs: The Business of the National Hockey League to 1945, by J. Andrew Ross (Syracuse: Syracuse University Press, 2015); The Toronto Maple Leaf Hockey Club Official Centennial Publication, by Kevin Shea and Jason Wilson (Toronto: McClelland & Stewart, 2016); Lords of the Rinks, by John Chi-Kit Wong (Toronto: U of T Press, 2005); the December 20, 1917 and December 24, 1917 editions of the Globe; the February 4, 1944 and September 19, 1945 editions of the Globe and Mail; the December 20, 1917 edition of the Montreal Gazette; and the December 13, 1917 and December 20, 1917 editions of the Toronto Daily Star.",league_anchor,nhl,nhl_hockey,,,,,,
+8353cf8c917ae28d,nhl_hockey,positive,7844,"The Spartans were upset by Bethune-Cookman, 70-68, in overtime in the MEAC Tournament quarterfinals.",hockey_jargon,overtime,nhl_hockey,,,,,,
+7db6158e4713c256,nhl_hockey,positive,32675,"In practise, even with this trait, longbow rangers tend to focus on a single target at once unless firing upon a closely packed group.",team_entities,rangers,nhl_hockey,,,,,,
+0a552ca5b3129d6d,nhl_hockey,positive,89303,"#1
+
+*Note, when referring to the Vezina Trophy from the time frame of 1927-1981, the criteria for winning was that it went to the goalie on the team with the fewest goals scored against it in the regular season.",hockey_jargon,goalie,nhl_hockey,,,,,,
+843257b1983c2b15,nhl_hockey,positive,298191,"2011
+
+Numbers: The Senators selected 10 players, with eight playing in the NHL.",league_anchor,nhl,nhl_hockey,,,,,,
+f8581f0bc0cbe6a7,nhl_hockey,positive,246399,"Mike Babcock: ""When Sid got the puck, we were in a pretty good situation there.""",hockey_jargon,puck,nhl_hockey,,,,,,
+d844a1b2b4c3d13e,nhl_hockey,positive,246744,"There are many lines of empirical evidence that all detect the human fingerprint in global warming:
+
+The human fingerprint in atmospheric carbon dioxide
+
+That rising carbon dioxide is caused by human CO2 emissions should be obvious when comparing CO2 levels to CO2 emissions:
+
+Figure 1: CO2 levels (Green Line - Law Dome, East Antarctica and Blue line - Mauna Loa, Hawaii ) and Cumulative CO2 emissions in gigatonnes of CO2 (Red Line - CDIAC ).",hockey_jargon,blue line,nhl_hockey,,,,,,
+e4561d54465aae97,nhl_hockey,local_hard_negative,3033528,"He recently sat down with B/R to talk about his home, the Russian Basketball Federation and Russia's banishment from the 2018 Winter Olympics in South Korea.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+ba48ebac275c63f7,nhl_hockey,local_hard_negative,95305,"She would go on to win a gold and silver medal at the 2006 Winter Olympics in Turin, Italy and was chosen as the flag bearer for Canada at the 2010 Vancouver Olympics opening ceremonies.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+8467a5371aedbc07,nhl_hockey,local_hard_negative,3745654,"18 Stanford women’s field hockey (10-7, 4-2 America East) produced a dominant performance against UC Davis (1-16, 0-6) on Saturday’s senior night.",non_nhl_hockey_confounders,field hockey,,,,,,,
+4f19550a1df68a83,nhl_hockey,local_hard_negative,2240789,"RELATED STORIES
+
+Olympics: PH’s Martinez qualifies for medal round in men’s figure skating
+
+Winter Olympics: PH’s Martinez garners 64.81 in short figure skating program
+
+Read Next
+
+LATEST STORIES
+
+MOST READ",non_nhl_hockey_confounders,winter olympics,,,,,,,
+14d4a7364ff32caa,nhl_hockey,local_hard_negative,684936,Environmentalists in South Korea are protesting a Winter Olympics construction project to build a ski slope through a 500-year-old protected forest.,non_nhl_hockey_confounders,winter olympics,,,,,,,
+840d9bfc23ea07e5,nhl_hockey,local_hard_negative,1383496,Gay activists have told Gay Star News they hope this is a ‘taste’ of what will be the case during the Sochi Winter Olympics in Russia next year.,non_nhl_hockey_confounders,winter olympics,,,,,,,
+32998b1156a580a4,nhl_hockey,local_hard_negative,798393,"The world celebrated in 1984 in Sarajevo, Yugoslavia, at the Winter Olympics, and again in Los Angeles at the Summer Olympics.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+bc3f18ec429f5334,nhl_hockey,local_hard_negative,2549726,"Recently, she penned an opinion article in the Washington Post titled, “For gay athletes, the US isn’t much more tolerant than Russia.”
+
+The piece was critical of Russian President Vladimir Putin, who in advance of the Winter Olympics signed into law last year a bill prohibiting “gay propaganda,” but it also condemned homophobia in the United States, including at her own school.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+e004da71952d20ee,nhl_hockey,local_hard_negative,799118,"While South Korea's hockey program has evolved in recent years, qualifying for the 2018 Winter Olympics as the host country, North Korea's has remained stagnant.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+cb2acd5f668a3855,nhl_hockey,local_hard_negative,3439730,"The 2022 Winter Olympics has just two candidates, China and Kazakhstan.Here's what to know about the United States' chances in the bid process:THE DEADLINES:The four cities will turn in the final pieces of their technical plans to the USOC in the next week.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+a1ad5e3ecc61cf82,nhl_hockey,local_hard_negative,938250,"Looney is currently the head coach of the Buffalo Bison Under 17 team
+
+Playing career [ edit ]
+
+In the gold medal game at the 1998 Winter Olympics, Looney scored the game-winning goal.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+d76fb82be8c88516,nhl_hockey,local_hard_negative,2698947,"STANFORD — As a freshman at St. Francis High in Mountain View, Kristina Bassi trimmed down her options for a fall sport: cross country or field hockey.",non_nhl_hockey_confounders,field hockey,,,,,,,
+839b43400db1689c,nhl_hockey,local_hard_negative,1645694,"Stoughton will oversee numerous aspects of Curling Canada’s mixed doubles program leading up to the sport’s debut as a medal discipline at the 2018 Winter Olympics in PyeongChang, South Korea.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+3b4f3c8cf44129ca,nhl_hockey,local_hard_negative,2702747,It’s fascinating how many under a certain age don’t know anything about the incident that occurred between Tonya Harding and Nancy Kerrigan before the 1994 Winter Olympics.,non_nhl_hockey_confounders,winter olympics,,,,,,,
+df948f6e397c61d7,nhl_hockey,local_hard_negative,1550676,"Free Field Hockey Games Duke community members can watch the #11 Blue Devils for free at East Campus' Williams Field at these upcoming games: Oct. 10 at 6 p.m. - Boston College
+
+Oct. 12 at 1 p.m. - Liberty University
+
+Oct. 17 at 6 p.m. - UNC-Chapel Hill
+
+Oct. 19 at 1 p.m. - James Madison University For a full schedule, visit the field hockey website.",non_nhl_hockey_confounders,field hockey,,,,,,,
+670aba5e5d5fd05c,nhl_hockey,local_hard_negative,2330817,"Mr. Bettman was asked if there was any possibility that the winter Olympics could result in the All-Star game being postponed or cancelled:
+
+None.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+d3ac31a38adad158,nhl_hockey,local_hard_negative,2569432,"Schools in Beijing are also developing winter sports classes.Beijing is committed to limiting its expenses for the 2022 Winter Olympics, with an estimated budget of $3.07 billion, far less than the recent Winter Games, Sochi 2014 cost $50 billion and Pyeongchang 2018 has set a $12 billion budget.Half of the budget will go to infrastructure, with the 2022 host city only constructing two new venues: the National Speed Skating Oval and the venue for bobsledding and luge competitions in Xiaohaituo, in the Beijing suburb of Yanqing.As part of austerity measures, Beijing has transformed the old steel mill of the Shougang Group into the 2022 Organizing Committee's headquarters.The national winter sports body has begun warming up for the 2022 Games, with the Capital Indoor Stadium, one of the 2022 Games venues, set to host the women's curling world championships in March.The Genting Resort in Chongli is set to host the FIS freestyle and snowboard world championships in 2021, one year ahead of the Winter Olympics.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+843944abab7dd8f4,nhl_hockey,local_hard_negative,2552346,"Gaetan Boucher wins 1,500m gold at 1984 Olympics 4:28
+
+Those three medals in one winter Olympics were the most ever to that time by a Canadian — not that the competition was that wide as this country, surrounded by a world of steroids and without much national funding, simply didn't win.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+7cb7a9b0fcd469a9,nhl_hockey,local_hard_negative,1482520,"Winter Olympics, Mr. President, not summer.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+52de2ca056fd34e8,nhl_hockey,local_hard_negative,2532309,"SCHEDULE: Full Winter Olympics schedule
+
+Obama's decision to skip the Sochi Games and instead appoint three openly gay athletes – Billie Jean King, Brian Boitano and Caitlin Cahow – to lead the U.S. delegation was considered an insult to Putin and the Olympic hosts.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+efae32930ff39ae4,nhl_hockey,local_hard_negative,3721583,"[121]
+
+Before the start of the 1992 Winter Olympics in Albertville and the Summer Olympics in Barcelona, The Olympic Committee of the USSR formally existed until March 12, 1992, when it disbanded but it was succeeded by the Russian Olympic Committee.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+e838838dd6d6c167,nhl_hockey,local_hard_negative,918758,Britain now is guaranteed to capture three medals overall at a Winter Olympics for the first time since 1936.,non_nhl_hockey_confounders,winter olympics,,,,,,,
+41d29d9323071099,nhl_hockey,local_hard_negative,2112862,"Two other groups, the Human Rights Campaign and Human Rights Watch, have called on the International Olympic Committee to speak out against the bill as Russia makes final preparations to host the Winter Olympics in Sochi next year.",non_nhl_hockey_confounders,winter olympics,,,,,,,
+33e6fb668d6249fb,nhl_hockey,local_hard_negative,1109704,It was Oil Field Hockey's initial discovery of the Barons crest and logo (I found the shoulder patch by piggy-backing off of his searches).,non_nhl_hockey_confounders,field hockey,,,,,,,
+c38aecfd81909463,nhl_hockey,local_hard_negative,3397270,"Some are enthusiastic without knowing ice hockey from field hockey and clearly have a lot to learn about the game, but some are already hardcore fans.",non_nhl_hockey_confounders,field hockey,,,,,,,
+f2d07b47e4a59acf,nhl_hockey,benchmark_hard_negative,1941,"That May, as Wildstein is trying to run for office, Christie makes the paper for socking a home run into a neighboring swimming pool.",mlb_baseball,home run,mlb_baseball,,,,,,
+e2d0241001a6b0bd,nhl_hockey,benchmark_hard_negative,49027,Joining Embarcadero as Delphi Product Manager Felicitaciones desde Colombia.,soccer,manager,soccer,,,,,,
+d7c5b131124fb0d3,nhl_hockey,benchmark_hard_negative,43741,"First of all, the most energy-intensive water is the treated, clean, drinking water that we heat in our home.",nba_basketball,heat,nba_basketball,,,,,,
+2e8718cb2d46fd34,nhl_hockey,benchmark_hard_negative,20152,"But once again, when a borderline playoff team is trying to play with the big dogs, playing a nineteen-year-old with little point guard experience over experienced players is not ideal.",nba_basketball,point guard,nba_basketball,,,,,,
+550af930e66501a1,nhl_hockey,benchmark_hard_negative,36267,The cubs are no longer considered safe for petting after eight weeks.,mlb_baseball,cubs,mlb_baseball,,,,,,
+508e2ccef00862f7,nhl_hockey,benchmark_hard_negative,3901,"“He looked good,” linebacker Kemal Ishmael said.",nfl_football,linebacker,nfl_football,,,,,,
+fa2dac72ab82fda0,nhl_hockey,benchmark_hard_negative,49019,"Joining Embarcadero as Delphi Product Manager MArco... che dire complimentiiiiiiiii Non potevano scegliere uomo migliore per dare un futuro roseo a delphi... grazie per quello che fai (specialmente perchè lo fai bene....)
+
+Joining Embarcadero as Delphi Product Manager Congrats!",soccer,manager,soccer,,,,,,
+5df40f4352b79e80,nhl_hockey,benchmark_hard_negative,49000,Joining Embarcadero as Delphi Product Manager Congratulations.,soccer,manager,soccer,,,,,,
+b680e64454f6e5af,nhl_hockey,benchmark_hard_negative,11010,And near the end of the first half quarterback Ben Roethlisberger was slammed to the ground.,nfl_football,quarterback,nfl_football,,,,,,
+0b869545c8ec96f9,nhl_hockey,benchmark_hard_negative,30292,"From the Grid Iron to the Gravy Train: How the NFL Scored a Nonprofit Status
+
+Those same fans funnel billions upon billions of dollars into the industry to buy everything from tickets to memorabilia.",nfl_football,nfl,nfl_football,,,,,,
+c5d1f929f0a6fa71,nhl_hockey,benchmark_hard_negative,31994,Here he looked to have taken a stride towards adding a Premier League medal when he met Mahrez's athletic back-heel to finish sharply past Foster.,soccer,premier league,soccer,,,,,,
+fb6827517d94df8b,nhl_hockey,benchmark_hard_negative,41509,"The HTF is a hot oil, and then the heat is transferred to molten salt for storage there, and when the heat is needed to generate electricity, steam is run through the turbine to generate electricity (Abengoa’s Solana, 2013).",nba_basketball,heat,nba_basketball,,,,,,
+01ecb212f77ffb88,nhl_hockey,benchmark_hard_negative,29072,"The same month Jacksonville had no problem finding $43 million right away for a gift to the NFL, local politicians said the school money could only be supplied over several decades.",nfl_football,nfl,nfl_football,,,,,,
+ed8101854d2cd3f8,nhl_hockey,benchmark_hard_negative,21750,"That further motivated me and in the last eight months I have learnt more in Patanjali than in my previous 12 years.”Ramdev is closely involved, participating in discussions with advertising agencies, on marketing plans or research, said a senior manager.",soccer,manager,soccer,,,,,,
+040f2747f033d8e2,nhl_hockey,benchmark_hard_negative,11255,"During his previous two-plus seasons from 2008-11, Williams was a fixture in the team’s backcourt.",nba_basketball,backcourt,nba_basketball,,,,,,
+f7020f1ffc5efb82,nhl_hockey,benchmark_hard_negative,36626,"Meanwhile, right-handed pitcher Sam Smith has been solid at times this season and gets up to 90 with his fastball, while in the bullpen, Brett Huber, Matt Denny, Tanner Bailey and Aaron Greenwood give the Rebels a reliable quartet.",mlb_baseball,bullpen;pitcher,mlb_baseball,,,,,,
+f5026739a47516c2,nhl_hockey,benchmark_hard_negative,28870,"Here are the aggregate 2015-2016 stats for the bullpen’s Big 4 of Brad Brach, Mychal Givens, Darren O’Day, and Zach Britton: 315 1/3 IP, 2.00 ERA, 1.03 WHIP, 10.82 K/9.",mlb_baseball,bullpen,mlb_baseball,,,,,,
+bdaad7cbe94918eb,nhl_hockey,benchmark_hard_negative,41236,The 24-year-old has been a target for a number of Championship and Premier League sides but will sign for Villa on a season-long loan.,soccer,premier league,soccer,,,,,,
+2b4b6deae439c0f4,nhl_hockey,benchmark_hard_negative,30365,"In fact there are only three NFL franchises, the New England Patriots, New York Giants, and New York Jets, which have paid three-quarters or more of their stadium capital costs, meaning 29 other stadiums were funded, in part by taxpayers.",nfl_football,nfl;patriots,nfl_football,,,,,,
+db0e1ad5a3c27a7a,nhl_hockey,benchmark_hard_negative,6684,"The Cardinal offensive line afforded 200-plus yards rushing in six games during the 2012 season, paving the way for record-breaking running back Stepfan Taylor.",nfl_football,offensive line,nfl_football,,,,,,
+e0dbc9c10c42869a,nhl_hockey,benchmark_hard_negative,23671,"The plans call for three towers that now can reach 240 feet in addition to homes, shops, offices, art studios, parks and a brewery, an area that Giants’ president Larry Baer told the Los Angeles Times will “have a Fenway feel, a Wrigleyville feel.”
+
+And catching the Dodgers may not be the end.",mlb_baseball,dodgers,mlb_baseball,,,,,,
+6a92f03c0438c378,nhl_hockey,benchmark_hard_negative,27441,"One such Ubisoft PR person is Tessa Vilyn, Ubisoft Benelux PR and events manager.",soccer,manager,soccer,,,,,,
+3ba89af17cfb6d61,nhl_hockey,benchmark_hard_negative,23572,"The oddsmakers at Bovada LV just published their ""First Manager to Get Fired"" odds.",soccer,manager,soccer,,,,,,
+94900a539bf7b657,nhl_hockey,benchmark_hard_negative,23515,"Hyoung Chang/The Denver Post
+
+Walt Weiss, Colorado Rockies: It's hard to remember any first-year manager who agreed to take the job on a one-year deal.",soccer,manager,soccer,,,,,,
+3438c2c704d655e6,nhl_hockey,benchmark_hard_negative,43691,"There’s several things going on over the last few years as we’ve had massive droughts and massive heat waves, which is power plants that never felt vulnerable now feel vulnerable and they might not have the water they need.",nba_basketball,heat,nba_basketball,,,,,,
+f201073d91dcb975,nhl_hockey,benchmark_hard_negative,7395,"It’s the first to use Wii U’s NFC, and it’s the first game to allow in game screen captures that you can post directly into the Miiverse social network for instant likes and comments.",nfl_football,nfc,nfl_football,,,,,,
+1ceddf43db1dd6a4,nhl_hockey,benchmark_hard_negative,10469,Caucasian patriots heroically exercising their right to punch people of color.,nfl_football,patriots,nfl_football,,,,,,
+e2439d2c2e34313d,nhl_hockey,benchmark_hard_negative,23553,Manuel is the winningest manager in Phillies history.,soccer,manager,soccer,,,,,,
+8c0c7e470a2f296a,nhl_hockey,benchmark_hard_negative,27721,"All of the players involved had a great time experiencing the Livewire program too – beyond playing FIFA, players were given the chance to hit the wards (one patient at Sydney Children’s Hospital decked out his room with a plethora of Sydney FC merch – the guys were impressed), do some origami, play some drums, and participate in some of Livewire and Starlight’s favourite pastimes old (Uno Championships) and new (the Head’s Up app is proving immensely popular recently).",soccer,fifa,soccer,,,,,,
+248de2e9d94f1639,nhl_hockey,benchmark_hard_negative,45025,"IT WAS a tough round to be an inside midfielder with many deserving engine-room players missing out on selection in this week's Team of the Week, brought to you by Accor Hotels.",soccer,midfielder,soccer,,,,,,
+4d19c1b3de0e4ab2,nhl_hockey,benchmark_hard_negative,30392,"Interestingly, as part of the 1966 antitrust exemption Congress granted the NFL in its pursuit to merge with the AFL, the league agreed to a rule forcing all existing franchises to be retained, meaning there must be 32 at all times, and none of those teams were allowed to move outside of their metropolitan areas.",nfl_football,nfl,nfl_football,,,,,,
+e7dd7ea3ffdf6f1a,nhl_hockey,benchmark_hard_negative,22395,"""We're in the bottom of the seventh inning.",mlb_baseball,inning,mlb_baseball,,,,,,
+3872db23e74c472a,nhl_hockey,benchmark_hard_negative,42851,The Around the Horn panel weighs in on the NBA sending a memo to teams about appropriate social media behavior.,nba_basketball,nba,nba_basketball,,,,,,
+c22084304ca15b72,nhl_hockey,benchmark_hard_negative,26201,"Aside from center Matt Slauson, the offensive line was a train wreck in 2016.",nfl_football,offensive line,nfl_football,,,,,,
+3cbe0150f697de80,nhl_hockey,benchmark_hard_negative,49011,"Joining Embarcadero as Delphi Product Manager Hi Marco, my congrats, after all your great Delphi support, you earned it !",soccer,manager,soccer,,,,,,
+0b0ce6e3b64f1652,nhl_hockey,benchmark_hard_negative,33509,"Pablo Marco, the regional manager of Doctors Without Borders, said on Monday that tens of thousands - many of them already displaced from other areas - were caught less than 5km from the frontline with ""nowhere to go"".",soccer,manager,soccer,,,,,,
+54241a1ca04141d5,nhl_hockey,benchmark_hard_negative,3829,The Team North America co-general manager said as much back in February.,soccer,manager,soccer,,,,,,
+9cc74da1098881f5,nhl_hockey,benchmark_hard_negative,30103,The Giants and Dodgers fighting it out has more of a ring to it than the Nats and Mets.,mlb_baseball,dodgers;mets,mlb_baseball,,,,,,
+bfaa178133a3c341,nhl_hockey,benchmark_hard_negative,6676,FootballScoop.com named Bloomgren its 2013 Offensive Line Coach of the Year following two years of eye-opening accomplishments.,nfl_football,offensive line,nfl_football,,,,,,
+38666a7b2edb1606,nhl_hockey,benchmark_hard_negative,23493,Johnson and GM Mike Rizzo agreed back in November 2012 this would be Johnson's last season as manager.,soccer,manager,soccer,,,,,,
+abc830ed17441723,nhl_hockey,benchmark_hard_negative,19650,Lucas Duda has one less error after an MLB scoring change from last Sunday against Colorado: Trevor Story was awarded a hit on a play in the eighth inning in which Duda originally received an error.,mlb_baseball,inning;mlb,mlb_baseball,,,,,,
+b1ca66903a7053ae,nhl_hockey,benchmark_hard_negative,23531,"On the other hand, the manager told the Los Angeles Times last winter that he asked the team to pick up his 2014 option, just so he could avoid being a topic in pieces like this -- and ""they said that wasn't the plan for me or my coaches.""",soccer,manager,soccer,,,,,,
+a9257d2528b7eef7,nhl_hockey,benchmark_hard_negative,8049,"The California grid also faces limited hydropower imports from the Pacific Northwest because of extreme heat up here, reducing the state’s ability to handle this crisis.",nba_basketball,heat,nba_basketball,,,,,,
+ec9d460acbcbe6d3,nhl_hockey,benchmark_hard_negative,49042,";-) Regards Niels
+
+Joining Embarcadero as Delphi Product Manager Congratulations and wish you the best.",soccer,manager,soccer,,,,,,
+a1697f1ca8375d1a,nhl_hockey,benchmark_hard_negative,26728,"In defensive coordinator Wade Phillips' 3-4 base set, Robert Quinn has transitioned from defensive end to outside linebacker, where he will sometimes drop into coverage but mostly rush the passer.",nfl_football,linebacker,nfl_football,,,,,,
+f6e1692b7924e86c,nhl_hockey,benchmark_hard_negative,31847,Zielinski is already pushing Allan for a starting spot and Milik has made his claim as the starting striker with a goal per minute ratio that is top in Europe.,soccer,striker,soccer,,,,,,
+0c7ff59baaf6528b,nhl_hockey,benchmark_hard_negative,63,"[A good night for Trump and a better night for Clinton]
+
+Clinton campaign manager Robby Mook issued a memo to supporters and the media Wednesday that claimed a decisive advantage.",soccer,manager,soccer,,,,,,
+08fe20fc464360a5,nhl_hockey,benchmark_hard_negative,42226,Whether general manager Bob Quinn and the L:ions’ front office select a running back in this year’s draft – which I’m assuming they will – Green should still be an important asset to Detroit’s offense.,soccer,manager,soccer,,,,,,
+7b9136e43adddd76,nhl_hockey,benchmark_hard_negative,32974,"With two games in the books, the 2014 World Series is tied and heading back to San Francisco.",mlb_baseball,world series,mlb_baseball,,,,,,
+546ba0fca859d647,nhl_hockey,benchmark_hard_negative,30137,"Or, to put it another way, (last year's Red Sox + David Price) ≠ a 2015 contender, so are we really so jazzed about the way they finished last year?",mlb_baseball,red sox,mlb_baseball,,,,,,
+3529d3b8065b8b2d,nhl_hockey,benchmark_hard_negative,27723,"Livewire has plenty more planned for the coming months – hopefully, we can work with clubs again prior to the release of FIFA 15.",soccer,fifa,soccer,,,,,,
+dd3070da20c09aca,nhl_hockey,benchmark_hard_negative,5448,"Coming off a disappointing 4-12 season in 2011, the organization is faced with a monumental decision: What to do at quarterback, the league’s most vital position.",nfl_football,quarterback,nfl_football,,,,,,
+d4a5fceaa484e713,nhl_hockey,benchmark_hard_negative,11769,There will be girls who go and see those two unhappy gay cowboys and go home and have fantasy dreams about them.,nfl_football,cowboys,nfl_football,,,,,,
+817747ebd6e18fb6,nhl_hockey,benchmark_hard_negative,31993,The Welsh midfielder is the only member of the Foxes squad remaining from their time in the third tier seven years ago and has winners' medals from both League One and the Championship.,soccer,midfielder,soccer,,,,,,
+87e2e7fd6707f063,nhl_hockey,benchmark_hard_negative,25228,4.Now heat the mixture over low-medium flame and start to stir.,nba_basketball,heat,nba_basketball,,,,,,
+25321cbfb6e7fa3d,nhl_hockey,benchmark_hard_negative,39117,Josh McLain smacked the first of the inning on an 0-2 pitch over the left field wall.,mlb_baseball,inning,mlb_baseball,,,,,,
+dc575d539493a60a,nhl_hockey,benchmark_hard_negative,30600,"CLOSE President Trump reprised his attacks on former San Francisco 49ers quarterback Colin Kaepernick, telling supporters in Ky. that 'they like when people stand for the American flag.'",nfl_football,49ers;quarterback,nfl_football,,,,,,
+8eb976324a5522c8,nhl_hockey,benchmark_hard_negative,40111,"If you’re working on the grill, in the heat, you have to take pills for the pain you get in your hands there, too.",nba_basketball,heat,nba_basketball,,,,,,
+d3336903f3c3f370,nhl_hockey,benchmark_hard_negative,4192,He left for Juve in 2013 when new Chelsea boss Conte was in charge and went on to win back-to-back Serie A titles.,soccer,serie a,soccer,,,,,,
+9c7da21650724812,nhl_hockey,benchmark_hard_negative,13289,"Messi's month-by-month goal tally
+
+January 7
+
+February 10
+
+March 13
+
+April 9
+
+May 8
+
+June 4
+
+July 0
+
+August 7
+
+September 5
+
+October 10
+
+November 9
+
+December 4
+
+Messi's goal breakdown
+
+Barcelona
+
+Copa del Rey: 3
+
+Primera Division: 56
+
+Champions League: 13
+
+Spanish Super Cup: 2
+
+Club total: 74
+
+Argentina
+
+World Cup qualifiers: 5
+
+Friendlies: 7
+
+Country total: 12
+
+Overall total: 86",soccer,barcelona;champions league,soccer,,,,,,
+832bbb90d5bc9e80,nhl_hockey,benchmark_hard_negative,20132,He is also currently one of the worst defensive players in the NBA.,nba_basketball,nba,nba_basketball,,,,,,
+c04cfd650d8b9a5a,nhl_hockey,benchmark_hard_negative,33161,"""They have given us petitions,"" Village Manager David Niemeyer says of the Teamsters.",soccer,manager,soccer,,,,,,
+1f3004dfb691e58d,nhl_hockey,benchmark_hard_negative,8689,"Scholes retired from playing in 2013
+
+Scholes, 41, won 11 Premier League titles, as well as two Champions League trophies, during more than 700 appearances for Manchester United before retiring in 2013.",soccer,champions league;manchester united;premier league,soccer,,,,,,
+cd1f445811317107,nhl_hockey,benchmark_hard_negative,22394,"""Being a baseball guy let me describe it this way,"" said Greenberg, whose father, Hank, was the Indians' general manager from 1950-59.",soccer,manager,soccer,,,,,,
+bfab22fee838700d,nhl_hockey,benchmark_hard_negative,28872,"Do we also have a manager who’s not afraid to yank Wright after he throws five good innings, whatever Wright’s feelings on the subject may be?",soccer,manager,soccer,,,,,,
+718733c011c91ca2,nhl_hockey,benchmark_hard_negative,45545,"Akin has taken heat from both sides of the aisle after using the term ""legitimate rape"" and saying women have a biological way of preventing unwanted pregnancies while he gave a now-notorious explanation of his views on abortion.",nba_basketball,heat,nba_basketball,,,,,,
+ae36c406fc45629f,nhl_hockey,benchmark_hard_negative,30330,It is also because of the fact that the NFL files taxes as a trade association that the public gets to know exactly what its executives make.,nfl_football,nfl,nfl_football,,,,,,
+9ef887394b078026,nhl_hockey,benchmark_hard_negative,8628,We won’t have the luxury of driving down the coast to see our American league team.,mlb_baseball,american league,mlb_baseball,,,,,,
+b7857d5c22315cde,nhl_hockey,benchmark_hard_negative,2799,"Photograph: Ronald Grant
+
+Born in Liverpool, Chegwin began his acting career at the age of 10 and had roles in Roman Polanski’s 1971 film version of Macbeth, the 1973 movie The Optimists of Nine Elms, alongside Peter Sellers, and the pilot of the TV sitcom Open All Hours.",soccer,liverpool,soccer,,,,,,
+3ff2fd0263302988,nhl_hockey,benchmark_hard_negative,40889,"Mac Logan, the city's general manager of transportation, said last week's meeting on the southwest transitway, in particular, was unlike any he had seen.",soccer,manager,soccer,,,,,,
+04995012d0e6566f,nhl_hockey,benchmark_hard_negative,38552,"He first stepped in when he saw rookie running back Terrance Ganaway try to run through linebacker Demario Davis in what he called a ""thud"" period, when players are instructed to simply thud off of each other.",nfl_football,linebacker,nfl_football,,,,,,
+deb3db2a05120d3c,nhl_hockey,benchmark_hard_negative,17638,"Those flags are often seen at soccer stadiums, when ultranationalist fans of England’s soccer team gather to cheer (and to fight fans of other nations), but they have been cropping up regularly at anti-immigrant and anti-Muslim protests in English cities over the past year.",soccer,soccer,soccer,,,,,,
+5306b9e02a48b475,nhl_hockey,benchmark_hard_negative,46403,"NFL Drafts from 1970 to 2013
+
+Top Five Schools for each Team
+
+The Rams/UCLA connection is still at the top of the list, but the Pittsburgh/Pittsburgh combination falls off.",nfl_football,nfl,nfl_football,,,,,,
+e8ae57f9619e3c10,nhl_hockey,benchmark_hard_negative,10283,"Now, his death has been confirmed by Tony Dimitriades, longtime manager of Tom Petty & The Heartbreakers.",soccer,manager,soccer,,,,,,
+da1a2b5ab2aaa098,nhl_hockey,benchmark_hard_negative,23477,"""Mariano Rivera played to the end of his contract and went to free agency.",nfl_football,free agency,nfl_football,,,,,,
+eec41921e9b038c3,nhl_hockey,medium_negative,219852,"[67] At Saturday Night's Main Event, Batista won a six-man tag match with teammates Rey Mysterio and Bobby Lashley, defeating World Heavyweight Champion King Booker, Finlay, and Mark Henry.",combat_sports,heavyweight;main event,combat_sports,,,,,,
+e87b1ac8017cec37,nhl_hockey,medium_negative,36589,"IR blaster and receiver: Still present is the IR port for controlling the console with a remote, but the Xbox One S also features an integrated IR blaster to control or power on other devices in the room.",gaming_general,xbox,gaming_general,,,,,,
+758c930d1e8ac962,nhl_hockey,medium_negative,20821,"On platforms where it is 64 or 128 bits, it can be inefficient to work with these types, as it is on the PlayStation 2 platform.",gaming_general,playstation,gaming_general,,,,,,
+1d38846ec256cc81,nhl_hockey,medium_negative,69176,You may notice that you enjoy this boss fight.,gaming_general,boss fight,gaming_general,,,,,,
+39771c1310203b1e,nhl_hockey,medium_negative,220052,"[199]
+
+Filmography
+
+Web series Year Title Role Notes 2016 The #Hashtagged Show Dr. Jason Rush 2 episodes
+
+Short films Year Title Role Notes 2017 2048: Nowhere to Run Sapper Morton Short film
+
+Championships and accomplishments
+
+Batista during his second World Heavyweight Championship reign
+
+See also",combat_sports,heavyweight,combat_sports,,,,,,
+3291f7494cafa435,nhl_hockey,medium_negative,125759,"Battlefield 4 is set to be launched on PS3, PS4, PC, Xbox 360 and Xbox One later this year with the first DLC for the game being a timed exclusive for Xbox One.",gaming_general,xbox,gaming_general,,,,,,
+9e7aebd1f0c6418a,nhl_hockey,medium_negative,100990,Almost a year ago dumped DirecTv and went with Playstation Vue.,gaming_general,playstation,gaming_general,,,,,,
+e258dc5e34875a02,nhl_hockey,medium_negative,154599,The game is a survival RPG that almost hides all information from the player.,gaming_general,rpg,gaming_general,,,,,,
+a0d19f7d2a49b3d7,nhl_hockey,medium_negative,66255,"The event, which airs on pay-per-view from Las Vegas’ MGM Grand Garden Arena, features the heavily anticipated grudge match between light-heavyweight champion Jon Jones (20-1 MMA, 14-1 UFC) and Daniel Cormier (15-0 MMA, 4-0 UFC).",combat_sports,heavyweight;mma;pay-per-view;ufc,combat_sports,,,,,,
+bc859cd9dac26e78,nhl_hockey,medium_negative,629,Steam Notes: Hi fellow Steamers!!,gaming_general,steam,gaming_general,,,,,,
+c7a20a667e2a7df4,nhl_hockey,medium_negative,69684,Restarting Steam should see the Beta version of the 1.4 update download and install.,gaming_general,steam,gaming_general,,,,,,
+b8565e3626b909a5,nhl_hockey,medium_negative,214726,"We apologize to any customers affected by the change in our retail plans, and thank everyone for the continued support as we look forward to the release of Halo Wars 2 for Xbox One and Windows 10 PC on Feb. 21, 2017.",gaming_general,xbox,gaming_general,,,,,,
+8ce8d69038347693,nhl_hockey,medium_negative,83655,The latest issue of Weekly Famitsu reveals Shining Resonance Re:frain for PlayStation 4.,gaming_general,playstation,gaming_general,,,,,,
+3655731d5772da70,nhl_hockey,medium_negative,176590,"- by BoxsonaOfficial Submission information:
+
+Posted:
+
+Category: All
+
+Theme: All
+
+Species: Unspecified / Any
+
+Gender: Any
+
+Favorites: 7
+
+Comments: 19
+
+Views: 534
+
+Image Specifications:
+
+Resolution: 469x1000
+
+Keywords:
+
+boxsona furry subscription_box subscription box fandom prize giveaway contest free box
+
+Free Boxsona Box Contest!",combat_sports,submission,combat_sports,,,,,,
+43d98a9969071ca8,nhl_hockey,medium_negative,171180,1 contender to the UFC 184 title bout between Chris Weidman and Belfort.,combat_sports,ufc,combat_sports,,,,,,
+dd4f6f3e441dc347,nhl_hockey,medium_negative,190052,"Release:-It is expected that Need For Speed:The Run will hit gaming Market in November 15 not confirmed,You can also set your :-It is expected that Need For Speed:The Run will hit gaming Market in November 15 not confirmed,You can also set your Preorders for ""The Run""
+
+Platform: -Xbox 360, PlayStation 3, PC, Wii, Nintendo 3DS
+
+You might love to see the first teaser of game shown below:
+
+Source:Official Website",gaming_general,nintendo;playstation;xbox,gaming_general,,,,,,
+16a44bc421f2ae1f,nhl_hockey,medium_negative,150857,"Multiplayer allows you to visit other players' farms either locally or over WiFi and exchange gifts, while StreetPass ""collects"" players who you have passed by so you can check out their farms' stats.",gaming_general,multiplayer,gaming_general,,,,,,
+e6b24604db5d661f,nhl_hockey,medium_negative,41497,BrightSource Energy’s Ivanpah (2014) used the reflected sunlight to simply boil water in the tower and operate directly off the steam produced.,gaming_general,steam,gaming_general,,,,,,
+fa70461984f7907c,nhl_hockey,medium_negative,135360,"About This Game Hit the dirt in Colin McRae Rally - the classic off-road racing experience
+
+Colin McRae Rally features the car and track list from last year’s top selling mobile title and features THIRTY amazing rally stages in three environments taken from the PlayStation classic Colin McRae 2.0. for this PC and Mac edition.",gaming_general,playstation,gaming_general,,,,,,
+2111d7585057d1bc,nhl_hockey,medium_negative,161509,"For example, Dolphin does not care in the slightest about how the filesystem on USB looks like as implemented by Nintendo.",gaming_general,nintendo,gaming_general,,,,,,
+882f8fff15523dfb,nhl_hockey,medium_negative,148410,"Of those World Cup knockout games, the Boks hold a two-one advantage over the All Blacks, who claimed the quarterfinal in Melbourne 29-9.",combat_sports,knockout,combat_sports,,,,,,
+94045a9e2adc556d,nhl_hockey,medium_negative,106949,"Posted on September 4, 2013, Ross Lincoln Xbox Live Gold Not Needed for Xbox One TV Features (UPDATED)
+
+Which next-gen console will be better?",gaming_general,xbox,gaming_general,,,,,,
+690b09e6a27ef555,nhl_hockey,medium_negative,97954,"Nano-one and Calcflow launched in the STEAM store (VR equivalent of an app story) Nov. 10, and are finalists for CONNECT’s Most Innovative New Product Awards in December.",gaming_general,steam,gaming_general,,,,,,
+1e01e8ebc63de29d,nhl_hockey,medium_negative,167221,Zalman uses a fourth design—composite heatpipes—which mix copper powder inside of the pipe to help aid in thermal transfer (the steam travels faster).,gaming_general,steam,gaming_general,,,,,,
+12bc55348af6cc1f,nhl_hockey,medium_negative,219956,Batista ultimately lost the triple threat match at WrestleMania after Bryan forced him to submit to win the WWE World Heavyweight Championship.,combat_sports,heavyweight,combat_sports,,,,,,
+bffd194d0703fc03,nhl_hockey,medium_negative,162514,"You agree that you will not, under any circumstances:
+
+A. in whole or in part, copy, photocopy, reproduce, translate, reverse engineer, derive source code from, modify, disassemble, decompile, or create derivative works based on TERA; provided, however, that you may make one (1) copy of the Game Client and the manuals for backup or archival purposes only;
+
+B. use cheats, automation software (bots), hacks, mods or any other unauthorized third-party software designed to modify any part of TERA;
+
+C. exploit TERA or any of its parts, including without limitation the Game Client, for any commercial purpose, including without limitation (a) use at a cyber cafe, computer gaming center or any other location-based site without the express written consent of En Masse; (b) for gathering in-game currency, items or resources for sale outside the game of TERA; (c) performing in-game services in exchange for payment outside the game of TERA, e.g., power-leveling; or (d) performing advertising or solicitations for a third party;
+
+D. use any unauthorized third-party software that intercepts, ""mines"", or otherwise collects information from or through TERA or the service, including without limitation any software that reads areas of RAM used by En Masse for TERA to store information about a character or the game environment; provided, however, that En Masse may, at its sole and absolute discretion, allow the use of certain third party user interfaces;
+
+E. access TERA from any Internet protocol addresses, computers or proxies that En Masse may prohibit in its sole and absolute discretion;
+
+F. modify or cause to be modified any files that are a part of the Game Clientof TERA in any way not expressly authorized by En Masse;
+
+G. host, provide or develop matchmaking services for TERA, or intercept, emulate or redirect the communication protocols used by En Masse in any way, for any purpose, including without limitation unauthorized play over the Internet, network play, or as part of content aggregation networks;
+
+H. facilitate, create or maintain any unauthorized connection to TERA or relatedservices, including without limitation (a) any connection to any unauthorized server that emulates, or attempts to emulate, the Service; and (b) any connection using programs or tools not expressly approved by En Masse;
+
+I. sell, grant a security interest in or transfer reproductions of any part of TERA to other parties in any way not expressly authorized herein, or rent, lease or license any party of TERA to others;
+
+J. sell, transfer or assign any Account, or any items incorporated into or part of TERA, including but not limited to any characters; or
+
+K. infringe a third party’s intellectual property or other rights, or violate any law or regulation applicable to you.",combat_sports,matchmaking,combat_sports,,,,,,
+192974054f98355f,nhl_hockey,medium_negative,116963,"The message was from the head of Valve Software, the influential video game design firm behind such industry-defining titles as the sci-fi shooter Half-Life and the first-person puzzle adventure Portal.",gaming_general,video game,gaming_general,,,,,,
+22e67090c78d4f2b,nhl_hockey,medium_negative,137785,This next very important step to Steam Early Access launch will rely very heavily on this community to ensure all the newcomers experiences are as great as the ones we have already had over the Alpha period.,gaming_general,steam,gaming_general,,,,,,
+21f75f9cc8a3b994,nhl_hockey,medium_negative,90474,He obviously would appreciate a crack at the UFC.,combat_sports,ufc,combat_sports,,,,,,
+a6dcc1f606ec3bbd,nhl_hockey,medium_negative,47869,"In a bout to determine the next light heavyweight title contender on the January FOX main event, Johnson flattened Alexander Gustafsson in 2:15.",combat_sports,heavyweight;main event,combat_sports,,,,,,
+ede99b147a1a0af8,nhl_hockey,background_negative,42409,"Despite its mushrooming value, however, Bank of England Deputy Governor Jon Cunliffe said on Wednesday bitcoin was not big enough to pose a risk to the global economy.",crypto_blockchain,bitcoin,crypto_blockchain,,,,,,
+def393b6bc127da8,nhl_hockey,background_negative,10910,"87–88: “NASA, in another unprecedented move, had inexplicably ordered Mars Observer to shut off its primary data stream prior to executing a key pre-orbital burn… Because NASA had violated the first rule of space travel—you never turn off the radio—no cause for the probe’s loss was ever satisfactorily determined.” Actually, whether a radio is turned on or off, practically all orbital insertion burns on lunar and planetary missions occur out of radio contact.",aviation_aerospace,nasa;orbital,aviation_aerospace,,,,,,
+785c23782d41bd1c,nhl_hockey,background_negative,34080,"A: Vancouver is the preferred destination, by far, because of perceived more relaxed anti-money laundering on-boarding compliance and more importantly, easier access to better schools and lifestyle for children of Chinese foreign nationals.",china,chinese,china,,,,,,
+d15b2c1d3ca7b405,nhl_hockey,background_negative,17655,"In any event, it is unlikely that North Koreans want to leave their fate to the hated Chinese when they can more easily walk across the Demilitarized Zone, the strip of land separating the two Koreas.",china,chinese,china,,,,,,
+2241b7153f86a385,nhl_hockey,background_negative,10836,Your editorial criticized the FAA for not licensing news corporations to use drones.,aviation_aerospace,faa,aviation_aerospace,,,,,,
+d591ee08674ef752,nhl_hockey,background_negative,54319,Scientists from Oxford University investigated the compositions of Martian meteorites found on Earth and data from NASA’s ‘Spirit’ rover that examined surface rocks in the Gusev crater on Mars.,aviation_aerospace,nasa,aviation_aerospace,,,,,,
+f578934e07048a5a,nhl_hockey,background_negative,18890,"Last year China invested more than any other country — and twice as much as the United States — in clean energy, at $ 110.5 billion, according to Bloomberg New Energy Finance.",china,china,china,,,,,,
+04de58ed71321437,nhl_hockey,background_negative,2691,Many believe the success of Taiwan's movement greatly encouraged Hong Kong activists.,china,hong kong,china,,,,,,
+a08cae5efebca1ee,nhl_hockey,background_negative,13136,Tingting brings Chinese buyers for a tour of the Tiptree fruit farm.,china,chinese,china,,,,,,
+c96eebbc1b58eb1f,nhl_hockey,background_negative,49718,"Motivations to Build the Blockchain Embassy in Panama
+
+Bitcoin.com reached out to one of the founders of the Blockchain Embassy (and Cryptobuyer), Jorge Farias, to get some insight on the motivations behind setting up the embassy.",crypto_blockchain,bitcoin;blockchain,crypto_blockchain,,,,,,
+78ae2c51ded4d516,nhl_hockey,background_negative,26095,"Meanwhile the European Central Bank (ECB) showed “openness to new technologies” and said that it intends to assess the relevance of blockchain and distributed ledger technology for various banking services like payments, securities settlement as well as collateral.",crypto_blockchain,blockchain,crypto_blockchain,,,,,,
+220a2fe3571396cf,nhl_hockey,background_negative,43794,"-end-
+
+Related Climate Change Reading:
+
+Global carbon emissions are on the rise again in 2017 after three years of little-to-no growth, according to researchers at the University of East Anglia and the Global Carbon Project.It was previously hoped that emissions might soon reach their peak after three stable years, so the new projection for 2017 is an unwelcome message for policy makers and delegates at the UN Climate Change Conference (COP 23) in Bonn this week.The research, published today simultaneously in the journals, Earth System Science Data Discussions and Environmental Research Letters, reveals that global emissions from all human activities will reach 41 billion tonnes in 2017, following a projected 2% rise in burning fossil fuels.The figures point to China as the main cause of the renewed growth in fossil emissions - with a projected growth of 3.5%.COemissions are expected to decline by 0.4% in the US and 0.2% in the EU, smaller declines than during the previous decade.Increases in coal use in China and the US are expected this year, reversing their decreases since 2013.Lead researcher Prof Corinne Le Quéré, director of the Tyndall Centre for Climate Change Research at UEA, said: ""Global COemissions appear to be going up strongly once again after a three year stable period.",china,china,china,,,,,,
+1289d15cc43fe336,nhl_hockey,background_negative,17651,Many tell us they would try to move north in the event of the destruction of the Kim regime so Beijing is worried about the influx of refugees in its northeastern provinces.,china,beijing,china,,,,,,
+688cb14e501377d4,nhl_hockey,background_negative,17666,"Beijing, however, covets something even more important to China: paper.",china,beijing;china,china,,,,,,
+562ca2675dbadab4,nhl_hockey,background_negative,39784,"The package of drugs the author designed
+
+Over the next few days I scan the courier’s site nervously watching the package’s progress from Shanghai and out of the country.",china,shanghai,china,,,,,,
+4d3f09874c4e0421,nhl_hockey,background_negative,38294,"Of course, ICOs are only a subset of the broader crypto/blockchain movement, but the noise it produces hardly allows outside observers to hear anything else today.",crypto_blockchain,blockchain,crypto_blockchain,,,,,,
+6c6a27edb503b41a,nhl_hockey,background_negative,5695,"That launch vehicle, capable of hefting 53 tons to low-Earth orbit (almost twice the ground-to-LEO payload capacity of the Space Shuttle), has already slipped in its development several times.",aviation_aerospace,payload,aviation_aerospace,,,,,,
+eef2ac16d36db17f,nhl_hockey,background_negative,27659,"This was during China's Cultural Revolution, which Becker refers to as a period of ""debate [and] fierce polemics.""",china,china,china,,,,,,
+d1676cc74eb06edb,nhl_hockey,background_negative,2682,"The meeting attracted little attention, but it marked the first time democracy advocates, including representatives from Hong Kong's political parties and students from both sides, had met in an organised fashion.",china,hong kong,china,,,,,,
+c9b8d692f9b6bbb8,nhl_hockey,background_negative,4071,"DigitalGlobe is enlisting the crowd to scan and tag images of more than 1,200 square miles of ocean for any visible evidence that could help locate the Malaysia Airlines 777 aircraft that went missing this weekend.",aviation_aerospace,aircraft,aviation_aerospace,,,,,,

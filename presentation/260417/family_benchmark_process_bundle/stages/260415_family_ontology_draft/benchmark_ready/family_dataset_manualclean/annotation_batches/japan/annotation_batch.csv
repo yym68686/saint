@@ -1,0 +1,509 @@
+candidate_id,family_id,proposed_bucket,source_row_index,text,matched_query_blocks,matched_terms,matched_family_ids,final_label,keep_for_benchmark,label_confidence,primary_reason,exclusion_trigger,notes
+8abafeeb2ab32226,japan,positive,36970,"And in those six years, he has yet to meet with any foreign head of state—his most significant exchanges with foreigners have been with a Japanese sushi chef and U.S. basketball player Dennis Rodman.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+ae726a044bdbc723,japan,positive,62192,"[525] Canada, China, Mexico, Japan, and Germany are its top trading partners.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+a80bb8640d86c762,japan,positive,74782,[25] And it is the only Japanese university within world top 100.,country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+7029937ca644ac4d,japan,positive,61940,"Other commonly taught languages (with 100,000 to 250,000 learners) include Latin, Japanese, ASL, Italian, and Chinese.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+4263af342c602e7f,japan,positive,9662,"Within the eSports community, I’ve had people (Japanese and non-Japanese alike) personally tell me that Japan simply doesn’t care about international recognition, but that was up for debate.",country_anchor,japan;japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+8f52e9667c37de5b,japan,positive,16024,"That technically makes Norrathian PP a “stronger” currency than the Japanese yen or Italian lira, albeit a thinner and less liquid one.",country_anchor,japanese;yen,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+236b99d8d0a93c29,japan,positive,51264,You’ve always been a big fan of Japan day game.,country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+5c54978dfc6f4521,japan,positive,9623,"That may sound racist, but as someone who lives outside of the major Japanese cities, I can tell you life out here is quite different.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+cd6c80cb4573257b,japan,positive,29918,"""But it was obvious where everyone added a bit at the beginning and a new summary slide to try to keep up with current events.“
+
+He yawned as he listened to the response from one of his colleagues, who was currently in Japan.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+6dc0f9ee5484be9c,japan,positive,90243,"“And we’re probably fewer than the number of pandas in zoos.”
+
+In many ways, Japan seems like it should be the perfect host for Chinese dissidents.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+0bd92f1dade4e551,japan,positive,31218,The Chinese Nationalist Army used the FN M1930 throughout the Second Sino-Japanese War.,country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+e3b0e3c39487424d,japan,positive,9622,"However, culturally speaking, Japanese people would prefer to stay silent and avoid inter-cultural communication issues.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+ae761760b2594d2f,japan,positive,90024,"(MORE: Why South Korea Is in an Uproar over Intelligence Sharing with Japan)
+
+The islands are located in the gulf between the two countries — known as the Sea of Japan by Japanese and the East Sea by South Koreans — and are about the same distance from each.",country_anchor,japan;japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+90013da7187f6506,japan,positive,103631,"There is very little information regarding the anime announcement of The Disappearance of Nagato Yuki-chan, including whether or no Kyoto Animation will produce it.",country_anchor,kyoto,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+068ca3e7dfcb1d82,japan,positive,32949,"More traditional menswear nerd culture began to converge with hype culture, a digital consumer market obsessed with the latest and greatest obscure Japanese brands and anything emblazoned with labels from cult brands like A Bathing Ape, Supreme or Stüssy.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+a2e223fa45d68b63,japan,positive,62690,"There is also wide diversity within the Asian race subgroup, with people claiming roots in China, Japan and the Philippines – nations from which immigrants arrived with the growth of the sugar cane industry in the mid-1800s.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+d1aca35437716729,japan,positive,117036,"I’ve occasionally seen similar in low-budget indie Japanese titles, but that’s about it.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+5a55366eb1cdaab1,japan,positive,7733,…[the] Japanese do not impose one or two exclusive uses for every zone.,country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+e70d7af723b85211,japan,positive,70131,"Part male wish fulfillment, part martial arts movie, and part gonzo anything-goes entertainment as only the Japanese film industry could dream up, Wolf Guy is a bizarre piece of work.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+2cc3b97411662749,japan,positive,19517,"Ekiben and...
+
+Ajinomoto Tokyo Style Shoyu Ramen with Chicken Ajinomoto USA makes a bowl of frozen ramen soup with toppings that is ready after adding water and microwaving for 4 minutes.",country_anchor,tokyo,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+3a8e71bf6acdfa87,japan,positive,74810,"Komaba Campus Building
+
+Main Auditorium
+
+Southern Complex
+
+Shirokanedai Campus [ edit ]
+
+The relatively small Shirokanedai Campus[70] hosts the Institute of Medical Science of the University of Tokyo (IMSUT), which is entirely dedicated to postgraduate studies.",country_anchor,tokyo,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+78e1cc82b92cf082,japan,positive,61795,"[172] The United States developed the first nuclear weapons and used them on Japan in the cities of Hiroshima and Nagasaki; causing the Japanese to surrender on September 2, ending World War II.",country_anchor,japan;japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+ae8bac343fcd16da,japan,positive,90313,"Japanese right-wing publications want his cartoons to be virulently against the Chinese Communist Party, and against Xi, because they think that sells papers.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+80498742de968a80,japan,positive,101496,"But he added that he thought there would be “some clarifications” to the guidance from the U.S. Federal Aviation Administration “in the coming days or weeks that will make clear that we do not recognize this zone, but certain kinds of communication protocols will be followed to avoid a problem.”
+
+“It’s imperfect, but given where we are that is the best we can do.”
+
+In a larger sense, Campbell said, Biden will have to convince China and Japan to cool their heels.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+fc4df508a0adcf3a,japan,positive,24497,"Instead, Japan has now recorded consecutive quarters of contraction for the first time since the global financial crisis.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+308492c6aa88c640,japan,positive,107456,"The Indomitable Great Saiyaman"" and it is scheduled to air on Sunday, Jan. 15 on Fuji TV at 9 a.m. Japan time.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+24dafa2280018ce9,japan,positive,90340,"And yet, he seemed shocked that in Tokyo the nightmares haven’t gone away.",country_anchor,tokyo,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+f283c6125a3af9c4,japan,positive,59112,"The sunset of deed restrictions ten years earlier in the West Jefferson Park community had resulted in the “infiltration” of blacks and Japanese into the neighborhood, which prompted white homeowners associations in West Adams to organize and prevent African and Japanese Americans from settling in their community.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+85233599f556bd56,japan,positive,33525,"Strained ties
+
+The issue has long been a source of friction between Seoul and Tokyo, with South Korea previously accussing Japanese leaders of repeatedly failing to properly atone for wartime atrocities.",country_anchor,japanese;tokyo,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+952f6f38a9b5a7b0,japan,positive,22692,"As we have previously noted, the Japanese cult Aum Shinrikyo attempted to obtain the Ebola virus as part of its biological warfare program.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+3dcb1171b323e3c9,japan,positive,74800,"After the fall of the Osaka Castle, the shōgun gave this pond and its surrounding garden to Maeda Toshitsune.",country_anchor,osaka,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+675b3aca38b545a6,japan,positive,27438,"Asia:
+
+Australian Society for Stem Cell Research (ASSCR); The New South Wales Stem Cell Network; Korean Society for Stem Cell Research; Japanese Society for Regenerative Medicine; Taiwan Society for Stem Cell Research; Stem Cell Society Singapore (SCSS)",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+ce25c3e5a4e892b5,japan,positive,90319,"Failing to find it and fearing the wrath of Qin, Xu took refuge in Japan instead.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+9480fdef274edf76,japan,positive,58642,"Yasujiro Ozu - Japan (1953)
+
+La strada (The Road), Dir.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+433afaaee33eb3fc,japan,positive,113791,"Each piece is crafted in a small-scale workshop in Kanagawa, Japan by wire cut craftsmen who have polished their skills for a long time.■Limited titanium versionsThe Titanium Tweezers of Longinus will only be available through pre-orders in limited quantities.Titanium is a rare metal that is durable, light, and resistant to rusting, and these titanium tweezers are only available now.The Titanium Tweezers come in two colors: red and blue.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+26088d9727a11ccf,japan,positive,7749,"So in neighborhoods full of small single-family homes, you will often see small apartment buildings full of what we would call small studio apartments: one room with a toilet.>
+
+In short, as the author concludes, Japan’s zoning laws are more rational, more efficient and fairer than those used in the United States.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+afea86f493ea98b6,japan,positive,74814,[72] Former prime minister Kiichi Miyazawa ordered Japanese government agencies to reduce the rate of employees who had attended the university's law faculty to below 50 percent due to concerns about diversity in the bureaucracy.,country_anchor;government_and_policy,japanese;japanese government;prime minister,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+e38d3309118130f3,japan,positive,68880,"Speaking in 1981 to auto workers in Detroit, Reagan said: ""And this is where I think government has a role that it has shirked so far, that is, to convince the Japanese that, in one way or another and in their own best interest, the deluge of their cars into the United States must be slowed while our industry gets back on its feet.""",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+8d2189f779aa90d2,japan,positive,109761,"What the additional inches in the wheelbase don't do, however, is add more rear-seat legroom or trunk space – the 2014 Mazda3's 35.8 inches in the back seat equals the Honda Civic but is well shy of some vehicles in its class, namely the VW Jetta and Toyota Corolla , while its 12.5 cubic feet of truck space again about matches that of the Civic and Corolla but falls short of the Chevy Cruze and Jetta Stepping inside the new Mazda3 reveals that the Japanese automaker has been hard at work in an attempt to draw ahead of its peers on both the design and technology fronts.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+20dd3762ba179ef1,japan,positive,116206,"The Templars and some officials have accused the self-defense forces of being a proxy force for the rival Jalisco New Generation cartel, a charge the vigilantes deny.",government_and_policy,self-defense forces,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+bc32110aea506f9d,japan,positive,90226,"In October 2014, he held a wedding ceremony with his girlfriend at a church in Osaka recommended by another Chinese activist.",country_anchor,osaka,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+325dbc90b75d490d,japan,positive,90254,"Wang Jinzhong, a freelance journalist and democracy activist who is unrelated to Rebel and who has lived in Japan since 1987, is effectively stateless.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+e643a31b04f79dc0,japan,positive,74792,"According to the Weekly Economist's 2010 rankings, graduates from Todai have the 12th best employment rate in 400 major companies in Japan.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+badb9597aec70210,japan,positive,9632,"Outside of Neverwinter Online, I was unable to find a Japanese guild in both the Japanese version of Darkfall and ArcheAge, even though I specifically went of out my way to search for them.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+a37bd04c2d302ce3,japan,positive,36972,"His father, Kim Jong-il, on the other hand, bargained and negotiated with the United States, South Korea, and Japan, at least paid lip service on denuclearization, and maintained good ties to China, the North’s primary benefactor.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+7cec2f5e846edccf,japan,positive,74807,The University of Tokyo is the only university in Japan which has a system of two years of general education before students can choose and move on to special fields of study.,country_anchor,japan;tokyo,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+cc1fb1c47f0a3db0,japan,positive,9648,"Most people seem to stereotype Japanese as being overly polite, so you can only imagine what happens when foreigners who are usually accused of being rude taunt a Japanese player.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+de05449e81b2959d,japan,positive,16191,There is more lung disease and more deaths from it than in Europe and older people report more arthritis and other limitations on their activity than in Europe or Japan.,country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+2947cfac97dc9a1a,japan,positive,101484,The two countries have long been loggerheads over uninhabited islands in the East China Sea – the Chinese call them Diaoyu and the Japanese call them Senkaku.,country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+9f995db4b4f0ebeb,japan,positive,9680,It’s actually providing a space where presenting developers are posting about the games they’re bringing to Tokyo Indie Festival.,country_anchor,tokyo,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+efbb4c33a683b700,japan,positive,53579,"Capitalism no longer delivers a rising standard of living in the regions where it began and developed first: Western Europe, North America and Japan.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+f4d3f71b91774c59,japan,positive,27432,"Asia:
+
+Japanese Society for Regenerative Medicine; Australian Society for Stem Cell Research (ASSCR); The New South Wales Stem Cell Network; Korean Society for Stem Cell Research; Taiwan Society for Stem Cell Research; Stem Cell Society Singapore (SCSS);
+
+Stem Cell Engineering (SCE)
+
+Stem cell engineering (SCE) was to gather information on the worldwide status and trends of research and development in field SCE, that is, the engineers and engineering approaches in the stem cell field, both in basic research and translation of research into clinical applications and commercial products.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+2f26a0169256f701,japan,positive,109885,"After a two years wait, Tokyo Xanadu, a recent title they developed, was released on the PS Vita in English.",country_anchor,tokyo,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+8293f9d9b7ffa298,japan,positive,24474,"Japan's exports have also declined amid economic contraction [File: EPA]
+
+Japan's economy has slipped into recession after a worse than expected performance for the first quarter of the year.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+44a7e05bf6984b1b,japan,positive,5193,"Japan and the U.S. agreed in secret in April 2015 on what the content provisions of automobiles ought to be and then “foisted” the agreement on Canada and Mexico, said Volpe.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+cd6276cc6120885b,japan,positive,24491,"Even before the disaster, Japan's economy was shaky.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+9649279a859cf513,japan,positive,33524,"Yun Byung-se said the agreement was ""final and irreversible,"" as long as Japan faithfully followed through with its promises.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+24f34df5d4a61236,japan,positive,24237,"You know, things like toasting each other with champagne every night for a week, lounging on the beach and giggling as we call each other Mr. and Mrs. Baseel, or beating the hell out of a convenience store clerk, like the Chinese newlyweds who are not only just married, but were also just arrested in Japan.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+88572113d5aec27e,japan,positive,47722,"Director John Schlesinger intercuts footage of a petrified, bloody Hoffman with the placid Bikila from the Tokyo Olympiad official film to striking effect.",country_anchor,tokyo,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+78da766d61c7de01,japan,positive,84477,"“We are under consultation with a limited number of staff in the European publishing business and will be able to confirm decisions regarding any potential redundancies in the coming weeks,""
+
+Sega had long been making a good deal of their revenue from their Japanese arcades or pachinko business.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+301f39d416fda1ef,japan,positive,24495,"After four solid quarters of growth, Japan's GDP turned negative in the last three months of 2010 due to weaker exports and consumer demand.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+4ebf869d33d0bb69,japan,positive,95084,"It has conducted two nuclear tests and a series of missile-related activities at an unprecedented pace since the beginning of last year.The North is technically still at war with the South after their 1950-53 conflict ended in a truce, not a treaty, and regularly threatens to destroy the United States, Japan and South Korea.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+3ad028c04e5d92bc,japan,positive,27972,"Each of the products added were released between 2009 and 2010.The report specifically pertains to Apple's vintage and obsolete products list in Japan, but the new additions will more than likely extend to the United States, Australia, Canada, and the rest of the Asia-Pacific and Europe regions.Apple already obsoleted CDMA models of the iPhone 4 around the world last month, while the late 2010 MacBook Air joins the mid 2009 iMac, 2010 Mac mini, and mid 2010 15-inch and 17-inch MacBook Pro among Apple's recently obsoleted notebooks.macOS Sierra remains compatible with the late 2010 MacBook Air, while the iPhone 4 cannot be updated beyond iOS 7.1.2.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+ee517304985bfd0e,japan,positive,27348,"Related Regenerative Medicine Conferences | Stem Cell Conferences | Stem Cell Congress | Tissue Science Conferences | Europe Conferences
+
+9th Advanced Cell and Gene Therapy conference, March 21-22, 2019 Rome, Italy; 12th Genomics and Molecular Biology conference, April 15-17, 2019 Berlin, Germany; 7th Integrative Biology conference, April 15-16, 2019 Berlin, Germany; Pacific Regenerative Medicine Conference, May 16-19, 2019 Hawaii, USA; Annual conference & Exhibition on Transversal, Translational & Transformative, December 2-5, 2019 Florida, USA; 21st International Conference on Tissue Engineering and Regenerative Medicine, June 27 - 28, 2019 London, United Kingdom; World Advanced Therapies & Regenerative Medicine Congress 2019, May 15 – 17, London, UK; 6th Annual European Congress on Clinical & Translational Sciences, October 18-20, 2019 Vienna, Austria;
+
+Related Associations and Societies:
+
+Europe:
+
+EuroStemCell (European Consortium for Stem Cell Research); German Stem Cell Network (GSCN); German Society for Stem Cell Research (GSZ); Stem Cell Network North Rhine-Westphalia (NRW); Norwegian Center for Stem Cell Research (NCSCR);
+
+USA:
+
+California Institute for Regenerative Medicine (CIRM); New York Stem Cell Foundation (NYSCF); Tissue Engineering International & Regenerative Medicine Society (TERMIS); International Society for Stem Cell Research (ISSCR);
+
+Asia:
+
+The New South Wales Stem Cell Network; Korean Society for Stem Cell Research; Japanese Society for Regenerative Medicine; Taiwan Society for Stem Cell Research; Stem Cell Society Singapore (SCSS);
+
+Rejuvenation
+
+Rejuvenation is a medical discipline focused on the practical reversal of the aging process.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+ac43ede453dbde48,japan,positive,64415,"Japanese bank Nomura’s latest “food vulnerability index” ranked Hong Kong as the world’s 17th most vulnerable place, not far behind such countries as Bangladesh, Syria, and Algeria.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+02cb3157468f53aa,japan,positive,80652,"The story of Corpse Party starts late at night in Kisaragi Academy, a normal Japanese high school.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+1855dfc332ce50c4,japan,positive,62083,"[420]
+
+The United States has a ""Special Relationship"" with the United Kingdom[421] and strong ties with Canada,[422] Australia,[423] New Zealand,[424] the Philippines,[425] Japan,[426] South Korea,[427] Israel,[428] and several European Union countries, including France, Italy, Germany, and Spain.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+03c4847131dcba15,japan,positive,7726,"In Laissez-Faire in Tokyo Land Use I pointed to Japan’s constitutional protection of property rights and it’s relatively laissez-faire approach to land use to explain why housing prices in Japan have not risen in past decades, as they have elsewhere in the developed world.",country_anchor,japan;tokyo,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+99f97141e956ad65,japan,positive,98960,"While Japanese reviews on Amazon are known for being a bit more harsh than their western counterparts, an average score of 1.4 stars is still pretty low for any title, let alone a Mobile Suit Gundam game, which usually gets at least 3 or 4 stars on average.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+7a53e830c8c70e35,japan,positive,74791,Todai alumni are distinctively successful in Japanese industries.,country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+50abb66da54131b3,japan,positive,31320,"[66]
+
+While new-production M1918A2 guns were almost universally praised for faultless performance in combat, a number of malfunctions in combat were reported with armory-reconditioned M1918A2s, particularly weapons that had been reconditioned by Ordnance in Japan, which did not replace operating (recoil) springs as a requirement of the reconditioning program.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+7cf75d9023f60ec1,japan,positive,75852,"Scientists trace the isotopes to Japan because they are products of nuclear fission—iodine-131, xenon-133, and cesium-137.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+3d4f01a55616740d,japan,positive,98956,"Gundam Extreme VS Force Is Getting Plasma-Blasted By Amazon Reviews In Japan
+
+By Sato .",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+e3189837939884ac,japan,positive,9613,"Everyone I spoke to who knows Blizzard’s games enjoyed them, but when asked why the games didn’t seem popular, the answer was always the same: no Japanese language support, until recently.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+507b2e4f19a7c193,japan,positive,74806,This is the campus where all the freshmen and sophomores of the University of Tokyo spend their college life.,country_anchor,tokyo,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+84a0ff71168c09f3,japan,positive,117373,"Media Contacts Panasonic Corporation Tokyo Public Relations Office Tel: +81-(0)3-3574-5664 Fax: +81-(0)3-3574-5699
+
+Panasonic News Bureau Tel: +81-(0)3-3542-6205 Fax: +81-(0)3-3542-9018
+
+Tesla Motors press@teslamotors.com Tel: 650-681-5250/650-681-5113
+
+Interested in keeping up with Tesla Motors?",country_anchor,tokyo,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+cddc06974a4fa915,japan,positive,51598,And then there's Japan.,country_anchor,japan,japan,drop,no,high,duplicate_or_low_quality,too_short_or_fragment,batch_bucket=positive; override=too_short_fragment
+248990d066e2eb0c,japan,positive,27366,"Related Regenerative Medicine Conferences | Stem Cell Conferences | Stem Cell Congress | Tissue Science Conferences | Europe Conferences
+
+9th Advanced Cell and Gene Therapy conference, March 21-22, 2019 Rome, Italy; 12th Genomics and Molecular Biology conference, April 15-17, 2019 Berlin, Germany; 7th Integrative Biology conference, April 15-16, 2019 Berlin, Germany; Pacific Regenerative Medicine Conference, May 16-19, 2019 Hawaii, USA; Annual conference & Exhibition on Transversal, Translational & Transformative, December 2-5, 2019 Florida, USA; 21st International Conference on Tissue Engineering and Regenerative Medicine, June 27 - 28, 2019 London, United Kingdom; World Advanced Therapies & Regenerative Medicine Congress 2019, May 15 – 17, London, UK; 6th Annual European Congress on Clinical & Translational Sciences, October 18-20, 2019 Vienna, Austria;
+
+Related Associations and Societies:
+
+Europe:
+
+EuroStemCell (European Consortium for Stem Cell Research); German Stem Cell Network (GSCN); German Society for Stem Cell Research (GSZ); Stem Cell Network North Rhine-Westphalia (NRW); Norwegian Center for Stem Cell Research (NCSCR);
+
+USA:
+
+California Institute for Regenerative Medicine (CIRM); New York Stem Cell Foundation (NYSCF); Tissue Engineering International & Regenerative Medicine Society (TERMIS); International Society for Stem Cell Research (ISSCR);
+
+Asia:
+
+The New South Wales Stem Cell Network; Korean Society for Stem Cell Research; Japanese Society for Regenerative Medicine; Taiwan Society for Stem Cell Research; Stem Cell Society Singapore (SCSS);
+
+Bioreactors in Tissue Engineering
+
+Bioreactors in Tissue Engineering a bioreactor is a device that utilizations mechanical intend to impact organic procedures.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+6e13a111dac0bb89,japan,positive,10624,"This is ""strong style,"" the notorious Japanese approach to pro-wrestling, now available with English commentary on AXS, a channel I had no idea existed.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+e0464adda14b0c5b,japan,positive,37053,"New Languages, teams and analyzing data with Excel & CSV files
+
+Exciting news – we have finished integrating Chinese, Japanese, Korean and Arabic native support within MonkeyLearn.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+307b9522308ac00c,japan,positive,75265,"Your browser does not support HTML5 video tag.Click here to view original GIF
+
+Here’s a really fun drone ballet performed in front of Mount Fuji in Japan.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+7df29e4d3ce4970a,japan,positive,54676,"In each movement, whether to China, Japan, or Cambodia, it takes on the hues of the local culture without losing its original spiritual impulse.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+8db438a719bc5e07,japan,positive,90301,"And a senior government official, who asked to speak on background so that he could speak freely, said, “Japan has no tendency to embarrass China just for the sake of embarrassing them.”
+
+Indeed, the United States is probably the only country with both the willingness and the ability to provoke the ruling Chinese Communist Party by enabling dissidents, both inside and outside China.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+431cf5fe255a7f81,japan,positive,90297,"“As far as I know, the Japanese policy on asylum and refugee seekers is a really harsh one,” Kanae Doi, Japan director for Human Rights Watch, told me.",country_anchor,japan;japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+9e96dca3e263d81b,japan,positive,78377,"Top 10 emitters 2013 % of global total China 29 USA 15 EU 10 India 7.1 Russian Federation 5.3 Japan 3.7 Germany 2.2 Republic of Korea 1.8 Iran 1.8 Saudi Arabia 1.5
+
+Source: Global Carbon Project",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+62317b9666790ced,japan,positive,87112,RT:Experts say Japan is obviously failing to safely clean up the plant and needs help from outside.,country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+cff6c35629613822,japan,positive,27375,"Related Regenerative Medicine Conferences | Stem Cell Conferences | Stem Cell Congress | Tissue Science Conferences | Europe Conferences
+
+9th Advanced Cell and Gene Therapy conference, March 21-22, 2019 Rome, Italy; 12th Genomics and Molecular Biology conference, April 15-17, 2019 Berlin, Germany; 7th Integrative Biology conference, April 15-16, 2019 Berlin, Germany; Pacific Regenerative Medicine Conference, May 16-19, 2019 Hawaii, USA; Annual conference & Exhibition on Transversal, Translational & Transformative, December 2-5, 2019 Florida, USA; 21st International Conference on Tissue Engineering and Regenerative Medicine, June 27 - 28, 2019 London, United Kingdom; World Advanced Therapies & Regenerative Medicine Congress 2019, May 15 – 17, London, UK; 6th Annual European Congress on Clinical & Translational Sciences, October 18-20, 2019 Vienna, Austria;
+
+Related Associations and Societies:
+
+Europe:
+
+EuroStemCell (European Consortium for Stem Cell Research); German Stem Cell Network (GSCN); German Society for Stem Cell Research (GSZ); Stem Cell Network North Rhine-Westphalia (NRW); Norwegian Center for Stem Cell Research (NCSCR);
+
+USA:
+
+California Institute for Regenerative Medicine (CIRM); New York Stem Cell Foundation (NYSCF); Tissue Engineering International & Regenerative Medicine Society (TERMIS); International Society for Stem Cell Research (ISSCR);
+
+Asia:
+
+The New South Wales Stem Cell Network; Korean Society for Stem Cell Research; Japanese Society for Regenerative Medicine; Taiwan Society for Stem Cell Research; Stem Cell Society Singapore (SCSS);
+
+Cancer Stem Cells
+
+Cancer stem cells (CSCs) are cancer cells (found within tumors or hematological cancers) that possess characteristics associated with normal stem cells, specifically the ability to give rise to all cell types found in a particular cancer sample.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+38364b5ff23b9678,japan,positive,75845,"""We continue to expect similar reports from state agencies and others across the nation given the nature and duration of the Japanese nuclear incident.""",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+6660f71ae8e26078,japan,positive,90335,“I don’t think Tokyo sees another Sun Yat-sen coming in.,country_anchor,tokyo,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+d31a207f1a0e1345,japan,positive,74781,"In January 2011, Repec ranked Todai's Economics department as Japan's best economics research university.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+f183c8308c484ce2,japan,positive,27328,"There have been countless journals and research papers focusing in on these clinical trials that have revealed promising results from these initial trials around the world
+
+Related Regenerative Medicine Conferences | Stem Cell Conferences | Stem Cell Congress | Tissue Science Conferences | Europe Conferences
+
+9th Advanced Cell and Gene Therapy conference, March 21-22, 2019 Rome, Italy; 12th Genomics and Molecular Biology conference, April 15-17, 2019 Berlin, Germany; 7th Integrative Biology conference, April 15-16, 2019 Berlin, Germany; Pacific Regenerative Medicine Conference, May 16-19, 2019 Hawaii, USA; Annual conference & Exhibition on Transversal, Translational & Transformative, December 2-5, 2019 Florida, USA; 21st International Conference on Tissue Engineering and Regenerative Medicine, June 27 - 28, 2019 London, United Kingdom; World Advanced Therapies & Regenerative Medicine Congress 2019, May 15 – 17, London, UK; 6th Annual European Congress on Clinical & Translational Sciences, October 18-20, 2019 Vienna, Austria;
+
+Related Associations and Societies:
+
+Europe:
+
+EuroStemCell (European Consortium for Stem Cell Research); German Stem Cell Network (GSCN); German Society for Stem Cell Research (GSZ); Stem Cell Network North Rhine-Westphalia (NRW); Norwegian Center for Stem Cell Research (NCSCR);
+
+USA:
+
+California Institute for Regenerative Medicine (CIRM); New York Stem Cell Foundation (NYSCF); Tissue Engineering International & Regenerative Medicine Society (TERMIS); International Society for Stem Cell Research (ISSCR);
+
+Asia:
+
+The New South Wales Stem Cell Network; Korean Society for Stem Cell Research; Japanese Society for Regenerative Medicine; Taiwan Society for Stem Cell Research; Stem Cell Society Singapore (SCSS);
+
+Biomaterials & Bioengineering
+
+Biomaterials are being utilized for the social insurance applications from old circumstances.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+9c5d202513342ee4,japan,positive,32449,"The system reached a new sales low in November when it managed to sell only 4,021 units across Japan in a week, placing behind even the ancient PlayStation Portable and selling less than 1/46th as much as the 3DS in the same period.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+c1f0912421015ab4,japan,positive,74760,"Kikuchi Dairoku, an important figure in Japanese education, served as president of Tokyo Imperial University.",country_anchor,japanese;tokyo,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+7126ca758559817c,japan,positive,19621,"At that time, when Japan had conquered many Southeast Asian countries in India’s vicinity, Bose was making arrangements to go from Germany to Japan – from whose occupied territories the INA’s assault on British forces was launched in October the following year.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+36cbec2c51649d87,japan,positive,19619,"During this period, addressing the Hindu Mahasabha session at Bhagalpur in 1941, Savarkar told his followers:
+
+“..it must be noted that Japan’s entry into the war has exposed us directly and immediately to the attack by Britain’s enemies…Hindu Mahasabhaites must, therefore, rouse Hindus especially in the provinces of Bengal and Assam as effectively as possible to enter the military forces of all arms without losing a single minute.”
+
+In reciprocation, the British commander-in-chief, “expressed his grateful appreciation of the lead given by Barrister Savarkar in exhorting the Hindus to join the forces of the land with a view to defend India from enemy attacks,” according to Hindu Mahasabha archives perused by Shamsul Islam.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+5061afc07c13b567,japan,positive,9675,The availability of World of Tanks and its Japanese client certainly drew attention to the event Keiko helped with!,country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+410b2c62f872cfbe,japan,positive,101489,"That advice made the Japanese, with whom the U.S. has a military defense treaty, none too happy.",country_anchor,japanese,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+9849f1ea4940552c,japan,positive,10590,"Illustrations by Ben Passmore
+
+You probably aren't getting into heaven if you enjoy watching New Japan Pro Wrestling.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+b14120b59935fa53,japan,positive,49423,"As there are no wild hedgehogs in Japan, seeing one is quite a treat.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+808e60df6d0a196d,japan,positive,83657,"Shining Resonance Re:frain is a remastered version of Shining Resonance, which was released for PlayStation 3 in Japan in December 2014.",country_anchor,japan,japan,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+191a5a15ef31191f,japan,local_hard_negative,960964,"This meeting led Tezuka Osamu to publish ""Jungle Emperor Leo"" in ""Manga Shonen"" magazine in serial form.",adjacent_culture_and_asia_confounders,manga,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+03517833187187d2,japan,local_hard_negative,222285,"In May 2011, before the project got shelved due to budget issues, before Jaume Collet-Serra took over, but after Ruairi Robinson took his turn, Albert Hughes (From Hell, The Book of Eli and more with brother Allen) walked away from plans to direct a Hollywood live-action adaptation of the Akira anime/manga.",adjacent_culture_and_asia_confounders,anime;manga,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+823b1d046b1767f9,japan,local_hard_negative,1417878,Yū launched the manga adaptation of the Ōkami Kodomo no Ame to Yuki ( Wolf Children ) film in Kadokawa Shoten's Young Ace magazine last year using Yoshiyuki Sadamoto's character designs.,adjacent_culture_and_asia_confounders,manga,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+5131143fde939b47,japan,local_hard_negative,421138,"Nyarko-san W, which aired during the Spring 2013 Anime lineup.",adjacent_culture_and_asia_confounders,anime,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+a3226d93cf071d92,japan,local_hard_negative,13417,"The original manga revolves around high school boy Ryōta Murakami, who cannot forget his female childhood friend whom he let die in an accident.",adjacent_culture_and_asia_confounders,manga,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+ae7b2da676ae88ba,japan,local_hard_negative,1461023,"In manga, sports and martial arts even look the same.",adjacent_culture_and_asia_confounders,manga,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+c2a4ef6d677b6066,japan,local_hard_negative,103172,Well it turns out Psycho is based on the space car Psychoroid from the anime Cobra: Space Adventure.,adjacent_culture_and_asia_confounders,anime,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+f1d77cdf3c493eec,japan,local_hard_negative,535928,great's manga of the same name.,adjacent_culture_and_asia_confounders,manga,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+c77bc066aa76d9aa,japan,local_hard_negative,754819,"SEOUL (Reuters) - North Korea has conducted a test of a new high-thrust engine at its Tongchang-ri rocket launch station and leader Kim Jong Un said the successful test was “a new birth” of its rocket industry, the reclusive North’s official media said on Sunday.",adjacent_culture_and_asia_confounders,seoul,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+10353d673cbee9ef,japan,local_hard_negative,1281231,"A criticism — at the very least, a comment that causes friction — of anime today is that the animators themselves have been influenced by anime only, rather than real life.",adjacent_culture_and_asia_confounders,anime,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+239450f979e2c839,japan,local_hard_negative,1416787,"When Seoul says Beijing needs to be more humanitarian in treatment of refugees, it can be interpreted as basically providing a bottle of water as they are trucked back across the Tumen River,” said the Seoul-based blogger known as the Spelunker, who specializes in China and North Korea issues and maintains his anonymity.",adjacent_culture_and_asia_confounders,seoul,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+da057d607aac97f7,japan,local_hard_negative,1009112,"Robert Kelly, an assistant professor at Pusan National University in South Korea, says that Seoul's increasing global stature may have provoked Pyongyang.",adjacent_culture_and_asia_confounders,seoul,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+00a7403e8490abbf,japan,local_hard_negative,697448,"His interests mostly involve games, anime, or robots (or a combination of the three).",adjacent_culture_and_asia_confounders,anime,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+53b5fa8ae4343299,japan,local_hard_negative,969757,"At least 750,000 people were displaced by the Seoul Games, when the government cleared low-income areas for stadiums.",adjacent_culture_and_asia_confounders,seoul,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+fd8a442ee3fce9eb,japan,local_hard_negative,606088,"This anime is a fantasy set in the real world, but the real-world implications of murder are never really addressed.",adjacent_culture_and_asia_confounders,anime,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+6e144e2300503e64,japan,local_hard_negative,421270,"Color Failure: Throughout the first anime... Mahiro has one near the end of Episode 1 after seeing Nyarko brutally beat a Nightgaunt to a bloody pulp — beside him his ""Sanity Meter"" is also shown going down the drain — and again at the end of Episode 3, when Yoriko calls him telling she's coming home.",adjacent_culture_and_asia_confounders,anime,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+4aceb57c321f6ce5,japan,local_hard_negative,421779,4koma manga adds Nakko and also extends the role of the humanized Shantak-kun.,adjacent_culture_and_asia_confounders,manga,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+6d80b6895f5e0e5e,japan,local_hard_negative,747522,North Korean authorities have repeatedly urged Seoul to stop such actions and have threatened to shell the area where the activists are carrying out their launches.,adjacent_culture_and_asia_confounders,seoul,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+366242ad1f5e649c,japan,local_hard_negative,594789,12 Stop the Bitch Campaign (trilogy) A black comedy series based on a manga.,adjacent_culture_and_asia_confounders,manga,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+658409a53f510308,japan,local_hard_negative,293176,"The complaint does not identify the anime, but some Internet users believe it refers to an episode of Scum's Wish that was broadcast in January.",adjacent_culture_and_asia_confounders,anime,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+a8e4b48373c7ef9f,japan,local_hard_negative,508172,"Sometimes being a male K-Pop fan can be tough, especially when you’re a fan of a male group in a sea of fangirls.",adjacent_culture_and_asia_confounders,k-pop,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+65ba0d5adb2a9603,japan,local_hard_negative,359207,"'We are trained for hostile environments, but it's hard to be brave when we meet bodies in dark water,' said diver Hwang Dae-sik, as the funerals of 25 students were held near the capital Seoul.",adjacent_culture_and_asia_confounders,seoul,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+57d65022490825a0,japan,local_hard_negative,1417871,"Sentai Filmworks is releasing the anime in North America, and Crunchyroll streamed the series as it aired.",adjacent_culture_and_asia_confounders,anime,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+696cdbaa13529ae6,japan,local_hard_negative,1472137,It’s perfectly fine to hope that you’ll get to see your favorite manga licensed.,adjacent_culture_and_asia_confounders,manga,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+aff35282b6819857,japan,local_hard_negative,197545,"Our experiences at local and national conventions with selling Ryuutama has been that anime and manga fans have heard of role-playing: Many want to try it, they're very interested in it, but the price point and learning curve has been an issue.",adjacent_culture_and_asia_confounders,anime;manga,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+2221ad39b2848ddc,russia_post_soviet,positive,113850,"Russia is a big nation and it does have tremendous significance for peace on our continent in the 21st century, but Moscow also has to adhere to international law.",region_anchor,moscow;russia,russia_post_soviet,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+1ce38ce5e0208e37,us_electoral_politics,positive,55437,"According to the Hollywood Reporter, Chong noted that Sanders “was happy to have his endorsement months back, but when it came time for the two men to appear in public together, someone got ‘cold feet.",voting_mechanics,endorsement,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+471bf979b88ef1ec,us_electoral_politics,positive,188177,"""People in general probably shouldn't smoke it, but for medical reasons I'm all for it,""
+
+Betty Harrison, Arkansas Voter said
+
+The Arkansas Cannabis Amendment would allow doctors to prescribe medical marijuana, which US Congressional candidate Steve Isaacson argues would benefit people with chronic pain, cancer, even PTSD.",candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+27351a38be362430,us_electoral_politics,positive,97572,"As a result the most confident outspoken candidate is seen as better than the calm rational ones, and thus we get candidates who confidently express the most extreme opinions about other groups of people, and those who relate to them support them, rather than disown them.",candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+448fc2ae499e0cef,us_electoral_politics,positive,177544,"The news program displayed a slide from the NSA with passages written by Mexican President Enrique Pena Nieto from June 2012, when he was a candidate for the presidency.",candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+f6ae6fd11bbeb77d,russia_post_soviet,positive,13007,"So, he comes up with something else: some of Manafort’s associates in Ukraine “were rumoured to have links with Russian intelligence.” Note the use of the word “rumoured”.",region_anchor,russian;ukraine,russia_post_soviet,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+aae1b18961c86a5f,russia_post_soviet,positive,37589,The St. Louis Blues aren't ready to cut ties with Russia-bound forward Vladimir Sobotka just yet.,region_anchor,russia,russia_post_soviet,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+e0122300147a8453,china,positive,37669,"Image: REN21
+
+According to data published by REN21, at the end of 2016 China had 77.4GW of solar PV installed, representing more than a quarter of the global total.",country_anchor,china,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+b0de6e9ec11839e1,us_electoral_politics,positive,163557,"TRUMP Clockwise, from upper left: Christie and Senator Marco Rubio during a January 14, 2016, GOP presidential debate; Christie stands behind Trump during a rally at the Forth Worth Convention Center in Texas, announcing his endorsement of the businessman’s candidacy ahead of the March 2 “super Tuesday” elections; On Nov. 20, 2016, President-elect Trump and Gov.",voting_mechanics,endorsement,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+78bc88cc14fa3821,us_electoral_politics,positive,81128,"That is to say, when the electoral vote outcome is so obviously going to be for one candidate or the other, an occasional Elector casts a vote for some personal favorite knowing full well that it will not make a difference in the result.",candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+69c3aa2d2b042c75,us_electoral_politics,positive,164878,"Here is part of what the site says about the groups origins: Former U.S. Senate candidate, Rick Weiland, and former Chief of Staff to U.S.",candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+faaec06586b744dd,russia_post_soviet,positive,102703,"They would sell it to Russia,"" Karlis Kalnins, a musician, told AFP in the capital Riga.",region_anchor,russia,russia_post_soviet,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+7392d5594a5f4b6f,china,positive,37010,Make sure to consult closely with China and Russia to keep them on board with the ever-tightening sanctions regime.,country_anchor,china,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+93f007fc6522b9f6,us_electoral_politics,positive,204664,All the available polling shows that most voters want less migration – though it also suggests that their desire to see a reduction is matched by cynicism about the politicians’ willingness to provide one.,election_anchor,polling,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+1bd81ec23697245b,china,positive,69355,Beijing is currently hosting an informal meeting for defence ministers from the region.,country_anchor,beijing,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+5b2a797f03b59b9e,china,positive,27691,"He sides with CCP leader Li Peng, who said there were ""sufficient human rights"" in China--just prior to ordering troops to crush the Tiananmen resistance.",country_anchor;policy_and_state,ccp;china,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+fe7f086fd9b5aabb,us_electoral_politics,positive,186610,"There are 120 unpledged Republican delegates overall, who are Republican National Committee members, and are free to support any candidate they choose, representing 5 percent of the total number of delegates.",candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+45f4e8707c897fa3,us_electoral_politics,positive,146232,"That fight, also in Brooklyn, was a 2016 fight of the year candidate.",candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+795bb65c366bfa4e,russia_post_soviet,positive,583,"COMPUTER PIRACY
+
+The frequent use of pirated software in Russia also helped spread the Wannacry infection, investigators said, as unlicensed products do not receive security updates.",region_anchor,russia,russia_post_soviet,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+4c9bad9ec40ca6be,us_electoral_politics,positive,176227,"His marketing agency dropped him before the charges were filed, and Nike confirmed last week that it no longer has an endorsement deal with Manziel.",voting_mechanics,endorsement,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+ba1c25f0ecaaca1d,china,positive,90248,"While Japan is more expensive than China, its cities rank among the world’s most livable.",country_anchor,china,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+d5be84486c20b23a,china,positive,91585,"“The long-term solution is to work with our partners in China and build confidence in the process in the way we want it to work,” he said.",country_anchor,china,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+ad29c9b63f6e4075,russia_post_soviet,positive,93421,"As such, Ukraine’s problems are little more than a propaganda proxy war where our own political fights are transferred to Ukraine’s and Russia’s context, warping the truth to score domestic spat points.",region_anchor,russia;ukraine,russia_post_soviet,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+836bf88ef6aaa332,us_electoral_politics,positive,158341,The vast majority say Trump because they feel he’s less likely to bomb them.” Presidential rhetoric was not sufficient compensation for the lives and homes that would be destroyed by the increased onslaughts that Democratic candidate Hillary Clinton seemed to promise.,candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+10fb0f791f76b9d5,us_electoral_politics,positive,77102,"Then again, maybe her chosen Presidential candidate wasn't any prize, either:
+
+The Cubs Schlafly is a real contender this year
+
+Trump almost immediately deleted the tweet, but screenshots are forever.",candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+8794d984a77dd3db,china,positive,70003,"Teens in Hong Kong climbed atop a skyscraper to eat a banana and take a selfie, resulting in what some are calling the ""world's scariest selfie"" and what Google News is calling over 100 articles.",economy_and_society,hong kong,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+9cbcb614ae8f4648,russia_post_soviet,positive,6082,"People tend to adapt to smaller deviations.”
+
+Researcher Leontiy Byzov from the Russian Academy of Sciences’ Sociology institute said in comments with Kommersant daily that the picture revealed by the poll could be explained by the fact that the average Russian thought that the economic crisis was imposed by hostile forces from abroad and therefore could not be really deep or serious.",region_anchor,russian,russia_post_soviet,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+1479503721ae72a3,us_electoral_politics,positive,123337,"Victoria Jones/PA 36/43 Philip Hammond and David Davis at a General Election campaign event in Central London Jeremy Selwyn 37/43 Pensioner Malcolm Baker confronts Liberal Democrat leader Tim Farron while he was the election campaign trail in Kidlington, near Oxford Sam Lister/PA 38/43 Prime Minister Theresa May eats chips as she meets with residents in Mevagissey, south-west England Dylan Martinez/AFP/Getty Images 39/43 Conservative party handout of Labour leader Jeremy Corbyn on a new poster, warning that families face a tax and debt bombshell under Jeremy Corbyn's leadership Conservative Party/PA 40/43 Nick Clegg delivers a campaign speech on the European Union at the National Liberal Club in London Stefan Rousseau/PA 41/43 Ukip leader Paul Nuttall (left) eats grapes during a walkabout in Dudley town centre in the West Midlands, with Ukip West Midlands MEP Bill Etheridge (right) and Phil Durnell, West Midlands Metro Mayor candidate Richard Vernalls/PA 42/43 Former Labour Party leader Ed Miliband retweeted a photo of him mowing a lawn whilst canvassing in his Doncaster North constituency Jane Nightingale 43/43 Prime Minister Theresa May makes a statement on 18 April calling for a general election Dan Kitwood/Getty Images 1/43 Jeremy Corbyn joins leaders for the BBC's Election Debate Stefan Rousseau/PA 2/43 Prime Minister Theresa May samples cheese at the Royal Bath and West Show in Shepton Mallet Leon Neal/Pool/Reuters 3/43 First Minister Nicola Sturgeon during the launch of the SNP General Election manifesto at Perth Concert Hall Jane Barlow/PA 4/43 Former Deputy Prime Minister Nick Clegg at the launch in central London of a Liberal Democrats campaign poster attacking the Conservatives' school meals policy Victoria Jones/PA 5/43 Jeremy Corbyn appears on The One Show BBC 6/43 Liberal Democrats leader Tim Farron and the party's local candidate Sir Simon Hughes are given a baking lesson at Comptoir Gourmand, an artisan bakery in Bermondsey, London Gareth Fuller/PA 7/43 Prime Minister Theresa May answers questions from the studio audience during a joint Channel 4 and Sky News general election programme recorded at Sky studios Stefan Rousseau/PA 8/43 Labour leader Jeremy Corbyn is interviewed by Jeremy Paxman during a joint Channel 4 and Sky News general election programme 'May v Corbyn Live: The Battle for Number 10' at Sky studios Stefan Rousseau/WPA Pool/Getty Images 9/43 Home Secretary Amber Rudd (left) and Shadow Home Secretary Diane Abbott appearing on the BBC One current affairs programme, The Andrew Marr Show.",candidate_and_party;election_anchor,campaign trail;candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+2820413ab4ba4ff5,china,positive,46856,Xunlei was developed by Thunder Networking Technologies and is based in the southern province of Shenzhen.,economy_and_society,shenzhen,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+4d06a9716d676931,us_electoral_politics,positive,149628,"Since then, more modern systems have been introduced and include electronic machines in polling stations operated by buttons or touchscreens which connect to a central database.",election_anchor,polling,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+1260b71a602b0dda,us_electoral_politics,positive,81117,"A second way in which a minority president could take office is if, as in 1888, one candidate's popular support were heavily concentrated in a few States while the other candidate maintained a slim popular lead in enough States to win the needed majority of the Electoral College.",candidate_and_party;election_anchor,candidate;electoral college,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+aa91623bc0edfc07,china,positive,27654,"Besides being born in Hong Kong, I lived on the mainland as well, where I attended public primary school.",economy_and_society,hong kong,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+2771e0ebe5ad31f3,us_electoral_politics,positive,81187,"Finally, its proponents argue quite correctly that the Electoral College maintains a federal system of government and representation.",election_anchor,electoral college,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+a885b81f33f5b502,china,positive,78376,"Mr Obama said the US would not intervene in South China Sea territorial disputes, but said it had an interest in freedom of navigation and that it hoped the conflicts would be resolved peacefully.",country_anchor,china,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+08f6e31e80e72f63,us_electoral_politics,positive,152383,"“Each person has a different calibration on where ‘go’ means ‘go’ and where ‘no’ means ‘no.’ I wouldn’t attempt to suggest for another where their own lines ought to be on that balancing act of personal philosophy and assigned roles or jobs, but what I would say is that I wish Mick the absolute best.”
+
+Trump and his other advisers, however, see Mulvaney as their bridge to the Freedom Caucus, believing he still has unique credibility with the conservative hard-liners, however hostile they may be to some of the administration’s priorities.",candidate_and_party,caucus,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+3f47ae65d2dbdc81,us_electoral_politics,positive,55152,"The protest was one of several in U.S. cities in the wake of Tuesday’s election of the GOP candidate, notably in Chicago, New York, Los Angeles, Detroit and Portland, Ore.
+
+“This is about what’s going to be done in our name,” said Peter Rachleff, a former Macalester College professor.",candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+30decfd7fa41f72d,us_electoral_politics,positive,82155,"And post-debate last week, THE STORY was, in some order or other, McCain campaign dirty tricks (racist robocalls), Republican efforts to keep American citizens from voting, McCain’s poor debate performance, electoral college predictions, etc.",election_anchor,electoral college,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+5a52e85f9d64c011,us_electoral_politics,positive,203753,"When asked in an interview with Harvey Levin on ""Objectified"" if he would run as a Democrat, Republican, or independent candidate, Cuban said, ""probably Republican.""",candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+73a6e04cc4423a49,china,positive,27667,"The mass of Chinese workers played no role in the 1949 revolution--""socialism"" was imposed from above in classic fashion, by the victorious Red Army--and they have never exercised any real authority since then in how China was run.",country_anchor,china;chinese,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+be3d4feace72b2bb,us_electoral_politics,positive,196831,"Bersani, 61, will now stand in national elections, likely in March, against a still-to-be-chosen centre-right candidate to take over from Monti.",candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+5b50402118b7d351,us_electoral_politics,positive,90599,"(AP Photo/Brennan Linsley)
+
+Democratic presidential candidate Hillary Clinton speaks at an event at East High School in Youngstown, Ohio, Saturday, July 30, 2016.",candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+1b2923c8eef45e4b,russia_post_soviet,positive,86957,And our ObamaCare fiasco and Russia’s Sochi fiasco are due to the same error: Both of us are using government to solve problems that could have been better solved by markets.,region_anchor,russia,russia_post_soviet,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+ce55141e95fb4b4e,china,positive,3476,"So, even if the Chinese continue to make the rules, consumption will continue to rise.",country_anchor,chinese,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+0a4faf0e735514ff,us_electoral_politics,positive,22081,"“He sent me an email when I started picking on him… What happened was I really didn’t like Ted Cruz, so I started helping Donald, tried to encourage him, 'cause I thought he’d be, and to this day thought he’d be a better candidate than Ted Cruz… But at some point, you’ve got to start learning and understanding the issues, you know?",candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+4d030aee82625a41,russia_post_soviet,positive,43213,"""The Russian government has unleashed a crackdown on civil society unprecedented in the country's post-Soviet history,"" the HRW report states.",region_anchor,post-soviet;russian,russia_post_soviet,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+a5555d35ff7d7c6f,china,positive,2466,"While there, Netanyahu signed a series of bilateral agreements and shared a champagne toast with Chinese Premier Li Keqiang.",country_anchor,chinese,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+75a086ba4022b0ca,russia_post_soviet,positive,13005,"“If it weren’t for Paul, Ukraine would have gone under Russia much earlier,” Voloshin told me.",region_anchor,russia;ukraine,russia_post_soviet,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+65b1e26262bc18d2,china,positive,34176,"And that did not end well for price action before in 2015...
+
+or 2009...
+
+And just as expected above...once the volume reaches a crescendo it crashes and The Party's Over
+
+As reports from China suggest both major margin increases at the main exchanges and crackdowns on real production: Tangshan city is banning all coke, steel & cement productions for 24 hours starting this noon.",country_anchor,china,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+174b221a198af830,china,positive,17672,"Another reason, however, may be that Chinese military officers do not want to reveal their plans because they want to control the northern portion of the Korean Peninsula.",country_anchor,chinese,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+09a2516d8695a262,us_electoral_politics,positive,63069,"If the Tea Party is going to have any legitimacy at all moving forward, then they need to fire John Boehner in 2012 and replace him with a candidate that actually believes in getting government spending under control.",candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+e31f5e74a6869a8b,russia_post_soviet,positive,94752,"[18][31]
+
+In the course of instituting government policy, Stalin promoted the doctrine of socialism in one country (adopted 1925), wherein the Soviet Union would establish socialism upon Russia's economic foundations (and support socialist revolutions elsewhere).",region_anchor,russia,russia_post_soviet,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+f1ff4e9d4a6148a9,china,positive,31217,"China [ edit ]
+
+FN M1930.",country_anchor,china,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+39d9bed298967c44,us_electoral_politics,positive,180579,The Sanders campaign points to polling data showing the five as competitive.,election_anchor,polling,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+1dc22f4448721b62,china,positive,27682,SOME SELF-described Maoist organizations view Mao's death and the end of the Cultural Revolution as the end of socialism in China.,country_anchor,china,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+3fb71e456c8ffd7a,china,positive,34074,"A: According to the Bank of China, about 16,000 to 18,000 officials with ties to the public sector were involved in moving proceeds of corruption illegally from China to other countries.",country_anchor,china,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+a42c956706388510,us_electoral_politics,positive,98513,So please help us finish off this month with your financial endorsement.,voting_mechanics,endorsement,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+1e8155e8fed6a808,china,positive,12962,"The Chinese contributed philosophical precepts and early monetary systems, among other things.",country_anchor,chinese,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+3eb70e8f305727c4,russia_post_soviet,positive,68475,"The New York Times reports they enlisted Boris J. Birshstein, a Russian organized crime figure who had fled to Israel and then on to Canada.",region_anchor,russian,russia_post_soviet,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+d844451bab08187a,us_electoral_politics,positive,45835,"Whether Bieber's apparent endorsement will translate to votes is unknown, but it surely can't hurt the heir-apparent for the Republican nomination to have one of the world's biggest celebrities seemingly on board.",voting_mechanics,endorsement,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+5ececc0870e825a8,china,positive,101410,I quit a perfectly good job in Singapore in 2004 and came to China with rudimentary Mandarin and the dream of living here.,country_anchor,china,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+2a912c4705b9d28c,china,positive,84434,"In the latest wave of protests in the Asian financial hub, a group of Chinese demonstrators on Thursday unfurled a huge banner on Hong Kong's famous ""Lion Rock,"" which overlooks many poor neighborhoods across the region's harbor.",country_anchor;economy_and_society,chinese;hong kong,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+549de82e8f64dda7,us_electoral_politics,positive,62035,"The President is not elected by direct vote, but by an indirect electoral college system in which the determining votes are apportioned to the states and the District of Columbia.",election_anchor,electoral college,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+b1e1606c6813138d,russia_post_soviet,positive,114748,"A 2007 position paper by the secular think-tank Center for Inquiry explored this issue, along with other issues relating to same-sex marriage, and argues that state-endorsement for domestic partnership is the best possible solution with regards to the separation of church and state, though they argue LGBTQ couples should be granted equal marriage rights so long as the state sanctions marriages.",geopolitics_and_war,sanctions,russia_post_soviet,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+188e472d84344acd,us_electoral_politics,positive,6742,Democratic gubernatorial candidate Heather R. Mizeur received some national exposure on the MSNBC network Wednesday -- thanks in part to the South American nation of Uruguay.,candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+626fbf57dff9f92e,us_electoral_politics,positive,81144,One effect of this mechanism is to make it extremely difficult for third party or independent candidates ever to make much of a showing in the Electoral College.,election_anchor,electoral college,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+dd69d2022933eb11,us_electoral_politics,positive,2000,"Wildstein’s agenda, though, proves to be larger than advancing any one candidate.",candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+f696b7d42789709d,us_electoral_politics,positive,74,Sanders ended the day further behind in the delegate count — and needing to win a slew of upcoming states by improbably large margins.,candidate_and_party,delegate count,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+a5cea8f9a4f01641,china,positive,37661,"So in a bid to make solar power more appealing to young people, one Chinese company has ditched the traditional approach of filling fields with uninspiring rows of PV panels, instead building its solar plants in the shape of giant pandas.",country_anchor,chinese,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+19cff131f72d2a26,us_electoral_politics,positive,179056,"Former Rep. Mike Rogers (R-MI) on State of the Union -- CNN screencapture
+
+A senior White House official said former Republican congressman Mike Rogers is being considered as a candidate to replace FBI Director James Comey, who was fired late on Tuesday by President Donald Trump.",candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+c997f7e8ad097244,china,positive,80261,"In a section set in Singapore, characters speak in pigeon English, with fragments of Russian and Chinese are mixed in.",country_anchor,chinese,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+9327d9919caaa38d,russia_post_soviet,positive,95163,Some have specifically said they want to know more about whether Obama’s Department of Justice was investigating the purchase of American uranium mines by a Russian-backed company in 2010.,region_anchor,russian,russia_post_soviet,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+6d5b8a4f70285145,china,positive,71159,It is one of the better Made-In China pellet smokers you will find.,country_anchor,china,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+69fb72ed1794d5d4,china,positive,101401,"At the same time, the China we arrived in has also changed profoundly.",country_anchor,china,china,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+ad7161af9aeb67da,us_electoral_politics,positive,177469,"Amy Peirone, a phD candidate in sociology who this week will present her research at the Congress of the Social Sciences and Humanities conference in St. Catharines, Ont., surveyed more than 1,000 University of Windsor students, resulting in a research paper called “I Bought my Degree, Now I Want My Job!”
+
+Ms. Peirone had the students answer a 94-item online survey about their own academic experiences, which asked them to agree or disagree with statements such as “It’s OK to make demands on a professor so he makes exceptions for me,” or “the tuition I pay entitles me to a passing grade.”
+
+The tuition I pay entitles me to a passing grade
+
+She found a correlation between students displaying a sense of academic entitlement and those who displayed a sense of entitlement when it comes to their future employment expectations, suggesting the attitude could carry over into the working world.",candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+0d1465e6ca4dfe71,us_electoral_politics,positive,14069,"Indeed, comparisons within‐domain type showed roughly similar effects for topics on which Bush was higher in complexity (effect of candidate t[28] = 2.93, p < .01) and topics on which Kerry was higher in complexity (effect of candidate t[30] = −2.63, p < .02).12 In other words, the interaction between domain type and ideology is roughly equally attributable to the fact that Bush was sometimes higher than Kerry on complexity as it is to the fact that Kerry was sometimes higher than Bush.13
+
+General Discussion Are conservatives simple‐minded?",candidate_and_party,candidate,us_electoral_politics,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+c71b5b2ed3654b5f,gaming_general,positive,35657,"Unlike in previous versions of Assassin’s Creed multiplayer, all Loss Bonuses now end on either a kill or a stun.",esports_and_live_service,multiplayer,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+5b4fefaa61307451,aviation_aerospace,positive,187619,"OTHER BASES
+
+The Defence Satellite Communication Station at Geraldton in Western Australia, along with Kojarena 20km inland, was one of Australia’s spy bases.",aerospace_anchor,satellite,aviation_aerospace,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+963a68d085b64517,aviation_aerospace,positive,61143,"88, on the 88th floor at 157 West 57th Street, was purchased through the limited liability company Pac Wholly Own, which records show is associated with the Pacific American Corporation, a New York subsidiary of the HNA Group, one of China’s largest private airline companies.",aviation_anchor,airline,aviation_aerospace,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+2a17c3289cf916d0,aviation_aerospace,positive,173856,TEC is a measure of the total number of electrons in the ionosphere on a path between a GPS satellite in space and a GPS receiver on the ground.,aerospace_anchor,satellite,aviation_aerospace,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+329f3529e8040ffc,gaming_general,positive,14308,"Various Xbox One features and functionality will change and come online over time just like they have on PC, with our goal being to have both versions align to each other as soon as possible.""",platform_anchor,xbox,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+f445cc865beebb50,gaming_general,positive,297639,"Just building up the game and putting it across generations of platforms, and working on platforms we've never worked on before with the PlayStation 3, these are very big challenges.",platform_anchor,playstation,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+1ea02432b8d29338,gaming_general,positive,237958,These can be found here:Excellent XBOX 360 Controller MODs for Mass effect 2 and 3 by Moonshine can be found here :me2-controller-support-power-wheel-t1703.htmlme3-controller-support-power-wheel-t1838.htmlIf you want to adjust the sensitivity of the controller (Never has a number been discussed more).,platform_anchor,xbox,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+4404a2f85819347a,gaming_general,positive,83655,The latest issue of Weekly Famitsu reveals Shining Resonance Re:frain for PlayStation 4.,platform_anchor,playstation,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+491314f6f4636903,gaming_general,positive,125240,"PS4 — Digital, Retail
+
+Elite Dangerous is the definitive massively multiplayer space epic, bringing gaming’s original open world adventure to the modern generation with a connected galaxy, evolving narrative, and the entirety of the Milky Way re-created at its full galactic proportions.",esports_and_live_service;gameplay_jargon,multiplayer;open world,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+b20a9634be23d28d,aviation_aerospace,positive,159574,They included the FAA...,aviation_anchor,faa,aviation_aerospace,drop,no,high,duplicate_or_low_quality,too_short_or_fragment,batch_bucket=medium_negative; override=too_short_fragment
+ac53843dc47b45db,gaming_general,positive,36555,The Xbox One S is the version of the console that Microsoft should've first released back in 2013 instead of the lumbering beast that we got.,platform_anchor,xbox,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+b8f9b80347c0fc2b,aviation_aerospace,positive,81308,"In the next parliamentary session, he said the government will consider additional pro-consumer moves such as preventing airline overbooking and lowering the roaming rates charged by cellular providers.",aviation_anchor,airline,aviation_aerospace,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+2899b43981ae96bf,aviation_aerospace,positive,160217,"Mr Obama visits Poland at the end of the month and is expected to confirm the stationing of F16 combat aircraft on Polish soil during meetings with Bronislaw Komorowski, his Polish counterpart, and other central and eastern European leaders.",aviation_anchor,aircraft,aviation_aerospace,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+34d1b2ec20dbaeca,aviation_aerospace,positive,195822,"These credentials allow the crew member to access the secure ballot.The astronauts will cast their votes and a secure completed ballot is downlinked and delivered back to the County Clerk’s Office by e-mail to be officially recorded.To highlight their unique voting situation and to encourage others to exercise their civic duty, Fincke and Chamitoff sent a special message that will air on NASA TV starting Monday, Oct. 27.Joined by Expedition 18 Flight Engineer Yury Lonchakov, Fincke and Chamitoff also beamed down a message celebrating the upcoming 10th anniversary of the station's launch.",aerospace_anchor,nasa,aviation_aerospace,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+32d7a50f29119669,gaming_general,positive,43649,"Hardware developer CTA’s kiosk featured an array of third-party Playstation, Playstation Move™, Wii, DSi and Kinect peripherals on the CES floor, from induction charge stations to gun controller and bowling ball modifications.",platform_anchor,playstation,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+2d50a0bcab60b276,gaming_general,positive,305570,Microsoft Corp. could finally unleash Windows apps on the Xbox One.,platform_anchor,xbox,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+cf7c1e877b8464f0,gaming_general,positive,41576,This came up when we asked him about the controversy and backlash surrounding Rise of the Tomb Raider's exclusivity deal with Xbox.,platform_anchor,xbox,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+465551c3938f934e,aviation_aerospace,positive,45878,"Porter expected to unveil deal
+
+Porter Airlines Inc. is expected to announce an order for as many as 30 of Bombardier Inc.'s C Series aircraft, according to the Wall Street Journal.",aviation_anchor,aircraft,aviation_aerospace,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+ff908aed9312cb7d,aviation_aerospace,positive,77926,The compact APS13 radar [center] was used in some fighter aircraft of that era and also for altitude sensing in the first atomic bombs.,aviation_anchor,aircraft,aviation_aerospace,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+3437638120e40dde,gaming_general,positive,288840,Or about the technical accomplishment that's happening on this Xbox One hardware.,platform_anchor,xbox,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+50c565514e034607,aviation_aerospace,positive,133729,"AP Photo/NASA/JPL-Caltech
+
+Newly released diplomatic cables from the 1970s reveal that the State Department once believed that old automobile parts were actually fragments that fell from space
+
+Officials excitedly relayed the discovery of space debris found in New Zealand to the Secretary of State, NASA and the Department of Defense, according to the cables, which were acquired by transparency group MuckRock in a Freedom of Information Request shared with Whispers.",aerospace_anchor,nasa,aviation_aerospace,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+571992081550bc2e,gaming_general,positive,251815,"We've gone into some detail as to who Microsoft can save Xbox Games for Windows Phone, but it seems the company does have plans to tackle the issue.",platform_anchor,xbox,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+44dc2cc8c1ef1295,gaming_general,positive,51931,"Rusted Portal Games
+
+Donaven Brines - Game Design
+
+Chad Matson - Lead Developer, Pathfinder
+
+Jason Stolberg - Lead Developer, Fifth Edition
+
+Reid Finucan - Game Developer
+
+Jeff Carter - Logistics
+
+Alison Hinch - Art Director
+
+Apocalypse the Risen Contributing Artists
+
+Raven Mimura - Iconics
+
+Rodrigo Vega - Races
+
+Preston Stone - Ghosts, Demons, and Devil
+
+Vincent Coviello - Risen
+
+Christopher Onciu - Demons
+
+Apocalypse the Risen Contributing Writers
+
+Amy DuBoff - North/South America Region
+
+Ant Tessitore - US Mid-Atlantic/Southest Region
+
+Jacob Huebsch - US Mid-West Region
+
+Robert Hazelton - US Northeast Region
+
+James Pianka - US West Region
+
+Craig Guarisco - US Northwest Region
+
+Jenna Pitman - US Southwest Region
+
+RISEN
+
+You didn't make it but we greatly appreciate your sacrifice!",platform_anchor,game developer,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+475a46cdddee578c,gaming_general,positive,178095,"Back in December of 2012, Nintendo Power Magazine shipped its last issue.",platform_anchor,nintendo,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+9bb4d3c47123a215,aviation_aerospace,positive,122293,"The state-owned company has already recruited a pilot recommended by Airbus, and a helicopter engineer from India.",aviation_anchor;operations_and_safety,airbus;pilot,aviation_aerospace,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+82ea6d831c770bbb,gaming_general,positive,338975,"In addition to this, in the Aladdin genesis video game there is a modern-day stop sign buried in the sand, as well as a number of bones and skeletons.",platform_anchor,video game,gaming_general,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+0145d9e52e3a8254,aviation_aerospace,positive,152960,The venerable scientist explained that all but the largest heavenly bodies can be redirected by rear-ending or towing them with an unmanned spacecraft.,aerospace_anchor,spacecraft,aviation_aerospace,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+8d43dab7821a5691,aviation_aerospace,positive,5706,"Is SpaceX working with NASA, then?",aerospace_anchor,nasa;spacex,aviation_aerospace,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+9f55d82a3f44279f,aviation_aerospace,positive,154381,"(University of Hawaii via AP)
+
+HONOLULU — After eight months of living in isolation on a remote Hawaii volcano, six NASA-backed research subjects will emerge from their Mars-like habitat on Sunday and return to civilization.",aerospace_anchor,nasa,aviation_aerospace,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+7c53e6e5899f799b,aviation_aerospace,positive,196171,"Before we look at Mars Express in more detail and decide what we can do to try and protect it from the speeding particles in the comet’s coma (the cloud of dust and gas surrounding the nucleus), we should take a moment to briefly describe the spacecraft and the encounter period.",aerospace_anchor,spacecraft,aviation_aerospace,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+3ae2127d724e7b17,crypto_blockchain,positive,172698,"Also, while local Israeli bitcoin dealers are known to be out of bitcoins due to the limits on international transfers, they are theoretically still in business (just without stock) and haven’t been approached by regulators.",protocol_anchor,bitcoin,crypto_blockchain,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+a92a1b484b6fa693,mlb_baseball,positive,907644,"In 2012, the Tigers each got $284,274.50 as the World Series runner-up team.",league_anchor,world series,mlb_baseball,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+31c273bb0ce9df03,mlb_baseball,positive,717859,"A baseball source told ESPNBoston.com they initially asked for the Cubs shortstop, Starlin Castro.",baseball_jargon,shortstop,mlb_baseball,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+b647c665857a7c06,mlb_baseball,positive,869370,"Defense has been a staple of the Orioles’ success under manager Buck Showalter, but advanced metrics show that the collective team defense this past season was toward the bottom of the American League.",league_anchor,american league,mlb_baseball,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+059e3a7164cd2f08,crypto_blockchain,positive,205924,"Lombrozo stated, “The way I see it, the consensus layer should focus on dispute resolution and short proofs — with all the application logic in higher layers.”
+
+New protocol layers, such as advanced payment channels and sidechains, could allow developers to bring new features to Bitcoin in a more-timely fashion.",protocol_anchor,bitcoin,crypto_blockchain,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+bbff26ea908fbb8a,mlb_baseball,positive,415214,"Mariano Rivera (2001)
+
+Harry How/Getty Images
+
+Three outs from the New York Yankees' fourth consecutive Series title, the game's greatest-ever closer couldn't finish the job.",team_entities,new york yankees,mlb_baseball,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+cda9564961538c8c,crypto_blockchain,positive,61092,There are so many ways to predict what the future of Bitcoin is going to be.,protocol_anchor,bitcoin,crypto_blockchain,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+2631ff67fea724e2,combat_sports,positive,392551,"They only won one match,[60] but Makabe left a huge mark by pinning GHC Heavyweight Champion Takashi Sugiura in a non-tournament tag team match.",promotion_anchor,heavyweight,combat_sports,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+ad98325743b25141,mlb_baseball,positive,630627,"Unfortunately, Snow doesn’t enjoy the highest batting average when it comes to blockbuster moves.",baseball_jargon,batting average,mlb_baseball,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+e234fa09f8cdf805,combat_sports,positive,65586,I don't care if we sparring or fighting.,training_and_matchmaking,sparring,combat_sports,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+b60a9fe0fd74b638,mlb_baseball,positive,863208,Cartnick drove a solo homer over the fence in left-center field for a 1-0 lead in the top of the first inning.,baseball_jargon,inning,mlb_baseball,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+c590f73c06d136f1,mlb_baseball,positive,770146,"We brought each other to games (he favored hockey and tennis; I preferred Major League Baseball, but could never convince him that baseball was in fact interesting, so we settled on the N.B.A.).",league_anchor,major league baseball,mlb_baseball,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+991b3b5f2242fda0,mlb_baseball,positive,148737,"In the National League, 11 players have unanimously won the Cy Young Award, for a total of 14 wins.",league_anchor,national league,mlb_baseball,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+a906aea37752eb73,combat_sports,positive,460203,"He just further elaborated on his reasoning as... Posted by Tap.Nap.Snap on Friday, September 30, 2016
+
+It’s understood that Aldo is referring to McGregor’s bottle-throwing war with team Diaz at the UFC 202 pre-fight press conference, and is likely referring to Jon Jones’ failed UFC 182 drug test for cocaine.",promotion_anchor,ufc,combat_sports,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+e56443d49fc2e919,crypto_blockchain,positive,12849,"Now, the exchanges are urging customers to withdraw their funds as regulators have also set a deadline for them to come up with plans to allow withdrawals “in a risk-free manner.”
+
+Also read: China’s Regulatory Crackdown Forces More Bitcoin Exchange Closures
+
+Exchanges Ordered to Announce Closing Dates
+
+Chinese authorities have ordered Beijing-based cryptocurrency exchanges to stop trading and allowing new registrations as of Friday, according to a government notice, which was verified by Reuters.",protocol_anchor,bitcoin,crypto_blockchain,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+7147e15e5c497398,crypto_blockchain,positive,205937,"Once more options for experimentation are available for developers, the pace of innovation on top of Bitcoin should increase.",protocol_anchor,bitcoin,crypto_blockchain,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+f167d920a54fb98c,crypto_blockchain,positive,127059,"I had about 100 conversations with people who are at the epicenter of the blockchain wave, including one of the approximately 35 people in the world who make up the Bitcoin Core team that’s responsible for the protocol’s upkeep.",protocol_anchor,bitcoin;blockchain,crypto_blockchain,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+c6cb20ac4875cd73,mlb_baseball,positive,479636,"Then came Tuesday night, when, in ghastly weather conditions, Aceves pitched as badly as the weather, especially in a third inning in which he walked three batters, committed two balks, was late in covering first base and made a throwing error.",baseball_jargon,inning,mlb_baseball,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+e571ed83016bdc0a,crypto_blockchain,positive,42397,"“EXIT RAMPS”
+
+Created in 2008, bitcoin uses encryption and a blockchain database that enables the fast and anonymous transfer of funds outside of a conventional centralised payment system.",protocol_anchor,bitcoin;blockchain,crypto_blockchain,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+f6b636630898ff1e,crypto_blockchain,positive,79627,"Lead Developer Colin Cantrell (Viz) studied the foundations of the Bitcoin Core code, understanding how Satoshi structured Bitcoin and identifying opportunities for improvement.",protocol_anchor,bitcoin,crypto_blockchain,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative

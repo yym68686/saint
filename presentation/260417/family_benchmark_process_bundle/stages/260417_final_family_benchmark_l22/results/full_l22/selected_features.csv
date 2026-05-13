@@ -1,0 +1,91 @@
+family_id,method,method_label,selected_feature_index,selection_auc,selection_target_reject_mean,selection_target_reject_strict,certainty,candidate_feature_count,display_name,category,experiment_id
+aviation_aerospace,kernel,SUR SAE,42709,0.79609375,0.5750000000000001,0.55,1.0,2,Aviation / Aerospace,technology_and_science,idea5-kernel
+aviation_aerospace,dense,PLRDC SAE,27367,0.83125,0.5666666666666667,0.5,1.0,2,Aviation / Aerospace,technology_and_science,idea1-dense-success
+aviation_aerospace,relu,ReLU SAE,19230,0.9128125,0.6916666666666668,0.6375,1.0,1,Aviation / Aerospace,technology_and_science,baseline/relusae
+aviation_aerospace,batchtopk,BatchTopK SAE,61606,0.76265625,0.525,0.5125,1.0,1,Aviation / Aerospace,technology_and_science,baseline/BatchTopK
+aviation_aerospace,topk,TopK SAE,19230,0.7575,0.4916666666666667,0.4625,1.0,1,Aviation / Aerospace,technology_and_science,baseline/main
+china,kernel,SUR SAE,7984,0.99265625,0.9083333333333333,0.8625,0.98,1,China,geography_and_politics,idea5-kernel
+china,dense,PLRDC SAE,11780,0.99046875,0.8833333333333333,0.825,0.98,1,China,geography_and_politics,idea1-dense-success
+china,relu,ReLU SAE,55414,0.98578125,0.8250000000000001,0.7375,0.96,1,China,geography_and_politics,baseline/relusae
+china,gatedsae,Gated SAE,28522,0.98875,0.8583333333333334,0.7875,0.96,1,China,geography_and_politics,baseline/gatedsae
+china,batchtopk,BatchTopK SAE,59114,0.9884375,0.875,0.8125,1.0,1,China,geography_and_politics,baseline/BatchTopK
+china,topk,TopK SAE,44781,0.9915625,0.8916666666666666,0.8375,1.0,1,China,geography_and_politics,baseline/main
+combat_sports,kernel,SUR SAE,31105,0.9790625,0.9416666666666668,0.9375,1.0,1,Combat Sports,sports_and_games,idea5-kernel
+combat_sports,dense,PLRDC SAE,29057,0.981484375,0.9583333333333334,0.95,0.98,1,Combat Sports,sports_and_games,idea1-dense-success
+combat_sports,relu,ReLU SAE,39279,0.98890625,0.9666666666666667,0.9624999999999999,0.98,1,Combat Sports,sports_and_games,baseline/relusae
+combat_sports,gatedsae,Gated SAE,23418,0.98921875,0.9666666666666667,0.9624999999999999,1.0,1,Combat Sports,sports_and_games,baseline/gatedsae
+combat_sports,batchtopk,BatchTopK SAE,39279,0.87125,0.375,0.2625,0.96,1,Combat Sports,sports_and_games,baseline/BatchTopK
+combat_sports,topk,TopK SAE,7610,0.980703125,0.9499999999999998,0.95,0.98,1,Combat Sports,sports_and_games,baseline/main
+crypto_blockchain,kernel,SUR SAE,35483,0.99375,1.0,1.0,1.0,1,Crypto / Blockchain,technology_and_science,idea5-kernel
+crypto_blockchain,dense,PLRDC SAE,26527,0.99484375,1.0,1.0,1.0,1,Crypto / Blockchain,technology_and_science,idea1-dense-success
+crypto_blockchain,relu,ReLU SAE,62742,0.99609375,1.0,1.0,1.0,1,Crypto / Blockchain,technology_and_science,baseline/relusae
+crypto_blockchain,gatedsae,Gated SAE,8318,0.99484375,1.0,1.0,0.98,1,Crypto / Blockchain,technology_and_science,baseline/gatedsae
+crypto_blockchain,batchtopk,BatchTopK SAE,33227,0.99421875,1.0,1.0,1.0,1,Crypto / Blockchain,technology_and_science,baseline/BatchTopK
+crypto_blockchain,topk,TopK SAE,65348,0.99390625,1.0,1.0,1.0,1,Crypto / Blockchain,technology_and_science,baseline/main
+gaming_general,kernel,SUR SAE,15714,0.95875,0.8833333333333333,0.85,1.0,3,Video Games / Gaming,sports_and_games,idea5-kernel
+gaming_general,dense,PLRDC SAE,62704,0.51765625,0.016666666666666666,0.0,1.0,1,Video Games / Gaming,sports_and_games,idea1-dense-success
+gaming_general,relu,ReLU SAE,13680,0.98546875,0.875,0.8125,1.0,3,Video Games / Gaming,sports_and_games,baseline/relusae
+gaming_general,gatedsae,Gated SAE,2206,0.98109375,0.8666666666666667,0.8375,1.0,4,Video Games / Gaming,sports_and_games,baseline/gatedsae
+gaming_general,batchtopk,BatchTopK SAE,35048,0.5253125,0.075,0.075,0.96,1,Video Games / Gaming,sports_and_games,baseline/BatchTopK
+gaming_general,jumprelu,JumpReLU SAE,26823,0.73390625,0.1416666666666667,0.1,0.98,2,Video Games / Gaming,sports_and_games,baseline/jumprelu
+japan,kernel,SUR SAE,27198,0.85171875,0.15833333333333333,0.05,0.96,1,Japan,geography_and_politics,idea5-kernel
+japan,dense,PLRDC SAE,24340,0.961875,0.6749999999999999,0.575,1.0,1,Japan,geography_and_politics,idea1-dense-success
+japan,relu,ReLU SAE,5337,0.8984375,0.3333333333333333,0.1625,0.98,1,Japan,geography_and_politics,baseline/relusae
+japan,gatedsae,Gated SAE,36268,0.92734375,0.45,0.3125,1.0,1,Japan,geography_and_politics,baseline/gatedsae
+japan,batchtopk,BatchTopK SAE,64610,0.965546875,0.8166666666666668,0.7375,0.98,1,Japan,geography_and_politics,baseline/BatchTopK
+middle_east_geopolitics,kernel,SUR SAE,29736,0.624140625,0.25,0.25,0.98,2,Middle East Geopolitics,geography_and_politics,idea5-kernel
+middle_east_geopolitics,dense,PLRDC SAE,26779,0.79640625,0.525,0.525,1.0,2,Middle East Geopolitics,geography_and_politics,idea1-dense-success
+middle_east_geopolitics,relu,ReLU SAE,5031,0.62,0.08333333333333333,0.037500000000000006,0.98,2,Middle East Geopolitics,geography_and_politics,baseline/relusae
+middle_east_geopolitics,gatedsae,Gated SAE,9095,0.55578125,0.075,0.025,1.0,1,Middle East Geopolitics,geography_and_politics,baseline/gatedsae
+middle_east_geopolitics,batchtopk,BatchTopK SAE,8526,0.8209375,0.625,0.625,1.0,2,Middle East Geopolitics,geography_and_politics,baseline/BatchTopK
+middle_east_geopolitics,topk,TopK SAE,58434,0.80921875,0.575,0.575,0.98,2,Middle East Geopolitics,geography_and_politics,baseline/main
+mlb_baseball,kernel,SUR SAE,7595,0.99828125,0.9916666666666667,0.9875,1.0,1,MLB / Professional Baseball,sports_and_games,idea5-kernel
+mlb_baseball,dense,PLRDC SAE,29418,0.998125,0.9833333333333334,0.975,0.98,1,MLB / Professional Baseball,sports_and_games,idea1-dense-success
+mlb_baseball,relu,ReLU SAE,17184,0.99796875,0.9833333333333334,0.975,1.0,1,MLB / Professional Baseball,sports_and_games,baseline/relusae
+mlb_baseball,gatedsae,Gated SAE,63230,0.9984375,0.9833333333333334,0.975,1.0,1,MLB / Professional Baseball,sports_and_games,baseline/gatedsae
+mlb_baseball,batchtopk,BatchTopK SAE,62605,0.99796875,0.9916666666666667,0.9875,1.0,1,MLB / Professional Baseball,sports_and_games,baseline/BatchTopK
+mlb_baseball,topk,TopK SAE,4947,0.99671875,0.975,0.9625,0.98,1,MLB / Professional Baseball,sports_and_games,baseline/main
+mlb_baseball,jumprelu,JumpReLU SAE,59003,0.964375,0.6833333333333332,0.5375,1.0,1,MLB / Professional Baseball,sports_and_games,baseline/jumprelu
+nba_basketball,kernel,SUR SAE,58436,0.9546875,0.7333333333333334,0.65,0.98,1,NBA / Basketball,sports_and_games,idea5-kernel
+nba_basketball,dense,PLRDC SAE,56388,0.95796875,0.75,0.675,0.98,1,NBA / Basketball,sports_and_games,idea1-dense-success
+nba_basketball,relu,ReLU SAE,54915,0.948125,0.6749999999999999,0.5625,1.0,1,NBA / Basketball,sports_and_games,baseline/relusae
+nba_basketball,gatedsae,Gated SAE,7430,0.94765625,0.7083333333333334,0.625,1.0,1,NBA / Basketball,sports_and_games,baseline/gatedsae
+nba_basketball,batchtopk,BatchTopK SAE,23103,0.96875,0.8083333333333332,0.75,1.0,1,NBA / Basketball,sports_and_games,baseline/BatchTopK
+nba_basketball,topk,TopK SAE,63950,0.96375,0.7833333333333333,0.725,1.0,1,NBA / Basketball,sports_and_games,baseline/main
+nba_basketball,jumprelu,JumpReLU SAE,59003,0.84265625,0.2416666666666667,0.1,1.0,1,NBA / Basketball,sports_and_games,baseline/jumprelu
+nfl_football,kernel,SUR SAE,21564,0.9753125,0.8833333333333333,0.8374999999999999,1.0,1,NFL / American Football,sports_and_games,idea5-kernel
+nfl_football,dense,PLRDC SAE,15862,0.9815625,0.9,0.8625,1.0,2,NFL / American Football,sports_and_games,idea1-dense-success
+nfl_football,relu,ReLU SAE,38483,0.9728125,0.8333333333333334,0.7625,1.0,1,NFL / American Football,sports_and_games,baseline/relusae
+nfl_football,gatedsae,Gated SAE,5299,0.9715625,0.7416666666666667,0.625,1.0,1,NFL / American Football,sports_and_games,baseline/gatedsae
+nfl_football,batchtopk,BatchTopK SAE,37755,0.975859375,0.8583333333333334,0.8,1.0,2,NFL / American Football,sports_and_games,baseline/BatchTopK
+nfl_football,jumprelu,JumpReLU SAE,59003,0.92859375,0.525,0.3625,1.0,1,NFL / American Football,sports_and_games,baseline/jumprelu
+nhl_hockey,kernel,SUR SAE,52359,0.97765625,0.975,0.975,1.0,1,NHL / Hockey,sports_and_games,idea5-kernel
+nhl_hockey,dense,PLRDC SAE,18374,0.978203125,0.975,0.975,1.0,1,NHL / Hockey,sports_and_games,idea1-dense-success
+nhl_hockey,relu,ReLU SAE,16978,0.97890625,0.975,0.975,0.98,1,NHL / Hockey,sports_and_games,baseline/relusae
+nhl_hockey,gatedsae,Gated SAE,26133,0.97734375,0.975,0.975,1.0,1,NHL / Hockey,sports_and_games,baseline/gatedsae
+nhl_hockey,batchtopk,BatchTopK SAE,35313,0.978828125,0.975,0.975,1.0,1,NHL / Hockey,sports_and_games,baseline/BatchTopK
+nhl_hockey,topk,TopK SAE,41173,0.97875,0.975,0.975,1.0,1,NHL / Hockey,sports_and_games,baseline/main
+russia_post_soviet,kernel,SUR SAE,62422,0.99203125,0.9333333333333332,0.9,0.94,1,Russia / Post-Soviet Sphere,geography_and_politics,idea5-kernel
+russia_post_soviet,dense,PLRDC SAE,1715,0.9946875,0.9500000000000001,0.925,1.0,1,Russia / Post-Soviet Sphere,geography_and_politics,idea1-dense-success
+russia_post_soviet,relu,ReLU SAE,13553,0.99703125,0.9666666666666667,0.95,0.98,1,Russia / Post-Soviet Sphere,geography_and_politics,baseline/relusae
+russia_post_soviet,gatedsae,Gated SAE,8926,0.96421875,0.6666666666666666,0.55,0.85,1,Russia / Post-Soviet Sphere,geography_and_politics,baseline/gatedsae
+russia_post_soviet,batchtopk,BatchTopK SAE,44538,0.99953125,0.9916666666666667,0.9875,0.95,1,Russia / Post-Soviet Sphere,geography_and_politics,baseline/BatchTopK
+russia_post_soviet,topk,TopK SAE,3763,0.995,0.9583333333333334,0.9375,0.98,1,Russia / Post-Soviet Sphere,geography_and_politics,baseline/main
+russia_post_soviet,jumprelu,JumpReLU SAE,13553,0.9846875,0.85,0.775,0.95,1,Russia / Post-Soviet Sphere,geography_and_politics,baseline/jumprelu
+soccer,kernel,SUR SAE,40102,0.88140625,0.6583333333333333,0.65,1.0,1,Soccer / Association Football,sports_and_games,idea5-kernel
+soccer,dense,PLRDC SAE,27807,0.95078125,0.8416666666666668,0.8,1.0,2,Soccer / Association Football,sports_and_games,idea1-dense-success
+soccer,relu,ReLU SAE,65353,0.981875,0.8166666666666668,0.7375,1.0,1,Soccer / Association Football,sports_and_games,baseline/relusae
+soccer,gatedsae,Gated SAE,33609,0.9703125,0.7916666666666666,0.7625,1.0,1,Soccer / Association Football,sports_and_games,baseline/gatedsae
+soccer,batchtopk,BatchTopK SAE,40102,0.85484375,0.6666666666666666,0.625,1.0,1,Soccer / Association Football,sports_and_games,baseline/BatchTopK
+soccer,topk,TopK SAE,40102,0.87640625,0.7333333333333333,0.7124999999999999,1.0,1,Soccer / Association Football,sports_and_games,baseline/main
+soccer,jumprelu,JumpReLU SAE,10391,0.9253125,0.5916666666666667,0.5249999999999999,1.0,1,Soccer / Association Football,sports_and_games,baseline/jumprelu
+us_electoral_politics,kernel,SUR SAE,44734,0.918671875,0.8083333333333332,0.775,0.95,3,U.S. Electoral Politics,geography_and_politics,idea5-kernel
+us_electoral_politics,relu,ReLU SAE,11513,0.97421875,0.7999999999999999,0.75,1.0,1,U.S. Electoral Politics,geography_and_politics,baseline/relusae
+us_electoral_politics,gatedsae,Gated SAE,51964,0.92578125,0.525,0.4,1.0,1,U.S. Electoral Politics,geography_and_politics,baseline/gatedsae
+us_electoral_politics,batchtopk,BatchTopK SAE,43187,0.930703125,0.8416666666666667,0.825,1.0,1,U.S. Electoral Politics,geography_and_politics,baseline/BatchTopK
+us_electoral_politics,jumprelu,JumpReLU SAE,11634,0.78625,0.20833333333333334,0.11249999999999999,0.98,1,U.S. Electoral Politics,geography_and_politics,baseline/jumprelu
+us_legislative_governance,kernel,SUR SAE,8427,0.903125,0.7416666666666667,0.6875,0.98,2,U.S. Legislative / Governance,geography_and_politics,idea5-kernel
+us_legislative_governance,relu,ReLU SAE,21519,0.938125,0.6416666666666667,0.625,0.98,1,U.S. Legislative / Governance,geography_and_politics,baseline/relusae
+us_legislative_governance,gatedsae,Gated SAE,48106,0.93421875,0.725,0.675,1.0,2,U.S. Legislative / Governance,geography_and_politics,baseline/gatedsae
+us_legislative_governance,topk,TopK SAE,55678,0.484375,0.0,0.0,0.95,1,U.S. Legislative / Governance,geography_and_politics,baseline/main
+us_legislative_governance,jumprelu,JumpReLU SAE,34801,0.70171875,0.19999999999999998,0.175,0.95,3,U.S. Legislative / Governance,geography_and_politics,baseline/jumprelu

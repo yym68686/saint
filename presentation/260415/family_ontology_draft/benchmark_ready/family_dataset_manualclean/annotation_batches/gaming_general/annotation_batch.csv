@@ -1,0 +1,923 @@
+candidate_id,family_id,proposed_bucket,source_row_index,text,matched_query_blocks,matched_terms,matched_family_ids,final_label,keep_for_benchmark,label_confidence,primary_reason,exclusion_trigger,notes
+2b663dcfd09aaab0,gaming_general,positive,307433,"It gave each map a wonderful sense of rhythm and narrative, and I maintain it's the best large-scale multiplayer mode I've ever played.",esports_and_live_service,multiplayer,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+9968e254a4f83eb7,gaming_general,positive,134295,Naoki Yoshida: The master discs for both the PlayStation 3 and Windows PC version are now complete.,platform_anchor,playstation,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+a2f62e4b9b8109b5,gaming_general,positive,23911,"DriveClub may have suffered some serious server issues at launch, but the studio both rectified those and delivered arguably the best Season Pass on the PlayStation 4 to date.",platform_anchor,playstation,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+6ad7378f01e1ddf5,gaming_general,positive,310971,"It should be fine for most games where your hands can be far apart, but in Fantastic Contraption you sometimes need to bring your hands close together to manipulate your contraptions, and the team worries the PlayStation VR may have trouble keeping both hands tracked separately.",platform_anchor,playstation,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+d15c655b7ca2ed51,gaming_general,positive,179251,"Advertisement
+
+The speedrun, which was completed on easy, is one of the most entertaining Fallout-related things I’ve watched recently, so I encourage you to put some time aside to enjoy it.",esports_and_live_service,speedrun,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+f3ae7594c51922d3,gaming_general,positive,279393,"[/box_light]
+
+[box_light]
+
+Press Start III: Turbo Edition
+
+Time: 7-11PM
+
+Location: Ltd. Art Gallery, 307 E Pike St, Seattle, Washington 98122
+
+Tix: Free Admission, All Ages
+
+Info: Facebook
+
+PRESS START III: TURBO EDITION
+
+August 29th – September 28th, 2013
+
+Our Annual Video Game show is in it’s third year!",platform_anchor,video game,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+933d5534449f9bf7,gaming_general,positive,14305,This has been an amazing year for us and launching both 1.0 on PC and on Xbox through Xbox Game Preview are huge milestones for the team.,platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+379a7b050dd2f1c0,gaming_general,positive,35518,"Today, we’re taking a look at the perks, streaks, and bonuses available in Assassin’s Creed 3 multiplayer.",esports_and_live_service,multiplayer,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+1a72cce5c5b0eda6,gaming_general,positive,297622,"""So when I'm playtesting and I'm trying to play PS4, Xbox One, Xbox 360 and PS3, that's a lot of work.",platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+d5c47e5af6355d00,gaming_general,positive,231473,Combat is not a video game and it’s not a movie.,platform_anchor,video game,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+55c9585afe8621da,gaming_general,positive,245057,"Whether there will be any multiplayer in The Witcher 3, we don't yet know.",esports_and_live_service,multiplayer,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+d28019f2a4251af9,gaming_general,positive,48119,"""[74] Complex featured Scorpion in a whole host of best-of lists: he was ranked the fifth most brutal fighter in the series[75] and the 15th best video game mascot,[76] in addition to the fourth ""most dominant"" fighting game character,[77] the 23rd ""most badass"" video game character of all time,[78] and one of video game characters who deserved their own spinoff title: ""[W]hether you want to admit it or not, Scorpion runs the [MK] series more than Liu Kang ever has.",platform_anchor,video game,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+d9e7c8acfc4a3dd8,gaming_general,positive,305571,"The company is bringing the core of Windows 10 to the Xbox One, allowing developers to bring apps and games from Windows Phone and PCs to Microsoft's latest console.",platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+fcf4211d48831f1a,gaming_general,positive,265133,"The following games and services will be inaccessible during maintenance:
+
+Arc Games forums
+
+Arc Games main website, product pages and news pages
+
+Arc Games platform including billing and messaging
+
+Arc Games support websites
+
+Battle of the Immortals
+
+Blacklight Retribution (launched from Arc Games)
+
+Champions Online
+
+Forsaken World
+
+Fortuna
+
+Jade Dynasty
+
+Neverwinter (PC & Xbox One)
+
+PWI
+
+Star Trek Online
+
+Swordsman
+
+War of the Immortals
+
+Additional games launched from Arc Games
+
+We anticipate this maintenance to run from October 13 starting at 6:00 am PT and running to 6:00 pm PT.",platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+263e286b41464859,gaming_general,positive,36569,"But if you are getting an Xbox One for the first time, have an interest in the bundled games and aren't saving your pennies for 2017's Project Scorpio, the One S is certainly a good all-round gaming and entertainment deal.",platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+131deb831c00073e,gaming_general,positive,36590,"Sarah Tew/CNET
+
+And it still does everything the old Xbox One does: The good news is that you're not losing anything with the Xbox One S compared with its predecessor.",platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+cefc1764fd7e9759,gaming_general,positive,187576,"Earlier this week, the official South Park Twitter account tweeted about Nintendo, kicking off rumors that The Fractured But Whole might be coming to the system.",platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+3d04eacf00b26423,gaming_general,positive,97954,"Nano-one and Calcflow launched in the STEAM store (VR equivalent of an app story) Nov. 10, and are finalists for CONNECT’s Most Innovative New Product Awards in December.",platform_anchor,steam,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+841cb542adedb104,gaming_general,positive,36551,"Update 8/4/16: Several spec teardown reports have uncovered slight difference in the graphical hardware performance of Xbox One S. Specifically, Xbox One S has a small GPU clock increase of 914 MHz from 853 MHz and an ESRAM bandwidth increase of 219 GB/s from 204 GB/s.",platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+587bf76e142bf256,gaming_general,positive,69605,League of Legends is the most popular multiplayer battle game and most popular in almost all part of the country especially in North America and Asia.,esports_and_live_service,multiplayer,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+757776bdaf42024f,gaming_general,positive,170728,I personally remember old PC games and even old Nintendo games that had tons of bugs.,platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+c7a85b21fcfc1e89,gaming_general,positive,326938,"If one didn’t know the rather unique history behind Nightmare Busters, it probably would just be seen as one of now two non-licensed Super Nintendo games for the SNES library out in the wild.",platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+ff0320e7052e814c,gaming_general,positive,190052,"Release:-It is expected that Need For Speed:The Run will hit gaming Market in November 15 not confirmed,You can also set your :-It is expected that Need For Speed:The Run will hit gaming Market in November 15 not confirmed,You can also set your Preorders for ""The Run""
+
+Platform: -Xbox 360, PlayStation 3, PC, Wii, Nintendo 3DS
+
+You might love to see the first teaser of game shown below:
+
+Source:Official Website",platform_anchor,nintendo;playstation;xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+841fe120e63c33df,gaming_general,positive,228879,"On top of that, we’ll have a brand new special event for Versus and a Bonus Loot Drop event in our 25 wave Horde experience – Horde Frenzy!",gameplay_jargon,loot drop,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+e0cf1a8d4b9ff410,gaming_general,positive,324793,"Iran even has a National Foundation of Computer Games and its own version of E3, the United States’ largest annual video game conference.",platform_anchor,video game,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+918bc44d0c092d62,gaming_general,positive,179016,One the biggest selling points of the PlayStation 3 is that gamers can use the console to play online at no additional charge.,platform_anchor,playstation,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+c1c3837227931b49,gaming_general,positive,276886,"Super Turbo Championship Edition – $5.99
+
+Hand of Fate Deluxe Edition – $8.79
+
+Hatsune Miku: Project Diva X – $24.99
+
+JoJo’s Bizarre Adventure: Eyes of Heaven Bundle – $23.99
+
+J-Stars Victory VS+ – $11.99
+
+LEGO Batman 3: Beyond Gotham – $7.99
+
+LEGO Batman 3: Beyond Gotham Season Pass – $5.99
+
+LEGO Harry Potter Collection – $7.49
+
+LEGO Jurassic World – $7.99
+
+LEGO Marvel’s Avengers – $9.99
+
+LEGO Marvel Super Heroes – $4.99
+
+LEGO The Hobbit – $7.99
+
+Marvel Pinball Season 1 Bundle – $11.49
+
+Marvel Pinball Season 2 Bundle – $10.99
+
+Marvel: Ultimate Alliance Bundle – $23.99
+
+Mass Effect Andromeda – $29.99
+
+Mass Effect Andromeda Deluxe Edition – $34.99
+
+Mirror’s Edge Catalyst – $9.99
+
+One Piece: Burning Blood Gold Edition – $25.34
+
+One Piece: Burning Blood Gold Pack – $6.24
+
+One Piece: Pirate Warriors 3 – $14.99
+
+One Piece: Pirate Warriors 3 Season Pass – $9.59
+
+Outlast: Bundle of Terror – $9.56
+
+Psychonauts – $3.99
+
+Quiplash – $3.99
+
+Rabbids Invasion – $7.99
+
+Rabbids Invasion Gold Edition – $13.99
+
+Retro City Rampage DX – $3.29
+
+Rise of the Tomb Raider: 20 Year Celebration – $23.99
+
+Saturday Morning RPG – $2.49
+
+Sherlock Holmes: The Devil’s Daughter – $19.99
+
+Slain: Back From Hell – $4.49
+
+Strider – $2.99
+
+Super Dungeon Bros – $5.99
+
+Switch Galaxy Ultra – $3.59
+
+Sword Art Online: Lost Song – $23.99
+
+Sword Art Online Re: Hollow Fragment – $7.99
+
+Terraria – $3.99
+
+The Jackbox Party Bundle – $17.99
+
+The Jackbox Party Pack – $9.99
+
+The Jackbox Party Pack 2 – $9.99
+
+The Jackbox Party Pack 3 – $9.99
+
+The Legend of Korra – $4.94
+
+The LEGO Movie Videogame – $4.99
+
+The Order: 1886 – $4.99
+
+The Walking Dead: Michonne – $4.49
+
+The Walking Dead: Season Two – $9.99
+
+The Walking Dead: The Complete First Season – $9.99
+
+Transformers Devastation – $9.99
+
+Trine Bundle – $5.09
+
+Ultimate Marvel vs Capcom 3 – $14.99
+
+Warhammer: End Times Vermintide – $15.99
+
+Wasteland 2 Director’s Cut – $15.99
+
+Zen Pinball 2: Balls of Glory Pinball – $4.99
+
+Zen Pinball 2 Captain America – $1.49
+
+Zen Pinball 2 Civil War – $1.49
+
+Zen Pinball 2 Deadpool – $1.49
+
+Zen Pinball 2 Doctor Strange – $1.49
+
+Zen Pinball 2 Fantastic Four – $1.49
+
+Zen Pinball 2 Guardians of the Galaxy – $1.49
+
+Zen Pinball 2 Marvel Pinball: Avengers Chronicles – $4.99
+
+Zen Pinball 2 Marvel Pinball Original Pack – $4.99
+
+Zen Pinball 2 Marvel Pinball: Vengeance and Virtue – $4.99
+
+Zen Pinball 2 Marvel’s Ant-Man – $1.49
+
+Zen Pinball 2 Marvel’s Avengers: Age of Ultron – $1.49
+
+Zen Pinball 2 Marvel’s Women of Power – $4.19
+
+Zen Pinball 2 South Park Pinball – $1.49
+
+Zen Pinball 2 Venom – $1.49 PlayStation 3 A Space Shooter for 2 Bucks (Mini) – $0.79
+
+Back to the Future: The Game Full Series – $5.99
+
+Injustice: Gods Among Us Ultimate Edition – $7.99
+
+J-Stars Victory VS+ – $7.99
+
+Oddworld: Munch’s Oddysee HD – $1.99
+
+Oddworld: Stranger’s Wrath HD – $2.99
+
+One Piece: Pirate Warriors – $4.99
+
+One Piece: Pirate Warriors 3 – $12.49
+
+One Piece Unlimited World Red – $4.99
+
+Retro City Rampage DX – $3.29
+
+South Park: The Stick of Truth – $7.99
+
+Strider – $2.99
+
+Terraria – $2.99
+
+The Walking Dead: Michonne – $4.49
+
+The Walking Dead: Season Two – $5.99
+
+Zen Pinball 2 Avenger Chronicles Pack – $4.99
+
+Zen Pinball 2: Balls of Glory Pinball – $4.99
+
+Zen Pinball 2 Captain America – $1.49
+
+Zen Pinball 2 Civil War – $1.49
+
+Zen Pinball 2 Deadpool – $1.49
+
+Zen Pinball 2 Doctor Strange – $1.49
+
+Zen Pinball 2 Fantastic Four – $1.49
+
+Zen Pinball 2 Guardians of the Galaxy – $1.49
+
+Zen Pinball 2 Marvel Pinball Original Pack – $4.99
+
+Zen Pinball 2 Marvel Pinball: Vengeance and Virtue – $4.99
+
+Zen Pinball 2 Marvel’s Ant-Man – $1.49
+
+Zen Pinball 2 Marvel’s Avengers: Age of Ultron – $1.49
+
+Zen Pinball 2 Marvel’s Women of Power – $4.19
+
+Zen Pinball 2 South Park Pinball – $1.49
+
+Zen Pinball 2 Venom – $1.49 PlayStation Vita Black Rock Shooter: The Game (PSP) – $5.99
+
+Broken Age – $3.99
+
+Crypt of the NecroDancer – $4.49
+
+Day of the Tentacle Remastered – $2.99
+
+Grim Fandango Remastered – $2.99
+
+Hatsune Miku: Project Diva X – $19.99
+
+J-Stars Victory VS+ – $7.99
+
+Oddworld: Munch’s Oddysee HD – $1.99
+
+Oddworld: Stranger’s Wrath HD – $2.99
+
+One Piece: Burning Blood Gold Edition – $19.34
+
+One Piece: Burning Blood Gold Pack – $6.24
+
+One Piece: Pirate Warriors 3 – $9.99
+
+One Piece: Pirate Warriors 3 Season Pass – $9.59
+
+One Piece Unlimited World Red – $4.99
+
+Prinny (PSP) – $2.99
+
+Prinny 2 (PSP) – $2.99
+
+Retro City Rampage DX – $3.29
+
+Saturday Morning RPG – $2.49
+
+Slain: Back From Hell – $4.49
+
+Terraria – $2.99
+
+The Walking Dead: Season Two – $7.99
+
+Zen Pinball 2 Avenger Chronicles Pack – $4.99
+
+Zen Pinball 2: Balls of Glory Pinball – $4.99
+
+Zen Pinball 2 Captain America – $1.49
+
+Zen Pinball 2 Civil War – $1.49
+
+Zen Pinball 2 Deadpool – $1.49
+
+Zen Pinball 2 Doctor Strange – $1.49
+
+Zen Pinball 2 Fantastic Four – $1.49
+
+Zen Pinball 2 Guardians of the Galaxy – $1.49
+
+Zen Pinball 2 Marvel Pinball Original Pack – $4.99
+
+Zen Pinball 2 Marvel Pinball: Vengeance and Virtue – $4.99
+
+Zen Pinball 2 Marvel’s Ant-Man – $1.49
+
+Zen Pinball 2 Marvel’s Avengers: Age of Ultron – $1.49
+
+Zen Pinball 2 Marvel’s Women of Power – $4.19
+
+Zen Pinball 2 South Park Pinball – $1.49
+
+Zen Pinball 2 Venom – $1.49 PlayStation Portable Retro City Rampage DX – $3.29 PSOne Classic Star Wars: Dark Forces – $1.37
+
+*All prices are in USD and may be higher in Canada.",gameplay_jargon;platform_anchor,playstation;rpg,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+a87d8eb8d85d0dd0,gaming_general,positive,307475,"It makes upgrading difficult because your success is always going to be hampered against high-level players, and it means that your first moments in the game's signature multiplayer are little more than a suggestion of how things might be fun at some point in the future.",esports_and_live_service,multiplayer,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+692dfa63cce0be1a,gaming_general,positive,245067,"This means there will be more freedom to the open world, to who you are and to what you can do.",gameplay_jargon,open world,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+1b4d7ddd3efe3e16,gaming_general,positive,43765,One of the features that PlayStation owners have asking about for years is the ability to expand their console storage with an external USB drive.,platform_anchor,playstation,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+0406ec7e78efcb6b,gaming_general,positive,56879,"Keep communicating with your backers, cross-promoting with other relevant Kickstarters, and doing partnerships where you can (we did a free weekend on Steam for our other game, which definitely helped bring some attention!).",platform_anchor,steam,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+26e2322cd1a3189e,gaming_general,positive,131054,"are now replaced by Faction Emblems in the rank-up reward packages from Faction Vendors
+
+Technical
+
+Networking fixes, which should reduce the instance of the Bee family of KTOs
+
+Fixed an issue in which using Xbox One party chat induced a slower frame rate
+
+The Dark Below goes live on December 9.",platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+9b21b83136198129,gaming_general,positive,333189,"As the video game business continues to see demand for updates to old favorites, we could do with fewer ""HD remasters"" of games that were already HD in the first place, and more labors of love like this restoration of one of LucasArts' most popular old adventure games.",platform_anchor,video game,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+d808ace1473c88ce,gaming_general,positive,276884,"July 2017 PSN Flash Sale Is Live, Here’s All the Deals
+
+Starting a day earlier than normal, and seemingly carrying a Comic-Con theme, the July 2017 PlayStation Store Flash Sale is now live in North America, letting you save on PlayStation 4, PlayStation 3, PlayStation Vita, and PlayStation Portable games.",platform_anchor,playstation,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+779e1e3476f5a61a,gaming_general,positive,137483,The new Official PlayStation Magazine celebrates 20 years of PlayStation and includes a celebratory look back at the last two decades of Sony goodness and has a very special secrets of PlayStation feature.,platform_anchor,playstation,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+79876e189a5c6130,gaming_general,positive,237960,"**** Remember to set the bioinput.ini file back to ""read only"" before you launch the game.- Moonshine for his work on ME2 and ME3 which inspired me to make this MOD.- Heff for all his techincal support.- Machine4578 and eezonaut for there relentless enthusiasm and testing.- BarderothReturns for her config only mod which found all the xbox interfaces that weren't broken.- For extra testing: libm, daninthemix, MotokoKusanagi34, b3ft, Gikoku, Daiyus, rjms1974, Mivey and arkhamtheknight2.- The creators of the tools used: ME1Explorer, JPEXS Free Flash Decompiler and UE Explorer.",platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+30bc5220b942dd03,gaming_general,positive,203416,"[/b] If I'm not mistaken, DOOM is the first FPS game I played that came out this year.",gameplay_jargon,fps game,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+e4efcd539bcdf784,gaming_general,positive,333192,"But once you're thrust into the actual multiplayer end of Hackmud, you're on your own... or you could always make the mistake of trusting another player.",esports_and_live_service,multiplayer,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+7d46ef656461578a,gaming_general,positive,230946,"The Facts
+
+Race as Kirby through a wide variety of colorful environments
+
+Simple one-button setup
+
+Kirby can boost around corners and absorb the powers of enemies
+
+Outrageous track design: loops, corkscrews, twists and turns, and more
+
+Features three different game modes
+
+Four-player split-screen support
+
+Progressive scan support
+
+Requires four memory blocks for saves
+
+LAN-enabled
+
+Gameplay
+
+Nintendo has tinkered with a Kirby racer for a long time.",platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+273cb03bf81f886c,gaming_general,positive,239326,"""We are aware of some issues today with players having problems connecting to GTA Online, as well as issues with the Xbox Live service,"" a representative said.",platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+55299e4f0daf3976,gaming_general,positive,42318,"If the final ruling goes against Microsoft and it does not settle, Motorola could theoretically force it to halt imports of the Xbox to the US.",platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+ed92b4eca27491d4,gaming_general,positive,182036,The trickle-down from the Xbox to PCs shouldn't come as a complete surprise.,platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+a83862752e4548f3,gaming_general,positive,245059,Rumours began about multiplayer when CDPR advertised for a Multiplayer Programmer last year.,esports_and_live_service,multiplayer,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+c0c9c703cc2cfa6b,gaming_general,positive,326893,"While high end graphical versions, at the time at least, were given a lukewarm reception on both the PC and the Sony Playstation, one version of the game was released quietly to little fanfare.",platform_anchor,playstation,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+eb33765416b6d0de,gaming_general,positive,161392,"Using Every Last Resource Available¶
+
+Square Enix heavily collaborated with Nintendo on this title in order to make the impossible a reality.",platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+d2152174fac7f0f1,gaming_general,positive,222557,"Come on Nintendo fans, if you really are ‘huge’ Bayonetta fans you would want to share the awesome gameplay with everyone else, right?",platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+94aaba200f6b5805,gaming_general,positive,99242,"Over the past few days, I've been talking to multiple sources about Star Wars: First Assault, the troubled multiplayer shooter that could be LucasArts's downloadable take on Battlefield and Call of Duty.",esports_and_live_service,multiplayer,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+122c99792c1609af,gaming_general,positive,295019,What I can tell you for certain is that we're creating a new and innovative game to be released on the Xbox One through the ID@Xbox program.,platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+ac53843dc47b45db,gaming_general,positive,36555,The Xbox One S is the version of the console that Microsoft should've first released back in 2013 instead of the lumbering beast that we got.,platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+206b8f0b7aa51fad,gaming_general,positive,41984,"Nintendo hasn't commented on the matter, but a recent job listing seems to indicate that the presentations will continue.",platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+8f1e460e50a7f75f,gaming_general,positive,36598,"4K and HDR scorecard
+
+I want to personally thank the Xbox One S for introducing me to the hot mess that is the world of 4K and HDR formats.",platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+a13c4b57dff63b59,gaming_general,positive,41987,"Plays games to obtain game footage and/or screen captures
+
+Edits video/audio for TV commercials, game trailers, Nintendo Direct, web content, demo kiosks, internal and external presentations, and general marketing purposes as needed
+
+Facilitates file transfers with other groups, agencies, and subsidiaries
+
+Maintains audio/video equipment and editing Macs
+
+Recommends and installs new editing/computer equipment and software
+
+Ability to work overtime required
+
+Be able to receive feedback from various groups, analyze it, and implement it in a timely manner
+
+Certainly seems to indicate that we'll have more Nintendo Directs in the future.",platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+05830ba9000c304a,gaming_general,positive,245087,"Those next-gen consoles haven't been specified in Cyberpunk's case, but we know for definite that The Witcher 3 will be on PS4, and we can expect both games to also be on the next Xbox.",platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+3dc6ae8862f00547,gaming_general,positive,42331,"It will decide whether Motorola should be allowed to order a ban on the distribution of Windows 7, Windows Media Payer and the Xbox console in the country because of the H.264 patents dispute.",platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+672c9789bb97e0e3,gaming_general,positive,222553,"You are correct, Nintendo paid for the development and exclusivity of Bayonetta 2 on consoles and while I don’t know the specifics in the contract about PC, even if they can’t use the work by Platinum Games they can always remake the engine from scratch which seems pretty unlikely.",platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+9e291080e535cb11,gaming_general,positive,69995,"Unfortunately, they eventually have to turn off the Playstation and go to bed since they have school and all.",platform_anchor,playstation,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+4a9d3f0c76d42b4e,gaming_general,positive,35516,"After reading my Assassin’s Creed 3 multiplayer abilities and crafting guide, it’s only natural you wanted more information on setting up your ability slots.",esports_and_live_service,multiplayer,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+0482273b576a1cc2,gaming_general,positive,201604,"We offer professional repairs for all kinds of problems, so whatever issue you have with your Sony product, we can help repair it:
+
+Sony Playstation repairs
+
+Sony Playstations Drive replacments
+
+Sony Playstation HDMI repalacments
+
+Sony Playstation Optical Drive
+
+Sony Playstation USB
+
+Sony Playstation Software fault
+
+Sony Playstation Graphics repairs
+
+Sony Playstation Blue light of Death
+
+Sony Vaio Repairs
+
+Sony Laptop Screen replacments",platform_anchor,playstation,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+71cc57cefd441233,gaming_general,positive,65144,"His bike and helmet were found the day after in Stanley Park, and he left his wallet, computer and phone at home, as well as closing his Twitter and Xbox Live accounts.",platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+1644db37b66ef9cf,gaming_general,positive,237946,This MOD adds full XBOX 360 controller support for playing Mass Effect 1.The Mass Effect game shipped with all the original XBOX controller interfaces but in a very broken state with some functionalityremoved.,platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+f07251ee8e148f68,gaming_general,positive,222083,Well chances are you can gain some money with it thanks to the Xbox music affiliate program!,platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+06c70f8bdcd4e760,gaming_general,positive,242519,"Kuchta testified the VIPs were ""basically playing a video game,"" using a simulator of rig controls on the bridge that was usually used for crew training.",platform_anchor,video game,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+ad0ea6a0b6af2194,gaming_general,positive,31343,"The company, having just had a successful launch of the PlayStation 4 console, has sent out emails to an unknown number of users requiring them to change their passwords because of “irregular activity” on the account.",platform_anchor,playstation,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+1e9c74f5f642ffbe,gaming_general,positive,178117,"Donkey Kong’s connections to Hollywood’s legendary giant ape King Kong – along with the arrival of the 20th anniversary of the live-action Super Mario Bros. movie – inspired us to make our theme for this issue “Nintendo at the Movies.” This was also the issue that ushered in our NF Magazine iPad app, giving us a “third pillar” of distribution for new issues.",platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+85a3d8bbb2bc759f,gaming_general,positive,182032,"Along with the Xbox One, Microsoft also announced a new Kinect today — and it appears the updated motion-tracking system will be coming to Windows PCs just like its predecessor.",platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+23ebaa872974bc33,gaming_general,positive,215620,"This kind of thing doesn't happen too often in eSports, as you seldom see glitches and exploits pulled out of a hat to be used to orchestrate an otherwise impossible comeback.",esports_and_live_service,esports,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+543ce4fce6e7ec94,gaming_general,positive,46345,"The very idea of moving from room to room with an assault weapon, “clearing” the room by shooting victims in the head, as Lanza did in Newtown, is a convention of the First Person Shooter video game genre.",platform_anchor,video game,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+34ffb1376fe33adb,gaming_general,positive,307487,"Like multiplayer, it's best defined by its aesthetics: we have some truly striking visions of the Star Wars universe both otherworldly and all too real, all of it set to the stirring Star Wars music that this game nails to a T. And unlike multiplayer, which uses music cues sparingly to create long stretches of awkward silence, the campaign gives us a much more consistent sense of drama, at least where sight and sound are concerned.",esports_and_live_service,multiplayer,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+29fc47b6536dc326,gaming_general,positive,130982,"), but some just asked for the names of popular TV shows, toys, and video game (including a number of YouTube channels, like Sky Does Minecraft).",platform_anchor,video game,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+468f2071a75a4e72,gaming_general,positive,100961,"Skinny buddle offerings have increased, too, and options include Dish Networks’ SlingTV, DIRECTV NOW and Sony’s PlayStation Vue.""",platform_anchor,playstation,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+92a1cf5947fc836f,gaming_general,positive,300912,Some of the biggest companies were trying to get games out the door that should’ve been released on the PlayStation 3.,platform_anchor,playstation,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+5d6cdfcaf5a5f040,gaming_general,positive,135360,"About This Game Hit the dirt in Colin McRae Rally - the classic off-road racing experience
+
+Colin McRae Rally features the car and track list from last year’s top selling mobile title and features THIRTY amazing rally stages in three environments taken from the PlayStation classic Colin McRae 2.0. for this PC and Mac edition.",platform_anchor,playstation,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+ca20d3f94f9b2770,gaming_general,positive,337624,When The New Order came out it wasn’t such a big deal that you were mowing down Nazis in a video game en masse.,platform_anchor,video game,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+5a41ceae9ceaf0d9,gaming_general,positive,215604,"When you have a scene as new and constantly changing as eSports, situations are going to crop up that cause debate over what the definition of ""cheating"" actual entails.",esports_and_live_service,esports,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+b5f4f6702aa06be6,gaming_general,positive,222505,"Note: We didn’t include the Nintendo Wii games that deserve PC ports because the Wii was a really unique console, but we might have a list dedicated just for the Nintendo Wii in the near future.",platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+ac7a028d200f2f2b,gaming_general,positive,331269,"Cosmo also sees that VR experiences are a spectrum from ranging from completely interactive like a video game, semi-interactive cinematic experience, and the completely passive.",platform_anchor,video game,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+90a45f1b29e6180d,gaming_general,positive,178077,"(Just like the classic Nintendo Power issues did, except that our posters won't be stapled into the issue, forcing you to rip them to remove them.)",platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+667ca3274f5c2d2d,gaming_general,positive,136211,"MMORPG
+
+Massively-Multiplayer Online Role-Playing Game
+
+MMO
+
+Massively-Multiplayer Online.",esports_and_live_service,multiplayer,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+a99a7cfbeb6c6ca8,gaming_general,positive,245065,"And yes it will be an open world game as well.""",gameplay_jargon,open world,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+cd372083c3ed7ec6,gaming_general,positive,12917,"""Nintendo does not routinely give away products in response to letters.",platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+50b91044f94f370b,gaming_general,positive,166591,"This year, there will be little to none focus on ESPORTS at all at TG.",esports_and_live_service,esports,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+5298a4824e205122,gaming_general,positive,14303,"That release looks like it will closely follow the launch of the Xbox One version of PUBG on December 12, which will include the much-anticipated vaulting system that's coming to the PC test servers soon.",platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+e167e09070b3acc0,gaming_general,positive,116782,It was back in the early 90s; I was around 6 years old and I was sitting in front of my friend’s Nintendo Entertainment System.,platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+2226315f802ccb77,gaming_general,positive,170052,"With the game’s esports focus, this should add an extra layer of strategy to races.",esports_and_live_service,esports,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+7d16c43698971d81,gaming_general,positive,215613,"Naturally, LDLC immediately filled a motion that what Fnatic did was illegal, but this is an issue with eSports.",esports_and_live_service,esports,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+89e58e3b42ba45b4,gaming_general,positive,335085,"Ever since it was announced that Sony Computer Entertainment (SCE) would be bringing virtual reality (VR) to the PlayStation 4 back in March 2014, fans have speculated on what first-party franchises could offer their support to the tech.",platform_anchor,playstation,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+6aff001b5e83ff30,gaming_general,positive,309481,"The allure of having a device that would allow an install base consisting of nearly 174 million handhelds (152 for DS, 22 for 3DS) to play their games on a console would be too great for Nintendo and consumers to ignore.",platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+256ce30d32e9066c,gaming_general,positive,279559,"Awkward
+
+Corn Mo
+
+Area Of Defect
+
+plus more guests
+
+[/box_light]
+
+[box_light]
+
+Invisible Arcade – Afterparty Edition
+
+Time: 8PM-1AM
+
+Location: Fred Wildlife Refuge, 128 Belmont Ave E, Seattle, WA 98102
+
+Tix: $5 (Eventbrite) 21+
+
+Info: Website
+
+DOUBLECROSS and
+
+FRED WILDLIFE REFUGE present
+
+Invisible Arcade
+
+A video game expo / concert mashup to delight your senses.",platform_anchor,video game,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+0a264f34b0606ed5,gaming_general,positive,106982,"2D fighting games are a very video game kinda thing, but where there’s a will, there’s a Way of the Fighter, an upcoming board game that tries to replicate the digital genre on a tabletop.",platform_anchor,video game,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+49b88d3e7226164a,gaming_general,positive,115026,"But plenty of us—the Atari kids, the Nintendo kids, heck, even the Playstation and Xbox kids—remember when gaming was given the same side-eye by the mainstream as big fat fantasy novels (hello, HBO’s 20-million-viewer-strong Game of Thrones) and sci-fi books covered in spaceships (*cough* Guardians of the Galaxy *cough*).",platform_anchor,nintendo;playstation;xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+e12571c78a0a15a7,gaming_general,positive,7368,"Nintendo is getting a lot of flak for making the pokéballs randomized, but I know it’s all part of the plan and just another addictive element to the game.",platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+2941e9e9727946d2,gaming_general,positive,41983,A lot of people have been wondering if Nintendo Directs will continue after Iwata's passing.,platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+ab7c04b3fb7c56e0,gaming_general,positive,251820,Xbox.,platform_anchor,xbox,gaming_general,drop,no,high,duplicate_or_low_quality,too_short_or_fragment,batch_bucket=positive; override=too_short_fragment
+8bdec08553f720a3,gaming_general,positive,36566,"When it's all said and done, the Xbox One S should be primarily viewed as a slimmed-down version of the Xbox One that introduces a mildly updated controller and provisions for 4K display.",platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+69df6bb3346d1b9e,gaming_general,positive,178100,"Now, NF Magazine is not Nintendo Power.",platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+0ce9839786b9657f,gaming_general,positive,199167,"The game paled in comparison to Nintendo’s Pro Wrestling, and if it’s possible for something to be frustratingly easy, this was it.",platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+9dff1214c9c8b6de,gaming_general,positive,125217,"It’s a tremendous week for PlayStation games, so read on for the full list.",platform_anchor,playstation,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+cbcbfa8bd63ba544,gaming_general,positive,15859,"A new Pokémon Rumble game will become the first to feature Skylanders style interactive toys, as Nintendo takes a typically cautious approach to NFC technology.",platform_anchor,nintendo,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+4b483fc9d4c1eccb,gaming_general,positive,36565,"But more importantly, Microsoft has already promised that the next Xbox -- dubbed Project Scorpio -- will be arriving in late 2017 with with the seriously amped-up graphics and VR-ready hardware that audiences are clamoring for.",platform_anchor,xbox,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+f6ef35d42e1dd99e,gaming_general,positive,222529,The Yakuza series by SEGA has been around since late 2005 when it debuted on the PlayStation 2.,platform_anchor,playstation,gaming_general,target_positive,yes,high,clear_in_family_anchor,,batch_bucket=positive
+f6877c601dbe0133,gaming_general,local_hard_negative,1238557,"And my source at the five-star hotel — which boasts Michelin-star dining, an opulent casino and employs DAVID GUETTA as its in-house pool DJ — said she is now their number one target.",tabletop_and_non_digital_confounders,casino,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+42bdcc99028cda56,gaming_general,local_hard_negative,1446325,"For more information and to keep up to date on Gaming Club activities check out our Facebook page at: https://www.facebook.com/groups/GamingClubAtOSU/
+
+Table C is for people who only want to play tabletop or Project M/console games.",tabletop_and_non_digital_confounders,tabletop,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+a1fce967f48ba01e,gaming_general,local_hard_negative,1792246,"There are just a few things to watch:
+
+The project should be somewhat related to tabletop role-playing.",tabletop_and_non_digital_confounders,tabletop,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+bea0ab0ce6470d92,gaming_general,local_hard_negative,985767,"The shorter short can, of course, make for a compelling visual—think Daniel Craig emerging, boy-shorted, from the sea in Casino Royale—but short shorts on men also confer social benefits to everyone.",tabletop_and_non_digital_confounders,casino,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+3fa912678f2ee1a8,gaming_general,local_hard_negative,187350,I wasn’t in a mood for blackjack but my girl friend wanted to play roulette before leaving the casino.,tabletop_and_non_digital_confounders,casino,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+b8594ff0cb52a03a,gaming_general,local_hard_negative,1037949,"The NFL’s opposition to gambling didn’t stop New England Patriots owner Robert Kraft and Las Vegas casino developer Steve Wynn from trying to build a $1 billion casino just beyond the end zone at Gillette Stadium in Foxborough, Mass., in 2011.",tabletop_and_non_digital_confounders,casino,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+c44a91d8a52d166b,gaming_general,local_hard_negative,2028196,"Mario Maurer played the black card-red card game and ""won"" exemption, but the former draftee author argues it is time to end the annual draft entirely.",tabletop_and_non_digital_confounders,card game,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+1395297d8e4df9c9,gaming_general,local_hard_negative,150497,"I liked how it was done in Casino Royale and could live with it done in a similar way in future films, but tacking it on at the end makes no sense to me.",tabletop_and_non_digital_confounders,casino,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+8a76aded90164598,gaming_general,local_hard_negative,1139168,"SpaceIL, which has received at least $16 million in grant money from American casino magnate Sheldon Adelson, plans to use a SpaceX Falcon 9.",tabletop_and_non_digital_confounders,casino,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+af428472b3384eed,gaming_general,local_hard_negative,73408,"Robot Turtles has more backers than any other tabletop game in Kickstarter’s history, with 13,765 people pitching in money for the project, and Mr. Shapiro had more than 20,000 presales on the site.",tabletop_and_non_digital_confounders,tabletop,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+5b555abc7d60ae9d,gaming_general,local_hard_negative,1175093,"It is, of course, Casino Royale.",tabletop_and_non_digital_confounders,casino,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+f4c8643233c2fc0a,gaming_general,local_hard_negative,187364,"Conclusion
+
+The Casino Aachen has a historic appearance from the outside, modern from the inside and the staff is friendly and professional.",tabletop_and_non_digital_confounders,casino,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+800b0cf45a130d01,gaming_general,local_hard_negative,860554,I Can Barely Rub Juice In This Casino Droogtime This Saturnine Existence IaMotMC 7 Licord Jazzcrasty cosmicTerrorist cosmicTerrorist XenoZane Liquid Negrocity licord nacrasty Killed by BR8K Spider!!!!!!!!,tabletop_and_non_digital_confounders,casino,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+d8429c5d9a3aa88c,gaming_general,local_hard_negative,1506723,I do not mean this as a critique of my old dungeon masters—they made tabletop gaming so fun that it has become a major component of my free time—but either the eternal will of D&D creator Gary Gygax or our immaturity made our old campaigns more of an action/battle puzzle than a story-driven experience.,tabletop_and_non_digital_confounders,tabletop,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+3325ecf5a2e37373,gaming_general,local_hard_negative,1121818,"Billionaire casino magnate and serial supermodel divorcée Sol Kerzner ignores
+
+2008 global meltdown, hosts Grand Opening for Dubai casino.",tabletop_and_non_digital_confounders,casino,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+8ac5a9d832c4b610,gaming_general,local_hard_negative,1506717,"Given the relative obscurity of tabletop role-playing games, I have been fortunate enough to be introduced to the genre as early as middle school.",tabletop_and_non_digital_confounders,tabletop,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+b6980424434da66c,gaming_general,local_hard_negative,1050985,"However, he denies that he had a bathroom mishap and said it was because the casino didn’t want him to win any additional money from the promotion.",tabletop_and_non_digital_confounders,casino,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+9a1888d4a553e33e,gaming_general,local_hard_negative,1932513,"In 1992, against friends' advice, she paid $10 million to buy and convert a faded Las Vegas hotel into the Debbie Reynolds Hotel and Casino.",tabletop_and_non_digital_confounders,casino,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+a7b52dbf7c16da54,gaming_general,local_hard_negative,1728586,"“They remind us what a great business this is and why it is more than just a business.”
+
+Full list of finalists
+
+Business Finance and Economics Journalist of the Year – sponsored byAstellas
+
+Tom Bergin, Reuters
+
+Stephen Grey, Reuters
+
+Sarah O'Connor, Financial Times
+
+Laura Kuenssberg, ITV News
+
+John Gapper, Financial Times
+
+David Enrich, The Wall Street Journal Europe
+
+Breaking News Award
+
+Channel 4 News: Plebgate – Plebs, lies and videotape
+
+Exaro, the Murdoch recording
+
+The Independent (Tom Harper), blue-chip hacking revelations
+
+The Observer (Catherine Deveney), UK’s top cardinal accused of ‘inappropriate acts’ by priests
+
+The Sunday Times (Insight), Generals for hire
+
+The Times (Anthony Loyd), Revealed: tragic victims of Syria’s nerve gas war
+
+Campaign of the Year – sponsored by Air France KLM
+
+Child sexual exploitation, The Times
+
+Fight for April, The Sun
+
+Ladder for London, London Evening Standard
+
+Safe Weekend Care, The Sunday Times
+
+Wedding for terminally ill cancer sufferer, Scunthorpe Telegraph
+
+Westminster for Sale, The Sunday Times
+
+Foreign Affairs Journalist of the Year
+
+Anthony Loyd, The Times
+
+Hala Jaber, The Sunday Times
+
+Katrina Manson, The Financial Times
+
+Kim Sengupta, The Independent
+
+Patrick Cockburn, The Independent
+
+Richard Lloyd Parry, The Times
+
+Investigation of the Year
+
+The Snowden Files, The Guardian
+
+Sins of our Fathers, BBC Scotland
+
+Plebgate – Plebs, Lies and Videotape, Channel 4 Dispatches
+
+Grooming scandal, Andrew Norfolk, The Times
+
+David Hunt (The Untouchable), Michael Gillard, The Sunday Times
+
+Cancer surgeon with high death rates, Jeanette Oldham, Birmingham Mail
+
+New Journalist of the Year (for journalists who have been in the industry for three years or less)
+
+Alex Ralph, The Times
+
+Fiona O’Cleirigh, Exaro News
+
+Maeve McClenaghan, The Bureau of Investigative Journalism
+
+Patrick Kingsley, The Guardian
+
+Sarah Morrison, The Independent
+
+Simon Murphy, The Mail on Sunday
+
+Photojournalist of the Year
+
+Jeremy Selwyn, London Evening Standard
+
+Mark Scott, The Sentinel
+
+Oli Scarff, Getty Images
+
+Richard Pohle, The Times
+
+Suzanne Plunkett, Thomson Reuters
+
+Politics Journalist of the Year
+
+Amelia Gentleman, The Guardian
+
+Janan Ganesh, Financial Times
+
+Joe Murphy, London Evening Standard
+
+Neil Elkes, Birmingham Post and Mail
+
+Steve Richards, The Independent
+
+Jonathan Calvert and Heidi Blake, The Sunday Times Insight team
+
+Journalism Innovation of the Year
+
+360 degree interactive camera, Lewis Whyld
+
+GuardianWitness, The Guardian
+
+Ooh-Ar augmented reality platform (as used in The Sentinel and Bristol Post)
+
+Sun+
+
+The Brixton Bugle and Brixton Blog
+
+Voices in Danger, The Independent
+
+Sports Journalist of the Year – sponsored by the Hippodrome Casino
+
+Christian Sylt, freelance for City AM and The Independent
+
+David Conn, The Guardian
+
+Ian Herbert, The Independent
+
+Luke Edwards, Telegraph Media Group
+
+Mark Ogden, Telegraph Media Group
+
+Sam Wallace, The Independent
+
+Science and Technology Journalist of the Year – sponsored by theWellcome Trust
+
+Robin McKie, The Observer
+
+Pallab Ghosh, BBC
+
+Leslie Hook, Financial Times
+
+Helen Thomson, New Scientist
+
+Gareth Iacobucci, British Medical Journal
+
+Andrew Gregory, Daily Mirror",tabletop_and_non_digital_confounders,casino,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+b323e588cb902659,gaming_general,local_hard_negative,1073723,"If it's not the way Elvis moves his hips, it's Dungeons and Dragons.",tabletop_and_non_digital_confounders,dungeons and dragons,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+edbed9e9ed4a7d74,gaming_general,local_hard_negative,784304,"On the outset, “Ouija: Origin of Evil” has all the appearances of a shopworn affair: a sequel to a movie based on a board game about a young girl bedeviled by diabolical spirits.",tabletop_and_non_digital_confounders,board game,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+bf39e8aa3dc6e116,gaming_general,local_hard_negative,244613,"(Or something even more shady, like Casino.)",tabletop_and_non_digital_confounders,casino,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+47f0c99962e8bfb6,gaming_general,local_hard_negative,75532,"Another way to support the podcast is to buy some records from our partners in crime over at Grandpa’s Casino Recordings, they carry some great vinyl ska records!",tabletop_and_non_digital_confounders,casino,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+b314e48a3d8dce3b,gaming_general,local_hard_negative,881032,The intensity of the control light to induce state-filling at the left and right QD L s is respectively modulated on the basis of the resultant rewards obtained from the chosen slot machine.,tabletop_and_non_digital_confounders,slot machine,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+1831d7bec5798080,gaming_general,local_hard_negative,420338,"Haunts: French lived for several years in Rome, left, and has also spent time in South Africa, right
+
+Debts: The alleged fraudster spent hundreds of thousands of dollars at the Cosmopolitan casino in Las Vegas
+
+He also withdrew more than $1million in cash and spent nearly $1.5million on his debit card, according to court records.",tabletop_and_non_digital_confounders,casino,,hard_negative,yes,high,nearby_confounder,,batch_bucket=local_hard_negative
+448916b45857ac4c,soccer,positive,45823,"Major League Soccer hasn’t made a commitment to Detroit, but said it is one of seven cities being considered as the league expands.",league_anchor,soccer,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+e0ab2c7c5cf37ded,combat_sports,positive,49541,"In 2014, UFC launched UFC FIGHT PASS™, a digital subscription service with exclusive live events, thousands of fights on-demand and original content.",promotion_anchor,ufc,combat_sports,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+886e3af4ed2d5497,combat_sports,positive,219774,"He later won the OVW Heavyweight Championship from ""The Machine"" Doug Basham before losing the belt to The Prototype.",promotion_anchor,heavyweight,combat_sports,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+0b7763d38bc8bab9,soccer,positive,136418,"Photos: Brazil fans mourn Chapecoense players A military guard of honor receives the coffins of members of the Chapecoense soccer team who were killed in a plane crash as they arrive at the airport in Chapeco, Brazil, on Saturday, December 3.",league_anchor,soccer,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+95e5bc1a450eb1a1,nba_basketball,positive,635186,You mean Russell Westbrook could average a triple-double and not win the MVP?,basketball_jargon,triple-double,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+4da7225a41026189,nba_basketball,positive,41026,"Instead, he's stopping at the free-throw line -- NBA people call this a ""short roll"" -- and taking the pass from the point guard or a wing sliding up to the ball.",basketball_jargon;league_anchor,nba;point guard,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+107c9a0f26f1b2c4,nba_basketball,positive,311005,"At 6 ft 6 in (1.98 m), Weems plays both the shooting guard and point guard positions.",basketball_jargon,point guard,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+b88bd5d8b778f713,nba_basketball,positive,400947,"Curry would have earned higher than an eight, but he only shot 80 percent last year from the free throw line.",basketball_jargon,free throw,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+c24be407372e626e,nba_basketball,positive,477921,"The BMO Harris Bradley Center in Milwaukee, WI, home to the Milwaukee Bucks, has a lease that runs until September 30, 2017.",team_entities,milwaukee bucks,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+d5d6c18818672a88,nba_basketball,positive,263183,Would Washington Wizards fans support the team like the Golden State Warriors’ fans did during the down years and create the best home court advantage in the NBA?,league_anchor;team_entities,golden state warriors;nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+8d293b8f01e5ce0d,combat_sports,positive,415051,"The son of former WBO middleweight and WBC super middleweight champion Nigel, 19, is set to make his bow in the paid game on a pay-per-view undercard.",fighter_entities,pay-per-view;undercard,combat_sports,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+ea67c7e521d6d4a3,nba_basketball,positive,295118,"Durant has held opponents to a 39 percent clip, according to NBA.com.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+c223fd2410619f81,nba_basketball,positive,240551,"Over his 12-year NBA career, he holds averages of 5.4 points and 1.7 rebounds in 15.7 minutes over 623 contests (157 starts) with Memphis, Sacramento, Denver, Indiana, Dallas, Atlanta, L.A. Clippers and Cleveland.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+c373293243cc8756,soccer,positive,112405,"(Image: Alex Livesey - FIFA)
+
+“It was Van Gaal who made me an international player.",league_anchor,fifa,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+c5731a1e85ddf9d0,nba_basketball,positive,247734,"In earning his fourth All-NBA First Team selection, Durant averaged 28.1 points while shooting .510 from the field, .416 from distance and .905 from the free throw line.",basketball_jargon;league_anchor,free throw;nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+8fdfab99364c9906,soccer,positive,158175,"But, according to Deloitte, the team fell ""to their lowest ever position (in the soccer repport) after only a small increase in revenue in 2015/16.",league_anchor,soccer,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+340e8956e5ef1aff,nba_basketball,positive,705127,"Miami has the second highest offensive rating in the NBA, but they also have a top-10 defense.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+801d70c52d064aae,soccer,positive,9511,"That hapless streak was triggered by the horrendous injury that their striker, Eduardo, suffered during a draw at Birmingham City, but the poise of this Arsenal team suggests they would be capable of withstanding even such a traumatic misfortune.",club_entities;soccer_jargon,arsenal;striker,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+3d647b834a1788f4,combat_sports,positive,200761,"“I think we’re going to look back in 10 years,” Fertitta said, “and look at some of these fights back from 2011, 2012, and go, ‘Wow, did the UFC really look like that?’ ”",promotion_anchor,ufc,combat_sports,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+02741e32110d9cb4,combat_sports,positive,117455,"Neal heads Honda Yuasa Racing teammate Gordon Shedden by the smallest of margins in the title fight, just one point separating the pair, with Jason Plato 29 points behind in third.",promotion_anchor,title fight,combat_sports,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+96e539e32de46243,combat_sports,positive,400190,"For more on “Strikeforce: Marquardt vs. Saffiedine,” stay tuned to the MMA Rumors section of the site.",promotion_anchor,mma,combat_sports,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+fb558c34aeae159a,soccer,positive,142809,"When asked about what FIFA is doing to be more gender equal, not just for its players but behind the scenes as well, Blatter, far too familiar with controversial public gaffes, made an outrageously sexist statement.",league_anchor,fifa,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+10d1610f8099db85,soccer,positive,31993,The Welsh midfielder is the only member of the Foxes squad remaining from their time in the third tier seven years ago and has winners' medals from both League One and the Championship.,soccer_jargon,midfielder,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+9f6badf4db130463,combat_sports,positive,90461,"""[The UFC] is where you can test yourself against the best guys in the world,"" he said.",promotion_anchor,ufc,combat_sports,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+c0a426f75cd10969,soccer,positive,78096,"Can you explain the plans to make Inter stronger from a financial point of view, also taking into account if you don't make qualification for the Champions League?",league_anchor,champions league,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+2d373a4e34130aea,combat_sports,positive,200749,"“We’re also learning so much about what an amazing sport this is and the potential that this has, not only for people who are training this way or participating in mixed martial arts, but as a lifestyle.”
+
+O’Toole and UFC CEO Lorenzo Fertitta were both bullish on the deal in an interview with the Herald yesterday, despite outcry from some fighters accustomed to the catch-as-catch-can sponsorship market that preceded it.",promotion_anchor,ufc,combat_sports,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+1dc269eecc3ef000,nba_basketball,positive,173917,Rose has sat out four of the Bulls’ nine game this season while easing into the grind of an NBA season.,league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+f521970fe7c33d98,nba_basketball,positive,437589,"After Miami matched Johnson’s four-year, $50 million offer sheet from the Nets in July, he worked to increase his value by improving his point guard skills.",basketball_jargon,point guard,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+df7f6eb4eaae1051,soccer,positive,68162,"Manchester United have also been mooted as a possible destination but sources told ESPN FC that, so far, that is no more than the player's camp floating possible destinations.",club_entities,manchester united,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+a679ce691670f005,nba_basketball,positive,401456,"And the most dominant conference-finals-or-later win in NBA history, the Lakers’ 126-70 thrashing of the Golden State Warriors on the road in Game 3 of the 1973 Western Conference finals, would be like winning by nine more goals than expected in soccer.",league_anchor;team_entities,golden state warriors;nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+eba3690a77143d8d,nba_basketball,positive,514998,"He played in 1,296 regular-season games – second most of any head coach in NBA history behind only Brooklyn Nets first-year coach Jason Kidd – and appeared in 131 playoff games.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+659dd699cd50586f,soccer,positive,25296,Sterling did not suffer any injuries in the alleged attack and he went on to start and score twice – his 14th and 15th goals of an extraordinary season – in City’s 4-1 victory over Tottenham as Pep Guardiola’s side moved 14 points clear at the top of the Premier League.,league_anchor,premier league,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+f01b09f18720fc2b,nba_basketball,positive,436628,"From June 10-12, players can get an early hands-on with the newest instalments in the Star Wars Battlefront, Need for Speed, Madden, FIFA and NBA LIVE franchises.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+c451c8811e866636,nba_basketball,positive,400895,"Group One – Wings that murdered you off the ball
+
+Reggie Miller – The greatest shooter coming off of two, three, or four screens in NBA history, he sometimes struggled to create his own shot.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+0390ad37dd2aacf4,nba_basketball,positive,174251,"Credit: Mike De Sisti
+
+By of the
+
+Wes Edens, one of the new co-owners of the Milwaukee Bucks, has seen what a new arena can do to rejuvenate downtowns in many midsize American cities.",team_entities,milwaukee bucks,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+943dbee7922690b4,nba_basketball,positive,41031,"As long as the Nets can manipulate the floor before these pick and rolls happen, he can get the ball at the free throw line in the middle of the floor and be a difference-maker.",basketball_jargon,free throw,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+06628aef25d2efb1,soccer,positive,142813,"When the most influential man in the sport says that it's hard to accept women in soccer governance, it doesn't do the reputation of FIFA as a sexist body any good.",league_anchor,fifa;soccer,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+5a1a10cac83a6c10,nba_basketball,positive,594105,"The Bucks are seeking a big man, according to multiple NBA executives, and are also trying to open up cap space by aborting some of their larger contracts, such as Matthew Dellavedova, John Henson (both signed through 2019–20), or Mirza Teletovic (signed through 2018–19).",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+514d61876a24defa,combat_sports,positive,298394,Bellator Official Site：http://bellator.spike.com/,promotion_anchor,bellator,combat_sports,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+d3df626459449eb6,nba_basketball,positive,267309,"For a comparison, Raw last week did 3.17 million viewers but the Golden State Warriors vs. Oklahoma City Thunder NBA playoff game did 8.71 million viewers, which was much tougher competition.",league_anchor;team_entities,golden state warriors;nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+d619b12eede5818d,nba_basketball,positive,413606,"And the Timberwolves sabotaged themselves along the way, agreeing to an illegal deal with Joe Smith that cost the franchise multiple first-round picks as part of the NBA's punishment.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+e763377e70cd429f,combat_sports,positive,286543,"When asked about his chances against the biggest name in UFC, Horn had a McGregor-like response, claiming the fight would be a walk in the park.",promotion_anchor,ufc,combat_sports,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+8918f2c32b38a988,nba_basketball,positive,193318,"According to ESPN, the NBA superstars made a never-before-released rap song together in 2011 during the lockout.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+58ecc43f39c00e95,soccer,positive,84171,"So, rather than rile suburban soccer parents with sensationalistic lies that have the sky falling on our children, why not just tell the truth?",league_anchor,soccer,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+1471da2d1b342f7e,soccer,positive,84260,SI boss Miles Jacobson said first weekend sales of the PC version beat those of Konami's Pro Evolution Soccer 2011 on multiple formats.,league_anchor,soccer,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+4bfd9d20288a54c8,soccer,positive,5227,"RIGHT BACK: Fabian Wiede (Germany)
+
+PLAYMAKER: Sanders Sagosen (Norway)
+
+LEFT BACK: Vuko Borozan (Montenegro)
+
+LINE-PLAYER: Blaž Blagotinšek (Slovenia)
+
+LEFT WING: Rune Dahmke (Germany)
+
+RIGHT WING: Darko Đukić (Serbia)
+
+GOALKEEPER: Torbjorn Bergerud (Norway)
+
+Our list didn’t include some names who will miss the tournament (Lasse Andersson or Paul Drux).",soccer_jargon,goalkeeper,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+38fbfeea89ff8b9d,nba_basketball,positive,515034,"After retiring as a player following the 2003-04 season he began a seven-year television career as an NBA analyst, the final five for ESPN and ABC, typically working alongside play-by-play man Mike Breen and ex-NBA coach Jeff Van Gundy on the network’s top broadcast team.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+34cbed41da1ac08f,nba_basketball,positive,628218,"Click to email this to a friend (Opens in new window)
+
+The NBA came down swiftly and severely on Clippers owner Donald Sterling, for racially insensitive remarks he was heard saying in a recorded private conversation.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+4d1fd9a1c67295be,soccer,positive,69548,They reckon FIFA has been buffing low rated teams and nerfing highly rated teams without telling players.,league_anchor,fifa,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+d2e8f55d3fe21625,nba_basketball,positive,240473,"Teletovic has played all three NBA seasons with the Brooklyn Nets and had his best statistical campaign in 2014-15 when he averaged a career-high 8.5 points, a career-best 4.9 rebounds and a career-high 1.2 assists in 40 games before being diagnosed with bilateral pulmonary embolous (multiple blood clots in the lungs) on Jan. 23.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+d5396da7e0ebca5c,combat_sports,positive,66259,"Elsewhere on the card, Kyoji Horiguchi (14-1 MMA, 3-0 UFC) was the unanimous choice over flyweight Louis Gaudinot (6-3 MMA, 1-2 UFC), and Hector Lombard (34-4-1 MMA, 3-2 UFC) was the consensus pick over welterweight Josh Burkman (27-10 MMA, 5-5 UFC).",promotion_anchor,mma;ufc,combat_sports,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+d507798339b2472c,nba_basketball,positive,47983,"Scorpion has also featured as a guest/cameo character in four non-fighting Midway Games titles: NBA Jam Tournament Edition (1995),[15] The Grid (2000),[16] MLB Slugfest: Loaded (2004),[17] and Psi-Ops: The Mindgate Conspiracy (2004).",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+15befa508f14df22,nba_basketball,positive,358824,"With the Cavs leading by 23, James, who had attempted just one free throw at that point, drove the length of the floor and drew contact from Miami’s James Johnson and Dion Waiters.",basketball_jargon,free throw,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+610327515fee9bed,soccer,positive,13781,And his reputation among fans was further enhanced when he gave Manchester United manager Alex Ferguson a verbal volley in front of the Main Stand at Anfield in September 2012.,club_entities,manchester united,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+696bb9fae80740da,combat_sports,positive,124428,"""Why not?” Brunson told MMA Fighting.",promotion_anchor,mma,combat_sports,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+ae7c20b625ae4264,combat_sports,positive,18537,I have the smallest hands in the UFC.,promotion_anchor,ufc,combat_sports,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+44629bf4554e906b,combat_sports,positive,547410,"Once hailed as the budding “Golden Boy” of South African boxing, Oosthuizen's stocks have taken a downward slide, with the unbeaten IBO champion gaining what was widely regarded a lucky and largely listless draw against Mexican-American Brandon Gonzales in his last fight.",promotion_anchor,boxing,combat_sports,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+2bdd28639ca7e496,nba_basketball,positive,223343,"Of course, players are even more athletic in the NBA, but he might be able to use his strength to his advantage with his new position.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+b055b0e06b572dbe,nba_basketball,positive,22400,"He created regional sports TV channels in Chicago and New York, helped the Wilpon family land a $400 million naming rights deal for Citi Field and worked with Cleveland owner Dan Gilbert on the purchase of the NBA's Cavaliers.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+80af96065142f862,soccer,positive,151098,"CONCACAF, one of the main FIFA regional entities at issue in the case, has its administrative offices in the US.",league_anchor,fifa,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+63fb68884933a689,combat_sports,positive,349942,"Overeem knocked out dos Santos ($400,000) with a vicious second-round volley of strikes in the night's heavyweight co-main event, which took place Dec. 19 and aired live on FOX.",fighter_entities;promotion_anchor,heavyweight;main event,combat_sports,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+452687ec732a9207,soccer,positive,151090,"We know of his views, which have nothing to do with any special relations between FIFA and Russia.",league_anchor,fifa,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+80d187f72a8d466e,nba_basketball,positive,142119,Porter was selected with the third pick of the first round in the 2013 NBA Draft.,league_anchor,nba;nba draft,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+520d7beb66c74757,nba_basketball,positive,205858,"In fact, the first game in league history was a match between the Huskies and New York Knicks at Toronto’s Maple Leaf Gardens; 2016-17 will be the 70th anniversary of that game and season.",team_entities,new york knicks,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+b85f630123486c33,nba_basketball,positive,247742,"The media voted for All-NBA First, Second and Third Teams by position with points awarded on a 5-3-1 basis.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+e39a4edb6d3f053d,combat_sports,positive,324646,"While Bagautinov is one of the most accomplished Combat Sambo practitioners ever to cross over into high-level mixed martial arts, nearly all of the other North Caucasian fighters in the UFC have earned national and international accolades in the sport.",promotion_anchor,ufc,combat_sports,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+a24ff54b279d7414,nba_basketball,positive,553542,Harden is the NBA's second-leading scorer at 27.2 points a game while also averaging seven assists and 5.8 rebounds.,league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+d1fcc58458529175,soccer,positive,136443,"The wife of Danilo, the goalkeeper whose last-gasp save took Chapecoense to the final, cried as she placed his photograph in the goalmouth.",soccer_jargon,goalkeeper,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+c0d50de1d64cb29a,nba_basketball,positive,413642,"Finally, in 2003, the Timberwolves made two dramatic trades, acquiring point guard Sam Cassell from Milwaukee and swingman Latrell Sprewell from New York, providing Garnett the best supporting cast of his Minnesota career.",basketball_jargon,point guard,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+4bd3d4d00ccd877d,combat_sports,positive,433970,"Though many of his salaries remain undisclosed since he often competes in UK events, his KO defeat at UFC 100 earned him $150,000.",promotion_anchor,ufc,combat_sports,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+d34824737313141b,combat_sports,positive,342073,4-ranked UFC fighter Donald “Cowboy” Cerrone.,promotion_anchor,ufc,combat_sports,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+7d97dde720b93192,nba_basketball,positive,311057,"[42]
+
+On June 16, 2015, he parted ways with CSKA Moscow in order to return to the NBA.",league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+0c7a72822ffc20df,nba_basketball,positive,635211,But the All-NBA team -- that's where the stakes are really high.,league_anchor,nba,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+df6c8eec0e6cf423,soccer,positive,93533,Coaches Circle and Presidents Circle members supporting the U.S. Soccer Development Fund can receive individual customer support and concierge services for their ticketing needs.,league_anchor,soccer,soccer,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+e8c4b93128724c01,nba_basketball,positive,86241,Lasry also served as the point guard's financial adviser.,basketball_jargon,point guard,nba_basketball,hard_negative,yes,high,nearby_confounder,,batch_bucket=benchmark_hard_negative
+5f6cbc1d332e5a5b,japan,positive,64176,"Aftershocks, further arrests, and further purges are sure to be felt and seen in the Middle East, Japan, Europe, and the U.S. over the coming days.",country_anchor,japan,japan,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+de05449e81b2959d,japan,positive,16191,There is more lung disease and more deaths from it than in Europe and older people report more arthritis and other limitations on their activity than in Europe or Japan.,country_anchor,japan,japan,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+cdcdb58dc325f061,crypto_blockchain,positive,63584,"Most, such as Steve Matthiasson with his eponymous label or Sashi Moorman of Sandhi, are consultants with high-profile wineries who are staking claims to new California wine with their own labels.",market_and_wallet,staking,crypto_blockchain,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+8c28f208818b68b1,japan,positive,53771,"[3]
+
+Posted to the Far East in 1941, MacCarthy was captured by the Japanese in Sumatra.",country_anchor,japanese,japan,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+db428ed666b145e8,crypto_blockchain,positive,79668,"This prevents blocks from being created or modified dated prior to this checkpoint, thus protecting the chain from malicious attempts to introduce an alternate blockchain.",protocol_anchor,blockchain,crypto_blockchain,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+8ef701a7a74aa419,crypto_blockchain,positive,172693,"According to Israeli Army News (English translation below), Israeli banks have begun to limit the size of wire transfer amounts to bitcoin exchanges.",protocol_anchor,bitcoin,crypto_blockchain,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+3d3fbbcf7fe9a62a,japan,positive,53601,"Thus, capitalists keep getting the higher profits that motivate their relocation out of Western Europe, North America and Japan.",country_anchor,japan,japan,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+3b2cc9800550e6be,japan,positive,28287,Winner will select the delivery port & Car From Japan will arrange the delivery of the prize at Car From Japan's sole discretion.,country_anchor,japan,japan,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+07e98be0e7f0e63f,japan,positive,90244,"In a Pew Research Center opinion survey released in late June, 89 percent of Japanese polled said they have an unfavorable view of China, by far the highest percentage of any of the dozens of countries surveyed.",country_anchor,japanese,japan,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+361a9cdbb2fc329e,crypto_blockchain,positive,60604,"Scoon's son Adam Scoon, the mastermind behind bringing bitcoin to the arcade, said he anticipated everyone would be using bitcoin in the future.",protocol_anchor,bitcoin,crypto_blockchain,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+f4d3f71b91774c59,japan,positive,27432,"Asia:
+
+Japanese Society for Regenerative Medicine; Australian Society for Stem Cell Research (ASSCR); The New South Wales Stem Cell Network; Korean Society for Stem Cell Research; Taiwan Society for Stem Cell Research; Stem Cell Society Singapore (SCSS);
+
+Stem Cell Engineering (SCE)
+
+Stem cell engineering (SCE) was to gather information on the worldwide status and trends of research and development in field SCE, that is, the engineers and engineering approaches in the stem cell field, both in basic research and translation of research into clinical applications and commercial products.",country_anchor,japanese,japan,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+8b37e64ceb2c10b8,crypto_blockchain,positive,209037,"In essence, miners need to sell their bitcoin more to pay for electricity than hoarders and users need to buy.",protocol_anchor,bitcoin,crypto_blockchain,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+cc1fb1c47f0a3db0,japan,positive,9648,"Most people seem to stereotype Japanese as being overly polite, so you can only imagine what happens when foreigners who are usually accused of being rude taunt a Japanese player.",country_anchor,japanese,japan,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+6d9d026935fc04a7,crypto_blockchain,positive,159366,"Bitcoin, however, with its innovative blockchain technology, entirely eliminates the need for a central bank by providing a way to safely transfer money directly from one individual to another.",protocol_anchor,bitcoin;blockchain,crypto_blockchain,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+950e60126027808e,japan,positive,9620,Europe and Asian countries with strong PC gaming communities allow us to invade their virtual worlds from time to time so we’re exposed to the idea of playing games in a foreign language more than the Japanese console gamers.,country_anchor,japanese,japan,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+5ef0f69a74cd8264,crypto_blockchain,positive,127104,"Jeremy Epstein is CEO of Never Stop Marketing and currently works with startups in the blockchain and decentralization space, including OB1/OpenBazaar, Internet of People, and Storj.",protocol_anchor,blockchain,crypto_blockchain,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+edc2e0af4d362f0d,crypto_blockchain,positive,60592,"Gamers at the Arcadia, in Blenheim, just need the bitcoin app on their smartphones.",protocol_anchor,bitcoin,crypto_blockchain,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+e48a83c625991b00,japan,positive,88371,"Japanese Egg & Garlic Fried Rice
+
+Ingredients:
+
+Method:
+
+South Indian egg curry
+
+Ingredients:
+
+Method:
+
+Egg & celery salad
+
+Ingredients:
+
+Method:
+
+Sweet cours
+
+Caramel custard
+
+Ingredients:
+
+Method:
+
+Get egg-ed!",country_anchor,japanese,japan,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+e7862ec26d0c189c,crypto_blockchain,positive,79854,And then came Bitcoin.,protocol_anchor,bitcoin,crypto_blockchain,drop,no,high,duplicate_or_low_quality,too_short_or_fragment,batch_bucket=medium_negative; override=too_short_fragment
+74f9b1c9a9c7a290,japan,positive,90261,"“Japan doesn’t welcome foreigners,” Zhao tells me.",country_anchor,japan,japan,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+827c172e50c246b6,japan,positive,88098,"Alecensa has already demonstrated a 66 percent reduction in the risk of cancer progression, compared with Xalkori, in previously untreated Japanese patients in a late-stage trial, Roche said in May.",country_anchor,japanese,japan,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+3d108b11c2c7b72b,crypto_blockchain,positive,139322,"Instead, he stood up, took out his wallet, and tried to give me $10—not for drinks but because “sometimes you just have to pay for things.” Yes, this person had spent his time-out arriving at the conclusion that 10 whole dollars was enough to compensate me for feeling exposed, trapped, degraded and simultaneously invisible and on display at my own dumb job.",market_and_wallet,wallet,crypto_blockchain,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+5061afc07c13b567,japan,positive,9675,The availability of World of Tanks and its Japanese client certainly drew attention to the event Keiko helped with!,country_anchor,japanese,japan,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+5c6ffadae1207839,japan,positive,9681,"The country is already home to many internet cafes to make-up for the fact that PC aren’t considered a necessity in Japan, but Akihabara eSports Square at least encourages patrons to download their Steam games when visiting their location.",country_anchor,japan,japan,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+d8b7d9f27a6d7696,crypto_blockchain,positive,117975,"Bitcoin Brands Inc. Sponsors MMA Legend Phil Baroni
+
+Bitcoin Brands Inc. announced that it has entered into a sponsorship agreement with mixed martial arts legend Phil “The New York Bad Ass” Baroni for his upcoming main card fight for Bellator 122.",protocol_anchor,bitcoin,crypto_blockchain,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+037ba4aa0adf3ecb,crypto_blockchain,positive,160522,"To begin with, the Philippines and Japan legalized Bitcoin and its businesses in their respective regions.",protocol_anchor,bitcoin,crypto_blockchain,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+0f7491dc0a81dba4,crypto_blockchain,positive,79547,"Blockchain “is likely to have a significant impact in industries ranging from finance to manufacturing, health care and utilities,” among other market sectors, the bank wrote.",protocol_anchor,blockchain,crypto_blockchain,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+5de6b3089c8694b4,crypto_blockchain,positive,117972,"Though it was perhaps the major announcements by Blockchain, the Chamber of Digital Commerce and OKCoin, as well as discussion of New York’s new bitcoin regulation that reverberated most widely online, the conference itself was focused on engendering community spirit.",protocol_anchor,bitcoin;blockchain,crypto_blockchain,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+4ca1771c2c849865,crypto_blockchain,positive,180749,"So, you’ve officially joined the blockchain revolution?",protocol_anchor,blockchain,crypto_blockchain,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+5699defb92aec9ac,crypto_blockchain,positive,143925,"but because of the increase in “hash power” “Computing hash power” this drives difficulty out of reach for the majority of the market just like our example :
+
+“Catch 22” The “Paradox”
+
+So if only a very few people are producing all of the new Bitcoins and a very few produced it before the market knew about it, who decides the Bitcoin price?",protocol_anchor,bitcoin,crypto_blockchain,medium_negative,yes,medium,topical_but_not_primary,,batch_bucket=medium_negative
+27efe3e837d711ce,china,positive,100760,"The least liked, by a long way, is the Chinese Crested, a breed that comes either hairless with a kind of mullet or in the ""Powder Puff"" (with fur) variety.",country_anchor,chinese,china,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+24d8e37ba5220cae,china,positive,90287,"Still, Wang opposed the cartoonist’s criticism of Xi, and of China.",country_anchor,china,china,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+ceef4e3ad23e18bd,china,positive,36476,"Xia Jun, a lawyer with the Environment and Resources Law Committee of the All China Lawyers Association, told the Global Times on Tuesday that the interpretation will not be sufficient given that some local governments tend to offer protection to major polluters who contribute to local GDP.",country_anchor,china,china,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+e927217fcbeb5ecb,china,positive,101381,"In the end, there are only two possible outcomes for a foreigner in China: you either stay here for the rest of your life, or, sooner or later, you leave.",country_anchor,china,china,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+5738339fdb8da816,us_legislative_governance,positive,75687,"While the Senate tax plan could certainly go further in taxing the rich, focusing on the megawealthy makes sense considering how much of our economy is now controlled by them.",institution_anchor,senate,us_legislative_governance,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+676a29ecc9e733c7,us_legislative_governance,positive,59610,"But there are those of us that actually support that.”
+
+For his part, Lee ducked when asked by reporters about the executive order, saying he only wanted to talk about criminal justice reform, the subject of a panel Sunday morning
+
+“We’re here to discuss a different issue and I’ve got to leave right now to go catch a flight,” he said.",process_and_regulation,executive order,us_legislative_governance,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+c62a9d54ab300b11,us_legislative_governance,positive,106052,"In a surprising example of legislators devising an intelligent law that actually fixes the problem, Congress enacted Dodd-Frank, which prevents lenders from making bad loans to unqualified borrowers.",institution_anchor,congress,us_legislative_governance,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+cca8a1968aea85ad,us_legislative_governance,positive,120930,"We have worked hard to improve our compliance oversight, and we have already self-imposed harsh sanctions.",process_and_regulation,oversight,us_legislative_governance,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+ba750e86488b4e6a,us_legislative_governance,positive,44954,"A month before the Gujarat election, Ajmal Kasab, one of the 26/11 jihadis, was hanged just to prove the Congress’ macho nationalism.",institution_anchor,congress,us_legislative_governance,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+42bd1384818297d8,us_legislative_governance,positive,106895,"Commenting on the incident, World Jewish Congress vice-president Boris Fuchsman said: ""We often say that there is no anti-Semitism at the state level today, but no-one has rooted out everyday anti-Semitism.""",institution_anchor,congress,us_legislative_governance,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+30fe44657948830b,aviation_aerospace,positive,138524,"Although it's logical to expect that classified U.S. aircraft programs exist, due to the number that have been revealed in ""all sorts of ways,"" it's uncommon for them to be exposed by civilian photos, Sweetman writes.",aviation_anchor,aircraft,aviation_aerospace,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+7659c7d67a567835,aviation_aerospace,positive,132660,"The spacecraft, part of the US space agency's Constellation programme, is the vehicle that Nasa hopes will carry man to the surface of the Moon by 2020.",aerospace_anchor,nasa;spacecraft,aviation_aerospace,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+059b715a5d0dd302,china,positive,90263,"When we do democracy promotion activities, we run into trouble.” Zhao claims that the Chinese listen to his cell-phone calls and that the Japanese have tapped his landline.",country_anchor,chinese,china,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+7f07454bf0b3ddb1,us_legislative_governance,positive,37264,"The House Oversight and Government Reform Committee, under new Chairman Jason Chaffetz, Utah Republican; the Senate Finance Committee under new Chairman Orrin G. Hatch, Utah Republican; and the House Ways and Means Committee under new Chairman Paul Ryan, Wisconsin Republican, all said they remain on the case.",institution_anchor;process_and_regulation,oversight;senate,us_legislative_governance,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+e767de555db595d9,china,positive,34071,"Bigger than the economies of most countries
+
+If you want a sense of how come China said in 2011 that the illegal removal of $2 Trillion from corruption payments threatens its economy, note that, according to Wikipedia, there are only a few countries in the world that have an economy of $2 Trillion or more and they are: US, Japan, Germany, UK, France, China, Italy, Brazil and Russia.",country_anchor,china,china,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+fb69d04298069a08,us_legislative_governance,positive,62071,"[411] Leadership in the Senate includes Republican Vice President Mike Pence, Republican President Pro Tempore Chuck Grassley, Majority Leader Mitch McConnell, and Minority Leader Chuck Schumer.",institution_anchor,senate,us_legislative_governance,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+e1d3fad51ab75b6e,us_legislative_governance,positive,39328,"And Americans may not only give up on Congress but on the prospects for the private insurance system altogether, increasing the demand for ideas like Medicare for more people.",institution_anchor,congress,us_legislative_governance,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+64d869338e1091a1,aviation_aerospace,positive,122341,The FAA and the controllers' union have established a program that encourages controllers to report errors by promising they won't be penalized for honest mistakes.,aviation_anchor,faa,aviation_aerospace,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+9951d050067d0484,aviation_aerospace,positive,83748,"But this youthful 39-year-old has a remarkably varied résumé: Before brewing caught his fancy, he worked as a photographer covering the war in Serbia; he spent nine years as an investment banker; and he made an unsuccessful attempt to start the Middle East’s first low-fare airline.",aviation_anchor,airline,aviation_aerospace,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative
+2c1029bd7863d960,china,positive,27659,"This was during China's Cultural Revolution, which Becker refers to as a period of ""debate [and] fierce polemics.""",country_anchor,china,china,background_negative,yes,high,clean_background_control,,batch_bucket=background_negative

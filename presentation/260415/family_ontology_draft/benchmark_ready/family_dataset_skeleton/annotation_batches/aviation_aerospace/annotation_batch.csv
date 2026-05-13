@@ -1,0 +1,407 @@
+candidate_id,family_id,proposed_bucket,source_row_index,text,matched_query_blocks,matched_terms,matched_family_ids,final_label,keep_for_benchmark,label_confidence,primary_reason,exclusion_trigger,notes
+1523cf5043b17ab2,aviation_aerospace,positive,179404,"Some countries will permit an aircraft that will not be flown into the airspace of another country to display the registration with the country prefix omitted - for example, gliders registered in Australia commonly display only the three-letter unique mark, without the ""VH-"" national prefix.",aviation_anchor,aircraft,aviation_aerospace,,,,,,
+f04afca696ccafe2,aviation_aerospace,positive,196177,"Constraints, constraints…
+
+The spacecraft is, in principle, able to turn in any direction, however the left, right and rear sides have radiators for shedding heat from the platform and payload systems and should not be illuminated by the Sun.",aerospace_anchor;operations_and_safety,payload;spacecraft,aviation_aerospace,,,,,,
+8439b0d9e39678b7,aviation_aerospace,positive,165208,"(The show, scheduled for just 10 episodes, doesn’t waste time, pulling the curtain back within 15 minutes of the pilot.)",operations_and_safety,pilot,aviation_aerospace,,,,,,
+48a6e3c36cc9d4ed,aviation_aerospace,positive,20579,The turbines resemble large aircraft propellers submerged in 180 to 240 feet of water.,aviation_anchor,aircraft,aviation_aerospace,,,,,,
+0e7948cc7b7c1433,aviation_aerospace,positive,184495,Some think that these antimatter annihilations would be a good way to power rockets and spacecraft.,aerospace_anchor,spacecraft,aviation_aerospace,,,,,,
+bd2534eb37f74b84,aviation_aerospace,positive,122344,"When FAA officials were asked about this, they indicated ""they didn't see the necessity to analyze the data that way,"" he said.",aviation_anchor,faa,aviation_aerospace,,,,,,
+a309a06405eed4f6,aviation_aerospace,positive,5672,"SpaceX announced an audacious plan on Wednesday to land an approximately 6,000kg spacecraft on the surface of Mars.",aerospace_anchor,spacecraft;spacex,aviation_aerospace,,,,,,
+945a68d1602121fe,aviation_aerospace,positive,115099,"Jordanian officials have said they would retaliate harshly for the slaying of the pilot, Lt. Muaz Kasasbeh, who was set ablaze while trapped in a cage.",operations_and_safety,pilot,aviation_aerospace,,,,,,
+619e25066deaccab,aviation_aerospace,positive,108044,"While sometimes dispatched on solo missions, or to lead a surface combatant task force, these cruisers' primary purpose is heading up the air defense squadrons protecting America's 11 aircraft carriers.",aviation_anchor,aircraft,aviation_aerospace,,,,,,
+6bbd3fa7e6d8c9cc,aviation_aerospace,positive,179373,"[4]
+
+Although each aircraft registration identifier is unique, some countries allow it to be re-used when the aircraft has been sold, destroyed or retired.",aviation_anchor,aircraft,aviation_aerospace,,,,,,
+8971c26a5c304cd1,aviation_aerospace,positive,183903,"Air Traffic Control games are not new, as they first appeared on the iPhone, one of the first smartphones with a full touchscreen.",operations_and_safety,air traffic control,aviation_aerospace,,,,,,
+517bf876539902c8,aviation_aerospace,positive,54318,Differences between martian meteorites and rocks examined by a NASA rover can be explained if Mars had an oxygen-rich atmosphere 4000 million years ago – well before the rise of atmospheric oxygen on Earth 2500m years ago.,aerospace_anchor,nasa,aviation_aerospace,,,,,,
+59bfbbbe37ee9032,aviation_aerospace,positive,122650,"But the airline says it has been defeated by escalating costs, particularly the price of having to ship fuel in by road from South Africa, and the unreal maths of the Zimbabwean economy.",aviation_anchor,airline,aviation_aerospace,,,,,,
+8ecb33eed5091da2,aviation_aerospace,positive,159610,"[32] Some of these warnings include the following:
+
+March 2001 – Italian intelligence warns of an al-Qaeda plot in the United States involving a massive strike involving aircraft, based on their wiretap of al-Qaeda cell in Milan.",aviation_anchor,aircraft,aviation_aerospace,,,,,,
+d2aea8d2eef45cad,aviation_aerospace,positive,75573,"In the biggest pilot case to date, ConEdison has embarked on a $250 million effort to develop 52 MW of demand-side resources to replace the need for a new substation and transmission lines in Brooklyn with a $1 billion price tag.",operations_and_safety,pilot,aviation_aerospace,,,,,,
+ebd27d63914ccccf,aviation_aerospace,positive,192741,Jesse (The recovery operations for the remains of Captain Bahinting and the Nepalese co-pilot are ongoing.,operations_and_safety,pilot,aviation_aerospace,,,,,,
+b0ae10e4d1f35152,aviation_aerospace,positive,191346,With full-throttle expansion of the tar sands described as “game over for the climate” by now-retired NASA scientist James Hansen — and with fracked oil and gas found to be dirtier than coal when examined in its entire lifecycle according to a May 2011 Cornell University study — it makes for scary math indeed.,aerospace_anchor,nasa,aviation_aerospace,,,,,,
+0650e377ae3e1093,aviation_aerospace,positive,126000,"The object, around 75 feet long and 40 feet wide, was spotted early on March 18 some 75 miles from a location where possible debris was sighted by another satellite on March 16 in the remote ocean off western Australia, China's State Administration of Science, Technology and Industry for National Defense (SASTIND) said on its website.",aerospace_anchor,satellite,aviation_aerospace,,,,,,
+13a47ee17ddd428f,aviation_aerospace,positive,53392,"To reduce the stress of travel on families, we started satellite locations.",aerospace_anchor,satellite,aviation_aerospace,,,,,,
+22406edab60a395b,aviation_aerospace,positive,147532,A new experimental spacecraft design anticipates the second problem with the techniques of the first.,aerospace_anchor,spacecraft,aviation_aerospace,,,,,,
+45631ecd5363fd33,aviation_aerospace,positive,54319,Scientists from Oxford University investigated the compositions of Martian meteorites found on Earth and data from NASA’s ‘Spirit’ rover that examined surface rocks in the Gusev crater on Mars.,aerospace_anchor,nasa,aviation_aerospace,,,,,,
+9cbaa33cf44c591e,aviation_aerospace,positive,81081,"On seeing the Pentagon in flames, the lead fighter pilot later explained, “I reverted to the Russian threat.",operations_and_safety,pilot,aviation_aerospace,,,,,,
+a1f5db92aa4bc0bd,aviation_aerospace,positive,129043,"Edwin L. Tan , 29.12.2011 I think your new gerneration plane to replace the F-15 is so impresive but, can you inject the harrier tech on that plane i think it will be give more edge against the enemy can you send me a model of the plane coz i am a collector of new fighter jets more power and God bless Happy new year Abe , 25.10.2011 Being a former fighter pilot and engineer.",operations_and_safety,pilot,aviation_aerospace,,,,,,
+d77425f51f31be52,aviation_aerospace,positive,32514,"For this reason, the paper refers to the object as a 'candidate z≈11 galaxy'
+
+More information
+
+The Hubble Space Telescope is a project of international cooperation between ESA and NASA.",aerospace_anchor,nasa,aviation_aerospace,,,,,,
+d8a06de6b86406b5,aviation_aerospace,positive,108242,"Target Locator Production information Manufacturer Misriah Armory Model H-165 FOM Type Laser designator Cost N/A Technical specifications Size Single-handed Damage Per Hit Extremely High Magazine Size 1 (7 missiles per magazine) Maximum Ammunition 3 (Campaign and Firefight)
+
+3 (Unearthed) Ammunition Type Orbital missiles Operation 7 missile salvo Rate of Fire Very low Usage Era(s) Human-Covenant war Affiliation United Nations Space Command [Source] • [Talk]
+
+The H-165 Forward Observer Module, also known as the Target Locator[1] or Target Designator,[2] is a United Nations Space Command artillery fire designator.",operations_and_safety,orbital,aviation_aerospace,,,,,,
+7ab28ec8c798db76,aviation_aerospace,positive,179376,Also note that an individual aircraft may be assigned different registrations during its existence.,aviation_anchor,aircraft,aviation_aerospace,,,,,,
+870602c8cffaafa3,aviation_aerospace,positive,150920,"As Cox put it, “Those of us that are involved in airline safety, we’re looking at this data for trends all the time, and the safety has gotten better.” Washington Post transportation reporter Ashley Halsey III added, “Lee’s pilots would be complaining, loudly and very publicly, if they felt that they were being given substandard equipment.”
+
+Unleashing competition on an industry that had been in a regulatory straitjacket for four decades was bound to lead to “creative destruction.” Tools such as outsourcing, automation, and creative pricing are all part of the discovery process as airlines seek viable business models for a sector that was badly in need of fundamental change.",aviation_anchor,airline,aviation_aerospace,,,,,,
+7ac5e116db2db404,aviation_aerospace,positive,122527,"The combined analysis of hundreds of photos and videos, as well as satellite imagery and testimony from eyewitnesses, provides compelling evidence of serious violations of international humanitarian law by Israeli forces which must be investigated.”
+
+There is strong evidence that Israeli forces committed war crimes in their relentless and massive bombardment of residential areas of Rafah in order to foil the capture of Lieutenant Hadar Goldin, displaying a shocking disregard for civilian lives.",aerospace_anchor,satellite,aviation_aerospace,,,,,,
+70c62c2a508b3e03,aviation_aerospace,positive,127846,"The margin for error is just as slim here, granted, however losing a pilot, or worse, a mech within the relatively consequence-less confines of single player is far preferable than falling to anonymous fighters online.",operations_and_safety,pilot,aviation_aerospace,,,,,,
+ae69d0fb0df9b468,aviation_aerospace,positive,74416,"However, on the final switchback Kerker was hit by a fellow pilot, taking both pilots out of the race.",operations_and_safety,pilot,aviation_aerospace,,,,,,
+d37f5c6846159a0f,aviation_aerospace,positive,111727,"Rather, the issues the plane has been facing have much more to do with Boeing’s decision to treat the design and production of such a radically new and different aircraft as a modular system so early in its development.",aviation_anchor,aircraft;boeing,aviation_aerospace,,,,,,
+3d4f5fd2b5a1ffb3,aviation_aerospace,positive,133733,"But the same cable noted rather drily that NASA had ""only marginal interest"" in the objects.",aerospace_anchor,nasa,aviation_aerospace,,,,,,
+667d9036d4fb3b0d,aviation_aerospace,positive,145368,She is an enthusiastic member of Ridgewell Gliding Club and is planning on becoming an airline pilot.,aviation_anchor;operations_and_safety,airline;pilot,aviation_aerospace,,,,,,
+3958d1afdc052f00,aviation_aerospace,positive,117724,"Speaking to BBC, the Airbus leader said even if a referendum on leaving the EU may be 18 months away, companies like Airbus needed to be ahead in that debate.",aviation_anchor,airbus,aviation_aerospace,,,,,,
+305fdd014d75ec81,aviation_aerospace,positive,20381,The airline tweeted that it was having problems with its weight-reporting system.,aviation_anchor,airline,aviation_aerospace,,,,,,
+f601fa4d2afb5778,aviation_aerospace,positive,36150,"It is the extremes that have the most impact on people and other life on the planet.”
+
+NASA images by Robert Simmon, based on data from the NASA Goddard Institute for Space Studies, NOAA National Climatic Data Center, Met Office Hadley Centre/Climatic Research Unit, and the Japanese Meteorological Agency.",aerospace_anchor,nasa,aviation_aerospace,,,,,,
+bb8d38cc1d4e298e,aviation_aerospace,positive,159562,"The book The Terror Timeline includes numerous articles that are often cited to suggest that the method of flying planes into buildings was known by U.S. officials:[5]
+
+In 1994, there were three examples of failed attempts to deliberately crash planes ito buildings, including one where a lone pilot crashed a small plane into the lawn of the White House.",operations_and_safety,pilot,aviation_aerospace,,,,,,
+a8110860f7e2e073,aviation_aerospace,positive,12827,"Anyone encountering this who refers specifically to the ""European Court case of Wallentin-Hermann v Alitalia"" may impress the airline sufficiently so that it does not waste time trying to bluster its way out of paying up.",aviation_anchor,airline,aviation_aerospace,,,,,,
+612d0cab9fc315da,aviation_aerospace,positive,60295,"The payload, landing gear, and arms of the aircraft attach with quick-snap connectors so the Galaxy R8700 goes from out-of-the-box to preflight in just a few minutes.",aviation_anchor;operations_and_safety,aircraft;payload,aviation_aerospace,,,,,,
+4096b58fa37c8d1e,aviation_aerospace,positive,5698,"Nevertheless, when SpaceX gets the vehicle flying, Falcon Heavy's economy is tantalizing, slashing the cost of getting tons of cargo into space.",aerospace_anchor,spacex,aviation_aerospace,,,,,,
+7b44bfe94b4f6ef4,aviation_aerospace,positive,172385,"""No arrests have been made yet,"" a police officer said.An airline spokesman said that the commander had been suspended.After the incident, the captain was allowed to fly again.",aviation_anchor,airline,aviation_aerospace,,,,,,
+b2c933dc21da8016,aviation_aerospace,positive,131548,Some have claimed “Nibiru” is not a planet after all but a brown dwarf star with its own active satellite system.,aerospace_anchor,satellite,aviation_aerospace,,,,,,
+dc0ad29d70d78e06,aviation_aerospace,positive,109081,SEPTA's pilot program will run through October 2015.,operations_and_safety,pilot,aviation_aerospace,,,,,,
+a9f5e9bd12043728,aviation_aerospace,positive,150810,Today the company announced that it will be rolling out “pre-commercial” 5G service to pilot customers in 11 markets across the United States by mid-2017.,operations_and_safety,pilot,aviation_aerospace,,,,,,
+989a870affcd8ae0,aviation_aerospace,positive,10776,"In this author’s opinion incidents like this highlight the tension between hobbyists and those responsible for security, and also their lack of knowledge of RC aircraft and the technology in general.",aviation_anchor,aircraft,aviation_aerospace,,,,,,
+90bba3ea5e3ac820,aviation_aerospace,positive,180872,Make sure you’re familiar with rules regarding what can and can’t be brought on board an aircraft.,aviation_anchor,aircraft,aviation_aerospace,,,,,,
+2a73bf07278c3287,aviation_aerospace,positive,138516,"Photo: CIA.gov Image 1 of / 17 Caption Close 'Mystery aircraft' over Texas draws speculation of real spy plane 1 / 17 Back to Gallery
+
+If the unidentified aircraft photographed over Amarillo turns out to be a new U.S. spy plane, it wouldn't be the first time.",aviation_anchor,aircraft,aviation_aerospace,,,,,,
+e1df137f7d7dc2a6,aviation_aerospace,positive,10965,"But NASA press officials, despite repeated inquiries from me and promises of cooperation from them, never disclosed the space mission(s) that these special engines had been originally flown on.",aerospace_anchor,nasa,aviation_aerospace,,,,,,
+fed8cf25c4a1bb15,aviation_aerospace,positive,196172,The shape and structure of spacecraft are normally described using a coordinate reference frame.,aerospace_anchor,spacecraft,aviation_aerospace,,,,,,
+f4375bceaf21d353,aviation_aerospace,positive,7677,"SOME OF FOSSETT'S RECORDS 1998/2002: Long-distance for solo ballooning 2001/2002: Duration for solo ballooning 2002: First solo round-the-world balloon flight First balloon crossings of Asia, Africa, Europe, South America, South Atlantic, South Pacific, Indian Oceans Seven fastest speed sailing titles 13 World Sailing Speed Record Council titles 2001: Fastest transatlantic sailing 2004: Fastest round-the-world sailing Round-the-world titles for medium airplanes US transcontinental titles for non-military aircraft
+
+In pictures: Steve Fossett Profile: Steve Fossett But reports later said that some remains had been found in the aircraft and would be sent for DNA analysis.",aviation_anchor,aircraft,aviation_aerospace,,,,,,
+7e4ad9b3724fde6a,aviation_aerospace,positive,20380,United responded on Twitter to passengers who experienced delays or problems with the airline’s website.,aviation_anchor,airline,aviation_aerospace,,,,,,
+922841152d32cfe8,aviation_aerospace,positive,69321,"The states of Texas, New Jersey and New York saw surveillance aircraft overhead each day from the 1st through the 7th.",aviation_anchor,aircraft,aviation_aerospace,,,,,,
+bbeb3a9e301d5eac,aviation_aerospace,positive,126003,"China said an image of the object had been captured by its high-definition earth observation satellite ""Gaofen-1"".",aerospace_anchor,satellite,aviation_aerospace,,,,,,
+5c177472a18ee50c,aviation_aerospace,positive,136363,"The Hog is a relatively easy aircraft to fly, but doing so while battling armed forces with this brutally realistic weapons delivery platform is one of the most challenging—and intensely satisfying—undertakings you’ll ever face in a PC flight sim.”
+
+92/100 – PC Gamer",aviation_anchor,aircraft,aviation_aerospace,,,,,,
+3f554033502c5dd0,aviation_aerospace,positive,18714,"And, in what seems to be standard protocol for NASA missions, the 90-day operation stretched into a six-year mission, paving the way for later Mars rovers like Opportunity and Curiosity.",aerospace_anchor,nasa,aviation_aerospace,,,,,,
+64d869338e1091a1,aviation_aerospace,positive,122341,The FAA and the controllers' union have established a program that encourages controllers to report errors by promising they won't be penalized for honest mistakes.,aviation_anchor,faa,aviation_aerospace,,,,,,
+5f0188a37b1a3d5f,aviation_aerospace,positive,10048,"""[29] Former U.S. Vice President Dick Cheney criticised Obama's decisions on the drone, saying that, after the aircraft went down, the president should have ordered an air strike within Iran: ""The right response to that would have been to go in immediately after it had gone down and destroy it.",aviation_anchor,aircraft,aviation_aerospace,,,,,,
+134f94ef38933d23,aviation_aerospace,positive,45578,"""These are exceptionally long periods of time to retain access to compromised servers for payload distribution of this nature,"" says Liam O'Murchu, manager of security response operations for Symantec.",operations_and_safety,payload,aviation_aerospace,,,,,,
+c8811beebe69ff0b,aviation_aerospace,positive,126007,"Remote seas
+
+The international search for the plane has in recent days focused on the southern Indian Ocean far off Australia's western coast, after satellite images captured floating objects that investigators believed could be parts of an aircraft.",aerospace_anchor;aviation_anchor,aircraft;satellite,aviation_aerospace,,,,,,
+13fb652984da2f8c,aviation_aerospace,positive,100958,"Though 32.9% say they're frustrated by ""poor customer service,"" and 29.9% say they're bothered by the quality of the pay TV service they receive from their telco, cable, or satellite TV provider.",aerospace_anchor,satellite,aviation_aerospace,,,,,,
+82ca512c0dd2a7f0,aviation_aerospace,positive,3561,"""We believe the CS100 is the perfect aircraft for the next stage of our growth for many reasons, not the least of which is that it is the quietest commercial jet in production.""",aviation_anchor,aircraft,aviation_aerospace,,,,,,
+430876b60723a9d6,aviation_aerospace,positive,117716,"IN PHOTO: An Airbus A320 airliner from Air New Zealand, seen in this undated file photo, has crashed in the sea off the southwest coast of France, near Perpignan with five people on board during a training flight on November 27, 2008.",aviation_anchor,airbus,aviation_aerospace,,,,,,
+158b9f33402c6233,aviation_aerospace,positive,5700,"If SpaceX gets the big rocket to work, then what?",aerospace_anchor,spacex,aviation_aerospace,,,,,,
+3f239e72725e1487,aviation_aerospace,positive,113607,"Mr Leicester flew 68 missions with Bomber Command, mostly night-time bombing operations over German cities in aircraft including the Halifax, and Pathfinder Lancasters.",aviation_anchor,aircraft,aviation_aerospace,,,,,,
+7840a64e76ca0ce0,aviation_aerospace,positive,192416,"Lots of other hillbillies made that same journey, creating satellite communities throughout the industrial Midwest.",aerospace_anchor,satellite,aviation_aerospace,,,,,,
+4152ccec84a34f01,aviation_aerospace,positive,109093,"""If we receive positive evaluations and feedback from the pilot program, SEPTA could add a turn alert system to its bus fleet in the near future,"" Sauer said.",operations_and_safety,pilot,aviation_aerospace,,,,,,
+b09784a797f57282,aviation_aerospace,positive,53768,"[3] The aircraft had crash landed after its undercarriage had failed to lower and it came to rest on the airfields bomb dump, where it caught fire.",aviation_anchor,aircraft,aviation_aerospace,,,,,,
+5aa79466c1bac42c,aviation_aerospace,positive,111744,"But with the 787, it appears that Boeing tried a very different approach: rather than having the puzzle solved and asking the suppliers to provide a defined puzzle piece, they asked suppliers to create their own blueprints for parts.",aviation_anchor,boeing,aviation_aerospace,,,,,,
+69684ce0454fa8f9,aviation_aerospace,positive,6351,"On Wednesday, it will come up at these local times at these locations, according to NASA: New York City, 8:58 p.m.; Miami, 8:35 p.m.; Seattle, 9:51 p.m.",aerospace_anchor,nasa,aviation_aerospace,,,,,,
+26170f2ca0bec210,aviation_aerospace,positive,109765,"The other new and noteworthy bit is the fighter-pilot-like Active Driving Display.According to Mazda, after benchmarking the infotainment systems in many of its rival automakers, they didn't find a single one that they thought was very good.",operations_and_safety,pilot,aviation_aerospace,,,,,,
+ea5369b41369b27c,aviation_aerospace,positive,45879,"Story continues below advertisement
+
+The announcement could come as early as tomorrow, and would make Toronto-based Porter the first Canadian carrier to buy the mid-range aircraft, The Globe and Mail's Bertrand Marotte writes.",aviation_anchor,aircraft,aviation_aerospace,,,,,,
+12d5a7c79bc433d7,aviation_aerospace,positive,3562,"Robert Kokonis, co-founder of airline consulting firm AirTrav, noted to CBC News that the thrust reverser required on landing may be louder than Deluce's promise of an engine that is ""whisper"" quiet.",aviation_anchor,airline,aviation_aerospace,,,,,,
+c554356f969562ca,aviation_aerospace,positive,82282,"On Wednesday a Ukrainian Air Force Su-25 fighter was also hit by a missile, forcing the pilot to eject.",operations_and_safety,pilot,aviation_aerospace,,,,,,
+6dc67141e343ad2f,aviation_aerospace,positive,10179,"NASA's Space Exploration Vehicle has reached downtown Houston after a trip up the Gulf Freeway.NASA usually looks to the stars, but today all eyes were on I-45 as the space agency hit the road to downtown Houston.The Space Exploration Vehicle is a big machine that NASA hopes will one day be used by astronauts to explore other planets.",aerospace_anchor,nasa,aviation_aerospace,,,,,,
+1ca1d8baefaec4c0,aviation_aerospace,positive,173816,"Similarly, Figure 4 shows 130.4 nm UV airglow data measured by the Special Sensor Ultraviolet Spectrographic Imager (SSUSI) satellite instrument on days before (left), during (middle), and after (right) a total solar eclipse over Africa on 29 March 2006.",aerospace_anchor,satellite,aviation_aerospace,,,,,,
+06ceb9222a640f9e,aviation_aerospace,positive,95083,"""Trump warned in an interview with Reuters on Thursday that a ""major, major conflict"" with North Korea was possible, while China said last week the situation on the Korean peninsula could escalate or slip out of control.In a show of force, the United States has already sent an aircraft carrier strike group, led by the USS Carl Vinson, to waters off the Korean peninsula to conduct drills with South Korea and Japan.The U.S. military's THAAD anti-missile defence system has reached initial operational capacity in South Korea, U.S. officials told Reuters, although they cautioned that it would not be fully operational for some months.North Korea test-launched a missile on Saturday that appeared to have failed within minutes, its fourth successive failed launch since March.",aviation_anchor,aircraft,aviation_aerospace,,,,,,
+6c6c4369e67e0dbf,aviation_aerospace,positive,18713,"Forty years ago, NASA landed a spacecraft on the surface of Mars, giving us our first close-up view of the so-called Red Planet.",aerospace_anchor,nasa;spacecraft,aviation_aerospace,,,,,,
+64335975913ca026,aviation_aerospace,positive,12825,"A couple of stroppy emails did persuade SIA to pay up, but it was disappointing that the airline continued to argue this issue even after the European Court decision.",aviation_anchor,airline,aviation_aerospace,,,,,,
+b6135707c404f366,aviation_aerospace,positive,4453,"“If I had to guess, I'd say it's as fresh and new as the day it was placed aboard the spacecraft,"" said David Doody, an engineer on the Voyager mission at NASA’s Jet Propulsion Laboratory, in an email.",aerospace_anchor,nasa;spacecraft,aviation_aerospace,,,,,,
+b44d126ab3f1de16,aviation_aerospace,positive,77546,We say “appears” because officially the tests were announced by the FAA but are centered near the US Navy’s largest installation in the Mojave Desert.,aviation_anchor,faa,aviation_aerospace,,,,,,
+3ec3142029ee2148,aviation_aerospace,positive,129128,"A total of 235 cetaceans were captured for sale to marine parks, including 20 Pacific white-sided dolphins, 179 bottlenose dolphins, 35 pantropical spotted dolphins and one pilot whale.",operations_and_safety,pilot,aviation_aerospace,,,,,,
+f63c3b8a12f73e8b,aviation_aerospace,positive,179414,"Normally when flying entirely within the United States, an aircraft would not identify itself starting with ""N"", since that is assumed.",aviation_anchor,aircraft,aviation_aerospace,,,,,,
+f4abaacdace6cc18,aviation_aerospace,positive,15200,"Let’s be clear; the mainstream media deserves a kick in the ass so hard they reach orbital velocity for their professional missteps, insularity, ideological blinders, vast self-regard, and occasional outright malice against conservatives.",operations_and_safety,orbital,aviation_aerospace,,,,,,
+d4bef3ce3223a532,aviation_aerospace,positive,195139,"According to NASA, the closest approach to Titan is scheduled for 11:08 pm PDT, today.",aerospace_anchor,nasa,aviation_aerospace,,,,,,
+7a34379f587fdd2c,aviation_aerospace,positive,195820,"A 1997 bill passed by Texas legislators sets up a technical procedure for astronauts -- nearly all of whom live in Houston -- to vote from space.A secure electronic ballot, generated by the Harris and Brazoria County Clerk's office, is uplinked by NASA's Johnson Space Center Mission Control Center.",aerospace_anchor,mission control;nasa,aviation_aerospace,,,,,,
+d06404a4c4d7ed9d,aviation_aerospace,positive,160098,"""So Nasa does not want the economic risk of having the Hubble [Space Telescope] go down.",aerospace_anchor,nasa,aviation_aerospace,,,,,,
+2d1c4e925e8f7f73,aviation_aerospace,positive,715,"Future exploration plans will become clearer when the Trump Administration and Congress weigh in on the agency’s budget, said Mark Geyer, acting deputy associate administrator for NASA’s Human Explorations and Operations Mission Directorate.",aerospace_anchor,nasa,aviation_aerospace,,,,,,
+3645456b840a577a,aviation_aerospace,positive,5744,"""Being able to show you can land that kind of spacecraft puts you on a track that people have to take seriously.”
+
+In short, if Red Dragon does land, it validates Musk's vision of colonizing Mars.",aerospace_anchor,spacecraft,aviation_aerospace,,,,,,
+cd3976fb84b21fad,aviation_aerospace,positive,2948,"Because when he’s off doing post on this pilot, we’re going to grope in the dark without him but he will be consulted quite heavily.”
+
+Tapert said, “ They opted for the half-hour format to match the “breakneck” pace of the films.",operations_and_safety,pilot,aviation_aerospace,,,,,,
+c6b82a1268640f0c,aviation_aerospace,positive,60338,"A comparison with the glow produced by SpaceX's Falcon 9 rocket, which launches the company's Dragon capsule on cargo missions to the International Space Station (ISS), might be instructive.",aerospace_anchor,spacex,aviation_aerospace,,,,,,
+321f5be3dd32b958,aviation_aerospace,positive,40832,"UK investigators believe a bomb was put in the hold of the Metrojet Airbus A321 before take-off, the BBC has learned.",aviation_anchor,airbus,aviation_aerospace,,,,,,
+1a6331010bbb1173,aviation_aerospace,positive,18718,So mission controllers adjusted the date so the spacecraft could find a smoother place to land.,aerospace_anchor,spacecraft,aviation_aerospace,,,,,,
+cb16fd9fa04c83ad,aviation_aerospace,positive,148294,"Khalifasat is billed as the satellite that marks the independence of EIAST from foreign technology providers, notably South Korea’s Satrec Initiative.",aerospace_anchor,satellite,aviation_aerospace,,,,,,
+b20a9634be23d28d,aviation_aerospace,positive,159574,They included the FAA...,aviation_anchor,faa,aviation_aerospace,,,,,,
+775e6a7e80d8510c,aviation_aerospace,positive,191356,"The coasts of the country are patrolled steadily by great armadas of naval power, bristling with heavy guns and loaded with countless aircraft.",aviation_anchor,aircraft,aviation_aerospace,,,,,,
+ed9ab2c208e23455,aviation_aerospace,positive,122273,"The helicopter, an Airbus H130, arrives ahead of a November 4 expected delivery date.",aviation_anchor,airbus,aviation_aerospace,,,,,,
+24aa0a2f16624837,aviation_aerospace,positive,10837,"But it failed to cite the safety concerns around drones that, given the current regulatory vacuum, the FAA must wrestle with.",aviation_anchor,faa,aviation_aerospace,,,,,,
+36ed9a9ffd84b44d,aviation_aerospace,positive,77553,But the jamming will only affect aircraft above 50 feet.,aviation_anchor,aircraft,aviation_aerospace,,,,,,
+2786cc4dd7234e8b,aviation_aerospace,positive,196176,Hacked-up version of the nice view showing spacecraft directions (some of you may prefer to assemble your own MEX paper model – Ed.),aerospace_anchor,spacecraft,aviation_aerospace,,,,,,
+02287f6c33a667ee,aviation_aerospace,positive,78112,We don't have any airline partners and that's why some people have mentioned Garuda before.,aviation_anchor,airline,aviation_aerospace,,,,,,
+f64d568f87eb872e,aviation_aerospace,local_hard_negative,1188283,Valenzuela’s grandfather worked on the railway in the United States.,transport_and_defense_confounders,railway,,,,,,,
+3986f299daea867b,aviation_aerospace,local_hard_negative,111008,The Exhibition Centre train station in Glasgow is only a short walk from the SSE Hydro where the live show is being performed.,transport_and_defense_confounders,train station,,,,,,,
+29aae1bf5b2b6038,aviation_aerospace,local_hard_negative,829014,"[18] The only railway line in Wester Ross is the Kyle of Lochalsh line, which is operated by ScotRail and provides a link between the southern part of the region and Inverness.",transport_and_defense_confounders,railway,,,,,,,
+ab6bf22790ab6d29,aviation_aerospace,local_hard_negative,514728,"In the joint venture, Toyota will acquire about 5 percent of Mazda, which will hold a 0.25 percent stake in the bigger automaker, according to both companies.",transport_and_defense_confounders,automaker,,,,,,,
+20abc0dc115455d5,aviation_aerospace,local_hard_negative,130664,"Or at least on January 1, 1948, his job was, along with those of other fellow railway workers.",transport_and_defense_confounders,railway,,,,,,,
+c27ee5b375aad0ca,aviation_aerospace,local_hard_negative,514720,"Blase De Leo, the division’s vice president for brand engagement, called the new offices “more than just a location.”
+
+De Leo said the automaker wanted to make its U.S. headquarters a “premium place to work” while emphasizing a work-life balance.",transport_and_defense_confounders,automaker,,,,,,,
+259d4c7bc3c5a672,aviation_aerospace,local_hard_negative,122402,"She spent hours in the train station until someone showed her the way to a hotel, where she slept in the bathtub of an American journalist.",transport_and_defense_confounders,train station,,,,,,,
+5f9552a344caf7b2,aviation_aerospace,local_hard_negative,892577,"Meanwhile, groups on both the left and right, not least the Adam Smith Institute, whose ideas inspired the 1990s privatisation of British Rail, universally accept that Britain’s railway privatisation has been a disaster, even though they disagree sharply about the way forward.",transport_and_defense_confounders,railway,,,,,,,
+1082bbc96276eb7c,aviation_aerospace,local_hard_negative,877053,"Because these two stations were built and exploited by two different railway companies in the 19th century, east-west lines terminate at Centraal Station, whereas north-south lines run through Hollands Spoor.",transport_and_defense_confounders,railway,,,,,,,
+eef1afbca31cf5aa,aviation_aerospace,local_hard_negative,1359360,"“Tulip Mania,” “The South Sea Bubble,” “Railway Mania,” etc., the list goes on and on, all the way up to modern day, where we see “The Real Estate Bubble”.",transport_and_defense_confounders,railway,,,,,,,
+ed2222835891bd67,aviation_aerospace,local_hard_negative,1020114,"Women push baby carriages here, little boys eat bags of potato chips in front of the markets, and men smoke outside the train station while the trains rattle the air.",transport_and_defense_confounders,train station,,,,,,,
+dac5ef7a966b05c2,aviation_aerospace,local_hard_negative,1440365,"The planned top speed of Britain’s HS2 high-speed rail link, by contrast, will be about 400km/h.",transport_and_defense_confounders,high-speed rail,,,,,,,
+a6d7ae815441ad80,aviation_aerospace,local_hard_negative,1214171,The Dearborn automaker is increasingly experimenting with new technologies and services beyond selling cars.,transport_and_defense_confounders,automaker,,,,,,,
+e0e176c93b800352,aviation_aerospace,local_hard_negative,663589,"For each execution, Reichhart was paid 150 Goldmark plus ten marks for daily expenses, and given a 3rd-class railway ticket.",transport_and_defense_confounders,railway,,,,,,,
+91584b54d88db3e7,aviation_aerospace,local_hard_negative,1969521,"Dean Wise, vice president for network strategy at BNSF Railway, summed up the hurdles that the hyperloop would have to overcome before it could put shovels in the ground.",transport_and_defense_confounders,railway,,,,,,,
+807b0f977dbd92fe,aviation_aerospace,local_hard_negative,1666521,The automaker claimed to have then cut ties with Hoerbiger in May last year.,transport_and_defense_confounders,automaker,,,,,,,
+0a838ee5fd243403,aviation_aerospace,local_hard_negative,480451,"[5]
+
+Hancock continued working with steam and supplied a light engine (similar to his steam road coaches) to the Eastern Counties Railway.",transport_and_defense_confounders,railway,,,,,,,
+e39327ea155ab65c,aviation_aerospace,local_hard_negative,813559,"In 1845, Milton had a rail line and accompanying train station, and that benefited the town greatly.",transport_and_defense_confounders,train station,,,,,,,
+b7cb548a3cf815f6,aviation_aerospace,local_hard_negative,939553,"Germany reacts to Cologne New Year's Eve attacks 1/13 Women protest against sexism outside Cologne Cathedral on 5 January after the assaults Oliver Berg/EPA 2/13 Women protest against sexism in Cologne following the rash of sex attacks on New Year's Eve Wolfgang Rattay/Reuters 3/13 Police initially failed to mention the assaults in report the following morning EPA 4/13 Police officers patrol in front of the main station of Cologne, Germany AP 5/13 German far-right supporters demonstrate at Cologne`s train station (Reuters) Reuters 6/13 Supporters of anti-immigration right-wing movement Pegida in Cologne, Germany, January 9, 2016.",transport_and_defense_confounders,train station,,,,,,,
+b1363baae3d58a9a,aviation_aerospace,local_hard_negative,2024345,"Electric cars appear to have laid down permanent roots in the automotive landscape with the first long-range, affordable EV from an established, mainstream automaker.",transport_and_defense_confounders,automaker,,,,,,,
+5c103659b3ad5b61,aviation_aerospace,local_hard_negative,130719,"We need a Labour government committed to putting our fragmented railway back together as a modern, ­integrated, publicly owned system fit for the 21st century.”
+
+A Mirror reader poll found 86% back public ownership.",transport_and_defense_confounders,railway,,,,,,,
+0ce5fcf6a049f33b,aviation_aerospace,local_hard_negative,1697330,They were quickly assigned guard duty along segments of the railway between Vladivostok and Nikolsk-Ussuriski in the north.,transport_and_defense_confounders,railway,,,,,,,
+98bd9bb922e5c315,aviation_aerospace,local_hard_negative,892671,"In the area I live, major railway line closures took place in the late 1990s.",transport_and_defense_confounders,railway,,,,,,,
+389eeec343703b8b,aviation_aerospace,local_hard_negative,734559,"It was declared an officially preserved railway in 1992, carrying about 40,000 passengers per year at the time.",transport_and_defense_confounders,railway,,,,,,,
+95cd9b94cde3b486,aviation_aerospace,local_hard_negative,329198,But building a railway to transport one rich man’s illegal purchase was not enough.,transport_and_defense_confounders,railway,,,,,,,
+fcc94993455e63e0,aviation_aerospace,benchmark_hard_negative,3092,"Now, the notion of Hong Kong independence has entered the real world.",china,hong kong,china,,,,,,
+6d21a46131715e8b,aviation_aerospace,benchmark_hard_negative,590,"If an operating system costs say 500 rubles, people would buy it.”
+
+Microsoft’s Windows 10 operating system currently costs around 8,000 rubles ($140.92) in Russia, around a fifth of the average monthly wage of 39,000 rubles.",russia_post_soviet,russia,russia_post_soviet,,,,,,
+64acf4bb78bb4a20,aviation_aerospace,benchmark_hard_negative,8772,Researchers at Nanjing Medical University and Yunnan Key Laboratory of Primate Biomedical Research in Kunming in China have created two genetically modified macaques with targeted mutations using the CRISPR/Cas9 system.,china,china,china,,,,,,
+79af7546aeda2680,aviation_aerospace,benchmark_hard_negative,18963,"By Ralph Nader
+
+The editor of The Hill, a newspaper exclusively covering Congress, said that Congress was not going to do very much in 2012, except for “the big bill” which is extending the payroll tax cut and unemployment compensation, which expire in late February.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+feb030bd0b0519ba,aviation_aerospace,benchmark_hard_negative,34074,"A: According to the Bank of China, about 16,000 to 18,000 officials with ties to the public sector were involved in moving proceeds of corruption illegally from China to other countries.",china,china,china,,,,,,
+a713c38be76ca587,aviation_aerospace,benchmark_hard_negative,33485,"The developments come as Russia faces charges that its air strikes have killed dozens of civilians across Idlib province, including in an area near a hospital.",russia_post_soviet,russia,russia_post_soviet,,,,,,
+337d8f37e2ce7542,aviation_aerospace,benchmark_hard_negative,22296,"Investigators
+
+Earlier on Saturday, Dutch foreign minister Frans Timmermans met Ukrainian president Petro Poroshenko in Kiev and told him the Netherlands was ‘angry, furious’ at the news that bodies were being dragged around the crash site, Reuters said.",russia_post_soviet,kiev,russia_post_soviet,,,,,,
+c9fb7879977683bf,aviation_aerospace,benchmark_hard_negative,2456,"Now, at Beijing’s urging, they’re having second thoughts.",china,beijing,china,,,,,,
+d08da05ba5615013,aviation_aerospace,benchmark_hard_negative,2817,"Also present at the celebration that was closed to the press, were Dr Ami Bera, on the brink of becoming the first Indian American physician elected to the US Congress from the 7th District in California, and Kumar Barve, the majority leader in the Maryland House of Delegates, and the most senior Indian American legislator who was elected to the State Assembly nearly two decades ago.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+6909adf54607d830,aviation_aerospace,benchmark_hard_negative,27209,"5) The US has legal authority to intervene in Iraq, but not in Syria
+
+The Iraqi government has authorized the US to conduct air strikes against ISIS in Iraq, which means that the US does not need authorization from the United Nations Security Council in order for the operation to be legal under international law.",russia_post_soviet,security council,russia_post_soviet,,,,,,
+f5e7ccac12b4ce48,aviation_aerospace,benchmark_hard_negative,31067,"[2] Browning had arranged for a public demonstration of both weapons at a location in southern Washington, D.C. known as Congress Heights.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+c4c070703d0ee01c,aviation_aerospace,benchmark_hard_negative,27641,"MY ARTICLE on the 1989 Tiananmen Square uprising in China (""Twenty years after Tiananmen Square"") for SocialistWorker.org drew a harsh response from Richard Becker, writing for the Party for Socialism and Liberation (PSL).",china,china,china,,,,,,
+4b9c7f3fca892ee2,aviation_aerospace,benchmark_hard_negative,528,"As New York Representative Eliot Engel, the ranking member of the House Committee on Foreign Affairs, explained, “[The] revelation about then-Senator Sessions’s contact with Russia’s ambassador removes all doubt that he must recuse himself from any investigation of Russia’s interference in last year’s election.",russia_post_soviet,russia,russia_post_soviet,,,,,,
+2d05670b576a48a3,aviation_aerospace,benchmark_hard_negative,34066,"However, a Chinese Commission later said this:
+
+The amount more than doubled in 2010 to US$412 Billion (CAD$553 Billion);
+
+In 2011, it was at US$600 Billion (CAD$806 Billion);
+
+In 2012, it was at US$1 Trillion (CAD$1.3 Trillion); and
+
+By 2013, it was at US$1.5 Trillion (CAD$2 Trillion).",china,chinese,china,,,,,,
+8ab93ac924fbd299,aviation_aerospace,benchmark_hard_negative,27322,"Related Regenerative Medicine Conferences | Stem Cell Conferences | Stem Cell Congress | Tissue Science Conferences | Europe Conferences
+
+9th Advanced Cell and Gene Therapy conference, March 21-22, 2019 Rome, Italy; 12th Genomics and Molecular Biology conference, April 15-17, 2019 Berlin, Germany; 7th Integrative Biology conference, April 15-16, 2019 Berlin, Germany; Pacific Regenerative Medicine Conference, May 16-19, 2019 Hawaii, USA; Annual conference & Exhibition on Transversal, Translational & Transformative, December 2-5, 2019 Florida, USA; 21st International Conference on Tissue Engineering and Regenerative Medicine, June 27 - 28, 2019 London, United Kingdom; World Advanced Therapies & Regenerative Medicine Congress 2019, May 15 – 17, London, UK; 6th Annual European Congress on Clinical & Translational Sciences, October 18-20, 2019 Vienna, Austria;
+
+Related Associations and Societies:
+
+Europe:
+
+EuroStemCell (European Consortium for Stem Cell Research); German Stem Cell Network (GSCN); German Society for Stem Cell Research (GSZ); Stem Cell Network North Rhine-Westphalia (NRW); Norwegian Center for Stem Cell Research (NCSCR); ScanBalt Stem Cell Research Network;
+
+USA:
+
+California Institute for Regenerative Medicine (CIRM); American Association of tissue banks; New York Stem Cell Foundation (NYSCF); Tissue Engineering International & Regenerative Medicine Society (TERMIS);
+
+Asia:
+
+Asia Pacific Association of Surgical Tissue Banking; The New South Wales Stem Cell Network; Korean Society for Stem Cell Research; Japanese Society for Regenerative Medicine; Taiwan Society for Stem Cell Research;
+
+Stem cells to Battle cancer
+
+Stem cell transplant is treatment in some types of cancers like leukemia, multiple myeloma, or some types of lymphoma.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+fcb00f32c4a0e7ae,aviation_aerospace,benchmark_hard_negative,28163,"If Congress had been told that the price tag would be not $50 billion, but $4 trillion, would it have voted so overwhelmingly for the Iraq War Resolution of October 2, 2002?",us_legislative_governance,congress,us_legislative_governance,,,,,,
+9cad3c22c0c205de,aviation_aerospace,benchmark_hard_negative,8881,"Russia, too, weighed in against the proposals.",russia_post_soviet,russia,russia_post_soviet,,,,,,
+8b4ef4386fde9d4d,aviation_aerospace,benchmark_hard_negative,37055,"You can select any of these new languages within the creation wizard of a MonkeyLearn model:
+
+For existing models, you can change the language settings on the ‘Parameters’ tab within your ‘Sandbox’:
+
+Many users have requested the possibility to train text classifiers in Chinese, Japanese, Korean and Arabic, so we hope these additions enables the creation of new and exciting text analysis models.",china,chinese,china,,,,,,
+5b0130701299f35e,aviation_aerospace,benchmark_hard_negative,3455,"Why, they wonder, can the Chinese buy practically every medium-sized German company they have an appetite for, while German corporations that want to do business in China are forced into joint ventures that flush a good deal of money into Chinese coffers.",china,china;chinese,china,,,,,,
+d023d46a06c195d6,aviation_aerospace,benchmark_hard_negative,13007,"So, he comes up with something else: some of Manafort’s associates in Ukraine “were rumoured to have links with Russian intelligence.” Note the use of the word “rumoured”.",russia_post_soviet,russian;ukraine,russia_post_soviet,,,,,,
+19230e564802885a,aviation_aerospace,benchmark_hard_negative,19350,Which brings us to the meetings between Trump and Chinese President Xi Jinping planned for Thursday and Friday at Mar-a-Lago in Florida.,china,chinese;xi jinping,china,,,,,,
+55315ac8cc08f5fa,aviation_aerospace,benchmark_hard_negative,336,"Although North Korea's missile infrastructure lacks the competence of Russia's, the Soviet-era missile on which North Korea based its missile had a 13% failure rate, and the North Korean version failed a whopping 88% of the time, according to the report.",russia_post_soviet,russia,russia_post_soviet,,,,,,
+585762466b2ec562,aviation_aerospace,benchmark_hard_negative,32841,Congress should enact appropriations riders to prevent ATF from considering such petitions.,us_legislative_governance,appropriations;congress,us_legislative_governance,,,,,,
+ce0e9962d9e75455,aviation_aerospace,benchmark_hard_negative,15886,"Many analysts say that the chances of that happening are small, and that Obama and Congress are likely to work out a compromise ahead of time.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+aed306795979efbe,aviation_aerospace,benchmark_hard_negative,8875,No self-respecting oligarch these days can afford to be without a superyacht.,russia_post_soviet,oligarch,russia_post_soviet,,,,,,
+39fb2e693c5414e2,aviation_aerospace,benchmark_hard_negative,27700,"The actions of the student and worker protesters of Tiananmen deserve our support, not the Chinese government.",china,chinese;chinese government,china,,,,,,
+1ad8ff015f5dbec1,aviation_aerospace,benchmark_hard_negative,18889,"[Apple’s big bet on China is also a bet on driverless cars]
+
+It is, in fact, leading the world in both areas.",china,china,china,,,,,,
+9e1c8b2a8868a7b3,aviation_aerospace,benchmark_hard_negative,6085,"READ MORE: Citizens see situation in Russia as ‘normal’ but expect crisis to deepen, poll shows
+
+In September Levada pollsters released the results of research that showed that over 80 percent of Russians are currently unwilling to participate in mass protests over political or economic issues.",russia_post_soviet,russia,russia_post_soviet,,,,,,
+2c6d78631d2a0dfd,aviation_aerospace,benchmark_hard_negative,35103,It certainly happened with the Russian hack story and #GoldenShowerGate.,russia_post_soviet,russian,russia_post_soviet,,,,,,
+97a55727b3cde6ff,aviation_aerospace,benchmark_hard_negative,35151,"Tirawi said Arafat’s body would be exhumed from its limestone mausoleum in Ramallah, away from the public or media presence, and separate samples will be taken by the French and Swiss forensic teams, as well as a Russian team of experts, who the Palestinians invited to help with the examination.",russia_post_soviet,russian,russia_post_soviet,,,,,,
+95145f2f27909ce7,aviation_aerospace,benchmark_hard_negative,2682,"The meeting attracted little attention, but it marked the first time democracy advocates, including representatives from Hong Kong's political parties and students from both sides, had met in an organised fashion.",china,hong kong,china,,,,,,
+5046d4e94b044558,aviation_aerospace,benchmark_hard_negative,27363,"Related Regenerative Medicine Conferences | Stem Cell Conferences | Stem Cell Congress | Tissue Science Conferences | Europe Conferences
+
+9th Advanced Cell and Gene Therapy conference, March 21-22, 2019 Rome, Italy; 12th Genomics and Molecular Biology conference, April 15-17, 2019 Berlin, Germany; 7th Integrative Biology conference, April 15-16, 2019 Berlin, Germany; Pacific Regenerative Medicine Conference, May 16-19, 2019 Hawaii, USA; Annual conference & Exhibition on Transversal, Translational & Transformative, December 2-5, 2019 Florida, USA; 21st International Conference on Tissue Engineering and Regenerative Medicine, June 27 - 28, 2019 London, United Kingdom; World Advanced Therapies & Regenerative Medicine Congress 2019, May 15 – 17, London, UK; 6th Annual European Congress on Clinical & Translational Sciences, October 18-20, 2019 Vienna, Austria;
+
+Related Associations and Societies:
+
+Europe:
+
+EuroStemCell (European Consortium for Stem Cell Research); German Stem Cell Network (GSCN); German Society for Stem Cell Research (GSZ); Stem Cell Network North Rhine-Westphalia (NRW); Norwegian Center for Stem Cell Research (NCSCR);
+
+USA:
+
+California Institute for Regenerative Medicine (CIRM); New York Stem Cell Foundation (NYSCF); Tissue Engineering International & Regenerative Medicine Society (TERMIS); International Society for Stem Cell Research (ISSCR);
+
+Asia:
+
+The New South Wales Stem Cell Network; Korean Society for Stem Cell Research; Japanese Society for Regenerative Medicine; Taiwan Society for Stem Cell Research; Stem Cell Society Singapore (SCSS);
+
+Applications of Tissue engineering & Regenerative Medicine
+
+There are many applications of Tissue engineering but majorly they are used in Organ Transplantation and Therapeutic Cloning like Bio Artificial liver device, artificial pancreas, artificial bladders, and Cartilage.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+53671a84ed23c89c,aviation_aerospace,benchmark_hard_negative,15950,"For example, on inauguration day, Trump's chief of staff ordered all federal government agencies to immediately withdraw any last minute rules made by the Obama administration that hadn't yet been published in the Federal Register.",us_legislative_governance,federal register,us_legislative_governance,,,,,,
+fc6ac3020b622fc2,aviation_aerospace,benchmark_hard_negative,2463,That relationship continued into the 1990s when President Bill Clinton furiously vetoed the proposed sale from Israel to China of an advanced radar system.,china,china,china,,,,,,
+99eb32b0d0c70c06,aviation_aerospace,benchmark_hard_negative,27369,"Related Regenerative Medicine Conferences | Stem Cell Conferences | Stem Cell Congress | Tissue Science Conferences | Europe Conferences
+
+9th Advanced Cell and Gene Therapy conference, March 21-22, 2019 Rome, Italy; 12th Genomics and Molecular Biology conference, April 15-17, 2019 Berlin, Germany; 7th Integrative Biology conference, April 15-16, 2019 Berlin, Germany; Pacific Regenerative Medicine Conference, May 16-19, 2019 Hawaii, USA; Annual conference & Exhibition on Transversal, Translational & Transformative, December 2-5, 2019 Florida, USA; 21st International Conference on Tissue Engineering and Regenerative Medicine, June 27 - 28, 2019 London, United Kingdom; World Advanced Therapies & Regenerative Medicine Congress 2019, May 15 – 17, London, UK; 6th Annual European Congress on Clinical & Translational Sciences, October 18-20, 2019 Vienna, Austria;
+
+Related Associations and Societies:
+
+Europe:
+
+EuroStemCell (European Consortium for Stem Cell Research); German Stem Cell Network (GSCN); German Society for Stem Cell Research (GSZ); Stem Cell Network North Rhine-Westphalia (NRW); Norwegian Center for Stem Cell Research (NCSCR);
+
+USA:
+
+California Institute for Regenerative Medicine (CIRM); New York Stem Cell Foundation (NYSCF); Tissue Engineering International & Regenerative Medicine Society (TERMIS); International Society for Stem Cell Research (ISSCR);
+
+Asia:
+
+The New South Wales Stem Cell Network; Korean Society for Stem Cell Research; Japanese Society for Regenerative Medicine; Taiwan Society for Stem Cell Research; Stem Cell Society Singapore (SCSS);
+
+Biochips & Tissue chips
+
+Biochips refer to the complete fundamental functional unit, capable of performing multi biochemical tasks simultaneously.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+36e8da1b3fd85dca,aviation_aerospace,benchmark_hard_negative,27659,"This was during China's Cultural Revolution, which Becker refers to as a period of ""debate [and] fierce polemics.""",china,china,china,,,,,,
+acbe9f815da719af,aviation_aerospace,benchmark_hard_negative,27224,Syria's Bashar al-Assad has a high-placed friend on the Security Council — Russia — and by virtue of being a state has other allies that don't want to see Syria bombed by the US.,russia_post_soviet,russia;security council,russia_post_soviet,,,,,,
+278c417645705063,aviation_aerospace,benchmark_hard_negative,27671,"He also states that ""millions of mainly young Chinese engaged in fierce struggle within the CCP, and against some of its top leaders, including Deng.""",china,ccp;chinese,china,,,,,,
+33d2fba49b4ce080,aviation_aerospace,benchmark_hard_negative,536,"There must be an independent, bipartisan, outside commission to investigate the Trump political, personal and financial connections to the Russians.”
+
+Senate Democratic leader Chuck Schumer agreed.",us_legislative_governance,senate,us_legislative_governance,,,,,,
+3282c78da9be6688,aviation_aerospace,benchmark_hard_negative,17003,The whole dirty story was fabricated - a disgraceful scheme to delegitimize Trump and prevent normalizing ties with Russia.,russia_post_soviet,russia,russia_post_soviet,,,,,,
+108af60a98807519,aviation_aerospace,benchmark_hard_negative,24492,"In a historic shift, China overtook the country as the world's second largest economy last year.",china,china,china,,,,,,
+5e28dcf3deb1e580,aviation_aerospace,benchmark_hard_negative,585,"But computer piracy is a long-standing issue for technology companies in Russia, one which has as become increasingly acute as the country’s economic slump and falling earnings make licensed products prohibitively expensive.",russia_post_soviet,russia,russia_post_soviet,,,,,,
+b115806f627d43a3,aviation_aerospace,benchmark_hard_negative,34070,"Money Laundering
+
+So, over $2,000,000,000,000 is missing from China and because China says it’s proceeds of corruption, it’s a $2,000,000,000,000 money laundering problem.",china,china,china,,,,,,
+8afb865079954dd8,aviation_aerospace,benchmark_hard_negative,16924,Russia releases this week.,russia_post_soviet,russia,russia_post_soviet,,,,,,
+02ed74d0c2348fdb,aviation_aerospace,benchmark_hard_negative,16811,"As we wait for Star Wars: The Last Jedi to storm the world beginning December 13, next weekend will see expansions and holdovers while China gets a roster of new pics including Paddington 2, Only The Brave, Loving Vincent and 47 Meters Down.",china,china,china,,,,,,
+18f9ed997548f56e,aviation_aerospace,benchmark_hard_negative,10831,"And, true, drones may well have been ""used to capture footage of massive demonstrations in Ukraine.""",russia_post_soviet,ukraine,russia_post_soviet,,,,,,
+89a841dfd02091bd,aviation_aerospace,benchmark_hard_negative,37666,"As well as building Panda-shaped solar plants, the UNDP agreement also supports three initiatives aimed at promoting green energy among young Chinese.",china,chinese,china,,,,,,
+a976126fdeb7c862,aviation_aerospace,benchmark_hard_negative,15910,"Obama is asking Congress for $88 billion for the Afghan war next year, down from $115 billion in the current fiscal year, which included the costs of winding down the war in Iraq.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+e106cb6a55b0d7e4,aviation_aerospace,benchmark_hard_negative,15220,"They and others actively elected to elide Trump's endless catalog of ideological sins, moral shortcomings, mob ties, Russian moneymen, personal weirdnesses, trophy wives, serial bankruptcies, persistent tax shenanigans, low-grade intellect, thinly-veiled racial animus, and conspiracy email-forwarding kooky grandpa affect.",russia_post_soviet,russian,russia_post_soviet,,,,,,
+2772a51f03707aad,aviation_aerospace,benchmark_hard_negative,37263,Republicans in Congress have vowed to continue investigating the IRS targeting.,us_legislative_governance,congress,us_legislative_governance,,,,,,
+e410581b7082b33f,aviation_aerospace,benchmark_hard_negative,34175,"The speculative activities will be vulnerable to a sharp reversal, once the upward price momentum wanes, according to BMI Research, a unit of Fitch Group, drawing parallels with a rally, followed by a slump, in Chinese equities last year.",china,chinese,china,,,,,,
+35f8a83442f59095,aviation_aerospace,benchmark_hard_negative,33899,"""Climate change is bigger than politics, and the disastrous effects on our planet and our civilization will continue regardless of what party holds majorities in Congress or occupies the White House,"" Tamminen said.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+428b48cb8213fb14,aviation_aerospace,benchmark_hard_negative,2704,"Giving Hong Kong people the right to choose their own leader would be a ""win-win"" situation for Hong Kong and China, he added.",china,china;hong kong,china,,,,,,
+9b52f0287bb99afa,aviation_aerospace,benchmark_hard_negative,39321,The $318 billion needed to cover those uninsured because of the tax bill is 40 times higher than the $8 billion Congress has failed to find for low-income children’s coverage.,us_legislative_governance,congress,us_legislative_governance,,,,,,
+4f43333550aac299,aviation_aerospace,benchmark_hard_negative,29489,Canada's position between the Soviet Union (now Russia) and the U.S. was strategically important during the Cold War since the route over the North Pole and Canada was the fastest route by air between the two countries and the most direct route for intercontinental ballistic missiles.,russia_post_soviet,russia,russia_post_soviet,,,,,,
+3630550c4b058691,aviation_aerospace,benchmark_hard_negative,37332,"A Chinese developer is seeking to make Auburn the site of a medical tourism complex, the Sun Journal reported.",china,chinese,china,,,,,,
+cfdb1af038b5f772,aviation_aerospace,benchmark_hard_negative,38299,"Today, we can see many ICOs originated in Russia.",russia_post_soviet,russia,russia_post_soviet,,,,,,
+9476708c71b0fc5e,aviation_aerospace,benchmark_hard_negative,13434,"Half of China's power generation capacity to be built between 2012 and 2020 will be coal-fired, said Woodmac.",china,china,china,,,,,,
+f3542e5181c5908f,aviation_aerospace,benchmark_hard_negative,3306,"For months, health insurance companies have been trying to get a solid answer from Congress and President Trump's White House on the future of the payments, called cost-sharing reductions, that help lower-income Americans afford their deductibles and co-payments.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+eeb19d3c19cabcd0,aviation_aerospace,benchmark_hard_negative,586,"A woman walks past a branch of Russian Post in Moscow, Russia, May 24, 2017.",russia_post_soviet,moscow;russia;russian,russia_post_soviet,,,,,,
+89f3f90076a2f721,aviation_aerospace,benchmark_hard_negative,15884,"If Obama and Congress cannot agree on another package of spending reductions or tax increases by next January, the Pentagon could be forced to slash an extra $600 billion over 10 years.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+b07f7330858e74a4,aviation_aerospace,benchmark_hard_negative,27663,"Becker's gripes about me and China's national anthem serve as a jumping-off point for the complaint that I'm hostile to ""the Chinese Revolution in its entirety""--back to the 1949 revolution and the victory of Mao's Red Army after the ""Long March.""",china,china;chinese,china,,,,,,
+6aa5f6ff10762728,aviation_aerospace,benchmark_hard_negative,13842,Sen. John McCain John Sidney McCainGOP lobbyists worry Trump lags in K Street fundraising Mark Kelly kicks off Senate bid: ‘A mission to lift up hardworking Arizonans’ Gabbard hits back at Meghan McCain after fight over Assad MORE (R-Ariz.) in a new interview criticized former Democratic presidential nominee Hillary Clinton Hillary Diane Rodham ClintonREAD: Cohen testimony alleges Trump knew Stone talked with WikiLeaks about DNC emails County GOP in Minnesota shares image comparing Sanders to Hitler Holder: 'Time to make the Electoral College a vestige of the past' MORE for writing her memoir so soon after the 2016 election.,us_legislative_governance,senate,us_legislative_governance,,,,,,
+af63b574685fc697,aviation_aerospace,benchmark_hard_negative,34078,"There is no reason to believe that the new figure of $2,000,000,000,000 in capital flight from China has shifted to other than those 4 top destinations in any material way.",china,china,china,,,,,,
+fb320b6e9e33be36,aviation_aerospace,benchmark_hard_negative,4431,Clinton said she opposed “numerous Bush administration proposals” to privatize the federal workforce while she was in the Senate.,us_legislative_governance,senate,us_legislative_governance,,,,,,
+846c386dc626018e,aviation_aerospace,benchmark_hard_negative,39598,"Grievances against Obama include gun-control proposals, immigration reform agitation, a departure from ""Biblical morality,"" alleged help for al-Qaida associates in the Middle East, an allegedly fabricated birth certificate and executive actions that loop around Congress.",us_legislative_governance,congress,us_legislative_governance,,,,,,
+e82351cbe0388a6c,aviation_aerospace,benchmark_hard_negative,36241,"Panic in Zanesville
+
+Ohio clamped down on ownership of dangerous animals in the aftermath, first with an executive order, and then with a state law requiring a permit for ownership of dangerous animals including tigers, lions, bears, elephants, alligators, crocodiles and anacondas and pythons 12 feet or longer.",us_legislative_governance,executive order,us_legislative_governance,,,,,,
+094f9d6854695922,aviation_aerospace,benchmark_hard_negative,23903,"“Europeans think they are now being treated worse by Trump than countries like Russia or Saudi Arabia,” said Stephan Bierling, an expert on transatlantic relations at the University of Regensburg in Germany.",russia_post_soviet,russia,russia_post_soviet,,,,,,
+4dea100f115bf7f1,aviation_aerospace,benchmark_hard_negative,36513,"The new oversight is part of the government’s evolving policy on how to archive the massive volume of electronic communications created in a digital age of e-mail, tweets and Instagram.",us_legislative_governance,oversight,us_legislative_governance,,,,,,
+6766baae1b7a02b6,aviation_aerospace,benchmark_hard_negative,25175,"China Miéville, one of the most consistently original voices in any genre, presents a brilliant work of alternate history.",china,china,china,,,,,,
+baae947ff2715a07,aviation_aerospace,benchmark_hard_negative,34065,China appears to have quit sharing data officially after 2011 because it said at that time that the outflows of proceeds of corruption was severe enough to threaten its economy and its political stability.,china,china,china,,,,,,
+359b06ead1cb2e09,aviation_aerospace,benchmark_hard_negative,5194,"The Rules of Origin content levels were set at “historic lows” at 35 per cent for parts and 45 per cent for cars, which would have allowed cars built in non-TPP countries such as China and Thailand to flood the North American market, he said.",china,china,china,,,,,,
+46e4b7fb5c143e96,aviation_aerospace,benchmark_hard_negative,3443,"Chancellor Angela Merkel arrived in Chengdu in southern China last Saturday (5.7.2014) with two dozen top managers in tow, including five heads of DAX-listed companies.",china,china,china,,,,,,
+702d64b8dfea51cd,aviation_aerospace,benchmark_hard_negative,37010,Make sure to consult closely with China and Russia to keep them on board with the ever-tightening sanctions regime.,china;russia_post_soviet,china;russia;sanctions,china;russia_post_soviet,,,,,,
+561282a67162b531,aviation_aerospace,benchmark_hard_negative,39348,"“Hollywood has made the French accent a sexual thing and the Chinese accent a clowny thing,” Wu said.",china,chinese,china,,,,,,
+2b48f64c22357b92,aviation_aerospace,medium_negative,39857,"gsrcrxsi
+
+Offline
+
+Activity: 294
+
+Merit: 250
+
+Sr. MemberActivity: 294Merit: 250 Re: [ANN][Pool][Profit-Switch][Optional Auto-Exchange per Coin][Vardiff] ~ Hashcows December 24, 2013, 07:08:33 PM #1807 I'm sure the amount that HC has been taking in from fees and their own mining is plenty to cover this 40BTC loss.",crypto_blockchain,mining,crypto_blockchain,,,,,,
+01079fcf515410ae,aviation_aerospace,medium_negative,49664,"The poll found that voters feel NDP leader Tom Mulcair would make the best prime minister (28 per cent), slightly ahead of Stephen Harper (25 per cent) and Justin Trudeau (23 per cent).",japan,prime minister,japan,,,,,,
+9c16a49be6682ddf,aviation_aerospace,medium_negative,42410,"FILE PHOTO: Bitcoin (virtual currency) coins placed on Dollar banknotes, next to computer keyboard, are seen in this illustration picture, November 6, 2017.",crypto_blockchain,bitcoin,crypto_blockchain,,,,,,
+5643e52f78d4da3b,aviation_aerospace,medium_negative,79690,"Protocol can handle 5k + connections allowing solo mining of any magnitude.Rewards are calculated along an exponential decay curve to slowly reduce the value of each block rather than shock both miners and the market with block reward halving which acts as a rudimentary decay model.Decayed amounts are deposited into the Reserves for each channel, preventing a miner from being able to mint more than the projected amount while difficulty is compensating to their amount of computing power.When reserves are below given thresholds, the mining reward is then based off of the time it took to create a block preventing a miner from ever being able to deplete the reserves.Every 60 minutes, the Nexus protocol automatically creates a checkpoint.",crypto_blockchain,mining,crypto_blockchain,,,,,,
+5ed77e170061a1b8,aviation_aerospace,medium_negative,49711,"Also read: ICO Regulatory Round-Up: UK, Malaysia, and Switzerland’s Crypto Valley Point to Risks
+
+Information on the Blockchain Embassy
+
+The space has crypto clothing and other merchandise for sale.",crypto_blockchain,blockchain,crypto_blockchain,,,,,,
+cd9361ed1bf44f78,aviation_aerospace,medium_negative,42389,"Bitcoin topped $10,000 for the first time in early Asia trading, before surging above $11,000 less than 12 hours later to reach $11,395.",crypto_blockchain,bitcoin,crypto_blockchain,,,,,,
+91b56d6173b1c663,aviation_aerospace,medium_negative,34152,"If you're interested in speaking or sponsoring one of our blockchain events, please email [masked].",crypto_blockchain,blockchain,crypto_blockchain,,,,,,
+327aec97213836ce,aviation_aerospace,medium_negative,16979,"They decided to go with a handful of launch partners instead of a single one, as PayPal’s Braintree did with Coinbase earlier this month.",crypto_blockchain,coinbase,crypto_blockchain,,,,,,
+67165b6d9eeac5e7,aviation_aerospace,medium_negative,54374,"In its written judgment, the Federal Court ruled out the need to hear the testimony of Musa, a former aide of then deputy prime minister Datuk Seri Najib Razak, saying it would not have any consequence to the case.",japan,prime minister,japan,,,,,,
+0b18d9b141a08d1d,aviation_aerospace,medium_negative,75854,"No doubt it's from Japan,"" Ted Hartwell, manager of the Desert Research Institute's Community Environmental Monitoring Program, told the Associated Press.",japan,japan,japan,,,,,,
+84883fa6edc947e5,aviation_aerospace,medium_negative,55060,"Jon Watts, director of enterprise services at Deloitte, has weighed in on Bitcoin regulatory issues with clear and cogent arguments.",crypto_blockchain,bitcoin,crypto_blockchain,,,,,,
+edff8e5a4eef7420,aviation_aerospace,medium_negative,56529,Please note that the contribution is calculated based on the CFI held in your wallet — the numbers below are just examples at specific CFI holding levels.,crypto_blockchain,wallet,crypto_blockchain,,,,,,
+3d8b463e8b8bb95b,aviation_aerospace,medium_negative,26093,"European Parliament
+
+A new draft report by the European Parliament on virtual currencies stresses that virtual currencies and blockchain technology can contribute greatly towards consumer welfare and economic development by dramatically lowering transaction costs for payments and transfer of funds while enhancing the speed and resilience of payment systems, and allowing transactions to be tracked in case of malfeasance.",crypto_blockchain,blockchain,crypto_blockchain,,,,,,
+88942a0459a2a6b2,aviation_aerospace,medium_negative,9663,"LoL players in particular seem to look forward to seeing what Japanese players are capable of, though many still don’t realize the Japanese players still don’t have their own servers (and Riot games has yet to return my inquiries about the situation).",japan,japanese,japan,,,,,,
+cce3efff21f05994,aviation_aerospace,medium_negative,79547,"Blockchain “is likely to have a significant impact in industries ranging from finance to manufacturing, health care and utilities,” among other market sectors, the bank wrote.",crypto_blockchain,blockchain,crypto_blockchain,,,,,,
+13b478c777a34138,aviation_aerospace,medium_negative,47923,"Appearances [ edit ]
+
+Mortal Kombat games [ edit ]
+
+""Scorpion"" is the alias of Hanzo Hasashi, formerly one of the finest warriors of the Shirai Ryu, a Japanese ninja clan.",japan,japanese,japan,,,,,,
+d505f50543440ed2,aviation_aerospace,medium_negative,9659,"Internationally, however, there are still issues the Japanese gamer must deal with.",japan,japanese,japan,,,,,,
+42b2581b39edec4d,aviation_aerospace,medium_negative,49423,"As there are no wild hedgehogs in Japan, seeing one is quite a treat.",japan,japan,japan,,,,,,
+5227ddd621fea03c,aviation_aerospace,medium_negative,65256,"Even Peru, where piracy is virtually unheard of, saw an attack this year on a Japanese fishing trawler by a gang of criminals calling itself the “pirates of the sea.” Overall, the first nine months of this year saw 352 attacks — a record level.",japan,japanese,japan,,,,,,
+660eb40eb0d823aa,aviation_aerospace,medium_negative,16864,"Next weekend, the film opens in Belgium, Japan and Taiwan.",japan,japan,japan,,,,,,
+a1d9b1d685b59c76,aviation_aerospace,medium_negative,60047,Both Android and iOS editions of ANX Vault now feature the ability to send bitcoin via email to recipients who do not yet have bitcoin addresses.,crypto_blockchain,bitcoin,crypto_blockchain,,,,,,
+5bc6a5e56256da20,aviation_aerospace,medium_negative,28316,"She said: “As Secretary of State for President Obama, I’m the person who held the last three meetings between the President of the Palestinian Authority and the Prime Minister of Israel.",japan,prime minister,japan,,,,,,
+ab5c4a3a912a562b,aviation_aerospace,medium_negative,33524,"Yun Byung-se said the agreement was ""final and irreversible,"" as long as Japan faithfully followed through with its promises.",japan,japan,japan,,,,,,
+ce8632308b935e3b,aviation_aerospace,medium_negative,10624,"This is ""strong style,"" the notorious Japanese approach to pro-wrestling, now available with English commentary on AXS, a channel I had no idea existed.",japan,japanese,japan,,,,,,
+4c2fca0ece00eda7,aviation_aerospace,medium_negative,9660,"As I mentioned previously, Japanese gamers are often shy and may not even admit to being Japanese.",japan,japanese,japan,,,,,,
+64692294e367e7d7,aviation_aerospace,medium_negative,34034,"I dispatch my security team to investigate, right after I create a security team, which I do by telling one guy to stop mining asteroids and start being a one-man security team.",crypto_blockchain,mining,crypto_blockchain,,,,,,
+4821b9cf4c66c2ef,aviation_aerospace,medium_negative,74787,"[51][52][53]
+
+Nikkei BP has been publishing a ranking system ""Brand rankings of Japanese universities"" every year, composed by the various indications related to the power of brand, and Todai has been 2nd in 2009-2010 in Greater Tokyo Area.",japan,japanese;tokyo,japan,,,,,,
+260aea0d6c643b9a,aviation_aerospace,medium_negative,29009,Japanese edition bonus track No.,japan,japanese,japan,,,,,,
+5ca3fa99f01ac3a3,aviation_aerospace,medium_negative,31295,"In 1944, Captain Wally A. Gayda, of the USAAF Air Transport Command, reportedly used a BAR to return fire against a Japanese Army Nakajima fighter that had attacked his C-46 cargo plane over the Hump in Burma.",japan,japanese,japan,,,,,,
+4bfdfb9de11dc88a,aviation_aerospace,medium_negative,49730,Or create a paper wallet.,crypto_blockchain,wallet,crypto_blockchain,,,,,,
+4b8f293912e94cb0,aviation_aerospace,background_negative,63655,Or to gain attention from a global soccer community that very much rates leagues by reputation.,soccer,soccer,soccer,,,,,,
+7a8365848055459e,aviation_aerospace,background_negative,76920,Even our manager began taking all the same breaks we did!,soccer,manager,soccer,,,,,,
+d855d523e328e929,aviation_aerospace,background_negative,47995,"""[21] A third ninja swap, Reptile, was added in the third revision as a hidden character who was outfitted in green and used Scorpion's spear (along with Sub-Zero's freeze) as part of his offensive arsenal; he was devised by Boon as ""a cooler version of Scorpion.",soccer,arsenal,soccer,,,,,,
+6d573a5faa3094c5,aviation_aerospace,background_negative,23485,"Joe Girardi, New York Yankees: He's been through this last dance before -- in 2010 -- and got a new three-year deal out of it, even after a season in which the Yankees got bludgeoned by the Rangers in the ALCS.",mlb_baseball,yankees,mlb_baseball,,,,,,
+7e855b8ed6f28ea7,aviation_aerospace,background_negative,73501,"Then, next season, we resume our march on the Champions League.",soccer,champions league,soccer,,,,,,
+6243e309f20e7ce8,aviation_aerospace,background_negative,49003,"(@bunnybuddhism)
+
+Joining Embarcadero as Delphi Product Manager Congratulation Marco.",soccer,manager,soccer,,,,,,
+1558ec93dd888013,aviation_aerospace,background_negative,39032,"""The majority of people I talk to have no idea they're coming so soon,"" said Lauren Issac, manager of sustainable transportation for the engineering and planning firm Parsons Brinkerhoff.",soccer,manager,soccer,,,,,,
+07daba2712c61148,aviation_aerospace,background_negative,49011,"Joining Embarcadero as Delphi Product Manager Hi Marco, my congrats, after all your great Delphi support, you earned it !",soccer,manager,soccer,,,,,,
+53bfcf0d8307a906,aviation_aerospace,background_negative,5510,"This is not an indictment on the position or its current standing, just an affirmation of his regime’s “bullpen” mantra in either drafting or signing a new QB each season for depth and seasoning.",mlb_baseball,bullpen,mlb_baseball,,,,,,
+571aa3df6c865624,aviation_aerospace,background_negative,78129,"He's a manager of the highest calibre who made history at Inter but we have Roberto Mancini now and he also has a good track record, winning lots of trophies.",soccer,manager,soccer,,,,,,
+8b971525697480a1,aviation_aerospace,background_negative,39117,Josh McLain smacked the first of the inning on an 0-2 pitch over the left field wall.,mlb_baseball,inning,mlb_baseball,,,,,,
+37e98dfdea299b5b,aviation_aerospace,background_negative,63931,"Kellyanne Conway, Trump's campaign manager, referenced Clinton's appearance at the concert while defending the GOP nominee's decision to appear at the opening of his new hotel in Washington, D.C., on Wednesday.",soccer,manager,soccer,,,,,,
+0336755d102262e7,aviation_aerospace,background_negative,48982,"Best regards,
+
+Joining Embarcadero as Delphi Product Manager Wow, congratulations, Marco!",soccer,manager,soccer,,,,,,
+fb00d56cbe97997f,aviation_aerospace,background_negative,30139,"Third, you have to believe in the Rays' rotation to an extent that it's not hard to see them aping the 2015 Mets, where the lineup does just enough until the deadline.",mlb_baseball,mets,mlb_baseball,,,,,,
+43e64025cf326319,aviation_aerospace,background_negative,66683,The 57-year-old former England and Arsenal defender appeared on the programme following a long battle with alcoholism that has lasted more than three decades and left him homeless.,soccer,arsenal,soccer,,,,,,
+bce56dd2e0f34b55,aviation_aerospace,background_negative,8668,"“When I was in Calgary and Brian Burke was [the general manager] in Vancouver, we were trying to get more teams to be involved, but at that time, we couldn’t get any of these teams in California to be involved.",soccer,manager,soccer,,,,,,
+76d5d18d99cb6259,aviation_aerospace,background_negative,9524,Arsenal are seeking an additional centre-forward but it remains to be seen whether they can conclude a deal.,soccer,arsenal,soccer,,,,,,
+b9afb4aaca756621,aviation_aerospace,background_negative,69545,One FIFA player believes he's proved the chem glitch through the use of a skill move.,soccer,fifa,soccer,,,,,,
+f78047469be28707,aviation_aerospace,background_negative,66259,"Elsewhere on the card, Kyoji Horiguchi (14-1 MMA, 3-0 UFC) was the unanimous choice over flyweight Louis Gaudinot (6-3 MMA, 1-2 UFC), and Hector Lombard (34-4-1 MMA, 3-2 UFC) was the consensus pick over welterweight Josh Burkman (27-10 MMA, 5-5 UFC).",combat_sports,mma;ufc,combat_sports,,,,,,
+8d3c276705b4096c,aviation_aerospace,background_negative,47828,"Barnett losing via submission to Rothwell, well, that's another story.",combat_sports,submission,combat_sports,,,,,,

@@ -1,0 +1,23 @@
+{
+  "source_root": "/Users/yanyuming/Downloads/GitHub/llama3_interpretability_sae/presentation/260415/family_ontology_draft/benchmark_ready/family_dataset_round2/candidate_pools",
+  "rules_path": "/Users/yanyuming/Downloads/GitHub/llama3_interpretability_sae/presentation/260415/family_ontology_draft/benchmark_ready/manual_cleaning_rules.yaml",
+  "definitions_path": "/Users/yanyuming/Downloads/GitHub/llama3_interpretability_sae/presentation/260415/family_ontology_draft/benchmark_ready/benchmark_ready_family_definitions.yaml",
+  "round_name": "manualclean",
+  "family_ids": [
+    "mlb_baseball",
+    "nfl_football",
+    "soccer",
+    "nba_basketball",
+    "nhl_hockey",
+    "combat_sports",
+    "gaming_general",
+    "crypto_blockchain",
+    "aviation_aerospace",
+    "china",
+    "japan",
+    "russia_post_soviet",
+    "middle_east_geopolitics",
+    "us_electoral_politics",
+    "us_legislative_governance"
+  ]
+}

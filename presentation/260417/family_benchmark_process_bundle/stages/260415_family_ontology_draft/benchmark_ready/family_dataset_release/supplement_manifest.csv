@@ -1,0 +1,16 @@
+family_id,auto_supply_target_positive,auto_supply_hard_negative,auto_supply_medium_negative,auto_supply_background_negative,selected_target_positive,selected_hard_negative,selected_medium_negative,selected_background_negative,selected_drop_or_ambiguous
+mlb_baseball,643,3523,983,2186,60,480,318,212,0
+nfl_football,715,3455,971,2182,62,484,319,212,0
+soccer,406,3688,1051,2185,72,480,307,211,0
+nba_basketball,753,3136,967,2187,62,482,317,213,0
+nhl_hockey,660,2906,968,2186,60,480,318,212,0
+combat_sports,329,3532,1307,2172,61,480,319,212,0
+gaming_general,510,2397,1139,2249,61,480,319,212,0
+crypto_blockchain,496,2769,1542,1733,66,482,314,208,0
+aviation_aerospace,684,2993,1063,1661,63,480,315,212,0
+china,706,3375,1355,2092,60,480,319,212,0
+japan,479,2942,1319,1755,61,480,319,212,0
+russia_post_soviet,675,2961,1362,1734,59,483,319,212,0
+middle_east_geopolitics,711,2942,1484,1948,60,480,320,212,0
+us_electoral_politics,521,2619,1513,1950,80,480,309,202,0
+us_legislative_governance,790,2787,1390,1736,63,482,315,212,0
