@@ -15,7 +15,7 @@ from torch.utils.data import DataLoader, Dataset, Subset
 from torch.utils.data.distributed import DistributedSampler
 from tqdm import tqdm
 
-from sae import TopKSparseAutoencoder
+from sae import KronSparseAutoencoder
 from utils.cuda_utils import set_up_cuda
 
 
@@ -29,7 +29,7 @@ def set_seed(seed: int):
     torch.backends.cudnn.benchmark = False
 
 
-class TopKSparseAutoencoderDataset(Dataset):
+class KronSparseAutoencoderDataset(Dataset):
     def __init__(self, data_dir: Path):
         """"""
         # List and sort data files to ensure consistent order across processes
@@ -278,7 +278,7 @@ def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
             logging.error(f"Failed to remove checkpoint {checkpoint}: {e}")
 
 def train_autoencoder(
-    model: TopKSparseAutoencoder,
+    model: KronSparseAutoencoder,
     train_dataloader: DataLoader,
     val_dataloader: DataLoader,
     num_epochs: int,
@@ -295,7 +295,7 @@ def train_autoencoder(
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
-) -> TopKSparseAutoencoder:
+) -> KronSparseAutoencoder:
     """"""
     logging.info("Sending model to device and wrapping in DistributedDataParallel...")
     model = model.to(device)
@@ -434,6 +434,8 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("--model_load_path", type=Path, default=None)
     parser.add_argument("--batch_size", type=int, default=1024)
     parser.add_argument("--checkpoint_dir", type=Path, default=Path("sae_checkpoints"))
+    parser.add_argument("--kron_heads", type=int, default=512)
+    parser.add_argument("--kron_m", type=int, default=4)
     return parser.parse_args()
 
 
@@ -468,6 +470,11 @@ def main() -> None:
     n_latents = 2**16  # 65536
     k = 64
     k_aux = 2048
+    kron_heads = args.kron_heads
+    kron_m = args.kron_m
+    assert n_latents % (kron_heads * kron_m) == 0, \
+        "n_latents must be divisible by kron_heads * kron_m"
+    kron_n = n_latents // (kron_heads * kron_m)
     aux_loss_coeff = 1 / 32
     dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
     sae_normalization_eps = 1e-6
@@ -493,6 +500,9 @@ def main() -> None:
                 "n_latents": n_latents,
                 "k": k,
                 "k_aux": k_aux,
+                "kron_heads": kron_heads,
+                "kron_m": kron_m,
+                "kron_n": kron_n,
                 "aux_loss_coeff": aux_loss_coeff,
                 "dead_steps_threshold": dead_steps_threshold,
                 "sae_normalization_eps": sae_normalization_eps,
@@ -511,7 +521,7 @@ def main() -> None:
             },
         )
 
-        logging.info("#### Starting SAE training script.")
+        logging.info("#### Starting KronSAE training script.")
         logging.info("#### Arguments:")
         logging.info(f"# data_dir={args.data_dir}")
         logging.info(f"# b_pre_path={args.b_pre_path}")
@@ -527,6 +537,9 @@ def main() -> None:
         logging.info(f"# n_latents={n_latents}")
         logging.info(f"# k={k}")
         logging.info(f"# k_aux={k_aux}")
+        logging.info(f"# kron_heads={kron_heads}")
+        logging.info(f"# kron_m={kron_m}")
+        logging.info(f"# kron_n={kron_n}")
         logging.info(f"# aux_loss_coeff={aux_loss_coeff}")
         logging.info(f"# dead_steps_threshold={dead_steps_threshold}")
         logging.info(f"# sae_normalization_eps={sae_normalization_eps}")
@@ -557,14 +570,16 @@ def main() -> None:
         f"b_pre shape mismatch. Expected {(d_model,)}, got {b_pre.shape}"
 
     # Initialize the model
-    logging.info("Initializing Sparse Autoencoder model...")
-    model = TopKSparseAutoencoder(
+    logging.info("Initializing Kron Sparse Autoencoder model...")
+    model = KronSparseAutoencoder(
         d_model=d_model,
         n_latents=n_latents,
         k=k,
         b_pre=b_pre,
         dtype=dtype,
         normalize_eps=sae_normalization_eps,
+        n_heads=kron_heads,
+        kron_m=kron_m,
     )
     if args.model_load_path:
         logging.info("Loading model weights from checkpoint...")
@@ -584,7 +599,7 @@ def main() -> None:
     dist.barrier()
 
     logging.info("Creating dataset...")
-    dataset = TopKSparseAutoencoderDataset(args.data_dir)
+    dataset = KronSparseAutoencoderDataset(args.data_dir)
     assert (batch_size, d_model) == dataset[0].shape, \
         f"Dataset shape mismatch. Expected {(batch_size, d_model)}, got {dataset[0].shape}"
     train_val_index = int(len(dataset) * train_val_split)
@@ -630,7 +645,7 @@ def main() -> None:
     logging.info(f"Validation dataloader created with {len(val_dataloader)} batches.")
     dist.barrier()
 
-    logging.info("Starting training of Sparse Autoencoder...")
+    logging.info("Starting training of Kron Sparse Autoencoder...")
     trained_model = train_autoencoder(
         model=model,
         train_dataloader=train_dataloader,
