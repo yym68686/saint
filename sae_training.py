@@ -15,7 +15,7 @@ from torch.utils.data import DataLoader, Dataset, Subset
 from torch.utils.data.distributed import DistributedSampler
 from tqdm import tqdm
 
-from sae import TopKSparseAutoencoder
+from sae import HierarchicalTopKSparseAutoencoder
 from utils.cuda_utils import set_up_cuda
 
 
@@ -29,7 +29,7 @@ def set_seed(seed: int):
     torch.backends.cudnn.benchmark = False
 
 
-class TopKSparseAutoencoderDataset(Dataset):
+class HierarchicalTopKSparseAutoencoderDataset(Dataset):
     def __init__(self, data_dir: Path):
         """"""
         # List and sort data files to ensure consistent order across processes
@@ -55,6 +55,7 @@ def train_epoch(
     optimizer: optim.AdamW,
     k_aux: int,
     aux_loss_coeff: float,
+    hierarchical_stride: int,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     logs_per_epoch: int,
@@ -68,9 +69,10 @@ def train_epoch(
 
     # Initialize epoch log variables and helpers
     loss_acc = torch.tensor(0.0, device=device)
+    hierarchical_loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
-    log_interval = len(dataloader) // logs_per_epoch
+    log_interval = max(1, len(dataloader) // logs_per_epoch)
     accumulated_loss_count = dist.get_world_size() * log_interval
 
     # Create epoch progress bar on main process
@@ -92,6 +94,11 @@ def train_epoch(
 
         # Compute main loss in normalized space
         loss = criterion(reconstructed, batch_normalized)
+        hierarchical_loss = model.module.compute_hierarchical_loss(
+            h_sparse=h_sparse,
+            target=batch_normalized,
+            stride=hierarchical_stride,
+        )
 
         # If enough latents haven't been activated in more than dead_steps_threshold training steps then calculate an
         # auxiliary loss to help reactivate the latents.
@@ -111,8 +118,8 @@ def train_epoch(
             # If there are not enough dead latents to activate, set auxiliary loss to 0.
             aux_loss = torch.tensor(0.0, device=device)
 
-        # Compute total loss with auxiliary loss coefficient
-        total_loss = loss + aux_loss_coeff * aux_loss
+        # Use HierarchicalTopK as the primary reconstruction objective.
+        total_loss = hierarchical_loss + aux_loss_coeff * aux_loss
 
         # Perform backward pass, project out gradient info as recommended by OpenAI paper, then step the optimizer
         # and normalize the decoder weights again.
@@ -123,6 +130,7 @@ def train_epoch(
 
         # Accumulate losses
         loss_acc += loss.detach()
+        hierarchical_loss_acc += hierarchical_loss.detach()
         aux_loss_acc += aux_loss.detach()
         total_loss_acc += total_loss.detach()
 
@@ -140,14 +148,17 @@ def train_epoch(
         # log to wandb and tqdm
         if (batch_idx + 1) % log_interval == 0:
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(hierarchical_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
+            avg_hierarchical_loss = hierarchical_loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
 
             # Reset log variables for next interval
             loss_acc = torch.tensor(0.0, device=device)
+            hierarchical_loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
 
@@ -161,6 +172,7 @@ def train_epoch(
                 wandb.log(
                     data={
                         "train/loss": avg_loss,
+                        "train/hierarchical_loss": avg_hierarchical_loss,
                         "train/aux_loss": avg_aux_loss,
                         "train/total_loss": avg_total_loss,
                         "debug/dead_latents_ratio": dead_latents_ratio,
@@ -171,6 +183,7 @@ def train_epoch(
                 )
                 progress_bar.set_postfix(
                     loss=f"{avg_loss:.6f}",
+                    hier=f"{avg_hierarchical_loss:.6f}",
                     aux_loss=f"{avg_aux_loss:.6f}",
                     total_loss=f"{avg_total_loss:.6f}",
                 )
@@ -188,18 +201,20 @@ def validate_epoch(
     criterion: nn.MSELoss,
     k_aux: int,
     aux_loss_coeff: float,
+    hierarchical_stride: int,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
-) -> tuple[float, float, float]:
+) -> tuple[float, float, float, float]:
     """"""
     # Set the model to eval mode
     model.eval()
 
     # Initialize epoch log variables
     loss_acc = torch.tensor(0.0, device=device)
+    hierarchical_loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
 
@@ -222,6 +237,11 @@ def validate_epoch(
 
             # Compute main loss in normalized space
             loss = criterion(reconstructed, batch_normalized)
+            hierarchical_loss = model.module.compute_hierarchical_loss(
+                h_sparse=h_sparse,
+                target=batch_normalized,
+                stride=hierarchical_stride,
+            )
 
             # Compute auxiliary loss if necessary
             dead_mask = latent_last_nonzero > dead_steps_threshold
@@ -234,11 +254,12 @@ def validate_epoch(
             else:
                 aux_loss = torch.tensor(0.0, device=device)
 
-            # Compute total loss with auxiliary loss coefficient
-            total_loss = loss + aux_loss_coeff * aux_loss
+            # Compute total loss with the hierarchical objective and auxiliary loss.
+            total_loss = hierarchical_loss + aux_loss_coeff * aux_loss
 
             # Accumulate losses
             loss_acc += loss.detach()
+            hierarchical_loss_acc += hierarchical_loss.detach()
             aux_loss_acc += aux_loss.detach()
             total_loss_acc += total_loss.detach()
 
@@ -252,13 +273,15 @@ def validate_epoch(
 
     # Gather and average losses across processes
     dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
+    dist.all_reduce(hierarchical_loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
     avg_loss = loss_acc.item() / (dist.get_world_size() * len(dataloader))
+    avg_hierarchical_loss = hierarchical_loss_acc.item() / (dist.get_world_size() * len(dataloader))
     avg_aux_loss = aux_loss_acc.item() / (dist.get_world_size() * len(dataloader))
     avg_total_loss = total_loss_acc.item() / (dist.get_world_size() * len(dataloader))
 
-    return avg_loss, avg_aux_loss, avg_total_loss
+    return avg_loss, avg_hierarchical_loss, avg_aux_loss, avg_total_loss
 
 def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
     """清理旧的检查点，只保留最新的 N 个"""
@@ -278,7 +301,7 @@ def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
             logging.error(f"Failed to remove checkpoint {checkpoint}: {e}")
 
 def train_autoencoder(
-    model: TopKSparseAutoencoder,
+    model: HierarchicalTopKSparseAutoencoder,
     train_dataloader: DataLoader,
     val_dataloader: DataLoader,
     num_epochs: int,
@@ -289,13 +312,14 @@ def train_autoencoder(
     optimizer_eps: float,
     k_aux: int,
     aux_loss_coeff: float,
+    hierarchical_stride: int,
     dead_steps_threshold: int,
     logs_per_epoch: int,
     checkpoint_dir: Path,
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
-) -> TopKSparseAutoencoder:
+) -> HierarchicalTopKSparseAutoencoder:
     """"""
     logging.info("Sending model to device and wrapping in DistributedDataParallel...")
     model = model.to(device)
@@ -358,6 +382,7 @@ def train_autoencoder(
             optimizer=optimizer,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
+            hierarchical_stride=hierarchical_stride,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             logs_per_epoch=logs_per_epoch,
@@ -367,7 +392,7 @@ def train_autoencoder(
         )
 
         # Validate an epoch
-        val_avg_loss, val_avg_aux_loss, val_avg_total_loss = validate_epoch(
+        val_avg_loss, val_avg_hierarchical_loss, val_avg_aux_loss, val_avg_total_loss = validate_epoch(
             epoch=epoch,
             num_epochs=num_epochs,
             model=model,
@@ -375,6 +400,7 @@ def train_autoencoder(
             criterion=criterion,
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
+            hierarchical_stride=hierarchical_stride,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             dtype=dtype,
@@ -391,6 +417,7 @@ def train_autoencoder(
             wandb.log(
                 data={
                     "val/loss": val_avg_loss,
+                    "val/hierarchical_loss": val_avg_hierarchical_loss,
                     "val/aux_loss": val_avg_aux_loss,
                     "val/total_loss": val_avg_total_loss,
                     "learning_rate": updated_lr,
@@ -400,6 +427,7 @@ def train_autoencoder(
             logging.info(f"Epoch {epoch + 1}/{num_epochs}, Updated LR: {updated_lr:.2e}")
             logging.info(
                 f"val/loss: {val_avg_loss:.6f} "
+                f"| val/hierarchical_loss: {val_avg_hierarchical_loss:.6f} "
                 f"| val/aux_loss: {val_avg_aux_loss:.6f} "
                 f"| val/total_loss: {val_avg_total_loss:.6f}",
             )
@@ -434,6 +462,7 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument("--model_load_path", type=Path, default=None)
     parser.add_argument("--batch_size", type=int, default=1024)
     parser.add_argument("--checkpoint_dir", type=Path, default=Path("sae_checkpoints"))
+    parser.add_argument("--hierarchical_stride", type=int, default=8)
     return parser.parse_args()
 
 
@@ -469,6 +498,7 @@ def main() -> None:
     k = 64
     k_aux = 2048
     aux_loss_coeff = 1 / 32
+    hierarchical_stride = args.hierarchical_stride
     dead_steps_threshold = 626  # ~1 epoch in training steps modify below use len(train_dataloader) + 1 is better
     sae_normalization_eps = 1e-6
     batch_size = args.batch_size
@@ -494,6 +524,7 @@ def main() -> None:
                 "k": k,
                 "k_aux": k_aux,
                 "aux_loss_coeff": aux_loss_coeff,
+                "hierarchical_stride": hierarchical_stride,
                 "dead_steps_threshold": dead_steps_threshold,
                 "sae_normalization_eps": sae_normalization_eps,
                 "batch_size": batch_size,
@@ -511,7 +542,7 @@ def main() -> None:
             },
         )
 
-        logging.info("#### Starting SAE training script.")
+        logging.info("#### Starting HierarchicalTopK SAE training script.")
         logging.info("#### Arguments:")
         logging.info(f"# data_dir={args.data_dir}")
         logging.info(f"# b_pre_path={args.b_pre_path}")
@@ -528,6 +559,7 @@ def main() -> None:
         logging.info(f"# k={k}")
         logging.info(f"# k_aux={k_aux}")
         logging.info(f"# aux_loss_coeff={aux_loss_coeff}")
+        logging.info(f"# hierarchical_stride={hierarchical_stride}")
         logging.info(f"# dead_steps_threshold={dead_steps_threshold}")
         logging.info(f"# sae_normalization_eps={sae_normalization_eps}")
         logging.info(f"# batch_size={batch_size}")
@@ -557,8 +589,8 @@ def main() -> None:
         f"b_pre shape mismatch. Expected {(d_model,)}, got {b_pre.shape}"
 
     # Initialize the model
-    logging.info("Initializing Sparse Autoencoder model...")
-    model = TopKSparseAutoencoder(
+    logging.info("Initializing HierarchicalTopK Sparse Autoencoder model...")
+    model = HierarchicalTopKSparseAutoencoder(
         d_model=d_model,
         n_latents=n_latents,
         k=k,
@@ -584,7 +616,7 @@ def main() -> None:
     dist.barrier()
 
     logging.info("Creating dataset...")
-    dataset = TopKSparseAutoencoderDataset(args.data_dir)
+    dataset = HierarchicalTopKSparseAutoencoderDataset(args.data_dir)
     assert (batch_size, d_model) == dataset[0].shape, \
         f"Dataset shape mismatch. Expected {(batch_size, d_model)}, got {dataset[0].shape}"
     train_val_index = int(len(dataset) * train_val_split)
@@ -630,7 +662,7 @@ def main() -> None:
     logging.info(f"Validation dataloader created with {len(val_dataloader)} batches.")
     dist.barrier()
 
-    logging.info("Starting training of Sparse Autoencoder...")
+    logging.info("Starting training of HierarchicalTopK Sparse Autoencoder...")
     trained_model = train_autoencoder(
         model=model,
         train_dataloader=train_dataloader,
@@ -643,6 +675,7 @@ def main() -> None:
         optimizer_eps=optimizer_eps,
         k_aux=k_aux,
         aux_loss_coeff=aux_loss_coeff,
+        hierarchical_stride=hierarchical_stride,
         dead_steps_threshold=dead_steps_threshold,
         logs_per_epoch=logs_per_epoch,
         checkpoint_dir=args.checkpoint_dir,

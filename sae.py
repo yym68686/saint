@@ -5,7 +5,15 @@ import torch
 from torch import nn
 
 
-class TopKSparseAutoencoder(nn.Module):
+class HierarchicalTopKSparseAutoencoder(nn.Module):
+    """TopK SAE with HierarchicalTopK training support.
+
+    The model architecture stays compatible with the baseline TopK SAE. The
+    difference is the training objective: intermediate TopK prefixes are
+    trained to reconstruct the input, so one SAE can preserve reconstruction
+    quality across multiple sparsity budgets.
+    """
+
     def __init__(
         self,
         d_model: int,
@@ -15,7 +23,6 @@ class TopKSparseAutoencoder(nn.Module):
         dtype: torch.dtype,
         normalize_eps: float = 1e-6,
     ):
-        """"""
         super().__init__()
         self.d_model = d_model
         self.n_latents = n_latents
@@ -24,16 +31,10 @@ class TopKSparseAutoencoder(nn.Module):
         self.normalize_eps = normalize_eps
         self.h_bias = None
 
-        # Initialize training data mean (or median) as shared trainable pre-bias Parameter for encoder and decoder
         self.b_pre = nn.Parameter(b_pre.to(dtype), requires_grad=True)
-
-        # Initialize encoder and decoder. The encoder has an additional bias term b_enc in addition to b_pre in the
-        # forward pass, whereas the decoder does not have a bias term.
         self.encoder = nn.Linear(d_model, n_latents, bias=True, dtype=dtype)
         self.decoder = nn.Linear(n_latents, d_model, bias=False, dtype=dtype)
 
-        # Use orthogonal initialization for encoder to ensure well-distributed, independent directions and copy
-        # the transposed encoder weights to decoder weights to ensure parallel initialization as per paper.
         nn.init.orthogonal_(self.encoder.weight)
         with torch.no_grad():
             self.decoder.weight.copy_(self.encoder.weight.t())
@@ -41,17 +42,26 @@ class TopKSparseAutoencoder(nn.Module):
         self.normalize_decoder_weights()
 
     def normalize_decoder_weights(self) -> None:
-        """Normalize the decoder weights to unit norm for each latent (corresponding to decoder columns)."""
+        """Normalize each latent decoder vector to unit norm."""
         with torch.no_grad():
-            self.decoder.weight.div_(self.decoder.weight.norm(dim=1, keepdim=True))
+            norms = self.decoder.weight.norm(dim=0, keepdim=True).clamp_min(1e-12)
+            self.decoder.weight.div_(norms)
 
-    def project_decoder_grads(self):
-        """Project out gradient information parallel to dict vectors."""
+    def project_decoder_grads(self) -> None:
+        """Project out decoder gradients parallel to each latent decoder vector."""
+        if self.decoder.weight.grad is None:
+            return
         with torch.no_grad():
-            # Compute dot product of decoder weights and their grads, then subtract the projection from the grads
-            # in place to save memory
-            proj = torch.sum(self.decoder.weight * self.decoder.weight.grad, dim=1, keepdim=True)
-            self.decoder.weight.grad.sub_(proj * self.decoder.weight)
+            decoder_normed = self.decoder.weight / self.decoder.weight.norm(
+                dim=0,
+                keepdim=True,
+            ).clamp_min(1e-12)
+            proj = torch.sum(
+                self.decoder.weight.grad * decoder_normed,
+                dim=0,
+                keepdim=True,
+            )
+            self.decoder.weight.grad.sub_(proj * decoder_normed)
 
     def preprocess_input(self, x: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
         """Preprocess input by converting to model dtype, centering and normalizing."""
@@ -76,21 +86,15 @@ class TopKSparseAutoencoder(nn.Module):
         :param x: input tensor of shape (batch_size, seq_len, d_model)
         :return: reconstructed tensor of shape (batch_size, seq_len, d_model)
         """
-        # Store original dtype and preprocess input
         orig_dtype = x.dtype
         x, mean, norm = self.preprocess_input(x)
 
-        # Reshape to flatten batch and sequence dimensions
         batch_size, seq_len, d_model = x.shape
         x = x.reshape(-1, d_model)
 
-        # Forward pass through model in normalized space
-        normalized_recon, h, _ = self.forward_1d_normalized(x)
-
-        # Reshape back to (batch_size, seq_len, d_model)
+        normalized_recon, _, _ = self.forward_1d_normalized(x)
         normalized_recon = normalized_recon.reshape(batch_size, seq_len, -1)
 
-        # Postprocess output and return
         reconstructed = self.postprocess_output(normalized_recon, mean, norm).to(orig_dtype)
         return reconstructed
 
@@ -101,51 +105,98 @@ class TopKSparseAutoencoder(nn.Module):
         """
         :param x: input tensor of shape (batch_size, d_model)
         """
-        # Subtract pre-bias and encode input
-        x = x - self.b_pre
-        h = self.encoder(x)
+        x_centered = x - self.b_pre
+        h = self.encoder(x_centered)
 
         if self.h_bias is not None:
-            # 获取最大的4个值及其索引
             top_values, top_indices = torch.topk(h, k=4, dim=-1)
 
-            # 遍历每个样本的前4大值
             for batch_idx in range(top_indices.shape[0]):
                 for i in range(4):
                     latent_idx = top_indices[batch_idx, i].item()
                     value = top_values[batch_idx, i].item()
                     logging.info(
-                        f"Top {i+1} value: h[{batch_idx}, {latent_idx}] = {value:.2f}"
+                        f"Top {i + 1} value: h[{batch_idx}, {latent_idx}] = {value:.2f}"
                     )
 
             h = h + self.h_bias
             non_zero_idx = torch.nonzero(self.h_bias).squeeze()
             logging.info(f"Latent bias at index {non_zero_idx}: h_value = {h[:, non_zero_idx]}")
 
-        # Reconstruct input and latent representation with default k sparsity
         reconstructed, h_sparse = self.decode_latent(h=h, k=self.k)
 
         return reconstructed, h, h_sparse
 
     def decode_latent(self, h: torch.Tensor, k: int) -> tuple[torch.Tensor, torch.Tensor]:
-        """"""
-        # Apply TopK activation, Relu to guarantee positive topk vals and then build sparse representation
+        """Apply fixed TopK activation and decode the sparse representation."""
         h = torch.relu(h)
         topk_values, topk_indices = torch.topk(h, k=k, dim=-1)
         h_sparse = torch.zeros_like(h).scatter_(1, topk_indices, topk_values)
-
-        # Decode h_sparse and add pre-bias
         reconstructed = self.decoder(h_sparse) + self.b_pre
 
         return reconstructed, h_sparse
 
+    def compute_hierarchical_loss(
+        self,
+        h_sparse: torch.Tensor,
+        target: torch.Tensor,
+        stride: int = 8,
+    ) -> torch.Tensor:
+        """Average reconstruction loss over cumulative TopK prefixes.
+
+        stride=1 uses every prefix 1..k. Larger strides follow the efficient
+        training shortcut used in the HierarchicalTopK implementation: evaluate
+        every N-th prefix and always include the full k-prefix.
+        """
+        stride = max(1, int(stride))
+        prefix_positions = torch.arange(
+            stride - 1,
+            self.k,
+            stride,
+            device=h_sparse.device,
+        )
+        if prefix_positions.numel() == 0 or prefix_positions[-1] != self.k - 1:
+            prefix_positions = torch.cat(
+                [
+                    prefix_positions,
+                    torch.tensor([self.k - 1], device=h_sparse.device),
+                ]
+            )
+
+        topk_values, topk_indices = torch.topk(h_sparse, k=self.k, dim=-1)
+        decoder_table = self.decoder.weight.t()
+        running_recon = torch.zeros(
+            h_sparse.shape[0],
+            self.d_model,
+            dtype=target.dtype,
+            device=target.device,
+        )
+        loss_acc = torch.zeros((), dtype=target.dtype, device=target.device)
+        start = 0
+
+        for prefix_end in prefix_positions.tolist():
+            stop = prefix_end + 1
+            block_indices = topk_indices[:, start:stop]
+            block_values = topk_values[:, start:stop]
+            block_vectors = decoder_table.index_select(
+                dim=0,
+                index=block_indices.reshape(-1),
+            ).view(*block_indices.shape, self.d_model)
+            running_recon = running_recon + torch.sum(
+                block_vectors * block_values.unsqueeze(-1),
+                dim=1,
+            )
+            reconstructed = running_recon + self.b_pre
+            loss_acc = loss_acc + torch.mean((reconstructed - target).pow(2))
+            start = stop
+
+        return loss_acc / prefix_positions.numel()
+
     def set_latent_bias(self, h_bias: torch.Tensor) -> None:
-        """"""
         assert h_bias.shape == (self.n_latents,), "h_bias shape must be of shape (n_latents,)"
         self.h_bias = h_bias.to(self.dtype)
 
     def unset_latent_bias(self) -> None:
-        """"""
         self.h_bias = None
 
 
@@ -155,9 +206,8 @@ def load_sae_model(
     sae_normalization_eps: float,
     device: torch.device,
     dtype: torch.dtype,
-) -> TopKSparseAutoencoder:
-    """"""
-    logging.info(f"Loading TopK SAE model weights and config from: {model_path}")
+) -> HierarchicalTopKSparseAutoencoder:
+    logging.info(f"Loading HierarchicalTopK SAE model weights and config from: {model_path}")
     state_dict = torch.load(
         model_path,
         map_location=torch.device("cpu"),
@@ -167,8 +217,8 @@ def load_sae_model(
     d_model = b_pre.shape[0]
     n_latents = state_dict["encoder.weight"].shape[0]
 
-    logging.info("Initializing TopK SAE model and loading state dict...")
-    model = TopKSparseAutoencoder(
+    logging.info("Initializing HierarchicalTopK SAE model and loading state dict...")
+    model = HierarchicalTopKSparseAutoencoder(
         d_model=d_model,
         n_latents=n_latents,
         k=sae_top_k,
@@ -184,3 +234,6 @@ def load_sae_model(
     model.eval()
 
     return model
+
+
+TopKSparseAutoencoder = HierarchicalTopKSparseAutoencoder
