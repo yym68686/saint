@@ -6,11 +6,11 @@ from torch import nn
 
 
 class TopAFASparseAutoencoder(nn.Module):
-    """Top-AFA SAE with per-sample adaptive feature count.
+    """Top-AFA SAE v2 with bounded per-sample adaptive feature count.
 
-    The Top-AFA activation follows the public COLM 2025 implementation:
-    features are ranked by approximate feature activation, then each sample
-    keeps the prefix whose cumulative feature norm best matches the input norm.
+    The original unbounded Top-AFA selection can collapse to very small active
+    sets in this activation pipeline. This v2 keeps the Top-AFA norm-matching
+    rule, but clamps the selected prefix length into a fixed budget window.
     """
 
     def __init__(
@@ -21,11 +21,23 @@ class TopAFASparseAutoencoder(nn.Module):
         b_pre: torch.Tensor,
         dtype: torch.dtype,
         normalize_eps: float = 1e-6,
+        min_k: int = 32,
+        max_k: int = 128,
+        target_l0: int = 64,
     ):
         super().__init__()
+        if not (1 <= min_k <= target_l0 <= max_k <= n_latents):
+            raise ValueError(
+                "Expected 1 <= min_k <= target_l0 <= max_k <= n_latents, "
+                f"got min_k={min_k}, target_l0={target_l0}, "
+                f"max_k={max_k}, n_latents={n_latents}."
+            )
         self.d_model = d_model
         self.n_latents = n_latents
-        self.k = k
+        self.k = target_l0 if k <= 0 else k
+        self.min_k = min_k
+        self.max_k = max_k
+        self.target_l0 = target_l0
         self.dtype = dtype
         self.normalize_eps = normalize_eps
         self.h_bias = None
@@ -143,6 +155,7 @@ class TopAFASparseAutoencoder(nn.Module):
         target_norm = torch.norm(x_centered, p=2, dim=-1, keepdim=True)
         cumulative_norm = torch.sqrt(cumulative_fa)
         selected_counts = torch.abs(cumulative_norm - target_norm).argmin(dim=-1) + 1
+        selected_counts = selected_counts.clamp(min=self.min_k, max=self.max_k)
 
         rank_positions = torch.arange(h_relu.shape[1], device=h_relu.device).unsqueeze(0)
         keep_by_rank = rank_positions < selected_counts.unsqueeze(1)
@@ -175,6 +188,12 @@ class TopAFASparseAutoencoder(nn.Module):
             ).pow(2)
         )
 
+    def compute_l0_loss(self, h_sparse: torch.Tensor) -> torch.Tensor:
+        """Soft monitoring loss for keeping the selected budget near target_l0."""
+        l0_norm = (h_sparse > 0).float().sum(dim=-1)
+        target = torch.full_like(l0_norm, float(self.target_l0))
+        return torch.mean(((l0_norm - target) / max(1, self.target_l0)).pow(2))
+
     def set_latent_bias(self, h_bias: torch.Tensor) -> None:
         assert h_bias.shape == (self.n_latents,), "h_bias shape must be of shape (n_latents,)"
         self.h_bias = h_bias.to(self.dtype)
@@ -199,15 +218,17 @@ def load_sae_model(
     b_pre = state_dict["b_pre"]
     d_model = b_pre.shape[0]
     n_latents = state_dict["encoder.weight"].shape[0]
+    target_l0 = sae_top_k if sae_top_k > 0 else 64
 
     logging.info("Initializing Top-AFA SAE model and loading state dict...")
     model = TopAFASparseAutoencoder(
         d_model=d_model,
         n_latents=n_latents,
-        k=sae_top_k,
+        k=target_l0,
         b_pre=b_pre,
         dtype=dtype,
         normalize_eps=sae_normalization_eps,
+        target_l0=target_l0,
     )
     model.load_state_dict(state_dict)
     del state_dict

@@ -48,11 +48,14 @@ def compute_losses(
     h_sparse: torch.Tensor,
     criterion: nn.MSELoss,
     afa_loss_coeff: float,
-) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+    l0_loss_coeff: float,
+) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
     loss = criterion(reconstructed, target)
     afa_loss = model.compute_afa_loss(h_sparse=h_sparse, target=target)
     weighted_afa_loss = afa_loss_coeff * afa_loss
-    return loss, afa_loss, weighted_afa_loss
+    l0_loss = model.compute_l0_loss(h_sparse=h_sparse)
+    weighted_l0_loss = l0_loss_coeff * l0_loss
+    return loss, afa_loss, weighted_afa_loss, l0_loss, weighted_l0_loss
 
 
 def train_epoch(
@@ -65,6 +68,7 @@ def train_epoch(
     k_aux: int,
     aux_loss_coeff: float,
     afa_loss_coeff: float,
+    l0_loss_coeff: float,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     logs_per_epoch: int,
@@ -77,6 +81,7 @@ def train_epoch(
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     afa_loss_acc = torch.tensor(0.0, device=device)
+    l0_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
     l0_norm_acc = torch.tensor(0.0, device=device)
     log_interval = max(1, len(dataloader) // logs_per_epoch)
@@ -95,13 +100,14 @@ def train_epoch(
         optimizer.zero_grad()
         reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
 
-        loss, afa_loss, weighted_afa_loss = compute_losses(
+        loss, afa_loss, weighted_afa_loss, l0_loss, weighted_l0_loss = compute_losses(
             model=model.module,
             reconstructed=reconstructed,
             target=batch_normalized,
             h_sparse=h_sparse,
             criterion=criterion,
             afa_loss_coeff=afa_loss_coeff,
+            l0_loss_coeff=l0_loss_coeff,
         )
 
         dead_mask = latent_last_nonzero > dead_steps_threshold
@@ -114,7 +120,7 @@ def train_epoch(
         else:
             aux_loss = torch.tensor(0.0, device=device)
 
-        total_loss = loss + aux_loss_coeff * aux_loss + weighted_afa_loss
+        total_loss = loss + aux_loss_coeff * aux_loss + weighted_afa_loss + weighted_l0_loss
 
         total_loss.backward()
         model.module.project_decoder_grads()
@@ -125,6 +131,7 @@ def train_epoch(
         loss_acc += loss.detach()
         aux_loss_acc += aux_loss.detach()
         afa_loss_acc += afa_loss.detach()
+        l0_loss_acc += l0_loss.detach()
         total_loss_acc += total_loss.detach()
         l0_norm_acc += l0_norm.detach()
 
@@ -139,17 +146,20 @@ def train_epoch(
             dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(afa_loss_acc, op=dist.ReduceOp.SUM)
+            dist.all_reduce(l0_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
             dist.all_reduce(l0_norm_acc, op=dist.ReduceOp.SUM)
             avg_loss = loss_acc.item() / accumulated_loss_count
             avg_aux_loss = aux_loss_acc.item() / accumulated_loss_count
             avg_afa_loss = afa_loss_acc.item() / accumulated_loss_count
+            avg_l0_loss = l0_loss_acc.item() / accumulated_loss_count
             avg_total_loss = total_loss_acc.item() / accumulated_loss_count
             avg_l0_norm = l0_norm_acc.item() / accumulated_loss_count
 
             loss_acc = torch.tensor(0.0, device=device)
             aux_loss_acc = torch.tensor(0.0, device=device)
             afa_loss_acc = torch.tensor(0.0, device=device)
+            l0_loss_acc = torch.tensor(0.0, device=device)
             total_loss_acc = torch.tensor(0.0, device=device)
             l0_norm_acc = torch.tensor(0.0, device=device)
 
@@ -164,6 +174,8 @@ def train_epoch(
                         "train/aux_loss": avg_aux_loss,
                         "train/afa_loss": avg_afa_loss,
                         "train/weighted_afa_loss": afa_loss_coeff * avg_afa_loss,
+                        "train/l0_loss": avg_l0_loss,
+                        "train/weighted_l0_loss": l0_loss_coeff * avg_l0_loss,
                         "train/total_loss": avg_total_loss,
                         "train/l0_norm": avg_l0_norm,
                         "debug/dead_latents_ratio": dead_latents_ratio,
@@ -175,6 +187,7 @@ def train_epoch(
                 progress_bar.set_postfix(
                     loss=f"{avg_loss:.6f}",
                     afa=f"{avg_afa_loss:.4f}",
+                    l0loss=f"{avg_l0_loss:.4f}",
                     l0=f"{avg_l0_norm:.1f}",
                     total=f"{avg_total_loss:.6f}",
                 )
@@ -192,17 +205,19 @@ def validate_epoch(
     k_aux: int,
     aux_loss_coeff: float,
     afa_loss_coeff: float,
+    l0_loss_coeff: float,
     latent_last_nonzero: torch.Tensor,
     dead_steps_threshold: int,
     dtype: torch.dtype,
     device: torch.device,
     rank: int,
-) -> tuple[float, float, float, float, float]:
+) -> tuple[float, float, float, float, float, float]:
     model.eval()
 
     loss_acc = torch.tensor(0.0, device=device)
     aux_loss_acc = torch.tensor(0.0, device=device)
     afa_loss_acc = torch.tensor(0.0, device=device)
+    l0_loss_acc = torch.tensor(0.0, device=device)
     total_loss_acc = torch.tensor(0.0, device=device)
     l0_norm_acc = torch.tensor(0.0, device=device)
 
@@ -218,13 +233,14 @@ def validate_epoch(
             batch_normalized, _, _ = model.module.preprocess_input(batch)
 
             reconstructed, h, h_sparse = model.module.forward_1d_normalized(batch_normalized)
-            loss, afa_loss, weighted_afa_loss = compute_losses(
+            loss, afa_loss, weighted_afa_loss, l0_loss, weighted_l0_loss = compute_losses(
                 model=model.module,
                 reconstructed=reconstructed,
                 target=batch_normalized,
                 h_sparse=h_sparse,
                 criterion=criterion,
                 afa_loss_coeff=afa_loss_coeff,
+                l0_loss_coeff=l0_loss_coeff,
             )
 
             dead_mask = latent_last_nonzero > dead_steps_threshold
@@ -237,12 +253,13 @@ def validate_epoch(
             else:
                 aux_loss = torch.tensor(0.0, device=device)
 
-            total_loss = loss + aux_loss_coeff * aux_loss + weighted_afa_loss
+            total_loss = loss + aux_loss_coeff * aux_loss + weighted_afa_loss + weighted_l0_loss
             l0_norm = (h_sparse > 0).float().sum(dim=-1).mean()
 
             loss_acc += loss.detach()
             aux_loss_acc += aux_loss.detach()
             afa_loss_acc += afa_loss.detach()
+            l0_loss_acc += l0_loss.detach()
             total_loss_acc += total_loss.detach()
             l0_norm_acc += l0_norm.detach()
 
@@ -255,16 +272,18 @@ def validate_epoch(
     dist.all_reduce(loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(aux_loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(afa_loss_acc, op=dist.ReduceOp.SUM)
+    dist.all_reduce(l0_loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(total_loss_acc, op=dist.ReduceOp.SUM)
     dist.all_reduce(l0_norm_acc, op=dist.ReduceOp.SUM)
     count = dist.get_world_size() * len(dataloader)
     avg_loss = loss_acc.item() / count
     avg_aux_loss = aux_loss_acc.item() / count
     avg_afa_loss = afa_loss_acc.item() / count
+    avg_l0_loss = l0_loss_acc.item() / count
     avg_total_loss = total_loss_acc.item() / count
     avg_l0_norm = l0_norm_acc.item() / count
 
-    return avg_loss, avg_aux_loss, avg_afa_loss, avg_total_loss, avg_l0_norm
+    return avg_loss, avg_aux_loss, avg_afa_loss, avg_l0_loss, avg_total_loss, avg_l0_norm
 
 
 def cleanup_old_checkpoints(checkpoint_dir: Path, keep_last_n: int = 3) -> None:
@@ -297,6 +316,7 @@ def train_autoencoder(
     k_aux: int,
     aux_loss_coeff: float,
     afa_loss_coeff: float,
+    l0_loss_coeff: float,
     dead_steps_threshold: int,
     logs_per_epoch: int,
     checkpoint_dir: Path,
@@ -356,6 +376,7 @@ def train_autoencoder(
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
             afa_loss_coeff=afa_loss_coeff,
+            l0_loss_coeff=l0_loss_coeff,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             logs_per_epoch=logs_per_epoch,
@@ -368,6 +389,7 @@ def train_autoencoder(
             val_avg_loss,
             val_avg_aux_loss,
             val_avg_afa_loss,
+            val_avg_l0_loss,
             val_avg_total_loss,
             val_avg_l0_norm,
         ) = validate_epoch(
@@ -379,6 +401,7 @@ def train_autoencoder(
             k_aux=k_aux,
             aux_loss_coeff=aux_loss_coeff,
             afa_loss_coeff=afa_loss_coeff,
+            l0_loss_coeff=l0_loss_coeff,
             latent_last_nonzero=latent_last_nonzero,
             dead_steps_threshold=dead_steps_threshold,
             dtype=dtype,
@@ -396,6 +419,8 @@ def train_autoencoder(
                     "val/aux_loss": val_avg_aux_loss,
                     "val/afa_loss": val_avg_afa_loss,
                     "val/weighted_afa_loss": afa_loss_coeff * val_avg_afa_loss,
+                    "val/l0_loss": val_avg_l0_loss,
+                    "val/weighted_l0_loss": l0_loss_coeff * val_avg_l0_loss,
                     "val/total_loss": val_avg_total_loss,
                     "val/l0_norm": val_avg_l0_norm,
                     "learning_rate": updated_lr,
@@ -407,6 +432,7 @@ def train_autoencoder(
                 f"val/loss: {val_avg_loss:.6f} "
                 f"| val/aux_loss: {val_avg_aux_loss:.6f} "
                 f"| val/afa_loss: {val_avg_afa_loss:.6f} "
+                f"| val/l0_loss: {val_avg_l0_loss:.6f} "
                 f"| val/l0_norm: {val_avg_l0_norm:.2f} "
                 f"| val/total_loss: {val_avg_total_loss:.6f}",
             )
@@ -440,9 +466,13 @@ def parse_arguments() -> argparse.Namespace:
     parser.add_argument(
         "--afa_loss_coeff",
         type=float,
-        default=1 / 64,
+        default=1 / 256,
         help="Weight for the Top-AFA norm-matching loss. Paper sweeps include 1/128 to 1/16.",
     )
+    parser.add_argument("--min_k", type=int, default=32)
+    parser.add_argument("--max_k", type=int, default=128)
+    parser.add_argument("--target_l0", type=int, default=64)
+    parser.add_argument("--l0_loss_coeff", type=float, default=0.0)
     return parser.parse_args()
 
 
@@ -471,10 +501,16 @@ def main() -> None:
 
     d_model = 3072
     n_latents = 2**16
-    k = 0
+    k = args.target_l0
     k_aux = 2048
     aux_loss_coeff = 1 / 32
     afa_loss_coeff = args.afa_loss_coeff
+    l0_loss_coeff = args.l0_loss_coeff
+    min_k = args.min_k
+    max_k = args.max_k
+    target_l0 = args.target_l0
+    assert 1 <= min_k <= target_l0 <= max_k <= n_latents, \
+        "Expected 1 <= min_k <= target_l0 <= max_k <= n_latents"
     dead_steps_threshold = 626
     sae_normalization_eps = 1e-6
     batch_size = args.batch_size
@@ -495,13 +531,17 @@ def main() -> None:
         wandb.init(
             project="llama3_interpretability_sae",
             config={
-                "method": "top_afa_sae",
+                "method": "top_afa_sae_v2_bounded_adaptive",
                 "d_model": d_model,
                 "n_latents": n_latents,
                 "k": k,
+                "min_k": min_k,
+                "max_k": max_k,
+                "target_l0": target_l0,
                 "k_aux": k_aux,
                 "aux_loss_coeff": aux_loss_coeff,
                 "afa_loss_coeff": afa_loss_coeff,
+                "l0_loss_coeff": l0_loss_coeff,
                 "dead_steps_threshold": dead_steps_threshold,
                 "sae_normalization_eps": sae_normalization_eps,
                 "batch_size": batch_size,
@@ -519,7 +559,7 @@ def main() -> None:
             },
         )
 
-        logging.info("#### Starting Top-AFA SAE training script.")
+        logging.info("#### Starting Top-AFA SAE v2 training script.")
         logging.info("#### Arguments:")
         logging.info(f"# data_dir={args.data_dir}")
         logging.info(f"# b_pre_path={args.b_pre_path}")
@@ -533,10 +573,14 @@ def main() -> None:
         logging.info("#### Configuration:")
         logging.info(f"# d_model={d_model}")
         logging.info(f"# n_latents={n_latents}")
-        logging.info(f"# k={k} (adaptive Top-AFA; fixed k is not used)")
+        logging.info(f"# k={k} (target L0 for bounded adaptive Top-AFA)")
+        logging.info(f"# min_k={min_k}")
+        logging.info(f"# max_k={max_k}")
+        logging.info(f"# target_l0={target_l0}")
         logging.info(f"# k_aux={k_aux}")
         logging.info(f"# aux_loss_coeff={aux_loss_coeff}")
         logging.info(f"# afa_loss_coeff={afa_loss_coeff}")
+        logging.info(f"# l0_loss_coeff={l0_loss_coeff}")
         logging.info(f"# dead_steps_threshold={dead_steps_threshold}")
         logging.info(f"# sae_normalization_eps={sae_normalization_eps}")
         logging.info(f"# batch_size={batch_size}")
@@ -570,6 +614,9 @@ def main() -> None:
         b_pre=b_pre,
         dtype=dtype,
         normalize_eps=sae_normalization_eps,
+        min_k=min_k,
+        max_k=max_k,
+        target_l0=target_l0,
     )
     if args.model_load_path:
         logging.info("Loading model weights from checkpoint...")
@@ -648,6 +695,7 @@ def main() -> None:
         k_aux=k_aux,
         aux_loss_coeff=aux_loss_coeff,
         afa_loss_coeff=afa_loss_coeff,
+        l0_loss_coeff=l0_loss_coeff,
         dead_steps_threshold=dead_steps_threshold,
         logs_per_epoch=logs_per_epoch,
         checkpoint_dir=args.checkpoint_dir,
