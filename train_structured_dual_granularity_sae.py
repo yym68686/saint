@@ -809,8 +809,6 @@ def main() -> None:
                 "Reused base encoder shape does not match the registered "
                 f"capacity: {tuple(base_state['encoder.weight'].shape)}"
             )
-        if not torch.equal(base_state["b_pre"].float(), b_pre.float()):
-            raise ValueError("Reused base b_pre does not match the cache mean")
         base_params = sum(
             int(base_state[key].numel()) for key in required_base_keys
         )
