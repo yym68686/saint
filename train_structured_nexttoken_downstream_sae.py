@@ -722,7 +722,7 @@ def main() -> None:
     targets: list[dict[str, Any]] = [
         {
             "label": "frozen V396 warm-start reference",
-            "kind": "v396_causal_learned_beta",
+            "kind": "v396_original_checkpoint",
             "layer": args.source_layer,
             "checkpoint": str(args.base_checkpoint),
             "trainable_parameters": sum(

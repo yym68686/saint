@@ -24,6 +24,7 @@ import torch.nn.functional as F
 
 
 CUSTOM_KINDS = {
+    "v396_original_checkpoint",
     "v396_causal_scaled_relu",
     "v396_causal_fixed_beta",
     "v396_causal_learned_beta",
@@ -53,7 +54,17 @@ def patch_custom_kinds(module: Any) -> None:
         raw = module.load_state(checkpoint)
         n_latents = int(raw["decoder.weight"].shape[1])
         keys = ["b_pre", "encoder.weight", "encoder.bias", "decoder.weight"]
-        if kind == "v396_causal_scaled_relu":
+        if kind == "v396_original_checkpoint":
+            state = module.move_keys(raw, keys, config.device, config.dtype)
+            state["causal.raw_beta"] = raw["v396.raw_beta"].to(
+                device=config.device,
+                dtype=config.dtype,
+            )
+            state["causal.log_gain"] = raw["v396.log_gain"].to(
+                device=config.device,
+                dtype=config.dtype,
+            )
+        elif kind == "v396_causal_scaled_relu":
             keys.extend(["causal.bias_delta", "causal.log_gain"])
         elif kind in {
             "v396_causal_learned_beta",
@@ -71,12 +82,23 @@ def patch_custom_kinds(module: Any) -> None:
                         "downstream.context_up_bias",
                     ]
                 )
-        state = module.move_keys(raw, keys, config.device, config.dtype)
+        if kind != "v396_original_checkpoint":
+            state = module.move_keys(raw, keys, config.device, config.dtype)
         extra = {
             "n_latents": n_latents,
             "parameter_count": int(target.get("trainable_parameters", sum(v.numel() for v in raw.values()))),
-            "max_beta": float(raw.get("causal.max_beta", torch.tensor(4.0)).item()),
-            "max_log_gain": float(raw.get("causal.max_log_gain", torch.tensor(2.0)).item()),
+            "max_beta": float(
+                raw.get(
+                    "causal.max_beta",
+                    raw.get("v396.max_beta", torch.tensor(4.0)),
+                ).item()
+            ),
+            "max_log_gain": float(
+                raw.get(
+                    "causal.max_log_gain",
+                    raw.get("v396.max_log_gain", torch.tensor(2.0)),
+                ).item()
+            ),
             "context_rank": int(
                 raw.get("downstream.context_rank", torch.tensor(1)).item()
             ),
@@ -133,15 +155,15 @@ def patch_custom_kinds(module: Any) -> None:
             context_hidden = F.silu(
                 F.linear(
                     context_input,
-                    state["downstream.context_down_weight"],
-                    state["downstream.context_down_bias"],
+                    state["downstream.context_down_weight"].float(),
+                    state["downstream.context_down_bias"].float(),
                 )
             )
             context_gain = float(extra["max_context_log_gain"]) * torch.tanh(
                 F.linear(
                     context_hidden,
-                    state["downstream.context_up_weight"],
-                    state["downstream.context_up_bias"],
+                    state["downstream.context_up_weight"].float(),
+                    state["downstream.context_up_bias"].float(),
                 )
                 / float(extra["context_rank"]) ** 0.5
             )
