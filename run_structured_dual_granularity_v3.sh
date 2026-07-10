@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-CODE="${CODE:-/root/saint-structured-dual-granularity-v2}"
+CODE="${CODE:-/root/saint-structured-dual-granularity-v3}"
 PY="${PY:-/root/.cache/pypoetry/virtualenvs/llama3-interpretability-sae-d40co3fS-py3.12/bin/python}"
 MODEL_DIR="${MODEL_DIR:-/root/saint/llama_3.2-3B_model/original}"
 PARQUET_PATH="${PARQUET_PATH:-/root/autodl-tmp/train-00000-of-00082.parquet}"
 OLD_MEAN_PATH="${OLD_MEAN_PATH:-/root/autodl-tmp/activation_outputs_mean.pt}"
 CACHE_DIR="${CACHE_DIR:-/autodl-fs/data/structured_activation_cache_owt50k_l20-l23_v1}"
-ROOT="${ROOT:-/autodl-fs/data/structured_dual_granularity_v2_20260710_retry1}"
+ROOT="${ROOT:-/autodl-fs/data/structured_dual_granularity_v3_20260710}"
 SCREEN_DIR="$ROOT/screen_seed42"
 REUSED_BASE_CHECKPOINT="${REUSED_BASE_CHECKPOINT:-/autodl-fs/data/structured_dual_granularity_v1_20260710/screen_seed42/trained_sae-structured-relu-base.pt}"
 REUSED_BASE_SUMMARY="${REUSED_BASE_SUMMARY:-/autodl-fs/data/structured_dual_granularity_v1_20260710/screen_seed42/train-summary-structured-dual-granularity.json}"
@@ -37,8 +37,12 @@ if base_checkpoint_sha256 != "$REUSED_BASE_SHA256":
         f"{base_checkpoint_sha256} != $REUSED_BASE_SHA256"
     )
 payload = {
-    "experiment": "structured-cache parameter-matched dual-granularity Softplus SAE v2",
-    "registered_before_cache_capture": True,
+    "experiment": (
+        "structured-cache parameter-matched dual-granularity "
+        "responsibility-split SAE v3"
+    ),
+    "registered_before_training_and_evaluation": True,
+    "reuses_versioned_read_only_cache_captured_before_v3": True,
     "code_branch": subprocess.check_output(
         ["git", "-C", str(code), "branch", "--show-current"],
         text=True,
@@ -68,6 +72,11 @@ payload = {
         "n_semantic": 4096,
         "semantic_activation": "softplus",
         "semantic_temperature": 0.10,
+        "token_target": "token activation minus within-sample mean",
+        "semantic_target": "within-sample mean activation",
+        "reconstruction_objective": (
+            "token residual MSE plus token-count-weighted sample mean MSE"
+        ),
         "temperature_source": (
             "rounded initial label-free semantic preactivation std 0.1024"
         ),
@@ -81,9 +90,11 @@ payload = {
     "reused_base_checkpoint": "$REUSED_BASE_CHECKPOINT",
     "reused_base_checkpoint_sha256": base_checkpoint_sha256,
     "reused_base_summary": "$REUSED_BASE_SUMMARY",
-    "controlled_change_from_v1": (
-        "semantic ReLU replaced by fixed-temperature Softplus; "
-        "all capacity, data, initialization, optimizer, steps and gates unchanged"
+    "controlled_change_from_v2": (
+        "token and semantic branches receive separate reconstruction "
+        "responsibilities: token residual and sample mean; Softplus "
+        "temperature, capacity, data, initialization, optimizer, steps "
+        "and gates are unchanged"
     ),
     "initial3": [
         "LabHC/bias_in_bios_class_set3",
@@ -95,7 +106,7 @@ payload = {
         "minimum_per_dataset_delta": ">= -0.01",
         "run_full7_only_after_pass": True,
     },
-    "family_version": 2,
+    "family_version": 3,
     "maximum_family_versions": 3,
 }
 path = root / "preregistration.json"
@@ -216,7 +227,7 @@ fi
 if [[ ! -f "$ROOT/semantic-branch-diagnostic.json" ]]; then
   "$PY" "$CODE/diagnose_structured_semantic_branch.py" \
     --cache-dir "$CACHE_DIR" \
-    --checkpoint "$SCREEN_DIR/trained_sae-structured-dual-granularity-softplus.pt" \
+    --checkpoint "$SCREEN_DIR/trained_sae-structured-dual-granularity-responsibility-split.pt" \
     --output-json "$ROOT/semantic-branch-diagnostic.json" \
     --layer 22 \
     --batch-samples 32 \
@@ -266,7 +277,7 @@ PY
 )"
 
 if [[ "$GATE_PASS" != "true" ]]; then
-  echo "== Initial3 gate rejected v2; full7 is prohibited"
+  echo "== Initial3 gate rejected v3; family exhausted and full7 is prohibited"
   exit 0
 fi
 

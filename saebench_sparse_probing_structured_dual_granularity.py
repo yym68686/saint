@@ -51,6 +51,7 @@ def load_target_state(
     elif target["kind"] in {
         "structured_dual_granularity",
         "structured_dual_granularity_softplus",
+        "structured_dual_granularity_responsibility_split",
     }:
         keys = [
             "b_pre",
@@ -133,9 +134,22 @@ def mean_features(
                     sums.index_add_(0, sample_index, token.float())
                     features = sums / lengths.float().unsqueeze(1)
                 else:
+                    pooled = torch.zeros(
+                        (local_count, centered.shape[1]),
+                        device=config.device,
+                        dtype=centered.dtype,
+                    )
+                    pooled.index_add_(0, sample_index, centered)
+                    pooled = pooled / lengths.to(centered.dtype).unsqueeze(1)
+                    token_input = centered
+                    if (
+                        target["kind"]
+                        == "structured_dual_granularity_responsibility_split"
+                    ):
+                        token_input = centered - pooled[sample_index]
                     token = torch.relu(
                         F.linear(
-                            centered,
+                            token_input,
                             state["token_encoder.weight"],
                             state["token_encoder.bias"],
                         )
@@ -147,19 +161,15 @@ def mean_features(
                     )
                     token_sums.index_add_(0, sample_index, token.float())
                     token_mean = token_sums / lengths.float().unsqueeze(1)
-                    pooled = torch.zeros(
-                        (local_count, centered.shape[1]),
-                        device=config.device,
-                        dtype=centered.dtype,
-                    )
-                    pooled.index_add_(0, sample_index, centered)
-                    pooled = pooled / lengths.to(centered.dtype).unsqueeze(1)
                     semantic_hidden = F.linear(
                         pooled,
                         state["semantic_encoder.weight"],
                         state["semantic_encoder.bias"],
                     )
-                    if target["kind"] == "structured_dual_granularity_softplus":
+                    if target["kind"] in {
+                        "structured_dual_granularity_softplus",
+                        "structured_dual_granularity_responsibility_split",
+                    }:
                         temperature = float(extra["semantic_temperature"])
                         if temperature <= 0:
                             raise ValueError(

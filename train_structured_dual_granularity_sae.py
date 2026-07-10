@@ -263,6 +263,20 @@ class ReLUFromScratchSAE(nn.Module):
     def active_features(out: dict[str, torch.Tensor]) -> torch.Tensor:
         return (out["z_token"] > 0).any(dim=0)
 
+    @staticmethod
+    def reconstruction_losses(
+        out: dict[str, torch.Tensor],
+        x_norm: torch.Tensor,
+        lengths: torch.Tensor,
+    ) -> dict[str, torch.Tensor]:
+        del lengths
+        total = F.mse_loss(out["recon"].float(), x_norm.float())
+        return {
+            "total": total,
+            "token": total,
+            "semantic": total.new_zeros(()),
+        }
+
     def auxiliary_reconstruction(
         self,
         out: dict[str, torch.Tensor],
@@ -419,6 +433,30 @@ class DualGranularitySAE(nn.Module):
             ]
         )
 
+    @staticmethod
+    def reconstruction_losses(
+        out: dict[str, torch.Tensor],
+        x_norm: torch.Tensor,
+        lengths: torch.Tensor,
+    ) -> dict[str, torch.Tensor]:
+        del x_norm
+        token = F.mse_loss(
+            out["token_recon_component"].float(),
+            out["token_target"].float(),
+        )
+        semantic_per_sample = (
+            out["semantic_recon_component"].float()
+            - out["semantic_target"].float()
+        ).square().mean(dim=1)
+        semantic = (
+            semantic_per_sample * lengths.float()
+        ).sum() / lengths.sum().float()
+        return {
+            "total": token + semantic,
+            "token": token,
+            "semantic": semantic,
+        }
+
     def auxiliary_reconstruction(
         self,
         out: dict[str, torch.Tensor],
@@ -450,12 +488,6 @@ class DualGranularitySAE(nn.Module):
         lengths: torch.Tensor,
     ) -> dict[str, torch.Tensor]:
         centered = x_norm - self.b_pre
-        token_h = F.linear(
-            centered,
-            self.token_encoder_weight,
-            self.token_encoder_bias,
-        )
-        z_token = torch.relu(token_h)
         sample_count = int(lengths.numel())
         pooled = torch.zeros(
             (sample_count, centered.shape[1]),
@@ -464,6 +496,13 @@ class DualGranularitySAE(nn.Module):
         )
         pooled.index_add_(0, sample_index, centered)
         pooled = pooled / lengths.to(centered.dtype).unsqueeze(1)
+        token_target = centered - pooled[sample_index]
+        token_h = F.linear(
+            token_target,
+            self.token_encoder_weight,
+            self.token_encoder_bias,
+        )
+        z_token = torch.relu(token_h)
         semantic_h = F.linear(
             pooled,
             self.semantic_encoder_weight,
@@ -472,23 +511,35 @@ class DualGranularitySAE(nn.Module):
         z_semantic = F.softplus(
             semantic_h / self.semantic_temperature
         ) * self.semantic_temperature
-        token_recon = F.linear(z_token, self.token_decoder_weight)
-        semantic_recon = F.linear(
+        token_recon_component = F.linear(
+            z_token,
+            self.token_decoder_weight,
+        )
+        semantic_recon_component = F.linear(
             z_semantic,
             self.semantic_decoder_weight,
-        )[sample_index]
-        recon = token_recon + semantic_recon + self.b_pre
+        )
+        recon = (
+            token_recon_component
+            + semantic_recon_component[sample_index]
+            + self.b_pre
+        )
         return {
             "recon": recon,
             "h_token": token_h,
             "h_semantic": semantic_h,
             "z_token": z_token,
             "z_semantic": z_semantic,
+            "token_target": token_target,
+            "semantic_target": pooled,
+            "token_recon_component": token_recon_component,
+            "semantic_recon_component": semantic_recon_component,
         }
 
     def export_state(self) -> dict[str, torch.Tensor]:
         return {
-            "structured.kind": torch.tensor(1),
+            "structured.kind": torch.tensor(2),
+            "structured.responsibility_split": torch.tensor(True),
             "structured.n_total": torch.tensor(self.n_total),
             "structured.n_token": torch.tensor(self.n_token),
             "structured.n_semantic": torch.tensor(self.n_semantic),
@@ -579,6 +630,8 @@ def train_one(
         accum = {
             "loss": 0.0,
             "recon": 0.0,
+            "token_recon": 0.0,
+            "semantic_recon": 0.0,
             "aux": 0.0,
             "l1": 0.0,
             "ev": 0.0,
@@ -598,7 +651,10 @@ def train_one(
             sample_index = batch.sample_index.to(device)
             lengths = batch.lengths.to(device)
             out = model(x, sample_index, lengths)
-            rec_loss = F.mse_loss(out["recon"].float(), x.float())
+            reconstruction = model.reconstruction_losses(out, x, lengths)
+            rec_loss = reconstruction["total"]
+            token_rec_loss = reconstruction["token"]
+            semantic_rec_loss = reconstruction["semantic"]
             l1 = model.l1_per_token(out, lengths).float()
             dead_mask = latent_last_nonzero > dead_steps_threshold
             dead_count = int(dead_mask.sum().item())
@@ -641,6 +697,10 @@ def train_one(
             ev = 1.0 - residual.square().sum() / x.float().square().sum()
             accum["loss"] += float(loss.detach().item())
             accum["recon"] += float(rec_loss.detach().item())
+            accum["token_recon"] += float(token_rec_loss.detach().item())
+            accum["semantic_recon"] += float(
+                semantic_rec_loss.detach().item()
+            )
             accum["aux"] += float(aux_loss.detach().item())
             accum["l1"] += float(l1.detach().item())
             accum["ev"] += float(ev.item())
@@ -669,6 +729,12 @@ def train_one(
                             "epoch": epoch + 1,
                             "step": global_step,
                             "recon": float(rec_loss.detach().item()),
+                            "token_recon": float(
+                                token_rec_loss.detach().item()
+                            ),
+                            "semantic_recon": float(
+                                semantic_rec_loss.detach().item()
+                            ),
                             "aux": float(aux_loss.detach().item()),
                             "l1": float(l1.detach().item()),
                             "ev": float(ev.item()),
@@ -687,7 +753,10 @@ def train_one(
                 sample_index,
                 lengths,
                 out,
+                reconstruction,
                 rec_loss,
+                token_rec_loss,
+                semantic_rec_loss,
                 aux_loss,
                 l1,
                 loss,
@@ -850,7 +919,7 @@ def main() -> None:
         semantic_temperature=args.semantic_temperature,
     )
     candidate_result = train_one(
-        "structured dual-granularity candidate",
+        "structured dual-granularity responsibility-split candidate",
         candidate,
         cache,
         args,
@@ -858,7 +927,7 @@ def main() -> None:
     )
     candidate_path = (
         args.output_dir
-        / "trained_sae-structured-dual-granularity-softplus.pt"
+        / "trained_sae-structured-dual-granularity-responsibility-split.pt"
     )
     torch.save(candidate.export_state(), candidate_path)
 
@@ -876,8 +945,8 @@ def main() -> None:
             "variant_key": "base",
         },
         {
-            "label": "structured-cache dual-granularity Softplus SAE",
-            "kind": "structured_dual_granularity_softplus",
+            "label": "structured-cache dual-granularity responsibility-split SAE",
+            "kind": "structured_dual_granularity_responsibility_split",
             "layer": args.layer,
             "checkpoint": str(candidate_path),
             "variant_key": "candidate",
@@ -889,7 +958,10 @@ def main() -> None:
         encoding="utf-8",
     )
     summary = {
-        "experiment": "parameter-matched structured-cache dual-granularity SAE",
+        "experiment": (
+            "parameter-matched structured-cache dual-granularity "
+            "responsibility-split SAE"
+        ),
         "arguments": {
             key: str(value) if isinstance(value, Path) else value
             for key, value in vars(args).items()
@@ -917,6 +989,7 @@ def main() -> None:
             "matches_relu_orthogonal_initialization": True,
             "matches_relu_joint_decoder_constraint": True,
             "matches_relu_dead_feature_auxiliary_objective": True,
+            "separate_token_residual_and_sample_mean_objectives": True,
             "uses_saebench_labels_for_training": False,
             "uses_eval_split_for_training": False,
             "uses_mean_diff_selection_for_training": False,
