@@ -11,6 +11,7 @@ ROOT="${ROOT:-/autodl-fs/data/structured_dual_granularity_v2_20260710}"
 SCREEN_DIR="$ROOT/screen_seed42"
 REUSED_BASE_CHECKPOINT="${REUSED_BASE_CHECKPOINT:-/autodl-fs/data/structured_dual_granularity_v1_20260710/screen_seed42/trained_sae-structured-relu-base.pt}"
 REUSED_BASE_SUMMARY="${REUSED_BASE_SUMMARY:-/autodl-fs/data/structured_dual_granularity_v1_20260710/screen_seed42/train-summary-structured-dual-granularity.json}"
+REUSED_BASE_SHA256="${REUSED_BASE_SHA256:-407aa42b2bab27a8f1ab24369ea860649fd412aeb0d0239848800c2453197385}"
 
 export PYTHONPATH="${CODE}:${PYTHONPATH:-}"
 source /etc/network_turbo >/dev/null 2>&1 || true
@@ -18,11 +19,23 @@ mkdir -p "$ROOT"
 
 "$PY" - <<PY | tee "$ROOT/preregistration.log"
 import json
+import hashlib
 import subprocess
 from pathlib import Path
 
 root = Path("$ROOT")
 code = Path("$CODE")
+base_checkpoint = Path("$REUSED_BASE_CHECKPOINT")
+digest = hashlib.sha256()
+with base_checkpoint.open("rb") as handle:
+    while chunk := handle.read(8 * 1024 * 1024):
+        digest.update(chunk)
+base_checkpoint_sha256 = digest.hexdigest()
+if base_checkpoint_sha256 != "$REUSED_BASE_SHA256":
+    raise SystemExit(
+        "Reused base checkpoint hash mismatch: "
+        f"{base_checkpoint_sha256} != $REUSED_BASE_SHA256"
+    )
 payload = {
     "experiment": "structured-cache parameter-matched dual-granularity Softplus SAE v2",
     "registered_before_cache_capture": True,
@@ -66,6 +79,7 @@ payload = {
         "same_exposed_feature_count": True,
     },
     "reused_base_checkpoint": "$REUSED_BASE_CHECKPOINT",
+    "reused_base_checkpoint_sha256": base_checkpoint_sha256,
     "reused_base_summary": "$REUSED_BASE_SUMMARY",
     "controlled_change_from_v1": (
         "semantic ReLU replaced by fixed-temperature Softplus; "
