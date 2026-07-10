@@ -1,0 +1,74 @@
+{
+  "experiment": "structured true downstream next-token contextual V396 SAE v2",
+  "family_version": "2/3",
+  "status": "preregistered-before-formal-training",
+  "motivation": "Remove the free prediction head that absorbed the v1 objective. The true next-token loss must pass through the frozen L22-to-output language-model path and directly update the exposed SAE features and a low-rank contextual gain module.",
+  "training_signal": {
+    "candidate": "true within-sample next-token cross entropy after replacing the L22 normalized source with the SAE reconstruction",
+    "reconstruction_control": "same trainable parameters and contextual module, reconstruction objective only",
+    "wrong_alignment_control": "same downstream loss with complete next-token target sequences circularly shifted across distinct samples",
+    "uses_saebench_labels": false,
+    "uses_eval_split": false,
+    "uses_one_vs_rest_targets": false,
+    "uses_mean_diff_selection": false,
+    "uses_test_feedback": false
+  },
+  "fixed_inputs": {
+    "cache_dir": "/autodl-fs/data/structured_activation_cache_owt50k_l20-l23_v1",
+    "cache_manifest_sha256": "7e9c522a08d844b48f1c0dfdeb0953053f11d59a9ef785ac6b79b52edf31e17f",
+    "base_checkpoint": "/root/autodl-tmp/v396_logcompanding_initial5/trained_sae-v396-logcompanding-relu.pt",
+    "base_checkpoint_sha256": "5a5319e1f2713e89f59c396d7f8dd1d340225416e506a10c42a4500cdceae42b",
+    "model_weights": "/root/saint/llama_3.2-3B_model/original/consolidated.00.pth",
+    "model_weights_sha256": "e85237a45033593adb3eb7e1a6cc5c410c4e2b360e24a422d3c1ab12a166c441",
+    "source_layer": 22
+  },
+  "fixed_training_configuration": {
+    "seed": 50,
+    "steps": 600,
+    "batch_sequences": 2,
+    "sequence_length": 32,
+    "context_rank": 32,
+    "max_context_log_gain": 0.5,
+    "trunk_lr": 1e-6,
+    "context_lr": 5e-5,
+    "downstream_loss_weight": 0.1,
+    "l1_coeff": 1e-6,
+    "beta_anchor_coeff": 0.001,
+    "gain_l2_coeff": 0.0001,
+    "context_l2_coeff": 0.0001,
+    "source_reproduction_tolerance": 0.001,
+    "exposed_feature_count": 65536
+  },
+  "training_only_calibration_evidence": {
+    "l22_source_reproduction_max_abs": 0.0,
+    "peak_gpu_memory_bytes": 23040231424,
+    "weight_0p01_observation": "next-token objective had negligible effect on total trunk gradient",
+    "weight_0p1_observation": "candidate trunk gradient changed materially while reconstruction remained dominant and finite",
+    "ten_step_candidate_final_ev": 0.8053393364,
+    "ten_step_reconstruction_control_final_ev": 0.8054471016,
+    "ten_step_candidate_final_true_ce": 3.7421519756,
+    "ten_step_reconstruction_control_final_true_ce": 3.7443249226
+  },
+  "initial3_protocol": {
+    "datasets": [
+      "LabHC/bias_in_bios_class_set3",
+      "canrager/amazon_reviews_mcauley_1and5",
+      "fancyzhx/ag_news"
+    ],
+    "train_size": 512,
+    "test_size": 128,
+    "context_length": 128,
+    "k_values": [1, 2, 5],
+    "random_seed": 42
+  },
+  "gate": {
+    "candidate_minus_best_same_parameter_control_min": 0.005,
+    "candidate_minus_wrong_alignment_min": 0.002,
+    "minimum_dataset_delta_vs_best_control": -0.01,
+    "candidate_true_ce_must_be_lower_than_reconstruction_control": true,
+    "source_reproduction_must_pass": true,
+    "trunk_and_context_parameters_must_update": true,
+    "full7_if_gate_fails": false,
+    "long_training_if_gate_fails": false
+  }
+}

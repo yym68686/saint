@@ -69,10 +69,19 @@ def main() -> None:
     train_variants = training["variants"]
     candidate_train = train_variants["candidate"]
     reconstruction_train = train_variants["reconstruction_control"]
-    candidate_true_ce = float(candidate_train["logs"][-1]["true_next_token_ce"])
-    reconstruction_true_ce = float(
-        reconstruction_train["logs"][-1]["true_next_token_ce"]
+    comparison_rows = min(
+        3,
+        len(candidate_train["logs"]),
+        len(reconstruction_train["logs"]),
     )
+    candidate_true_ce = sum(
+        float(row["true_next_token_ce"])
+        for row in candidate_train["logs"][-comparison_rows:]
+    ) / comparison_rows
+    reconstruction_true_ce = sum(
+        float(row["true_next_token_ce"])
+        for row in reconstruction_train["logs"][-comparison_rows:]
+    ) / comparison_rows
     true_ce_delta = candidate_true_ce - reconstruction_true_ce
     delta_best = float(candidate["mean_acc"] - best_control["mean_acc"])
     delta_reconstruction = float(
@@ -112,6 +121,7 @@ def main() -> None:
         "candidate_final_true_next_token_ce": candidate_true_ce,
         "reconstruction_control_final_true_next_token_ce": reconstruction_true_ce,
         "candidate_minus_reconstruction_true_ce": true_ce_delta,
+        "final_logged_rows_used_for_ce": comparison_rows,
         "source_reproduction_max_abs": source_reproduction_max,
         "dataset_deltas": dataset_rows,
         "gate": gate,
