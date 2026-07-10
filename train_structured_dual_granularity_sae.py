@@ -102,6 +102,25 @@ class StructuredActivationCache:
     def mean(self) -> torch.Tensor:
         return torch.load(self.mean_path, map_location="cpu", weights_only=True).float()
 
+    def batch_count(self, split: str) -> int:
+        if split not in {"train", "validation"}:
+            raise ValueError(split)
+        count = 0
+        for entry in self.shards:
+            meta = torch.load(
+                self.cache_dir / entry["meta"]["path"],
+                map_location="cpu",
+                weights_only=True,
+            )
+            sample_ids = meta["sample_ids"].to(torch.int64)
+            if split == "train":
+                selected = int((sample_ids < self.train_cutoff).sum().item())
+                count += selected // self.batch_samples
+            else:
+                selected = int((sample_ids >= self.train_cutoff).sum().item())
+                count += math.ceil(selected / self.batch_samples)
+        return count
+
     def iter_batches(self, epoch: int, split: str) -> Iterator[PackedBatch]:
         if split not in {"train", "validation"}:
             raise ValueError(split)
@@ -170,14 +189,16 @@ def make_initial_tensors(
     seed: int,
 ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
     generator = torch.Generator(device="cpu").manual_seed(seed)
-    encoder = torch.randn(
+    encoder = torch.empty(
         (n_latents, d_model),
-        generator=generator,
         dtype=torch.float32,
-    ) / math.sqrt(d_model)
+    )
+    nn.init.orthogonal_(encoder, generator=generator)
     encoder_bias = torch.zeros(n_latents, dtype=torch.float32)
     decoder = encoder.T.contiguous()
-    decoder.div_(decoder.norm(dim=0, keepdim=True).clamp_min(1.0e-6))
+    # Match the existing ReLU SAE implementation exactly: the stored decoder
+    # matrix is normalized and projected row-wise.
+    decoder.div_(decoder.norm(dim=1, keepdim=True).clamp_min(1.0e-6))
     return encoder, encoder_bias, decoder
 
 
@@ -203,7 +224,7 @@ class ReLUFromScratchSAE(nn.Module):
     def normalize_decoder(self) -> None:
         with torch.no_grad():
             self.decoder_weight.div_(
-                self.decoder_weight.norm(dim=0, keepdim=True).clamp_min(1.0e-6)
+                self.decoder_weight.norm(dim=1, keepdim=True).clamp_min(1.0e-6)
             )
 
     def project_decoder_grads(self) -> None:
@@ -212,7 +233,7 @@ class ReLUFromScratchSAE(nn.Module):
         with torch.no_grad():
             projection = (
                 self.decoder_weight * self.decoder_weight.grad
-            ).sum(dim=0, keepdim=True)
+            ).sum(dim=1, keepdim=True)
             self.decoder_weight.grad.sub_(projection * self.decoder_weight)
 
     def base_parameters(self) -> list[nn.Parameter]:
@@ -223,8 +244,41 @@ class ReLUFromScratchSAE(nn.Module):
             self.decoder_weight,
         ]
 
+    @property
+    def n_total(self) -> int:
+        return int(self.encoder_weight.shape[0])
+
     def semantic_parameters(self) -> list[nn.Parameter]:
         return []
+
+    @staticmethod
+    def l1_per_token(
+        out: dict[str, torch.Tensor],
+        lengths: torch.Tensor,
+    ) -> torch.Tensor:
+        del lengths
+        return out["z_token"].sum(dim=1).mean()
+
+    @staticmethod
+    def active_features(out: dict[str, torch.Tensor]) -> torch.Tensor:
+        return (out["z_token"] > 0).any(dim=0)
+
+    def auxiliary_reconstruction(
+        self,
+        out: dict[str, torch.Tensor],
+        dead_mask: torch.Tensor,
+        k_aux: int,
+        sample_index: torch.Tensor,
+    ) -> torch.Tensor:
+        del sample_index
+        h_masked = out["h_token"] * dead_mask.to(out["h_token"].dtype)
+        values, indices = torch.topk(
+            torch.relu(h_masked),
+            k=min(k_aux, self.n_total),
+            dim=1,
+        )
+        sparse = torch.zeros_like(h_masked).scatter_(1, indices, values)
+        return F.linear(sparse, self.decoder_weight) + self.b_pre
 
     def forward(
         self,
@@ -239,9 +293,10 @@ class ReLUFromScratchSAE(nn.Module):
         recon = F.linear(z, self.decoder_weight) + self.b_pre
         return {
             "recon": recon,
+            "h_token": h,
+            "h_semantic": h.new_zeros((0, 0)),
             "z_token": z,
             "z_semantic": z.new_zeros((0, 0)),
-            "exported": z,
         }
 
     def export_state(self) -> dict[str, torch.Tensor]:
@@ -293,22 +348,36 @@ class DualGranularitySAE(nn.Module):
 
     def normalize_decoder(self) -> None:
         with torch.no_grad():
-            for decoder in (
-                self.token_decoder_weight,
-                self.semantic_decoder_weight,
-            ):
-                decoder.div_(decoder.norm(dim=0, keepdim=True).clamp_min(1.0e-6))
+            row_norm = (
+                self.token_decoder_weight.square().sum(dim=1, keepdim=True)
+                + self.semantic_decoder_weight.square().sum(dim=1, keepdim=True)
+            ).sqrt().clamp_min(1.0e-6)
+            self.token_decoder_weight.div_(row_norm)
+            self.semantic_decoder_weight.div_(row_norm)
 
     def project_decoder_grads(self) -> None:
-        for decoder in (
-            self.token_decoder_weight,
-            self.semantic_decoder_weight,
+        if (
+            self.token_decoder_weight.grad is None
+            or self.semantic_decoder_weight.grad is None
         ):
-            if decoder.grad is None:
-                continue
-            with torch.no_grad():
-                projection = (decoder * decoder.grad).sum(dim=0, keepdim=True)
-                decoder.grad.sub_(projection * decoder)
+            return
+        with torch.no_grad():
+            projection = (
+                (
+                    self.token_decoder_weight
+                    * self.token_decoder_weight.grad
+                ).sum(dim=1, keepdim=True)
+                + (
+                    self.semantic_decoder_weight
+                    * self.semantic_decoder_weight.grad
+                ).sum(dim=1, keepdim=True)
+            )
+            self.token_decoder_weight.grad.sub_(
+                projection * self.token_decoder_weight
+            )
+            self.semantic_decoder_weight.grad.sub_(
+                projection * self.semantic_decoder_weight
+            )
 
     def base_parameters(self) -> list[nn.Parameter]:
         return [
@@ -324,6 +393,51 @@ class DualGranularitySAE(nn.Module):
             self.semantic_encoder_bias,
             self.semantic_decoder_weight,
         ]
+
+    @staticmethod
+    def l1_per_token(
+        out: dict[str, torch.Tensor],
+        lengths: torch.Tensor,
+    ) -> torch.Tensor:
+        token_sum = out["z_token"].sum()
+        semantic_sum = (
+            out["z_semantic"].sum(dim=1)
+            * lengths.to(out["z_semantic"].dtype)
+        ).sum()
+        return (token_sum + semantic_sum) / lengths.sum()
+
+    @staticmethod
+    def active_features(out: dict[str, torch.Tensor]) -> torch.Tensor:
+        return torch.cat(
+            [
+                (out["z_token"] > 0).any(dim=0),
+                (out["z_semantic"] > 0).any(dim=0),
+            ]
+        )
+
+    def auxiliary_reconstruction(
+        self,
+        out: dict[str, torch.Tensor],
+        dead_mask: torch.Tensor,
+        k_aux: int,
+        sample_index: torch.Tensor,
+    ) -> torch.Tensor:
+        semantic_per_token = out["h_semantic"][sample_index]
+        h_all = torch.cat([out["h_token"], semantic_per_token], dim=1)
+        h_masked = h_all * dead_mask.to(h_all.dtype)
+        values, indices = torch.topk(
+            torch.relu(h_masked),
+            k=min(k_aux, self.n_total),
+            dim=1,
+        )
+        sparse = torch.zeros_like(h_masked).scatter_(1, indices, values)
+        token_sparse = sparse[:, : self.n_token]
+        semantic_sparse = sparse[:, self.n_token :]
+        return (
+            F.linear(token_sparse, self.token_decoder_weight)
+            + F.linear(semantic_sparse, self.semantic_decoder_weight)
+            + self.b_pre
+        )
 
     def forward(
         self,
@@ -358,18 +472,12 @@ class DualGranularitySAE(nn.Module):
             self.semantic_decoder_weight,
         )[sample_index]
         recon = token_recon + semantic_recon + self.b_pre
-        exported = torch.cat(
-            [
-                z_token,
-                z_semantic[sample_index],
-            ],
-            dim=1,
-        )
         return {
             "recon": recon,
+            "h_token": token_h,
+            "h_semantic": semantic_h,
             "z_token": z_token,
             "z_semantic": z_semantic,
-            "exported": exported,
         }
 
     def export_state(self) -> dict[str, torch.Tensor]:
@@ -447,15 +555,27 @@ def train_one(
     history: list[dict[str, float]] = []
     global_step = 0
     started = time.time()
+    dead_steps_threshold = (
+        args.dead_steps_threshold
+        if args.dead_steps_threshold > 0
+        else cache.batch_count("train") + 1
+    )
+    latent_last_nonzero = torch.zeros(
+        model.n_total,
+        dtype=torch.long,
+        device=device,
+    )
 
     for epoch in range(args.epochs):
         accum = {
             "loss": 0.0,
             "recon": 0.0,
+            "aux": 0.0,
             "l1": 0.0,
             "ev": 0.0,
             "active_token": 0.0,
             "active_semantic": 0.0,
+            "dead_ratio": 0.0,
             "base_grad": 0.0,
             "semantic_grad": 0.0,
             "tokens": 0.0,
@@ -470,8 +590,28 @@ def train_one(
             lengths = batch.lengths.to(device)
             out = model(x, sample_index, lengths)
             rec_loss = F.mse_loss(out["recon"].float(), x.float())
-            l1 = out["exported"].float().sum(dim=1).mean()
-            loss = rec_loss + args.l1_coeff * l1
+            l1 = model.l1_per_token(out, lengths).float()
+            dead_mask = latent_last_nonzero > dead_steps_threshold
+            dead_count = int(dead_mask.sum().item())
+            if dead_count >= args.k_aux:
+                residual_target = x.float() - out["recon"].detach().float()
+                auxiliary_recon = model.auxiliary_reconstruction(
+                    out,
+                    dead_mask,
+                    args.k_aux,
+                    sample_index,
+                )
+                aux_loss = F.mse_loss(
+                    auxiliary_recon.float(),
+                    residual_target,
+                )
+            else:
+                aux_loss = rec_loss.new_zeros(())
+            loss = (
+                rec_loss
+                + args.aux_loss_coeff * aux_loss
+                + args.l1_coeff * l1
+            )
             if not torch.isfinite(loss):
                 raise FloatingPointError(
                     f"{label} produced NaN/Inf at epoch={epoch + 1} step={global_step + 1}"
@@ -484,11 +624,15 @@ def train_one(
             model.project_decoder_grads()
             optimizer.step()
             model.normalize_decoder()
+            active_features = model.active_features(out).detach()
+            latent_last_nonzero.mul_((~active_features).to(torch.long))
+            latent_last_nonzero.add_(1)
 
             residual = out["recon"].detach().float() - x.float()
             ev = 1.0 - residual.square().sum() / x.float().square().sum()
             accum["loss"] += float(loss.detach().item())
             accum["recon"] += float(rec_loss.detach().item())
+            accum["aux"] += float(aux_loss.detach().item())
             accum["l1"] += float(l1.detach().item())
             accum["ev"] += float(ev.item())
             accum["active_token"] += float(
@@ -502,6 +646,7 @@ def train_one(
                     .mean()
                     .item()
                 )
+            accum["dead_ratio"] += dead_count / model.n_total
             accum["base_grad"] += base_grad
             accum["semantic_grad"] += semantic_grad
             accum["tokens"] += float(x.shape[0])
@@ -515,8 +660,11 @@ def train_one(
                             "epoch": epoch + 1,
                             "step": global_step,
                             "recon": float(rec_loss.detach().item()),
+                            "aux": float(aux_loss.detach().item()),
                             "l1": float(l1.detach().item()),
                             "ev": float(ev.item()),
+                            "dead_ratio": dead_count / model.n_total,
+                            "dead_steps_threshold": dead_steps_threshold,
                             "base_grad_norm": base_grad,
                             "semantic_grad_norm": semantic_grad,
                             "learning_rate": optimizer.param_groups[0]["lr"],
@@ -525,7 +673,19 @@ def train_one(
                     ),
                     flush=True,
                 )
-            del x, sample_index, lengths, out, rec_loss, l1, loss, residual, ev
+            del (
+                x,
+                sample_index,
+                lengths,
+                out,
+                rec_loss,
+                aux_loss,
+                l1,
+                loss,
+                residual,
+                ev,
+                active_features,
+            )
         scheduler.step()
         row = {
             "epoch": float(epoch + 1),
@@ -561,6 +721,7 @@ def train_one(
         "validation": validation,
         "global_steps": global_step,
         "elapsed_seconds": time.time() - started,
+        "dead_steps_threshold": dead_steps_threshold,
         "semantic_parameter_max_delta": max(semantic_deltas, default=0.0),
         "parameter_count": parameter_count(model),
     }
@@ -584,6 +745,14 @@ def main() -> None:
     parser.add_argument("--optimizer-eps", type=float, default=6.25e-10)
     parser.add_argument("--weight-decay", type=float, default=0.0)
     parser.add_argument("--l1-coeff", type=float, default=1.0e-4)
+    parser.add_argument("--k-aux", type=int, default=2_048)
+    parser.add_argument("--aux-loss-coeff", type=float, default=1.0 / 32.0)
+    parser.add_argument(
+        "--dead-steps-threshold",
+        type=int,
+        default=0,
+        help="Use <=0 to match one full training epoch plus one step.",
+    )
     parser.add_argument("--grad-clip", type=float, default=1.0)
     parser.add_argument("--normalize-eps", type=float, default=1.0e-6)
     parser.add_argument("--log-every", type=int, default=100)
@@ -683,6 +852,9 @@ def main() -> None:
             "same_optimizer": True,
             "same_epochs": True,
             "same_exposed_feature_count": True,
+            "matches_relu_orthogonal_initialization": True,
+            "matches_relu_joint_decoder_constraint": True,
+            "matches_relu_dead_feature_auxiliary_objective": True,
             "uses_saebench_labels_for_training": False,
             "uses_eval_split_for_training": False,
             "uses_mean_diff_selection_for_training": False,
