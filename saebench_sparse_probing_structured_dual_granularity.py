@@ -38,15 +38,21 @@ def load_target_state(
     module: Any,
     target: dict[str, Any],
     config: Any,
-) -> tuple[dict[str, torch.Tensor], dict[str, int | float]]:
+) -> tuple[dict[str, torch.Tensor], dict[str, int | float | str]]:
+    readout_source = target.get("readout_source", "all")
+    if readout_source not in {"all", "token", "semantic"}:
+        raise ValueError(f"Unknown readout source: {readout_source}")
     raw = module.load_state(Path(target["checkpoint"]))
     if target["kind"] == "relu":
+        if readout_source != "all":
+            raise ValueError("ReLU controls only support the all-feature readout")
         keys = ["b_pre", "encoder.weight", "encoder.bias"]
         state = module.move_keys(raw, keys, config.device, config.dtype)
         extra = {
             "n_total": int(raw["encoder.weight"].shape[0]),
             "n_token": int(raw["encoder.weight"].shape[0]),
             "n_semantic": 0,
+            "readout_source": readout_source,
         }
     elif target["kind"] in {
         "structured_dual_granularity",
@@ -61,10 +67,18 @@ def load_target_state(
             "semantic_encoder.bias",
         ]
         state = module.move_keys(raw, keys, config.device, config.dtype)
+        n_token = int(raw["structured.n_token"].item())
+        n_semantic = int(raw["structured.n_semantic"].item())
+        readout_width = {
+            "all": n_token + n_semantic,
+            "token": n_token,
+            "semantic": n_semantic,
+        }[readout_source]
         extra = {
-            "n_total": int(raw["structured.n_total"].item()),
-            "n_token": int(raw["structured.n_token"].item()),
-            "n_semantic": int(raw["structured.n_semantic"].item()),
+            "n_total": readout_width,
+            "n_token": n_token,
+            "n_semantic": n_semantic,
+            "readout_source": readout_source,
             "semantic_temperature": float(
                 raw.get(
                     "structured.semantic_temperature",
@@ -88,7 +102,7 @@ def mean_features(
     masks: dict[str, torch.Tensor],
     target: dict[str, Any],
     state: dict[str, torch.Tensor],
-    extra: dict[str, int | float],
+    extra: dict[str, int | float | str],
     config: Any,
 ) -> dict[str, torch.Tensor]:
     result: dict[str, torch.Tensor] = {}
@@ -181,7 +195,12 @@ def mean_features(
                         ).float()
                     else:
                         semantic = torch.relu(semantic_hidden).float()
-                    features = torch.cat([token_mean, semantic], dim=1)
+                    if extra["readout_source"] == "token":
+                        features = token_mean
+                    elif extra["readout_source"] == "semantic":
+                        features = semantic
+                    else:
+                        features = torch.cat([token_mean, semantic], dim=1)
                 output[start:end] = features.cpu()
                 del acts, mask, local_ids, flat_mask, x, sample_index
             result[class_name] = output
