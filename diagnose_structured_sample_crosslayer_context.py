@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Gate sample-level lexical-centroid predictability before SAE training."""
+"""Gate sample-level cross-layer contextual predictability before SAE training."""
 
 from __future__ import annotations
 
@@ -9,7 +9,6 @@ import hashlib
 import importlib.util
 import inspect
 import json
-import math
 import sys
 import time
 from pathlib import Path
@@ -27,7 +26,7 @@ INITIAL3 = [
 
 
 def load_eval_module(path: Path) -> Any:
-    spec = importlib.util.spec_from_file_location("lexical_centroid_eval", path)
+    spec = importlib.util.spec_from_file_location("crosslayer_context_eval", path)
     if spec is None or spec.loader is None:
         raise RuntimeError(f"Cannot import evaluator from {path}")
     module = importlib.util.module_from_spec(spec)
@@ -232,33 +231,11 @@ def dataset_mean(row: dict[str, Any], dataset: str, k_values: list[int]) -> floa
     ) / len(k_values)
 
 
-def load_output_weight(model_weights: Path) -> torch.Tensor:
-    try:
-        state = torch.load(
-            model_weights,
-            map_location="cpu",
-            weights_only=True,
-            mmap=True,
-        )
-    except TypeError:
-        state = torch.load(
-            model_weights,
-            map_location="cpu",
-            weights_only=True,
-        )
-    output_weight = state["output.weight"]
-    if output_weight.ndim != 2:
-        raise ValueError(f"Unexpected output.weight shape: {tuple(output_weight.shape)}")
-    del state
-    return output_weight
-
-
 def collect_sample_summaries(
     module: Any,
     cache_dir: Path,
     manifest: dict[str, Any],
     state: dict[str, torch.Tensor],
-    output_weight: torch.Tensor,
     sample_count: int,
     min_sample_tokens: int,
     sample_batch_size: int,
@@ -266,14 +243,19 @@ def collect_sample_summaries(
     device: torch.device,
     dtype: torch.dtype,
     eps: float,
-) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, dict[str, Any]]:
+) -> tuple[
+    torch.Tensor,
+    torch.Tensor,
+    torch.Tensor,
+    torch.Tensor,
+    dict[str, Any],
+]:
     feature_count = int(state["encoder.weight"].shape[0])
     d_model = int(state["encoder.weight"].shape[1])
-    vocab_size = int(output_weight.shape[0])
     feature_means = torch.empty((sample_count, feature_count), dtype=torch.float32)
-    lexical_centroids = torch.empty((sample_count, d_model), dtype=torch.float32)
+    layer23_centroids = torch.empty((sample_count, d_model), dtype=torch.float32)
+    layer22_centroids = torch.empty((sample_count, d_model), dtype=torch.float32)
     collected_sample_ids = torch.empty(sample_count, dtype=torch.int64)
-    token_histogram = torch.zeros(vocab_size, dtype=torch.int64)
     sample_lengths: list[int] = []
     emitted = 0
     with torch.inference_mode():
@@ -283,15 +265,21 @@ def collect_sample_summaries(
                 map_location="cpu",
                 weights_only=True,
             )
-            activations = torch.load(
+            activations22 = torch.load(
                 cache_dir / shard["layers"]["22"]["path"],
                 map_location="cpu",
                 weights_only=True,
             )
+            activations23 = torch.load(
+                cache_dir / shard["layers"]["23"]["path"],
+                map_location="cpu",
+                weights_only=True,
+            )
+            if activations22.shape != activations23.shape:
+                raise RuntimeError("L22 and L23 cache shards are not aligned")
             offsets = meta["offsets"].to(torch.int64)
             lengths = meta["lengths"].to(torch.int64)
             sample_ids = meta["sample_ids"].to(torch.int64)
-            token_ids = meta["token_ids"].to(torch.int64)
             attention_mask = meta["attention_mask"].to(torch.bool)
             eligible = torch.nonzero(
                 lengths >= min_sample_tokens,
@@ -306,8 +294,8 @@ def collect_sample_summaries(
                 if selected.numel() == 0:
                     continue
                 selected_lengths = lengths[selected]
-                token_activations = []
-                selected_tokens = []
+                token_activations22 = []
+                token_activations23 = []
                 owners = []
                 for owner, index_tensor in enumerate(selected):
                     index = int(index_tensor.item())
@@ -317,38 +305,47 @@ def collect_sample_summaries(
                             "Stored attention mask disagrees with sample length"
                         )
                     packed_start = int(offsets[index].item())
-                    token_activations.append(
-                        activations[packed_start : packed_start + length]
+                    token_activations22.append(
+                        activations22[packed_start : packed_start + length]
                     )
-                    ids = token_ids[index, :length]
-                    if int(ids.min().item()) < 0 or int(ids.max().item()) >= vocab_size:
-                        raise ValueError("Token ID is outside the output vocabulary")
-                    selected_tokens.append(ids)
+                    token_activations23.append(
+                        activations23[packed_start : packed_start + length]
+                    )
                     owners.append(torch.full((length,), owner, dtype=torch.int64))
                     sample_lengths.append(length)
-                flat_activations = torch.cat(token_activations, dim=0)
-                flat_tokens = torch.cat(selected_tokens, dim=0)
+                flat_activations22 = torch.cat(token_activations22, dim=0)
+                flat_activations23 = torch.cat(token_activations23, dim=0)
                 flat_owners = torch.cat(owners, dim=0)
-                token_histogram += torch.bincount(
-                    flat_tokens,
-                    minlength=vocab_size,
-                )
                 feature_sums = torch.zeros(
                     (selected.numel(), feature_count),
                     device=device,
                     dtype=torch.float32,
                 )
-                target_sums = torch.zeros(
+                layer23_sums = torch.zeros(
                     (selected.numel(), d_model),
                     device=device,
                     dtype=torch.float32,
                 )
-                for token_start in range(0, flat_tokens.numel(), token_batch_size):
+                layer22_sums = torch.zeros(
+                    (selected.numel(), d_model),
+                    device=device,
+                    dtype=torch.float32,
+                )
+                token_count = int(flat_owners.numel())
+                for token_start in range(0, token_count, token_batch_size):
                     token_end = min(
-                        int(flat_tokens.numel()), token_start + token_batch_size
+                        token_count, token_start + token_batch_size
                     )
-                    x = module.normalize_activation(
-                        flat_activations[token_start:token_end].to(
+                    x22 = module.normalize_activation(
+                        flat_activations22[token_start:token_end].to(
+                            device=device,
+                            non_blocking=True,
+                        ),
+                        dtype,
+                        eps,
+                    )
+                    x23 = module.normalize_activation(
+                        flat_activations23[token_start:token_end].to(
                             device=device,
                             non_blocking=True,
                         ),
@@ -357,56 +354,61 @@ def collect_sample_summaries(
                     )
                     z = torch.relu(
                         F.linear(
-                            x - state["b_pre"],
+                            x22 - state["b_pre"],
                             state["encoder.weight"],
                             state["encoder.bias"],
                         )
                     ).float()
-                    target = F.normalize(
-                        output_weight[flat_tokens[token_start:token_end]].float(),
-                        dim=1,
-                        eps=1.0e-12,
-                    ).to(device=device, non_blocking=True)
                     owner = flat_owners[token_start:token_end].to(
                         device=device,
                         non_blocking=True,
                     )
                     feature_sums.index_add_(0, owner, z)
-                    target_sums.index_add_(0, owner, target)
-                    del x, z, target, owner
+                    layer23_sums.index_add_(0, owner, x23.float())
+                    layer22_sums.index_add_(0, owner, x22.float())
+                    del x22, x23, z, owner
                 denominators = selected_lengths.to(
                     device=device,
                     dtype=torch.float32,
                 ).unsqueeze(1)
                 batch_feature_means = feature_sums / denominators
-                batch_centroids = F.normalize(
-                    target_sums / denominators,
+                batch_layer23_centroids = F.normalize(
+                    layer23_sums / denominators,
+                    dim=1,
+                    eps=1.0e-12,
+                )
+                batch_layer22_centroids = F.normalize(
+                    layer22_sums / denominators,
                     dim=1,
                     eps=1.0e-12,
                 )
                 batch_end = emitted + int(selected.numel())
                 feature_means[emitted:batch_end] = batch_feature_means.cpu()
-                lexical_centroids[emitted:batch_end] = batch_centroids.cpu()
+                layer23_centroids[emitted:batch_end] = (
+                    batch_layer23_centroids.cpu()
+                )
+                layer22_centroids[emitted:batch_end] = (
+                    batch_layer22_centroids.cpu()
+                )
                 collected_sample_ids[emitted:batch_end] = sample_ids[selected]
                 emitted = batch_end
                 del (
-                    flat_activations,
-                    flat_tokens,
+                    flat_activations22,
+                    flat_activations23,
                     flat_owners,
                     feature_sums,
-                    target_sums,
+                    layer23_sums,
+                    layer22_sums,
                     denominators,
                     batch_feature_means,
-                    batch_centroids,
+                    batch_layer23_centroids,
+                    batch_layer22_centroids,
                 )
-            del activations, meta
+            del activations22, activations23, meta
             if emitted >= sample_count:
                 break
     if emitted != sample_count:
         raise RuntimeError(f"Expected {sample_count} samples, got {emitted}")
-    probabilities = token_histogram[token_histogram > 0].float()
-    probabilities /= probabilities.sum()
-    token_entropy = float(-(probabilities * probabilities.log()).sum().item())
     metadata = {
         "sample_count": sample_count,
         "token_count": int(sum(sample_lengths)),
@@ -414,19 +416,24 @@ def collect_sample_summaries(
         "sample_length_mean": float(torch.tensor(sample_lengths).float().mean().item()),
         "sample_length_min": int(min(sample_lengths)),
         "sample_length_max": int(max(sample_lengths)),
-        "unique_token_count": int((token_histogram > 0).sum().item()),
-        "token_entropy_nats": token_entropy,
-        "token_perplexity": math.exp(token_entropy),
+        "layer22_layer23_centroid_cosine": distribution(
+            (layer22_centroids * layer23_centroids).sum(dim=1)
+        ),
     }
-    return feature_means, lexical_centroids, collected_sample_ids, metadata
+    return (
+        feature_means,
+        layer23_centroids,
+        layer22_centroids,
+        collected_sample_ids,
+        metadata,
+    )
 
 
-def estimate_lexical_centroid_weights(
+def estimate_crosslayer_context_weights(
     module: Any,
     checkpoint: Path,
     cache_dir: Path,
     manifest: dict[str, Any],
-    model_weights: Path,
     sample_count: int,
     min_sample_tokens: int,
     sample_batch_size: int,
@@ -446,99 +453,122 @@ def estimate_lexical_centroid_weights(
         dtype,
     )
     del raw
-    output_weight = load_output_weight(model_weights)
-    feature_means, lexical_centroids, sample_ids, sample_report = (
-        collect_sample_summaries(
-            module,
-            cache_dir,
-            manifest,
-            state,
-            output_weight,
-            sample_count,
-            min_sample_tokens,
-            sample_batch_size,
-            token_batch_size,
-            device,
-            dtype,
-            eps,
-        )
+    (
+        feature_means,
+        layer23_centroids,
+        layer22_centroids,
+        sample_ids,
+        sample_report,
+    ) = collect_sample_summaries(
+        module,
+        cache_dir,
+        manifest,
+        state,
+        sample_count,
+        min_sample_tokens,
+        sample_batch_size,
+        token_batch_size,
+        device,
+        dtype,
+        eps,
     )
     wrong_permutation, wrong_shift = sample_separating_cyclic_permutation(
         sample_ids, permutation_seed
     )
     feature_count = int(state["encoder.weight"].shape[0])
     d_model = int(state["encoder.weight"].shape[1])
-    sum_target = lexical_centroids.sum(dim=0).to(device)
-    sum_target2 = lexical_centroids.square().sum(dim=0).to(device)
-    var_target = (
-        sum_target2 - sum_target.square() / sample_count
+    sum_layer23 = layer23_centroids.sum(dim=0).to(device)
+    sum_layer23_2 = layer23_centroids.square().sum(dim=0).to(device)
+    var_layer23 = (
+        sum_layer23_2 - sum_layer23.square() / sample_count
+    ).clamp_min(0)
+    sum_layer22 = layer22_centroids.sum(dim=0).to(device)
+    sum_layer22_2 = layer22_centroids.square().sum(dim=0).to(device)
+    var_layer22 = (
+        sum_layer22_2 - sum_layer22.square() / sample_count
     ).clamp_min(0)
     sum_z = torch.zeros(feature_count, device=device, dtype=torch.float32)
     sum_z2 = torch.zeros_like(sum_z)
-    cross_true = torch.zeros(
+    cross_layer23 = torch.zeros(
         (feature_count, d_model), device=device, dtype=torch.float32
     )
-    cross_wrong = torch.zeros_like(cross_true)
+    cross_layer22 = torch.zeros_like(cross_layer23)
+    cross_wrong = torch.zeros_like(cross_layer23)
     with torch.inference_mode():
         for start in range(0, sample_count, cross_batch_samples):
             end = min(sample_count, start + cross_batch_samples)
             z = feature_means[start:end].to(device=device, non_blocking=True)
-            true_target = lexical_centroids[start:end].to(
+            layer23_target = layer23_centroids[start:end].to(
                 device=device, non_blocking=True
             )
-            wrong_target = lexical_centroids[
+            layer22_target = layer22_centroids[start:end].to(
+                device=device, non_blocking=True
+            )
+            wrong_target = layer23_centroids[
                 wrong_permutation[start:end]
             ].to(device=device, non_blocking=True)
             sum_z += z.sum(dim=0)
             sum_z2 += z.square().sum(dim=0)
-            cross_true.addmm_(z.T, true_target)
+            cross_layer23.addmm_(z.T, layer23_target)
+            cross_layer22.addmm_(z.T, layer22_target)
             cross_wrong.addmm_(z.T, wrong_target)
-            del z, true_target, wrong_target
+            del z, layer23_target, layer22_target, wrong_target
     var_z = (sum_z2 - sum_z.square() / sample_count).clamp_min(0)
-    true_score = score_from_cross_statistics(
-        cross_true,
+    layer23_score = score_from_cross_statistics(
+        cross_layer23,
         sum_z,
-        sum_target,
+        sum_layer23,
         var_z,
-        var_target,
+        var_layer23,
+        sample_count,
+        score_feature_block,
+    )
+    layer22_score = score_from_cross_statistics(
+        cross_layer22,
+        sum_z,
+        sum_layer22,
+        var_z,
+        var_layer22,
         sample_count,
         score_feature_block,
     )
     wrong_score = score_from_cross_statistics(
         cross_wrong,
         sum_z,
-        sum_target,
+        sum_layer23,
         var_z,
-        var_target,
+        var_layer23,
         sample_count,
         score_feature_block,
     )
-    del cross_true, cross_wrong, state
+    del cross_layer23, cross_layer22, cross_wrong, state
     torch.cuda.empty_cache()
 
-    predictive_weight = rank_weights(true_score, permutation_seed + 1)
-    wrong_weight = rank_weights(wrong_score, permutation_seed + 2)
+    shared_rank_tie_seed = permutation_seed + 1
+    layer23_weight = rank_weights(layer23_score, shared_rank_tie_seed)
+    layer22_weight = rank_weights(layer22_score, shared_rank_tie_seed)
+    wrong_weight = rank_weights(wrong_score, shared_rank_tie_seed)
     feature_generator = torch.Generator(device="cpu").manual_seed(
-        permutation_seed + 3
+        permutation_seed + 2
     )
     feature_permutation = torch.randperm(
         feature_count, generator=feature_generator
     )
     weights = {
         "raw": torch.ones(feature_count, dtype=torch.float32),
-        "lexical_centroid": predictive_weight,
-        "permuted": predictive_weight[feature_permutation],
+        "crosslayer_context": layer23_weight,
+        "same_layer_context": layer22_weight,
+        "permuted": layer23_weight[feature_permutation],
         "wrong_alignment": wrong_weight,
     }
     report = {
         "signal_definition": (
-            "sqrt(mean_d corr(mean_t z_s,t,j, "
-            "l2_normalize(mean_t l2_normalize(W_out[token_s,t])))_d^2)"
+            "sqrt(mean_d corr(mean_t relu_s,t,j(L22), "
+            "l2_normalize(mean_t normalize_activation(x_s,t,L23)))_d^2)"
         ),
         **sample_report,
         "feature_count": feature_count,
         "d_model": d_model,
-        "vocab_size": int(output_weight.shape[0]),
         "permutation_seed": permutation_seed,
         "wrong_cyclic_shift": wrong_shift,
         "wrong_fixed_pair_count": int(
@@ -547,20 +577,28 @@ def estimate_lexical_centroid_weights(
         "wrong_same_sample_pair_count": int(
             (sample_ids[wrong_permutation] == sample_ids).sum().item()
         ),
-        "predictive_rank_tie_seed": permutation_seed + 1,
-        "wrong_rank_tie_seed": permutation_seed + 2,
-        "feature_permutation_seed": permutation_seed + 3,
-        "lexical_centroid": distribution(lexical_centroids),
-        "output_coordinate_variance": distribution(
-            var_target.cpu() / sample_count
+        "shared_rank_tie_seed": shared_rank_tie_seed,
+        "feature_permutation_seed": permutation_seed + 2,
+        "layer23_centroid": distribution(layer23_centroids),
+        "layer22_centroid": distribution(layer22_centroids),
+        "layer23_coordinate_variance": distribution(
+            var_layer23.cpu() / sample_count
+        ),
+        "layer22_coordinate_variance": distribution(
+            var_layer22.cpu() / sample_count
         ),
         "feature_variance": distribution(var_z.cpu() / sample_count),
-        "predictive_score": distribution(true_score),
+        "layer23_predictive_score": distribution(layer23_score),
+        "layer22_same_layer_score": distribution(layer22_score),
         "wrong_alignment_score": distribution(wrong_score),
-        "predictive_weight": distribution(predictive_weight),
+        "layer23_predictive_weight": distribution(layer23_weight),
+        "layer22_same_layer_weight": distribution(layer22_weight),
         "wrong_alignment_weight": distribution(wrong_weight),
-        "score_correlation_true_wrong": float(
-            torch.corrcoef(torch.stack([true_score, wrong_score]))[0, 1].item()
+        "score_correlation_layer23_layer22": float(
+            torch.corrcoef(torch.stack([layer23_score, layer22_score]))[0, 1].item()
+        ),
+        "score_correlation_layer23_wrong": float(
+            torch.corrcoef(torch.stack([layer23_score, wrong_score]))[0, 1].item()
         ),
     }
     return weights, report
@@ -577,7 +615,6 @@ def main() -> None:
     )
     parser.add_argument("--checkpoint", type=Path, required=True)
     parser.add_argument("--cache-dir", type=Path, required=True)
-    parser.add_argument("--model-weights", type=Path, required=True)
     parser.add_argument("--model-dir", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--sample-count", type=int, default=8192)
@@ -614,12 +651,11 @@ def main() -> None:
     manifest_path = args.cache_dir / "manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     started = time.time()
-    weights, lexical_report = estimate_lexical_centroid_weights(
+    weights, context_report = estimate_crosslayer_context_weights(
         module,
         args.checkpoint,
         args.cache_dir,
         manifest,
-        args.model_weights,
         args.sample_count,
         args.min_sample_tokens,
         args.sample_batch_size,
@@ -631,9 +667,9 @@ def main() -> None:
         dtype,
         1.0e-6,
     )
-    torch.save(weights, args.output_dir / "sample-lexical-centroid-weights.pt")
-    (args.output_dir / "sample-lexical-centroid-statistics.json").write_text(
-        json.dumps(lexical_report, indent=2) + "\n", encoding="utf-8"
+    torch.save(weights, args.output_dir / "sample-crosslayer-context-weights.pt")
+    (args.output_dir / "sample-crosslayer-context-statistics.json").write_text(
+        json.dumps(context_report, indent=2) + "\n", encoding="utf-8"
     )
 
     kwargs = {
@@ -695,9 +731,10 @@ def main() -> None:
 
     variants = [
         ("raw", "L22 ReLU reference"),
-        ("lexical_centroid", "true-sample lexical-centroid weighting"),
-        ("permuted", "permuted lexical-centroid-weight control"),
-        ("wrong_alignment", "wrong-sample lexical-centroid control"),
+        ("crosslayer_context", "true-sample L23 contextual weighting"),
+        ("same_layer_context", "same-sample L22 target control"),
+        ("permuted", "permuted L23-context-weight control"),
+        ("wrong_alignment", "wrong-sample L23-context control"),
     ]
     rows = []
     for variant_key, label in variants:
@@ -733,8 +770,9 @@ def main() -> None:
     summary = summarize(rows, args.k_values)
     summary_by_key = {row["variant_key"]: row for row in summary}
     rows_by_key = {row["variant_key"]: row for row in rows}
-    candidate = summary_by_key["lexical_centroid"]
+    candidate = summary_by_key["crosslayer_context"]
     reference = summary_by_key["raw"]
+    same_layer = summary_by_key["same_layer_context"]
     permuted = summary_by_key["permuted"]
     wrong = summary_by_key["wrong_alignment"]
     dataset_deltas = {
@@ -742,14 +780,14 @@ def main() -> None:
             "reference": dataset_mean(
                 rows_by_key["raw"], dataset, args.k_values
             ),
-            "lexical_centroid": dataset_mean(
-                rows_by_key["lexical_centroid"], dataset, args.k_values
+            "crosslayer_context": dataset_mean(
+                rows_by_key["crosslayer_context"], dataset, args.k_values
             ),
         }
         for dataset in args.datasets
     }
     for values in dataset_deltas.values():
-        values["delta"] = values["lexical_centroid"] - values["reference"]
+        values["delta"] = values["crosslayer_context"] - values["reference"]
     gate = {
         "candidate_minus_reference_at_least_0p005": (
             candidate["mean_acc"] - reference["mean_acc"] >= 0.005
@@ -759,6 +797,9 @@ def main() -> None:
         ),
         "candidate_minus_permuted_at_least_0p002": (
             candidate["mean_acc"] - permuted["mean_acc"] >= 0.002
+        ),
+        "candidate_minus_same_layer_at_least_0p002": (
+            candidate["mean_acc"] - same_layer["mean_acc"] >= 0.002
         ),
         "candidate_minus_wrong_alignment_at_least_0p002": (
             candidate["mean_acc"] - wrong["mean_acc"] >= 0.002
@@ -771,33 +812,32 @@ def main() -> None:
             "checkpoint_sha256": sha256(args.checkpoint),
             "cache_dir": str(args.cache_dir),
             "cache_manifest_sha256": sha256(manifest_path),
-            "model_weights": str(args.model_weights),
-            "model_weights_size": args.model_weights.stat().st_size,
-            "layer": 22,
+            "source_layer": 22,
+            "target_layer": 23,
             "datasets": args.datasets,
             "train_size": args.train_size,
             "test_size": args.test_size,
             "k_values": args.k_values,
             "random_seed": args.random_seed,
         },
-        "sample_lexical_centroid_signal": lexical_report,
+        "sample_crosslayer_context_signal": context_report,
         "architecture_results": rows,
         "summary": summary,
         "dataset_deltas": dataset_deltas,
         "gate": gate,
         "decision": (
-            "authorize-sample-lexical-centroid-sae-v1-screen"
+            "authorize-sample-crosslayer-context-sae-v1-screen"
             if gate["pass"]
-            else "stop-before-sample-lexical-centroid-training"
+            else "stop-before-sample-crosslayer-context-training"
         ),
         "elapsed_seconds": time.time() - started,
     }
-    output_json = args.output_dir / "sample-lexical-centroid-gate.json"
+    output_json = args.output_dir / "sample-crosslayer-context-gate.json"
     output_json.write_text(
         json.dumps(payload, indent=2) + "\n", encoding="utf-8"
     )
     lines = [
-        "# Structured sample lexical-centroid gate",
+        "# Structured sample cross-layer contextual gate",
         "",
         "| Variant | Mean Acc | Mean AUC | Top-1 | Top-2 | Top-5 |",
         "|---|---:|---:|---:|---:|---:|",
@@ -809,7 +849,7 @@ def main() -> None:
             f"{row['top_2_acc']:.6f} | {row['top_5_acc']:.6f} |"
         )
     lines.extend(["", f"Decision: `{payload['decision']}`", ""])
-    (args.output_dir / "sample-lexical-centroid-gate.md").write_text(
+    (args.output_dir / "sample-crosslayer-context-gate.md").write_text(
         "\n".join(lines), encoding="utf-8"
     )
     print(
