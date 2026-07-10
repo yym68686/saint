@@ -55,7 +55,7 @@ payload = {
     "signal": {
         "layer": 22,
         "sample_count": int("$SAMPLE_COUNT"),
-        "batch_samples": 16,
+        "batch_samples": 64,
         "min_sample_tokens": 2,
         "views": "mean SAE response over even and odd token positions of the same true OWT sample",
         "score": "per-feature Pearson correlation between the two sample views",
@@ -113,7 +113,7 @@ PY
   --model-dir "$MODEL_DIR" \
   --output-dir "$ROOT" \
   --sample-count "$SAMPLE_COUNT" \
-  --batch-samples 16 \
+  --batch-samples 64 \
   --min-sample-tokens 2 \
   --permutation-seed 44026 \
   --datasets \

@@ -275,7 +275,7 @@ def main() -> None:
     parser.add_argument("--model-dir", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--sample-count", type=int, default=8192)
-    parser.add_argument("--batch-samples", type=int, default=16)
+    parser.add_argument("--batch-samples", type=int, default=64)
     parser.add_argument("--min-sample-tokens", type=int, default=2)
     parser.add_argument("--permutation-seed", type=int, default=44026)
     parser.add_argument("--datasets", nargs="+", default=common.INITIAL3)
