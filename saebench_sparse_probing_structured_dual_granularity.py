@@ -38,7 +38,7 @@ def load_target_state(
     module: Any,
     target: dict[str, Any],
     config: Any,
-) -> tuple[dict[str, torch.Tensor], dict[str, int]]:
+) -> tuple[dict[str, torch.Tensor], dict[str, int | float]]:
     raw = module.load_state(Path(target["checkpoint"]))
     if target["kind"] == "relu":
         keys = ["b_pre", "encoder.weight", "encoder.bias"]
@@ -48,7 +48,10 @@ def load_target_state(
             "n_token": int(raw["encoder.weight"].shape[0]),
             "n_semantic": 0,
         }
-    elif target["kind"] == "structured_dual_granularity":
+    elif target["kind"] in {
+        "structured_dual_granularity",
+        "structured_dual_granularity_softplus",
+    }:
         keys = [
             "b_pre",
             "token_encoder.weight",
@@ -61,6 +64,12 @@ def load_target_state(
             "n_total": int(raw["structured.n_total"].item()),
             "n_token": int(raw["structured.n_token"].item()),
             "n_semantic": int(raw["structured.n_semantic"].item()),
+            "semantic_temperature": float(
+                raw.get(
+                    "structured.semantic_temperature",
+                    torch.tensor(0.0),
+                ).item()
+            ),
         }
     else:
         raise ValueError(target["kind"])
@@ -78,7 +87,7 @@ def mean_features(
     masks: dict[str, torch.Tensor],
     target: dict[str, Any],
     state: dict[str, torch.Tensor],
-    extra: dict[str, int],
+    extra: dict[str, int | float],
     config: Any,
 ) -> dict[str, torch.Tensor]:
     result: dict[str, torch.Tensor] = {}
@@ -145,13 +154,23 @@ def mean_features(
                     )
                     pooled.index_add_(0, sample_index, centered)
                     pooled = pooled / lengths.to(centered.dtype).unsqueeze(1)
-                    semantic = torch.relu(
-                        F.linear(
-                            pooled,
-                            state["semantic_encoder.weight"],
-                            state["semantic_encoder.bias"],
-                        )
-                    ).float()
+                    semantic_hidden = F.linear(
+                        pooled,
+                        state["semantic_encoder.weight"],
+                        state["semantic_encoder.bias"],
+                    )
+                    if target["kind"] == "structured_dual_granularity_softplus":
+                        temperature = float(extra["semantic_temperature"])
+                        if temperature <= 0:
+                            raise ValueError(
+                                "Softplus target has no positive semantic temperature"
+                            )
+                        semantic = (
+                            F.softplus(semantic_hidden / temperature)
+                            * temperature
+                        ).float()
+                    else:
+                        semantic = torch.relu(semantic_hidden).float()
                     features = torch.cat([token_mean, semantic], dim=1)
                 output[start:end] = features.cpu()
                 del acts, mask, local_ids, flat_mask, x, sample_index

@@ -57,8 +57,15 @@ def main() -> None:
     encoder_weight = state["semantic_encoder.weight"].to(device)
     encoder_bias = state["semantic_encoder.bias"].to(device)
     decoder_weight = state["semantic_decoder.weight"].to(device)
+    semantic_temperature = float(
+        state.get(
+            "structured.semantic_temperature",
+            torch.tensor(0.0),
+        ).item()
+    )
 
     preactivations = []
+    activations = []
     active_feature_mask = torch.zeros(
         encoder_weight.shape[0],
         dtype=torch.bool,
@@ -83,8 +90,16 @@ def main() -> None:
             pooled.index_add_(0, sample_index, centered)
             pooled = pooled / lengths.to(centered.dtype).unsqueeze(1)
             hidden = F.linear(pooled, encoder_weight, encoder_bias)
+            if semantic_temperature > 0:
+                semantic = (
+                    F.softplus(hidden / semantic_temperature)
+                    * semantic_temperature
+                )
+            else:
+                semantic = torch.relu(hidden)
             active = hidden > 0
             preactivations.append(hidden.float().cpu())
+            activations.append(semantic.float().cpu())
             active_feature_mask |= active.any(dim=0)
             active_per_sample_sum += float(active.sum().item())
             sample_count += int(active.shape[0])
@@ -92,6 +107,7 @@ def main() -> None:
                 break
 
     hidden_all = torch.cat(preactivations, dim=0)
+    activation_all = torch.cat(activations, dim=0)
     positive = hidden_all > 0
     report = {
         "cache_dir": str(args.cache_dir.resolve()),
@@ -100,6 +116,7 @@ def main() -> None:
         "layer": args.layer,
         "validation_samples": sample_count,
         "semantic_features": int(encoder_weight.shape[0]),
+        "semantic_temperature": semantic_temperature,
         "semantic_bias": {
             **tensor_stats(encoder_bias),
             "positive_fraction": float(
@@ -119,6 +136,7 @@ def main() -> None:
             "active_feature_count": int(active_feature_mask.sum().item()),
             "active_per_sample": active_per_sample_sum / max(sample_count, 1),
         },
+        "semantic_activation": tensor_stats(activation_all),
     }
     report["branch_dead"] = (
         report["semantic_preactivation"]["positive_fraction"] < 1.0e-4

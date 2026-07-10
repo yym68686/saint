@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-CODE="${CODE:-/root/saint-structured-dual-granularity-v1}"
+CODE="${CODE:-/root/saint-structured-dual-granularity-v2}"
 PY="${PY:-/root/.cache/pypoetry/virtualenvs/llama3-interpretability-sae-d40co3fS-py3.12/bin/python}"
 MODEL_DIR="${MODEL_DIR:-/root/saint/llama_3.2-3B_model/original}"
 PARQUET_PATH="${PARQUET_PATH:-/root/autodl-tmp/train-00000-of-00082.parquet}"
 OLD_MEAN_PATH="${OLD_MEAN_PATH:-/root/autodl-tmp/activation_outputs_mean.pt}"
 CACHE_DIR="${CACHE_DIR:-/autodl-fs/data/structured_activation_cache_owt50k_l20-l23_v1}"
-ROOT="${ROOT:-/autodl-fs/data/structured_dual_granularity_v1_20260710}"
+ROOT="${ROOT:-/autodl-fs/data/structured_dual_granularity_v2_20260710}"
 SCREEN_DIR="$ROOT/screen_seed42"
+REUSED_BASE_CHECKPOINT="${REUSED_BASE_CHECKPOINT:-/autodl-fs/data/structured_dual_granularity_v1_20260710/screen_seed42/trained_sae-structured-relu-base.pt}"
+REUSED_BASE_SUMMARY="${REUSED_BASE_SUMMARY:-/autodl-fs/data/structured_dual_granularity_v1_20260710/screen_seed42/train-summary-structured-dual-granularity.json}"
 
 export PYTHONPATH="${CODE}:${PYTHONPATH:-}"
 source /etc/network_turbo >/dev/null 2>&1 || true
@@ -22,7 +24,7 @@ from pathlib import Path
 root = Path("$ROOT")
 code = Path("$CODE")
 payload = {
-    "experiment": "structured-cache parameter-matched dual-granularity SAE v1",
+    "experiment": "structured-cache parameter-matched dual-granularity Softplus SAE v2",
     "registered_before_cache_capture": True,
     "code_branch": subprocess.check_output(
         ["git", "-C", str(code), "branch", "--show-current"],
@@ -51,6 +53,11 @@ payload = {
         "epochs": 10,
         "n_total": 65536,
         "n_semantic": 4096,
+        "semantic_activation": "softplus",
+        "semantic_temperature": 0.10,
+        "temperature_source": (
+            "rounded initial label-free semantic preactivation std 0.1024"
+        ),
         "layer": 22,
         "parameter_count_each": 402721792,
         "same_initial_tensors": True,
@@ -58,6 +65,12 @@ payload = {
         "same_data_order": True,
         "same_exposed_feature_count": True,
     },
+    "reused_base_checkpoint": "$REUSED_BASE_CHECKPOINT",
+    "reused_base_summary": "$REUSED_BASE_SUMMARY",
+    "controlled_change_from_v1": (
+        "semantic ReLU replaced by fixed-temperature Softplus; "
+        "all capacity, data, initialization, optimizer, steps and gates unchanged"
+    ),
     "initial3": [
         "LabHC/bias_in_bios_class_set3",
         "canrager/amazon_reviews_mcauley_1and5",
@@ -68,7 +81,7 @@ payload = {
         "minimum_per_dataset_delta": ">= -0.01",
         "run_full7_only_after_pass": True,
     },
-    "family_version": 1,
+    "family_version": 2,
     "maximum_family_versions": 3,
 }
 path = root / "preregistration.json"
@@ -161,9 +174,12 @@ if [[ ! -f "$SCREEN_DIR/train-summary-structured-dual-granularity.json" ]]; then
   "$PY" "$CODE/train_structured_dual_granularity_sae.py" \
     --cache-dir "$CACHE_DIR" \
     --output-dir "$SCREEN_DIR" \
+    --reuse-base-checkpoint "$REUSED_BASE_CHECKPOINT" \
+    --reuse-base-summary "$REUSED_BASE_SUMMARY" \
     --layer 22 \
     --n-total 65536 \
     --n-semantic 4096 \
+    --semantic-temperature 0.10 \
     --epochs 10 \
     --batch-samples 32 \
     --train-fraction 0.95 \
@@ -186,7 +202,7 @@ fi
 if [[ ! -f "$ROOT/semantic-branch-diagnostic.json" ]]; then
   "$PY" "$CODE/diagnose_structured_semantic_branch.py" \
     --cache-dir "$CACHE_DIR" \
-    --checkpoint "$SCREEN_DIR/trained_sae-structured-dual-granularity.pt" \
+    --checkpoint "$SCREEN_DIR/trained_sae-structured-dual-granularity-softplus.pt" \
     --output-json "$ROOT/semantic-branch-diagnostic.json" \
     --layer 22 \
     --batch-samples 32 \
@@ -236,7 +252,7 @@ PY
 )"
 
 if [[ "$GATE_PASS" != "true" ]]; then
-  echo "== Initial3 gate rejected v1; full7 is prohibited"
+  echo "== Initial3 gate rejected v2; full7 is prohibited"
   exit 0
 fi
 

@@ -315,10 +315,13 @@ class DualGranularitySAE(nn.Module):
         n_total: int,
         n_semantic: int,
         seed: int,
+        semantic_temperature: float,
     ) -> None:
         super().__init__()
         if n_semantic <= 0 or n_semantic >= n_total:
             raise ValueError("n_semantic must lie strictly between 0 and n_total")
+        if semantic_temperature <= 0:
+            raise ValueError("semantic_temperature must be positive")
         d_model = int(b_pre.numel())
         encoder, encoder_bias, decoder = make_initial_tensors(
             n_total,
@@ -328,6 +331,7 @@ class DualGranularitySAE(nn.Module):
         self.n_total = int(n_total)
         self.n_semantic = int(n_semantic)
         self.n_token = self.n_total - self.n_semantic
+        self.semantic_temperature = float(semantic_temperature)
         self.b_pre = nn.Parameter(b_pre.clone())
         self.token_encoder_weight = nn.Parameter(encoder[: self.n_token].clone())
         self.token_encoder_bias = nn.Parameter(
@@ -411,7 +415,7 @@ class DualGranularitySAE(nn.Module):
         return torch.cat(
             [
                 (out["z_token"] > 0).any(dim=0),
-                (out["z_semantic"] > 0).any(dim=0),
+                (out["h_semantic"] > 0).any(dim=0),
             ]
         )
 
@@ -465,7 +469,9 @@ class DualGranularitySAE(nn.Module):
             self.semantic_encoder_weight,
             self.semantic_encoder_bias,
         )
-        z_semantic = torch.relu(semantic_h)
+        z_semantic = F.softplus(
+            semantic_h / self.semantic_temperature
+        ) * self.semantic_temperature
         token_recon = F.linear(z_token, self.token_decoder_weight)
         semantic_recon = F.linear(
             z_semantic,
@@ -486,6 +492,9 @@ class DualGranularitySAE(nn.Module):
             "structured.n_total": torch.tensor(self.n_total),
             "structured.n_token": torch.tensor(self.n_token),
             "structured.n_semantic": torch.tensor(self.n_semantic),
+            "structured.semantic_temperature": torch.tensor(
+                self.semantic_temperature
+            ),
             "b_pre": self.b_pre.detach().cpu(),
             "token_encoder.weight": self.token_encoder_weight.detach().cpu(),
             "token_encoder.bias": self.token_encoder_bias.detach().cpu(),
@@ -640,7 +649,7 @@ def train_one(
             )
             if out["z_semantic"].numel():
                 accum["active_semantic"] += float(
-                    (out["z_semantic"].detach() > 0)
+                    (out["h_semantic"].detach() > 0)
                     .float()
                     .sum(dim=1)
                     .mean()
@@ -731,9 +740,12 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--cache-dir", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--reuse-base-checkpoint", type=Path)
+    parser.add_argument("--reuse-base-summary", type=Path)
     parser.add_argument("--layer", type=int, default=22)
     parser.add_argument("--n-total", type=int, default=65_536)
     parser.add_argument("--n-semantic", type=int, default=4_096)
+    parser.add_argument("--semantic-temperature", type=float, default=0.1)
     parser.add_argument("--epochs", type=int, default=10)
     parser.add_argument("--batch-samples", type=int, default=32)
     parser.add_argument("--train-fraction", type=float, default=0.95)
@@ -771,18 +783,65 @@ def main() -> None:
     args.output_dir.mkdir(parents=True, exist_ok=True)
     b_pre = cache.mean()
 
-    base = ReLUFromScratchSAE(
-        b_pre=b_pre,
-        n_latents=args.n_total,
-        seed=args.initialization_seed,
-    )
-    base_result = train_one("structured ReLU base", base, cache, args, device)
-    base_path = args.output_dir / "trained_sae-structured-relu-base.pt"
-    torch.save(base.export_state(), base_path)
-    base.to("cpu")
-    del base
-    if device.type == "cuda":
-        torch.cuda.empty_cache()
+    if args.reuse_base_checkpoint is not None:
+        base_path = args.reuse_base_checkpoint.resolve()
+        if not base_path.exists():
+            raise FileNotFoundError(base_path)
+        base_state = torch.load(
+            base_path,
+            map_location="cpu",
+            weights_only=True,
+        )
+        required_base_keys = [
+            "b_pre",
+            "encoder.weight",
+            "encoder.bias",
+            "decoder.weight",
+        ]
+        missing = [key for key in required_base_keys if key not in base_state]
+        if missing:
+            raise KeyError(f"Reused base checkpoint is missing keys: {missing}")
+        if tuple(base_state["encoder.weight"].shape) != (
+            args.n_total,
+            cache.d_model,
+        ):
+            raise ValueError(
+                "Reused base encoder shape does not match the registered "
+                f"capacity: {tuple(base_state['encoder.weight'].shape)}"
+            )
+        if not torch.equal(base_state["b_pre"].float(), b_pre.float()):
+            raise ValueError("Reused base b_pre does not match the cache mean")
+        base_params = sum(
+            int(base_state[key].numel()) for key in required_base_keys
+        )
+        if args.reuse_base_summary is None:
+            base_result: dict[str, object] = {
+                "reused": True,
+                "checkpoint_sha256": sha256_file(base_path),
+                "parameter_count": base_params,
+            }
+        else:
+            reused_summary = json.loads(
+                args.reuse_base_summary.read_text(encoding="utf-8")
+            )
+            base_result = dict(reused_summary["base_result"])
+            base_result["reused"] = True
+            base_result["checkpoint_sha256"] = sha256_file(base_path)
+        del base_state
+    else:
+        base = ReLUFromScratchSAE(
+            b_pre=b_pre,
+            n_latents=args.n_total,
+            seed=args.initialization_seed,
+        )
+        base_result = train_one("structured ReLU base", base, cache, args, device)
+        base_path = args.output_dir / "trained_sae-structured-relu-base.pt"
+        torch.save(base.export_state(), base_path)
+        base.to("cpu")
+        del base
+        if device.type == "cuda":
+            torch.cuda.empty_cache()
+        base_params = int(base_result["parameter_count"])
 
     set_seed(args.seed)
     candidate = DualGranularitySAE(
@@ -790,6 +849,7 @@ def main() -> None:
         n_total=args.n_total,
         n_semantic=args.n_semantic,
         seed=args.initialization_seed,
+        semantic_temperature=args.semantic_temperature,
     )
     candidate_result = train_one(
         "structured dual-granularity candidate",
@@ -798,10 +858,12 @@ def main() -> None:
         args,
         device,
     )
-    candidate_path = args.output_dir / "trained_sae-structured-dual-granularity.pt"
+    candidate_path = (
+        args.output_dir
+        / "trained_sae-structured-dual-granularity-softplus.pt"
+    )
     torch.save(candidate.export_state(), candidate_path)
 
-    base_params = int(base_result["parameter_count"])
     candidate_params = int(candidate_result["parameter_count"])
     if base_params != candidate_params:
         raise RuntimeError(
@@ -816,8 +878,8 @@ def main() -> None:
             "variant_key": "base",
         },
         {
-            "label": "structured-cache dual-granularity SAE",
-            "kind": "structured_dual_granularity",
+            "label": "structured-cache dual-granularity Softplus SAE",
+            "kind": "structured_dual_granularity_softplus",
             "layer": args.layer,
             "checkpoint": str(candidate_path),
             "variant_key": "candidate",
@@ -841,6 +903,8 @@ def main() -> None:
         "parameter_matched": base_params == candidate_params,
         "exposed_feature_count": args.n_total,
         "base_checkpoint": str(base_path),
+        "base_checkpoint_sha256": sha256_file(base_path),
+        "base_reused": args.reuse_base_checkpoint is not None,
         "candidate_checkpoint": str(candidate_path),
         "targets_json": str(targets_path),
         "base_result": base_result,
@@ -859,6 +923,9 @@ def main() -> None:
             "uses_eval_split_for_training": False,
             "uses_mean_diff_selection_for_training": False,
             "uses_test_feedback_for_training": False,
+            "reused_identical_registered_base": (
+                args.reuse_base_checkpoint is not None
+            ),
         },
     }
     summary_path = args.output_dir / "train-summary-structured-dual-granularity.json"
