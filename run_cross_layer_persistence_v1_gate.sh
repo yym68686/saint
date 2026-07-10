@@ -54,7 +54,8 @@ payload = {
         "center_tokens": 4096,
         "correlation_tokens": 8192,
         "correlation": "per-feature Pearson correlation with L22 after label-free layer centering",
-        "weight": "stable rank map to [0.5,1.5] with mean 1.0",
+        "weight": "rank map to [0.5,1.5] with mean 1.0",
+        "rank_tie_break": "independent 1e-7 random jitter from pre-registered seed",
         "evaluation_uses_only_layer22_features": True,
     },
     "controls": {

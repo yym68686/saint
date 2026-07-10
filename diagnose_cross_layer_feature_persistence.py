@@ -126,8 +126,11 @@ def correlation_from_sums(
     ).clamp(-1, 1)
 
 
-def rank_weights(scores: torch.Tensor) -> torch.Tensor:
-    order = torch.argsort(scores, stable=True)
+def rank_weights(scores: torch.Tensor, tie_seed: int) -> torch.Tensor:
+    generator = torch.Generator(device="cpu")
+    generator.manual_seed(tie_seed)
+    tie_break = torch.rand(scores.shape, generator=generator) * 1.0e-7
+    order = torch.argsort(scores.float() + tie_break)
     ranks = torch.empty_like(order, dtype=torch.float32)
     ranks[order] = torch.arange(order.numel(), dtype=torch.float32)
     if order.numel() == 1:
@@ -247,8 +250,8 @@ def estimate_persistence(
         }
     persistence_score = torch.stack(correlations).mean(dim=0)
     wrong_score = torch.stack(wrong_correlations).mean(dim=0)
-    persistence_weight = rank_weights(persistence_score)
-    wrong_weight = rank_weights(wrong_score)
+    persistence_weight = rank_weights(persistence_score, permutation_seed + 1)
+    wrong_weight = rank_weights(wrong_score, permutation_seed + 2)
     feature_generator = torch.Generator(device="cpu")
     feature_generator.manual_seed(permutation_seed)
     feature_permutation = torch.randperm(
@@ -283,6 +286,8 @@ def estimate_persistence(
         "correlation_tokens": count,
         "feature_count": feature_count,
         "permutation_seed": permutation_seed,
+        "persistence_rank_tie_seed": permutation_seed + 1,
+        "wrong_alignment_rank_tie_seed": permutation_seed + 2,
         "per_layer": per_layer_summary,
         "persistence_score": distribution(persistence_score),
         "wrong_alignment_score": distribution(wrong_score),
