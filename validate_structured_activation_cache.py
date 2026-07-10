@@ -12,7 +12,8 @@ from typing import Any
 
 import torch
 
-from capture_structured_activations import SCHEMA_VERSION
+
+SCHEMA_VERSION = "structured-activation-cache-v1"
 
 
 def sha256_file(path: Path, chunk_size: int = 8 * 1024 * 1024) -> str:
