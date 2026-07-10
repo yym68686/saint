@@ -17,12 +17,23 @@ import torch.nn.functional as F
 import diagnose_cross_layer_feature_persistence as common
 
 
-def distribution(values: torch.Tensor) -> dict[str, float]:
-    values = values.detach().float().cpu()
+def distribution(
+    values: torch.Tensor, max_quantile_values: int = 1_000_000
+) -> dict[str, float | int]:
+    values = values.detach().float().cpu().reshape(-1)
+    value_count = int(values.numel())
+    quantile_stride = max(
+        1,
+        (value_count + max_quantile_values - 1) // max_quantile_values,
+    )
+    quantile_values = values[::quantile_stride][:max_quantile_values].contiguous()
     quantiles = torch.quantile(
-        values, torch.tensor([0.01, 0.1, 0.5, 0.9, 0.99])
+        quantile_values, torch.tensor([0.01, 0.1, 0.5, 0.9, 0.99])
     )
     return {
+        "value_count": value_count,
+        "quantile_sample_count": int(quantile_values.numel()),
+        "quantile_stride": quantile_stride,
         "mean": float(values.mean().item()),
         "std": float(values.std().item()),
         "min": float(values.min().item()),
