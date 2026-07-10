@@ -183,6 +183,20 @@ if [[ ! -f "$SCREEN_DIR/train-summary-structured-dual-granularity.json" ]]; then
   echo "== parameter-matched screen training done $(date -Is)"
 fi
 
+if [[ ! -f "$ROOT/semantic-branch-diagnostic.json" ]]; then
+  "$PY" "$CODE/diagnose_structured_semantic_branch.py" \
+    --cache-dir "$CACHE_DIR" \
+    --checkpoint "$SCREEN_DIR/trained_sae-structured-dual-granularity.pt" \
+    --output-json "$ROOT/semantic-branch-diagnostic.json" \
+    --layer 22 \
+    --batch-samples 32 \
+    --train-fraction 0.95 \
+    --seed 42 \
+    --max-batches 32 \
+    --device cuda \
+    | tee "$ROOT/semantic-branch-diagnostic.log"
+fi
+
 if [[ ! -f "$ROOT/initial3.json" ]]; then
   echo "== Initial3 eval start $(date -Is)"
   "$PY" "$CODE/saebench_sparse_probing_structured_dual_granularity.py" \
