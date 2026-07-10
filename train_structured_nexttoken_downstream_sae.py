@@ -107,6 +107,8 @@ class SequenceBatch:
     token_ids: torch.Tensor
     cached_source: torch.Tensor
     sample_ids: torch.Tensor
+    capture_token_ids: torch.Tensor
+    capture_rows: torch.Tensor
 
 
 class StructuredSequenceCache:
@@ -137,6 +139,9 @@ class StructuredSequenceCache:
         self.sample_count = int(self.manifest["summary"]["sample_count"])
         self.train_cutoff = int(self.sample_count * self.train_fraction)
         self.shards = list(self.manifest["shards"])
+        self.capture_batch_size = int(
+            self.manifest["configuration"]["batch_size"]
+        )
 
     def fingerprint(self) -> str:
         return sha256_file(self.manifest_path)
@@ -154,9 +159,6 @@ class StructuredSequenceCache:
         while True:
             shard_order = list(range(len(self.shards)))
             random.Random(self.seed + epoch * 1_000_003).shuffle(shard_order)
-            pending_tokens: list[torch.Tensor] = []
-            pending_sources: list[torch.Tensor] = []
-            pending_samples: list[int] = []
             for shard_position in shard_order:
                 entry = self.shards[shard_position]
                 meta = torch.load(
@@ -171,42 +173,66 @@ class StructuredSequenceCache:
                 )
                 lengths = meta["lengths"].to(torch.int64)
                 sample_ids = meta["sample_ids"].to(torch.int64)
-                eligible = torch.nonzero(
-                    (sample_ids < self.train_cutoff) & (lengths >= sequence_length),
-                    as_tuple=False,
-                ).flatten()
-                generator = torch.Generator(device="cpu").manual_seed(
-                    self.seed + epoch * 1_000_003 + shard_position * 10_007
-                )
-                eligible = eligible[
-                    torch.randperm(eligible.numel(), generator=generator)
-                ]
                 offsets = meta["offsets"].to(torch.int64)
                 tokens = meta["token_ids"].to(torch.int64)
-                for index_tensor in eligible:
-                    index = int(index_tensor.item())
-                    sample_id = int(sample_ids[index].item())
-                    # Cached activations include the complete causal prefix. Starting at
-                    # zero lets the frozen model reproduce them exactly without adding
-                    # uncached prefix state to the training protocol.
-                    local_start = 0
-                    packed_start = int(offsets[index].item()) + local_start
-                    pending_tokens.append(
-                        tokens[index, local_start : local_start + sequence_length].clone()
+                capture_starts = list(
+                    range(0, int(lengths.numel()), self.capture_batch_size)
+                )
+                random.Random(
+                    self.seed + epoch * 1_000_003 + shard_position * 10_007
+                ).shuffle(capture_starts)
+                for capture_start in capture_starts:
+                    capture_end = min(
+                        capture_start + self.capture_batch_size,
+                        int(lengths.numel()),
                     )
-                    pending_sources.append(
-                        sources[packed_start : packed_start + sequence_length].clone()
+                    local_indices = torch.arange(capture_start, capture_end)
+                    eligible = local_indices[
+                        (sample_ids[local_indices] < self.train_cutoff)
+                        & (lengths[local_indices] >= sequence_length)
+                    ]
+                    if eligible.numel() < batch_sequences:
+                        continue
+                    generator = torch.Generator(device="cpu").manual_seed(
+                        self.seed
+                        + epoch * 1_000_003
+                        + shard_position * 100_003
+                        + capture_start
                     )
-                    pending_samples.append(sample_id)
-                    if len(pending_tokens) == batch_sequences:
-                        yield SequenceBatch(
-                            token_ids=torch.stack(pending_tokens),
-                            cached_source=torch.stack(pending_sources),
-                            sample_ids=torch.tensor(pending_samples, dtype=torch.int64),
+                    eligible = eligible[
+                        torch.randperm(eligible.numel(), generator=generator)
+                    ]
+                    capture_width = int(
+                        lengths[capture_start:capture_end].max().item()
+                    )
+                    capture_tokens = tokens[
+                        capture_start:capture_end,
+                        :capture_width,
+                    ].clone()
+                    for cursor in range(0, int(eligible.numel()), batch_sequences):
+                        selected = eligible[cursor : cursor + batch_sequences]
+                        if selected.numel() != batch_sequences:
+                            continue
+                        selected_tokens = torch.stack(
+                            [tokens[int(index.item()), :sequence_length] for index in selected]
                         )
-                        pending_tokens = []
-                        pending_sources = []
-                        pending_samples = []
+                        selected_sources = torch.stack(
+                            [
+                                sources[
+                                    int(offsets[int(index.item())].item())
+                                    : int(offsets[int(index.item())].item())
+                                    + sequence_length
+                                ]
+                                for index in selected
+                            ]
+                        )
+                        yield SequenceBatch(
+                            token_ids=selected_tokens,
+                            cached_source=selected_sources,
+                            sample_ids=sample_ids[selected].clone(),
+                            capture_token_ids=capture_tokens,
+                            capture_rows=(selected - capture_start).to(torch.int64),
+                        )
             epoch += 1
 
 
@@ -461,15 +487,28 @@ def train_variant(
         batch = next(batches)
         tokens = batch.token_ids.to(device, non_blocking=True)
         cached_source = batch.cached_source.to(device, non_blocking=True)
-        hidden_at_source, frequencies, mask = forward_to_source(
+        capture_tokens = batch.capture_token_ids.to(device, non_blocking=True)
+        capture_rows = batch.capture_rows.to(device, non_blocking=True)
+        capture_hidden, capture_frequencies, _ = forward_to_source(
             frozen_lm,
-            tokens,
+            capture_tokens,
             args.source_layer,
         )
+        hidden_at_source = capture_hidden.index_select(0, capture_rows)[
+            :, : args.sequence_length
+        ]
+        frequencies = capture_frequencies[: args.sequence_length]
+        mask = causal_mask(
+            args.sequence_length,
+            hidden_at_source.device,
+            hidden_at_source.dtype,
+        )
         with torch.no_grad():
-            recomputed_source = frozen_lm.layers[args.source_layer].attention_norm(
-                hidden_at_source
-            )
+            recomputed_source = frozen_lm.layers[
+                args.source_layer
+            ].attention_norm(capture_hidden).index_select(0, capture_rows)[
+                :, : args.sequence_length
+            ]
             source_error = (
                 recomputed_source.float() - cached_source.float()
             ).abs().max()
@@ -577,6 +616,10 @@ def train_variant(
         del (
             tokens,
             cached_source,
+            capture_tokens,
+            capture_rows,
+            capture_hidden,
+            capture_frequencies,
             hidden_at_source,
             recomputed_source,
             x_norm,
