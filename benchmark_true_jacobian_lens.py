@@ -30,7 +30,7 @@ def load_prompt(
     source_layer: int,
     sequence_length: int,
     prompt_ordinal: int,
-) -> tuple[torch.Tensor, torch.Tensor, int]:
+) -> tuple[torch.Tensor, torch.Tensor, int, torch.Tensor, int]:
     candidates_seen = 0
     for shard in manifest["shards"]:
         meta = torch.load(
@@ -55,7 +55,16 @@ def load_prompt(
         start = int(offsets[local_index].item())
         cached = activations[start : start + sequence_length].float()
         sample_id = int(meta["sample_ids"][local_index].item())
-        return token_ids, cached, sample_id
+        capture_batch_size = int(manifest["configuration"]["batch_size"])
+        capture_start = (local_index // capture_batch_size) * capture_batch_size
+        capture_end = min(capture_start + capture_batch_size, int(lengths.numel()))
+        capture_width = int(lengths[capture_start:capture_end].max().item())
+        capture_tokens = meta["token_ids"][
+            capture_start:capture_end,
+            :capture_width,
+        ].to(torch.long)
+        capture_row = local_index - capture_start
+        return token_ids, cached, sample_id, capture_tokens, capture_row
     raise IndexError(
         f"Only {candidates_seen} prompts have at least {sequence_length} tokens; "
         f"cannot select ordinal {prompt_ordinal}"
@@ -188,7 +197,7 @@ def main() -> None:
     args.model_dir = args.model_dir.resolve()
     args.cache_dir = args.cache_dir.resolve()
     manifest = load_manifest(args.cache_dir)
-    token_ids, cached_source, sample_id = load_prompt(
+    token_ids, cached_source, sample_id, capture_tokens, capture_row = load_prompt(
         args.cache_dir,
         manifest,
         args.source_layer,
@@ -214,6 +223,21 @@ def main() -> None:
         dtype=dtype,
     )
     model.requires_grad_(False)
+    capture_tokens = capture_tokens.to(device)
+    capture_hidden, _, _ = forward_to_source(
+        model,
+        capture_tokens,
+        args.source_layer,
+    )
+    with torch.no_grad():
+        capture_recomputed = model.layers[args.source_layer].attention_norm(
+            capture_hidden
+        )[capture_row, : args.sequence_length]
+    capture_difference = (
+        capture_recomputed.float().cpu() - cached_source
+    )
+    del capture_tokens, capture_hidden, capture_recomputed
+
     tokens = token_ids.unsqueeze(0).to(device)
     hidden, frequencies, mask = forward_to_source(model, tokens, args.source_layer)
 
@@ -268,6 +292,26 @@ def main() -> None:
         position_average_error = float((explicit_mean - rows[0]).abs().max().item())
 
     seconds_per_row = sum(row["seconds"] for row in timing) / args.jacobian_rows
+    cached_rms = float(cached_source.square().mean().sqrt().item())
+
+    def reproduction_stats(difference: torch.Tensor) -> dict[str, float]:
+        return {
+            "max_abs_error": float(difference.abs().max().item()),
+            "mean_abs_error": float(difference.abs().mean().item()),
+            "root_mean_squared_error": float(
+                difference.square().mean().sqrt().item()
+            ),
+            "relative_root_mean_squared_error": float(
+                difference.square().mean().sqrt().item() / cached_rms
+            ),
+            "cosine_similarity": float(
+                torch.nn.functional.cosine_similarity(
+                    (cached_source + difference).reshape(1, -1),
+                    cached_source.reshape(1, -1),
+                ).item()
+            ),
+        }
+
     report = {
         "method": "exact batched reverse-mode averaged downstream Jacobian",
         "source_representation": "attention-normalized residual stream at layer input",
@@ -287,11 +331,9 @@ def main() -> None:
         "estimated_hours_for_10_prompts": seconds_per_row * params.dim * 10 / 3600,
         "peak_cuda_memory_bytes": int(torch.cuda.max_memory_allocated()),
         "cache_reproduction": {
-            "max_abs_error": float(source_difference.abs().max().item()),
-            "mean_abs_error": float(source_difference.abs().mean().item()),
-            "root_mean_squared_error": float(
-                source_difference.square().mean().sqrt().item()
-            ),
+            "single_prompt_batch": reproduction_stats(source_difference),
+            "original_capture_batch": reproduction_stats(capture_difference),
+            "cached_activation_rms": cached_rms,
         },
         "jacobian_rows": {
             "finite": bool(torch.isfinite(rows).all().item()),
