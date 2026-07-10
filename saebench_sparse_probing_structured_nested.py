@@ -48,11 +48,27 @@ def load_target_state(
             raise ValueError("ReLU controls only support the all-feature readout")
         keys = ["b_pre", "encoder.weight", "encoder.bias"]
         state = module.move_keys(raw, keys, config.device, config.dtype)
+        raw_width = int(raw["encoder.weight"].shape[0])
+        feature_start = int(target.get("feature_start", 0))
+        feature_end = int(target.get("feature_end", raw_width))
+        if not 0 <= feature_start < feature_end <= raw_width:
+            raise ValueError(
+                "Invalid ReLU feature slice: "
+                f"[{feature_start}:{feature_end}] for width {raw_width}"
+            )
+        state["encoder.weight"] = state["encoder.weight"][
+            feature_start:feature_end
+        ].contiguous()
+        state["encoder.bias"] = state["encoder.bias"][
+            feature_start:feature_end
+        ].contiguous()
         extra = {
-            "n_total": int(raw["encoder.weight"].shape[0]),
-            "n_token": int(raw["encoder.weight"].shape[0]),
+            "n_total": feature_end - feature_start,
+            "n_token": feature_end - feature_start,
             "n_semantic": 0,
             "readout_source": readout_source,
+            "feature_start": feature_start,
+            "feature_end": feature_end,
         }
     elif target["kind"] in {
         "structured_dual_granularity",
