@@ -296,7 +296,7 @@ def main() -> None:
             "dataset_results": {},
             "per_class": {},
         }
-        for dataset, cached in cache.items():
+        for dataset_index, (dataset, cached) in enumerate(cache.items()):
             layer = int(target["layer"])
             train_features = mean_features(
                 module,
@@ -316,12 +316,15 @@ def main() -> None:
                 extra,
                 config,
             )
-            dataset_result, per_class = module.evaluate_probe_for_dataset(
+            probe_seed = args.random_seed + 1009 * dataset_index
+            probe_result = module.probe_one_architecture_dataset(
                 train_features,
                 test_features,
                 args.k_values,
-                args.random_seed,
+                probe_seed,
             )
+            dataset_result = probe_result["metrics"]
+            per_class = probe_result["per_class"]
             row["dataset_results"][dataset] = dataset_result
             row["per_class"][dataset] = per_class
             print(
