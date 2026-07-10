@@ -5,6 +5,7 @@ CODE="${CODE:-/root/saint-structured-dual-granularity-v1}"
 PY="${PY:-/root/.cache/pypoetry/virtualenvs/llama3-interpretability-sae-d40co3fS-py3.12/bin/python}"
 MODEL_DIR="${MODEL_DIR:-/root/saint/llama_3.2-3B_model/original}"
 PARQUET_PATH="${PARQUET_PATH:-/root/autodl-tmp/train-00000-of-00082.parquet}"
+OLD_MEAN_PATH="${OLD_MEAN_PATH:-/root/autodl-tmp/activation_outputs_mean.pt}"
 CACHE_DIR="${CACHE_DIR:-/autodl-fs/data/structured_activation_cache_owt50k_l20-l23_v1}"
 ROOT="${ROOT:-/autodl-fs/data/structured_dual_granularity_v1_20260710}"
 SCREEN_DIR="$ROOT/screen_seed42"
@@ -32,6 +33,7 @@ payload = {
         text=True,
     ).strip(),
     "source_parquet": "$PARQUET_PATH",
+    "old_l22_mean": "$OLD_MEAN_PATH",
     "cache_dir": "$CACHE_DIR",
     "cache_configuration": {
         "samples": 50000,
@@ -104,6 +106,55 @@ fi
   --require-read-only \
   --output-json "$ROOT/cache-validation.json" \
   | tee "$ROOT/cache-validation.log"
+
+"$PY" - <<PY | tee "$ROOT/cache-compatibility-audit.log"
+import json
+from pathlib import Path
+
+import torch
+import torch.nn.functional as F
+
+cache_dir = Path("$CACHE_DIR")
+old_mean_path = Path("$OLD_MEAN_PATH")
+new_mean = torch.load(
+    cache_dir / "mean-layer-22.pt",
+    map_location="cpu",
+    weights_only=True,
+).float()
+old_mean = torch.load(
+    old_mean_path,
+    map_location="cpu",
+    weights_only=True,
+).float()
+if new_mean.shape != old_mean.shape:
+    raise SystemExit(
+        f"L22 mean shape mismatch: new={tuple(new_mean.shape)} "
+        f"old={tuple(old_mean.shape)}"
+    )
+difference = new_mean - old_mean
+report = {
+    "old_mean_path": str(old_mean_path),
+    "new_mean_path": str(cache_dir / "mean-layer-22.pt"),
+    "shape": list(new_mean.shape),
+    "max_abs_difference": float(difference.abs().max().item()),
+    "mean_abs_difference": float(difference.abs().mean().item()),
+    "root_mean_squared_difference": float(difference.square().mean().sqrt().item()),
+    "cosine_similarity": float(
+        F.cosine_similarity(new_mean.unsqueeze(0), old_mean.unsqueeze(0)).item()
+    ),
+}
+report["compatible"] = (
+    report["mean_abs_difference"] <= 1.0e-5
+    and report["cosine_similarity"] >= 0.999999
+)
+(Path("$ROOT") / "cache-compatibility-audit.json").write_text(
+    json.dumps(report, indent=2) + "\n",
+    encoding="utf-8",
+)
+print(json.dumps(report, indent=2))
+if not report["compatible"]:
+    raise SystemExit("New structured cache is not distribution-compatible with the old L22 cache")
+PY
 
 if [[ ! -f "$SCREEN_DIR/train-summary-structured-dual-granularity.json" ]]; then
   echo "== parameter-matched screen training start $(date -Is)"
