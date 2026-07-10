@@ -27,6 +27,7 @@ CUSTOM_KINDS = {
     "v396_causal_scaled_relu",
     "v396_causal_fixed_beta",
     "v396_causal_learned_beta",
+    "structured_nexttoken_downstream_v2",
 }
 
 
@@ -54,16 +55,37 @@ def patch_custom_kinds(module: Any) -> None:
         keys = ["b_pre", "encoder.weight", "encoder.bias", "decoder.weight"]
         if kind == "v396_causal_scaled_relu":
             keys.extend(["causal.bias_delta", "causal.log_gain"])
-        elif kind == "v396_causal_learned_beta":
+        elif kind in {
+            "v396_causal_learned_beta",
+            "structured_nexttoken_downstream_v2",
+        }:
             keys.append("causal.raw_beta")
             if "causal.log_gain" in raw:
                 keys.append("causal.log_gain")
+            if kind == "structured_nexttoken_downstream_v2":
+                keys.extend(
+                    [
+                        "downstream.context_down_weight",
+                        "downstream.context_down_bias",
+                        "downstream.context_up_weight",
+                        "downstream.context_up_bias",
+                    ]
+                )
         state = module.move_keys(raw, keys, config.device, config.dtype)
         extra = {
             "n_latents": n_latents,
             "parameter_count": int(target.get("trainable_parameters", sum(v.numel() for v in raw.values()))),
             "max_beta": float(raw.get("causal.max_beta", torch.tensor(4.0)).item()),
             "max_log_gain": float(raw.get("causal.max_log_gain", torch.tensor(2.0)).item()),
+            "context_rank": int(
+                raw.get("downstream.context_rank", torch.tensor(1)).item()
+            ),
+            "max_context_log_gain": float(
+                raw.get(
+                    "downstream.max_context_log_gain",
+                    torch.tensor(0.0),
+                ).item()
+            ),
         }
         del raw
         return state, extra
@@ -106,6 +128,24 @@ def patch_custom_kinds(module: Any) -> None:
                 float(extra["max_log_gain"]),
             ).exp().float().to(u.device)
             z = z * gain.unsqueeze(0)
+        if kind == "structured_nexttoken_downstream_v2":
+            context_input = F.layer_norm(x_norm.float(), (x_norm.shape[-1],))
+            context_hidden = F.silu(
+                F.linear(
+                    context_input,
+                    state["downstream.context_down_weight"],
+                    state["downstream.context_down_bias"],
+                )
+            )
+            context_gain = float(extra["max_context_log_gain"]) * torch.tanh(
+                F.linear(
+                    context_hidden,
+                    state["downstream.context_up_weight"],
+                    state["downstream.context_up_bias"],
+                )
+                / float(extra["context_rank"]) ** 0.5
+            )
+            z = z * context_gain.exp()
         return None, None, z
 
     module.load_sae_state = load_sae_state
