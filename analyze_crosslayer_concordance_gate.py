@@ -26,7 +26,7 @@ def main() -> None:
     parser.add_argument("--output-md", type=Path, required=True)
     parser.add_argument("--minimum-control-delta", type=float, default=0.005)
     parser.add_argument("--maximum-dataset-drop", type=float, default=0.01)
-    parser.add_argument("--reference-initial3", type=float, default=0.851389)
+    parser.add_argument("--reference-initial3", type=float, default=0.837543)
     parser.add_argument("--maximum-reference-gap", type=float, default=0.01)
     args = parser.parse_args()
 

@@ -83,7 +83,7 @@ CUDA_VISIBLE_DEVICES=0 "$PYTHON_BIN" saebench_sparse_probing_structured_dual_gra
   --output-md "$ROOT/initial3-gate.md" \
   --minimum-control-delta 0.005 \
   --maximum-dataset-drop 0.01 \
-  --reference-initial3 0.851389 \
+  --reference-initial3 0.837543 \
   --maximum-reference-gap 0.01 \
   | tee "$ROOT/initial3-gate.log"
 

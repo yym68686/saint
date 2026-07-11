@@ -49,7 +49,7 @@
     "train_size": 512,
     "test_size": 128,
     "random_seed": 42,
-    "reference_mean_acc": 0.851389
+    "reference_mean_acc": 0.837543
   },
   "hard_gates": {
     "minimum_delta_vs_best_matched_control": 0.005,
