@@ -64,6 +64,7 @@ def patch_custom_kinds(module: Any) -> None:
                 "level1.raw_beta",
                 "level1.log_gain",
                 "cascaded.cluster_scale",
+                "cascaded.wrong_cluster_scale",
             ]
         state = module.move_keys(raw, keys, config.device, config.dtype)
         if kind == "cascaded_concept":
@@ -139,7 +140,12 @@ def patch_custom_kinds(module: Any) -> None:
                 else "cascaded.parent"
             )
             parent = state[parent_key]
-            scale = state["cascaded.cluster_scale"].float().index_select(
+            scale_key = (
+                "cascaded.wrong_cluster_scale"
+                if readout == "wrong_hierarchy"
+                else "cascaded.cluster_scale"
+            )
+            scale = state[scale_key].float().index_select(
                 0, parent
             )
             high.scatter_add_(
