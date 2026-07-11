@@ -1,0 +1,69 @@
+{
+  "experiment": "parameter-matched fixed C2R causal preflight",
+  "status": "mechanism-preflight-not-final-architecture",
+  "date": "2026-07-11",
+  "motivation": "Test whether decoder-neighbor cross-sample consistency provides a causal label-free signal for low-dimensional semantic consolidation before adding a learned routing module.",
+  "source": {
+    "paper": "C2R: Cross-sample Consistency Regularization Mitigates Feature Splitting and Absorption in Sparse Autoencoders",
+    "arxiv": "2606.30609v1",
+    "official_repository": "https://github.com/hr-jin/Cross-sample-Consistency-Regularization",
+    "official_code_commit": "21aa150cee335ddef072b5389c73d746a9a4d504"
+  },
+  "base_checkpoint": {
+    "path": "/root/saint/trained_sae-relu-l22.pt",
+    "sha256": "5f1ec2bf462093c30a7cbc721899b27112c2b9bb219b2dd69248b5fb71153939",
+    "layer": 22,
+    "parameter_count": 402721792,
+    "exposed_feature_count": 65536
+  },
+  "training_data": {
+    "path": "/root/autodl-tmp/activation_outputs_batched",
+    "policy": "read-only; metadata manifest must be identical before and after training",
+    "activation_source": "same L22 activation cache used by existing baselines"
+  },
+  "variants": [
+    "frozen ReLU reference",
+    "matched ReLU finetune",
+    "wrong-alignment C2R control",
+    "true C2R preflight"
+  ],
+  "training": {
+    "steps": 600,
+    "batch_tokens": 256,
+    "learning_rate": 1e-6,
+    "l1_coefficient": 1e-6,
+    "c2r_interval": 5,
+    "c2r_active_subset": 2048,
+    "c2r_average_loss_fraction": 0.01,
+    "seed": 42,
+    "same_initial_checkpoint": true,
+    "same_data_order": true,
+    "same_optimizer": true,
+    "same_parameter_count": true,
+    "same_exposed_feature_count": true
+  },
+  "wrong_control": {
+    "definition": "Cyclically shift the selected activation-norm vector by a nonzero step-dependent offset while preserving its exact multiset; retain the same decoder-neighbor geometry.",
+    "required_fixed_pair_count": 0
+  },
+  "initial3": [
+    "LabHC/bias_in_bios_class_set3",
+    "canrager/amazon_reviews_mcauley_1and5",
+    "fancyzhx/ag_news"
+  ],
+  "gate": {
+    "minimum_delta_over_best_control": 0.005,
+    "maximum_per_dataset_drop": 0.01,
+    "same_dataset_reference": 0.837543,
+    "maximum_reference_gap": 0.01,
+    "pass_action": "Develop the parameterized C2R consistency router with an exact same-parameter control suite.",
+    "fail_action": "Stop the C2R family before adding a learned module; do not run full7."
+  },
+  "leakage_prohibitions": [
+    "SAEBench labels",
+    "evaluation split",
+    "one-vs-rest targets",
+    "mean-diff selected features",
+    "test feedback"
+  ]
+}
