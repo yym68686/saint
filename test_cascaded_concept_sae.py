@@ -7,7 +7,7 @@ from train_cascaded_concept_sae import (
     CascadedConceptSAE,
     PartitionedV396,
     hierarchy_transport_loss,
-    maximally_deranged_parent_assignment,
+    shuffled_parent_assignment,
     parameter_count,
     rank_low_activity_slots,
 )
@@ -98,10 +98,11 @@ def test_level2_loss_updates_both_levels() -> None:
     assert candidate.low_decoder.grad.norm() > 0
 
 
-def test_parent_derangement_is_maximal_and_count_preserving() -> None:
+def test_parent_shuffle_is_deterministic_and_count_preserving() -> None:
     parent = torch.tensor([0, 0, 0, 0, 0, 1, 1, 2])
-    wrong = maximally_deranged_parent_assignment(parent)
-    assert int((parent == wrong).sum()) == 2
+    wrong = shuffled_parent_assignment(parent)
+    assert torch.equal(wrong, shuffled_parent_assignment(parent))
+    assert not torch.equal(parent, wrong)
     assert torch.equal(
         torch.bincount(parent),
         torch.bincount(wrong),

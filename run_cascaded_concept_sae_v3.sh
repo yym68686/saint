@@ -50,7 +50,7 @@ PY
   --hierarchy-l1-coeff 1e-6 \
   --transport-weight 1e-3 \
   --transport-temperature 0.1 \
-  --sinkhorn-iterations 5 \
+  --sinkhorn-iterations 100 \
   --beta-anchor-coeff 1e-3 \
   --gain-anchor-coeff 1e-4 \
   --log-every 50 \

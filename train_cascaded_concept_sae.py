@@ -242,22 +242,17 @@ def sinkhorn_balanced_targets(
     iterations: int,
 ) -> torch.Tensor:
     batch_size, parent_count = standardized_scores.shape
-    assignment = standardized_scores.float() / temperature
-    assignment = torch.exp(
-        assignment - assignment.max(dim=1, keepdim=True).values
-    )
-    assignment.div_(assignment.sum().clamp_min(1.0e-20))
+    log_assignment = standardized_scores.float() / temperature
+    target_column_mass = math.log(batch_size / parent_count)
     for _ in range(iterations):
-        assignment.div_(
-            assignment.sum(dim=0, keepdim=True).clamp_min(1.0e-20)
+        log_assignment.add_(
+            target_column_mass
+            - torch.logsumexp(log_assignment, dim=0, keepdim=True)
         )
-        assignment.div_(parent_count)
-        assignment.div_(
-            assignment.sum(dim=1, keepdim=True).clamp_min(1.0e-20)
+        log_assignment.sub_(
+            torch.logsumexp(log_assignment, dim=1, keepdim=True)
         )
-        assignment.div_(batch_size)
-    assignment.mul_(batch_size)
-    return assignment
+    return log_assignment.exp()
 
 
 def hierarchy_transport_loss(
@@ -438,23 +433,19 @@ class PartitionedV396(nn.Module):
         }
 
 
-def maximally_deranged_parent_assignment(parent: torch.Tensor) -> torch.Tensor:
-    """Change maximal memberships while preserving every parent count."""
+def shuffled_parent_assignment(
+    parent: torch.Tensor, seed: int = 42003
+) -> torch.Tensor:
+    """Shuffle child memberships while preserving every parent count."""
 
-    order = torch.argsort(parent, stable=True)
-    sorted_parent = parent.index_select(0, order)
+    generator = torch.Generator(device="cpu").manual_seed(seed)
+    permutation = torch.randperm(len(parent), generator=generator)
+    wrong = parent.index_select(0, permutation)
     counts = torch.bincount(parent)
-    shift = int(counts.max().item())
-    rotated = torch.roll(sorted_parent, shifts=shift)
-    wrong = torch.empty_like(parent)
-    wrong[order] = rotated
-    expected_fixed = max(0, 2 * shift - len(parent))
-    if int((wrong == parent).sum().item()) != expected_fixed:
-        raise RuntimeError("Membership derangement did not attain the optimum")
     if not torch.equal(
         torch.bincount(wrong, minlength=len(counts)), counts
     ):
-        raise RuntimeError("Membership derangement changed parent counts")
+        raise RuntimeError("Membership shuffle changed parent counts")
     return wrong
 
 
@@ -606,7 +597,7 @@ class CascadedConceptSAE(PartitionedV396):
         parent = parent_device.cpu()
         strength = strength.cpu()
         counts = torch.bincount(parent, minlength=self.n_high)
-        wrong = maximally_deranged_parent_assignment(parent)
+        wrong = shuffled_parent_assignment(parent)
         wrong_counts = torch.bincount(wrong, minlength=self.n_high)
         probabilities = counts.float() / counts.sum()
         nonzero_probabilities = probabilities[probabilities > 0]
@@ -829,7 +820,7 @@ def main() -> None:
     parser.add_argument("--hierarchy-l1-coeff", type=float, default=1.0e-6)
     parser.add_argument("--transport-weight", type=float, default=1.0e-3)
     parser.add_argument("--transport-temperature", type=float, default=0.1)
-    parser.add_argument("--sinkhorn-iterations", type=int, default=5)
+    parser.add_argument("--sinkhorn-iterations", type=int, default=100)
     parser.add_argument("--beta-anchor-coeff", type=float, default=1.0e-3)
     parser.add_argument("--gain-anchor-coeff", type=float, default=1.0e-4)
     parser.add_argument("--grad-clip", type=float, default=1.0)
@@ -917,7 +908,7 @@ def main() -> None:
         "controls": [
             "same-parameter activity-partitioned V396 finetune",
             "same-checkpoint Level-1-only readout",
-            "maximally changed child memberships with every learned parent "
+            "seed-42003 child-membership shuffle with every learned parent "
             "count fixed",
         ],
         "uses_saebench_labels_for_training": False,
