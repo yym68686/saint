@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Apply the preregistered Initial3 gate to Cascaded Concept SAE v1."""
+"""Apply the preregistered Initial3 gate to Cascaded Concept SAE v2."""
 
 from __future__ import annotations
 
@@ -31,31 +31,31 @@ def main() -> None:
     }
     required = {
         "v396_finetune",
-        "cascaded_concept",
-        "cascaded_concept_wrong_hierarchy",
-        "cascaded_concept_level1_only",
+        "cascaded_concept_v2",
+        "cascaded_concept_v2_wrong_hierarchy",
+        "cascaded_concept_v2_level1_only",
     }
     missing = sorted(required - set(rows))
     if missing:
         raise KeyError(f"Evaluation is missing {missing}")
 
-    candidate = rows["cascaded_concept"]["mean_acc"]
+    candidate = rows["cascaded_concept_v2"]["mean_acc"]
     base = rows["v396_finetune"]["mean_acc"]
     control_names = (
-        "cascaded_concept_wrong_hierarchy",
-        "cascaded_concept_level1_only",
+        "cascaded_concept_v2_wrong_hierarchy",
+        "cascaded_concept_v2_level1_only",
     )
     best_control_name = max(control_names, key=lambda name: rows[name]["mean_acc"])
     best_control = rows[best_control_name]["mean_acc"]
     dataset_deltas = {}
-    for dataset_name, metrics in details["cascaded_concept"][
+    for dataset_name, metrics in details["cascaded_concept_v2"][
         "dataset_results"
     ].items():
         dataset_deltas[dataset_name] = mean_accuracy(metrics) - mean_accuracy(
             details["v396_finetune"]["dataset_results"][dataset_name]
         )
 
-    candidate_train = train["results"]["cascaded_concept"]
+    candidate_train = train["results"]["cascaded_concept_v2"]
     report: dict[str, Any] = {
         "candidate_mean_acc": candidate,
         "v396_finetune_mean_acc": base,
@@ -114,7 +114,7 @@ def main() -> None:
     )
 
     lines = [
-        "# Cascaded Concept SAE v1 Initial3 Gate",
+        "# Cascaded Concept SAE v2 Initial3 Gate",
         "",
         "| Variant | Mean Acc |",
         "|---|---:|",
