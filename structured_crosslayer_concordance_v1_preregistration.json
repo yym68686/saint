@@ -1,0 +1,64 @@
+{
+  "experiment": "cross-layer concordance shared SAE v1",
+  "family_version": 1,
+  "status": "preregistered-before-formal-evaluation",
+  "hypothesis": "A shared learnable dictionary trained on aligned L20-L23 token activations with same-token latent concordance will concentrate layer-stable semantic evidence in L22 features more effectively than matched multi-layer reconstruction or cross-sample wrong-alignment controls.",
+  "training": {
+    "cache": "/autodl-fs/data/structured_activation_cache_owt50k_l20-l23_v1",
+    "cache_read_only": true,
+    "base_checkpoint": "/autodl-fs/data/structured_dual_granularity_v1_20260710/screen_seed42/trained_sae-structured-relu-base.pt",
+    "layers": [20, 21, 22, 23],
+    "reference_layer": 22,
+    "steps": 600,
+    "batch_samples": 8,
+    "seed": 42,
+    "learning_rate": 0.00001,
+    "l1_coefficient": 0.0001,
+    "concordance_weight": 0.1,
+    "calibration_groups": 16,
+    "calibration_parameter_count": 64,
+    "max_log_scale": 0.25,
+    "coefficient_sweep": false
+  },
+  "variants": {
+    "reconstruction_control": "Same shared dictionary, layer calibration, cache, optimizer, data order and steps; no concordance loss.",
+    "wrong_alignment": "Same model and concordance loss, but each layer is paired through a bijective cross-sample token derangement with identical activation marginals.",
+    "candidate": "Same model and loss coefficient with true same-token alignment across L20-L23."
+  },
+  "fairness": {
+    "trainable_parameter_count_each": 402721792,
+    "exposed_l22_features_each": 65536,
+    "same_initial_tensors": true,
+    "same_training_data": true,
+    "same_data_order": true,
+    "same_optimizer": true,
+    "same_steps": true,
+    "saebench_labels_in_training": false,
+    "eval_split_in_training": false,
+    "mean_diff_in_training": false,
+    "test_feedback_in_training": false
+  },
+  "initial3": {
+    "datasets": [
+      "LabHC/bias_in_bios_class_set3",
+      "canrager/amazon_reviews_mcauley_1and5",
+      "fancyzhx/ag_news"
+    ],
+    "k_values": [1, 2, 5],
+    "train_size": 512,
+    "test_size": 128,
+    "random_seed": 42,
+    "reference_mean_acc": 0.851389
+  },
+  "hard_gates": {
+    "minimum_delta_vs_best_matched_control": 0.005,
+    "maximum_drop_on_any_initial3_dataset": 0.01,
+    "maximum_gap_below_reference": 0.01,
+    "long_training_before_gate_pass": false,
+    "full7_before_long_training": false
+  },
+  "family_rules": {
+    "maximum_versions": 3,
+    "stop_after_three_versions_below_base_only": true
+  }
+}
