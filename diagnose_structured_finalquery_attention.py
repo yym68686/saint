@@ -205,7 +205,7 @@ def compute_relu_attention_pooling(
                         attention,
                         x_attention.unsqueeze(0),
                         freqs_cis,
-                    )[0]
+                    )[0].float()
                     if length > 1:
                         shift = 1 + (
                             control_seed + sample_count_total
