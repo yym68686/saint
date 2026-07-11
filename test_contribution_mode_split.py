@@ -95,6 +95,21 @@ class ContributionModeSplitTest(unittest.TestCase):
         self.assertTrue((probability >= 0).all())
         self.assertTrue((probability <= 1).all())
 
+    def test_split_route_probability_preserves_bfloat16_linear_dtype(self) -> None:
+        x = torch.randn(6, 4).to(torch.bfloat16)
+        weight = torch.randn(2, 4).to(torch.bfloat16)
+        bias = torch.randn(2).to(torch.bfloat16)
+        allocation = torch.tensor(
+            [[1.0, 0.0, 0.5, 0.5], [0.0, 1.0, 0.5, 0.5]],
+            dtype=torch.bfloat16,
+        )
+        parent_h = torch.nn.functional.linear(x, weight, bias)
+        probability = split_route_probability(
+            x, parent_h, weight, bias, allocation
+        )
+        self.assertEqual(probability.dtype, torch.float32)
+        self.assertTrue(torch.isfinite(probability).all())
+
 
 if __name__ == "__main__":
     unittest.main()

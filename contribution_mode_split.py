@@ -56,7 +56,8 @@ def split_route_probability(
 ) -> torch.Tensor:
     """Route parent mass using an additive partition of its affine score."""
     first_weight = parent_weight * allocation
-    first_bias = parent_bias * allocation.float().mean(dim=1)
+    bias_fraction = allocation.float().mean(dim=1).to(parent_bias.dtype)
+    first_bias = parent_bias * bias_fraction
     first = F.linear(x_centered, first_weight, first_bias)
     second = parent_h - first
     first_pos = torch.relu(first.float())
