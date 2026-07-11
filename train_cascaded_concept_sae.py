@@ -272,23 +272,32 @@ class PartitionedV396(nn.Module):
         }
 
 
-def deranged_parent_assignment(parent: torch.Tensor) -> torch.Tensor:
-    order = torch.argsort(parent, stable=True)
-    sorted_parent = parent.index_select(0, order)
-    counts = torch.bincount(parent)
-    shift = int(counts.max().item())
-    if 2 * shift > len(parent):
-        raise ValueError("Cannot construct count-preserving parent derangement")
-    rotated = torch.roll(sorted_parent, shifts=shift)
-    wrong = torch.empty_like(parent)
-    wrong[order] = rotated
+def permuted_parent_assignment(parent: torch.Tensor) -> torch.Tensor:
+    """Relabel every learned cluster while preserving its membership.
+
+    A child-wise, count-preserving derangement does not exist when one learned
+    cluster contains more than half of all children. Relabeling whole clusters
+    is always well defined when at least two clusters are active. It changes
+    every parent assignment and preserves the number of active clusters and the
+    multiset of cluster sizes, which are the capacity properties needed by the
+    wrong-hierarchy control.
+    """
+
+    active = torch.unique(parent, sorted=True)
+    if len(active) < 2:
+        raise ValueError("Wrong-hierarchy control requires two active clusters")
+    replacement = torch.roll(active, shifts=1)
+    lookup_size = int(active.max().item()) + 1
+    lookup = torch.arange(lookup_size, device=parent.device)
+    lookup[active] = replacement
+    wrong = lookup.index_select(0, parent)
     if torch.any(wrong == parent):
-        raise RuntimeError("Parent derangement retained fixed assignments")
-    if not torch.equal(
-        torch.bincount(wrong, minlength=len(counts)),
-        counts,
-    ):
-        raise RuntimeError("Parent derangement changed cluster sizes")
+        raise RuntimeError("Cluster relabeling retained fixed assignments")
+    original_sizes = torch.sort(torch.bincount(parent)[active]).values
+    wrong_active = torch.unique(wrong, sorted=True)
+    wrong_sizes = torch.sort(torch.bincount(wrong)[wrong_active]).values
+    if not torch.equal(original_sizes, wrong_sizes):
+        raise RuntimeError("Cluster relabeling changed the size multiset")
     return wrong
 
 
@@ -394,13 +403,16 @@ class CascadedConceptSAE(PartitionedV396):
         parent = torch.cat(parents)
         strength = torch.cat(strengths)
         counts = torch.bincount(parent, minlength=self.n_high)
-        wrong = deranged_parent_assignment(parent)
+        wrong = permuted_parent_assignment(parent)
+        wrong_counts = torch.bincount(wrong, minlength=self.n_high)
         return {
             "parent": parent,
             "wrong_parent": wrong,
             "strength": strength,
             "cluster_count": counts,
             "cluster_scale": counts.float().clamp_min(1).rsqrt(),
+            "wrong_cluster_count": wrong_counts,
+            "wrong_cluster_scale": wrong_counts.float().clamp_min(1).rsqrt(),
         }
 
     def export_state(self, hierarchy_chunk_size: int = 128) -> dict[str, torch.Tensor]:
@@ -415,6 +427,8 @@ class CascadedConceptSAE(PartitionedV396):
             "cascaded.parent_strength": hierarchy["strength"],
             "cascaded.cluster_count": hierarchy["cluster_count"],
             "cascaded.cluster_scale": hierarchy["cluster_scale"],
+            "cascaded.wrong_cluster_count": hierarchy["wrong_cluster_count"],
+            "cascaded.wrong_cluster_scale": hierarchy["wrong_cluster_scale"],
             "b_pre": self.b_pre.detach().cpu(),
             "level1.encoder.weight": self.low_encoder.detach().cpu(),
             "level1.encoder.bias": self.low_bias.detach().cpu(),
@@ -592,7 +606,8 @@ def main() -> None:
         "controls": [
             "same-parameter V396 finetune",
             "same-checkpoint Level-1 only",
-            "count-preserving zero-fixed-point wrong hierarchy",
+            "zero-fixed-point cluster-label permutation with the same active "
+            "cluster count and cluster-size multiset",
         ],
         "uses_saebench_labels_for_training": False,
         "uses_class_names_for_training": False,
