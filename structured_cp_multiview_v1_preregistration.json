@@ -1,0 +1,73 @@
+{
+  "experiment": "exact-parameter CP factorized multi-view SAE v1",
+  "family_version": 1,
+  "status": "preregistered-before-formal-evaluation",
+  "external_mechanism_evidence": {
+    "paper": "fmxcoders: Factorized Masked Crosscoders for Cross-Layer Feature Discovery",
+    "arxiv": "2605.09438v1",
+    "used_result": "The paper's unmasked CP factorization improves average single-latent probing F1 over per-layer SAE baselines on GPT2, Pythia, and Gemma, including Bias in Bios, AG News, EuroParl, Amazon Sentiment and Amazon category tasks.",
+    "local_adaptation": "Replace the layer mode with four interleaved token views from the same L22 text so training and evaluation retain the same L22 activation source as ordinary SAE baselines."
+  },
+  "hypothesis": "A CP-factorized encoder/decoder shared across disjoint views of one text will form sample-stable semantic coordinates that a standard mean-pooled SAE and a cross-sample view control cannot recover.",
+  "training": {
+    "cache": "/autodl-fs/data/structured_activation_cache_owt50k_l20-l23_v1",
+    "cache_read_only": true,
+    "base_checkpoint": "/root/saint/trained_sae-relu-l22.pt",
+    "layer": 22,
+    "views": 4,
+    "view_definition": "token position modulo 4 within each real sample",
+    "cp_rank": 2934,
+    "rank_selection": "largest integer CP rank that fits below the 402721792-parameter ReLU budget before assigning every remaining parameter to the feature-gain module",
+    "feature_gain_parameter_count": 28752,
+    "steps": 600,
+    "batch_samples": 32,
+    "seed": 42,
+    "learning_rate": 0.00001,
+    "l1_coefficient": 0.0001,
+    "max_log_gain": 0.25,
+    "rank_or_loss_weight_sweep": false
+  },
+  "variants": {
+    "frozen_relu": "Unchanged token-mean ReLU checkpoint, evaluated only.",
+    "mean_pooled_control": "Exact-parameter ordinary ReLU SAE; encode the mean of four L22 views and reconstruct all views with one shared decoder.",
+    "wrong_alignment": "Exact-parameter CP model trained on four independently shifted sample views; each view marginal is unchanged and all fixed pairs are forbidden.",
+    "candidate": "Exact-parameter CP model trained on four true views from the same L22 text sample."
+  },
+  "fairness": {
+    "trainable_parameter_count_each": 402721792,
+    "exposed_features_each": 65536,
+    "same_layer": 22,
+    "same_sample_cache": true,
+    "same_data_order": true,
+    "same_optimizer": true,
+    "same_steps": true,
+    "all_new_module_parameters_used_in_forward": true,
+    "saebench_labels_in_training": false,
+    "eval_split_in_training": false,
+    "mean_diff_in_training": false,
+    "test_feedback_in_training": false
+  },
+  "initial3": {
+    "datasets": [
+      "LabHC/bias_in_bios_class_set3",
+      "canrager/amazon_reviews_mcauley_1and5",
+      "fancyzhx/ag_news"
+    ],
+    "k_values": [1, 2, 5],
+    "train_size": 512,
+    "test_size": 128,
+    "random_seed": 42,
+    "same_dataset_v396_reference": 0.837543
+  },
+  "hard_gates": {
+    "minimum_delta_vs_best_of_frozen_and_matched_controls": 0.005,
+    "maximum_drop_on_any_initial3_dataset": 0.01,
+    "maximum_gap_below_same_dataset_reference": 0.01,
+    "long_training_before_gate_pass": false,
+    "full7_before_long_training": false
+  },
+  "family_rules": {
+    "maximum_versions": 3,
+    "stop_after_three_versions_below_base_only": true
+  }
+}
