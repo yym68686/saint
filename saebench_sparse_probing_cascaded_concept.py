@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Full7 evaluator for the V396 causal-attribution suite.
+"""Sparse-probing evaluator for the exact-parameter Cascaded Concept SAE.
 
 The L22 activations for every dataset are collected once and retained in CPU
 memory. Each checkpoint is then loaded once, evaluated across all datasets, and
@@ -23,11 +23,7 @@ import torch
 import torch.nn.functional as F
 
 
-CUSTOM_KINDS = {
-    "v396_causal_scaled_relu",
-    "v396_causal_fixed_beta",
-    "v396_causal_learned_beta",
-}
+CUSTOM_KINDS = {"v396_finetune", "cascaded_concept"}
 
 
 def load_eval_module(path: Path) -> Any:
@@ -50,20 +46,36 @@ def patch_custom_kinds(module: Any) -> None:
             return original_load(target, config)
         checkpoint = Path(target["checkpoint"])
         raw = module.load_state(checkpoint)
-        n_latents = int(raw["decoder.weight"].shape[1])
-        keys = ["b_pre", "encoder.weight", "encoder.bias", "decoder.weight"]
-        if kind == "v396_causal_scaled_relu":
-            keys.extend(["causal.bias_delta", "causal.log_gain"])
-        elif kind == "v396_causal_learned_beta":
-            keys.append("causal.raw_beta")
-            if "causal.log_gain" in raw:
-                keys.append("causal.log_gain")
+        if kind == "v396_finetune":
+            n_latents = int(raw["decoder.weight"].shape[1])
+            keys = [
+                "b_pre",
+                "encoder.weight",
+                "encoder.bias",
+                "v396.raw_beta",
+                "v396.log_gain",
+            ]
+        else:
+            n_latents = int(raw["cascaded.n_total"].item())
+            keys = [
+                "b_pre",
+                "level1.encoder.weight",
+                "level1.encoder.bias",
+                "level1.raw_beta",
+                "level1.log_gain",
+                "cascaded.cluster_scale",
+            ]
         state = module.move_keys(raw, keys, config.device, config.dtype)
+        if kind == "cascaded_concept":
+            state["cascaded.parent"] = raw["cascaded.parent"].long().to(config.device)
+            state["cascaded.wrong_parent"] = raw[
+                "cascaded.wrong_parent"
+            ].long().to(config.device)
         extra = {
             "n_latents": n_latents,
             "parameter_count": int(target.get("trainable_parameters", sum(v.numel() for v in raw.values()))),
-            "max_beta": float(raw.get("causal.max_beta", torch.tensor(4.0)).item()),
-            "max_log_gain": float(raw.get("causal.max_log_gain", torch.tensor(2.0)).item()),
+            "max_beta": float(raw["v396.max_beta"].item()),
+            "max_log_gain": float(raw["v396.max_log_gain"].item()),
         }
         del raw
         return state, extra
@@ -78,35 +90,64 @@ def patch_custom_kinds(module: Any) -> None:
         kind = str(target["kind"])
         if kind not in CUSTOM_KINDS:
             return original_encode(x_flat, target, state, extra, config)
-        x_norm = module.normalize_activation(x_flat, config.dtype, config.normalize_eps)
-        x_centered = x_norm - state["b_pre"]
-        h = module.dense_encode(x_centered, state)
-        if kind == "v396_causal_scaled_relu":
-            gain = state["causal.log_gain"].clamp(-2.0, 2.0).exp().to(h.dtype)
-            z = torch.relu(h + state["causal.bias_delta"].to(h.dtype)) * gain
-            return None, None, z
-
-        u = torch.relu(h).float()
-        if kind == "v396_causal_fixed_beta":
-            beta = torch.tensor(float(target["fixed_beta"]), device=u.device, dtype=torch.float32)
-            z = torch.log1p(beta * u) / torch.log1p(beta)
-            return None, None, z
-
-        beta = F.softplus(state["causal.raw_beta"].float()).clamp(
+        x_norm = module.normalize_activation(
+            x_flat, config.dtype, config.normalize_eps
+        ).float()
+        centered = x_norm - state["b_pre"].float()
+        if kind == "v396_finetune":
+            preactivation = F.linear(
+                centered,
+                state["encoder.weight"].float(),
+                state["encoder.bias"].float(),
+            )
+            raw_beta = state["v396.raw_beta"].float()
+            log_gain = state["v396.log_gain"].float()
+        else:
+            preactivation = F.linear(
+                centered,
+                state["level1.encoder.weight"].float(),
+                state["level1.encoder.bias"].float(),
+            )
+            raw_beta = state["level1.raw_beta"].float()
+            log_gain = state["level1.log_gain"].float()
+        positive = torch.relu(preactivation)
+        beta = F.softplus(raw_beta).clamp(
             1.0e-4,
             float(extra["max_beta"]),
-        ).to(u.device)
-        if beta.numel() == 1:
-            z = torch.log1p(beta * u) / torch.log1p(beta)
-        else:
-            z = torch.log1p(beta.unsqueeze(0) * u) / torch.log1p(beta).unsqueeze(0)
-        if "causal.log_gain" in state:
-            gain = state["causal.log_gain"].clamp(
-                -float(extra["max_log_gain"]),
-                float(extra["max_log_gain"]),
-            ).exp().float().to(u.device)
-            z = z * gain.unsqueeze(0)
-        return None, None, z
+        )
+        gain = log_gain.clamp(
+            -float(extra["max_log_gain"]),
+            float(extra["max_log_gain"]),
+        ).exp()
+        low = (
+            torch.log1p(beta.unsqueeze(0) * positive)
+            / torch.log1p(beta).unsqueeze(0)
+            * gain.unsqueeze(0)
+        )
+        if kind == "v396_finetune":
+            return None, None, low
+
+        readout = str(target.get("readout", "learned_hierarchy"))
+        n_high = extra["n_latents"] - int(low.shape[1])
+        high = torch.zeros(
+            (len(low), n_high), device=low.device, dtype=low.dtype
+        )
+        if readout != "level1_only":
+            parent_key = (
+                "cascaded.wrong_parent"
+                if readout == "wrong_hierarchy"
+                else "cascaded.parent"
+            )
+            parent = state[parent_key]
+            scale = state["cascaded.cluster_scale"].float().index_select(
+                0, parent
+            )
+            high.scatter_add_(
+                1,
+                parent.unsqueeze(0).expand(len(low), -1),
+                low * scale.unsqueeze(0),
+            )
+        return None, None, torch.cat([low, high], dim=1)
 
     module.load_sae_state = load_sae_state
     module.encode_features_for_tokens = encode_features_for_tokens
@@ -203,7 +244,7 @@ def summarize(rows: list[dict[str, Any]], k_values: list[int]) -> list[dict[str,
 def write_markdown(path: Path, payload: dict[str, Any]) -> None:
     k_values = payload["config"]["k_values"]
     lines = [
-        "# V396 Causal Attribution Full7",
+        "# Exact-Parameter Cascaded Concept SAE Sparse Probing",
         "",
         "| Variant | Seed | Mean Acc ↑ | Mean AUC ↑ | "
         + " | ".join(f"Top-{k} Acc ↑" for k in k_values)
