@@ -74,6 +74,23 @@ def main() -> None:
             float(row["concordance_loss"]) > 0.0
             for row in histories["wrong_alignment"]
         ),
+        "true_and_wrong_objective_scales_are_equal": all(
+            abs(float(row["normalized_concordance_objective"]) - 1.0) < 1.0e-6
+            for key in ("candidate", "wrong_alignment")
+            for row in histories[key]
+        ),
+        "true_and_wrong_weighted_objectives_are_equal": all(
+            abs(
+                float(candidate_row["weighted_concordance_objective"])
+                - float(wrong_row["weighted_concordance_objective"])
+            )
+            < 1.0e-8
+            for candidate_row, wrong_row in zip(
+                histories["candidate"],
+                histories["wrong_alignment"],
+                strict=True,
+            )
+        ),
         "wrong_alignment_no_fixed_pairs": int(
             variants["wrong_alignment"]["wrong_fixed_pair_count"]
         )

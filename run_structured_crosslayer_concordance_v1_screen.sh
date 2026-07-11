@@ -42,7 +42,7 @@ CUDA_VISIBLE_DEVICES=0 "$PYTHON_BIN" train_structured_crosslayer_concordance_sae
   --seed 42 \
   --lr 1e-5 \
   --l1-coeff 1e-4 \
-  --concordance-weight 0.1 \
+  --concordance-weight 0.005 \
   --calibration-groups 16 \
   --max-log-scale 0.25 \
   --validation-batches 32 \

@@ -514,9 +514,17 @@ def train_variant(
                         other = other[permutation]
                     terms.append(cosine_concordance_loss(reference, other))
                 concordance = torch.stack(terms).mean()
+            normalized_concordance = rec_loss.new_zeros(())
             loss = rec_loss + args.l1_coeff * l1
             if variant.concordance_mode != "none":
-                loss = loss + args.concordance_weight * concordance
+                # Equalize true/wrong objective scale without changing either
+                # pairing's gradient direction. This prevents the naturally
+                # larger wrong-pair cosine distance from becoming a stronger
+                # regularizer than the candidate receives.
+                normalized_concordance = concordance / concordance.detach().clamp_min(
+                    1.0e-8
+                )
+                loss = loss + args.concordance_weight * normalized_concordance
             if not torch.isfinite(loss):
                 raise FloatingPointError(
                     f"{variant.key} produced NaN/Inf at step {step + 1}"
@@ -556,6 +564,12 @@ def train_variant(
                 "reconstruction_loss": float(rec_loss.detach().item()),
                 "l1": float(l1.detach().item()),
                 "concordance_loss": float(concordance.detach().item()),
+                "normalized_concordance_objective": float(
+                    normalized_concordance.detach().item()
+                ),
+                "weighted_concordance_objective": float(
+                    (args.concordance_weight * normalized_concordance.detach()).item()
+                ),
                 "reference_layer_ev": float(reference_ev.item()),
                 "active_per_token": float(active_per_token.item()),
                 "dead_ratio_so_far": float((~ever_active).float().mean().item()),
@@ -574,7 +588,8 @@ def train_variant(
                     flush=True,
                 )
             del normalized, sample_index, lengths, outputs, rec_loss, l1
-            del concordance, loss, reference_residual, reference_ev, active_per_token
+            del concordance, normalized_concordance, loss
+            del reference_residual, reference_ev, active_per_token
             if step >= args.steps:
                 break
         epoch += 1
@@ -617,7 +632,7 @@ def main() -> None:
     parser.add_argument("--optimizer-eps", type=float, default=6.25e-10)
     parser.add_argument("--weight-decay", type=float, default=0.0)
     parser.add_argument("--l1-coeff", type=float, default=1.0e-4)
-    parser.add_argument("--concordance-weight", type=float, default=0.1)
+    parser.add_argument("--concordance-weight", type=float, default=0.005)
     parser.add_argument("--calibration-groups", type=int, default=16)
     parser.add_argument("--max-log-scale", type=float, default=0.25)
     parser.add_argument("--grad-clip", type=float, default=1.0)

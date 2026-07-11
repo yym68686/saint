@@ -14,7 +14,8 @@
     "seed": 42,
     "learning_rate": 0.00001,
     "l1_coefficient": 0.0001,
-    "concordance_weight": 0.1,
+    "concordance_weight": 0.005,
+    "concordance_scale_normalization": "Each true/wrong raw cosine loss is divided by its detached current value, preserving gradient direction while making the scalar regularization strength identical. The fixed 0.005 contribution matches the true-alignment scale observed in a two-step label-free smoke run before any probing evaluation.",
     "calibration_groups": 16,
     "calibration_parameter_count": 64,
     "max_log_scale": 0.25,
@@ -22,7 +23,7 @@
   },
   "variants": {
     "reconstruction_control": "Same shared dictionary, layer calibration, cache, optimizer, data order and steps; no concordance loss.",
-    "wrong_alignment": "Same model and concordance loss, but each layer is paired through a bijective cross-sample token derangement with identical activation marginals.",
+    "wrong_alignment": "Same model and scale-normalized concordance loss, but each layer is paired through a bijective cross-sample token derangement with identical activation marginals.",
     "candidate": "Same model and loss coefficient with true same-token alignment across L20-L23."
   },
   "fairness": {
