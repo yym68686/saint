@@ -32,16 +32,19 @@ def ridge_student(
     train_y: torch.Tensor,
     ridge_scale: float,
 ) -> tuple[torch.Tensor, torch.Tensor, float]:
+    input_mean = train_x.mean(dim=0)
     target_mean = train_y.mean(dim=0)
+    centered_input = train_x - input_mean
     centered_target = train_y - target_mean
-    kernel = train_x @ train_x.T
+    kernel = centered_input @ centered_input.T
     ridge = ridge_scale * float(kernel.diagonal().mean().item())
     dual = torch.linalg.solve(
         kernel + ridge * torch.eye(kernel.shape[0], dtype=kernel.dtype),
         centered_target,
     )
-    weight = train_x.T @ dual
-    return weight, target_mean, ridge
+    weight = centered_input.T @ dual
+    bias = target_mean - input_mean @ weight
+    return weight, bias, ridge
 
 
 def prediction_metrics(
