@@ -232,7 +232,11 @@ def hierarchy_information_loss(
     code: torch.Tensor,
     temperature: float,
 ) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
-    probabilities = torch.softmax(code.float() / temperature, dim=-1)
+    code = code.float()
+    standardized = (code - code.mean(dim=0, keepdim=True)) / code.std(
+        dim=0, unbiased=False, keepdim=True
+    ).clamp_min(1.0e-4)
+    probabilities = torch.softmax(standardized / temperature, dim=-1)
     probabilities = probabilities.clamp_min(1.0e-12)
     marginal = probabilities.mean(dim=0)
     conditional_entropy = -(
@@ -504,6 +508,27 @@ class CascadedConceptSAE(PartitionedV396):
 
     @torch.inference_mode()
     def build_hierarchy(self, chunk_size: int) -> dict[str, torch.Tensor]:
+        score_sum = torch.zeros(
+            self.n_high, device=self.low_decoder.device, dtype=torch.float64
+        )
+        score_square_sum = torch.zeros_like(score_sum)
+        for start in range(0, self.n_low, chunk_size):
+            end = min(self.n_low, start + chunk_size)
+            atoms = self.low_decoder[:, start:end].T
+            hidden = F.linear(atoms - self.high_bias, self.high_encoder)
+            code = compand(
+                hidden,
+                self.high_beta,
+                self.high_gain,
+                self.max_beta,
+                self.max_log_gain,
+            ).double()
+            score_sum.add_(code.sum(dim=0))
+            score_square_sum.add_(code.square().sum(dim=0))
+        score_mean = score_sum / self.n_low
+        score_std = (
+            score_square_sum / self.n_low - score_mean.square()
+        ).clamp_min(1.0e-8).sqrt()
         parents = []
         strengths = []
         for start in range(0, self.n_low, chunk_size):
@@ -517,12 +542,10 @@ class CascadedConceptSAE(PartitionedV396):
                 self.max_beta,
                 self.max_log_gain,
             )
-            value, parent = code.max(dim=1)
-            zero = value <= 0
-            if zero.any():
-                raw_value, raw_parent = hidden[zero].max(dim=1)
-                value[zero] = raw_value
-                parent[zero] = raw_parent
+            standardized = (
+                code - score_mean.float()
+            ) / score_std.float().clamp_min(1.0e-4)
+            value, parent = standardized.max(dim=1)
             parents.append(parent.cpu())
             strengths.append(value.cpu())
         parent = torch.cat(parents)
@@ -546,6 +569,8 @@ class CascadedConceptSAE(PartitionedV396):
             "hard_effective_parents": entropy.exp(),
             "hard_max_share": probabilities.max(),
             "wrong_fixed_fraction": (wrong == parent).float().mean(),
+            "parent_score_mean": score_mean.float().cpu(),
+            "parent_score_std": score_std.float().cpu(),
         }
 
     def export_state(self, hierarchy_chunk_size: int = 128) -> dict[str, torch.Tensor]:
@@ -569,6 +594,8 @@ class CascadedConceptSAE(PartitionedV396):
             "cascaded.wrong_fixed_fraction": hierarchy[
                 "wrong_fixed_fraction"
             ],
+            "cascaded.parent_score_mean": hierarchy["parent_score_mean"],
+            "cascaded.parent_score_std": hierarchy["parent_score_std"],
             "cascaded.kept_indices": self.kept_indices.detach().cpu(),
             "cascaded.reallocated_indices": self.reallocated_indices.detach().cpu(),
             "b_pre": self.b_pre.detach().cpu(),
@@ -760,8 +787,9 @@ def main() -> None:
         "same_stream_seed": args.seed,
         "active_atom_cap": args.active_atom_cap,
         "balance_objective": (
+            "per-parent decoder-atom score standardization followed by "
             "normalized conditional entropy minus marginal entropy over "
-            "Level-2 soft assignments"
+            "Level-2 soft assignments; raw codes retain the reconstruction path"
         ),
         "balance_weight": args.balance_weight,
         "balance_temperature": args.balance_temperature,
