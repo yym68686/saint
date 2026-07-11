@@ -272,13 +272,15 @@ def compute_relu_attention_pooling(
             for key in variants:
                 variants[key][class_name] = outputs[key]
     tensors = {
-        "normalized_entropy": torch.tensor(entropy_values),
-        "max_weight": torch.tensor(max_values),
-        "first_token_weight": torch.tensor(first_values),
-        "last_token_weight": torch.tensor(last_values),
-        "uniform_l1_distance": torch.tensor(uniform_l1_values),
+        "normalized_entropy": torch.tensor(entropy_values, dtype=torch.float64),
+        "max_weight": torch.tensor(max_values, dtype=torch.float64),
+        "first_token_weight": torch.tensor(first_values, dtype=torch.float64),
+        "last_token_weight": torch.tensor(last_values, dtype=torch.float64),
+        "uniform_l1_distance": torch.tensor(
+            uniform_l1_values, dtype=torch.float64
+        ),
         "mean_attention_representation_cosine": torch.tensor(
-            representation_cosines
+            representation_cosines, dtype=torch.float64
         ),
     }
     statistics = {
