@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-CODE="${CODE:-/root/saint-cascaded-concept-sae-v2}"
+CODE="${CODE:-/root/saint-cascaded-concept-sae-v3}"
 PY="${PY:-/root/.cache/pypoetry/virtualenvs/llama3-interpretability-sae-d40co3fS-py3.12/bin/python}"
-ROOT="${ROOT:-/autodl-fs/data/cascaded_concept_sae_v2_20260711}"
+ROOT="${ROOT:-/autodl-fs/data/cascaded_concept_sae_v3_20260711}"
 V396="${V396:-/root/autodl-tmp/v396_logcompanding_initial5/trained_sae-v396-logcompanding-relu.pt}"
 DATA="${DATA:-/root/autodl-tmp/activation_outputs_batched}"
 MODEL="${MODEL:-/root/saint/llama_3.2-3B_model/original}"
@@ -48,8 +48,9 @@ PY
   --l1-coeff 1e-6 \
   --hierarchy-weight 1.0 \
   --hierarchy-l1-coeff 1e-6 \
-  --balance-weight 1e-2 \
-  --balance-temperature 0.1 \
+  --transport-weight 1e-3 \
+  --transport-temperature 0.1 \
+  --sinkhorn-iterations 5 \
   --beta-anchor-coeff 1e-3 \
   --gain-anchor-coeff 1e-4 \
   --log-every 50 \
@@ -58,7 +59,7 @@ PY
 
 set +e
 "$PY" "$CODE/analyze_cascaded_unsupervised_gate.py" \
-  --checkpoint "$ROOT/trained_sae-cascaded_concept_v2.pt" \
+  --checkpoint "$ROOT/trained_sae-cascaded_concept_v3.pt" \
   --output-json "$ROOT/unsupervised-gate.json" \
   --output-md "$ROOT/unsupervised-gate.md" \
   | tee "$ROOT/unsupervised-gate.log"

@@ -228,25 +228,61 @@ def select_low_activity_slots(
     return kept, reallocated, report
 
 
-def hierarchy_information_loss(
-    code: torch.Tensor,
-    temperature: float,
-) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+def standardize_parent_scores(code: torch.Tensor) -> torch.Tensor:
     code = code.float()
-    standardized = (code - code.mean(dim=0, keepdim=True)) / code.std(
+    return (code - code.mean(dim=0, keepdim=True)) / code.std(
         dim=0, unbiased=False, keepdim=True
     ).clamp_min(1.0e-4)
-    probabilities = torch.softmax(standardized / temperature, dim=-1)
-    probabilities = probabilities.clamp_min(1.0e-12)
-    marginal = probabilities.mean(dim=0)
-    conditional_entropy = -(
-        probabilities * probabilities.log()
-    ).sum(dim=-1).mean()
-    marginal_entropy = -(marginal * marginal.log()).sum()
-    normalizer = math.log(code.shape[-1])
-    information_loss = (conditional_entropy - marginal_entropy) / normalizer
-    effective_parents = marginal_entropy.exp()
-    return information_loss, effective_parents, marginal.max()
+
+
+@torch.no_grad()
+def sinkhorn_balanced_targets(
+    standardized_scores: torch.Tensor,
+    temperature: float,
+    iterations: int,
+) -> torch.Tensor:
+    batch_size, parent_count = standardized_scores.shape
+    assignment = standardized_scores.float() / temperature
+    assignment = torch.exp(
+        assignment - assignment.max(dim=1, keepdim=True).values
+    )
+    assignment.div_(assignment.sum().clamp_min(1.0e-20))
+    for _ in range(iterations):
+        assignment.div_(
+            assignment.sum(dim=0, keepdim=True).clamp_min(1.0e-20)
+        )
+        assignment.div_(parent_count)
+        assignment.div_(
+            assignment.sum(dim=1, keepdim=True).clamp_min(1.0e-20)
+        )
+        assignment.div_(batch_size)
+    assignment.mul_(batch_size)
+    return assignment
+
+
+def hierarchy_transport_loss(
+    code: torch.Tensor,
+    temperature: float,
+    iterations: int,
+) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, torch.Tensor]:
+    standardized = standardize_parent_scores(code)
+    target = sinkhorn_balanced_targets(
+        standardized, temperature, iterations
+    )
+    log_probabilities = F.log_softmax(standardized / temperature, dim=-1)
+    transport_loss = -(target * log_probabilities).sum(dim=-1).mean()
+    hard_parent = target.argmax(dim=-1)
+    hard_counts = torch.bincount(
+        hard_parent, minlength=code.shape[-1]
+    ).float()
+    nonzero = hard_counts[hard_counts > 0] / len(hard_parent)
+    effective_parents = (-(nonzero * nonzero.log()).sum()).exp()
+    return (
+        transport_loss,
+        effective_parents,
+        hard_counts.max() / len(hard_parent),
+        target.sum(dim=0).std() / target.sum(dim=0).mean(),
+    )
 
 
 class PartitionedV396(nn.Module):
@@ -362,9 +398,10 @@ class PartitionedV396(nn.Module):
             "hierarchy_reconstruction": x.new_zeros((0, x.shape[1])),
             "hierarchy_target": x.new_zeros((0, x.shape[1])),
             "hierarchy_code": x.new_zeros((0, self.n_high)),
-            "hierarchy_information_loss": x.new_zeros(()),
-            "hierarchy_soft_effective_parents": x.new_zeros(()),
-            "hierarchy_soft_max_share": x.new_zeros(()),
+            "hierarchy_transport_loss": x.new_zeros(()),
+            "hierarchy_transport_effective_parents": x.new_zeros(()),
+            "hierarchy_transport_max_share": x.new_zeros(()),
+            "hierarchy_transport_column_cv": x.new_zeros(()),
             "active_atom_count": x.new_zeros(()),
         }
 
@@ -430,11 +467,13 @@ class CascadedConceptSAE(PartitionedV396):
         kept_indices: torch.Tensor,
         reallocated_indices: torch.Tensor,
         active_atom_cap: int,
-        balance_temperature: float,
+        transport_temperature: float,
+        sinkhorn_iterations: int,
     ) -> None:
         super().__init__(state, kept_indices, reallocated_indices)
         self.active_atom_cap = int(active_atom_cap)
-        self.balance_temperature = float(balance_temperature)
+        self.transport_temperature = float(transport_temperature)
+        self.sinkhorn_iterations = int(sinkhorn_iterations)
         self.module_probe_width = min(256, self.n_high)
         self.module_initial = [
             self.high_encoder[: self.module_probe_width].detach().cpu().clone(),
@@ -472,8 +511,12 @@ class CascadedConceptSAE(PartitionedV396):
         hierarchy_reconstruction = (
             F.linear(hierarchy_z, self.high_decoder) + self.high_bias
         )
-        information_loss, effective_parents, max_share = hierarchy_information_loss(
-            hierarchy_z, self.balance_temperature
+        transport_loss, effective_parents, max_share, column_cv = (
+            hierarchy_transport_loss(
+                hierarchy_z,
+                self.transport_temperature,
+                self.sinkhorn_iterations,
+            )
         )
         return {
             "reconstruction": reconstruction,
@@ -483,9 +526,10 @@ class CascadedConceptSAE(PartitionedV396):
             "hierarchy_reconstruction": hierarchy_reconstruction,
             "hierarchy_target": atoms,
             "hierarchy_code": hierarchy_z,
-            "hierarchy_information_loss": information_loss,
-            "hierarchy_soft_effective_parents": effective_parents,
-            "hierarchy_soft_max_share": max_share,
+            "hierarchy_transport_loss": transport_loss,
+            "hierarchy_transport_effective_parents": effective_parents,
+            "hierarchy_transport_max_share": max_share,
+            "hierarchy_transport_column_cv": column_cv,
             "active_atom_count": torch.tensor(
                 float(len(active)), device=x.device
             ),
@@ -529,8 +573,11 @@ class CascadedConceptSAE(PartitionedV396):
         score_std = (
             score_square_sum / self.n_low - score_mean.square()
         ).clamp_min(1.0e-8).sqrt()
-        parents = []
-        strengths = []
+        standardized_scores = torch.empty(
+            (self.n_low, self.n_high),
+            device=self.low_decoder.device,
+            dtype=torch.float16,
+        )
         for start in range(0, self.n_low, chunk_size):
             end = min(self.n_low, start + chunk_size)
             atoms = self.low_decoder[:, start:end].T
@@ -545,11 +592,19 @@ class CascadedConceptSAE(PartitionedV396):
             standardized = (
                 code - score_mean.float()
             ) / score_std.float().clamp_min(1.0e-4)
-            value, parent = standardized.max(dim=1)
-            parents.append(parent.cpu())
-            strengths.append(value.cpu())
-        parent = torch.cat(parents)
-        strength = torch.cat(strengths)
+            standardized_scores[start:end] = standardized.half()
+        transport = sinkhorn_balanced_targets(
+            standardized_scores,
+            self.transport_temperature,
+            self.sinkhorn_iterations,
+        )
+        strength, parent_device = transport.max(dim=1)
+        transport_column_mass = transport.sum(dim=0)
+        transport_column_cv = (
+            transport_column_mass.std() / transport_column_mass.mean()
+        )
+        parent = parent_device.cpu()
+        strength = strength.cpu()
         counts = torch.bincount(parent, minlength=self.n_high)
         wrong = maximally_deranged_parent_assignment(parent)
         wrong_counts = torch.bincount(wrong, minlength=self.n_high)
@@ -558,6 +613,26 @@ class CascadedConceptSAE(PartitionedV396):
         entropy = -(
             nonzero_probabilities * nonzero_probabilities.log()
         ).sum()
+
+        def partition_coherence(assignment: torch.Tensor) -> torch.Tensor:
+            assignment_device = assignment.to(self.low_decoder.device)
+            atoms = self.low_decoder.T
+            sums = torch.zeros(
+                (self.n_high, atoms.shape[1]),
+                device=atoms.device,
+                dtype=atoms.dtype,
+            )
+            sums.index_add_(0, assignment_device, atoms)
+            assignment_counts = torch.bincount(
+                assignment_device, minlength=self.n_high
+            ).float()
+            valid = assignment_counts > 1
+            numerator = sums.square().sum(dim=1) - assignment_counts
+            denominator = assignment_counts * (assignment_counts - 1)
+            return (numerator[valid] / denominator[valid]).mean()
+
+        learned_coherence = partition_coherence(parent)
+        wrong_coherence = partition_coherence(wrong)
         return {
             "parent": parent,
             "wrong_parent": wrong,
@@ -569,6 +644,12 @@ class CascadedConceptSAE(PartitionedV396):
             "hard_effective_parents": entropy.exp(),
             "hard_max_share": probabilities.max(),
             "wrong_fixed_fraction": (wrong == parent).float().mean(),
+            "transport_column_cv": transport_column_cv.cpu(),
+            "learned_partition_coherence": learned_coherence.cpu(),
+            "wrong_partition_coherence": wrong_coherence.cpu(),
+            "partition_coherence_delta": (
+                learned_coherence - wrong_coherence
+            ).cpu(),
             "parent_score_mean": score_mean.float().cpu(),
             "parent_score_std": score_std.float().cpu(),
         }
@@ -593,6 +674,18 @@ class CascadedConceptSAE(PartitionedV396):
             "cascaded.hard_max_share": hierarchy["hard_max_share"],
             "cascaded.wrong_fixed_fraction": hierarchy[
                 "wrong_fixed_fraction"
+            ],
+            "cascaded.transport_column_cv": hierarchy[
+                "transport_column_cv"
+            ],
+            "cascaded.learned_partition_coherence": hierarchy[
+                "learned_partition_coherence"
+            ],
+            "cascaded.wrong_partition_coherence": hierarchy[
+                "wrong_partition_coherence"
+            ],
+            "cascaded.partition_coherence_delta": hierarchy[
+                "partition_coherence_delta"
             ],
             "cascaded.parent_score_mean": hierarchy["parent_score_mean"],
             "cascaded.parent_score_std": hierarchy["parent_score_std"],
@@ -639,14 +732,14 @@ def train_variant(
         low_l1 = output["low_z"].float().mean()
         hierarchy_reconstruction = reconstruction.new_zeros(())
         hierarchy_l1 = reconstruction.new_zeros(())
-        hierarchy_information = reconstruction.new_zeros(())
+        hierarchy_transport = reconstruction.new_zeros(())
         if output["hierarchy_code"].numel():
             hierarchy_reconstruction = F.mse_loss(
                 output["hierarchy_reconstruction"].float(),
                 output["hierarchy_target"].float(),
             )
             hierarchy_l1 = output["hierarchy_code"].float().mean()
-            hierarchy_information = output["hierarchy_information_loss"]
+            hierarchy_transport = output["hierarchy_transport_loss"]
         anchor = model.regularization(args)
         loss = (
             reconstruction
@@ -655,7 +748,7 @@ def train_variant(
             * (
                 hierarchy_reconstruction
                 + args.hierarchy_l1_coeff * hierarchy_l1
-                + args.balance_weight * hierarchy_information
+                + args.transport_weight * hierarchy_transport
             )
             + anchor
         )
@@ -680,14 +773,17 @@ def train_variant(
                     hierarchy_reconstruction.detach().item()
                 ),
                 "hierarchy_l1": float(hierarchy_l1.detach().item()),
-                "hierarchy_information_loss": float(
-                    hierarchy_information.detach().item()
+                "hierarchy_transport_loss": float(
+                    hierarchy_transport.detach().item()
                 ),
-                "hierarchy_soft_effective_parents": float(
-                    output["hierarchy_soft_effective_parents"].detach().item()
+                "hierarchy_transport_effective_parents": float(
+                    output["hierarchy_transport_effective_parents"].detach().item()
                 ),
-                "hierarchy_soft_max_share": float(
-                    output["hierarchy_soft_max_share"].detach().item()
+                "hierarchy_transport_max_share": float(
+                    output["hierarchy_transport_max_share"].detach().item()
+                ),
+                "hierarchy_transport_column_cv": float(
+                    output["hierarchy_transport_column_cv"].detach().item()
                 ),
                 "anchor": float(anchor.detach().item()),
                 "low_gradient_norm": low_grad,
@@ -700,7 +796,7 @@ def train_variant(
             print(json.dumps(row), flush=True)
             logs.append(row)
         del output, x, reconstruction, low_l1, hierarchy_reconstruction
-        del hierarchy_l1, hierarchy_information, anchor, loss
+        del hierarchy_l1, hierarchy_transport, anchor, loss
     result: dict[str, object] = {
         "label": label,
         "parameter_count": parameter_count(model),
@@ -731,8 +827,9 @@ def main() -> None:
     parser.add_argument("--l1-coeff", type=float, default=1.0e-6)
     parser.add_argument("--hierarchy-weight", type=float, default=1.0)
     parser.add_argument("--hierarchy-l1-coeff", type=float, default=1.0e-6)
-    parser.add_argument("--balance-weight", type=float, default=1.0e-2)
-    parser.add_argument("--balance-temperature", type=float, default=0.1)
+    parser.add_argument("--transport-weight", type=float, default=1.0e-3)
+    parser.add_argument("--transport-temperature", type=float, default=0.1)
+    parser.add_argument("--sinkhorn-iterations", type=int, default=5)
     parser.add_argument("--beta-anchor-coeff", type=float, default=1.0e-3)
     parser.add_argument("--gain-anchor-coeff", type=float, default=1.0e-4)
     parser.add_argument("--grad-clip", type=float, default=1.0)
@@ -761,7 +858,7 @@ def main() -> None:
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
     preregistration = {
-        "experiment": "activity-allocated balanced Cascaded Concept SAE v2",
+        "experiment": "Sinkhorn-transport Cascaded Concept SAE v3",
         "status": "registered-before-training-and-saebench-evaluation",
         "git": git_metadata(),
         "architecture_source": "Cascaded Sparse Autoencoders, arXiv:2606.16193v1",
@@ -773,10 +870,13 @@ def main() -> None:
             "label-free OWT stream map one-for-one to the Level-2 encoder, "
             "decoder, and shared center"
         ),
-        "v1_failure_evidence": {
+        "prior_failure_evidence": {
             "tail_split_removed_high_activity_features": True,
-            "hard_effective_parents": 5.98,
-            "largest_parent_share": 0.5125,
+            "v1_hard_effective_parents": 5.98,
+            "v1_largest_parent_share": 0.5125,
+            "v2_hard_effective_parents": 42.91,
+            "v2_largest_parent_share": 0.2078,
+            "v2_soft_hard_assignment_mismatch": True,
         },
         "steps": args.steps,
         "batch_tokens": args.batch_tokens,
@@ -786,13 +886,14 @@ def main() -> None:
         ),
         "same_stream_seed": args.seed,
         "active_atom_cap": args.active_atom_cap,
-        "balance_objective": (
-            "per-parent decoder-atom score standardization followed by "
-            "normalized conditional entropy minus marginal entropy over "
-            "Level-2 soft assignments; raw codes retain the reconstruction path"
+        "transport_objective": (
+            "per-parent decoder-atom score standardization followed by a "
+            "stop-gradient Sinkhorn-balanced assignment target and cross-entropy; "
+            "the same global transport and argmax rounding define exported parents"
         ),
-        "balance_weight": args.balance_weight,
-        "balance_temperature": args.balance_temperature,
+        "transport_weight": args.transport_weight,
+        "transport_temperature": args.transport_temperature,
+        "sinkhorn_iterations": args.sinkhorn_iterations,
         "level2_initialization": (
             "encoder, decoder, center, beta, and gain inherit the corresponding "
             "parameters from the reallocated low-activity V396 slots"
@@ -803,8 +904,11 @@ def main() -> None:
             "fancyzhx/ag_news",
         ],
         "gate": {
-            "hard_effective_parents_before_eval": ">= 64",
-            "largest_hard_parent_share_before_eval": "<= 0.20",
+            "active_hard_parents_before_eval": ">= 2048",
+            "hard_effective_parents_before_eval": ">= 256",
+            "largest_hard_parent_share_before_eval": "<= 0.10",
+            "learned_minus_wrong_atom_coherence": ">= 0.05",
+            "transport_column_cv": "<= 0.05",
             "candidate_minus_v396_finetune": ">= 0.005",
             "candidate_minus_best_hierarchy_control": ">= 0.002",
             "minimum_dataset_delta_vs_v396": ">= -0.01",
@@ -813,7 +917,8 @@ def main() -> None:
         "controls": [
             "same-parameter activity-partitioned V396 finetune",
             "same-checkpoint Level-1-only readout",
-            "maximally changed child memberships with every parent count fixed",
+            "maximally changed child memberships with every learned parent "
+            "count fixed",
         ],
         "uses_saebench_labels_for_training": False,
         "uses_class_names_for_training": False,
@@ -853,13 +958,14 @@ def main() -> None:
             PartitionedV396(state, kept_indices, reallocated_indices),
         ),
         (
-            "cascaded_concept_v2",
+            "cascaded_concept_v3",
             CascadedConceptSAE(
                 state,
                 kept_indices,
                 reallocated_indices,
                 args.active_atom_cap,
-                args.balance_temperature,
+                args.transport_temperature,
+                args.sinkhorn_iterations,
             ),
         ),
     ):
@@ -900,12 +1006,12 @@ def main() -> None:
         torch.cuda.empty_cache()
 
     base_count = int(results["v396_finetune"]["parameter_count"])
-    candidate_count = int(results["cascaded_concept_v2"]["parameter_count"])
+    candidate_count = int(results["cascaded_concept_v3"]["parameter_count"])
     if base_count != candidate_count:
         raise RuntimeError(
             f"Parameter mismatch: control={base_count}, candidate={candidate_count}"
         )
-    if float(results["cascaded_concept_v2"]["final_high_gradient_norm"]) <= 0:
+    if float(results["cascaded_concept_v3"]["final_high_gradient_norm"]) <= 0:
         raise RuntimeError("Cascaded module received no gradient")
     targets_path = args.output_dir / "targets-cascaded-concept.json"
     targets_path.write_text(json.dumps(targets, indent=2) + "\n", encoding="utf-8")

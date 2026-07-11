@@ -6,7 +6,7 @@ import torch.nn.functional as F
 from train_cascaded_concept_sae import (
     CascadedConceptSAE,
     PartitionedV396,
-    hierarchy_information_loss,
+    hierarchy_transport_loss,
     maximally_deranged_parent_assignment,
     parameter_count,
     rank_low_activity_slots,
@@ -37,7 +37,12 @@ def test_exact_parameter_mapping() -> None:
     reallocated = torch.tensor([1, 3, 7, 8])
     control = PartitionedV396(state, kept, reallocated)
     candidate = CascadedConceptSAE(
-        state, kept, reallocated, active_atom_cap=6, balance_temperature=0.1
+        state,
+        kept,
+        reallocated,
+        active_atom_cap=6,
+        transport_temperature=0.1,
+        sinkhorn_iterations=5,
     )
     assert parameter_count(control) == parameter_count(candidate)
     assert parameter_count(control) == sum(
@@ -71,7 +76,12 @@ def test_level2_loss_updates_both_levels() -> None:
     kept = torch.tensor([0, 2, 4, 5, 6, 9])
     reallocated = torch.tensor([1, 3, 7, 8])
     candidate = CascadedConceptSAE(
-        state, kept, reallocated, active_atom_cap=6, balance_temperature=0.1
+        state,
+        kept,
+        reallocated,
+        active_atom_cap=6,
+        transport_temperature=0.1,
+        sinkhorn_iterations=5,
     )
     x = torch.randn(5, 4)
     output = candidate(x)
@@ -98,13 +108,19 @@ def test_parent_derangement_is_maximal_and_count_preserving() -> None:
     )
 
 
-def test_information_loss_prefers_balanced_confident_assignments() -> None:
+def test_transport_loss_prefers_balanced_confident_assignments() -> None:
     balanced = torch.eye(4) * 20
     collapsed = torch.zeros(4, 4)
     collapsed[:, 0] = 20
-    balanced_loss, _, _ = hierarchy_information_loss(balanced, 0.1)
-    collapsed_loss, _, _ = hierarchy_information_loss(collapsed, 0.1)
+    balanced_loss, _, _, balanced_cv = hierarchy_transport_loss(
+        balanced, 0.1, 5
+    )
+    collapsed_loss, _, _, collapsed_cv = hierarchy_transport_loss(
+        collapsed, 0.1, 5
+    )
     assert balanced_loss < collapsed_loss - 0.9
+    assert balanced_cv < 1.0e-5
+    assert collapsed_cv < 1.0e-5
 
 
 def test_low_activity_slot_ranking_is_deterministic() -> None:
