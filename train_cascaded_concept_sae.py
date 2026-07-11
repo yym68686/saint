@@ -460,11 +460,13 @@ class CascadedConceptSAE(PartitionedV396):
         active_atom_cap: int,
         transport_temperature: float,
         sinkhorn_iterations: int,
+        export_sinkhorn_iterations: int,
     ) -> None:
         super().__init__(state, kept_indices, reallocated_indices)
         self.active_atom_cap = int(active_atom_cap)
         self.transport_temperature = float(transport_temperature)
         self.sinkhorn_iterations = int(sinkhorn_iterations)
+        self.export_sinkhorn_iterations = int(export_sinkhorn_iterations)
         self.module_probe_width = min(256, self.n_high)
         self.module_initial = [
             self.high_encoder[: self.module_probe_width].detach().cpu().clone(),
@@ -587,7 +589,7 @@ class CascadedConceptSAE(PartitionedV396):
         transport = sinkhorn_balanced_targets(
             standardized_scores,
             self.transport_temperature,
-            self.sinkhorn_iterations,
+            self.export_sinkhorn_iterations,
         )
         strength, parent_device = transport.max(dim=1)
         transport_column_mass = transport.sum(dim=0)
@@ -821,6 +823,7 @@ def main() -> None:
     parser.add_argument("--transport-weight", type=float, default=1.0e-3)
     parser.add_argument("--transport-temperature", type=float, default=0.1)
     parser.add_argument("--sinkhorn-iterations", type=int, default=100)
+    parser.add_argument("--export-sinkhorn-iterations", type=int, default=1000)
     parser.add_argument("--beta-anchor-coeff", type=float, default=1.0e-3)
     parser.add_argument("--gain-anchor-coeff", type=float, default=1.0e-4)
     parser.add_argument("--grad-clip", type=float, default=1.0)
@@ -885,6 +888,7 @@ def main() -> None:
         "transport_weight": args.transport_weight,
         "transport_temperature": args.transport_temperature,
         "sinkhorn_iterations": args.sinkhorn_iterations,
+        "export_sinkhorn_iterations": args.export_sinkhorn_iterations,
         "level2_initialization": (
             "encoder, decoder, center, beta, and gain inherit the corresponding "
             "parameters from the reallocated low-activity V396 slots"
@@ -957,6 +961,7 @@ def main() -> None:
                 args.active_atom_cap,
                 args.transport_temperature,
                 args.sinkhorn_iterations,
+                args.export_sinkhorn_iterations,
             ),
         ),
     ):

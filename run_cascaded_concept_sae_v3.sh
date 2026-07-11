@@ -51,6 +51,7 @@ PY
   --transport-weight 1e-3 \
   --transport-temperature 0.1 \
   --sinkhorn-iterations 100 \
+  --export-sinkhorn-iterations 1000 \
   --beta-anchor-coeff 1e-3 \
   --gain-anchor-coeff 1e-4 \
   --log-every 50 \

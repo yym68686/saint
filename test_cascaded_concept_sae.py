@@ -43,6 +43,7 @@ def test_exact_parameter_mapping() -> None:
         active_atom_cap=6,
         transport_temperature=0.1,
         sinkhorn_iterations=5,
+        export_sinkhorn_iterations=5,
     )
     assert parameter_count(control) == parameter_count(candidate)
     assert parameter_count(control) == sum(
@@ -82,6 +83,7 @@ def test_level2_loss_updates_both_levels() -> None:
         active_atom_cap=6,
         transport_temperature=0.1,
         sinkhorn_iterations=5,
+        export_sinkhorn_iterations=5,
     )
     x = torch.randn(5, 4)
     output = candidate(x)
