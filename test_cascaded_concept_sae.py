@@ -6,7 +6,7 @@ import torch.nn.functional as F
 from train_cascaded_concept_sae import (
     CascadedConceptSAE,
     PartitionedV396,
-    deranged_parent_assignment,
+    permuted_parent_assignment,
     parameter_count,
 )
 
@@ -78,11 +78,11 @@ def test_level2_loss_updates_both_levels() -> None:
     assert candidate.low_decoder.grad.norm() > 0
 
 
-def test_parent_derangement_preserves_cluster_sizes() -> None:
-    parent = torch.tensor([0, 0, 0, 1, 1, 2, 2, 3])
-    wrong = deranged_parent_assignment(parent)
+def test_parent_permutation_preserves_cluster_size_multiset() -> None:
+    parent = torch.tensor([0, 0, 0, 0, 0, 1, 1, 2])
+    wrong = permuted_parent_assignment(parent)
     assert not torch.any(parent == wrong)
     assert torch.equal(
-        torch.bincount(parent),
-        torch.bincount(wrong),
+        torch.sort(torch.bincount(parent)[torch.unique(parent)]).values,
+        torch.sort(torch.bincount(wrong)[torch.unique(wrong)]).values,
     )
