@@ -270,11 +270,19 @@ def strongest_group_rms(
     labels: torch.Tensor,
 ) -> torch.Tensor:
     labels = labels.to(token_features.device)
-    profiles = []
-    for group_id in torch.unique(labels, sorted=True):
-        selected = token_features[labels == group_id]
-        profiles.append(torch.sqrt(selected.square().mean(dim=0) + 1.0e-8))
-    return torch.stack(profiles, dim=0).max(dim=0).values
+    group_count = int(labels.max().item()) + 1
+    sums = torch.zeros(
+        (group_count, token_features.shape[1]),
+        device=token_features.device,
+        dtype=token_features.dtype,
+    )
+    sums.index_add_(0, labels, token_features.square())
+    counts = torch.bincount(labels, minlength=group_count).to(
+        device=token_features.device,
+        dtype=token_features.dtype,
+    )
+    profiles = torch.sqrt(sums / counts[:, None].clamp_min(1.0) + 1.0e-8)
+    return profiles.max(dim=0).values
 
 
 def compute_group_variants(
