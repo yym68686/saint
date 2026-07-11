@@ -318,7 +318,6 @@ class CrossLayerSharedReLUSAE(nn.Module):
             "encoder.weight": effective_encoder,
             "encoder.bias": self.full_bias().detach().cpu(),
             "decoder.weight": self.decoder_weight.detach().cpu(),
-            "crosslayer.shared_encoder.weight": self.encoder_weight.detach().cpu(),
             "crosslayer.encoder_bias_core": self.encoder_bias_core.detach().cpu(),
             "crosslayer.layer_group_log_scale": self.layer_group_log_scale.detach().cpu(),
             "crosslayer.layers": torch.tensor(self.layers, dtype=torch.int64),
