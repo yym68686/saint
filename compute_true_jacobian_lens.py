@@ -90,8 +90,8 @@ def main() -> None:
     params = ModelArgs(
         **json.loads((args.model_dir / "params.json").read_text(encoding="utf-8"))
     )
-    if args.target_layer >= params.n_layers - 1:
-        raise ValueError("Target must omit the final transformer block")
+    if args.target_layer >= params.n_layers:
+        raise ValueError("Target must be a valid transformer block index")
     dtype = {
         "bfloat16": torch.bfloat16,
         "float16": torch.float16,
@@ -253,10 +253,14 @@ def main() -> None:
             "target_residual)/d(source_activation)"
         ),
         "source_representation": "attention-normalized residual stream at layer input",
-        "target_representation": "residual stream after penultimate transformer block",
+        "target_representation": (
+            "final-layer residual stream"
+            if args.target_layer == params.n_layers - 1
+            else "residual stream after intermediate transformer block"
+        ),
         "source_layer": args.source_layer,
         "target_layer": args.target_layer,
-        "final_transformer_block_omitted": True,
+        "final_transformer_block_omitted": args.target_layer < params.n_layers - 1,
         "attention_pattern_gradients": "enabled",
         "sequence_length": args.sequence_length,
         "eligible_prompt_count": eligible_count,

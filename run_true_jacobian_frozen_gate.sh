@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-CODE="${CODE:-/root/saint-true-jacobian-workspace-v1}"
+CODE="${CODE:-/root/saint-true-jacobian-final-v2}"
 PY="${PY:-/root/.cache/pypoetry/virtualenvs/llama3-interpretability-sae-d40co3fS-py3.12/bin/python}"
 MODEL_DIR="${MODEL_DIR:-/root/saint/llama_3.2-3B_model/original}"
 EVAL_SCRIPT="${EVAL_SCRIPT:-/root/autodl-tmp/saebench_sparse_probing_all_architectures.py}"
-ROOT="${ROOT:-/autodl-fs/data/true_jacobian_workspace_v1_20260710}"
+ROOT="${ROOT:-/autodl-fs/data/true_jacobian_final_v2_20260711}"
 JACOBIAN_DIR="$ROOT/jacobian_n10"
 RELU_CHECKPOINT="${RELU_CHECKPOINT:-/autodl-fs/data/structured_dual_granularity_v1_20260710/screen_seed42/trained_sae-structured-relu-base.pt}"
 
@@ -17,7 +17,7 @@ import subprocess
 from pathlib import Path
 
 payload = {
-    "experiment": "true Jacobian frozen Initial3 signal gate",
+    "experiment": "final-residual true Jacobian frozen Initial3 signal gate v2",
     "status": "registered-before-frozen-evaluation",
     "code_commit": subprocess.check_output(
         ["git", "-C", "$CODE", "rev-parse", "HEAD"], text=True
@@ -125,7 +125,7 @@ report["pass"] = all([
     report["minimum_dataset_delta_at_least_minus_0p01"],
     report["beats_random_orthogonal"],
 ])
-report["decision"] = "allow-jacobian-sae-v1-training" if report["pass"] else "stop-before-training"
+report["decision"] = "allow-jacobian-sae-v2-training" if report["pass"] else "stop-before-training"
 Path("$ROOT/frozen-initial3-gate.json").write_text(
     json.dumps(report, indent=2) + "\n", encoding="utf-8"
 )

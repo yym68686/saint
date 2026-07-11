@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-CODE="${CODE:-/root/saint-true-jacobian-workspace-v1}"
+CODE="${CODE:-/root/saint-true-jacobian-final-v2}"
 PY="${PY:-/root/.cache/pypoetry/virtualenvs/llama3-interpretability-sae-d40co3fS-py3.12/bin/python}"
 MODEL_DIR="${MODEL_DIR:-/root/saint/llama_3.2-3B_model/original}"
 CACHE_DIR="${CACHE_DIR:-/autodl-fs/data/structured_activation_cache_owt50k_l20-l23_v1}"
-ROOT="${ROOT:-/autodl-fs/data/true_jacobian_workspace_v1_20260710}"
+ROOT="${ROOT:-/autodl-fs/data/true_jacobian_final_v2_20260711}"
 JACOBIAN_DIR="$ROOT/jacobian_n10"
 
 export PYTHONPATH="${CODE}:${PYTHONPATH:-}"
@@ -17,7 +17,7 @@ import subprocess
 from pathlib import Path
 
 payload = {
-    "experiment": "true averaged downstream Jacobian workspace signal gate",
+    "experiment": "final-residual averaged Jacobian workspace signal gate v2",
     "status": "registered-before-full-jacobian-and-evaluation",
     "code_branch": subprocess.check_output(
         ["git", "-C", "$CODE", "branch", "--show-current"], text=True
@@ -26,11 +26,15 @@ payload = {
         ["git", "-C", "$CODE", "rev-parse", "HEAD"], text=True
     ).strip(),
     "method_source": "https://transformer-circuits.pub/2026/workspace/index.html",
+    "reason_for_v2": (
+        "v1 stopped at transformer block 26; the cited method maps to the "
+        "final-layer residual stream, which is block 27 in this 28-layer model"
+    ),
     "method": {
         "source_layer": 22,
         "source_representation": "attention-normalized residual stream at layer input",
-        "target_layer": 26,
-        "target_representation": "residual stream after penultimate transformer block",
+        "target_layer": 27,
+        "target_representation": "final-layer residual stream before final norm",
         "sequence_length": 128,
         "prompt_count": 10,
         "prompt_seed": 42,
@@ -40,6 +44,11 @@ payload = {
         "prompt_aggregation": "elementwise mean",
         "attention_pattern_gradients": "enabled",
         "row_batch_size": 8,
+        "paper_target_match": True,
+        "source_coordinate_adaptation": (
+            "the source intervention is the attention-normalized L22 cache "
+            "coordinate used by all compared SAEs"
+        ),
     },
     "data": {
         "cache_dir": "$CACHE_DIR",
@@ -79,7 +88,7 @@ if [[ ! -f "$JACOBIAN_DIR/average-jacobian-metadata.json" ]]; then
     --cache-dir "$CACHE_DIR" \
     --output-dir "$JACOBIAN_DIR" \
     --source-layer 22 \
-    --target-layer 26 \
+    --target-layer 27 \
     --sequence-length 128 \
     --prompt-count 10 \
     --prompt-seed 42 \

@@ -208,8 +208,8 @@ def main() -> None:
     params = ModelArgs(
         **json.loads((args.model_dir / "params.json").read_text(encoding="utf-8"))
     )
-    if args.target_layer >= params.n_layers - 1:
-        raise ValueError("target layer must omit the final transformer block")
+    if args.target_layer >= params.n_layers:
+        raise ValueError("target layer must be a valid transformer block index")
     dtype = {
         "bfloat16": torch.bfloat16,
         "float16": torch.float16,
@@ -318,7 +318,7 @@ def main() -> None:
         "target_representation": "residual stream after target transformer block",
         "source_layer": args.source_layer,
         "target_layer": args.target_layer,
-        "final_transformer_block_omitted": True,
+        "final_transformer_block_omitted": args.target_layer < params.n_layers - 1,
         "sample_id": sample_id,
         "prompt_ordinal": args.prompt_ordinal,
         "sequence_length": args.sequence_length,
