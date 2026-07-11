@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-CODE="${CODE:-/autodl-fs/data/worktrees/saint-structured-sample-lexical-centroid-v1}"
+CODE="${CODE:-/autodl-fs/data/worktrees/saint-structured-sample-idf-centroid-v2}"
 PY="${PY:-/root/.cache/pypoetry/virtualenvs/llama3-interpretability-sae-d40co3fS-py3.12/bin/python}"
 MODEL_DIR="${MODEL_DIR:-/root/saint/llama_3.2-3B_model/original}"
 MODEL_WEIGHTS="${MODEL_WEIGHTS:-$MODEL_DIR/consolidated.00.pth}"
 CACHE_DIR="${CACHE_DIR:-/autodl-fs/data/structured_activation_cache_owt50k_l20-l23_v1}"
 CHECKPOINT="${CHECKPOINT:-/autodl-fs/data/structured_dual_granularity_v1_20260710/screen_seed42/trained_sae-structured-relu-base.pt}"
-ROOT="${ROOT:-/autodl-fs/data/structured_sample_lexical_centroid_v1_gate_20260711}"
+ROOT="${ROOT:-/autodl-fs/data/structured_sample_idf_centroid_v2_gate_20260711}"
 SAMPLE_COUNT="${SAMPLE_COUNT:-8192}"
 TRAIN_SIZE="${TRAIN_SIZE:-512}"
 TEST_SIZE="${TEST_SIZE:-128}"
@@ -30,7 +30,7 @@ model_weights = Path("$MODEL_WEIGHTS")
 branch = subprocess.check_output(
     ["git", "-C", str(code), "branch", "--show-current"], text=True
 ).strip()
-if branch != "scpg-structured-sample-lexical-centroid-v1":
+if branch != "scpg-structured-sample-idf-centroid-v2":
     raise SystemExit(f"Unexpected branch: {branch}")
 if cache.stat().st_mode & (stat.S_IWUSR | stat.S_IWGRP | stat.S_IWOTH):
     raise SystemExit("Structured cache is writable")
@@ -65,7 +65,8 @@ if writable_cache_files:
     raise SystemExit(f"Structured cache contains writable files: {writable_cache_files}")
 
 payload = {
-    "experiment": "structured true-sample lexical-centroid frozen gate",
+    "experiment": "structured true-sample IDF lexical-centroid frozen gate",
+    "diagnostic_family_version": "2/3",
     "registered_before_diagnostic": True,
     "code_branch": branch,
     "code_commit": subprocess.check_output(
@@ -88,15 +89,28 @@ payload = {
         "sample_batch_size": 32,
         "token_batch_size": 128,
         "sample_boundaries_from_manifest": True,
-        "target": "L2-normalized mean of per-token L2-normalized frozen output.weight rows within the same real OWT sample",
-        "score": "diagonally whitened multivariate correlation norm between sample-mean SAE activation and lexical centroid",
+        "document_frequency_corpus": "all 50000 unlabeled OWT samples in the immutable structured cache",
+        "smooth_idf": "log((N+1)/(df+1))+1",
+        "target": "L2-normalized smooth-IDF-weighted mean of per-token L2-normalized frozen output.weight rows within the same real OWT sample",
+        "score": "diagonally whitened multivariate correlation norm between sample-mean SAE activation and the IDF lexical centroid",
         "weight": "rank map to [0.5,1.5] with mean 1.0",
         "target_variant_sweep": False,
         "evaluation_uses_only_standard_layer22_features": True,
     },
+    "pre_gate_unlabeled_evidence": {
+        "uses_saebench_data": False,
+        "owt_document_count": 50000,
+        "tokens_in_at_least_10pct_documents_token_mass": 0.2716706,
+        "tokens_in_at_least_10pct_documents_idf_weighted_mass": 0.0987184,
+        "split_view_sample_count": 4096,
+        "uniform_same_minus_wrong_cosine": 0.0464753,
+        "idf_same_minus_wrong_cosine": 0.0818911,
+    },
     "controls": {
         "raw_l22_relu": True,
-        "feature_permuted_same_weight_distribution": True,
+        "uniform_lexical_centroid": True,
+        "token_idf_cyclic_permutation_same_global_weight_distribution": True,
+        "feature_permuted_same_rank_weight_distribution": True,
         "complete_sample_target_cyclic_shift": True,
         "wrong_pairs_have_zero_fixed_samples": True,
         "wrong_pairs_have_zero_same_sample_pairs": True,
@@ -116,7 +130,9 @@ payload = {
     "gate": {
         "candidate_minus_reference_mean_acc": ">= 0.005",
         "minimum_per_dataset_delta": ">= -0.01",
-        "candidate_minus_permuted": ">= 0.002",
+        "candidate_minus_uniform_centroid": ">= 0.002",
+        "candidate_minus_token_idf_permuted": ">= 0.002",
+        "candidate_minus_feature_permuted": ">= 0.002",
         "candidate_minus_wrong_alignment": ">= 0.002",
         "training_prohibited_before_pass": True,
     },
@@ -125,6 +141,7 @@ payload = {
         "uses_class_names_to_construct_signal": False,
         "uses_eval_split_to_construct_signal": False,
         "uses_mean_diff_to_construct_signal": False,
+        "uses_test_feedback_to_choose_idf_formula": False,
         "uses_only_owt_sample_boundaries_and_token_ids": True,
         "modifies_checkpoint": False,
         "modifies_cache": False,
@@ -141,7 +158,7 @@ else:
 print(json.dumps(payload, indent=2))
 PY
 
-"$PY" "$CODE/diagnose_structured_sample_lexical_centroid.py" \
+"$PY" "$CODE/diagnose_structured_sample_idf_centroid.py" \
   --checkpoint "$CHECKPOINT" \
   --cache-dir "$CACHE_DIR" \
   --model-weights "$MODEL_WEIGHTS" \
@@ -173,7 +190,7 @@ PY
 import json
 from pathlib import Path
 payload = json.loads(
-    Path("$ROOT/sample-lexical-centroid-gate.json").read_text()
+    Path("$ROOT/sample-idf-centroid-gate.json").read_text()
 )
 report = {
     "gate_pass": payload["gate"]["pass"],

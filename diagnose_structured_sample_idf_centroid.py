@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Gate sample-level lexical-centroid predictability before SAE training."""
+"""Gate IDF-weighted sample lexical predictability before SAE training."""
 
 from __future__ import annotations
 
@@ -27,7 +27,7 @@ INITIAL3 = [
 
 
 def load_eval_module(path: Path) -> Any:
-    spec = importlib.util.spec_from_file_location("lexical_centroid_eval", path)
+    spec = importlib.util.spec_from_file_location("idf_centroid_eval", path)
     if spec is None or spec.loader is None:
         raise RuntimeError(f"Cannot import evaluator from {path}")
     module = importlib.util.module_from_spec(spec)
@@ -253,12 +253,104 @@ def load_output_weight(model_weights: Path) -> torch.Tensor:
     return output_weight
 
 
+def estimate_document_frequency(
+    cache_dir: Path,
+    manifest: dict[str, Any],
+    vocab_size: int,
+) -> tuple[torch.Tensor, torch.Tensor, dict[str, Any]]:
+    document_frequency = torch.zeros(vocab_size, dtype=torch.int64)
+    token_frequency = torch.zeros(vocab_size, dtype=torch.int64)
+    document_count = 0
+    token_count = 0
+    for shard in manifest["shards"]:
+        meta = torch.load(
+            cache_dir / shard["meta"]["path"],
+            map_location="cpu",
+            weights_only=True,
+        )
+        for token_ids, length_tensor in zip(meta["token_ids"], meta["lengths"]):
+            length = int(length_tensor.item())
+            ids = token_ids[:length].to(torch.int64)
+            if int(ids.min().item()) < 0 or int(ids.max().item()) >= vocab_size:
+                raise ValueError("Token ID is outside the output vocabulary")
+            token_frequency += torch.bincount(ids, minlength=vocab_size)
+            document_frequency[ids.unique()] += 1
+            document_count += 1
+            token_count += length
+    expected_documents = int(manifest["summary"]["sample_count"])
+    expected_tokens = int(manifest["summary"]["token_count"])
+    if document_count != expected_documents or token_count != expected_tokens:
+        raise RuntimeError(
+            "Document-frequency pass disagrees with the cache manifest: "
+            f"documents={document_count}/{expected_documents}, "
+            f"tokens={token_count}/{expected_tokens}"
+        )
+    smooth_idf = (
+        torch.log(
+            torch.tensor(float(document_count + 1))
+            / (document_frequency.float() + 1.0)
+        )
+        + 1.0
+    )
+    observed = document_frequency > 0
+    document_fraction = document_frequency.float() / document_count
+    weighted_mass = token_frequency.float() * smooth_idf
+    bins = []
+    edges = [0.0, 1.0e-4, 1.0e-3, 1.0e-2, 0.05, 0.1, 0.5, 1.01]
+    for lower, upper in zip(edges[:-1], edges[1:]):
+        mask = observed & (document_fraction >= lower) & (document_fraction < upper)
+        bins.append(
+            {
+                "document_fraction_lower": lower,
+                "document_fraction_upper": upper,
+                "token_type_count": int(mask.sum().item()),
+                "token_mass_fraction": float(
+                    token_frequency[mask].sum().item() / token_count
+                ),
+                "idf_weighted_mass_fraction": float(
+                    weighted_mass[mask].sum().item()
+                    / weighted_mass.sum().item()
+                ),
+            }
+        )
+    report = {
+        "document_count": document_count,
+        "token_count": token_count,
+        "observed_token_types": int(observed.sum().item()),
+        "smooth_idf_formula": "log((N+1)/(df+1))+1",
+        "smooth_idf_observed": distribution(smooth_idf[observed]),
+        "document_frequency_bins": bins,
+    }
+    return document_frequency, smooth_idf, report
+
+
+def permute_observed_idf(
+    smooth_idf: torch.Tensor,
+    document_frequency: torch.Tensor,
+    seed: int,
+) -> tuple[torch.Tensor, int, int]:
+    observed = torch.nonzero(document_frequency > 0, as_tuple=False).flatten()
+    if observed.numel() < 2:
+        raise ValueError("IDF permutation requires at least two observed tokens")
+    generator = torch.Generator(device="cpu").manual_seed(seed)
+    shift = int(
+        torch.randint(1, int(observed.numel()), (1,), generator=generator).item()
+    )
+    source = torch.roll(observed, shifts=shift)
+    permuted = smooth_idf.clone()
+    permuted[observed] = smooth_idf[source]
+    fixed_token_ids = int((observed == source).sum().item())
+    return permuted, shift, fixed_token_ids
+
+
 def collect_sample_summaries(
     module: Any,
     cache_dir: Path,
     manifest: dict[str, Any],
     state: dict[str, torch.Tensor],
     output_weight: torch.Tensor,
+    smooth_idf: torch.Tensor,
+    permuted_idf: torch.Tensor,
     sample_count: int,
     min_sample_tokens: int,
     sample_batch_size: int,
@@ -266,12 +358,25 @@ def collect_sample_summaries(
     device: torch.device,
     dtype: torch.dtype,
     eps: float,
-) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor, dict[str, Any]]:
+) -> tuple[
+    torch.Tensor,
+    dict[str, torch.Tensor],
+    torch.Tensor,
+    dict[str, Any],
+]:
     feature_count = int(state["encoder.weight"].shape[0])
     d_model = int(state["encoder.weight"].shape[1])
     vocab_size = int(output_weight.shape[0])
     feature_means = torch.empty((sample_count, feature_count), dtype=torch.float32)
-    lexical_centroids = torch.empty((sample_count, d_model), dtype=torch.float32)
+    centroids = {
+        "uniform_centroid": torch.empty(
+            (sample_count, d_model), dtype=torch.float32
+        ),
+        "idf_centroid": torch.empty((sample_count, d_model), dtype=torch.float32),
+        "token_idf_permuted": torch.empty(
+            (sample_count, d_model), dtype=torch.float32
+        ),
+    }
     collected_sample_ids = torch.empty(sample_count, dtype=torch.int64)
     token_histogram = torch.zeros(vocab_size, dtype=torch.int64)
     sample_lengths: list[int] = []
@@ -343,10 +448,17 @@ def collect_sample_summaries(
                     device=device,
                     dtype=torch.float32,
                 )
+                idf_target_sums = torch.zeros_like(target_sums)
+                permuted_target_sums = torch.zeros_like(target_sums)
+                idf_denominators = torch.zeros(
+                    selected.numel(), device=device, dtype=torch.float32
+                )
+                permuted_denominators = torch.zeros_like(idf_denominators)
                 for token_start in range(0, flat_tokens.numel(), token_batch_size):
                     token_end = min(
                         int(flat_tokens.numel()), token_start + token_batch_size
                     )
+                    token_slice = flat_tokens[token_start:token_end].to(torch.int64)
                     x = module.normalize_activation(
                         flat_activations[token_start:token_end].to(
                             device=device,
@@ -363,30 +475,69 @@ def collect_sample_summaries(
                         )
                     ).float()
                     target = F.normalize(
-                        output_weight[flat_tokens[token_start:token_end]].float(),
+                        output_weight[token_slice].float(),
                         dim=1,
                         eps=1.0e-12,
                     ).to(device=device, non_blocking=True)
+                    idf_weight = smooth_idf[token_slice].to(
+                        device=device, non_blocking=True
+                    )
+                    permuted_weight = permuted_idf[token_slice].to(
+                        device=device, non_blocking=True
+                    )
                     owner = flat_owners[token_start:token_end].to(
                         device=device,
                         non_blocking=True,
                     )
                     feature_sums.index_add_(0, owner, z)
                     target_sums.index_add_(0, owner, target)
-                    del x, z, target, owner
+                    idf_target_sums.index_add_(
+                        0, owner, target * idf_weight.unsqueeze(1)
+                    )
+                    permuted_target_sums.index_add_(
+                        0, owner, target * permuted_weight.unsqueeze(1)
+                    )
+                    idf_denominators.index_add_(0, owner, idf_weight)
+                    permuted_denominators.index_add_(
+                        0, owner, permuted_weight
+                    )
+                    del (
+                        x,
+                        z,
+                        target,
+                        idf_weight,
+                        permuted_weight,
+                        token_slice,
+                        owner,
+                    )
                 denominators = selected_lengths.to(
                     device=device,
                     dtype=torch.float32,
                 ).unsqueeze(1)
                 batch_feature_means = feature_sums / denominators
-                batch_centroids = F.normalize(
-                    target_sums / denominators,
-                    dim=1,
-                    eps=1.0e-12,
-                )
+                batch_centroids = {
+                    "uniform_centroid": F.normalize(
+                        target_sums / denominators,
+                        dim=1,
+                        eps=1.0e-12,
+                    ),
+                    "idf_centroid": F.normalize(
+                        idf_target_sums
+                        / idf_denominators.clamp_min(1.0e-12).unsqueeze(1),
+                        dim=1,
+                        eps=1.0e-12,
+                    ),
+                    "token_idf_permuted": F.normalize(
+                        permuted_target_sums
+                        / permuted_denominators.clamp_min(1.0e-12).unsqueeze(1),
+                        dim=1,
+                        eps=1.0e-12,
+                    ),
+                }
                 batch_end = emitted + int(selected.numel())
                 feature_means[emitted:batch_end] = batch_feature_means.cpu()
-                lexical_centroids[emitted:batch_end] = batch_centroids.cpu()
+                for key, values in batch_centroids.items():
+                    centroids[key][emitted:batch_end] = values.cpu()
                 collected_sample_ids[emitted:batch_end] = sample_ids[selected]
                 emitted = batch_end
                 del (
@@ -395,10 +546,14 @@ def collect_sample_summaries(
                     flat_owners,
                     feature_sums,
                     target_sums,
+                    idf_target_sums,
+                    permuted_target_sums,
+                    idf_denominators,
+                    permuted_denominators,
                     denominators,
                     batch_feature_means,
-                    batch_centroids,
                 )
+                del batch_centroids
             del activations, meta
             if emitted >= sample_count:
                 break
@@ -418,10 +573,10 @@ def collect_sample_summaries(
         "token_entropy_nats": token_entropy,
         "token_perplexity": math.exp(token_entropy),
     }
-    return feature_means, lexical_centroids, collected_sample_ids, metadata
+    return feature_means, centroids, collected_sample_ids, metadata
 
 
-def estimate_lexical_centroid_weights(
+def estimate_idf_centroid_weights(
     module: Any,
     checkpoint: Path,
     cache_dir: Path,
@@ -447,13 +602,27 @@ def estimate_lexical_centroid_weights(
     )
     del raw
     output_weight = load_output_weight(model_weights)
-    feature_means, lexical_centroids, sample_ids, sample_report = (
+    document_frequency, smooth_idf, document_frequency_report = (
+        estimate_document_frequency(
+            cache_dir,
+            manifest,
+            int(output_weight.shape[0]),
+        )
+    )
+    permuted_idf, token_idf_shift, token_idf_fixed_count = permute_observed_idf(
+        smooth_idf,
+        document_frequency,
+        permutation_seed + 11,
+    )
+    feature_means, centroids, sample_ids, sample_report = (
         collect_sample_summaries(
             module,
             cache_dir,
             manifest,
             state,
             output_weight,
+            smooth_idf,
+            permuted_idf,
             sample_count,
             min_sample_tokens,
             sample_batch_size,
@@ -468,78 +637,95 @@ def estimate_lexical_centroid_weights(
     )
     feature_count = int(state["encoder.weight"].shape[0])
     d_model = int(state["encoder.weight"].shape[1])
-    sum_target = lexical_centroids.sum(dim=0).to(device)
-    sum_target2 = lexical_centroids.square().sum(dim=0).to(device)
-    var_target = (
-        sum_target2 - sum_target.square() / sample_count
-    ).clamp_min(0)
+    target_names = [
+        "uniform_centroid",
+        "idf_centroid",
+        "token_idf_permuted",
+        "wrong_alignment",
+    ]
+    target_blocks = [
+        centroids["uniform_centroid"],
+        centroids["idf_centroid"],
+        centroids["token_idf_permuted"],
+        centroids["idf_centroid"][wrong_permutation],
+    ]
+    all_targets = torch.cat(target_blocks, dim=1)
+    sum_target = all_targets.sum(dim=0).to(device)
+    sum_target2 = all_targets.square().sum(dim=0).to(device)
+    var_target = (sum_target2 - sum_target.square() / sample_count).clamp_min(0)
     sum_z = torch.zeros(feature_count, device=device, dtype=torch.float32)
     sum_z2 = torch.zeros_like(sum_z)
-    cross_true = torch.zeros(
-        (feature_count, d_model), device=device, dtype=torch.float32
+    cross = torch.zeros(
+        (feature_count, len(target_names) * d_model),
+        device=device,
+        dtype=torch.float32,
     )
-    cross_wrong = torch.zeros_like(cross_true)
     with torch.inference_mode():
         for start in range(0, sample_count, cross_batch_samples):
             end = min(sample_count, start + cross_batch_samples)
             z = feature_means[start:end].to(device=device, non_blocking=True)
-            true_target = lexical_centroids[start:end].to(
+            target = all_targets[start:end].to(
                 device=device, non_blocking=True
             )
-            wrong_target = lexical_centroids[
-                wrong_permutation[start:end]
-            ].to(device=device, non_blocking=True)
             sum_z += z.sum(dim=0)
             sum_z2 += z.square().sum(dim=0)
-            cross_true.addmm_(z.T, true_target)
-            cross_wrong.addmm_(z.T, wrong_target)
-            del z, true_target, wrong_target
+            cross.addmm_(z.T, target)
+            del z, target
     var_z = (sum_z2 - sum_z.square() / sample_count).clamp_min(0)
-    true_score = score_from_cross_statistics(
-        cross_true,
-        sum_z,
-        sum_target,
-        var_z,
-        var_target,
-        sample_count,
-        score_feature_block,
-    )
-    wrong_score = score_from_cross_statistics(
-        cross_wrong,
-        sum_z,
-        sum_target,
-        var_z,
-        var_target,
-        sample_count,
-        score_feature_block,
-    )
-    del cross_true, cross_wrong, state
+    scores = {}
+    target_variances = {}
+    for index, name in enumerate(target_names):
+        start = index * d_model
+        end = start + d_model
+        scores[name] = score_from_cross_statistics(
+            cross[:, start:end],
+            sum_z,
+            sum_target[start:end],
+            var_z,
+            var_target[start:end],
+            sample_count,
+            score_feature_block,
+        )
+        target_variances[name] = distribution(
+            var_target[start:end].cpu() / sample_count
+        )
+    del cross, state
     torch.cuda.empty_cache()
 
-    predictive_weight = rank_weights(true_score, permutation_seed + 1)
-    wrong_weight = rank_weights(wrong_score, permutation_seed + 2)
+    score_weights = {
+        name: rank_weights(score, permutation_seed + 101)
+        for name, score in scores.items()
+    }
     feature_generator = torch.Generator(device="cpu").manual_seed(
-        permutation_seed + 3
+        permutation_seed + 201
     )
     feature_permutation = torch.randperm(
         feature_count, generator=feature_generator
     )
     weights = {
         "raw": torch.ones(feature_count, dtype=torch.float32),
-        "lexical_centroid": predictive_weight,
-        "permuted": predictive_weight[feature_permutation],
-        "wrong_alignment": wrong_weight,
+        "uniform_centroid": score_weights["uniform_centroid"],
+        "idf_centroid": score_weights["idf_centroid"],
+        "token_idf_permuted": score_weights["token_idf_permuted"],
+        "feature_permuted": score_weights["idf_centroid"][feature_permutation],
+        "wrong_alignment": score_weights["wrong_alignment"],
     }
     report = {
         "signal_definition": (
             "sqrt(mean_d corr(mean_t z_s,t,j, "
-            "l2_normalize(mean_t l2_normalize(W_out[token_s,t])))_d^2)"
+            "l2_normalize(sum_t smooth_idf(token_s,t) * "
+            "l2_normalize(W_out[token_s,t])))_d^2)"
         ),
+        "smooth_idf_formula": "log((N+1)/(df+1))+1",
         **sample_report,
+        "document_frequency": document_frequency_report,
         "feature_count": feature_count,
         "d_model": d_model,
         "vocab_size": int(output_weight.shape[0]),
         "permutation_seed": permutation_seed,
+        "token_idf_permutation_seed": permutation_seed + 11,
+        "token_idf_cyclic_shift": token_idf_shift,
+        "token_idf_fixed_token_count": token_idf_fixed_count,
         "wrong_cyclic_shift": wrong_shift,
         "wrong_fixed_pair_count": int(
             (wrong_permutation == torch.arange(sample_count)).sum().item()
@@ -547,21 +733,22 @@ def estimate_lexical_centroid_weights(
         "wrong_same_sample_pair_count": int(
             (sample_ids[wrong_permutation] == sample_ids).sum().item()
         ),
-        "predictive_rank_tie_seed": permutation_seed + 1,
-        "wrong_rank_tie_seed": permutation_seed + 2,
-        "feature_permutation_seed": permutation_seed + 3,
-        "lexical_centroid": distribution(lexical_centroids),
-        "output_coordinate_variance": distribution(
-            var_target.cpu() / sample_count
-        ),
+        "shared_rank_tie_seed": permutation_seed + 101,
+        "feature_permutation_seed": permutation_seed + 201,
+        "centroids": {
+            name: distribution(values) for name, values in centroids.items()
+        },
+        "target_coordinate_variance": target_variances,
         "feature_variance": distribution(var_z.cpu() / sample_count),
-        "predictive_score": distribution(true_score),
-        "wrong_alignment_score": distribution(wrong_score),
-        "predictive_weight": distribution(predictive_weight),
-        "wrong_alignment_weight": distribution(wrong_weight),
-        "score_correlation_true_wrong": float(
-            torch.corrcoef(torch.stack([true_score, wrong_score]))[0, 1].item()
-        ),
+        "scores": {name: distribution(score) for name, score in scores.items()},
+        "weights": {
+            name: distribution(weight)
+            for name, weight in score_weights.items()
+        },
+        "score_correlation_names": target_names,
+        "score_correlation_matrix": torch.corrcoef(
+            torch.stack([scores[name] for name in target_names])
+        ).tolist(),
     }
     return weights, report
 
@@ -614,7 +801,7 @@ def main() -> None:
     manifest_path = args.cache_dir / "manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     started = time.time()
-    weights, lexical_report = estimate_lexical_centroid_weights(
+    weights, idf_report = estimate_idf_centroid_weights(
         module,
         args.checkpoint,
         args.cache_dir,
@@ -631,9 +818,9 @@ def main() -> None:
         dtype,
         1.0e-6,
     )
-    torch.save(weights, args.output_dir / "sample-lexical-centroid-weights.pt")
-    (args.output_dir / "sample-lexical-centroid-statistics.json").write_text(
-        json.dumps(lexical_report, indent=2) + "\n", encoding="utf-8"
+    torch.save(weights, args.output_dir / "sample-idf-centroid-weights.pt")
+    (args.output_dir / "sample-idf-centroid-statistics.json").write_text(
+        json.dumps(idf_report, indent=2) + "\n", encoding="utf-8"
     )
 
     kwargs = {
@@ -695,9 +882,11 @@ def main() -> None:
 
     variants = [
         ("raw", "L22 ReLU reference"),
-        ("lexical_centroid", "true-sample lexical-centroid weighting"),
-        ("permuted", "permuted lexical-centroid-weight control"),
-        ("wrong_alignment", "wrong-sample lexical-centroid control"),
+        ("uniform_centroid", "uniform lexical-centroid control"),
+        ("idf_centroid", "true-sample IDF lexical-centroid weighting"),
+        ("token_idf_permuted", "wrong-token-IDF mapping control"),
+        ("feature_permuted", "feature-permuted IDF-weight control"),
+        ("wrong_alignment", "wrong-sample IDF-centroid control"),
     ]
     rows = []
     for variant_key, label in variants:
@@ -733,32 +922,47 @@ def main() -> None:
     summary = summarize(rows, args.k_values)
     summary_by_key = {row["variant_key"]: row for row in summary}
     rows_by_key = {row["variant_key"]: row for row in rows}
-    candidate = summary_by_key["lexical_centroid"]
+    candidate = summary_by_key["idf_centroid"]
     reference = summary_by_key["raw"]
-    permuted = summary_by_key["permuted"]
+    uniform = summary_by_key["uniform_centroid"]
+    token_permuted = summary_by_key["token_idf_permuted"]
+    feature_permuted = summary_by_key["feature_permuted"]
     wrong = summary_by_key["wrong_alignment"]
     dataset_deltas = {
         dataset: {
             "reference": dataset_mean(
                 rows_by_key["raw"], dataset, args.k_values
             ),
-            "lexical_centroid": dataset_mean(
-                rows_by_key["lexical_centroid"], dataset, args.k_values
+            "uniform_centroid": dataset_mean(
+                rows_by_key["uniform_centroid"], dataset, args.k_values
+            ),
+            "idf_centroid": dataset_mean(
+                rows_by_key["idf_centroid"], dataset, args.k_values
             ),
         }
         for dataset in args.datasets
     }
     for values in dataset_deltas.values():
-        values["delta"] = values["lexical_centroid"] - values["reference"]
+        values["delta_reference"] = values["idf_centroid"] - values["reference"]
+        values["delta_uniform"] = (
+            values["idf_centroid"] - values["uniform_centroid"]
+        )
     gate = {
         "candidate_minus_reference_at_least_0p005": (
             candidate["mean_acc"] - reference["mean_acc"] >= 0.005
         ),
         "no_dataset_drop_below_minus_0p01": all(
-            values["delta"] >= -0.01 for values in dataset_deltas.values()
+            values["delta_reference"] >= -0.01
+            for values in dataset_deltas.values()
         ),
-        "candidate_minus_permuted_at_least_0p002": (
-            candidate["mean_acc"] - permuted["mean_acc"] >= 0.002
+        "candidate_minus_uniform_at_least_0p002": (
+            candidate["mean_acc"] - uniform["mean_acc"] >= 0.002
+        ),
+        "candidate_minus_token_idf_permuted_at_least_0p002": (
+            candidate["mean_acc"] - token_permuted["mean_acc"] >= 0.002
+        ),
+        "candidate_minus_feature_permuted_at_least_0p002": (
+            candidate["mean_acc"] - feature_permuted["mean_acc"] >= 0.002
         ),
         "candidate_minus_wrong_alignment_at_least_0p002": (
             candidate["mean_acc"] - wrong["mean_acc"] >= 0.002
@@ -780,24 +984,24 @@ def main() -> None:
             "k_values": args.k_values,
             "random_seed": args.random_seed,
         },
-        "sample_lexical_centroid_signal": lexical_report,
+        "sample_idf_centroid_signal": idf_report,
         "architecture_results": rows,
         "summary": summary,
         "dataset_deltas": dataset_deltas,
         "gate": gate,
         "decision": (
-            "authorize-sample-lexical-centroid-sae-v1-screen"
+            "authorize-structured-idf-centroid-sae-v2-screen"
             if gate["pass"]
-            else "stop-before-sample-lexical-centroid-training"
+            else "stop-before-structured-idf-centroid-training"
         ),
         "elapsed_seconds": time.time() - started,
     }
-    output_json = args.output_dir / "sample-lexical-centroid-gate.json"
+    output_json = args.output_dir / "sample-idf-centroid-gate.json"
     output_json.write_text(
         json.dumps(payload, indent=2) + "\n", encoding="utf-8"
     )
     lines = [
-        "# Structured sample lexical-centroid gate",
+        "# Structured sample IDF-centroid gate",
         "",
         "| Variant | Mean Acc | Mean AUC | Top-1 | Top-2 | Top-5 |",
         "|---|---:|---:|---:|---:|---:|",
@@ -809,7 +1013,7 @@ def main() -> None:
             f"{row['top_2_acc']:.6f} | {row['top_5_acc']:.6f} |"
         )
     lines.extend(["", f"Decision: `{payload['decision']}`", ""])
-    (args.output_dir / "sample-lexical-centroid-gate.md").write_text(
+    (args.output_dir / "sample-idf-centroid-gate.md").write_text(
         "\n".join(lines), encoding="utf-8"
     )
     print(
