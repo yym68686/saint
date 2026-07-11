@@ -86,6 +86,9 @@ def activation_summary(
     centered = transformed - transformed.mean(dim=0, keepdim=True)
     singular_values = torch.linalg.svdvals(centered)
     row_norms = transformed.norm(dim=1)
+    unit_transformed = transformed / row_norms.unsqueeze(1).clamp_min(1.0e-30)
+    unit_centered = unit_transformed - unit_transformed.mean(dim=0, keepdim=True)
+    unit_singular_values = torch.linalg.svdvals(unit_centered)
     coordinate_std = centered.square().mean(dim=0).sqrt()
     cosine = F.cosine_similarity(source, transformed, dim=1)
     return {
@@ -98,6 +101,7 @@ def activation_summary(
             (coordinate_std.std(unbiased=False) / coordinate_std.mean().clamp_min(1.0e-30)).item()
         ),
         "covariance_rank": rank_summary(singular_values),
+        "row_unit_covariance_rank": rank_summary(unit_singular_values),
     }
 
 
