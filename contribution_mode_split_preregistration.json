@@ -1,0 +1,72 @@
+{
+  "experiment": "ELUDe-inspired contribution-mode split frozen causal gate",
+  "status": "mechanism-preflight-not-final-architecture",
+  "date": "2026-07-11",
+  "motivation": "Test whether distinct input-contribution modes inside one V396 feature can be separated into low-k readable responses without labels, parameter growth, or exposed-dimension growth before developing a jointly trainable module.",
+  "source": {
+    "paper": "Interpretability Without Tradeoffs: Disentangling Polysemanticity At Equal Predictive Performance",
+    "method": "ELUDe",
+    "arxiv": "2605.31304v1",
+    "pdf_sha256": "c637912014ade99dbb8d2a21187beda01f96ad4b62e4b81126af3e7cc26e5221"
+  },
+  "base_checkpoint": {
+    "path": "/root/autodl-tmp/v396_logcompanding_initial5/trained_sae-v396-logcompanding-relu.pt",
+    "sha256": "5a5319e1f2713e89f59c396d7f8dd1d340225416e506a10c42a4500cdceae42b",
+    "layer": 22,
+    "parameter_count": 402852864,
+    "exposed_feature_count": 65536
+  },
+  "training_data": {
+    "path": "/root/autodl-tmp/activation_outputs_batched",
+    "policy": "read-only; metadata manifest must be identical before and after fitting",
+    "activation_source": "same flat L22 activation cache used by existing baselines",
+    "sample_files": 64,
+    "sample_tokens": 131072
+  },
+  "fit": {
+    "top_activation_instances_per_feature": 64,
+    "contribution_clusters": 2,
+    "spherical_kmeans_iterations": 8,
+    "minimum_cluster_size": 16,
+    "split_pairs": 4096,
+    "exclusive_assignment_margin_rho": 0.5,
+    "no_hyperparameter_sweep": true
+  },
+  "representation": {
+    "definition": "For each selected parent, partition its encoder weight additively from two contribution-mode representatives. Route the original nonnegative V396 response between the two subresponses using normalized positive split preactivations. Fold one low-usage recipient response into the first slot so every parent-recipient pair preserves total activation mass and the total exposed dimension remains 65536.",
+    "parent_selection": "largest balanced two-mode contribution separation on unlabeled OWT tokens",
+    "recipient_selection": "lowest unlabeled OWT mean V396 activation, disjoint from parents",
+    "variants": [
+      "frozen V396 reference",
+      "mass-fold-only control",
+      "coordinate-misaligned split control",
+      "true contribution-mode split candidate"
+    ],
+    "same_exposed_feature_count": true,
+    "pairwise_activation_mass_preserved": true
+  },
+  "wrong_control": {
+    "definition": "Apply a deterministic nonzero circular permutation to each learned input-coordinate allocation vector before multiplying by the same parent encoder row. This preserves each allocation multiset and additive parent decomposition while breaking alignment to the contribution modes.",
+    "required_identity_permutations": 0
+  },
+  "initial3": [
+    "LabHC/bias_in_bios_class_set3",
+    "canrager/amazon_reviews_mcauley_1and5",
+    "fancyzhx/ag_news"
+  ],
+  "gate": {
+    "minimum_delta_over_best_control": 0.005,
+    "maximum_per_dataset_drop": 0.01,
+    "same_dataset_reference": 0.837543,
+    "maximum_reference_gap": 0.01,
+    "pass_action": "Develop one exact-parameter, exact-exposed-dimension, jointly trained contribution-routed split SAE with an aligned wrong-control suite.",
+    "fail_action": "Close the contribution-mode split family before trainable architecture development; do not run full7."
+  },
+  "leakage_prohibitions": [
+    "SAEBench labels",
+    "evaluation split",
+    "one-vs-rest targets",
+    "mean-diff selected features",
+    "test feedback"
+  ]
+}
