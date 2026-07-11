@@ -431,9 +431,6 @@ class CascadedConceptSAE(PartitionedV396):
         super().__init__(state, kept_indices, reallocated_indices)
         self.active_atom_cap = int(active_atom_cap)
         self.balance_temperature = float(balance_temperature)
-        with torch.no_grad():
-            self.high_bias.copy_(self.low_decoder.mean(dim=1))
-            self.high_encoder.copy_(self.high_decoder.T)
         self.module_probe_width = min(256, self.n_high)
         self.module_initial = [
             self.high_encoder[: self.module_probe_width].detach().cpu().clone(),
@@ -769,8 +766,8 @@ def main() -> None:
         "balance_weight": args.balance_weight,
         "balance_temperature": args.balance_temperature,
         "level2_initialization": (
-            "decoder from the reallocated low-activity V396 columns; encoder "
-            "from that decoder transpose; center from the kept decoder-atom mean"
+            "encoder, decoder, center, beta, and gain inherit the corresponding "
+            "parameters from the reallocated low-activity V396 slots"
         ),
         "initial3": [
             "LabHC/bias_in_bios_class_set3",
