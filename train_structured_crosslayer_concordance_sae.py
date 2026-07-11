@@ -624,6 +624,11 @@ def main() -> None:
     parser.add_argument("--normalize-eps", type=float, default=1.0e-6)
     parser.add_argument("--validation-batches", type=int, default=32)
     parser.add_argument("--log-every", type=int, default=50)
+    parser.add_argument(
+        "--save-checkpoints",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+    )
     parser.add_argument("--device", default="cuda")
     args = parser.parse_args()
 
@@ -649,20 +654,25 @@ def main() -> None:
     for variant in VARIANTS:
         model, result = train_variant(variant, base_state, cache, args, device)
         checkpoint = args.output_dir / f"trained_sae-{variant.key}.pt"
-        torch.save(model.export_state(), checkpoint)
-        result["checkpoint"] = str(checkpoint)
-        result["checkpoint_sha256"] = sha256_file(checkpoint)
+        if args.save_checkpoints:
+            torch.save(model.export_state(), checkpoint)
+            result["checkpoint"] = str(checkpoint)
+            result["checkpoint_sha256"] = sha256_file(checkpoint)
+        else:
+            result["checkpoint"] = None
+            result["checkpoint_sha256"] = None
         results[variant.key] = result
         counts.add(int(result["parameter_count"]))
-        targets.append(
-            {
-                "label": variant.label,
-                "kind": "relu",
-                "layer": args.reference_layer,
-                "checkpoint": str(checkpoint),
-                "variant_key": variant.key,
-            }
-        )
+        if args.save_checkpoints:
+            targets.append(
+                {
+                    "label": variant.label,
+                    "kind": "relu",
+                    "layer": args.reference_layer,
+                    "checkpoint": str(checkpoint),
+                    "variant_key": variant.key,
+                }
+            )
         model.to("cpu")
         del model
         if device.type == "cuda":
@@ -675,10 +685,11 @@ def main() -> None:
             f"Parameter count differs from source ReLU: variants={counts}, source={expected}"
         )
     targets_path = args.output_dir / "targets-crosslayer-concordance-v1.json"
-    targets_path.write_text(
-        json.dumps(targets, ensure_ascii=False, indent=2) + "\n",
-        encoding="utf-8",
-    )
+    if args.save_checkpoints:
+        targets_path.write_text(
+            json.dumps(targets, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
     summary = {
         "experiment": "cross-layer concordance shared SAE v1 short warm-start screen",
         "arguments": {
@@ -692,7 +703,7 @@ def main() -> None:
         "parameter_count_each": next(iter(counts)),
         "exposed_feature_count_each": int(base_state["encoder.weight"].shape[0]),
         "same_initial_tensors": True,
-        "targets_json": str(targets_path),
+        "targets_json": str(targets_path) if args.save_checkpoints else None,
         "variants": results,
         "fairness": {
             "same_structured_cache": True,
